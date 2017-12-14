@@ -3,7 +3,7 @@
 //  mamba
 //
 //  Created by David Coufal on 7/11/16.
-//  Copyright © 2016 Comcast Corporation.
+//  Copyright © 2016 Comcast Cable Communications Management, LLC
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
 //  You may obtain a copy of the License at
