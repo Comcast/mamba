@@ -1,8 +1,10 @@
-language: swift
+language: objective-c
 osx_image: xcode9.2
 
+
 env:
-  - LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8
+  global:
+  - LANG=en_US.UTF-8
   - PROJECT="mamba.xcodeproj"
   - IOS_SCHEME="mamba"
   - TVOS_SCHEME="mambaTVOS"
