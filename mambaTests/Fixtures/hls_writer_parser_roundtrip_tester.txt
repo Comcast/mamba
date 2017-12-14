@@ -1,0 +1,133 @@
+#EXTM3U
+# Add tags to this file to test the round trip between parsing and writing
+# Since we strip out extraneous white space and newlines, you should eschew those characters when you update this file
+# This has to be a syntactically correct file, but it does not have to make sense or be playable.
+# ---
+# Testing unknown tags:
+# ---
+#EXT-FAKE-TAG1
+#EXT-FAKE-TAG2:10
+#EXT-FAKE-TAG3:10,fakedata
+#EXT-FAKE-TAG4:FAKE-KEY:Value,FAKE-NUMBER:100
+# ---
+# Testing EXT-X-I-FRAME-STREAM-INF:
+# ---
+#EXT-X-I-FRAME-STREAM-INF:BANDWIDTH=328400,PROGRAM-ID=1,CODECS="avc1.4d401f",RESOLUTION=320x180,URI="IP_720p60_51_SAP_TS/4242/format-hls-track-iframe-bandwidth-328400-repid-328400.m3u8"
+#EXT-X-I-FRAME-STREAM-INF:BANDWIDTH=328400,URI="IP_720p60_51_SAP_TS/4242/format-hls-track-iframe-bandwidth-328400-repid-328400.m3u8"
+#EXT-X-I-FRAME-STREAM-INF:BANDWIDTH=328400,UNKNOWN_TAG1=VALUE1,URI="IP_720p60_51_SAP_TS/4242/format-hls-track-iframe-bandwidth-328400-repid-328400.m3u8",UNKNOWN_TAG2=VALUE2
+# ---
+# Testing EXT-X-MEDIA:
+# ---
+#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="g104000",NAME="Spanish"
+#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="g104000",NAME="Spanish",LANGUAGE="es",ASSOC-LANGUAGE="en",URI="IP_720p60_51_SAP_TS/4242/format-hls-track-sap-bandwidth-104000-repid-104000.m3u8"
+#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="g104000",NAME="Spanish",LANGUAGE="es",ASSOC-LANGUAGE="en",URI="IP_720p60_51_SAP_TS/4242/format-hls-track-sap-bandwidth-104000-repid-104000.m3u8",DEFAULT=YES,AUTOSELECT=YES
+#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="g104000",NAME="Spanish",UNKNOWN_TAG1=VALUE1,LANGUAGE="es",ASSOC-LANGUAGE="en",URI="IP_720p60_51_SAP_TS/4242/format-hls-track-sap-bandwidth-104000-repid-104000.m3u8",DEFAULT=YES,AUTOSELECT=YES,UNKNOWN_TAG2=VALUE2
+#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="g104000",NAME="Spanish",UNKTAG1="Value1",UNKTAG2="Value2,Value3",UNKTAG3="Value1,Value2,Value3",UNKTAG4="Value2,Value3"
+#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="g104000",NAME="English"
+#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="g104000",NAME="English",LANGUAGE="en",ASSOC-LANGUAGE="en",DEFAULT=YES,AUTOSELECT=YES
+#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="g147200",NAME="Spanish",LANGUAGE="es",ASSOC-LANGUAGE="en",URI="IP_720p60_51_SAP_TS/4242/format-hls-track-sap-bandwidth-147200-repid-147200.m3u8"
+#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="g104000",NAME="English",LANGUAGE="en",ASSOC-LANGUAGE="en",DEFAULT=YES,AUTOSELECT=YES,UNKNOWN_TAG2=VALUE2
+#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="subs",NAME="English",DEFAULT=YES,AUTOSELECT=YES,FORCED=NO,LANGUAGE="en",CHARACTERISTICS="public.accessibility.transcribes-spoken-dialog, public.accessibility.describes-music-and-sound",URI="subtitles/eng/prog_index.m3u8"
+#EXT-X-MEDIA:TYPE=SUBTITLES,GROUP-ID="subs",NAME="English (Forced)",DEFAULT=NO,AUTOSELECT=NO,FORCED=YES,LANGUAGE="en",URI="subtitles/eng_forced/prog_index.m3u8"
+#EXT-X-MEDIA:TYPE=CLOSED-CAPTIONS,GROUP-ID="cc1",LANGUAGE="en",NAME="English",AUTOSELECT=YES,DEFAULT=YES,INSTREAM-ID="CC1"
+# ---
+# Testing EXT-X-STREAM-INF:
+# ---
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=484444
+gear3/prog_index.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=484444,CODECS="codec1,codec2.42",RESOLUTION=1920x1080,AUDIO="audioId",VIDEO="videoId",CLOSED-CAPTIONS="cc1",SUBTITLES="subs"
+gear3/prog_index.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,UNKNOWN_TAG1=VALUE1,BANDWIDTH=484444,CODECS="codec1,codec2.42",RESOLUTION=1920x1080,AUDIO="audioId",VIDEO="videoId",UNKNOWN_TAG2=VALUE2
+gear3/prog_index.m3u8
+# ---
+# Testing EXT-X-TARGETDURATION:
+# ---
+#EXT-X-TARGETDURATION:10
+# ---
+# Testing EXT-X-ENDLIST:
+# ---
+#EXT-X-ENDLIST
+# ---
+# Testing EXTINF:
+# ---
+#EXTINF:5220,
+http://media.example.com/entire.ts
+#EXTINF:5220,Game of Thrones
+http://media.example.com/entire.ts
+#EXTINF:5220,How I Met Your Mother,Unknown Extension
+http://media.example.com/entire.ts
+# ---
+# Testing EXT-X-STREAM-INF:
+# ---
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=200000
+#EXT-X-STREAM-INF:BANDWIDTH=560400,AUDIO="g104000",PROGRAM-ID=1,CODECS="avc1.4d401f,mp4a.40.5",RESOLUTION=320x180
+#EXT-X-STREAM-INF:BANDWIDTH=560400,AUDIO="g104000",PROGRAM-ID=1,CODECS="avc1.4d401f,mp4a.40.5",RESOLUTION=320x180,UNKNOWN_TAG2=VALUE2
+# ---
+# Testing EXT_X_MEDIA_SEQUENCE:
+# ---
+#EXT-X-MEDIA-SEQUENCE:1
+# ---
+# Testing EXT_X_ALLOW_CACHE:
+# ---
+#EXT-X-ALLOW-CACHE:YES
+#EXT-X-ALLOW-CACHE:NO
+#EXT-X-ALLOW-CACHE:DISALLOWED_VALUE
+# ---
+# Testing EXT_X_KEY:
+# ---
+#EXT-X-KEY:METHOD=NONE
+#EXT-X-KEY:METHOD=AES-128,URI="https://priv.example.com/key.php?r=52"
+#EXT-X-KEY:METHOD=AES-128,URI="https://priv.example.com/key.php?r=52",IV=0x9c7db8778570d05c3177c349fd9236aa
+#EXT-X-KEY:METHOD=SAMPLE-AES,URI="https://priv.example.com/key.php?r=52",IV=0x9c7db8778570d05c3177c349fd9236aa,KEYFORMAT="com.apple.streamingkeydelivery",KEYFORMATVERSIONS="1"
+#EXT-X-KEY:METHOD=AES-128,URI="https://priv.example.com/key.php?r=52",IV=0x9c7db8778570d05c3177c349fd9236aa,UNKNOWN_TAG2=VALUE2
+# ---
+# Testing EXT_X_MAP:
+# ---
+#EXT-X-MAP:URI="main.mp4",BYTERANGE="560@0"
+#EXT-X-MAP:URI="main.mp4"
+# ---
+# Testing EXT_X_PROGRAM_DATE_TIME:
+# ---
+#EXT-X-PROGRAM-DATE-TIME:2010-02-19T14:54:23.031+08:00
+#EXT-X-PROGRAM-DATE-TIME:CLEARLY_NOT_A_DATE_TIME_VALUE
+#EXT-X-PROGRAM-DATE-TIME:2010-02-19
+# ---
+# Testing EXT-X-VERSION:
+# ---
+#EXT-X-VERSION:1
+#EXT-X-VERSION:NOT_A_VALID_VALUE
+# ---
+# Testing EXT-X-INDEPENDENT-SEGMENTS:
+# ---
+#EXT-X-INDEPENDENT-SEGMENTS
+# ---
+# Testing EXT-X-DISCONTINUITY-SEQUENCE:
+# ---
+#EXT-X-DISCONTINUITY-SEQUENCE:1
+# ---
+# Testing EXT-X-DISCONTINUITY:
+# ---
+#EXT-X-DISCONTINUITY
+# ---
+# Testing EXT-X-I-FRAMES-ONLY:
+# ---
+#EXT-X-I-FRAMES-ONLY
+# ---
+# Testing EXT-X-PLAYLIST-TYPE:
+# ---
+#EXT-X-PLAYLIST-TYPE:VOD
+#EXT-X-PLAYLIST-TYPE:EVENT
+#EXT-X-PLAYLIST-TYPE:DISALLOWED_VALUE
+# ---
+# Testing EXT-X-BYTERANGE:
+# ---
+#EXT-X-BYTERANGE:75232@0
+#EXT-X-BYTERANGE:82112@752321
+#EXT-X-BYTERANGE:69864
+# ---
+# Testing EXT-X-START:
+# ---
+#EXT-X-START:TIME-OFFSET=0
+#EXT-X-START:TIME-OFFSET=30,PRECISE=YES
+# ---
+# newline at EOF is generated by the HLSWriter, so we should have one here as well...

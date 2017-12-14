@@ -1,0 +1,2026 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01CD2E7A1DE4D46F002510E7 /* EXT_X_MAPTagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD2E791DE4D46F002510E7 /* EXT_X_MAPTagParserTests.swift */; };
+		1D28F3451EAA9E500010320B /* hls_ad_master_manifest.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3401EAA9E500010320B /* hls_ad_master_manifest.m3u8 */; };
+		1D28F3461EAA9E500010320B /* hls_ad_variant_manifest.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3411EAA9E500010320B /* hls_ad_variant_manifest.m3u8 */; };
+		1D28F3471EAA9E500010320B /* hls_master_manifest_sap.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3421EAA9E500010320B /* hls_master_manifest_sap.m3u8 */; };
+		1D28F3481EAA9E500010320B /* hls_master_manifest.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3431EAA9E500010320B /* hls_master_manifest.m3u8 */; };
+		1D28F3491EAA9E500010320B /* hls_variant_manifest.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3441EAA9E500010320B /* hls_variant_manifest.m3u8 */; };
+		1D9D9E9B1EAFC0DB00CC7274 /* hls_ad_master_manifest.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3401EAA9E500010320B /* hls_ad_master_manifest.m3u8 */; };
+		1D9D9E9C1EAFC0DE00CC7274 /* hls_ad_variant_manifest.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3411EAA9E500010320B /* hls_ad_variant_manifest.m3u8 */; };
+		1D9D9E9D1EAFC0E100CC7274 /* hls_master_manifest_sap.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3421EAA9E500010320B /* hls_master_manifest_sap.m3u8 */; };
+		1D9D9E9E1EAFC0E300CC7274 /* hls_master_manifest.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3431EAA9E500010320B /* hls_master_manifest.m3u8 */; };
+		1D9D9E9F1EAFC0E600CC7274 /* hls_variant_manifest.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3441EAA9E500010320B /* hls_variant_manifest.m3u8 */; };
+		1D9D9EA01EAFC0F700CC7274 /* HLSStringRefExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883290551EA172170064588B /* HLSStringRefExtensionTests.swift */; };
+		4367C3731EAE83C000685945 /* HLSManifestStructureMasterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4367C3721EAE83C000685945 /* HLSManifestStructureMasterTests.swift */; };
+		43DE4EFB1E564DA300EEE800 /* EXT_X_STARTTimeOffsetValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE4EFA1E564DA300EEE800 /* EXT_X_STARTTimeOffsetValidator.swift */; };
+		43DE4EFD1E564DBE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE4EFC1E564DBE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift */; };
+		43DE4EFF1E564E1500EEE800 /* HLSMediaSpanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE4EFE1E564E1500EEE800 /* HLSMediaSpanTests.swift */; };
+		43DE4F001E564E1500EEE800 /* HLSMediaSpanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE4EFE1E564E1500EEE800 /* HLSMediaSpanTests.swift */; };
+		43DE4F0D1E564FEE00EEE800 /* EXT_X_STARTTimeOffsetValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE4EFA1E564DA300EEE800 /* EXT_X_STARTTimeOffsetValidator.swift */; };
+		43DE4F0E1E564FFE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE4EFC1E564DBE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift */; };
+		883290561EA172170064588B /* HLSStringRefExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883290551EA172170064588B /* HLSStringRefExtensionTests.swift */; };
+		D44E03771E3BAC9F00126B52 /* HLSTag+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E03761E3BAC9F00126B52 /* HLSTag+Util.swift */; };
+		D44E03781E3BAC9F00126B52 /* HLSTag+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E03761E3BAC9F00126B52 /* HLSTag+Util.swift */; };
+		D4BB018D1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB018C1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift */; };
+		D4BB018E1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB018C1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift */; };
+		EC03B63D1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */; };
+		EC03B63E1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */; };
+		EC03B63F1E5CC55800BF1F97 /* RapidParserMasterParseArray.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B63C1E5CC55800BF1F97 /* RapidParserMasterParseArray.h */; };
+		EC03B6401E5CC55800BF1F97 /* RapidParserMasterParseArray.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B63C1E5CC55800BF1F97 /* RapidParserMasterParseArray.h */; };
+		EC03B6521E5CC56B00BF1F97 /* HLSRapidParser.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6411E5CC56B00BF1F97 /* HLSRapidParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC03B6531E5CC56B00BF1F97 /* HLSRapidParser.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6411E5CC56B00BF1F97 /* HLSRapidParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC03B6541E5CC56B00BF1F97 /* HLSRapidParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6421E5CC56B00BF1F97 /* HLSRapidParser.m */; };
+		EC03B6551E5CC56B00BF1F97 /* HLSRapidParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6421E5CC56B00BF1F97 /* HLSRapidParser.m */; };
+		EC03B6561E5CC56B00BF1F97 /* HLSRapidParserCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6431E5CC56B00BF1F97 /* HLSRapidParserCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC03B6571E5CC56B00BF1F97 /* HLSRapidParserCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6431E5CC56B00BF1F97 /* HLSRapidParserCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC03B6581E5CC56B00BF1F97 /* HLSStringRef.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6441E5CC56B00BF1F97 /* HLSStringRef.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC03B6591E5CC56B00BF1F97 /* HLSStringRef.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6441E5CC56B00BF1F97 /* HLSStringRef.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC03B65A1E5CC56B00BF1F97 /* HLSStringRef.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6451E5CC56B00BF1F97 /* HLSStringRef.m */; };
+		EC03B65B1E5CC56B00BF1F97 /* HLSStringRef.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6451E5CC56B00BF1F97 /* HLSStringRef.m */; };
+		EC03B65C1E5CC56B00BF1F97 /* HLSStringRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6461E5CC56B00BF1F97 /* HLSStringRef.swift */; };
+		EC03B65D1E5CC56B00BF1F97 /* HLSStringRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6461E5CC56B00BF1F97 /* HLSStringRef.swift */; };
+		EC03B65E1E5CC56B00BF1F97 /* RapidParser.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6471E5CC56B00BF1F97 /* RapidParser.c */; };
+		EC03B65F1E5CC56B00BF1F97 /* RapidParser.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6471E5CC56B00BF1F97 /* RapidParser.c */; };
+		EC03B6601E5CC56B00BF1F97 /* RapidParser.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6481E5CC56B00BF1F97 /* RapidParser.h */; };
+		EC03B6611E5CC56B00BF1F97 /* RapidParser.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6481E5CC56B00BF1F97 /* RapidParser.h */; };
+		EC03B6621E5CC56B00BF1F97 /* RapidParserDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6491E5CC56B00BF1F97 /* RapidParserDebug.h */; };
+		EC03B6631E5CC56B00BF1F97 /* RapidParserDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6491E5CC56B00BF1F97 /* RapidParserDebug.h */; };
+		EC03B6641E5CC56B00BF1F97 /* RapidParserError.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B64A1E5CC56B00BF1F97 /* RapidParserError.m */; };
+		EC03B6651E5CC56B00BF1F97 /* RapidParserError.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B64A1E5CC56B00BF1F97 /* RapidParserError.m */; };
+		EC03B6661E5CC56B00BF1F97 /* RapidParserError.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64B1E5CC56B00BF1F97 /* RapidParserError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC03B6671E5CC56B00BF1F97 /* RapidParserError.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64B1E5CC56B00BF1F97 /* RapidParserError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC03B6681E5CC56B00BF1F97 /* RapidParserLineState.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B64C1E5CC56B00BF1F97 /* RapidParserLineState.c */; };
+		EC03B6691E5CC56B00BF1F97 /* RapidParserLineState.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B64C1E5CC56B00BF1F97 /* RapidParserLineState.c */; };
+		EC03B66A1E5CC56B00BF1F97 /* RapidParserLineState.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64D1E5CC56B00BF1F97 /* RapidParserLineState.h */; };
+		EC03B66B1E5CC56B00BF1F97 /* RapidParserLineState.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64D1E5CC56B00BF1F97 /* RapidParserLineState.h */; };
+		EC03B66C1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64E1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h */; };
+		EC03B66D1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64E1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h */; };
+		EC03B66E1E5CC56B00BF1F97 /* RapidParserState.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64F1E5CC56B00BF1F97 /* RapidParserState.h */; };
+		EC03B66F1E5CC56B00BF1F97 /* RapidParserState.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64F1E5CC56B00BF1F97 /* RapidParserState.h */; };
+		EC03B6701E5CC56B00BF1F97 /* RapidParserStateHandlers.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6501E5CC56B00BF1F97 /* RapidParserStateHandlers.c */; };
+		EC03B6711E5CC56B00BF1F97 /* RapidParserStateHandlers.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6501E5CC56B00BF1F97 /* RapidParserStateHandlers.c */; };
+		EC03B6721E5CC56B00BF1F97 /* RapidParserStateHandlers.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6511E5CC56B00BF1F97 /* RapidParserStateHandlers.h */; };
+		EC03B6731E5CC56B00BF1F97 /* RapidParserStateHandlers.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6511E5CC56B00BF1F97 /* RapidParserStateHandlers.h */; };
+		EC073F571FE0572400689228 /* HLSTagCriterionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F561FE0572400689228 /* HLSTagCriterionTests.swift */; };
+		EC073F581FE0572400689228 /* HLSTagCriterionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F561FE0572400689228 /* HLSTagCriterionTests.swift */; };
+		EC073F5A1FE072DC00689228 /* HLSTagCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F591FE072DC00689228 /* HLSTagCollectionTests.swift */; };
+		EC073F5B1FE072DC00689228 /* HLSTagCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F591FE072DC00689228 /* HLSTagCollectionTests.swift */; };
+		EC073F5D1FE0840000689228 /* OutputStreamExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F5C1FE0840000689228 /* OutputStreamExtensionTests.swift */; };
+		EC073F5E1FE0840000689228 /* OutputStreamExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F5C1FE0840000689228 /* OutputStreamExtensionTests.swift */; };
+		EC073F601FE08F7500689228 /* String+Helio.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F5F1FE08F7500689228 /* String+Helio.swift */; };
+		EC073F611FE08F7500689228 /* String+Helio.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F5F1FE08F7500689228 /* String+Helio.swift */; };
+		EC1521581DD28536006FB265 /* mamba.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC15214F1DD28536006FB265 /* mamba.framework */; };
+		EC15215F1DD28536006FB265 /* mamba.h in Headers */ = {isa = PBXBuildFile; fileRef = EC1521511DD28536006FB265 /* mamba.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC1521741DD2856F006FB265 /* mamba.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC15216B1DD2856F006FB265 /* mamba.framework */; };
+		EC1705401DFB490A00C969F9 /* linear_ad_insertion_AD.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC17053B1DFB490A00C969F9 /* linear_ad_insertion_AD.m3u8 */; };
+		EC1705411DFB490A00C969F9 /* linear_ad_insertion_AD.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC17053B1DFB490A00C969F9 /* linear_ad_insertion_AD.m3u8 */; };
+		EC1705421DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_forced.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC17053C1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_forced.m3u8 */; };
+		EC1705431DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_forced.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC17053C1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_forced.m3u8 */; };
+		EC1705441DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_natural.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC17053D1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_natural.m3u8 */; };
+		EC1705451DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_natural.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC17053D1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_natural.m3u8 */; };
+		EC1705461DFB490A00C969F9 /* linear_ad_insertion_CONTENT_mid_ad.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC17053E1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_mid_ad.m3u8 */; };
+		EC1705471DFB490A00C969F9 /* linear_ad_insertion_CONTENT_mid_ad.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC17053E1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_mid_ad.m3u8 */; };
+		EC1705481DFB490A00C969F9 /* linear_ad_insertion_CONTENT_start_ad.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC17053F1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_start_ad.m3u8 */; };
+		EC1705491DFB490A00C969F9 /* linear_ad_insertion_CONTENT_start_ad.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC17053F1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_start_ad.m3u8 */; };
+		EC37A8D71E9C16C7005E8342 /* HLSManifestStructureAndEditingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC37A8D61E9C16C7005E8342 /* HLSManifestStructureAndEditingTests.swift */; };
+		EC37A8D81E9C16C7005E8342 /* HLSManifestStructureAndEditingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC37A8D61E9C16C7005E8342 /* HLSManifestStructureAndEditingTests.swift */; };
+		EC3B01A51DD4D47900B512E3 /* EXT_X_KEYValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B019E1DD4D47900B512E3 /* EXT_X_KEYValidator.swift */; };
+		EC3B01A61DD4D47900B512E3 /* EXT_X_KEYValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B019E1DD4D47900B512E3 /* EXT_X_KEYValidator.swift */; };
+		EC3B01A71DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B019F1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift */; };
+		EC3B01A81DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B019F1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift */; };
+		EC3B01A91DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupDEFAULTValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01A01DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupDEFAULTValidator.swift */; };
+		EC3B01AA1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupDEFAULTValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01A01DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupDEFAULTValidator.swift */; };
+		EC3B01AB1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupNAMEValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01A11DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupNAMEValidator.swift */; };
+		EC3B01AC1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupNAMEValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01A11DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupNAMEValidator.swift */; };
+		EC3B01AD1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupTYPEValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01A21DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupTYPEValidator.swift */; };
+		EC3B01AE1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupTYPEValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01A21DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupTYPEValidator.swift */; };
+		EC3B01AF1DD4D47900B512E3 /* EXT_X_STREAM_INFRenditionGroupValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01A31DD4D47900B512E3 /* EXT_X_STREAM_INFRenditionGroupValidator.swift */; };
+		EC3B01B01DD4D47900B512E3 /* EXT_X_STREAM_INFRenditionGroupValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01A31DD4D47900B512E3 /* EXT_X_STREAM_INFRenditionGroupValidator.swift */; };
+		EC3B01B11DD4D47900B512E3 /* EXT_X_TARGETDURATIONLengthValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01A41DD4D47900B512E3 /* EXT_X_TARGETDURATIONLengthValidator.swift */; };
+		EC3B01B21DD4D47900B512E3 /* EXT_X_TARGETDURATIONLengthValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01A41DD4D47900B512E3 /* EXT_X_TARGETDURATIONLengthValidator.swift */; };
+		EC3B01BF1DD4D49A00B512E3 /* HLSManifestCardinalityValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01B31DD4D49A00B512E3 /* HLSManifestCardinalityValidator.swift */; };
+		EC3B01C01DD4D49A00B512E3 /* HLSManifestCardinalityValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01B31DD4D49A00B512E3 /* HLSManifestCardinalityValidator.swift */; };
+		EC3B01C11DD4D49A00B512E3 /* HLSManifestCollectionValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01B41DD4D49A00B512E3 /* HLSManifestCollectionValidator.swift */; };
+		EC3B01C21DD4D49A00B512E3 /* HLSManifestCollectionValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01B41DD4D49A00B512E3 /* HLSManifestCollectionValidator.swift */; };
+		EC3B01C31DD4D49A00B512E3 /* HLSManifestOneToManyValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01B51DD4D49A00B512E3 /* HLSManifestOneToManyValidator.swift */; };
+		EC3B01C41DD4D49A00B512E3 /* HLSManifestOneToManyValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01B51DD4D49A00B512E3 /* HLSManifestOneToManyValidator.swift */; };
+		EC3B01C51DD4D49A00B512E3 /* HLSManifestRenditionGroupAudioVideoValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01B61DD4D49A00B512E3 /* HLSManifestRenditionGroupAudioVideoValidator.swift */; };
+		EC3B01C61DD4D49A00B512E3 /* HLSManifestRenditionGroupAudioVideoValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01B61DD4D49A00B512E3 /* HLSManifestRenditionGroupAudioVideoValidator.swift */; };
+		EC3B01C71DD4D49A00B512E3 /* HLSManifestRenditionGroupMatchingNAMELANGUAGEValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01B71DD4D49A00B512E3 /* HLSManifestRenditionGroupMatchingNAMELANGUAGEValidator.swift */; };
+		EC3B01C81DD4D49A00B512E3 /* HLSManifestRenditionGroupMatchingNAMELANGUAGEValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01B71DD4D49A00B512E3 /* HLSManifestRenditionGroupMatchingNAMELANGUAGEValidator.swift */; };
+		EC3B01C91DD4D49A00B512E3 /* HLSManifestRenditionGroupMatchingPROGRAM_IDValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01B81DD4D49A00B512E3 /* HLSManifestRenditionGroupMatchingPROGRAM_IDValidator.swift */; };
+		EC3B01CA1DD4D49A00B512E3 /* HLSManifestRenditionGroupMatchingPROGRAM_IDValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01B81DD4D49A00B512E3 /* HLSManifestRenditionGroupMatchingPROGRAM_IDValidator.swift */; };
+		EC3B01CB1DD4D49A00B512E3 /* HLSManifestRenditionGroupValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01B91DD4D49A00B512E3 /* HLSManifestRenditionGroupValidator.swift */; };
+		EC3B01CC1DD4D49A00B512E3 /* HLSManifestRenditionGroupValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01B91DD4D49A00B512E3 /* HLSManifestRenditionGroupValidator.swift */; };
+		EC3B01CD1DD4D49A00B512E3 /* HLSManifestTagCardinalityValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01BA1DD4D49A00B512E3 /* HLSManifestTagCardinalityValidation.swift */; };
+		EC3B01CE1DD4D49A00B512E3 /* HLSManifestTagCardinalityValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01BA1DD4D49A00B512E3 /* HLSManifestTagCardinalityValidation.swift */; };
+		EC3B01CF1DD4D49A00B512E3 /* HLSManifestTagGroupValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01BB1DD4D49A00B512E3 /* HLSManifestTagGroupValidator.swift */; };
+		EC3B01D01DD4D49A00B512E3 /* HLSManifestTagGroupValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01BB1DD4D49A00B512E3 /* HLSManifestTagGroupValidator.swift */; };
+		EC3B01D11DD4D49A00B512E3 /* HLSManifestValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01BC1DD4D49A00B512E3 /* HLSManifestValidator.swift */; };
+		EC3B01D21DD4D49A00B512E3 /* HLSManifestValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01BC1DD4D49A00B512E3 /* HLSManifestValidator.swift */; };
+		EC3B01D31DD4D49A00B512E3 /* HLSManifestValidatorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01BD1DD4D49A00B512E3 /* HLSManifestValidatorImpl.swift */; };
+		EC3B01D41DD4D49A00B512E3 /* HLSManifestValidatorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01BD1DD4D49A00B512E3 /* HLSManifestValidatorImpl.swift */; };
+		EC402B931F7D5A8B00730C74 /* HLSManifestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC402B921F7D5A8B00730C74 /* HLSManifestTests.swift */; };
+		EC402B941F7D5A8B00730C74 /* HLSManifestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC402B921F7D5A8B00730C74 /* HLSManifestTests.swift */; };
+		EC42A5F21FD9B88E00317EA5 /* IndeterminateBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC42A5F11FD9B88E00317EA5 /* IndeterminateBool.swift */; };
+		EC42A5F31FD9B88E00317EA5 /* IndeterminateBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC42A5F11FD9B88E00317EA5 /* IndeterminateBool.swift */; };
+		EC42A5F51FD9BF0500317EA5 /* IndeterminateBoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC42A5F41FD9BF0500317EA5 /* IndeterminateBoolTests.swift */; };
+		EC42A5F61FD9BF0500317EA5 /* IndeterminateBoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC42A5F41FD9BF0500317EA5 /* IndeterminateBoolTests.swift */; };
+		EC4424891E95A69C00AECFAB /* HLSManifestStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4424881E95A69C00AECFAB /* HLSManifestStructure.swift */; };
+		EC44248A1E95A69C00AECFAB /* HLSManifestStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4424881E95A69C00AECFAB /* HLSManifestStructure.swift */; };
+		EC44248C1E9694C600AECFAB /* HLSTagGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44248B1E9694C600AECFAB /* HLSTagGroup.swift */; };
+		EC44248D1E9694C600AECFAB /* HLSTagGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44248B1E9694C600AECFAB /* HLSTagGroup.swift */; };
+		EC44E7661DEE2F9E0087C890 /* EXT_X_MAPTagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD2E791DE4D46F002510E7 /* EXT_X_MAPTagParserTests.swift */; };
+		EC6F38921EA95882006BC30E /* HLSManifestInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6F38911EA95882006BC30E /* HLSManifestInterfaceTests.swift */; };
+		EC6F38931EA95882006BC30E /* HLSManifestInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6F38911EA95882006BC30E /* HLSManifestInterfaceTests.swift */; };
+		EC7491461DD299B400AF4E20 /* HLSManifestTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491421DD299B400AF4E20 /* HLSManifestTypes.swift */; };
+		EC7491471DD299B400AF4E20 /* HLSManifestTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491421DD299B400AF4E20 /* HLSManifestTypes.swift */; };
+		EC74914C1DD29ACF00AF4E20 /* HLSTagCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74914A1DD29ACF00AF4E20 /* HLSTagCriteria.swift */; };
+		EC74914D1DD29ACF00AF4E20 /* HLSTagCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74914A1DD29ACF00AF4E20 /* HLSTagCriteria.swift */; };
+		EC74914E1DD29ACF00AF4E20 /* HLSTagCriterion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74914B1DD29ACF00AF4E20 /* HLSTagCriterion.swift */; };
+		EC74914F1DD29ACF00AF4E20 /* HLSTagCriterion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74914B1DD29ACF00AF4E20 /* HLSTagCriterion.swift */; };
+		EC7491591DD29AED00AF4E20 /* HLSTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491521DD29AED00AF4E20 /* HLSTag.swift */; };
+		EC74915A1DD29AED00AF4E20 /* HLSTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491521DD29AED00AF4E20 /* HLSTag.swift */; };
+		EC7491631DD29B0F00AF4E20 /* CoreMedia+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74915F1DD29B0F00AF4E20 /* CoreMedia+Util.swift */; };
+		EC7491641DD29B0F00AF4E20 /* CoreMedia+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74915F1DD29B0F00AF4E20 /* CoreMedia+Util.swift */; };
+		EC7491651DD29B0F00AF4E20 /* FailableStringLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491601DD29B0F00AF4E20 /* FailableStringLiteralConvertible.swift */; };
+		EC7491661DD29B0F00AF4E20 /* FailableStringLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491601DD29B0F00AF4E20 /* FailableStringLiteralConvertible.swift */; };
+		EC7491671DD29B0F00AF4E20 /* RegisteredHLSTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491611DD29B0F00AF4E20 /* RegisteredHLSTags.swift */; };
+		EC7491681DD29B0F00AF4E20 /* RegisteredHLSTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491611DD29B0F00AF4E20 /* RegisteredHLSTags.swift */; };
+		EC74916E1DD29B5D00AF4E20 /* CollectionType+FindExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74916B1DD29B5D00AF4E20 /* CollectionType+FindExtensions.swift */; };
+		EC74916F1DD29B5D00AF4E20 /* CollectionType+FindExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74916B1DD29B5D00AF4E20 /* CollectionType+FindExtensions.swift */; };
+		EC7491701DD29B5D00AF4E20 /* CollectionType+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74916C1DD29B5D00AF4E20 /* CollectionType+Safe.swift */; };
+		EC7491711DD29B5D00AF4E20 /* CollectionType+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74916C1DD29B5D00AF4E20 /* CollectionType+Safe.swift */; };
+		EC7491721DD29B5D00AF4E20 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74916D1DD29B5D00AF4E20 /* OrderedDictionary.swift */; };
+		EC7491731DD29B5D00AF4E20 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74916D1DD29B5D00AF4E20 /* OrderedDictionary.swift */; };
+		EC74917D1DD29C3500AF4E20 /* String+DateParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917A1DD29C3500AF4E20 /* String+DateParsing.swift */; };
+		EC74917E1DD29C3500AF4E20 /* String+DateParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917A1DD29C3500AF4E20 /* String+DateParsing.swift */; };
+		EC74917F1DD29C3500AF4E20 /* String+HLSTypeEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917B1DD29C3500AF4E20 /* String+HLSTypeEquatable.swift */; };
+		EC7491801DD29C3500AF4E20 /* String+HLSTypeEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917B1DD29C3500AF4E20 /* String+HLSTypeEquatable.swift */; };
+		EC7491811DD29C3500AF4E20 /* String+Trim.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917C1DD29C3500AF4E20 /* String+Trim.swift */; };
+		EC7491821DD29C3500AF4E20 /* String+Trim.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917C1DD29C3500AF4E20 /* String+Trim.swift */; };
+		EC7491861DD29CCB00AF4E20 /* GenericDictionaryTagParserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491831DD29CCB00AF4E20 /* GenericDictionaryTagParserHelper.swift */; };
+		EC7491871DD29CCB00AF4E20 /* GenericDictionaryTagParserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491831DD29CCB00AF4E20 /* GenericDictionaryTagParserHelper.swift */; };
+		EC7491881DD29CCB00AF4E20 /* StringArrayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491841DD29CCB00AF4E20 /* StringArrayParser.swift */; };
+		EC7491891DD29CCB00AF4E20 /* StringArrayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491841DD29CCB00AF4E20 /* StringArrayParser.swift */; };
+		EC74918A1DD29CCB00AF4E20 /* StringDictionaryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491851DD29CCB00AF4E20 /* StringDictionaryParser.swift */; };
+		EC74918B1DD29CCB00AF4E20 /* StringDictionaryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491851DD29CCB00AF4E20 /* StringDictionaryParser.swift */; };
+		EC7491B51DD29D5C00AF4E20 /* HLSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491A81DD29D5C00AF4E20 /* HLSParser.swift */; };
+		EC7491B61DD29D5C00AF4E20 /* HLSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491A81DD29D5C00AF4E20 /* HLSParser.swift */; };
+		EC7491B91DD29D5C00AF4E20 /* HLSTagDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AA1DD29D5C00AF4E20 /* HLSTagDescriptor.swift */; };
+		EC7491BA1DD29D5C00AF4E20 /* HLSTagDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AA1DD29D5C00AF4E20 /* HLSTagDescriptor.swift */; };
+		EC7491BB1DD29D5C00AF4E20 /* HLSTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AB1DD29D5C00AF4E20 /* HLSTagParser.swift */; };
+		EC7491BC1DD29D5C00AF4E20 /* HLSTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AB1DD29D5C00AF4E20 /* HLSTagParser.swift */; };
+		EC7491BD1DD29D5C00AF4E20 /* HLSTagValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AC1DD29D5C00AF4E20 /* HLSTagValidator.swift */; };
+		EC7491BE1DD29D5C00AF4E20 /* HLSTagValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AC1DD29D5C00AF4E20 /* HLSTagValidator.swift */; };
+		EC7491BF1DD29D5C00AF4E20 /* HLSTagValueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AD1DD29D5C00AF4E20 /* HLSTagValueIdentifier.swift */; };
+		EC7491C01DD29D5C00AF4E20 /* HLSTagValueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AD1DD29D5C00AF4E20 /* HLSTagValueIdentifier.swift */; };
+		EC7491C11DD29D5C00AF4E20 /* HLSTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AE1DD29D5C00AF4E20 /* HLSTagWriter.swift */; };
+		EC7491C21DD29D5C00AF4E20 /* HLSTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AE1DD29D5C00AF4E20 /* HLSTagWriter.swift */; };
+		EC7491C31DD29D5C00AF4E20 /* HLSValidationIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AF1DD29D5C00AF4E20 /* HLSValidationIssue.swift */; };
+		EC7491C41DD29D5C00AF4E20 /* HLSValidationIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AF1DD29D5C00AF4E20 /* HLSValidationIssue.swift */; };
+		EC7491C71DD29D5C00AF4E20 /* HLSValueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B11DD29D5C00AF4E20 /* HLSValueTypes.swift */; };
+		EC7491C81DD29D5C00AF4E20 /* HLSValueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B11DD29D5C00AF4E20 /* HLSValueTypes.swift */; };
+		EC7491C91DD29D5C00AF4E20 /* HLSWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B21DD29D5C00AF4E20 /* HLSWriter.swift */; };
+		EC7491CA1DD29D5C00AF4E20 /* HLSWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B21DD29D5C00AF4E20 /* HLSWriter.swift */; };
+		EC7491CD1DD29D7C00AF4E20 /* PantosTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491CB1DD29D7C00AF4E20 /* PantosTag.swift */; };
+		EC7491CE1DD29D7C00AF4E20 /* PantosTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491CB1DD29D7C00AF4E20 /* PantosTag.swift */; };
+		EC7491CF1DD29D7C00AF4E20 /* PantosValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491CC1DD29D7C00AF4E20 /* PantosValue.swift */; };
+		EC7491D01DD29D7C00AF4E20 /* PantosValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491CC1DD29D7C00AF4E20 /* PantosValue.swift */; };
+		EC7491D81DD29D9600AF4E20 /* GenericDictionaryTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491D21DD29D9600AF4E20 /* GenericDictionaryTagParser.swift */; };
+		EC7491D91DD29D9600AF4E20 /* GenericDictionaryTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491D21DD29D9600AF4E20 /* GenericDictionaryTagParser.swift */; };
+		EC7491DA1DD29D9600AF4E20 /* GenericNoDataTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491D31DD29D9600AF4E20 /* GenericNoDataTagParser.swift */; };
+		EC7491DB1DD29D9600AF4E20 /* GenericNoDataTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491D31DD29D9600AF4E20 /* GenericNoDataTagParser.swift */; };
+		EC7491DC1DD29D9600AF4E20 /* GenericSingleValueTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491D41DD29D9600AF4E20 /* GenericSingleValueTagParser.swift */; };
+		EC7491DD1DD29D9600AF4E20 /* GenericSingleValueTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491D41DD29D9600AF4E20 /* GenericSingleValueTagParser.swift */; };
+		EC7491EB1DD29DBB00AF4E20 /* GenericDictionaryTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491E21DD29DBB00AF4E20 /* GenericDictionaryTagWriter.swift */; };
+		EC7491EC1DD29DBB00AF4E20 /* GenericDictionaryTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491E21DD29DBB00AF4E20 /* GenericDictionaryTagWriter.swift */; };
+		EC7491EF1DD29DBB00AF4E20 /* GenericSingleTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491E41DD29DBB00AF4E20 /* GenericSingleTagWriter.swift */; };
+		EC7491F01DD29DBB00AF4E20 /* GenericSingleTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491E41DD29DBB00AF4E20 /* GenericSingleTagWriter.swift */; };
+		EC7491F11DD29DBB00AF4E20 /* LocationTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491E51DD29DBB00AF4E20 /* LocationTagWriter.swift */; };
+		EC7491F21DD29DBB00AF4E20 /* LocationTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491E51DD29DBB00AF4E20 /* LocationTagWriter.swift */; };
+		EC7491F81DD29DD300AF4E20 /* GenericDictionaryTagValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491F51DD29DD300AF4E20 /* GenericDictionaryTagValidator.swift */; };
+		EC7491F91DD29DD300AF4E20 /* GenericDictionaryTagValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491F51DD29DD300AF4E20 /* GenericDictionaryTagValidator.swift */; };
+		EC7491FA1DD29DD300AF4E20 /* GenericSingleTagValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491F61DD29DD300AF4E20 /* GenericSingleTagValidator.swift */; };
+		EC7491FB1DD29DD300AF4E20 /* GenericSingleTagValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491F61DD29DD300AF4E20 /* GenericSingleTagValidator.swift */; };
+		EC7491FC1DD29DD300AF4E20 /* HLSDictionaryTagValueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491F71DD29DD300AF4E20 /* HLSDictionaryTagValueIdentifier.swift */; };
+		EC7491FD1DD29DD300AF4E20 /* HLSDictionaryTagValueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491F71DD29DD300AF4E20 /* HLSDictionaryTagValueIdentifier.swift */; };
+		EC74920A1DD29E2900AF4E20 /* bipbopall.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7491FE1DD29E2900AF4E20 /* bipbopall.m3u8 */; };
+		EC74920B1DD29E2900AF4E20 /* bipbopall.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7491FE1DD29E2900AF4E20 /* bipbopall.m3u8 */; };
+		EC74920C1DD29E2900AF4E20 /* hls_sampleMasterFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC7491FF1DD29E2900AF4E20 /* hls_sampleMasterFile.txt */; };
+		EC74920D1DD29E2900AF4E20 /* hls_sampleMasterFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC7491FF1DD29E2900AF4E20 /* hls_sampleMasterFile.txt */; };
+		EC74920E1DD29E2900AF4E20 /* hls_sampleMediaFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC7492001DD29E2900AF4E20 /* hls_sampleMediaFile.txt */; };
+		EC74920F1DD29E2900AF4E20 /* hls_sampleMediaFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC7492001DD29E2900AF4E20 /* hls_sampleMediaFile.txt */; };
+		EC7492101DD29E2900AF4E20 /* hls_singleMediaFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC7492011DD29E2900AF4E20 /* hls_singleMediaFile.txt */; };
+		EC7492111DD29E2900AF4E20 /* hls_singleMediaFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC7492011DD29E2900AF4E20 /* hls_singleMediaFile.txt */; };
+		EC7492121DD29E2900AF4E20 /* hls_writer_parser_roundtrip_tester.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC7492021DD29E2900AF4E20 /* hls_writer_parser_roundtrip_tester.txt */; };
+		EC7492131DD29E2900AF4E20 /* hls_writer_parser_roundtrip_tester.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC7492021DD29E2900AF4E20 /* hls_writer_parser_roundtrip_tester.txt */; };
+		EC7492141DD29E2900AF4E20 /* Super8_muxed1_4242.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492031DD29E2900AF4E20 /* Super8_muxed1_4242.m3u8 */; };
+		EC7492151DD29E2900AF4E20 /* Super8_muxed1_4242.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492031DD29E2900AF4E20 /* Super8_muxed1_4242.m3u8 */; };
+		EC7492161DD29E2900AF4E20 /* Super8_muxed2_1376214110461.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492041DD29E2900AF4E20 /* Super8_muxed2_1376214110461.m3u8 */; };
+		EC7492171DD29E2900AF4E20 /* Super8_muxed2_1376214110461.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492041DD29E2900AF4E20 /* Super8_muxed2_1376214110461.m3u8 */; };
+		EC7492181DD29E2900AF4E20 /* Super8_muxed3_HD_VOD_VDS_TELENOVELA_02152016_LVLH08.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492051DD29E2900AF4E20 /* Super8_muxed3_HD_VOD_VDS_TELENOVELA_02152016_LVLH08.m3u8 */; };
+		EC7492191DD29E2900AF4E20 /* Super8_muxed3_HD_VOD_VDS_TELENOVELA_02152016_LVLH08.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492051DD29E2900AF4E20 /* Super8_muxed3_HD_VOD_VDS_TELENOVELA_02152016_LVLH08.m3u8 */; };
+		EC74921A1DD29E2900AF4E20 /* super8demuxed1_4242.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492061DD29E2900AF4E20 /* super8demuxed1_4242.m3u8 */; };
+		EC74921B1DD29E2900AF4E20 /* super8demuxed1_4242.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492061DD29E2900AF4E20 /* super8demuxed1_4242.m3u8 */; };
+		EC74921C1DD29E2900AF4E20 /* super8demuxed2_IP_1080p24_51_TS.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492071DD29E2900AF4E20 /* super8demuxed2_IP_1080p24_51_TS.m3u8 */; };
+		EC74921D1DD29E2900AF4E20 /* super8demuxed2_IP_1080p24_51_TS.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492071DD29E2900AF4E20 /* super8demuxed2_IP_1080p24_51_TS.m3u8 */; };
+		EC74921E1DD29E2900AF4E20 /* super8demuxed3_1376214110461.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492081DD29E2900AF4E20 /* super8demuxed3_1376214110461.m3u8 */; };
+		EC74921F1DD29E2900AF4E20 /* super8demuxed3_1376214110461.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492081DD29E2900AF4E20 /* super8demuxed3_1376214110461.m3u8 */; };
+		EC7492201DD29E2900AF4E20 /* ThirdPartyHLSTagsTestFixture.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC7492091DD29E2900AF4E20 /* ThirdPartyHLSTagsTestFixture.txt */; };
+		EC7492211DD29E2900AF4E20 /* ThirdPartyHLSTagsTestFixture.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC7492091DD29E2900AF4E20 /* ThirdPartyHLSTagsTestFixture.txt */; };
+		EC7492281DD29E4A00AF4E20 /* FixtureLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492221DD29E4A00AF4E20 /* FixtureLoader.swift */; };
+		EC7492291DD29E4A00AF4E20 /* FixtureLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492221DD29E4A00AF4E20 /* FixtureLoader.swift */; };
+		EC74922C1DD29E4A00AF4E20 /* HLSManifest+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492241DD29E4A00AF4E20 /* HLSManifest+Convenience.swift */; };
+		EC74922D1DD29E4A00AF4E20 /* HLSManifest+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492241DD29E4A00AF4E20 /* HLSManifest+Convenience.swift */; };
+		EC74922E1DD29E4A00AF4E20 /* HLSManifestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492251DD29E4A00AF4E20 /* HLSManifestMock.swift */; };
+		EC74922F1DD29E4A00AF4E20 /* HLSManifestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492251DD29E4A00AF4E20 /* HLSManifestMock.swift */; };
+		EC7492321DD29E4A00AF4E20 /* HLSTagParserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492271DD29E4A00AF4E20 /* HLSTagParserMock.swift */; };
+		EC7492331DD29E4A00AF4E20 /* HLSTagParserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492271DD29E4A00AF4E20 /* HLSTagParserMock.swift */; };
+		EC74923E1DD29E7300AF4E20 /* HLSParser_Super8DemuxedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492351DD29E7300AF4E20 /* HLSParser_Super8DemuxedTests.swift */; };
+		EC74923F1DD29E7300AF4E20 /* HLSParser_Super8DemuxedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492351DD29E7300AF4E20 /* HLSParser_Super8DemuxedTests.swift */; };
+		EC7492401DD29E7300AF4E20 /* HLSParser_Super8MuxedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492361DD29E7300AF4E20 /* HLSParser_Super8MuxedTests.swift */; };
+		EC7492411DD29E7300AF4E20 /* HLSParser_Super8MuxedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492361DD29E7300AF4E20 /* HLSParser_Super8MuxedTests.swift */; };
+		EC7492421DD29E7300AF4E20 /* HLSParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492371DD29E7300AF4E20 /* HLSParserTest.swift */; };
+		EC7492431DD29E7300AF4E20 /* HLSParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492371DD29E7300AF4E20 /* HLSParserTest.swift */; };
+		EC7492481DD29E7300AF4E20 /* HLSValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74923A1DD29E7300AF4E20 /* HLSValidatorTests.swift */; };
+		EC7492491DD29E7300AF4E20 /* HLSValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74923A1DD29E7300AF4E20 /* HLSValidatorTests.swift */; };
+		EC74924A1DD29E7300AF4E20 /* HLSWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74923B1DD29E7300AF4E20 /* HLSWriterTests.swift */; };
+		EC74924B1DD29E7300AF4E20 /* HLSWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74923B1DD29E7300AF4E20 /* HLSWriterTests.swift */; };
+		EC7492611DD29E9A00AF4E20 /* HLSTagWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492521DD29E9A00AF4E20 /* HLSTagWriting.swift */; };
+		EC7492621DD29E9A00AF4E20 /* HLSTagWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492521DD29E9A00AF4E20 /* HLSTagWriting.swift */; };
+		EC7492721DD29EC800AF4E20 /* EXT_X_ALLOW_CACHETagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492671DD29EC800AF4E20 /* EXT_X_ALLOW_CACHETagParserTests.swift */; };
+		EC7492731DD29EC800AF4E20 /* EXT_X_ALLOW_CACHETagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492671DD29EC800AF4E20 /* EXT_X_ALLOW_CACHETagParserTests.swift */; };
+		EC7492741DD29EC800AF4E20 /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492681DD29EC800AF4E20 /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift */; };
+		EC7492751DD29EC800AF4E20 /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492681DD29EC800AF4E20 /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift */; };
+		EC7492761DD29EC800AF4E20 /* EXT_X_KEYTagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492691DD29EC800AF4E20 /* EXT_X_KEYTagParserTests.swift */; };
+		EC7492771DD29EC800AF4E20 /* EXT_X_KEYTagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492691DD29EC800AF4E20 /* EXT_X_KEYTagParserTests.swift */; };
+		EC7492781DD29EC800AF4E20 /* EXT_X_MEDIATagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74926A1DD29EC800AF4E20 /* EXT_X_MEDIATagParserTests.swift */; };
+		EC7492791DD29EC800AF4E20 /* EXT_X_MEDIATagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74926A1DD29EC800AF4E20 /* EXT_X_MEDIATagParserTests.swift */; };
+		EC74927A1DD29EC800AF4E20 /* EXT_X_PROGRAM_DATE_TIMEParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74926B1DD29EC800AF4E20 /* EXT_X_PROGRAM_DATE_TIMEParserTests.swift */; };
+		EC74927B1DD29EC800AF4E20 /* EXT_X_PROGRAM_DATE_TIMEParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74926B1DD29EC800AF4E20 /* EXT_X_PROGRAM_DATE_TIMEParserTests.swift */; };
+		EC74927E1DD29EC800AF4E20 /* GenericNoDataTagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74926D1DD29EC800AF4E20 /* GenericNoDataTagParserTests.swift */; };
+		EC74927F1DD29EC800AF4E20 /* GenericNoDataTagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74926D1DD29EC800AF4E20 /* GenericNoDataTagParserTests.swift */; };
+		EC7492801DD29EC800AF4E20 /* GenericSingleValueTagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74926E1DD29EC800AF4E20 /* GenericSingleValueTagParserTests.swift */; };
+		EC7492811DD29EC800AF4E20 /* GenericSingleValueTagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74926E1DD29EC800AF4E20 /* GenericSingleValueTagParserTests.swift */; };
+		EC7492821DD29EC800AF4E20 /* StringArrayParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74926F1DD29EC800AF4E20 /* StringArrayParserTests.swift */; };
+		EC7492831DD29EC800AF4E20 /* StringArrayParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74926F1DD29EC800AF4E20 /* StringArrayParserTests.swift */; };
+		EC7492841DD29EC800AF4E20 /* StringDictionaryParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492701DD29EC800AF4E20 /* StringDictionaryParserTests.swift */; };
+		EC7492851DD29EC800AF4E20 /* StringDictionaryParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492701DD29EC800AF4E20 /* StringDictionaryParserTests.swift */; };
+		EC74928A1DD29F1500AF4E20 /* GenericDictionaryTagValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492881DD29F1500AF4E20 /* GenericDictionaryTagValidatorTests.swift */; };
+		EC74928B1DD29F1500AF4E20 /* GenericDictionaryTagValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492881DD29F1500AF4E20 /* GenericDictionaryTagValidatorTests.swift */; };
+		EC74928C1DD29F1500AF4E20 /* GenericSingleTagValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492891DD29F1500AF4E20 /* GenericSingleTagValidatorTests.swift */; };
+		EC74928D1DD29F1500AF4E20 /* GenericSingleTagValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492891DD29F1500AF4E20 /* GenericSingleTagValidatorTests.swift */; };
+		EC7492981DD29F3B00AF4E20 /* GenericDictionaryTagWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492901DD29F3B00AF4E20 /* GenericDictionaryTagWriterTests.swift */; };
+		EC7492991DD29F3B00AF4E20 /* GenericDictionaryTagWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492901DD29F3B00AF4E20 /* GenericDictionaryTagWriterTests.swift */; };
+		EC74929C1DD29F3B00AF4E20 /* GenericSingleTagWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492921DD29F3B00AF4E20 /* GenericSingleTagWriterTests.swift */; };
+		EC74929D1DD29F3B00AF4E20 /* GenericSingleTagWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492921DD29F3B00AF4E20 /* GenericSingleTagWriterTests.swift */; };
+		EC7492A11DD29F4600AF4E20 /* ThirdPartyTagListSupportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492A01DD29F4600AF4E20 /* ThirdPartyTagListSupportTests.swift */; };
+		EC7492A21DD29F4600AF4E20 /* ThirdPartyTagListSupportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492A01DD29F4600AF4E20 /* ThirdPartyTagListSupportTests.swift */; };
+		EC7492A71DD29F7000AF4E20 /* CollectionTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492A31DD29F7000AF4E20 /* CollectionTypeTests.swift */; };
+		EC7492A81DD29F7000AF4E20 /* CollectionTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492A31DD29F7000AF4E20 /* CollectionTypeTests.swift */; };
+		EC7492A91DD29F7000AF4E20 /* MambaUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492A41DD29F7000AF4E20 /* MambaUtilTests.swift */; };
+		EC7492AA1DD29F7000AF4E20 /* MambaUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492A41DD29F7000AF4E20 /* MambaUtilTests.swift */; };
+		EC7492AB1DD29F7000AF4E20 /* OrderedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492A51DD29F7000AF4E20 /* OrderedDictionaryTests.swift */; };
+		EC7492AC1DD29F7000AF4E20 /* OrderedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492A51DD29F7000AF4E20 /* OrderedDictionaryTests.swift */; };
+		EC7492AD1DD29F7000AF4E20 /* URL+hlsmanifestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492A61DD29F7000AF4E20 /* URL+hlsmanifestTests.swift */; };
+		EC7492AE1DD29F7000AF4E20 /* URL+hlsmanifestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492A61DD29F7000AF4E20 /* URL+hlsmanifestTests.swift */; };
+		EC7492B31DD29F8900AF4E20 /* HLSCodecArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492AF1DD29F8900AF4E20 /* HLSCodecArrayTests.swift */; };
+		EC7492B41DD29F8900AF4E20 /* HLSCodecArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492AF1DD29F8900AF4E20 /* HLSCodecArrayTests.swift */; };
+		EC7492B51DD29F8900AF4E20 /* HLSMediaTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B01DD29F8900AF4E20 /* HLSMediaTypeTests.swift */; };
+		EC7492B61DD29F8900AF4E20 /* HLSMediaTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B01DD29F8900AF4E20 /* HLSMediaTypeTests.swift */; };
+		EC7492B71DD29F8900AF4E20 /* HLSPlaylistTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B11DD29F8900AF4E20 /* HLSPlaylistTypeTests.swift */; };
+		EC7492B81DD29F8900AF4E20 /* HLSPlaylistTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B11DD29F8900AF4E20 /* HLSPlaylistTypeTests.swift */; };
+		EC7492B91DD29F8900AF4E20 /* HLSResolutionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B21DD29F8900AF4E20 /* HLSResolutionTests.swift */; };
+		EC7492BA1DD29F8900AF4E20 /* HLSResolutionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B21DD29F8900AF4E20 /* HLSResolutionTests.swift */; };
+		EC7F0A471EA6808E0011F44B /* HLSManifestInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7F0A461EA6808E0011F44B /* HLSManifestInterface.swift */; };
+		EC7F0A481EA6808E0011F44B /* HLSManifestInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7F0A461EA6808E0011F44B /* HLSManifestInterface.swift */; };
+		EC8A3C801F7C329900A50EED /* HLSManifestStructureMasterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4367C3721EAE83C000685945 /* HLSManifestStructureMasterTests.swift */; };
+		EC8A3C821F7C497400A50EED /* HLSManifestCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A3C811F7C497400A50EED /* HLSManifestCore.swift */; };
+		EC8A3C831F7C497400A50EED /* HLSManifestCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A3C811F7C497400A50EED /* HLSManifestCore.swift */; };
+		EC8A3C851F7C4D3000A50EED /* HLSManifestStructureInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A3C841F7C4D3000A50EED /* HLSManifestStructureInterface.swift */; };
+		EC8A3C861F7C4D3000A50EED /* HLSManifestStructureInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A3C841F7C4D3000A50EED /* HLSManifestStructureInterface.swift */; };
+		EC95477C1E5CC7C800962535 /* OutputStream+HLSWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95477B1E5CC7C800962535 /* OutputStream+HLSWriting.swift */; };
+		EC95477D1E5CC7C900962535 /* OutputStream+HLSWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95477B1E5CC7C800962535 /* OutputStream+HLSWriting.swift */; };
+		EC95477F1E5CC80800962535 /* HLSStringRef+mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95477E1E5CC80800962535 /* HLSStringRef+mamba.swift */; };
+		EC9547801E5CC80800962535 /* HLSStringRef+mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95477E1E5CC80800962535 /* HLSStringRef+mamba.swift */; };
+		EC9547821E5CC82500962535 /* GenericTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547811E5CC82500962535 /* GenericTagWriter.swift */; };
+		EC9547831E5CC82500962535 /* GenericTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547811E5CC82500962535 /* GenericTagWriter.swift */; };
+		EC9547851E5CC83C00962535 /* NoOpTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547841E5CC83C00962535 /* NoOpTagParser.swift */; };
+		EC9547861E5CC83C00962535 /* NoOpTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547841E5CC83C00962535 /* NoOpTagParser.swift */; };
+		EC9547881E5CC84700962535 /* Mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547871E5CC84700962535 /* Mamba.swift */; };
+		EC9547891E5CC84700962535 /* Mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547871E5CC84700962535 /* Mamba.swift */; };
+		EC95478B1E5CC86300962535 /* EXTINFValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95478A1E5CC86300962535 /* EXTINFValidator.swift */; };
+		EC95478C1E5CC86300962535 /* EXTINFValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95478A1E5CC86300962535 /* EXTINFValidator.swift */; };
+		EC9826021DD3A113003BCDA5 /* URL+hlsmanifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9826011DD3A113003BCDA5 /* URL+hlsmanifest.swift */; };
+		EC9826031DD3A113003BCDA5 /* URL+hlsmanifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9826011DD3A113003BCDA5 /* URL+hlsmanifest.swift */; };
+		ECBEF4F11F7AC58A0051078F /* ReadMeUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEF4F01F7AC58A0051078F /* ReadMeUnitTests.swift */; };
+		ECBEF4F21F7AC58A0051078F /* ReadMeUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEF4F01F7AC58A0051078F /* ReadMeUnitTests.swift */; };
+		ECC410601EA02F4800B4E3C8 /* StructureState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC4105F1EA02F4800B4E3C8 /* StructureState.swift */; };
+		ECC410611EA02F4800B4E3C8 /* StructureState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC4105F1EA02F4800B4E3C8 /* StructureState.swift */; };
+		ECC410641EA1518E00B4E3C8 /* StructureStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC410631EA1518E00B4E3C8 /* StructureStateTests.swift */; };
+		ECC410651EA1518E00B4E3C8 /* StructureStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC410631EA1518E00B4E3C8 /* StructureStateTests.swift */; };
+		ECC410671EA1527700B4E3C8 /* HLSTagGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC410661EA1527700B4E3C8 /* HLSTagGroupTests.swift */; };
+		ECC410681EA1527700B4E3C8 /* HLSTagGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC410661EA1527700B4E3C8 /* HLSTagGroupTests.swift */; };
+		ECC4106A1EA1687500B4E3C8 /* HLSManifestStructureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC410691EA1687500B4E3C8 /* HLSManifestStructureTests.swift */; };
+		ECC4106B1EA1687500B4E3C8 /* HLSManifestStructureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC410691EA1687500B4E3C8 /* HLSManifestStructureTests.swift */; };
+		ECCF2DAD1E23F54100D7C48B /* HLSTagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF2DAC1E23F54100D7C48B /* HLSTagTests.swift */; };
+		ECCF2DAE1E23F54100D7C48B /* HLSTagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF2DAC1E23F54100D7C48B /* HLSTagTests.swift */; };
+		ECE36DE11F2A9D94005E5DA7 /* HLSManifestTimelineTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE36DE01F2A9D94005E5DA7 /* HLSManifestTimelineTranslator.swift */; };
+		ECE36DE21F2A9D94005E5DA7 /* HLSManifestTimelineTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE36DE01F2A9D94005E5DA7 /* HLSManifestTimelineTranslator.swift */; };
+		ECE36DE41F2A9F10005E5DA7 /* HLSManifestTimelineAndSequencingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE36DE31F2A9F10005E5DA7 /* HLSManifestTimelineAndSequencingTests.swift */; };
+		ECE36DE51F2A9F10005E5DA7 /* HLSManifestTimelineAndSequencingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE36DE31F2A9F10005E5DA7 /* HLSManifestTimelineAndSequencingTests.swift */; };
+		ECFAA6581E6DD93C00398D66 /* HLSManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFAA6571E6DD93C00398D66 /* HLSManifest.swift */; };
+		ECFAA6591E6DD93C00398D66 /* HLSManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFAA6571E6DD93C00398D66 /* HLSManifest.swift */; };
+		ECFBD9011E5CCA0900379FC2 /* mamba.h in Headers */ = {isa = PBXBuildFile; fileRef = EC1521511DD28536006FB265 /* mamba.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ECFBD9031E5CCAAF00379FC2 /* XCTestCase+mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD9021E5CCAAF00379FC2 /* XCTestCase+mamba.swift */; };
+		ECFBD9041E5CCAAF00379FC2 /* XCTestCase+mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD9021E5CCAAF00379FC2 /* XCTestCase+mamba.swift */; };
+		ECFBD90E1E5CCC2200379FC2 /* HLSStringRefTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD90B1E5CCC2200379FC2 /* HLSStringRefTests.m */; };
+		ECFBD90F1E5CCC2200379FC2 /* HLSStringRefTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD90B1E5CCC2200379FC2 /* HLSStringRefTests.m */; };
+		ECFBD9101E5CCC2200379FC2 /* ParseArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD90C1E5CCC2200379FC2 /* ParseArrayTests.m */; };
+		ECFBD9111E5CCC2200379FC2 /* ParseArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD90C1E5CCC2200379FC2 /* ParseArrayTests.m */; };
+		ECFBD9121E5CCC2200379FC2 /* RapidParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD90D1E5CCC2200379FC2 /* RapidParserTests.swift */; };
+		ECFBD9131E5CCC2200379FC2 /* RapidParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD90D1E5CCC2200379FC2 /* RapidParserTests.swift */; };
+		ECFBD9151E5CCCB100379FC2 /* PantosTagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD9141E5CCCB100379FC2 /* PantosTagTests.swift */; };
+		ECFBD9161E5CCCB100379FC2 /* PantosTagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD9141E5CCCB100379FC2 /* PantosTagTests.swift */; };
+		F700CD311E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD2F1E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.h */; };
+		F700CD321E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD2F1E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.h */; };
+		F700CD331E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD301E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.m */; };
+		F700CD341E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD301E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.m */; };
+		F700CD371E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD351E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.h */; };
+		F700CD381E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD351E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.h */; };
+		F700CD391E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD361E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.m */; };
+		F700CD3A1E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD361E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.m */; };
+		F700CD3D1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD3B1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.h */; };
+		F700CD3E1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD3B1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.h */; };
+		F700CD3F1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD3C1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.m */; };
+		F700CD401E78AA57001C9487 /* HLSStringRef_ConcreteNSData.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD3C1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.m */; };
+		F70E9E9A1E8C43C8006022C6 /* HLSParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70E9E991E8C43C8006022C6 /* HLSParserError.swift */; };
+		F70E9E9B1E8C43C8006022C6 /* HLSParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70E9E991E8C43C8006022C6 /* HLSParserError.swift */; };
+		F73183751E78758B00ED8E59 /* HLSStringRefFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F73183731E78758B00ED8E59 /* HLSStringRefFactory.h */; };
+		F73183761E78758B00ED8E59 /* HLSStringRefFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F73183731E78758B00ED8E59 /* HLSStringRefFactory.h */; };
+		F73183771E78758B00ED8E59 /* HLSStringRefFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F73183741E78758B00ED8E59 /* HLSStringRefFactory.m */; };
+		F73183781E78758B00ED8E59 /* HLSStringRefFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F73183741E78758B00ED8E59 /* HLSStringRefFactory.m */; };
+		F7CFF2791F38CACF009F4C82 /* CMTimeMakeFromString.c in Sources */ = {isa = PBXBuildFile; fileRef = F7CFF2771F38CACF009F4C82 /* CMTimeMakeFromString.c */; };
+		F7CFF27A1F38CACF009F4C82 /* CMTimeMakeFromString.c in Sources */ = {isa = PBXBuildFile; fileRef = F7CFF2771F38CACF009F4C82 /* CMTimeMakeFromString.c */; };
+		F7CFF27B1F38CACF009F4C82 /* CMTimeMakeFromString.h in Headers */ = {isa = PBXBuildFile; fileRef = F7CFF2781F38CACF009F4C82 /* CMTimeMakeFromString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7CFF27C1F38CACF009F4C82 /* CMTimeMakeFromString.h in Headers */ = {isa = PBXBuildFile; fileRef = F7CFF2781F38CACF009F4C82 /* CMTimeMakeFromString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7CFF27E1F392009009F4C82 /* CMTimeMakeFromStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CFF27D1F392009009F4C82 /* CMTimeMakeFromStringTests.swift */; };
+		F7CFF27F1F392009009F4C82 /* CMTimeMakeFromStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CFF27D1F392009009F4C82 /* CMTimeMakeFromStringTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC1521591DD28536006FB265 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC6C8F5C1D08C526007C1C99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC15214E1DD28536006FB265;
+			remoteInfo = mamba;
+		};
+		EC1521751DD2856F006FB265 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC6C8F5C1D08C526007C1C99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC15216A1DD2856F006FB265;
+			remoteInfo = mambaTVOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01CD2E791DE4D46F002510E7 /* EXT_X_MAPTagParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_MAPTagParserTests.swift; sourceTree = "<group>"; };
+		1D28F3401EAA9E500010320B /* hls_ad_master_manifest.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_ad_master_manifest.m3u8; sourceTree = "<group>"; };
+		1D28F3411EAA9E500010320B /* hls_ad_variant_manifest.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_ad_variant_manifest.m3u8; sourceTree = "<group>"; };
+		1D28F3421EAA9E500010320B /* hls_master_manifest_sap.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_master_manifest_sap.m3u8; sourceTree = "<group>"; };
+		1D28F3431EAA9E500010320B /* hls_master_manifest.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_master_manifest.m3u8; sourceTree = "<group>"; };
+		1D28F3441EAA9E500010320B /* hls_variant_manifest.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_variant_manifest.m3u8; sourceTree = "<group>"; };
+		4367C3721EAE83C000685945 /* HLSManifestStructureMasterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSManifestStructureMasterTests.swift; sourceTree = "<group>"; };
+		43DE4EFA1E564DA300EEE800 /* EXT_X_STARTTimeOffsetValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EXT_X_STARTTimeOffsetValidator.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		43DE4EFC1E564DBE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_MEDIARenditionINSTREAMIDValidator.swift; sourceTree = "<group>"; };
+		43DE4EFE1E564E1500EEE800 /* HLSMediaSpanTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSMediaSpanTests.swift; sourceTree = "<group>"; };
+		883290551EA172170064588B /* HLSStringRefExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSStringRefExtensionTests.swift; sourceTree = "<group>"; };
+		D44E03761E3BAC9F00126B52 /* HLSTag+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLSTag+Util.swift"; sourceTree = "<group>"; };
+		D4BB018C1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLSTagArray+RenditionGroups.swift"; sourceTree = "<group>"; };
+		EC02E9761E26E77900D4CEAC /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/tvOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
+		EC03B62D1E5CC54900BF1F97 /* PrototypeRapidParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrototypeRapidParseArray.include; sourceTree = "<group>"; };
+		EC03B62E1E5CC54900BF1F97 /* RapidParser_LookingForEForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForEForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
+		EC03B62F1E5CC54900BF1F97 /* RapidParser_LookingForEForEXTState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForEForEXTState_ParseArray.include; sourceTree = "<group>"; };
+		EC03B6301E5CC54900BF1F97 /* RapidParser_LookingForHashForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForHashForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
+		EC03B6311E5CC54900BF1F97 /* RapidParser_LookingForHashForEXTState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForHashForEXTState_ParseArray.include; sourceTree = "<group>"; };
+		EC03B6321E5CC54900BF1F97 /* RapidParser_LookingForIForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForIForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
+		EC03B6331E5CC54900BF1F97 /* RapidParser_LookingForNewlineForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForNewlineForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
+		EC03B6341E5CC54900BF1F97 /* RapidParser_LookingForNewLineForEXTState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForNewLineForEXTState_ParseArray.include; sourceTree = "<group>"; };
+		EC03B6351E5CC54900BF1F97 /* RapidParser_LookingForNewLineForHashState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForNewLineForHashState_ParseArray.include; sourceTree = "<group>"; };
+		EC03B6361E5CC54900BF1F97 /* RapidParser_LookingForNForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForNForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
+		EC03B6371E5CC54900BF1F97 /* RapidParser_LookingForTForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForTForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
+		EC03B6381E5CC54900BF1F97 /* RapidParser_LookingForXForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForXForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
+		EC03B6391E5CC54900BF1F97 /* RapidParser_LookingForXForEXTState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForXForEXTState_ParseArray.include; sourceTree = "<group>"; };
+		EC03B63A1E5CC54900BF1F97 /* RapidParser_ScanningState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_ScanningState_ParseArray.include; sourceTree = "<group>"; };
+		EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RapidParserMasterParseArray.c; sourceTree = "<group>"; };
+		EC03B63C1E5CC55800BF1F97 /* RapidParserMasterParseArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserMasterParseArray.h; sourceTree = "<group>"; };
+		EC03B6411E5CC56B00BF1F97 /* HLSRapidParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSRapidParser.h; sourceTree = "<group>"; };
+		EC03B6421E5CC56B00BF1F97 /* HLSRapidParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLSRapidParser.m; sourceTree = "<group>"; };
+		EC03B6431E5CC56B00BF1F97 /* HLSRapidParserCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSRapidParserCallback.h; sourceTree = "<group>"; };
+		EC03B6441E5CC56B00BF1F97 /* HLSStringRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSStringRef.h; sourceTree = "<group>"; };
+		EC03B6451E5CC56B00BF1F97 /* HLSStringRef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLSStringRef.m; sourceTree = "<group>"; };
+		EC03B6461E5CC56B00BF1F97 /* HLSStringRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSStringRef.swift; sourceTree = "<group>"; };
+		EC03B6471E5CC56B00BF1F97 /* RapidParser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RapidParser.c; sourceTree = "<group>"; };
+		EC03B6481E5CC56B00BF1F97 /* RapidParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParser.h; sourceTree = "<group>"; };
+		EC03B6491E5CC56B00BF1F97 /* RapidParserDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserDebug.h; sourceTree = "<group>"; };
+		EC03B64A1E5CC56B00BF1F97 /* RapidParserError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RapidParserError.m; sourceTree = "<group>"; };
+		EC03B64B1E5CC56B00BF1F97 /* RapidParserError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserError.h; sourceTree = "<group>"; };
+		EC03B64C1E5CC56B00BF1F97 /* RapidParserLineState.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RapidParserLineState.c; sourceTree = "<group>"; };
+		EC03B64D1E5CC56B00BF1F97 /* RapidParserLineState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserLineState.h; sourceTree = "<group>"; };
+		EC03B64E1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserNewTagCallbacks.h; sourceTree = "<group>"; };
+		EC03B64F1E5CC56B00BF1F97 /* RapidParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserState.h; sourceTree = "<group>"; };
+		EC03B6501E5CC56B00BF1F97 /* RapidParserStateHandlers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RapidParserStateHandlers.c; sourceTree = "<group>"; };
+		EC03B6511E5CC56B00BF1F97 /* RapidParserStateHandlers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserStateHandlers.h; sourceTree = "<group>"; };
+		EC073F561FE0572400689228 /* HLSTagCriterionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSTagCriterionTests.swift; sourceTree = "<group>"; };
+		EC073F591FE072DC00689228 /* HLSTagCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSTagCollectionTests.swift; sourceTree = "<group>"; };
+		EC073F5C1FE0840000689228 /* OutputStreamExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputStreamExtensionTests.swift; sourceTree = "<group>"; };
+		EC073F5F1FE08F7500689228 /* String+Helio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helio.swift"; sourceTree = "<group>"; };
+		EC15214F1DD28536006FB265 /* mamba.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mamba.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC1521511DD28536006FB265 /* mamba.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mamba.h; sourceTree = "<group>"; };
+		EC1521521DD28536006FB265 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC1521571DD28536006FB265 /* mambaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mambaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC15215E1DD28536006FB265 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC15216B1DD2856F006FB265 /* mamba.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mamba.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC15216E1DD2856F006FB265 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC1521731DD2856F006FB265 /* mambaTVOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mambaTVOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC17053B1DFB490A00C969F9 /* linear_ad_insertion_AD.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = linear_ad_insertion_AD.m3u8; sourceTree = "<group>"; };
+		EC17053C1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_forced.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = linear_ad_insertion_CONTENT_end_ad_forced.m3u8; sourceTree = "<group>"; };
+		EC17053D1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_natural.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = linear_ad_insertion_CONTENT_end_ad_natural.m3u8; sourceTree = "<group>"; };
+		EC17053E1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_mid_ad.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = linear_ad_insertion_CONTENT_mid_ad.m3u8; sourceTree = "<group>"; };
+		EC17053F1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_start_ad.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = linear_ad_insertion_CONTENT_start_ad.m3u8; sourceTree = "<group>"; };
+		EC37A8D61E9C16C7005E8342 /* HLSManifestStructureAndEditingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HLSManifestStructureAndEditingTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EC3B019E1DD4D47900B512E3 /* EXT_X_KEYValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_KEYValidator.swift; sourceTree = "<group>"; };
+		EC3B019F1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift; sourceTree = "<group>"; };
+		EC3B01A01DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupDEFAULTValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_MEDIARenditionGroupDEFAULTValidator.swift; sourceTree = "<group>"; };
+		EC3B01A11DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupNAMEValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_MEDIARenditionGroupNAMEValidator.swift; sourceTree = "<group>"; };
+		EC3B01A21DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupTYPEValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_MEDIARenditionGroupTYPEValidator.swift; sourceTree = "<group>"; };
+		EC3B01A31DD4D47900B512E3 /* EXT_X_STREAM_INFRenditionGroupValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_STREAM_INFRenditionGroupValidator.swift; sourceTree = "<group>"; };
+		EC3B01A41DD4D47900B512E3 /* EXT_X_TARGETDURATIONLengthValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_TARGETDURATIONLengthValidator.swift; sourceTree = "<group>"; };
+		EC3B01B31DD4D49A00B512E3 /* HLSManifestCardinalityValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSManifestCardinalityValidator.swift; sourceTree = "<group>"; };
+		EC3B01B41DD4D49A00B512E3 /* HLSManifestCollectionValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSManifestCollectionValidator.swift; sourceTree = "<group>"; };
+		EC3B01B51DD4D49A00B512E3 /* HLSManifestOneToManyValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSManifestOneToManyValidator.swift; sourceTree = "<group>"; };
+		EC3B01B61DD4D49A00B512E3 /* HLSManifestRenditionGroupAudioVideoValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSManifestRenditionGroupAudioVideoValidator.swift; sourceTree = "<group>"; };
+		EC3B01B71DD4D49A00B512E3 /* HLSManifestRenditionGroupMatchingNAMELANGUAGEValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSManifestRenditionGroupMatchingNAMELANGUAGEValidator.swift; sourceTree = "<group>"; };
+		EC3B01B81DD4D49A00B512E3 /* HLSManifestRenditionGroupMatchingPROGRAM_IDValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSManifestRenditionGroupMatchingPROGRAM_IDValidator.swift; sourceTree = "<group>"; };
+		EC3B01B91DD4D49A00B512E3 /* HLSManifestRenditionGroupValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSManifestRenditionGroupValidator.swift; sourceTree = "<group>"; };
+		EC3B01BA1DD4D49A00B512E3 /* HLSManifestTagCardinalityValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSManifestTagCardinalityValidation.swift; sourceTree = "<group>"; };
+		EC3B01BB1DD4D49A00B512E3 /* HLSManifestTagGroupValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSManifestTagGroupValidator.swift; sourceTree = "<group>"; };
+		EC3B01BC1DD4D49A00B512E3 /* HLSManifestValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSManifestValidator.swift; sourceTree = "<group>"; };
+		EC3B01BD1DD4D49A00B512E3 /* HLSManifestValidatorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSManifestValidatorImpl.swift; sourceTree = "<group>"; };
+		EC402B921F7D5A8B00730C74 /* HLSManifestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSManifestTests.swift; sourceTree = "<group>"; };
+		EC42A5F11FD9B88E00317EA5 /* IndeterminateBool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndeterminateBool.swift; sourceTree = "<group>"; };
+		EC42A5F41FD9BF0500317EA5 /* IndeterminateBoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndeterminateBoolTests.swift; sourceTree = "<group>"; };
+		EC4424881E95A69C00AECFAB /* HLSManifestStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSManifestStructure.swift; sourceTree = "<group>"; };
+		EC44248B1E9694C600AECFAB /* HLSTagGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagGroup.swift; sourceTree = "<group>"; };
+		EC5B87A91D947B59005F68C4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS10.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		EC6F38911EA95882006BC30E /* HLSManifestInterfaceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSManifestInterfaceTests.swift; sourceTree = "<group>"; };
+		EC7491421DD299B400AF4E20 /* HLSManifestTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSManifestTypes.swift; sourceTree = "<group>"; };
+		EC74914A1DD29ACF00AF4E20 /* HLSTagCriteria.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagCriteria.swift; sourceTree = "<group>"; };
+		EC74914B1DD29ACF00AF4E20 /* HLSTagCriterion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagCriterion.swift; sourceTree = "<group>"; };
+		EC7491521DD29AED00AF4E20 /* HLSTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTag.swift; sourceTree = "<group>"; };
+		EC74915F1DD29B0F00AF4E20 /* CoreMedia+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreMedia+Util.swift"; sourceTree = "<group>"; };
+		EC7491601DD29B0F00AF4E20 /* FailableStringLiteralConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FailableStringLiteralConvertible.swift; sourceTree = "<group>"; };
+		EC7491611DD29B0F00AF4E20 /* RegisteredHLSTags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisteredHLSTags.swift; sourceTree = "<group>"; };
+		EC74916B1DD29B5D00AF4E20 /* CollectionType+FindExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionType+FindExtensions.swift"; sourceTree = "<group>"; };
+		EC74916C1DD29B5D00AF4E20 /* CollectionType+Safe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionType+Safe.swift"; sourceTree = "<group>"; };
+		EC74916D1DD29B5D00AF4E20 /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
+		EC74917A1DD29C3500AF4E20 /* String+DateParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+DateParsing.swift"; sourceTree = "<group>"; };
+		EC74917B1DD29C3500AF4E20 /* String+HLSTypeEquatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HLSTypeEquatable.swift"; sourceTree = "<group>"; };
+		EC74917C1DD29C3500AF4E20 /* String+Trim.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Trim.swift"; sourceTree = "<group>"; };
+		EC7491831DD29CCB00AF4E20 /* GenericDictionaryTagParserHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDictionaryTagParserHelper.swift; sourceTree = "<group>"; };
+		EC7491841DD29CCB00AF4E20 /* StringArrayParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringArrayParser.swift; sourceTree = "<group>"; };
+		EC7491851DD29CCB00AF4E20 /* StringDictionaryParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringDictionaryParser.swift; sourceTree = "<group>"; };
+		EC7491A81DD29D5C00AF4E20 /* HLSParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSParser.swift; sourceTree = "<group>"; };
+		EC7491AA1DD29D5C00AF4E20 /* HLSTagDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagDescriptor.swift; sourceTree = "<group>"; };
+		EC7491AB1DD29D5C00AF4E20 /* HLSTagParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagParser.swift; sourceTree = "<group>"; };
+		EC7491AC1DD29D5C00AF4E20 /* HLSTagValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagValidator.swift; sourceTree = "<group>"; };
+		EC7491AD1DD29D5C00AF4E20 /* HLSTagValueIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagValueIdentifier.swift; sourceTree = "<group>"; };
+		EC7491AE1DD29D5C00AF4E20 /* HLSTagWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagWriter.swift; sourceTree = "<group>"; };
+		EC7491AF1DD29D5C00AF4E20 /* HLSValidationIssue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSValidationIssue.swift; sourceTree = "<group>"; };
+		EC7491B11DD29D5C00AF4E20 /* HLSValueTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSValueTypes.swift; sourceTree = "<group>"; };
+		EC7491B21DD29D5C00AF4E20 /* HLSWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSWriter.swift; sourceTree = "<group>"; };
+		EC7491CB1DD29D7C00AF4E20 /* PantosTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantosTag.swift; sourceTree = "<group>"; };
+		EC7491CC1DD29D7C00AF4E20 /* PantosValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantosValue.swift; sourceTree = "<group>"; };
+		EC7491D21DD29D9600AF4E20 /* GenericDictionaryTagParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDictionaryTagParser.swift; sourceTree = "<group>"; };
+		EC7491D31DD29D9600AF4E20 /* GenericNoDataTagParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericNoDataTagParser.swift; sourceTree = "<group>"; };
+		EC7491D41DD29D9600AF4E20 /* GenericSingleValueTagParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericSingleValueTagParser.swift; sourceTree = "<group>"; };
+		EC7491E21DD29DBB00AF4E20 /* GenericDictionaryTagWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDictionaryTagWriter.swift; sourceTree = "<group>"; };
+		EC7491E41DD29DBB00AF4E20 /* GenericSingleTagWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericSingleTagWriter.swift; sourceTree = "<group>"; };
+		EC7491E51DD29DBB00AF4E20 /* LocationTagWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTagWriter.swift; sourceTree = "<group>"; };
+		EC7491F51DD29DD300AF4E20 /* GenericDictionaryTagValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDictionaryTagValidator.swift; sourceTree = "<group>"; };
+		EC7491F61DD29DD300AF4E20 /* GenericSingleTagValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericSingleTagValidator.swift; sourceTree = "<group>"; };
+		EC7491F71DD29DD300AF4E20 /* HLSDictionaryTagValueIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSDictionaryTagValueIdentifier.swift; sourceTree = "<group>"; };
+		EC7491FE1DD29E2900AF4E20 /* bipbopall.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bipbopall.m3u8; sourceTree = "<group>"; };
+		EC7491FF1DD29E2900AF4E20 /* hls_sampleMasterFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_sampleMasterFile.txt; sourceTree = "<group>"; };
+		EC7492001DD29E2900AF4E20 /* hls_sampleMediaFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_sampleMediaFile.txt; sourceTree = "<group>"; };
+		EC7492011DD29E2900AF4E20 /* hls_singleMediaFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_singleMediaFile.txt; sourceTree = "<group>"; };
+		EC7492021DD29E2900AF4E20 /* hls_writer_parser_roundtrip_tester.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_writer_parser_roundtrip_tester.txt; sourceTree = "<group>"; };
+		EC7492031DD29E2900AF4E20 /* Super8_muxed1_4242.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Super8_muxed1_4242.m3u8; sourceTree = "<group>"; };
+		EC7492041DD29E2900AF4E20 /* Super8_muxed2_1376214110461.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Super8_muxed2_1376214110461.m3u8; sourceTree = "<group>"; };
+		EC7492051DD29E2900AF4E20 /* Super8_muxed3_HD_VOD_VDS_TELENOVELA_02152016_LVLH08.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Super8_muxed3_HD_VOD_VDS_TELENOVELA_02152016_LVLH08.m3u8; sourceTree = "<group>"; };
+		EC7492061DD29E2900AF4E20 /* super8demuxed1_4242.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = super8demuxed1_4242.m3u8; sourceTree = "<group>"; };
+		EC7492071DD29E2900AF4E20 /* super8demuxed2_IP_1080p24_51_TS.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = super8demuxed2_IP_1080p24_51_TS.m3u8; sourceTree = "<group>"; };
+		EC7492081DD29E2900AF4E20 /* super8demuxed3_1376214110461.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = super8demuxed3_1376214110461.m3u8; sourceTree = "<group>"; };
+		EC7492091DD29E2900AF4E20 /* ThirdPartyHLSTagsTestFixture.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ThirdPartyHLSTagsTestFixture.txt; sourceTree = "<group>"; };
+		EC7492221DD29E4A00AF4E20 /* FixtureLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixtureLoader.swift; sourceTree = "<group>"; };
+		EC7492241DD29E4A00AF4E20 /* HLSManifest+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLSManifest+Convenience.swift"; sourceTree = "<group>"; };
+		EC7492251DD29E4A00AF4E20 /* HLSManifestMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSManifestMock.swift; sourceTree = "<group>"; };
+		EC7492271DD29E4A00AF4E20 /* HLSTagParserMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagParserMock.swift; sourceTree = "<group>"; };
+		EC7492351DD29E7300AF4E20 /* HLSParser_Super8DemuxedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSParser_Super8DemuxedTests.swift; sourceTree = "<group>"; };
+		EC7492361DD29E7300AF4E20 /* HLSParser_Super8MuxedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSParser_Super8MuxedTests.swift; sourceTree = "<group>"; };
+		EC7492371DD29E7300AF4E20 /* HLSParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HLSParserTest.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EC74923A1DD29E7300AF4E20 /* HLSValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSValidatorTests.swift; sourceTree = "<group>"; };
+		EC74923B1DD29E7300AF4E20 /* HLSWriterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HLSWriterTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EC7492521DD29E9A00AF4E20 /* HLSTagWriting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagWriting.swift; sourceTree = "<group>"; };
+		EC7492671DD29EC800AF4E20 /* EXT_X_ALLOW_CACHETagParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_ALLOW_CACHETagParserTests.swift; sourceTree = "<group>"; };
+		EC7492681DD29EC800AF4E20 /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_I_FRAME_STREAM_INFTagParserTests.swift; sourceTree = "<group>"; };
+		EC7492691DD29EC800AF4E20 /* EXT_X_KEYTagParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_KEYTagParserTests.swift; sourceTree = "<group>"; };
+		EC74926A1DD29EC800AF4E20 /* EXT_X_MEDIATagParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_MEDIATagParserTests.swift; sourceTree = "<group>"; };
+		EC74926B1DD29EC800AF4E20 /* EXT_X_PROGRAM_DATE_TIMEParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_PROGRAM_DATE_TIMEParserTests.swift; sourceTree = "<group>"; };
+		EC74926D1DD29EC800AF4E20 /* GenericNoDataTagParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericNoDataTagParserTests.swift; sourceTree = "<group>"; };
+		EC74926E1DD29EC800AF4E20 /* GenericSingleValueTagParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericSingleValueTagParserTests.swift; sourceTree = "<group>"; };
+		EC74926F1DD29EC800AF4E20 /* StringArrayParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringArrayParserTests.swift; sourceTree = "<group>"; };
+		EC7492701DD29EC800AF4E20 /* StringDictionaryParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringDictionaryParserTests.swift; sourceTree = "<group>"; };
+		EC7492881DD29F1500AF4E20 /* GenericDictionaryTagValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDictionaryTagValidatorTests.swift; sourceTree = "<group>"; };
+		EC7492891DD29F1500AF4E20 /* GenericSingleTagValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericSingleTagValidatorTests.swift; sourceTree = "<group>"; };
+		EC7492901DD29F3B00AF4E20 /* GenericDictionaryTagWriterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDictionaryTagWriterTests.swift; sourceTree = "<group>"; };
+		EC7492921DD29F3B00AF4E20 /* GenericSingleTagWriterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericSingleTagWriterTests.swift; sourceTree = "<group>"; };
+		EC7492A01DD29F4600AF4E20 /* ThirdPartyTagListSupportTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdPartyTagListSupportTests.swift; sourceTree = "<group>"; };
+		EC7492A31DD29F7000AF4E20 /* CollectionTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTypeTests.swift; sourceTree = "<group>"; };
+		EC7492A41DD29F7000AF4E20 /* MambaUtilTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MambaUtilTests.swift; sourceTree = "<group>"; };
+		EC7492A51DD29F7000AF4E20 /* OrderedDictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionaryTests.swift; sourceTree = "<group>"; };
+		EC7492A61DD29F7000AF4E20 /* URL+hlsmanifestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+hlsmanifestTests.swift"; sourceTree = "<group>"; };
+		EC7492AF1DD29F8900AF4E20 /* HLSCodecArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSCodecArrayTests.swift; sourceTree = "<group>"; };
+		EC7492B01DD29F8900AF4E20 /* HLSMediaTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSMediaTypeTests.swift; sourceTree = "<group>"; };
+		EC7492B11DD29F8900AF4E20 /* HLSPlaylistTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSPlaylistTypeTests.swift; sourceTree = "<group>"; };
+		EC7492B21DD29F8900AF4E20 /* HLSResolutionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSResolutionTests.swift; sourceTree = "<group>"; };
+		EC7F0A461EA6808E0011F44B /* HLSManifestInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSManifestInterface.swift; sourceTree = "<group>"; };
+		EC8A3C811F7C497400A50EED /* HLSManifestCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSManifestCore.swift; sourceTree = "<group>"; };
+		EC8A3C841F7C4D3000A50EED /* HLSManifestStructureInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSManifestStructureInterface.swift; sourceTree = "<group>"; };
+		EC95477B1E5CC7C800962535 /* OutputStream+HLSWriting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OutputStream+HLSWriting.swift"; sourceTree = "<group>"; };
+		EC95477E1E5CC80800962535 /* HLSStringRef+mamba.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLSStringRef+mamba.swift"; sourceTree = "<group>"; };
+		EC9547811E5CC82500962535 /* GenericTagWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTagWriter.swift; sourceTree = "<group>"; };
+		EC9547841E5CC83C00962535 /* NoOpTagParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoOpTagParser.swift; sourceTree = "<group>"; };
+		EC9547871E5CC84700962535 /* Mamba.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mamba.swift; sourceTree = "<group>"; };
+		EC95478A1E5CC86300962535 /* EXTINFValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXTINFValidator.swift; sourceTree = "<group>"; };
+		EC9826011DD3A113003BCDA5 /* URL+hlsmanifest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+hlsmanifest.swift"; sourceTree = "<group>"; };
+		ECBEF4F01F7AC58A0051078F /* ReadMeUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMeUnitTests.swift; sourceTree = "<group>"; };
+		ECC4105F1EA02F4800B4E3C8 /* StructureState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructureState.swift; sourceTree = "<group>"; };
+		ECC410631EA1518E00B4E3C8 /* StructureStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructureStateTests.swift; sourceTree = "<group>"; };
+		ECC410661EA1527700B4E3C8 /* HLSTagGroupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagGroupTests.swift; sourceTree = "<group>"; };
+		ECC410691EA1687500B4E3C8 /* HLSManifestStructureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSManifestStructureTests.swift; sourceTree = "<group>"; };
+		ECCF2DAC1E23F54100D7C48B /* HLSTagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagTests.swift; sourceTree = "<group>"; };
+		ECD1EA4E1E2595AE00A88101 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
+		ECD1EA5A1E25A36000A88101 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = Carthage/Build/iOS/OCMock.framework; sourceTree = "<group>"; };
+		ECE36DE01F2A9D94005E5DA7 /* HLSManifestTimelineTranslator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSManifestTimelineTranslator.swift; sourceTree = "<group>"; };
+		ECE36DE31F2A9F10005E5DA7 /* HLSManifestTimelineAndSequencingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HLSManifestTimelineAndSequencingTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		ECFAA6571E6DD93C00398D66 /* HLSManifest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSManifest.swift; sourceTree = "<group>"; };
+		ECFBD9021E5CCAAF00379FC2 /* XCTestCase+mamba.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+mamba.swift"; sourceTree = "<group>"; };
+		ECFBD90B1E5CCC2200379FC2 /* HLSStringRefTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HLSStringRefTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		ECFBD90C1E5CCC2200379FC2 /* ParseArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseArrayTests.m; sourceTree = "<group>"; };
+		ECFBD90D1E5CCC2200379FC2 /* RapidParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidParserTests.swift; sourceTree = "<group>"; };
+		ECFBD9141E5CCCB100379FC2 /* PantosTagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantosTagTests.swift; sourceTree = "<group>"; };
+		F700CD2F1E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSStringRef_ConcreteUnownedBytes.h; sourceTree = "<group>"; };
+		F700CD301E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLSStringRef_ConcreteUnownedBytes.m; sourceTree = "<group>"; };
+		F700CD351E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSStringRef_ConcreteNSString.h; sourceTree = "<group>"; };
+		F700CD361E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLSStringRef_ConcreteNSString.m; sourceTree = "<group>"; };
+		F700CD3B1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSStringRef_ConcreteNSData.h; sourceTree = "<group>"; };
+		F700CD3C1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLSStringRef_ConcreteNSData.m; sourceTree = "<group>"; };
+		F70E9E991E8C43C8006022C6 /* HLSParserError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSParserError.swift; sourceTree = "<group>"; };
+		F73183731E78758B00ED8E59 /* HLSStringRefFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSStringRefFactory.h; sourceTree = "<group>"; };
+		F73183741E78758B00ED8E59 /* HLSStringRefFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLSStringRefFactory.m; sourceTree = "<group>"; };
+		F7CFF2771F38CACF009F4C82 /* CMTimeMakeFromString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CMTimeMakeFromString.c; sourceTree = "<group>"; };
+		F7CFF2781F38CACF009F4C82 /* CMTimeMakeFromString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMTimeMakeFromString.h; sourceTree = "<group>"; };
+		F7CFF27D1F392009009F4C82 /* CMTimeMakeFromStringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMTimeMakeFromStringTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC15214B1DD28536006FB265 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC1521541DD28536006FB265 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC1521581DD28536006FB265 /* mamba.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC1521671DD2856F006FB265 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC1521701DD2856F006FB265 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC1521741DD2856F006FB265 /* mamba.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0173AB081D5BB304005DE51B /* Tag Validator Tests */ = {
+			isa = PBXGroup;
+			children = (
+				EC7492881DD29F1500AF4E20 /* GenericDictionaryTagValidatorTests.swift */,
+				EC7492891DD29F1500AF4E20 /* GenericSingleTagValidatorTests.swift */,
+			);
+			path = "Tag Validator Tests";
+			sourceTree = "<group>";
+		};
+		0173AB0D1D5BB371005DE51B /* Pantos-Generic Tag Validators */ = {
+			isa = PBXGroup;
+			children = (
+				EC95478A1E5CC86300962535 /* EXTINFValidator.swift */,
+				EC3B019E1DD4D47900B512E3 /* EXT_X_KEYValidator.swift */,
+				EC3B019F1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift */,
+				EC3B01A01DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupDEFAULTValidator.swift */,
+				EC3B01A11DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupNAMEValidator.swift */,
+				EC3B01A21DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupTYPEValidator.swift */,
+				43DE4EFC1E564DBE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift */,
+				43DE4EFA1E564DA300EEE800 /* EXT_X_STARTTimeOffsetValidator.swift */,
+				EC3B01A31DD4D47900B512E3 /* EXT_X_STREAM_INFRenditionGroupValidator.swift */,
+				EC3B01A41DD4D47900B512E3 /* EXT_X_TARGETDURATIONLengthValidator.swift */,
+				EC7491F51DD29DD300AF4E20 /* GenericDictionaryTagValidator.swift */,
+				EC7491F61DD29DD300AF4E20 /* GenericSingleTagValidator.swift */,
+				EC7491F71DD29DD300AF4E20 /* HLSDictionaryTagValueIdentifier.swift */,
+				EC3B01B31DD4D49A00B512E3 /* HLSManifestCardinalityValidator.swift */,
+				EC3B01B41DD4D49A00B512E3 /* HLSManifestCollectionValidator.swift */,
+				EC3B01B51DD4D49A00B512E3 /* HLSManifestOneToManyValidator.swift */,
+				EC3B01B61DD4D49A00B512E3 /* HLSManifestRenditionGroupAudioVideoValidator.swift */,
+				EC3B01B71DD4D49A00B512E3 /* HLSManifestRenditionGroupMatchingNAMELANGUAGEValidator.swift */,
+				EC3B01B81DD4D49A00B512E3 /* HLSManifestRenditionGroupMatchingPROGRAM_IDValidator.swift */,
+				EC3B01B91DD4D49A00B512E3 /* HLSManifestRenditionGroupValidator.swift */,
+				EC3B01BA1DD4D49A00B512E3 /* HLSManifestTagCardinalityValidation.swift */,
+				EC3B01BB1DD4D49A00B512E3 /* HLSManifestTagGroupValidator.swift */,
+				EC3B01BC1DD4D49A00B512E3 /* HLSManifestValidator.swift */,
+				EC3B01BD1DD4D49A00B512E3 /* HLSManifestValidatorImpl.swift */,
+			);
+			path = "Pantos-Generic Tag Validators";
+			sourceTree = "<group>";
+		};
+		EC03B62B1E5CC51C00BF1F97 /* HLS Rapid Parser */ = {
+			isa = PBXGroup;
+			children = (
+				F73183721E7872AB00ED8E59 /* HLSStringRef */,
+				EC03B62C1E5CC52C00BF1F97 /* Master Parse Array */,
+				EC03B6411E5CC56B00BF1F97 /* HLSRapidParser.h */,
+				EC03B6421E5CC56B00BF1F97 /* HLSRapidParser.m */,
+				EC03B6431E5CC56B00BF1F97 /* HLSRapidParserCallback.h */,
+				EC03B6471E5CC56B00BF1F97 /* RapidParser.c */,
+				EC03B6481E5CC56B00BF1F97 /* RapidParser.h */,
+				EC03B6491E5CC56B00BF1F97 /* RapidParserDebug.h */,
+				EC03B64B1E5CC56B00BF1F97 /* RapidParserError.h */,
+				EC03B64A1E5CC56B00BF1F97 /* RapidParserError.m */,
+				EC03B64C1E5CC56B00BF1F97 /* RapidParserLineState.c */,
+				EC03B64D1E5CC56B00BF1F97 /* RapidParserLineState.h */,
+				EC03B64E1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h */,
+				EC03B64F1E5CC56B00BF1F97 /* RapidParserState.h */,
+				EC03B6501E5CC56B00BF1F97 /* RapidParserStateHandlers.c */,
+				EC03B6511E5CC56B00BF1F97 /* RapidParserStateHandlers.h */,
+			);
+			path = "HLS Rapid Parser";
+			sourceTree = "<group>";
+		};
+		EC03B62C1E5CC52C00BF1F97 /* Master Parse Array */ = {
+			isa = PBXGroup;
+			children = (
+				EC03B62D1E5CC54900BF1F97 /* PrototypeRapidParseArray.include */,
+				EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */,
+				EC03B63C1E5CC55800BF1F97 /* RapidParserMasterParseArray.h */,
+				EC03B62E1E5CC54900BF1F97 /* RapidParser_LookingForEForEXTINFState_ParseArray.include */,
+				EC03B62F1E5CC54900BF1F97 /* RapidParser_LookingForEForEXTState_ParseArray.include */,
+				EC03B6301E5CC54900BF1F97 /* RapidParser_LookingForHashForEXTINFState_ParseArray.include */,
+				EC03B6311E5CC54900BF1F97 /* RapidParser_LookingForHashForEXTState_ParseArray.include */,
+				EC03B6321E5CC54900BF1F97 /* RapidParser_LookingForIForEXTINFState_ParseArray.include */,
+				EC03B6361E5CC54900BF1F97 /* RapidParser_LookingForNForEXTINFState_ParseArray.include */,
+				EC03B6341E5CC54900BF1F97 /* RapidParser_LookingForNewLineForEXTState_ParseArray.include */,
+				EC03B6351E5CC54900BF1F97 /* RapidParser_LookingForNewLineForHashState_ParseArray.include */,
+				EC03B6331E5CC54900BF1F97 /* RapidParser_LookingForNewlineForEXTINFState_ParseArray.include */,
+				EC03B6371E5CC54900BF1F97 /* RapidParser_LookingForTForEXTINFState_ParseArray.include */,
+				EC03B6381E5CC54900BF1F97 /* RapidParser_LookingForXForEXTINFState_ParseArray.include */,
+				EC03B6391E5CC54900BF1F97 /* RapidParser_LookingForXForEXTState_ParseArray.include */,
+				EC03B63A1E5CC54900BF1F97 /* RapidParser_ScanningState_ParseArray.include */,
+			);
+			path = "Master Parse Array";
+			sourceTree = "<group>";
+		};
+		EC1418351D21BAD000B5CE32 /* Tag Parser Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EC7491831DD29CCB00AF4E20 /* GenericDictionaryTagParserHelper.swift */,
+				EC7491841DD29CCB00AF4E20 /* StringArrayParser.swift */,
+				EC7491851DD29CCB00AF4E20 /* StringDictionaryParser.swift */,
+			);
+			path = "Tag Parser Helpers";
+			sourceTree = "<group>";
+		};
+		EC1521501DD28536006FB265 /* mamba */ = {
+			isa = PBXGroup;
+			children = (
+				EC1521521DD28536006FB265 /* Info.plist */,
+			);
+			path = mamba;
+			sourceTree = "<group>";
+		};
+		EC15215B1DD28536006FB265 /* mambaTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC6C8F821D08C78C007C1C99 /* Fixtures */,
+				EC6C8F831D08C793007C1C99 /* Helpers */,
+				EC6F38911EA95882006BC30E /* HLSManifestInterfaceTests.swift */,
+				EC37A8D61E9C16C7005E8342 /* HLSManifestStructureAndEditingTests.swift */,
+				4367C3721EAE83C000685945 /* HLSManifestStructureMasterTests.swift */,
+				ECC410691EA1687500B4E3C8 /* HLSManifestStructureTests.swift */,
+				EC402B921F7D5A8B00730C74 /* HLSManifestTests.swift */,
+				ECE36DE31F2A9F10005E5DA7 /* HLSManifestTimelineAndSequencingTests.swift */,
+				43DE4EFE1E564E1500EEE800 /* HLSMediaSpanTests.swift */,
+				EC7492351DD29E7300AF4E20 /* HLSParser_Super8DemuxedTests.swift */,
+				EC7492361DD29E7300AF4E20 /* HLSParser_Super8MuxedTests.swift */,
+				EC7492371DD29E7300AF4E20 /* HLSParserTest.swift */,
+				883290551EA172170064588B /* HLSStringRefExtensionTests.swift */,
+				EC073F591FE072DC00689228 /* HLSTagCollectionTests.swift */,
+				EC073F561FE0572400689228 /* HLSTagCriterionTests.swift */,
+				ECC410661EA1527700B4E3C8 /* HLSTagGroupTests.swift */,
+				ECCF2DAC1E23F54100D7C48B /* HLSTagTests.swift */,
+				EC7492521DD29E9A00AF4E20 /* HLSTagWriting.swift */,
+				EC74923A1DD29E7300AF4E20 /* HLSValidatorTests.swift */,
+				EC74923B1DD29E7300AF4E20 /* HLSWriterTests.swift */,
+				EC15215E1DD28536006FB265 /* Info.plist */,
+				EC073F5C1FE0840000689228 /* OutputStreamExtensionTests.swift */,
+				ECFBD9141E5CCCB100379FC2 /* PantosTagTests.swift */,
+				ECFBD9081E5CCBFF00379FC2 /* Rapid Parsing Tests */,
+				ECBEF4F01F7AC58A0051078F /* ReadMeUnitTests.swift */,
+				ECC410631EA1518E00B4E3C8 /* StructureStateTests.swift */,
+				EC3B57F41D36CCE7006656C3 /* Tag Parser Tests */,
+				0173AB081D5BB304005DE51B /* Tag Validator Tests */,
+				EC3B57F51D36CD11006656C3 /* Tag Writer Tests */,
+				EC7492A01DD29F4600AF4E20 /* ThirdPartyTagListSupportTests.swift */,
+				EC86853F1D667907004551B8 /* Util Tests */,
+			);
+			path = mambaTests;
+			sourceTree = "<group>";
+		};
+		EC15216C1DD2856F006FB265 /* mambaTVOS */ = {
+			isa = PBXGroup;
+			children = (
+				EC15216E1DD2856F006FB265 /* Info.plist */,
+			);
+			path = mambaTVOS;
+			sourceTree = "<group>";
+		};
+		EC1521821DD2857B006FB265 /* mambaSharedFramework */ = {
+			isa = PBXGroup;
+			children = (
+				F795EAF01D909D1900534F7E /* HLS Models */,
+				EC8685381D651C0F004551B8 /* HLS Query Language */,
+				EC03B62B1E5CC51C00BF1F97 /* HLS Rapid Parser */,
+				EC7ECA011D30177A000EEB7D /* HLS Utils */,
+				ECBE47001D33F4100081D096 /* Pantos-Generic HLS Manifest Parsing */,
+				EC7491A81DD29D5C00AF4E20 /* HLSParser.swift */,
+				F70E9E991E8C43C8006022C6 /* HLSParserError.swift */,
+				EC7491AA1DD29D5C00AF4E20 /* HLSTagDescriptor.swift */,
+				EC7491AB1DD29D5C00AF4E20 /* HLSTagParser.swift */,
+				EC7491AC1DD29D5C00AF4E20 /* HLSTagValidator.swift */,
+				EC7491AD1DD29D5C00AF4E20 /* HLSTagValueIdentifier.swift */,
+				EC7491AE1DD29D5C00AF4E20 /* HLSTagWriter.swift */,
+				EC7491AF1DD29D5C00AF4E20 /* HLSValidationIssue.swift */,
+				EC7491B11DD29D5C00AF4E20 /* HLSValueTypes.swift */,
+				EC7491B21DD29D5C00AF4E20 /* HLSWriter.swift */,
+				EC9547871E5CC84700962535 /* Mamba.swift */,
+				EC1521511DD28536006FB265 /* mamba.h */,
+			);
+			path = mambaSharedFramework;
+			sourceTree = "<group>";
+		};
+		EC17053A1DFB487E00C969F9 /* Linear Ad Insertion Manifests */ = {
+			isa = PBXGroup;
+			children = (
+				EC17053B1DFB490A00C969F9 /* linear_ad_insertion_AD.m3u8 */,
+				EC17053C1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_forced.m3u8 */,
+				EC17053D1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_natural.m3u8 */,
+				EC17053E1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_mid_ad.m3u8 */,
+				EC17053F1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_start_ad.m3u8 */,
+			);
+			path = "Linear Ad Insertion Manifests";
+			sourceTree = "<group>";
+		};
+		EC3B57F41D36CCE7006656C3 /* Tag Parser Tests */ = {
+			isa = PBXGroup;
+			children = (
+				EC7492671DD29EC800AF4E20 /* EXT_X_ALLOW_CACHETagParserTests.swift */,
+				EC7492681DD29EC800AF4E20 /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift */,
+				EC7492691DD29EC800AF4E20 /* EXT_X_KEYTagParserTests.swift */,
+				01CD2E791DE4D46F002510E7 /* EXT_X_MAPTagParserTests.swift */,
+				EC74926A1DD29EC800AF4E20 /* EXT_X_MEDIATagParserTests.swift */,
+				EC74926B1DD29EC800AF4E20 /* EXT_X_PROGRAM_DATE_TIMEParserTests.swift */,
+				EC74926D1DD29EC800AF4E20 /* GenericNoDataTagParserTests.swift */,
+				EC74926E1DD29EC800AF4E20 /* GenericSingleValueTagParserTests.swift */,
+				EC74926F1DD29EC800AF4E20 /* StringArrayParserTests.swift */,
+				EC7492701DD29EC800AF4E20 /* StringDictionaryParserTests.swift */,
+			);
+			path = "Tag Parser Tests";
+			sourceTree = "<group>";
+		};
+		EC3B57F51D36CD11006656C3 /* Tag Writer Tests */ = {
+			isa = PBXGroup;
+			children = (
+				EC7492901DD29F3B00AF4E20 /* GenericDictionaryTagWriterTests.swift */,
+				EC7492921DD29F3B00AF4E20 /* GenericSingleTagWriterTests.swift */,
+			);
+			path = "Tag Writer Tests";
+			sourceTree = "<group>";
+		};
+		EC550EEA1D35A71700706DC9 /* Pantos-Generic Tag Writers */ = {
+			isa = PBXGroup;
+			children = (
+				EC7491E21DD29DBB00AF4E20 /* GenericDictionaryTagWriter.swift */,
+				EC7491E41DD29DBB00AF4E20 /* GenericSingleTagWriter.swift */,
+				EC9547811E5CC82500962535 /* GenericTagWriter.swift */,
+				EC7491E51DD29DBB00AF4E20 /* LocationTagWriter.swift */,
+			);
+			path = "Pantos-Generic Tag Writers";
+			sourceTree = "<group>";
+		};
+		EC5B87A81D947B59005F68C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC02E9761E26E77900D4CEAC /* OHHTTPStubs.framework */,
+				ECD1EA5A1E25A36000A88101 /* OCMock.framework */,
+				ECD1EA4E1E2595AE00A88101 /* OHHTTPStubs.framework */,
+				EC5B87A91D947B59005F68C4 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC60B5931D52681100421ACF /* String Util */ = {
+			isa = PBXGroup;
+			children = (
+				F7CFF2771F38CACF009F4C82 /* CMTimeMakeFromString.c */,
+				F7CFF2781F38CACF009F4C82 /* CMTimeMakeFromString.h */,
+				EC74917A1DD29C3500AF4E20 /* String+DateParsing.swift */,
+				EC74917B1DD29C3500AF4E20 /* String+HLSTypeEquatable.swift */,
+				EC74917C1DD29C3500AF4E20 /* String+Trim.swift */,
+			);
+			path = "String Util";
+			sourceTree = "<group>";
+		};
+		EC60B5941D52682100421ACF /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				EC74916B1DD29B5D00AF4E20 /* CollectionType+FindExtensions.swift */,
+				EC74916C1DD29B5D00AF4E20 /* CollectionType+Safe.swift */,
+				D4BB018C1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift */,
+				EC74916D1DD29B5D00AF4E20 /* OrderedDictionary.swift */,
+			);
+			path = Collections;
+			sourceTree = "<group>";
+		};
+		EC6C8F5B1D08C526007C1C99 = {
+			isa = PBXGroup;
+			children = (
+				EC5B87A81D947B59005F68C4 /* Frameworks */,
+				EC6C8F661D08C526007C1C99 /* Products */,
+				EC1521501DD28536006FB265 /* mamba */,
+				EC1521821DD2857B006FB265 /* mambaSharedFramework */,
+				EC15216C1DD2856F006FB265 /* mambaTVOS */,
+				EC15215B1DD28536006FB265 /* mambaTests */,
+			);
+			sourceTree = "<group>";
+		};
+		EC6C8F661D08C526007C1C99 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC15214F1DD28536006FB265 /* mamba.framework */,
+				EC1521571DD28536006FB265 /* mambaTests.xctest */,
+				EC15216B1DD2856F006FB265 /* mamba.framework */,
+				EC1521731DD2856F006FB265 /* mambaTVOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC6C8F821D08C78C007C1C99 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				EC17053A1DFB487E00C969F9 /* Linear Ad Insertion Manifests */,
+				EC7492031DD29E2900AF4E20 /* Super8_muxed1_4242.m3u8 */,
+				EC7492041DD29E2900AF4E20 /* Super8_muxed2_1376214110461.m3u8 */,
+				EC7492051DD29E2900AF4E20 /* Super8_muxed3_HD_VOD_VDS_TELENOVELA_02152016_LVLH08.m3u8 */,
+				EC7492091DD29E2900AF4E20 /* ThirdPartyHLSTagsTestFixture.txt */,
+				EC7491FE1DD29E2900AF4E20 /* bipbopall.m3u8 */,
+				1D28F3401EAA9E500010320B /* hls_ad_master_manifest.m3u8 */,
+				1D28F3411EAA9E500010320B /* hls_ad_variant_manifest.m3u8 */,
+				1D28F3431EAA9E500010320B /* hls_master_manifest.m3u8 */,
+				1D28F3421EAA9E500010320B /* hls_master_manifest_sap.m3u8 */,
+				EC7491FF1DD29E2900AF4E20 /* hls_sampleMasterFile.txt */,
+				EC7492001DD29E2900AF4E20 /* hls_sampleMediaFile.txt */,
+				EC7492011DD29E2900AF4E20 /* hls_singleMediaFile.txt */,
+				1D28F3441EAA9E500010320B /* hls_variant_manifest.m3u8 */,
+				EC7492021DD29E2900AF4E20 /* hls_writer_parser_roundtrip_tester.txt */,
+				EC7492061DD29E2900AF4E20 /* super8demuxed1_4242.m3u8 */,
+				EC7492071DD29E2900AF4E20 /* super8demuxed2_IP_1080p24_51_TS.m3u8 */,
+				EC7492081DD29E2900AF4E20 /* super8demuxed3_1376214110461.m3u8 */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		EC6C8F831D08C793007C1C99 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EC7492221DD29E4A00AF4E20 /* FixtureLoader.swift */,
+				EC7492241DD29E4A00AF4E20 /* HLSManifest+Convenience.swift */,
+				EC7492251DD29E4A00AF4E20 /* HLSManifestMock.swift */,
+				EC7492271DD29E4A00AF4E20 /* HLSTagParserMock.swift */,
+				ECFBD9021E5CCAAF00379FC2 /* XCTestCase+mamba.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		EC7D1C791D343B5A007F971D /* Pantos-Generic Tag Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				EC7491D21DD29D9600AF4E20 /* GenericDictionaryTagParser.swift */,
+				EC7491D31DD29D9600AF4E20 /* GenericNoDataTagParser.swift */,
+				EC7491D41DD29D9600AF4E20 /* GenericSingleValueTagParser.swift */,
+				EC9547841E5CC83C00962535 /* NoOpTagParser.swift */,
+			);
+			path = "Pantos-Generic Tag Parsers";
+			sourceTree = "<group>";
+		};
+		EC7ECA011D30177A000EEB7D /* HLS Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EC60B5941D52682100421ACF /* Collections */,
+				EC74915F1DD29B0F00AF4E20 /* CoreMedia+Util.swift */,
+				EC7491601DD29B0F00AF4E20 /* FailableStringLiteralConvertible.swift */,
+				EC95477E1E5CC80800962535 /* HLSStringRef+mamba.swift */,
+				D44E03761E3BAC9F00126B52 /* HLSTag+Util.swift */,
+				EC42A5F11FD9B88E00317EA5 /* IndeterminateBool.swift */,
+				EC95477B1E5CC7C800962535 /* OutputStream+HLSWriting.swift */,
+				EC7491611DD29B0F00AF4E20 /* RegisteredHLSTags.swift */,
+				EC60B5931D52681100421ACF /* String Util */,
+				EC1418351D21BAD000B5CE32 /* Tag Parser Helpers */,
+				EC9826011DD3A113003BCDA5 /* URL+hlsmanifest.swift */,
+			);
+			path = "HLS Utils";
+			sourceTree = "<group>";
+		};
+		EC8685381D651C0F004551B8 /* HLS Query Language */ = {
+			isa = PBXGroup;
+			children = (
+				EC74914A1DD29ACF00AF4E20 /* HLSTagCriteria.swift */,
+				EC74914B1DD29ACF00AF4E20 /* HLSTagCriterion.swift */,
+			);
+			path = "HLS Query Language";
+			sourceTree = "<group>";
+		};
+		EC86853F1D667907004551B8 /* Util Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F7CFF27D1F392009009F4C82 /* CMTimeMakeFromStringTests.swift */,
+				EC7492A31DD29F7000AF4E20 /* CollectionTypeTests.swift */,
+				EC42A5F41FD9BF0500317EA5 /* IndeterminateBoolTests.swift */,
+				EC7492A41DD29F7000AF4E20 /* MambaUtilTests.swift */,
+				EC7492A51DD29F7000AF4E20 /* OrderedDictionaryTests.swift */,
+				EC073F5F1FE08F7500689228 /* String+Helio.swift */,
+				EC7492A61DD29F7000AF4E20 /* URL+hlsmanifestTests.swift */,
+				EC9BCAA21D749D8B0032BEBE /* Value Types */,
+			);
+			path = "Util Tests";
+			sourceTree = "<group>";
+		};
+		EC9BCAA21D749D8B0032BEBE /* Value Types */ = {
+			isa = PBXGroup;
+			children = (
+				EC7492AF1DD29F8900AF4E20 /* HLSCodecArrayTests.swift */,
+				EC7492B01DD29F8900AF4E20 /* HLSMediaTypeTests.swift */,
+				EC7492B11DD29F8900AF4E20 /* HLSPlaylistTypeTests.swift */,
+				EC7492B21DD29F8900AF4E20 /* HLSResolutionTests.swift */,
+			);
+			path = "Value Types";
+			sourceTree = "<group>";
+		};
+		ECBE47001D33F4100081D096 /* Pantos-Generic HLS Manifest Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				EC7D1C791D343B5A007F971D /* Pantos-Generic Tag Parsers */,
+				0173AB0D1D5BB371005DE51B /* Pantos-Generic Tag Validators */,
+				EC550EEA1D35A71700706DC9 /* Pantos-Generic Tag Writers */,
+				EC7491CB1DD29D7C00AF4E20 /* PantosTag.swift */,
+				EC7491CC1DD29D7C00AF4E20 /* PantosValue.swift */,
+			);
+			path = "Pantos-Generic HLS Manifest Parsing";
+			sourceTree = "<group>";
+		};
+		ECC410621EA03AD000B4E3C8 /* Manifest Structure */ = {
+			isa = PBXGroup;
+			children = (
+				EC4424881E95A69C00AECFAB /* HLSManifestStructure.swift */,
+				EC8A3C841F7C4D3000A50EED /* HLSManifestStructureInterface.swift */,
+				ECE36DE01F2A9D94005E5DA7 /* HLSManifestTimelineTranslator.swift */,
+				EC44248B1E9694C600AECFAB /* HLSTagGroup.swift */,
+				ECC4105F1EA02F4800B4E3C8 /* StructureState.swift */,
+			);
+			path = "Manifest Structure";
+			sourceTree = "<group>";
+		};
+		ECFBD9081E5CCBFF00379FC2 /* Rapid Parsing Tests */ = {
+			isa = PBXGroup;
+			children = (
+				ECFBD90B1E5CCC2200379FC2 /* HLSStringRefTests.m */,
+				ECFBD90C1E5CCC2200379FC2 /* ParseArrayTests.m */,
+				ECFBD90D1E5CCC2200379FC2 /* RapidParserTests.swift */,
+			);
+			path = "Rapid Parsing Tests";
+			sourceTree = "<group>";
+		};
+		F73183721E7872AB00ED8E59 /* HLSStringRef */ = {
+			isa = PBXGroup;
+			children = (
+				EC03B6441E5CC56B00BF1F97 /* HLSStringRef.h */,
+				EC03B6451E5CC56B00BF1F97 /* HLSStringRef.m */,
+				EC03B6461E5CC56B00BF1F97 /* HLSStringRef.swift */,
+				F73183731E78758B00ED8E59 /* HLSStringRefFactory.h */,
+				F73183741E78758B00ED8E59 /* HLSStringRefFactory.m */,
+				F700CD3B1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.h */,
+				F700CD3C1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.m */,
+				F700CD351E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.h */,
+				F700CD361E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.m */,
+				F700CD2F1E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.h */,
+				F700CD301E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.m */,
+			);
+			path = HLSStringRef;
+			sourceTree = "<group>";
+		};
+		F795EAF01D909D1900534F7E /* HLS Models */ = {
+			isa = PBXGroup;
+			children = (
+				ECFAA6571E6DD93C00398D66 /* HLSManifest.swift */,
+				EC8A3C811F7C497400A50EED /* HLSManifestCore.swift */,
+				EC7F0A461EA6808E0011F44B /* HLSManifestInterface.swift */,
+				EC7491421DD299B400AF4E20 /* HLSManifestTypes.swift */,
+				EC7491521DD29AED00AF4E20 /* HLSTag.swift */,
+				ECC410621EA03AD000B4E3C8 /* Manifest Structure */,
+			);
+			path = "HLS Models";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EC15214C1DD28536006FB265 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC03B63F1E5CC55800BF1F97 /* RapidParserMasterParseArray.h in Headers */,
+				EC03B6581E5CC56B00BF1F97 /* HLSStringRef.h in Headers */,
+				F73183751E78758B00ED8E59 /* HLSStringRefFactory.h in Headers */,
+				F700CD311E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.h in Headers */,
+				EC03B6621E5CC56B00BF1F97 /* RapidParserDebug.h in Headers */,
+				F700CD371E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.h in Headers */,
+				EC03B6721E5CC56B00BF1F97 /* RapidParserStateHandlers.h in Headers */,
+				EC03B66C1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h in Headers */,
+				EC03B66A1E5CC56B00BF1F97 /* RapidParserLineState.h in Headers */,
+				EC03B66E1E5CC56B00BF1F97 /* RapidParserState.h in Headers */,
+				EC03B6521E5CC56B00BF1F97 /* HLSRapidParser.h in Headers */,
+				F700CD3D1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.h in Headers */,
+				F7CFF27B1F38CACF009F4C82 /* CMTimeMakeFromString.h in Headers */,
+				EC15215F1DD28536006FB265 /* mamba.h in Headers */,
+				EC03B6601E5CC56B00BF1F97 /* RapidParser.h in Headers */,
+				EC03B6561E5CC56B00BF1F97 /* HLSRapidParserCallback.h in Headers */,
+				EC03B6661E5CC56B00BF1F97 /* RapidParserError.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC1521681DD2856F006FB265 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC03B6401E5CC55800BF1F97 /* RapidParserMasterParseArray.h in Headers */,
+				EC03B6591E5CC56B00BF1F97 /* HLSStringRef.h in Headers */,
+				F73183761E78758B00ED8E59 /* HLSStringRefFactory.h in Headers */,
+				F700CD321E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.h in Headers */,
+				EC03B6631E5CC56B00BF1F97 /* RapidParserDebug.h in Headers */,
+				F700CD381E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.h in Headers */,
+				EC03B6731E5CC56B00BF1F97 /* RapidParserStateHandlers.h in Headers */,
+				EC03B66D1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h in Headers */,
+				ECFBD9011E5CCA0900379FC2 /* mamba.h in Headers */,
+				EC03B66B1E5CC56B00BF1F97 /* RapidParserLineState.h in Headers */,
+				EC03B66F1E5CC56B00BF1F97 /* RapidParserState.h in Headers */,
+				F700CD3E1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.h in Headers */,
+				F7CFF27C1F38CACF009F4C82 /* CMTimeMakeFromString.h in Headers */,
+				EC03B6531E5CC56B00BF1F97 /* HLSRapidParser.h in Headers */,
+				EC03B6611E5CC56B00BF1F97 /* RapidParser.h in Headers */,
+				EC03B6571E5CC56B00BF1F97 /* HLSRapidParserCallback.h in Headers */,
+				EC03B6671E5CC56B00BF1F97 /* RapidParserError.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		EC15214E1DD28536006FB265 /* mamba */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC1521641DD28536006FB265 /* Build configuration list for PBXNativeTarget "mamba" */;
+			buildPhases = (
+				EC15214A1DD28536006FB265 /* Sources */,
+				EC15214B1DD28536006FB265 /* Frameworks */,
+				EC15214C1DD28536006FB265 /* Headers */,
+				EC15214D1DD28536006FB265 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mamba;
+			productName = mamba;
+			productReference = EC15214F1DD28536006FB265 /* mamba.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EC1521561DD28536006FB265 /* mambaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC1521651DD28536006FB265 /* Build configuration list for PBXNativeTarget "mambaTests" */;
+			buildPhases = (
+				EC1521531DD28536006FB265 /* Sources */,
+				EC1521541DD28536006FB265 /* Frameworks */,
+				EC1521551DD28536006FB265 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC15215A1DD28536006FB265 /* PBXTargetDependency */,
+			);
+			name = mambaTests;
+			productName = mambaTests;
+			productReference = EC1521571DD28536006FB265 /* mambaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EC15216A1DD2856F006FB265 /* mambaTVOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC15217C1DD2856F006FB265 /* Build configuration list for PBXNativeTarget "mambaTVOS" */;
+			buildPhases = (
+				EC1521661DD2856F006FB265 /* Sources */,
+				EC1521671DD2856F006FB265 /* Frameworks */,
+				EC1521681DD2856F006FB265 /* Headers */,
+				EC1521691DD2856F006FB265 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mambaTVOS;
+			productName = mambaTVOS;
+			productReference = EC15216B1DD2856F006FB265 /* mamba.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EC1521721DD2856F006FB265 /* mambaTVOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC15217F1DD2856F006FB265 /* Build configuration list for PBXNativeTarget "mambaTVOSTests" */;
+			buildPhases = (
+				EC15216F1DD2856F006FB265 /* Sources */,
+				EC1521701DD2856F006FB265 /* Frameworks */,
+				EC1521711DD2856F006FB265 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC1521761DD2856F006FB265 /* PBXTargetDependency */,
+			);
+			name = mambaTVOSTests;
+			productName = mambaTVOSTests;
+			productReference = EC1521731DD2856F006FB265 /* mambaTVOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC6C8F5C1D08C526007C1C99 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Comcast Corporation.\n//  Licensed under the Apache License, Version 2.0 (the \"License\");\n//  you may not use this file except in compliance with the License.\n//  You may obtain a copy of the License at\n//\n//  http://www.apache.org/licenses/LICENSE-2.0\n//\n//  Unless required by applicable law or agreed to in writing, software\n//  distributed under the License is distributed on an \"AS IS\" BASIS,\n//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n//  See the License for the specific language governing permissions and\n//  limitations under the License.";
+				TargetAttributes = {
+					EC15214E1DD28536006FB265 = {
+						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = "";
+						ProvisioningStyle = Manual;
+					};
+					EC1521561DD28536006FB265 = {
+						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = "";
+						ProvisioningStyle = Automatic;
+					};
+					EC15216A1DD2856F006FB265 = {
+						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = "";
+						ProvisioningStyle = Manual;
+					};
+					EC1521721DD2856F006FB265 = {
+						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EC6C8F5F1D08C526007C1C99 /* Build configuration list for PBXProject "mamba" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC6C8F5B1D08C526007C1C99;
+			productRefGroup = EC6C8F661D08C526007C1C99 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC15214E1DD28536006FB265 /* mamba */,
+				EC15216A1DD2856F006FB265 /* mambaTVOS */,
+				EC1521561DD28536006FB265 /* mambaTests */,
+				EC1521721DD2856F006FB265 /* mambaTVOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC15214D1DD28536006FB265 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC1521551DD28536006FB265 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D28F3461EAA9E500010320B /* hls_ad_variant_manifest.m3u8 in Resources */,
+				1D28F3451EAA9E500010320B /* hls_ad_master_manifest.m3u8 in Resources */,
+				1D28F3471EAA9E500010320B /* hls_master_manifest_sap.m3u8 in Resources */,
+				EC74921C1DD29E2900AF4E20 /* super8demuxed2_IP_1080p24_51_TS.m3u8 in Resources */,
+				EC7492141DD29E2900AF4E20 /* Super8_muxed1_4242.m3u8 in Resources */,
+				EC1705461DFB490A00C969F9 /* linear_ad_insertion_CONTENT_mid_ad.m3u8 in Resources */,
+				EC7492201DD29E2900AF4E20 /* ThirdPartyHLSTagsTestFixture.txt in Resources */,
+				EC74920A1DD29E2900AF4E20 /* bipbopall.m3u8 in Resources */,
+				EC1705421DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_forced.m3u8 in Resources */,
+				EC74921A1DD29E2900AF4E20 /* super8demuxed1_4242.m3u8 in Resources */,
+				EC74921E1DD29E2900AF4E20 /* super8demuxed3_1376214110461.m3u8 in Resources */,
+				EC74920C1DD29E2900AF4E20 /* hls_sampleMasterFile.txt in Resources */,
+				EC1705401DFB490A00C969F9 /* linear_ad_insertion_AD.m3u8 in Resources */,
+				EC7492161DD29E2900AF4E20 /* Super8_muxed2_1376214110461.m3u8 in Resources */,
+				EC1705441DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_natural.m3u8 in Resources */,
+				EC1705481DFB490A00C969F9 /* linear_ad_insertion_CONTENT_start_ad.m3u8 in Resources */,
+				1D28F3481EAA9E500010320B /* hls_master_manifest.m3u8 in Resources */,
+				1D28F3491EAA9E500010320B /* hls_variant_manifest.m3u8 in Resources */,
+				EC7492181DD29E2900AF4E20 /* Super8_muxed3_HD_VOD_VDS_TELENOVELA_02152016_LVLH08.m3u8 in Resources */,
+				EC74920E1DD29E2900AF4E20 /* hls_sampleMediaFile.txt in Resources */,
+				EC7492101DD29E2900AF4E20 /* hls_singleMediaFile.txt in Resources */,
+				EC7492121DD29E2900AF4E20 /* hls_writer_parser_roundtrip_tester.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC1521691DD2856F006FB265 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC1521711DD2856F006FB265 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D9D9E9C1EAFC0DE00CC7274 /* hls_ad_variant_manifest.m3u8 in Resources */,
+				1D9D9E9B1EAFC0DB00CC7274 /* hls_ad_master_manifest.m3u8 in Resources */,
+				1D9D9E9D1EAFC0E100CC7274 /* hls_master_manifest_sap.m3u8 in Resources */,
+				EC74921D1DD29E2900AF4E20 /* super8demuxed2_IP_1080p24_51_TS.m3u8 in Resources */,
+				EC7492151DD29E2900AF4E20 /* Super8_muxed1_4242.m3u8 in Resources */,
+				EC1705471DFB490A00C969F9 /* linear_ad_insertion_CONTENT_mid_ad.m3u8 in Resources */,
+				EC7492211DD29E2900AF4E20 /* ThirdPartyHLSTagsTestFixture.txt in Resources */,
+				EC74920B1DD29E2900AF4E20 /* bipbopall.m3u8 in Resources */,
+				EC1705431DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_forced.m3u8 in Resources */,
+				EC74921B1DD29E2900AF4E20 /* super8demuxed1_4242.m3u8 in Resources */,
+				EC74921F1DD29E2900AF4E20 /* super8demuxed3_1376214110461.m3u8 in Resources */,
+				EC74920D1DD29E2900AF4E20 /* hls_sampleMasterFile.txt in Resources */,
+				EC1705411DFB490A00C969F9 /* linear_ad_insertion_AD.m3u8 in Resources */,
+				EC7492171DD29E2900AF4E20 /* Super8_muxed2_1376214110461.m3u8 in Resources */,
+				EC1705451DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_natural.m3u8 in Resources */,
+				EC1705491DFB490A00C969F9 /* linear_ad_insertion_CONTENT_start_ad.m3u8 in Resources */,
+				1D9D9E9E1EAFC0E300CC7274 /* hls_master_manifest.m3u8 in Resources */,
+				1D9D9E9F1EAFC0E600CC7274 /* hls_variant_manifest.m3u8 in Resources */,
+				EC7492191DD29E2900AF4E20 /* Super8_muxed3_HD_VOD_VDS_TELENOVELA_02152016_LVLH08.m3u8 in Resources */,
+				EC74920F1DD29E2900AF4E20 /* hls_sampleMediaFile.txt in Resources */,
+				EC7492111DD29E2900AF4E20 /* hls_singleMediaFile.txt in Resources */,
+				EC7492131DD29E2900AF4E20 /* hls_writer_parser_roundtrip_tester.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC15214A1DD28536006FB265 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC3B01A91DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupDEFAULTValidator.swift in Sources */,
+				EC8A3C821F7C497400A50EED /* HLSManifestCore.swift in Sources */,
+				EC3B01C31DD4D49A00B512E3 /* HLSManifestOneToManyValidator.swift in Sources */,
+				ECFAA6581E6DD93C00398D66 /* HLSManifest.swift in Sources */,
+				ECC410601EA02F4800B4E3C8 /* StructureState.swift in Sources */,
+				EC7491811DD29C3500AF4E20 /* String+Trim.swift in Sources */,
+				EC7491C31DD29D5C00AF4E20 /* HLSValidationIssue.swift in Sources */,
+				EC74916E1DD29B5D00AF4E20 /* CollectionType+FindExtensions.swift in Sources */,
+				EC7491DA1DD29D9600AF4E20 /* GenericNoDataTagParser.swift in Sources */,
+				EC7491C91DD29D5C00AF4E20 /* HLSWriter.swift in Sources */,
+				EC3B01A51DD4D47900B512E3 /* EXT_X_KEYValidator.swift in Sources */,
+				EC7491721DD29B5D00AF4E20 /* OrderedDictionary.swift in Sources */,
+				EC3B01BF1DD4D49A00B512E3 /* HLSManifestCardinalityValidator.swift in Sources */,
+				EC7491FA1DD29DD300AF4E20 /* GenericSingleTagValidator.swift in Sources */,
+				EC9547851E5CC83C00962535 /* NoOpTagParser.swift in Sources */,
+				EC42A5F21FD9B88E00317EA5 /* IndeterminateBool.swift in Sources */,
+				EC74914E1DD29ACF00AF4E20 /* HLSTagCriterion.swift in Sources */,
+				EC4424891E95A69C00AECFAB /* HLSManifestStructure.swift in Sources */,
+				EC7491BF1DD29D5C00AF4E20 /* HLSTagValueIdentifier.swift in Sources */,
+				EC3B01C91DD4D49A00B512E3 /* HLSManifestRenditionGroupMatchingPROGRAM_IDValidator.swift in Sources */,
+				F700CD331E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.m in Sources */,
+				EC95478B1E5CC86300962535 /* EXTINFValidator.swift in Sources */,
+				EC95477F1E5CC80800962535 /* HLSStringRef+mamba.swift in Sources */,
+				EC8A3C851F7C4D3000A50EED /* HLSManifestStructureInterface.swift in Sources */,
+				EC9826021DD3A113003BCDA5 /* URL+hlsmanifest.swift in Sources */,
+				EC3B01D11DD4D49A00B512E3 /* HLSManifestValidator.swift in Sources */,
+				EC3B01CF1DD4D49A00B512E3 /* HLSManifestTagGroupValidator.swift in Sources */,
+				EC44248C1E9694C600AECFAB /* HLSTagGroup.swift in Sources */,
+				ECE36DE11F2A9D94005E5DA7 /* HLSManifestTimelineTranslator.swift in Sources */,
+				EC7491BD1DD29D5C00AF4E20 /* HLSTagValidator.swift in Sources */,
+				EC3B01D31DD4D49A00B512E3 /* HLSManifestValidatorImpl.swift in Sources */,
+				EC74917F1DD29C3500AF4E20 /* String+HLSTypeEquatable.swift in Sources */,
+				EC7491B51DD29D5C00AF4E20 /* HLSParser.swift in Sources */,
+				EC03B65A1E5CC56B00BF1F97 /* HLSStringRef.m in Sources */,
+				EC03B6541E5CC56B00BF1F97 /* HLSRapidParser.m in Sources */,
+				F70E9E9A1E8C43C8006022C6 /* HLSParserError.swift in Sources */,
+				EC7491701DD29B5D00AF4E20 /* CollectionType+Safe.swift in Sources */,
+				EC7491BB1DD29D5C00AF4E20 /* HLSTagParser.swift in Sources */,
+				EC7491C11DD29D5C00AF4E20 /* HLSTagWriter.swift in Sources */,
+				EC3B01CD1DD4D49A00B512E3 /* HLSManifestTagCardinalityValidation.swift in Sources */,
+				EC7491B91DD29D5C00AF4E20 /* HLSTagDescriptor.swift in Sources */,
+				EC3B01AD1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupTYPEValidator.swift in Sources */,
+				EC3B01B11DD4D47900B512E3 /* EXT_X_TARGETDURATIONLengthValidator.swift in Sources */,
+				EC03B63D1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */,
+				EC3B01C11DD4D49A00B512E3 /* HLSManifestCollectionValidator.swift in Sources */,
+				EC9547821E5CC82500962535 /* GenericTagWriter.swift in Sources */,
+				F700CD3F1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.m in Sources */,
+				F7CFF2791F38CACF009F4C82 /* CMTimeMakeFromString.c in Sources */,
+				EC7491FC1DD29DD300AF4E20 /* HLSDictionaryTagValueIdentifier.swift in Sources */,
+				43DE4EFD1E564DBE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift in Sources */,
+				EC7491C71DD29D5C00AF4E20 /* HLSValueTypes.swift in Sources */,
+				EC7F0A471EA6808E0011F44B /* HLSManifestInterface.swift in Sources */,
+				EC7491EF1DD29DBB00AF4E20 /* GenericSingleTagWriter.swift in Sources */,
+				EC03B65C1E5CC56B00BF1F97 /* HLSStringRef.swift in Sources */,
+				EC3B01C51DD4D49A00B512E3 /* HLSManifestRenditionGroupAudioVideoValidator.swift in Sources */,
+				EC7491591DD29AED00AF4E20 /* HLSTag.swift in Sources */,
+				EC3B01AF1DD4D47900B512E3 /* EXT_X_STREAM_INFRenditionGroupValidator.swift in Sources */,
+				EC3B01CB1DD4D49A00B512E3 /* HLSManifestRenditionGroupValidator.swift in Sources */,
+				EC03B6701E5CC56B00BF1F97 /* RapidParserStateHandlers.c in Sources */,
+				EC7491F81DD29DD300AF4E20 /* GenericDictionaryTagValidator.swift in Sources */,
+				EC7491631DD29B0F00AF4E20 /* CoreMedia+Util.swift in Sources */,
+				EC03B65E1E5CC56B00BF1F97 /* RapidParser.c in Sources */,
+				D44E03771E3BAC9F00126B52 /* HLSTag+Util.swift in Sources */,
+				EC7491F11DD29DBB00AF4E20 /* LocationTagWriter.swift in Sources */,
+				EC7491671DD29B0F00AF4E20 /* RegisteredHLSTags.swift in Sources */,
+				EC74914C1DD29ACF00AF4E20 /* HLSTagCriteria.swift in Sources */,
+				EC95477C1E5CC7C800962535 /* OutputStream+HLSWriting.swift in Sources */,
+				EC3B01C71DD4D49A00B512E3 /* HLSManifestRenditionGroupMatchingNAMELANGUAGEValidator.swift in Sources */,
+				EC74917D1DD29C3500AF4E20 /* String+DateParsing.swift in Sources */,
+				EC3B01AB1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupNAMEValidator.swift in Sources */,
+				EC7491651DD29B0F00AF4E20 /* FailableStringLiteralConvertible.swift in Sources */,
+				EC7491461DD299B400AF4E20 /* HLSManifestTypes.swift in Sources */,
+				EC3B01A71DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift in Sources */,
+				F700CD391E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.m in Sources */,
+				43DE4EFB1E564DA300EEE800 /* EXT_X_STARTTimeOffsetValidator.swift in Sources */,
+				EC74918A1DD29CCB00AF4E20 /* StringDictionaryParser.swift in Sources */,
+				F73183771E78758B00ED8E59 /* HLSStringRefFactory.m in Sources */,
+				D4BB018D1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift in Sources */,
+				EC7491881DD29CCB00AF4E20 /* StringArrayParser.swift in Sources */,
+				EC7491D81DD29D9600AF4E20 /* GenericDictionaryTagParser.swift in Sources */,
+				EC03B6681E5CC56B00BF1F97 /* RapidParserLineState.c in Sources */,
+				EC7491EB1DD29DBB00AF4E20 /* GenericDictionaryTagWriter.swift in Sources */,
+				EC03B6641E5CC56B00BF1F97 /* RapidParserError.m in Sources */,
+				EC7491DC1DD29D9600AF4E20 /* GenericSingleValueTagParser.swift in Sources */,
+				EC7491CF1DD29D7C00AF4E20 /* PantosValue.swift in Sources */,
+				EC7491CD1DD29D7C00AF4E20 /* PantosTag.swift in Sources */,
+				EC9547881E5CC84700962535 /* Mamba.swift in Sources */,
+				EC7491861DD29CCB00AF4E20 /* GenericDictionaryTagParserHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC1521531DD28536006FB265 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC74928C1DD29F1500AF4E20 /* GenericSingleTagValidatorTests.swift in Sources */,
+				EC7492B91DD29F8900AF4E20 /* HLSResolutionTests.swift in Sources */,
+				EC7492A71DD29F7000AF4E20 /* CollectionTypeTests.swift in Sources */,
+				EC7492281DD29E4A00AF4E20 /* FixtureLoader.swift in Sources */,
+				EC7492761DD29EC800AF4E20 /* EXT_X_KEYTagParserTests.swift in Sources */,
+				883290561EA172170064588B /* HLSStringRefExtensionTests.swift in Sources */,
+				EC7492A91DD29F7000AF4E20 /* MambaUtilTests.swift in Sources */,
+				EC7492741DD29EC800AF4E20 /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift in Sources */,
+				ECFBD90E1E5CCC2200379FC2 /* HLSStringRefTests.m in Sources */,
+				EC7492401DD29E7300AF4E20 /* HLSParser_Super8MuxedTests.swift in Sources */,
+				4367C3731EAE83C000685945 /* HLSManifestStructureMasterTests.swift in Sources */,
+				EC74922E1DD29E4A00AF4E20 /* HLSManifestMock.swift in Sources */,
+				EC7492611DD29E9A00AF4E20 /* HLSTagWriting.swift in Sources */,
+				EC7492981DD29F3B00AF4E20 /* GenericDictionaryTagWriterTests.swift in Sources */,
+				EC7492B51DD29F8900AF4E20 /* HLSMediaTypeTests.swift in Sources */,
+				EC42A5F51FD9BF0500317EA5 /* IndeterminateBoolTests.swift in Sources */,
+				ECFBD9121E5CCC2200379FC2 /* RapidParserTests.swift in Sources */,
+				ECCF2DAD1E23F54100D7C48B /* HLSTagTests.swift in Sources */,
+				EC7492801DD29EC800AF4E20 /* GenericSingleValueTagParserTests.swift in Sources */,
+				ECC410641EA1518E00B4E3C8 /* StructureStateTests.swift in Sources */,
+				EC7492821DD29EC800AF4E20 /* StringArrayParserTests.swift in Sources */,
+				EC74927A1DD29EC800AF4E20 /* EXT_X_PROGRAM_DATE_TIMEParserTests.swift in Sources */,
+				EC74929C1DD29F3B00AF4E20 /* GenericSingleTagWriterTests.swift in Sources */,
+				EC7492321DD29E4A00AF4E20 /* HLSTagParserMock.swift in Sources */,
+				EC7492421DD29E7300AF4E20 /* HLSParserTest.swift in Sources */,
+				ECFBD9151E5CCCB100379FC2 /* PantosTagTests.swift in Sources */,
+				EC7492841DD29EC800AF4E20 /* StringDictionaryParserTests.swift in Sources */,
+				EC402B931F7D5A8B00730C74 /* HLSManifestTests.swift in Sources */,
+				EC7492AD1DD29F7000AF4E20 /* URL+hlsmanifestTests.swift in Sources */,
+				ECFBD9031E5CCAAF00379FC2 /* XCTestCase+mamba.swift in Sources */,
+				EC7492A11DD29F4600AF4E20 /* ThirdPartyTagListSupportTests.swift in Sources */,
+				EC073F571FE0572400689228 /* HLSTagCriterionTests.swift in Sources */,
+				EC37A8D71E9C16C7005E8342 /* HLSManifestStructureAndEditingTests.swift in Sources */,
+				EC073F5D1FE0840000689228 /* OutputStreamExtensionTests.swift in Sources */,
+				ECC410671EA1527700B4E3C8 /* HLSTagGroupTests.swift in Sources */,
+				ECBEF4F11F7AC58A0051078F /* ReadMeUnitTests.swift in Sources */,
+				EC7492721DD29EC800AF4E20 /* EXT_X_ALLOW_CACHETagParserTests.swift in Sources */,
+				EC073F5A1FE072DC00689228 /* HLSTagCollectionTests.swift in Sources */,
+				F7CFF27E1F392009009F4C82 /* CMTimeMakeFromStringTests.swift in Sources */,
+				EC74927E1DD29EC800AF4E20 /* GenericNoDataTagParserTests.swift in Sources */,
+				ECC4106A1EA1687500B4E3C8 /* HLSManifestStructureTests.swift in Sources */,
+				EC74924A1DD29E7300AF4E20 /* HLSWriterTests.swift in Sources */,
+				EC74928A1DD29F1500AF4E20 /* GenericDictionaryTagValidatorTests.swift in Sources */,
+				EC073F601FE08F7500689228 /* String+Helio.swift in Sources */,
+				EC74922C1DD29E4A00AF4E20 /* HLSManifest+Convenience.swift in Sources */,
+				EC7492B71DD29F8900AF4E20 /* HLSPlaylistTypeTests.swift in Sources */,
+				ECFBD9101E5CCC2200379FC2 /* ParseArrayTests.m in Sources */,
+				EC7492B31DD29F8900AF4E20 /* HLSCodecArrayTests.swift in Sources */,
+				43DE4EFF1E564E1500EEE800 /* HLSMediaSpanTests.swift in Sources */,
+				ECE36DE41F2A9F10005E5DA7 /* HLSManifestTimelineAndSequencingTests.swift in Sources */,
+				01CD2E7A1DE4D46F002510E7 /* EXT_X_MAPTagParserTests.swift in Sources */,
+				EC7492481DD29E7300AF4E20 /* HLSValidatorTests.swift in Sources */,
+				EC7492AB1DD29F7000AF4E20 /* OrderedDictionaryTests.swift in Sources */,
+				EC74923E1DD29E7300AF4E20 /* HLSParser_Super8DemuxedTests.swift in Sources */,
+				EC7492781DD29EC800AF4E20 /* EXT_X_MEDIATagParserTests.swift in Sources */,
+				EC6F38921EA95882006BC30E /* HLSManifestInterfaceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC1521661DD2856F006FB265 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43DE4F0E1E564FFE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift in Sources */,
+				EC8A3C831F7C497400A50EED /* HLSManifestCore.swift in Sources */,
+				43DE4F0D1E564FEE00EEE800 /* EXT_X_STARTTimeOffsetValidator.swift in Sources */,
+				ECFAA6591E6DD93C00398D66 /* HLSManifest.swift in Sources */,
+				ECC410611EA02F4800B4E3C8 /* StructureState.swift in Sources */,
+				EC3B01AA1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupDEFAULTValidator.swift in Sources */,
+				EC3B01C41DD4D49A00B512E3 /* HLSManifestOneToManyValidator.swift in Sources */,
+				EC7491821DD29C3500AF4E20 /* String+Trim.swift in Sources */,
+				EC7491C41DD29D5C00AF4E20 /* HLSValidationIssue.swift in Sources */,
+				EC74916F1DD29B5D00AF4E20 /* CollectionType+FindExtensions.swift in Sources */,
+				EC7491DB1DD29D9600AF4E20 /* GenericNoDataTagParser.swift in Sources */,
+				EC7491CA1DD29D5C00AF4E20 /* HLSWriter.swift in Sources */,
+				EC3B01A61DD4D47900B512E3 /* EXT_X_KEYValidator.swift in Sources */,
+				EC7491731DD29B5D00AF4E20 /* OrderedDictionary.swift in Sources */,
+				EC3B01C01DD4D49A00B512E3 /* HLSManifestCardinalityValidator.swift in Sources */,
+				EC42A5F31FD9B88E00317EA5 /* IndeterminateBool.swift in Sources */,
+				EC9547861E5CC83C00962535 /* NoOpTagParser.swift in Sources */,
+				EC7491FB1DD29DD300AF4E20 /* GenericSingleTagValidator.swift in Sources */,
+				EC44248A1E95A69C00AECFAB /* HLSManifestStructure.swift in Sources */,
+				EC74914F1DD29ACF00AF4E20 /* HLSTagCriterion.swift in Sources */,
+				F700CD341E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.m in Sources */,
+				EC95478C1E5CC86300962535 /* EXTINFValidator.swift in Sources */,
+				EC9547801E5CC80800962535 /* HLSStringRef+mamba.swift in Sources */,
+				EC8A3C861F7C4D3000A50EED /* HLSManifestStructureInterface.swift in Sources */,
+				EC7491C01DD29D5C00AF4E20 /* HLSTagValueIdentifier.swift in Sources */,
+				EC3B01CA1DD4D49A00B512E3 /* HLSManifestRenditionGroupMatchingPROGRAM_IDValidator.swift in Sources */,
+				EC9826031DD3A113003BCDA5 /* URL+hlsmanifest.swift in Sources */,
+				EC44248D1E9694C600AECFAB /* HLSTagGroup.swift in Sources */,
+				ECE36DE21F2A9D94005E5DA7 /* HLSManifestTimelineTranslator.swift in Sources */,
+				EC3B01D21DD4D49A00B512E3 /* HLSManifestValidator.swift in Sources */,
+				EC3B01D01DD4D49A00B512E3 /* HLSManifestTagGroupValidator.swift in Sources */,
+				EC7491BE1DD29D5C00AF4E20 /* HLSTagValidator.swift in Sources */,
+				EC3B01D41DD4D49A00B512E3 /* HLSManifestValidatorImpl.swift in Sources */,
+				EC03B65B1E5CC56B00BF1F97 /* HLSStringRef.m in Sources */,
+				EC7491801DD29C3500AF4E20 /* String+HLSTypeEquatable.swift in Sources */,
+				EC7491B61DD29D5C00AF4E20 /* HLSParser.swift in Sources */,
+				F70E9E9B1E8C43C8006022C6 /* HLSParserError.swift in Sources */,
+				EC03B6551E5CC56B00BF1F97 /* HLSRapidParser.m in Sources */,
+				EC7491711DD29B5D00AF4E20 /* CollectionType+Safe.swift in Sources */,
+				EC7491BC1DD29D5C00AF4E20 /* HLSTagParser.swift in Sources */,
+				EC7491C21DD29D5C00AF4E20 /* HLSTagWriter.swift in Sources */,
+				EC3B01CE1DD4D49A00B512E3 /* HLSManifestTagCardinalityValidation.swift in Sources */,
+				EC7491BA1DD29D5C00AF4E20 /* HLSTagDescriptor.swift in Sources */,
+				EC03B63E1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */,
+				EC3B01AE1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupTYPEValidator.swift in Sources */,
+				EC3B01B21DD4D47900B512E3 /* EXT_X_TARGETDURATIONLengthValidator.swift in Sources */,
+				EC3B01C21DD4D49A00B512E3 /* HLSManifestCollectionValidator.swift in Sources */,
+				F7CFF27A1F38CACF009F4C82 /* CMTimeMakeFromString.c in Sources */,
+				F700CD401E78AA57001C9487 /* HLSStringRef_ConcreteNSData.m in Sources */,
+				EC9547831E5CC82500962535 /* GenericTagWriter.swift in Sources */,
+				EC7491FD1DD29DD300AF4E20 /* HLSDictionaryTagValueIdentifier.swift in Sources */,
+				EC7F0A481EA6808E0011F44B /* HLSManifestInterface.swift in Sources */,
+				EC7491C81DD29D5C00AF4E20 /* HLSValueTypes.swift in Sources */,
+				EC7491F01DD29DBB00AF4E20 /* GenericSingleTagWriter.swift in Sources */,
+				EC03B65D1E5CC56B00BF1F97 /* HLSStringRef.swift in Sources */,
+				EC3B01C61DD4D49A00B512E3 /* HLSManifestRenditionGroupAudioVideoValidator.swift in Sources */,
+				EC74915A1DD29AED00AF4E20 /* HLSTag.swift in Sources */,
+				EC3B01B01DD4D47900B512E3 /* EXT_X_STREAM_INFRenditionGroupValidator.swift in Sources */,
+				EC03B6711E5CC56B00BF1F97 /* RapidParserStateHandlers.c in Sources */,
+				EC3B01CC1DD4D49A00B512E3 /* HLSManifestRenditionGroupValidator.swift in Sources */,
+				EC7491F91DD29DD300AF4E20 /* GenericDictionaryTagValidator.swift in Sources */,
+				EC03B65F1E5CC56B00BF1F97 /* RapidParser.c in Sources */,
+				EC7491641DD29B0F00AF4E20 /* CoreMedia+Util.swift in Sources */,
+				D44E03781E3BAC9F00126B52 /* HLSTag+Util.swift in Sources */,
+				EC7491F21DD29DBB00AF4E20 /* LocationTagWriter.swift in Sources */,
+				EC7491681DD29B0F00AF4E20 /* RegisteredHLSTags.swift in Sources */,
+				EC95477D1E5CC7C900962535 /* OutputStream+HLSWriting.swift in Sources */,
+				EC74914D1DD29ACF00AF4E20 /* HLSTagCriteria.swift in Sources */,
+				EC3B01C81DD4D49A00B512E3 /* HLSManifestRenditionGroupMatchingNAMELANGUAGEValidator.swift in Sources */,
+				EC74917E1DD29C3500AF4E20 /* String+DateParsing.swift in Sources */,
+				EC3B01AC1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupNAMEValidator.swift in Sources */,
+				EC7491661DD29B0F00AF4E20 /* FailableStringLiteralConvertible.swift in Sources */,
+				EC7491471DD299B400AF4E20 /* HLSManifestTypes.swift in Sources */,
+				F700CD3A1E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.m in Sources */,
+				EC3B01A81DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift in Sources */,
+				EC74918B1DD29CCB00AF4E20 /* StringDictionaryParser.swift in Sources */,
+				F73183781E78758B00ED8E59 /* HLSStringRefFactory.m in Sources */,
+				D4BB018E1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift in Sources */,
+				EC7491891DD29CCB00AF4E20 /* StringArrayParser.swift in Sources */,
+				EC7491D91DD29D9600AF4E20 /* GenericDictionaryTagParser.swift in Sources */,
+				EC03B6691E5CC56B00BF1F97 /* RapidParserLineState.c in Sources */,
+				EC7491EC1DD29DBB00AF4E20 /* GenericDictionaryTagWriter.swift in Sources */,
+				EC03B6651E5CC56B00BF1F97 /* RapidParserError.m in Sources */,
+				EC7491DD1DD29D9600AF4E20 /* GenericSingleValueTagParser.swift in Sources */,
+				EC7491D01DD29D7C00AF4E20 /* PantosValue.swift in Sources */,
+				EC7491CE1DD29D7C00AF4E20 /* PantosTag.swift in Sources */,
+				EC9547891E5CC84700962535 /* Mamba.swift in Sources */,
+				EC7491871DD29CCB00AF4E20 /* GenericDictionaryTagParserHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC15216F1DD2856F006FB265 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC74928D1DD29F1500AF4E20 /* GenericSingleTagValidatorTests.swift in Sources */,
+				EC7492BA1DD29F8900AF4E20 /* HLSResolutionTests.swift in Sources */,
+				1D9D9EA01EAFC0F700CC7274 /* HLSStringRefExtensionTests.swift in Sources */,
+				EC7492A81DD29F7000AF4E20 /* CollectionTypeTests.swift in Sources */,
+				EC7492291DD29E4A00AF4E20 /* FixtureLoader.swift in Sources */,
+				F7CFF27F1F392009009F4C82 /* CMTimeMakeFromStringTests.swift in Sources */,
+				EC7492771DD29EC800AF4E20 /* EXT_X_KEYTagParserTests.swift in Sources */,
+				EC7492AA1DD29F7000AF4E20 /* MambaUtilTests.swift in Sources */,
+				ECFBD90F1E5CCC2200379FC2 /* HLSStringRefTests.m in Sources */,
+				EC7492751DD29EC800AF4E20 /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift in Sources */,
+				EC7492411DD29E7300AF4E20 /* HLSParser_Super8MuxedTests.swift in Sources */,
+				EC74922F1DD29E4A00AF4E20 /* HLSManifestMock.swift in Sources */,
+				EC7492621DD29E9A00AF4E20 /* HLSTagWriting.swift in Sources */,
+				EC7492991DD29F3B00AF4E20 /* GenericDictionaryTagWriterTests.swift in Sources */,
+				ECFBD9131E5CCC2200379FC2 /* RapidParserTests.swift in Sources */,
+				EC42A5F61FD9BF0500317EA5 /* IndeterminateBoolTests.swift in Sources */,
+				ECCF2DAE1E23F54100D7C48B /* HLSTagTests.swift in Sources */,
+				EC7492B61DD29F8900AF4E20 /* HLSMediaTypeTests.swift in Sources */,
+				ECC410651EA1518E00B4E3C8 /* StructureStateTests.swift in Sources */,
+				EC7492811DD29EC800AF4E20 /* GenericSingleValueTagParserTests.swift in Sources */,
+				EC7492831DD29EC800AF4E20 /* StringArrayParserTests.swift in Sources */,
+				EC74927B1DD29EC800AF4E20 /* EXT_X_PROGRAM_DATE_TIMEParserTests.swift in Sources */,
+				EC74929D1DD29F3B00AF4E20 /* GenericSingleTagWriterTests.swift in Sources */,
+				EC7492331DD29E4A00AF4E20 /* HLSTagParserMock.swift in Sources */,
+				ECFBD9161E5CCCB100379FC2 /* PantosTagTests.swift in Sources */,
+				EC7492431DD29E7300AF4E20 /* HLSParserTest.swift in Sources */,
+				ECBEF4F21F7AC58A0051078F /* ReadMeUnitTests.swift in Sources */,
+				EC402B941F7D5A8B00730C74 /* HLSManifestTests.swift in Sources */,
+				EC6F38931EA95882006BC30E /* HLSManifestInterfaceTests.swift in Sources */,
+				EC7492851DD29EC800AF4E20 /* StringDictionaryParserTests.swift in Sources */,
+				EC7492AE1DD29F7000AF4E20 /* URL+hlsmanifestTests.swift in Sources */,
+				EC073F581FE0572400689228 /* HLSTagCriterionTests.swift in Sources */,
+				ECFBD9041E5CCAAF00379FC2 /* XCTestCase+mamba.swift in Sources */,
+				EC073F5E1FE0840000689228 /* OutputStreamExtensionTests.swift in Sources */,
+				EC37A8D81E9C16C7005E8342 /* HLSManifestStructureAndEditingTests.swift in Sources */,
+				ECC410681EA1527700B4E3C8 /* HLSTagGroupTests.swift in Sources */,
+				EC7492A21DD29F4600AF4E20 /* ThirdPartyTagListSupportTests.swift in Sources */,
+				EC073F5B1FE072DC00689228 /* HLSTagCollectionTests.swift in Sources */,
+				EC7492731DD29EC800AF4E20 /* EXT_X_ALLOW_CACHETagParserTests.swift in Sources */,
+				ECC4106B1EA1687500B4E3C8 /* HLSManifestStructureTests.swift in Sources */,
+				EC44E7661DEE2F9E0087C890 /* EXT_X_MAPTagParserTests.swift in Sources */,
+				EC74927F1DD29EC800AF4E20 /* GenericNoDataTagParserTests.swift in Sources */,
+				EC74924B1DD29E7300AF4E20 /* HLSWriterTests.swift in Sources */,
+				EC073F611FE08F7500689228 /* String+Helio.swift in Sources */,
+				EC74928B1DD29F1500AF4E20 /* GenericDictionaryTagValidatorTests.swift in Sources */,
+				EC74922D1DD29E4A00AF4E20 /* HLSManifest+Convenience.swift in Sources */,
+				ECFBD9111E5CCC2200379FC2 /* ParseArrayTests.m in Sources */,
+				EC7492B81DD29F8900AF4E20 /* HLSPlaylistTypeTests.swift in Sources */,
+				43DE4F001E564E1500EEE800 /* HLSMediaSpanTests.swift in Sources */,
+				EC7492B41DD29F8900AF4E20 /* HLSCodecArrayTests.swift in Sources */,
+				ECE36DE51F2A9F10005E5DA7 /* HLSManifestTimelineAndSequencingTests.swift in Sources */,
+				EC7492491DD29E7300AF4E20 /* HLSValidatorTests.swift in Sources */,
+				EC7492AC1DD29F7000AF4E20 /* OrderedDictionaryTests.swift in Sources */,
+				EC74923F1DD29E7300AF4E20 /* HLSParser_Super8DemuxedTests.swift in Sources */,
+				EC8A3C801F7C329900A50EED /* HLSManifestStructureMasterTests.swift in Sources */,
+				EC7492791DD29EC800AF4E20 /* EXT_X_MEDIATagParserTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC15215A1DD28536006FB265 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC15214E1DD28536006FB265 /* mamba */;
+			targetProxy = EC1521591DD28536006FB265 /* PBXContainerItemProxy */;
+		};
+		EC1521761DD2856F006FB265 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC15216A1DD2856F006FB265 /* mambaTVOS */;
+			targetProxy = EC1521751DD2856F006FB265 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EC1521601DD28536006FB265 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = mamba/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		EC1521611DD28536006FB265 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = mamba/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		EC1521621DD28536006FB265 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = mambaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mambaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "mambaTests/mambaTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		EC1521631DD28536006FB265 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = mambaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mambaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mambaTests/mambaTests-Bridging-Header.h";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		EC15217D1DD2856F006FB265 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = mamba/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
+				PRODUCT_NAME = mamba;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "appletvsimulator appletvos";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		EC15217E1DD2856F006FB265 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = mamba/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
+				PRODUCT_NAME = mamba;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "appletvsimulator appletvos";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+		EC1521801DD2856F006FB265 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = mambaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mambaTVOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SUPPORTED_PLATFORMS = "appletvsimulator appletvos";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "mambaTests/mambaTVOSTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		EC1521811DD2856F006FB265 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = mambaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mambaTVOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SUPPORTED_PLATFORMS = "appletvsimulator appletvos";
+				SWIFT_OBJC_BRIDGING_HEADER = "mambaTests/mambaTVOSTests-Bridging-Header.h";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+		EC6C8F771D08C526007C1C99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EC6C8F781D08C526007C1C99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC1521641DD28536006FB265 /* Build configuration list for PBXNativeTarget "mamba" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC1521601DD28536006FB265 /* Debug */,
+				EC1521611DD28536006FB265 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC1521651DD28536006FB265 /* Build configuration list for PBXNativeTarget "mambaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC1521621DD28536006FB265 /* Debug */,
+				EC1521631DD28536006FB265 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC15217C1DD2856F006FB265 /* Build configuration list for PBXNativeTarget "mambaTVOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC15217D1DD2856F006FB265 /* Debug */,
+				EC15217E1DD2856F006FB265 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC15217F1DD2856F006FB265 /* Build configuration list for PBXNativeTarget "mambaTVOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC1521801DD2856F006FB265 /* Debug */,
+				EC1521811DD2856F006FB265 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC6C8F5F1D08C526007C1C99 /* Build configuration list for PBXProject "mamba" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC6C8F771D08C526007C1C99 /* Debug */,
+				EC6C8F781D08C526007C1C99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC6C8F5C1D08C526007C1C99 /* Project object */;
+}

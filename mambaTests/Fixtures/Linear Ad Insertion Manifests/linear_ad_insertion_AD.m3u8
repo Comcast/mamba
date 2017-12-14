@@ -1,0 +1,32 @@
+#EXTM3U
+# Note that the media name indicates the HLSManifest atg array index for convenience in debugging and writing unit tests  -  (this line is index 0)
+# This is a 60 second ad, 12 fragments of 5 seconds each  -  (this line is index 1)
+#   -  (this line is index 2)
+#EXT-X-MEDIA-SEQUENCE:0
+#EXT-X-TARGETDURATION:5
+#EXT-X-VERSION:4
+#EXTINF:5.0,index6
+ad0.ts
+#EXTINF:5.0,index8
+ad1.ts
+#EXTINF:5.0,index10
+ad2.ts
+#EXTINF:5.0,index12
+ad3.ts
+#EXTINF:5.0,index14
+ad4.ts
+#EXTINF:5.0,index16
+ad5.ts
+#EXTINF:5.0,index18
+ad6.ts
+#EXTINF:5.0,index20
+ad7.ts
+#EXTINF:5.0,index22
+ad8.ts
+#EXTINF:5.0,index24
+ad9.ts
+#EXTINF:5.0,index26
+ad10.ts
+#EXTINF:5.0,index28
+ad11.ts
+#EXT-X-ENDLIST
