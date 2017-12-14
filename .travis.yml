@@ -1,0 +1,33 @@
+language: swift
+osx_image: xcode9.2
+
+env:
+  - LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8
+  - PROJECT="mamba.xcodeproj"
+  - IOS_SCHEME="mamba"
+  - TVOS_SCHEME="mambaTVOS"
+  - IOS_SDK=iphonesimulator11.0
+  - TVOS_SDK=appletvsimulator11.0
+  matrix:
+   - DESTINATION="OS=9.3,name=iPhone 6"               SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES"
+   - DESTINATION="OS=9.3,name=iPad Air"               SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES"
+
+   - DESTINATION="OS=10.1,name=iPhone 7"              SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES"
+   - DESTINATION="OS=10.2,name=iPad Air 2"            SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES"
+
+   - DESTINATION="OS=11.1,name=iPhone X"              SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES"
+   - DESTINATION="OS=11.1,name=iPad Pro (10.5 inch)"  SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES"
+
+   - DESTINATION="OS=11.1,name=Apple TV 4K"           SDK="$TVOS_SDK" SCHEME="$TVOS_SCHEME" RUN_TESTS="YES"
+
+before_install:
+  - brew update
+  - brew install xctool
+
+script:
+  - set -euo pipefail
+  - if [ $RUN_TESTS == "YES" ]; then
+      xctool test -project "$PROJECT" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO build test
+    else
+      xctool test -project "$PROJECT" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO build
+    fi
