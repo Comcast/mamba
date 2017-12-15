@@ -114,13 +114,13 @@ class MambaUtilTests: XCTestCase {
         let calComponents: Set<Calendar.Component> = [.year, .month, .day, .hour, .minute, .second, .timeZone]
         let components = calendar.dateComponents(calComponents, from: date!)
         
-        XCTAssert(components.year == 2010, "date did not parse as expected")
-        XCTAssert(components.month == 2, "date did not parse as expected")
-        XCTAssert(components.day == 19, "date did not parse as expected")
-        XCTAssert(components.hour == 7 - hourOffset, "date did not parse as expected")
-        XCTAssert(components.minute == 54 - minuteOffset, "date did not parse as expected")
-        XCTAssert(components.second == 23, "date did not parse as expected")
-        XCTAssert(components.timeZone == TimeZone.current, "date did not parse as expected") // if this fails, comment it out. Swift 3 made "localTimeZone" go away, and I'm just assuming that "current" is a replacement
+        XCTAssert(components.year == 2010, "Date Parse error in year. Expected 2010. Got \(String(describing: components.year))")
+        XCTAssert(components.month == 2, "Date Parse error in month. Expected 2. Got \(String(describing: components.month))")
+        XCTAssert(components.day == 19, "Date Parse error in day. Expected 19. Got \(String(describing: components.day))")
+        XCTAssert(components.hour == 7 - hourOffset, "Date Parse error in hour. Expected \(7 - hourOffset). Got \(String(describing: components.hour))")
+        XCTAssert(components.minute == 54 - minuteOffset, "Date Parse error in minute. Expected \(54 - minuteOffset). Got \(String(describing: components.minute))")
+        XCTAssert(components.second == 23, "Date Parse error in second. Expected 23. Got \(String(describing: components.second))")
+        XCTAssert(components.timeZone == TimeZone.current, "Date Parse error in timeZone. Expected TimeZone.current \'\(TimeZone.current)\'. Got \(String(describing: components.timeZone))") // if this fails, comment it out. Swift 3 made "localTimeZone" go away, and I'm just assuming that "current" is a replacement
     }
     
 }
