@@ -18,6 +18,12 @@ _Mamba Project Goals:_
 
 * **Maximum performance**. We required our parsing library to parse very large HLS manifests (12 hour Video-On-Demand) on low end phones in a few milliseconds. A internal core C library is used for very fast parsing of large manifests.
 
+## Requires
+
+* XCode 9+
+* Swift 3+ (written in Swift 4)
+* iOS 9+ _or_ tvOS 10+
+
 ## Usage
 
 ### _Parsing a HLS Manifest_
