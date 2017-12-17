@@ -1,13 +1,10 @@
-codecov:
-  branch: master
 
 coverage:
   precision: 2
   round: nearest
   range: "70...100"
   ignore:
-    - Tests/*
-    - mambaTests/*
+    - mambaTests/**/*
 
   status:
     project:
