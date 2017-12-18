@@ -5,6 +5,7 @@ coverage:
   range: "70...100"
   ignore:
     - mambaTests/**/*
+    
 
   status:
     project:
