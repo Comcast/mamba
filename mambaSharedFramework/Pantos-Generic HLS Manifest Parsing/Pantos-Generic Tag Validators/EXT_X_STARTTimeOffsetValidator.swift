@@ -33,12 +33,14 @@ class  EXT_X_STARTTimeOffsetValidator: HLSManifestValidator {
             let footerTags = manifest.tags[range]
             endListExist = footerTags.contains(where: { (tag) -> Bool in return tag.tagDescriptor == PantosTag.EXT_X_ENDLIST })
         }
-        let headerTags = manifest.tags[manifest.header.range]
-        for tag in headerTags {
-            if tag.tagDescriptor == PantosTag.EXT_X_START {
-                startTag = tag
-            } else if tag.tagDescriptor == PantosTag.EXT_X_TARGETDURATION {
-                targetDurationTag = tag
+        if let header = manifest.header {
+            let headerTags = manifest.tags[header.range]
+            for tag in headerTags {
+                if tag.tagDescriptor == PantosTag.EXT_X_START {
+                    startTag = tag
+                } else if tag.tagDescriptor == PantosTag.EXT_X_TARGETDURATION {
+                    targetDurationTag = tag
+                }
             }
         }
         guard let startTimeOffSet: CMTime = startTag?.value(forValueIdentifier: PantosValue.startTimeOffset),

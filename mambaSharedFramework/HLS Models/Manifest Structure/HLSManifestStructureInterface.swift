@@ -35,7 +35,7 @@ public protocol HLSManifestStructureInterface {
      have the scope HLSTagDescriptorScope.wholeManifest or HLSTagDescriptorScope.mediaSpanner are part of this
      structure.
      */
-    var header: TagGroup { get }
+    var header: TagGroup? { get }
     
     /**
      All the `HLSTag`s in the middle of the manifest that generally have the scope HLSTagDescriptorScope.mediaFragment

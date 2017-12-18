@@ -29,9 +29,9 @@ class HLSManifestStructureMasterTests: XCTestCase {
         let manifestString = FixtureLoader.loadAsString(fixtureName: "hls_master_manifest.m3u8")
         let manifest = parseManifest(inString: manifestString!)
         
-        XCTAssert(manifest.header.range.count == 3, "Expecting 3 header tags")
-        XCTAssert(manifest.header.startIndex == 0)
-        XCTAssert(manifest.header.endIndex == 2)
+        XCTAssert(manifest.header?.range.count == 3, "Expecting 3 header tags")
+        XCTAssert(manifest.header?.startIndex == 0)
+        XCTAssert(manifest.header?.endIndex == 2)
         
         XCTAssert(manifest.mediaFragmentGroups.count == 7, "Expecting 7 media groups")
         for group in manifest.mediaFragmentGroups {
@@ -49,7 +49,7 @@ class HLSManifestStructureMasterTests: XCTestCase {
     func testMissingUri() {
     
         let manifest = parseManifest(inString: missingUriManifest)
-        XCTAssert(manifest.header.range.count == 1, "Expecting 0 header tags")
+        XCTAssert(manifest.header?.range.count == 1, "Expecting 0 header tags")
         XCTAssert(manifest.mediaFragmentGroups.count == 3, "Expecting 3 media groups")
         XCTAssert(manifest.footer == nil)
     }

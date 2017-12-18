@@ -27,9 +27,9 @@ class HLSManifestStructureAndEditingTests: XCTestCase {
     func testHLSWithNoXKeys() {
         let manifest = parseManifest(inString: sampleVariantManifest_NoXKeys)
         
-        XCTAssert(manifest.header.range.count == 3, "Expecting 3 header tags")
-        XCTAssert(manifest.header.startIndex == 0)
-        XCTAssert(manifest.header.endIndex == 2)
+        XCTAssert(manifest.header?.range.count == 3, "Expecting 3 header tags")
+        XCTAssert(manifest.header?.startIndex == 0)
+        XCTAssert(manifest.header?.endIndex == 2)
         
         XCTAssert(manifest.footer?.range.count == 1, "Expecting 1 footer tags")
         XCTAssert(manifest.footer?.startIndex == 17)
@@ -72,9 +72,9 @@ class HLSManifestStructureAndEditingTests: XCTestCase {
     func testHLSWithXKeys() {
         let manifest = parseManifest(inString: sampleVariantManifest_XKeys)
         
-        XCTAssert(manifest.header.range.count == 4, "Expecting 4 header tags")
-        XCTAssert(manifest.header.startIndex == 0)
-        XCTAssert(manifest.header.endIndex == 3)
+        XCTAssert(manifest.header?.range.count == 4, "Expecting 4 header tags")
+        XCTAssert(manifest.header?.startIndex == 0)
+        XCTAssert(manifest.header?.endIndex == 3)
         
         XCTAssert(manifest.footer?.range.count == 1, "Expecting 1 footer tags")
         XCTAssert(manifest.footer?.startIndex == 20)
@@ -137,7 +137,7 @@ class HLSManifestStructureAndEditingTests: XCTestCase {
     func testHLSWithMissingEXTINF_MissingFooter() {
         let manifest = parseManifest(inString: sampleVariantManifest_NoFooter)
         
-        XCTAssert(manifest.header.range.count == 3)
+        XCTAssert(manifest.header?.range.count == 3)
         XCTAssert(manifest.footer == nil)
         XCTAssert(manifest.mediaFragmentGroups.count == 6)
     }
@@ -145,7 +145,7 @@ class HLSManifestStructureAndEditingTests: XCTestCase {
     func testHLSWithMissingEXTINF_CustomMediaSequence() {
         let manifest = parseManifest(inString: sampleVariantManifest_MediaSequenceStartsAt2)
 
-        XCTAssert(manifest.header.range.count == 4)
+        XCTAssert(manifest.header?.range.count == 4)
         XCTAssert(manifest.footer?.range.count == 1)
         XCTAssert(manifest.mediaFragmentGroups.count == 6)
         
@@ -165,9 +165,9 @@ class HLSManifestStructureAndEditingTests: XCTestCase {
         
         manifest.insert(tag: tag, atIndex: 8)
         
-        XCTAssert(manifest.header.range.count == 4, "Expecting 4 header tags")
-        XCTAssert(manifest.header.startIndex == 0)
-        XCTAssert(manifest.header.endIndex == 3)
+        XCTAssert(manifest.header?.range.count == 4, "Expecting 4 header tags")
+        XCTAssert(manifest.header?.startIndex == 0)
+        XCTAssert(manifest.header?.endIndex == 3)
         
         XCTAssert(manifest.footer?.range.count == 1, "Expecting 1 footer tags")
         XCTAssert(manifest.footer?.startIndex == 21)
@@ -232,9 +232,9 @@ class HLSManifestStructureAndEditingTests: XCTestCase {
         
         manifest.insert(tags: tags, atIndex: 8)
         
-        XCTAssert(manifest.header.range.count == 4, "Expecting 4 header tags")
-        XCTAssert(manifest.header.startIndex == 0)
-        XCTAssert(manifest.header.endIndex == 3)
+        XCTAssert(manifest.header?.range.count == 4, "Expecting 4 header tags")
+        XCTAssert(manifest.header?.startIndex == 0)
+        XCTAssert(manifest.header?.endIndex == 3)
         
         XCTAssert(manifest.footer?.range.count == 1, "Expecting 1 footer tags")
         XCTAssert(manifest.footer?.startIndex == 22)
@@ -300,9 +300,9 @@ class HLSManifestStructureAndEditingTests: XCTestCase {
         manifest.insert(tag: tag2, atIndex: 8)
         manifest.insert(tag: tag1, atIndex: 8)
         
-        XCTAssert(manifest.header.range.count == 4, "Expecting 4 header tags")
-        XCTAssert(manifest.header.startIndex == 0)
-        XCTAssert(manifest.header.endIndex == 3)
+        XCTAssert(manifest.header?.range.count == 4, "Expecting 4 header tags")
+        XCTAssert(manifest.header?.startIndex == 0)
+        XCTAssert(manifest.header?.endIndex == 3)
         
         XCTAssert(manifest.footer?.range.count == 1, "Expecting 1 footer tags")
         XCTAssert(manifest.footer?.startIndex == 22)
@@ -365,9 +365,9 @@ class HLSManifestStructureAndEditingTests: XCTestCase {
         
         manifest.delete(atIndex: 7) // This deletes the DISCONTINUITY tag in sampleVariantManifest_frag1
         
-        XCTAssert(manifest.header.range.count == 4, "Expecting 4 header tags")
-        XCTAssert(manifest.header.startIndex == 0)
-        XCTAssert(manifest.header.endIndex == 3)
+        XCTAssert(manifest.header?.range.count == 4, "Expecting 4 header tags")
+        XCTAssert(manifest.header?.startIndex == 0)
+        XCTAssert(manifest.header?.endIndex == 3)
         
         XCTAssert(manifest.footer?.range.count == 1, "Expecting 1 footer tags")
         XCTAssert(manifest.footer?.startIndex == 19)
@@ -426,9 +426,9 @@ class HLSManifestStructureAndEditingTests: XCTestCase {
         
         manifest.delete(atIndex: 7) // This deletes the DISCONTINUITY tag in sampleVariantManifest_frag1
         
-        XCTAssert(manifest.header.range.count == 4, "Expecting 4 header tags")
-        XCTAssert(manifest.header.startIndex == 0)
-        XCTAssert(manifest.header.endIndex == 3)
+        XCTAssert(manifest.header?.range.count == 4, "Expecting 4 header tags")
+        XCTAssert(manifest.header?.startIndex == 0)
+        XCTAssert(manifest.header?.endIndex == 3)
         
         XCTAssert(manifest.footer?.range.count == 1, "Expecting 1 footer tags")
         XCTAssert(manifest.footer?.startIndex == 19)
@@ -490,9 +490,9 @@ class HLSManifestStructureAndEditingTests: XCTestCase {
         
         manifest.delete(atRange: 7...8) // This deletes the DISCONTINUITY and BYTERANGE tags in sampleVariantManifest_frag1
         
-        XCTAssert(manifest.header.range.count == 4, "Expecting 4 header tags")
-        XCTAssert(manifest.header.startIndex == 0)
-        XCTAssert(manifest.header.endIndex == 3)
+        XCTAssert(manifest.header?.range.count == 4, "Expecting 4 header tags")
+        XCTAssert(manifest.header?.startIndex == 0)
+        XCTAssert(manifest.header?.endIndex == 3)
         
         XCTAssert(manifest.footer?.range.count == 1, "Expecting 1 footer tags")
         XCTAssert(manifest.footer?.startIndex == 18)
@@ -564,15 +564,15 @@ class HLSManifestStructureAndEditingTests: XCTestCase {
         // we're not going to test initial conditions as that's tested in `testHLSWithXKeys` above
         
         // access the manifest structure to force a build and set us in the .clean state
-        XCTAssert(manifest.header.range.count == 5, "Expecting 5 header tags")
+        XCTAssert(manifest.header?.range.count == 5, "Expecting 5 header tags")
         
         // This deletes the comment tags
         manifest.delete(atIndex: 3)
         manifest.delete(atIndex: 3)
         
-        XCTAssert(manifest.header.range.count == 3, "Expecting 3 header tags")
-        XCTAssert(manifest.header.startIndex == 0)
-        XCTAssert(manifest.header.endIndex == 2)
+        XCTAssert(manifest.header?.range.count == 3, "Expecting 3 header tags")
+        XCTAssert(manifest.header?.startIndex == 0)
+        XCTAssert(manifest.header?.endIndex == 2)
         
         XCTAssert(manifest.footer?.range.count == 1, "Expecting 1 footer tags")
         XCTAssert(manifest.footer?.startIndex == 7)
@@ -611,9 +611,9 @@ class HLSManifestStructureAndEditingTests: XCTestCase {
         
         manifest.insert(tags: tags, atIndex: 10) // inserting between fragment 2 and 3
         
-        XCTAssert(manifest.header.range.count == 4, "Expecting 4 header tags")
-        XCTAssert(manifest.header.startIndex == 0)
-        XCTAssert(manifest.header.endIndex == 3)
+        XCTAssert(manifest.header?.range.count == 4, "Expecting 4 header tags")
+        XCTAssert(manifest.header?.startIndex == 0)
+        XCTAssert(manifest.header?.endIndex == 3)
         
         XCTAssert(manifest.footer?.range.count == 1, "Expecting 1 footer tags")
         XCTAssert(manifest.footer?.startIndex == 24)
@@ -685,9 +685,9 @@ class HLSManifestStructureAndEditingTests: XCTestCase {
     func testHLS_MissingEXTINF() {
         let manifest = parseManifest(inString: sampleVariantManifest_MissingEXTINF)
         
-        XCTAssert(manifest.header.range.count == 9, "Expecting 9 header tags, as structurally-unparsable manifests are treated as 'all header'")
-        XCTAssert(manifest.header.startIndex == 0)
-        XCTAssert(manifest.header.endIndex == 8)
+        XCTAssert(manifest.header?.range.count == 9, "Expecting 9 header tags, as structurally-unparsable manifests are treated as 'all header'")
+        XCTAssert(manifest.header?.startIndex == 0)
+        XCTAssert(manifest.header?.endIndex == 8)
         
         XCTAssert(manifest.mediaFragmentGroups.count == 0, "Expecting no groups")
         
@@ -781,7 +781,7 @@ class HLSManifestStructureAndEditingTests: XCTestCase {
     func testAllHeader() {
         let manifest = parseManifest(inString: sampleVariantManifest_header)
         
-        XCTAssert(manifest.header.range.count == 3, "Should have a header")
+        XCTAssert(manifest.header?.range.count == 3, "Should have a header")
         XCTAssert(manifest.mediaFragmentGroups.count == 0, "Should have no groups")
         XCTAssert(manifest.footer == nil, "Should have no footer")
         XCTAssert(manifest.mediaSpans.count == 0, "Should have no spans")
@@ -804,7 +804,7 @@ class HLSManifestStructureAndEditingTests: XCTestCase {
         
         let manifest = parseManifest(inString: sampleSpanInHeader)
         
-        XCTAssert(manifest.header.range.count == 4, "Should have a header")
+        XCTAssert(manifest.header?.range.count == 4, "Should have a header")
         XCTAssert(manifest.mediaFragmentGroups.count == 2, "Should have 2 groups")
         XCTAssert(manifest.footer?.range.count == 1, "Should have a footer")
         XCTAssert(manifest.mediaSpans.count == 2, "Should have 2 spans")
@@ -827,7 +827,7 @@ class HLSManifestStructureAndEditingTests: XCTestCase {
         
         let manifest = parseManifest(inString: sampleSpanInHeader)
         
-        XCTAssert(manifest.header.range.count == 3, "Should have a header")
+        XCTAssert(manifest.header?.range.count == 3, "Should have a header")
         XCTAssert(manifest.mediaFragmentGroups.count == 2, "Should have 2 groups")
         XCTAssert(manifest.footer?.range.count == 1, "Should have a footer")
         XCTAssert(manifest.mediaSpans.count == 2, "Should have 2 spans")

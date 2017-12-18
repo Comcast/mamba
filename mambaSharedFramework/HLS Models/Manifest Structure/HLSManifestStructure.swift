@@ -59,7 +59,7 @@ import CoreMedia
 final class HLSManifestStructure: HLSManifestStructureInterface {
         
     init(withTags tags: [HLSTag]) {
-        self._header = TagGroup(range: 0...0)
+        self._header = nil
         self._mediaFragmentGroups = [MediaFragmentTagGroup]()
         self._footer = nil
         self._mediaSpans = [TagSpan]()
@@ -81,7 +81,7 @@ final class HLSManifestStructure: HLSManifestStructureInterface {
         }
     }
     
-    var header: TagGroup {
+    var header: TagGroup? {
         return queue.sync {
             rebuildIfRequired()
             return _header
@@ -285,14 +285,17 @@ final class HLSManifestStructure: HLSManifestStructureInterface {
         var foundChangePoint = false
         
         // is the insert in the header?
-        if _header.range.contains(index) {
-            if alterCount < 0 && !_header.range.contains(index - alterCount) {
-                // deleted out of the header
-                rebuild()
-                return false
+        if var header = _header {
+            if header.range.contains(index) {
+                if alterCount < 0 && !header.range.contains(index - alterCount) {
+                    // deleted out of the header
+                    rebuild()
+                    return false
+                }
+                header.range = header.startIndex...(header.endIndex + alterCount)
+                foundChangePoint = true
             }
-            _header.range = _header.startIndex...(_header.endIndex + alterCount)
-            foundChangePoint = true
+            self._header = header
         }
         
         // is the insert in one of the media groups?
@@ -337,7 +340,7 @@ final class HLSManifestStructure: HLSManifestStructureInterface {
     private var structureState: StructureState = .dirtyRequiresRebuild
 
     private var _tags: [HLSTag]
-    private var _header: TagGroup
+    private var _header: TagGroup?
     private var _mediaFragmentGroups: [MediaFragmentTagGroup]
     private var _footer: TagGroup?
     private var _mediaSpans: [TagSpan]
@@ -349,7 +352,7 @@ final class HLSManifestStructure: HLSManifestStructureInterface {
 extension HLSManifestStructure: CustomDebugStringConvertible {
     
     public var debugDescription: String {
-        return "HLSManifestStructure header: \(header) \nmediaFragmentGroups:\(mediaFragmentGroups) \nfooter:\(String(describing: footer)) \nmediaSpans:\(mediaSpans) \ntags:\(tags)\n"
+        return "HLSManifestStructure header: \(String(describing: header)) \nmediaFragmentGroups:\(mediaFragmentGroups) \nfooter:\(String(describing: footer)) \nmediaSpans:\(mediaSpans) \ntags:\(tags)\n"
     }
 }
 
@@ -360,7 +363,7 @@ fileprivate struct HLSManifestStructureConstructor {
         return tags.type() == .master ? PantosTag.EXT_X_STREAM_INF :  PantosTag.EXTINF
     }
     
-    fileprivate static func generateMediaGroups(fromTags tags: [HLSTag]) throws -> (header: TagGroup, mediaFragmentGroups: [MediaFragmentTagGroup], footer: TagGroup?) {
+    fileprivate static func generateMediaGroups(fromTags tags: [HLSTag]) throws -> (header: TagGroup?, mediaFragmentGroups: [MediaFragmentTagGroup], footer: TagGroup?) {
         
         var mediaFragmentGroups = [MediaFragmentTagGroup]()
         
@@ -383,6 +386,12 @@ fileprivate struct HLSManifestStructureConstructor {
         let mediaStartIndexOptional = tags.index(where: { $0.scope() == .mediaFragment })
         
         guard let mediaStartIndex = mediaStartIndexOptional else {
+            if tags.count == 0 {
+                // if we have no tags, we have no content at all
+                return (header: nil,
+                        mediaFragmentGroups: mediaFragmentGroups,
+                        footer: nil)
+            }
             // if we don't have any media fragment tags, it's all header
             return (header: TagGroup(range: 0...(tags.endIndex - 1)),
                     mediaFragmentGroups: mediaFragmentGroups,
@@ -468,7 +477,7 @@ fileprivate struct HLSManifestStructureConstructor {
     }
     
     fileprivate static func generateMediaSpans(fromTags tags:[HLSTag],
-                                               header: TagGroup,
+                                               header: TagGroup?,
                                                mediaFragmentGroups: [MediaFragmentTagGroup]) throws -> [TagSpan] {
         
         var mediaSpans = [TagSpan]()
@@ -481,13 +490,15 @@ fileprivate struct HLSManifestStructureConstructor {
         var startKeyTag: HLSTag? = nil
         
         // handle any X-KEY tags in the header
-        let headerTags = tags[header.range]
-        let headerKeyTags = headerTags.filter{ $0.tagDescriptor == PantosTag.EXT_X_KEY }
-        if let firstXKeyTag = headerKeyTags.last {
-            // we only have to handle the last X-KEY in the header, as previous X-KEY's will be superceded by this one
-            keyCount += headerKeyTags.count
-            startKeyIndex = 0 // if we find one in the header, we are always starting at the first index
-            startKeyTag = firstXKeyTag
+        if let header = header {
+            let headerTags = tags[header.range]
+            let headerKeyTags = headerTags.filter{ $0.tagDescriptor == PantosTag.EXT_X_KEY }
+            if let firstXKeyTag = headerKeyTags.last {
+                // we only have to handle the last X-KEY in the header, as previous X-KEY's will be superceded by this one
+                keyCount += headerKeyTags.count
+                startKeyIndex = 0 // if we find one in the header, we are always starting at the first index
+                startKeyTag = firstXKeyTag
+            }
         }
         
         // handle X-KEY tags found interior to the manifest

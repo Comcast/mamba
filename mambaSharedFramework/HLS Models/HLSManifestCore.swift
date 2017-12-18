@@ -40,7 +40,7 @@ public struct HLSManifestCore<T>: HLSManifestInterface, CustomDebugStringConvert
         return structure.tags
     }
     
-    public var header: TagGroup {
+    public var header: TagGroup? {
         return structure.header
     }
     

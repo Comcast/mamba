@@ -71,6 +71,17 @@ class HLSManifestStructureTests: XCTestCase {
         
         XCTAssert(structure.footer == nil)
     }
+    
+    func testEmptyManifest() {
+        
+        let manifest = parseManifest(inString: "#EXTM3U")
+        
+        let structure = HLSManifestStructure(withTags: manifest.tags)
+        
+        XCTAssertNil(structure.footer)
+        XCTAssert(structure.mediaFragmentGroups.count == 0)
+        XCTAssertNil(structure.header)
+    }
 }
 
 // unusual/malformed manifest to test footer deletion
