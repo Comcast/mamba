@@ -1,7 +1,7 @@
 clean: true
 author: Comcast VIPER
 author_url: https://stackoverflow.com/jobs/companies/comcast-viper
-github_url: https://github.comcast.com/viper-player/mamba_ios
+github_url: https://github.com/Comcast/mamba
 min_acl: internal
 skip_undocumented: false
 hide_documentation_coverage: false
@@ -9,4 +9,4 @@ source_directory: .
 readme: README.md
 theme: fullwidth
 use_safe_filenames: true
-copyright: "Copyright © 2017 Comcast Corporation under [Apache License 2.0](https://github.comcast.com/viper-player/mamba_ios/blob/develop/LICENSE)."
+copyright: "Copyright © 2017 Comcast Cable Communications Management, LLC under [Apache License 2.0](https://github.comcast.com/viper-player/mamba_ios/blob/develop/LICENSE)."
