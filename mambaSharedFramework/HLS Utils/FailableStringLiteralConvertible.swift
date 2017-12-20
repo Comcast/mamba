@@ -19,7 +19,7 @@
 
 import Foundation
 
-/// A protocol for objects that can be constructed from some strings, but might fail.
+/// A protocol for objects that can be constructed from a string, but might fail.
 public protocol FailableStringLiteralConvertible {
     init?(string: String)
 }
