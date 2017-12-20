@@ -1,6 +1,6 @@
 //
 //  HLSManifestTimelineTranslator.swift
-//  helio
+//  mamba
 //
 //  Created by David Coufal on 10/13/16.
 //  Copyright © 2016 Comcast Cable Communications Management, LLC

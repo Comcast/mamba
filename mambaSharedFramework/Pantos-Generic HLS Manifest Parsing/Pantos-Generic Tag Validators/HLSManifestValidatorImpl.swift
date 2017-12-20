@@ -18,11 +18,19 @@
 //
 
 import Foundation
-    
+
+/// A protocol for HLSManifestValidator that is a superset of other validators.
 public protocol HLSExtensibleValidator: HLSManifestValidator {
+    /// An array of HLSValidator types that will be used to validate manifests
     static var validators:[HLSValidator.Type] { get }
 }
 
+/**
+ Default implementation of HLSExtensibleValidator.
+ 
+ It will take a HLSManifestInterface, apply tag validators to all the tags, and then try to validate the
+ entire manifest against all the validators in the `validators` array.
+ */
 public extension HLSExtensibleValidator {
     
     public static func validate(hlsManifest: HLSManifestInterface) -> [HLSValidationIssue]? {
@@ -63,6 +71,7 @@ public extension HLSExtensibleValidator {
     }
 }
 
+/// Validator for master manifests
 public class HLSMasterManifestValidator: HLSExtensibleValidator {
     public static let validators:[HLSValidator.Type] = [HLSManifestRenditionGroupValidator.self,
                                                 EXT_X_STREAM_INFRenditionGroupAUDIOValidator.self,
@@ -70,6 +79,7 @@ public class HLSMasterManifestValidator: HLSExtensibleValidator {
                                                 EXT_X_STREAM_INFRenditionGroupSUBTITLESValidator.self]
 }
 
+/// Validator for variant manifests
 public class HLSVariantManifestValidator: HLSExtensibleValidator {
     public static let validators:[HLSValidator.Type] = [HLSManifestAggregateTagCardinalityValidator.self,
                                                         EXT_X_TARGETDURATIONLengthValidator.self,
@@ -78,6 +88,7 @@ public class HLSVariantManifestValidator: HLSExtensibleValidator {
                                                         EXT_X_STARTTimeOffsetValidator.self]
 }
 
+/// A general purpose validator that will validate either a variant or a master manifest
 public class HLSCompleteManifestValidator: HLSManifestValidator {
 
     public static func validate(hlsManifest: HLSManifestInterface) -> [HLSValidationIssue]? {

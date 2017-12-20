@@ -19,6 +19,7 @@
 
 import Foundation
 
+/// Generic writer for HLS tags that have just one single value (e.g. `#EXT-X-TARGETDURATION:10`)
 struct GenericSingleTagWriter: HLSTagWriter {
     
     fileprivate let singleTagValueIdentifier: HLSTagValueIdentifier

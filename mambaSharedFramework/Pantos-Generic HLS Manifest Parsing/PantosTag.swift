@@ -19,11 +19,22 @@
 
 import Foundation
 
-/// enum describing all HLS tags that mamba understands from the Pantos HLS specification
-///
-/// `.Comment` is a special tag, indicating a HLS comment
-///
-/// `.UnknownTag` is a special tag, indicating a tag recognized as a HLS tag, but one that we do not currently parse
+/**
+ enum describing all HLS tags that mamba understands from the Pantos HLS specification
+ 
+ `.Comment` is a special tag, indicating a HLS comment
+ 
+ `.UnknownTag` is a special tag, indicating a tag recognized as a HLS tag, but one that we do not currently parse
+ 
+ Other tags that are treated specially are:
+ 
+ `.Location`: will not have a `tagName`
+ 
+ `.EXTM3U`: will not actually show up in HLSTag arrays for manifests. It's here as a convenience.
+ 
+ `.EXTINF`: Since this is such a common tag and appears in great numbers, the duration is available as a direct
+ property on `HLSTag`. This allows us to speed parsing of these tags.
+ */
 public enum PantosTag: String {
     
     // MARK: special tags

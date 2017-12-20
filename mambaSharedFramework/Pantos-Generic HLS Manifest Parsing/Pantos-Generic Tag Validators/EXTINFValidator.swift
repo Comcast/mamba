@@ -20,7 +20,7 @@
 import Foundation
 
 // Specialized validator for EXTINF tags
-public class EXTINFValidator: HLSTagValidator {
+class EXTINFValidator: HLSTagValidator {
     
     public func validate(tag: HLSTag) -> [HLSValidationIssue]? {
         

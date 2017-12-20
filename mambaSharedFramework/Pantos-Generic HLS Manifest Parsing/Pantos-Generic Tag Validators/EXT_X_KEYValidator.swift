@@ -21,7 +21,7 @@ import Foundation
 
 // EXT-X-KEY If the encryption method is NONE, the URI, IV, KEYFORMAT and KEYFORMATVERSIONS attributes MUST NOT be present. 
 // If the encryption method is AES-128 or SAMPLE-AES, the URI attribute MUST be present.
-public class EXT_X_KEYValidator: GenericDictionaryTagValidator {
+class EXT_X_KEYValidator: GenericDictionaryTagValidator {
     
     override public func validate(tag: HLSTag) -> [HLSValidationIssue]? {
         

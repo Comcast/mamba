@@ -81,7 +81,7 @@ public struct MediaFragmentTagGroup: TagGroupProtocol, CustomDebugStringConverti
  An object to model the tags that are all "spanned" by one particualr tag.
  
  See `HLSTagDescriptorScope.mediaSpanner` for more info, but briefly, some
- kinds of tags (such as `#EXT-X-KEY`) that can span multiiple tags (and
+ kinds of tags (such as `#EXT-X-KEY`) that can span multiple tags (and
  multiple MediaFragmentTagGroup's)
  */
 public struct TagSpan: CustomDebugStringConvertible {

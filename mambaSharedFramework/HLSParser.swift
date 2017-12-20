@@ -35,10 +35,22 @@ public final class HLSParser {
         }
     }
     
+    /**
+     Adds a HLSTagDescriptor to the registered tags list for this parser.
+     
+     It'w worth noting that manifest parsing proceeds with the registered tags that are
+     present at the beginning of parsing.
+     */
     func registerHLSTags(tagType: HLSTagDescriptor.Type) {
         registeredTags.register(tagDescriptorType: tagType)
     }
     
+    /**
+     Removes all registered tags from this parser, leaving only the built in PantosTag collection.
+     
+     It'w worth noting that manifest parsing proceeds with the registered tags that are
+     present at the beginning of parsing.
+     */
     func unRegisterAllHLSTags() {
         registeredTags.unRegisterAllHLSTagDescriptors()
     }

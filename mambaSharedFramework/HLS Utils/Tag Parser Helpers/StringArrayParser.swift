@@ -21,7 +21,7 @@ import Foundation
 
 struct StringArrayParser {
     
-    /// takes a string that is formatted as <str1>,<str2>,<str3> and returns [<str1>, <str2>, <str3>].
+    /// takes a string that is formatted as "<str1>,<str2>,<str3>" and returns [<str1>, <str2>, <str3>].
     ///
     /// quotes should escape commas, so "str1,"str2,str3"" should resolve to ["str1", "str2,str3"]
     static func parseToArray(fromParsableString string: String, ignoreQuotes: Bool = false) -> [String] {

@@ -22,7 +22,16 @@ import Foundation
 /// Namespace class for validating HLS manifests
 public protocol HLSValidator: class {}
 
+/// Protocol for validating objects that implement `HLSManifestInterface`
 public protocol HLSManifestValidator: HLSValidator {
+    
+    /**
+     Validates a HLSManifestInterface
+     
+     - parameter hlsManifest: A `HLSManifestInterface` to validate
+     
+     - returns: An array of `HLSValidationIssue`s or nil if no issues were found.
+     */
     static func validate(hlsManifest: HLSManifestInterface) -> [HLSValidationIssue]?
 }
 

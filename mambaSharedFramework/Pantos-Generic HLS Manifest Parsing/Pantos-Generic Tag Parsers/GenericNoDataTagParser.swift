@@ -19,15 +19,20 @@
 
 import Foundation
 
-class GenericNoDataTagParser: HLSTagParser {
+/**
+ A class for generically parsing HLS tags with no data (i.e. `#EXT-X-DISCONTINUITY`)
+ 
+ This is really a no-op class, as the HLSTagDictionary returned from parseTag will always be empty.
+ */
+public class GenericNoDataTagParser: HLSTagParser {
     
     let tag: HLSTagDescriptor
 
-    required init(tag: HLSTagDescriptor) {
+    public required init(tag: HLSTagDescriptor) {
         self.tag = tag
     }
     
-    func parseTag(fromTagString string: String?) throws -> HLSTagDictionary {
+    public func parseTag(fromTagString string: String?) throws -> HLSTagDictionary {
         if let string = string {
             assert(string.count == 0)
         }

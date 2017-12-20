@@ -20,6 +20,7 @@
 import Foundation
 
 typealias HLSTagIdentifierPair = (tagDescriptor: HLSTagDescriptor, valueIdentifier: HLSTagValueIdentifier)
+
 protocol HLSManifestCollectionValidator: HLSManifestValidator {
     static var tagIdentifierPairs:[HLSTagIdentifierPair] { get }
     static var validation: ([HLSTag]) -> [HLSValidationIssue]? { get }

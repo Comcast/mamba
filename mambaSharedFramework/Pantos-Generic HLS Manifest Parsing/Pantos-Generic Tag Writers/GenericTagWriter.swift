@@ -19,6 +19,8 @@
 
 import Foundation
 
+/// A generic writer for tags that pays no attention to structure. It will just take the tag and any data and write it directly to stream.
+/// This is useful for `PantosTag.UnknownTag` type tags where we do not recognize the type.
 struct GenericTagWriter: HLSTagWriter {
     
     func write(tag: HLSTag, toStream stream: OutputStream) throws {

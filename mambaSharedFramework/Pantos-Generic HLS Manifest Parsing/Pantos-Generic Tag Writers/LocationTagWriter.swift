@@ -19,6 +19,7 @@
 
 import Foundation
 
+/// A tag writer for `PantosTag.Location` tags.
 struct LocationTagWriter: HLSTagWriter {
     
     func write(tag: HLSTag, toStream stream: OutputStream) throws {

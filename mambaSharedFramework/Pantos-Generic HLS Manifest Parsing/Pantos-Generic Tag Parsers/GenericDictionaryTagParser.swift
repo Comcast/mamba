@@ -19,14 +19,20 @@
 
 import Foundation
 
-/// Class for generically parsing tags in the form of `#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="g104000",NAME="English",LANGUAGE="en",DEFAULT=YES,AUTOSELECT=YES`, where there is a tag with a set of key=value pairs as part of the payload
+/**
+ Class for generically parsing tags in the form of:
+    `#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="g104000",NAME="English",LANGUAGE="en",DEFAULT=YES,AUTOSELECT=YES`,
+ where there is a tag with a set of key=value pairs as part of the payload
+ */
 public class GenericDictionaryTagParser: HLSTagParser {
     
     let tag: HLSTagDescriptor
     
-    /// Constructs a GenericDictionaryTagParser
-    ///
-    /// tag - The HLSTagDescriptor for the tag you are trying to parse
+    /**
+     Constructs a GenericDictionaryTagParser
+     
+     - parameter tag: The HLSTagDescriptor for the tag you are trying to parse
+     */
     public init(tag: HLSTagDescriptor) {
         self.tag = tag
     }

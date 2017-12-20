@@ -19,11 +19,19 @@
 
 import Foundation
 
+/// Generically validates dictionary style HLS tags.
 public class GenericDictionaryTagValidator: HLSTagValidator {
     
     private let dictionaryValueIdentifiers: [HLSDictionaryTagValueIdentifier]
     private let tag: HLSTagDescriptor
     
+    /**
+     Initializer for GenericDictionaryTagValidator
+     
+     - parameter tag: The HLSTagDescriptor for this tag.
+     
+     - parameter dictionaryValueIdentifiers: An array of HLSDictionaryTagValueIdentifier objects describing the expected data in this tag
+     */
     public init(tag: HLSTagDescriptor, dictionaryValueIdentifiers: [HLSDictionaryTagValueIdentifier]) {
         self.tag = tag
         self.dictionaryValueIdentifiers = dictionaryValueIdentifiers

@@ -20,7 +20,6 @@
 import Foundation
 
 // INSTREAM-ID attribute is REQUIRED if the TYPE attribute is CLOSED-CAPTIONS
-
 class EXT_X_MEDIARenditionINSTREAMIDValidator: HLSManifestTagGroupValidator {
     
     static let tagIdentifierPairs: [HLSTagIdentifierPair] = tagIdentifierPairsWithDefaultValueIdentifier(descriptors: [PantosTag.EXT_X_MEDIA])

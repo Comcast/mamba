@@ -25,11 +25,13 @@ public class GenericSingleValueTagParser: HLSTagParser {
     let tag: HLSTagDescriptor
     var singleValueIdentifier: HLSTagValueIdentifier
     
-    /// Constructs a GenericSingleValueTagParser
-    ///
-    /// tag - The HLSTagDescriptor for the tag you are trying to parse
-    /// singleValueIdentifier - The HLSTagValueIdentifier for the value you are trying to parse out of the tag
-    /// validator - The SingleValueValidator that will do any validation of the tag value. Just return true if no validation is required
+    /**
+     Constructs a GenericSingleValueTagParser
+     
+     - parameter tag: The HLSTagDescriptor for the tag you are trying to parse
+     - parameter singleValueIdentifier: The HLSTagValueIdentifier for the value you are trying to parse out of the tag
+     - parameter validator: The SingleValueValidator that will do any validation of the tag value. Just return true if no validation is required
+    */
     public init(tag: HLSTagDescriptor, singleValueIdentifier: HLSTagValueIdentifier) {
         self.tag = tag
         self.singleValueIdentifier = singleValueIdentifier

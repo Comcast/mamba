@@ -19,6 +19,7 @@
 
 import Foundation
 
+/// Generic writer for dictionary style tags
 public struct GenericDictionaryTagWriter: HLSTagWriter {
     
     public init() {}

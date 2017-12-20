@@ -22,7 +22,6 @@ import CoreMedia
 
 // The EXT-X-START tag indicates a preferred point at which to start playing a Playlist. If the variant does not contain EXT-X-ENDLIST, the TIME-OFFSET should not be within 3 target durations from the end, else TIME-OFFSET absolute value should never be longer than the playlist
 //#EXT-X-START:TIME-OFFSET=30,PRECISE=YES
-
 class  EXT_X_STARTTimeOffsetValidator: HLSManifestValidator {
     
     static func validate(hlsManifest manifest: HLSManifestInterface) -> [HLSValidationIssue]? {

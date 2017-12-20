@@ -35,12 +35,15 @@ public typealias HLSTagDictionary = OrderedDictionary<String, HLSValueData>
 
 /// Describes a object that parse an individual tag from a line in a HLS manifest
 public protocol HLSTagParser: class {
-        
-    /// Takes a tag (i.e. if your tag is "#EXT-GENERICTAG:<Values>", you would pass "<Values>" as your argument) and parses it
-    ///
-    /// returns a `HLSTagDictionary` of all the key value pairs found in the tag (will contain values found in single-value tags as well, for convenience)
-    ///
-    /// Throws a HLSTagParserError.malformedHLSTag type if the tag is malformed or is missing pantos required data
-    ///
+    
+    /**
+     Parses an HLS tag from a String. (i.e. if your tag is "#EXT-GENERICTAG:<Values>", you would pass "<Values>" as your string argument)
+     
+     - parameter fromTagString: An optional string to parse. (Optional because some tags actually have no data)
+     
+     - returns: An `HLSTagDictionary` of all the key value pairs found in the tag (will contain values found in single-value tags as well, for convenience)
+     
+     - throws: a HLSTagParserError.malformedHLSTag type if the tag is malformed or is missing pantos required data
+     */
     func parseTag(fromTagString: String?) throws -> HLSTagDictionary
 }

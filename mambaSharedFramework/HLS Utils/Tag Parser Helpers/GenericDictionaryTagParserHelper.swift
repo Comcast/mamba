@@ -21,7 +21,7 @@ import Foundation
 
 struct GenericDictionaryTagParserHelper {
     
-    /// Generic code to parse a tags values out from a dictionary. Assumes all tag values are strings and returns them as such
+    /// Generic code to parse tag dictionary values out from a string. Assumes all tag values are strings and returns them as such
     static func parseTag(fromParsableString string: String?,
                          tag: HLSTagDescriptor)
         throws -> HLSTagDictionary {

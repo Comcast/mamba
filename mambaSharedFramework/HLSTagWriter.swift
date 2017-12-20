@@ -22,8 +22,16 @@ import Foundation
 /// Describes an object that can serialize individual HLSTag objects
 public protocol HLSTagWriter {
     
-    /// Writes the data of the tag to the provided OutputStream.
-    /// Does not need to write newlines (handled by the caller).
+    /**
+     Writes the data of the tag to the provided OutputStream.
+     Does not need to write newlines (handled by the caller).
+     
+     - parameter tag: The HLSTag to write to the stream
+     
+     - parameter toStream: An open `OutputStream` to recieve data.
+     
+     - throws: Error if there is an issue writing to the stream
+     */
     func write(tag: HLSTag, toStream: OutputStream) throws
 }
 

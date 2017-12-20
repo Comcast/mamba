@@ -19,13 +19,18 @@
 
 import Foundation
 
+/// A protocol describing what values are expected in a dictionary style HLS tag.
 public protocol HLSDictionaryTagValueIdentifier {
 
+    /// The HLSTagValueIdentifier of the key in the key value pair.
     var valueId: HLSTagValueIdentifier { get }
+    /// Is the key-value pair optional or required?
     var optional: Bool { get }
+    /// What type are we expecting for the value in the key-value pair. This type must implement FailableStringLiteralConvertible.
     var expectedType: FailableStringLiteralConvertible.Type { get }
 }
 
+/// A concrete implemention of HLSDictionaryTagValueIdentifier.
 public struct HLSDictionaryTagValueIdentifierImpl: HLSDictionaryTagValueIdentifier {
     
     public init(valueId: HLSTagValueIdentifier, optional: Bool, expectedType: FailableStringLiteralConvertible.Type) {

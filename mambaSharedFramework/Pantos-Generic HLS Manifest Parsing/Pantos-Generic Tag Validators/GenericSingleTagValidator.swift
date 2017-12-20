@@ -23,8 +23,8 @@ import Foundation
 /// Class for generically validating values in the form of `#EXT-X-TARGETDURATION:10`, where there is a tag with a one and only one value(that is a string convertible to a known type) associated with it
 public class GenericSingleTagValidator<S: FailableStringLiteralConvertible>: HLSTagValidator {
     
-    fileprivate let singleValueIdentifier: HLSTagValueIdentifier
-    fileprivate let tag: HLSTagDescriptor
+    private let singleValueIdentifier: HLSTagValueIdentifier
+    private let tag: HLSTagDescriptor
     
     public init(tag: HLSTagDescriptor, singleValueIdentifier: HLSTagValueIdentifier) {
         self.tag = tag
