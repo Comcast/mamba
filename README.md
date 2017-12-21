@@ -34,7 +34,7 @@ Create an `HLSParser`.
 let parser = HLSParser()
 ```
 
-Parse your HLS manifest using the parser. Here's the callback version:
+Parse your HLS manifest using the parser. Here's the asynchronous version:
 
 ```swift
 let myManifestData: Data = ... // source of HLS data
@@ -50,7 +50,7 @@ parser.parse(manifestData: myManifestData,
 	         })
 ```
 
-And here's the inline version:
+And here's the synchronous version:
 
 ```swift
 let manifest: HLSManifest
