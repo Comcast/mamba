@@ -41,13 +41,13 @@ let myManifestData: Data = ... // source of HLS data
 let myManifestURL: URL = ... // the URL of this manifest resource
 
 parser.parse(manifestData: myManifestData,
-	         url: myManifestURL,
-	         success: { manifest in
-	              // do something with the parsed HLSManifest object
-	         },
-	         failure: { parserError in
-	              // handle the HLSParserError
-	         })
+             url: myManifestURL,
+             success: { manifest in
+                  // do something with the parsed HLSManifest object
+             },
+             failure: { parserError in
+                  // handle the HLSParserError
+             })
 ```
 
 And here's the synchronous version:
@@ -60,7 +60,7 @@ do {
                                 url: myManifestURL)
 }
 catch {
-	// we received an error in parsing this manifest
+    // we received an error in parsing this manifest
 }
 // do something with the parsed HLSManifest
 ```
@@ -106,10 +106,10 @@ Write your HLS manifest to a stream.
 let stream: OutputStream = ... // stream to receive the HLS Manifest
 
 do {
-	try writer.write(hlsManifest: manifest, toStream: stream)
+    try writer.write(hlsManifest: manifest, toStream: stream)
 }
 catch {
-	// there was an error severe enough for us to stop writing the data
+    // there was an error severe enough for us to stop writing the data
 }
 ``` 
 
