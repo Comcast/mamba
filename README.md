@@ -1,6 +1,7 @@
 [![Build Status](https://secure.travis-ci.org/Comcast/mamba.svg)](https://travis-ci.org/Comcast/mamba) 
 [![Code Coverage from codecov](https://codecov.io/gh/Comcast/mamba/branch/develop/graph/badge.svg)](https://codecov.io/gh/Comcast/mamba)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Cocoapod status](https://img.shields.io/cocoapods/v/mamba.svg)][podLink]
 [![GitHub release](https://img.shields.io/github/release/Comcast/mamba.svg)](https://github.com/Comcast/mamba/releases)
 [![License](https://img.shields.io/cocoapods/l/mamba.svg)](https://raw.githubusercontent.com/Comcast/mamba/master/LICENSE.md)
 [![Platform](https://img.shields.io/cocoapods/p/mamba.svg?style=flat)]()
