@@ -23,27 +23,27 @@ import XCTest
 
 extension XCTestCase {
     
-    public func parseManifest(inFixtureName fixtureName: String,
+    public func parsePlaylist(inFixtureName fixtureName: String,
                               tagTypes:[HLSTagDescriptor.Type]? = nil,
-                              url: URL? = fakeManifestURL()) -> HLSManifest {
+                              url: URL? = fakePlaylistURL()) -> HLSPlaylist {
         
         let data = FixtureLoader.load(fixtureName: fixtureName as NSString)
         
-        return parseManifest(inData: data! as Data, tagTypes: tagTypes, url: url!)
+        return parsePlaylist(inData: data! as Data, tagTypes: tagTypes, url: url!)
     }
     
-    public func parseManifest(inString manifestString: String,
+    public func parsePlaylist(inString playlistString: String,
                               tagTypes:[HLSTagDescriptor.Type]? = nil,
-                              url: URL? = fakeManifestURL()) -> HLSManifest {
+                              url: URL? = fakePlaylistURL()) -> HLSPlaylist {
         
-        let data = manifestString.data(using: .utf8)
+        let data = playlistString.data(using: .utf8)
         
-        return parseManifest(inData: data!, tagTypes: tagTypes, url: url!)
+        return parsePlaylist(inData: data!, tagTypes: tagTypes, url: url!)
     }
     
-    public func parseManifest(inData data: Data,
+    public func parsePlaylist(inData data: Data,
                               tagTypes:[HLSTagDescriptor.Type]? = nil,
-                              url: URL = fakeManifestURL()) -> HLSManifest {
+                              url: URL = fakePlaylistURL()) -> HLSPlaylist {
         
         let parser = HLSParser(tagTypes: tagTypes)
         
@@ -54,18 +54,18 @@ extension XCTestCase {
             }
         }
         
-        let expectation = self.expectation(description: "parseAndTestManifest completion")
+        let expectation = self.expectation(description: "parseAndTestPlaylist completion")
         
-        var manifest: HLSManifest? = nil
+        var playlist: HLSPlaylist? = nil
         
-        parser.parse(manifestData: data,
+        parser.parse(playlistData: data,
                      url: url,
                      success: { (m) in
-                        manifest = m
+                        playlist = m
                         expectation.fulfill()
         },
                      failure: { (error) in
-                        print("Failure in parseAndTestManifest in the \"\(String(describing: type(of: self)))\" unit test. Error \(error.localizedDescription)")
+                        print("Failure in parseAndTestPlaylist in the \"\(String(describing: type(of: self)))\" unit test. Error \(error.localizedDescription)")
                         XCTFail()
                         expectation.fulfill()
         })
@@ -73,38 +73,38 @@ extension XCTestCase {
         waitForExpectations(timeout: 2.0, handler: {
             error in
             if (error != nil) {
-                print("Parse timeout in parseAndTestManifest in the \"\(String(describing: type(of: self)))\" unit test: \(error!)")
+                print("Parse timeout in parseAndTestPlaylist in the \"\(String(describing: type(of: self)))\" unit test: \(error!)")
                 XCTFail()
             }
         })
         
-        return manifest!
+        return playlist!
     }
     
-    public func parseManifests(inFirstString manifestString1: String,
-                               inSecondString manifestString2: String) -> (manifest1: HLSManifest, manifest2: HLSManifest) {
+    public func parsePlaylists(inFirstString playlistString1: String,
+                               inSecondString playlistString2: String) -> (playlist1: HLSPlaylist, playlist2: HLSPlaylist) {
         
-        let data1 = manifestString1.data(using: .utf8)
-        let data2 = manifestString2.data(using: .utf8)
+        let data1 = playlistString1.data(using: .utf8)
+        let data2 = playlistString2.data(using: .utf8)
         
-        let expectation1 = self.expectation(description: "parseAndTestManifest1 completion")
+        let expectation1 = self.expectation(description: "parseAndTestPlaylist1 completion")
         
         let parser = HLSParser()
         
-        var manifest1: HLSManifest? = nil
-        var manifest2: HLSManifest? = nil
+        var playlist1: HLSPlaylist? = nil
+        var playlist2: HLSPlaylist? = nil
         
-        let url1 = fakeManifestURL()
-        let url2 = fakeManifestURL()
+        let url1 = fakePlaylistURL()
+        let url2 = fakePlaylistURL()
         
-        parser.parse(manifestData: data1!,
+        parser.parse(playlistData: data1!,
                      url: url1,
                      success: { (m) in
-                        manifest1 = m
+                        playlist1 = m
                         expectation1.fulfill()
         },
                      failure: { _ in
-                        print("Failure in parseAndTestManifest 1 in the \"\(String(describing: type(of: self)))\" unit test")
+                        print("Failure in parseAndTestPlaylist 1 in the \"\(String(describing: type(of: self)))\" unit test")
                         XCTFail()
                         expectation1.fulfill()
         })
@@ -112,21 +112,21 @@ extension XCTestCase {
         waitForExpectations(timeout: 2.0, handler: {
             error in
             if (error != nil) {
-                print("Parse timeout in parseAndTestManifest 1 in the \"\(String(describing: type(of: self)))\" unit test: \(error!)")
+                print("Parse timeout in parseAndTestPlaylist 1 in the \"\(String(describing: type(of: self)))\" unit test: \(error!)")
                 XCTFail()
             }
         })
         
-        let expectation2 = self.expectation(description: "parseAndTestManifest2 completion")
+        let expectation2 = self.expectation(description: "parseAndTestPlaylist2 completion")
         
-        parser.parse(manifestData: data2!,
+        parser.parse(playlistData: data2!,
                      url: url2,
                      success: { (m) in
-                        manifest2 = m
+                        playlist2 = m
                         expectation2.fulfill()
         },
                      failure: { _ in
-                        print("Failure in parseAndTestManifest 1 in the \"\(String(describing: type(of: self)))\" unit test")
+                        print("Failure in parseAndTestPlaylist 1 in the \"\(String(describing: type(of: self)))\" unit test")
                         XCTFail()
                         expectation2.fulfill()
         })
@@ -134,12 +134,12 @@ extension XCTestCase {
         waitForExpectations(timeout: 2.0, handler: {
             error in
             if (error != nil) {
-                print("Parse timeout in parseAndTestManifest 2 in the \"\(String(describing: type(of: self)))\" unit test: \(error!)")
+                print("Parse timeout in parseAndTestPlaylist 2 in the \"\(String(describing: type(of: self)))\" unit test: \(error!)")
                 XCTFail()
             }
         })
         
-        return (manifest1!, manifest2!)
+        return (playlist1!, playlist2!)
     }
     
     public func writeToString(withTag tag: HLSTag, withWriter writer: HLSTagWriter) throws -> String {
@@ -155,8 +155,8 @@ extension XCTestCase {
         return String(data: data, encoding: .utf8)!
     }
     
-    public func createManifest(fromTags tags: [HLSTag]) -> HLSManifest {
-        return HLSManifest(url: fakeManifestURL(), tags: tags, registeredTags: RegisteredHLSTags(), hlsData: Data())
+    public func createPlaylist(fromTags tags: [HLSTag]) -> HLSPlaylist {
+        return HLSPlaylist(url: fakePlaylistURL(), tags: tags, registeredTags: RegisteredHLSTags(), hlsData: Data())
     }
 }
 

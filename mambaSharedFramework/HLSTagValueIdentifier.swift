@@ -24,7 +24,7 @@ import Foundation
 /// There is a default `HLSTagValueIdentifier` provider, `PantosValue`
 public protocol HLSTagValueIdentifier {
     
-    /// Get a string represention of the tag value that is the same as how it appears in the HLS manifest (i.e. "`PROGRAM-ID`"), if it does appear in the manifest
+    /// Get a string represention of the tag value that is the same as how it appears in the HLS playlist (i.e. "`PROGRAM-ID`"), if it does appear in the playlist
     func toString() -> String
 }
 

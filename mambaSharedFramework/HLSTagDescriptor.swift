@@ -21,12 +21,12 @@ import Foundation
 
 /// Protocol that describes the behavior of a HLS tag descriptor.
 ///
-/// Every line in a HLS manifest gets a `HLSTagDescriptor` as a shorthand for the kind of data that is represented.
+/// Every line in a HLS playlist gets a `HLSTagDescriptor` as a shorthand for the kind of data that is represented.
 ///
 /// There is a default `HLSTagDescriptor` provider, `PantosTag`
 public protocol HLSTagDescriptor {
     
-    /// Get a string represention of the tag descriptor that is the same as how it appears in the HLS manifest (i.e. "`EXTINF`")
+    /// Get a string represention of the tag descriptor that is the same as how it appears in the HLS playlist (i.e. "`EXTINF`")
     func toString() -> String
     
     /// Equality Implementation to work around Equatable issues with protocols
@@ -44,7 +44,7 @@ public protocol HLSTagDescriptor {
      - parameter forTag: We want a parser for this HLSTagDescriptor
      
      - returns: A optional HLSTagParser. Some `HLSTagDescriptor`s (particularly `PantosTag`s) will not
-     get a parser as they are parsed during the initial pass through the manifest.
+     get a parser as they are parsed during the initial pass through the playlist.
      (This is specifically true for .Comment, .Location, .UnknownTag and .EXTINF tags, as well
      as tags with type of HLSTagDescriptorType.noValue)
      */
@@ -84,11 +84,11 @@ public func !=(lhs: HLSTagDescriptor, rhs: HLSTagDescriptor) -> Bool {
 }
 
 public enum HLSTagDescriptorScope {
-    /// a tag that describes the entire manifest
-    case wholeManifest
-    /// a tag that describes a media fragment
-    case mediaFragment
-    /// a tag that describes multiple media fragments
+    /// a tag that describes the entire playlist
+    case wholePlaylist
+    /// a tag that describes a media segment
+    case mediaSegment
+    /// a tag that describes multiple media segments
     case mediaSpanner
     /// unknown tag type
     case unknown

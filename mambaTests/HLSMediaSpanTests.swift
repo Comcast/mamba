@@ -55,14 +55,14 @@ class HLSMediaSpanTests: XCTestCase {
     
     func runTest(hlsString: String, expectedSpans: [HLSMediaGroupIndexRange]) {
         
-        let manifest = parseManifest(inString: hlsString)
-        let validationIssues = HLSMasterManifestValidator.validate(hlsManifest: manifest)
+        let playlist = parsePlaylist(inString: hlsString)
+        let validationIssues = HLSMasterPlaylistValidator.validate(hlsPlaylist: playlist)
         XCTAssert((validationIssues != nil) ? validationIssues!.count == 0 : true, "Should be no issues in the HLS fixtures")
         
-        XCTAssert(manifest.mediaSpans.count == expectedSpans.count, "Expected span count did not equal actual span count")
+        XCTAssert(playlist.mediaSpans.count == expectedSpans.count, "Expected span count did not equal actual span count")
         for (index, expectedSpan) in expectedSpans.enumerated() {
             
-            let span = manifest.mediaSpans[index]
+            let span = playlist.mediaSpans[index]
             XCTAssertEqual(span.tagMediaSpan, expectedSpan, "Expected span \(expectedSpan) does not equal actual span \(span)")
         }
     }

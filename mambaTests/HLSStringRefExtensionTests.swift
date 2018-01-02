@@ -51,7 +51,7 @@ class HLSStringRefExtensionTests: XCTestCase {
     }
     
     func testRelativeURL() {
-        let url: URL = URL(string:"http://fake.server/manifest.m3u8")!
+        let url: URL = URL(string:"http://fake.server/playlist.m3u8")!
         let relativeUrlStringRef = HLSStringRef(string: "variant.m3u8")
         let fullUrlStringRef = HLSStringRef(hlsStringRef:relativeUrlStringRef, relativeTo:url)
         XCTAssert(fullUrlStringRef! == "http://fake.server/variant.m3u8")

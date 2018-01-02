@@ -31,49 +31,49 @@ class ReadMeUnitTests: XCTestCase {
     
     func testMambaReadmeCode() {
         
-        // Parsing a HLS Manifest
+        // Parsing a HLS Playlist
         //***********************
         
         let parser = HLSParser()
         
-        let myManifestData: Data = FixtureLoader.load(fixtureName: "bipbopall.m3u8")! as Data // source of HLS data
-        let myManifestURL: URL = URL(string: "https://not.a.real.server/main.m3u8")! // the URL of this manifest resource
+        let myPlaylistData: Data = FixtureLoader.load(fixtureName: "bipbopall.m3u8")! as Data // source of HLS data
+        let myPlaylistURL: URL = URL(string: "https://not.a.real.server/main.m3u8")! // the URL of this playlist resource
         
-        parser.parse(manifestData: myManifestData,
-                     url: myManifestURL,
-                     success: { manifest in
-                        // do something with the parsed HLSManifest object
+        parser.parse(playlistData: myPlaylistData,
+                     url: myPlaylistURL,
+                     success: { playlist in
+                        // do something with the parsed HLSPlaylist object
         },
                      failure: { parserError in
                         // handle the HLSParserError
         })
         
-        let manifest: HLSManifest
+        let playlist: HLSPlaylist
         do {
             // note: could take several milliseconds for large transcripts!
-            manifest = try parser.parse(manifestData: myManifestData,
-                                        url: myManifestURL)
+            playlist = try parser.parse(playlistData: myPlaylistData,
+                                        url: myPlaylistURL)
         }
         catch {
-            // we received an error in parsing this manifest
+            // we received an error in parsing this playlist
             return
         }
         
-        // Validating a HLS Manifest
+        // Validating a HLS Playlist
         //**************************
         
-        let issues = HLSCompleteManifestValidator.validate(hlsManifest: manifest)
+        let issues = HLSCompletePlaylistValidator.validate(hlsPlaylist: playlist)
         
-        // Writing a HLS Manifest
+        // Writing a HLS Playlist
         //***********************
         
         let writer = HLSWriter()
         
-        let stream = OutputStream.toMemory() // stream to receive the HLS Manifest
+        let stream = OutputStream.toMemory() // stream to receive the HLS Playlist
         stream.open()
         
         do {
-            try writer.write(hlsManifest: manifest, toStream: stream)
+            try writer.write(hlsPlaylist: playlist, toStream: stream)
         }
         catch {
             // there was an error severe enough for us to stop writing the data

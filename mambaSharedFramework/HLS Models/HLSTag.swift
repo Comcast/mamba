@@ -20,21 +20,21 @@
 import Foundation
 
 /**
- A struct representing a single tag line from a HLS manifest.
+ A struct representing a single tag line from a HLS playlist.
  
  *Important memory safety note:* This struct contains `HLSStringRef`s. Those objects
  may contain unsafe pointers to a external `Data` object (typically this Data object
- is the one parsed by `HLSParser` to create a `HLSManifest` containing many
+ is the one parsed by `HLSParser` to create a `HLSPlaylist` containing many
  `HLSTag`s). If this Data is deallocted before this `HLSTag` is deallocated,
  accessing any `HLSString`s may result in undefined behavior.
  
  The rule for safety is, as long as a paricular `HLSTag` is accessed while its
- parent `HLSManifest` is still allocated, that is safe. If you need to access
- any `HLSTag` data after its parent `HLSManifest` is deallocated, you'll need to
+ parent `HLSPlaylist` is still allocated, that is safe. If you need to access
+ any `HLSTag` data after its parent `HLSPlaylist` is deallocated, you'll need to
  make a copy of any relevant `HLSStringRef`s via it's `stringValue` function.
  
  This un-swift-like memory safety issue was done for performance reasons. Allocating
- hundreds of thousands of `String`s when parsing a HLS manifest that is multiple
+ hundreds of thousands of `String`s when parsing a HLS playlist that is multiple
  hours in length is very slow. Creating pointers to already existing memory is fast.
  */
 public struct HLSTag: CustomDebugStringConvertible {
@@ -47,14 +47,14 @@ public struct HLSTag: CustomDebugStringConvertible {
     public let tagDescriptor: HLSTagDescriptor
     
     /**
-     The actual string name of the tag as found in the original HLS manifest.
+     The actual string name of the tag as found in the original HLS playlist.
      
      Is usually the same value as the `tagDescriptor`.
      
      Cases when it will be different:
      
      * When `tagDescriptor` is `PantosTag.UnknownTag`: This value will be set
-     the value found in the HLS manifest.
+     the value found in the HLS playlist.
      
      * When `tagDescriptor` is `PantosTag.Comment` or `PantosTag.Location`,
      this value will be nil.
@@ -62,7 +62,7 @@ public struct HLSTag: CustomDebugStringConvertible {
     public let tagName: HLSStringRef?
     
     /**
-     The data associated with this tag as found in the original HLS Manifest.
+     The data associated with this tag as found in the original HLS Playlist.
      
      * If this tag is a `PantosTag.UnknownTag`, this value will be the data
      after the colon (or a zero-length string if there was no data after the colon).
@@ -81,7 +81,7 @@ public struct HLSTag: CustomDebugStringConvertible {
     public let tagData: HLSStringRef
     
     /**
-     Represents the duration of a fragment in a EXTINF tag.
+     Represents the duration of a segment in a EXTINF tag.
      
      Only valid for EXTINF tags, but used so frequently we have a special member variable for it. Will be kCMTimeInvalid if not EXTINF.
      */
@@ -131,7 +131,7 @@ public struct HLSTag: CustomDebugStringConvertible {
     }
     
     /**
-     Convenience initializer for creating one-off tags on the fly (for inserting into parsed HLS manifests).
+     Convenience initializer for creating one-off tags on the fly (for inserting into parsed HLS playlists).
      
      - parameter tagDescriptor: An HLSTagDescriptor (we will not be expecting any "special" descriptors, such
      as PantosTag.Comment, PantosTag.Location, PantosTag.UnknownTag). We'll use the `toString()` function

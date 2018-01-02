@@ -33,7 +33,7 @@ public struct HLSValueData {
 
 public typealias HLSTagDictionary = OrderedDictionary<String, HLSValueData>
 
-/// Describes a object that parse an individual tag from a line in a HLS manifest
+/// Describes a object that parse an individual tag from a line in a HLS playlist
 public protocol HLSTagParser: class {
     
     /**

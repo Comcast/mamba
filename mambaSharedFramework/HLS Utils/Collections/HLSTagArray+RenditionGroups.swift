@@ -21,8 +21,8 @@ import Foundation
 
 public extension Collection where Iterator.Element == HLSTag {
     
-    /// returns the ManifestType of this tag collection (i.e. master vs. variant)
-    public func type() -> ManifestType {
+    /// returns the FileType of this tag collection (i.e. master vs. variant)
+    public func type() -> FileType {
         
         for tag in self {
             if tag.tagDescriptor == PantosTag.EXTINF {
@@ -35,14 +35,14 @@ public extension Collection where Iterator.Element == HLSTag {
         return .unknown
     }
     
-    /// returns true if we can detect a SAP stream (only works for master manifests)
+    /// returns true if we can detect a SAP stream (only works for master playlists)
     public func hasSap() -> Bool {
         
         let languages = Set(self.extractValues(tagDescriptor: PantosTag.EXT_X_MEDIA, valueIdentifier: PantosValue.language))
         return languages.count > 1
     }
     
-    /// returns the #EXT-X-MEDIA tags for SAP audio streams if present (only works for master manifests)
+    /// returns the #EXT-X-MEDIA tags for SAP audio streams if present (only works for master playlists)
     public func sapStreams() -> [HLSTag]? {
         
         return self.filter({ $0.tagDescriptor == PantosTag.EXT_X_MEDIA }).filter({
@@ -66,7 +66,7 @@ public extension Collection where Iterator.Element == HLSTag {
         return values
     }
     
-    /// returns true if we are a master manifest and have a audio only stream
+    /// returns true if we are a master playlist and have a audio only stream
     public func hasAudioOnlyStream() -> Bool {
         
         guard let _ = firstAudioOnlyStreamInfTag() else { return false }

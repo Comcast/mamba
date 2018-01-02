@@ -19,7 +19,7 @@
 
 #include "CMTimeMakeFromString.h"
 
-// Used in calculating fragment durations to avoid floating point math.
+// Used in calculating segment durations to avoid floating point math.
 // On overflow, returns -1.
 static inline int32_t int32exp10(uint8_t exp) {
     static const int32_t powers[] = { 1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000 };

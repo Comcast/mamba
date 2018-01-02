@@ -34,13 +34,13 @@ class HLSTagGroupTests: XCTestCase {
         XCTAssert(tagGroup.endIndex == end)
     }
 
-    func testMediaFragmentTagGroup() {
+    func testMediaSegmentTagGroup() {
         let begin = 34526
         let end = 76352
         let mediaSequence = 25635
         let timeRange = CMTimeRange(start: CMTime(seconds: 13.24, preferredTimescale: CMTimeScale.defaultMambaTimeScale), duration: CMTime(seconds: 15.77, preferredTimescale: CMTimeScale.defaultMambaTimeScale))
         
-        let tagGroup = MediaFragmentTagGroup(range: begin...end, mediaSequence: mediaSequence, timeRange: timeRange, discontinuity: false)
+        let tagGroup = MediaSegmentTagGroup(range: begin...end, mediaSequence: mediaSequence, timeRange: timeRange, discontinuity: false)
         
         XCTAssert(tagGroup.debugDescription.contains("\(begin)"))
         XCTAssert(tagGroup.debugDescription.contains("\(end)"))

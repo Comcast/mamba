@@ -23,57 +23,57 @@ import XCTest
 
 class HLSTagWriting: XCTestCase {
     
-    static let sampleManifest = "#EXTM3U\n#EXT-X-KEY:METHOD=AES-128,URI=\"https://priv.example.com/key.php?r=52\",IV=0x9c7db8778570d05c3177c349fd9236aa"
+    static let samplePlaylist = "#EXTM3U\n#EXT-X-KEY:METHOD=AES-128,URI=\"https://priv.example.com/key.php?r=52\",IV=0x9c7db8778570d05c3177c349fd9236aa"
     
     func testWriteExisting_byString() {
-        let manifest = parseManifest(inString: HLSTagWriting.sampleManifest)
+        let playlist = parsePlaylist(inString: HLSTagWriting.samplePlaylist)
         
-        let numberValues = manifest.tags[0].numberOfParsedValues()
-        var tag = manifest.tags[0]
+        let numberValues = playlist.tags[0].numberOfParsedValues()
+        var tag = playlist.tags[0]
         
-        XCTAssert(manifest.tags[0].value(forKey: PantosValue.method.toString()) == "AES-128", "Should have parsed the manifest correctly")
+        XCTAssert(playlist.tags[0].value(forKey: PantosValue.method.toString()) == "AES-128", "Should have parsed the playlist correctly")
         
         tag.set(value: "NONE", forKey: PantosValue.method.toString())
         
-        XCTAssert(tag.value(forKey: PantosValue.method.toString()) == "NONE", "Should have parsed the manifest correctly")
+        XCTAssert(tag.value(forKey: PantosValue.method.toString()) == "NONE", "Should have parsed the playlist correctly")
         XCTAssert(tag.numberOfParsedValues() == numberValues, "Should have same number of parsed values")
     }
     
     func testWriteExisting_byValueIdentifier() {
-        let manifest = parseManifest(inString: HLSTagWriting.sampleManifest)
+        let playlist = parsePlaylist(inString: HLSTagWriting.samplePlaylist)
         
-        let numberValues = manifest.tags[0].numberOfParsedValues()
-        var tag = manifest.tags[0]
+        let numberValues = playlist.tags[0].numberOfParsedValues()
+        var tag = playlist.tags[0]
         
-        XCTAssert(manifest.tags[0].value(forValueIdentifier: PantosValue.method) == "AES-128", "Should have parsed the manifest correctly")
+        XCTAssert(playlist.tags[0].value(forValueIdentifier: PantosValue.method) == "AES-128", "Should have parsed the playlist correctly")
         
         tag.set(value: "NONE", forValueIdentifier: PantosValue.method)
         
-        XCTAssert(tag.value(forValueIdentifier: PantosValue.method) == "NONE", "Should have parsed the manifest correctly")
+        XCTAssert(tag.value(forValueIdentifier: PantosValue.method) == "NONE", "Should have parsed the playlist correctly")
         XCTAssert(tag.numberOfParsedValues() == numberValues, "Should have same number of parsed values")
     }
     
     func testWriteNew_byString() {
-        let manifest = parseManifest(inString: HLSTagWriting.sampleManifest)
+        let playlist = parsePlaylist(inString: HLSTagWriting.samplePlaylist)
         
-        let numberValues = manifest.tags[0].numberOfParsedValues()
-        var tag = manifest.tags[0]
+        let numberValues = playlist.tags[0].numberOfParsedValues()
+        var tag = playlist.tags[0]
         
         tag.set(value: "TEST_VALUE", forKey: PantosValue.codecs.toString())
         
-        XCTAssert(tag.value(forKey: PantosValue.codecs.toString()) == "TEST_VALUE", "Should have parsed the manifest correctly")
+        XCTAssert(tag.value(forKey: PantosValue.codecs.toString()) == "TEST_VALUE", "Should have parsed the playlist correctly")
         XCTAssert(tag.numberOfParsedValues() == numberValues + 1, "Should have one more parsed value")
     }
     
     func testWriteNew_byValueIdentifier() {
-        let manifest = parseManifest(inString: HLSTagWriting.sampleManifest)
+        let playlist = parsePlaylist(inString: HLSTagWriting.samplePlaylist)
         
-        let numberValues = manifest.tags[0].numberOfParsedValues()
-        var tag = manifest.tags[0]
+        let numberValues = playlist.tags[0].numberOfParsedValues()
+        var tag = playlist.tags[0]
         
         tag.set(value: "TEST_VALUE", forValueIdentifier: PantosValue.codecs)
         
-        XCTAssert(tag.value(forValueIdentifier: PantosValue.codecs) == "TEST_VALUE", "Should have parsed the manifest correctly")
+        XCTAssert(tag.value(forValueIdentifier: PantosValue.codecs) == "TEST_VALUE", "Should have parsed the playlist correctly")
         XCTAssert(tag.numberOfParsedValues() == numberValues + 1, "Should have one more parsed value")
     }
     

@@ -13,14 +13,14 @@
 import Foundation
 
 /**
- A performant parser for HLS manifests.
+ A performant parser for HLS playlists.
  */
 public final class HLSParser {
     
     internal fileprivate(set) var registeredTags = RegisteredHLSTags()
     
     /**
-     Constructs a parser for HLS manifests.
+     Constructs a parser for HLS playlists.
      
      - parameter tagTypes: An optional array of `HLSTagDescriptor` Types that the caller
      would like this parser to parse. If you have custom tags that you'd like to easily
@@ -38,7 +38,7 @@ public final class HLSParser {
     /**
      Adds a HLSTagDescriptor to the registered tags list for this parser.
      
-     It's worth noting that manifest parsing proceeds with the registered tags that are
+     It's worth noting that playlist parsing proceeds with the registered tags that are
      present at the beginning of parsing.
      */
     func registerHLSTags(tagType: HLSTagDescriptor.Type) {
@@ -48,7 +48,7 @@ public final class HLSParser {
     /**
      Removes all registered tags from this parser, leaving only the built in PantosTag collection.
      
-     It's worth noting that manifest parsing proceeds with the registered tags that are
+     It's worth noting that playlist parsing proceeds with the registered tags that are
      present at the beginning of parsing.
      */
     func unRegisterAllHLSTags() {
@@ -56,103 +56,103 @@ public final class HLSParser {
     }
     
     /**
-     Parses a HLS manifest into a `HLSManifest` structure for editing.
+     Parses a HLS playlist into a `HLSPlaylist` structure for editing.
      
      - warning: this method, to improve performance, keeps references to the
-     original `manifestData` in the final `HLSManifest` structure. (This allows us
+     original `playlistData` in the final `HLSPlaylist` structure. (This allows us
      to not allocate very much memory during parsing, which keeps this method
-     performant). The final `HLSManifest` will keep a reference to the `manifestData`
+     performant). The final `HLSPlaylist` will keep a reference to the `playlistData`
      so the caller does not have to keep a reference, but be aware that if a
      mutable data object is passed in and is mutated during parsing or afterward
-     while manipulating the manifest, the caller will get undefined behavior.
+     while manipulating the playlist, the caller will get undefined behavior.
      
-     - parameter manifestData: A `Data` object that represents a HLS manifest
+     - parameter playlistData: A `Data` object that represents a HLS playlist
      (typically from a web request)
      
-     - parameter url: The URL of the original manifest.
+     - parameter url: The URL of the original playlist.
      
-     - parameter success: A closure callback called with a `HLSManifest`
+     - parameter success: A closure callback called with a `HLSPlaylist`
      structure when the parse has sucessfully completed.
      
      - parameter failure: A closure callback called when the incoming HLS
-     manifest had some structural problem that prevented us from parsing.
+     playlist had some structural problem that prevented us from parsing.
      */
-    public func parse(manifestData data: Data,
+    public func parse(playlistData data: Data,
                       url: URL,
-                      success: @escaping HLSManifestParserSuccess,
-                      failure: @escaping HLSManifestParserFailure) {
+                      success: @escaping HLSPlaylistParserSuccess,
+                      failure: @escaping HLSPlaylistParserFailure) {
         
-        parse(manifestData: data,
-              customData: HLSManifestURLData(url: url),
-              hlsManifestConstructor: constructHLSManifest,
+        parse(playlistData: data,
+              customData: HLSPlaylistURLData(url: url),
+              hlsPlaylistConstructor: constructHLSPlaylist,
               success: success,
               failure: failure)
     }
     
     /**
-     Parses a HLS manifest into a `HLSManifest` structure for editing.
+     Parses a HLS playlist into a `HLSPlaylist` structure for editing.
      
      - warning: this method, to improve performance, keeps references to the
-     original `manifestData` in the final `HLSManifest` structure. (This allows us
+     original `playlistData` in the final `HLSPlaylist` structure. (This allows us
      to not allocate very much memory during parsing, which keeps this method
-     performant). The final `HLSManifest` will keep a reference to the `manifestData`
+     performant). The final `HLSPlaylist` will keep a reference to the `playlistData`
      so the caller does not have to keep a reference, but be aware that if a
      mutable data object is passed in and is mutated during parsing or afterward
-     while manipulating the manifest, the caller will get undefined behavior.
+     while manipulating the playlist, the caller will get undefined behavior.
      
-     - parameter manifestData: A `Data` object that represents a HLS manifest
+     - parameter playlistData: A `Data` object that represents a HLS playlist
      (typically from a web request)
      
-     - parameter url: The URL of the original manifest. This is optional, but some
-     manifest manipulations require it.
+     - parameter url: The URL of the original playlist. This is optional, but some
+     playlist manipulations require it.
      
      - parameter timeout: The timeout in seconds. If the timeout is exceeded, an
      `HLSParserError` with the `timedOut` code will be thrown.
      
-     - returns: A parsed `HLSManifest`.
+     - returns: A parsed `HLSPlaylist`.
      
-     - throws: If the manifest cannot be parsed, throws an `HLSParserError`.
+     - throws: If the playlist cannot be parsed, throws an `HLSParserError`.
      */
-    public func parse(manifestData data: Data, url: URL, timeout: Int = 1) throws -> HLSManifest {
-        return try parse(manifestData: data,
-                         customData: HLSManifestURLData(url: url),
-                         hlsManifestConstructor: constructHLSManifest)
+    public func parse(playlistData data: Data, url: URL, timeout: Int = 1) throws -> HLSPlaylist {
+        return try parse(playlistData: data,
+                         customData: HLSPlaylistURLData(url: url),
+                         hlsPlaylistConstructor: constructHLSPlaylist)
     }
     
     /**
-     Generic parser for your concrete `HLSManifestCore` objects, if you need one. Most
-     users will be using the built-in `HLSManifest` concrete object, so you probably
+     Generic parser for your concrete `HLSPlaylistCore` objects, if you need one. Most
+     users will be using the built-in `HLSPlaylist` concrete object, so you probably
      don't need to use this method.
      
      - warning: this method, to improve performance, keeps references to the
-     original `manifestData` in the final `HLSManifest` structure. (This allows us
+     original `playlistData` in the final `HLSPlaylist` structure. (This allows us
      to not allocate very much memory during parsing, which keeps this method
-     performant). The final `HLSManifest` will keep a reference to the `manifestData`
+     performant). The final `HLSPlaylist` will keep a reference to the `playlistData`
      so the caller does not have to keep a reference, but be aware that if a
      mutable data object is passed in and is mutated during parsing or afterward
-     while manipulating the manifest, the caller will get undefined behavior.
+     while manipulating the playlist, the caller will get undefined behavior.
      
-     - parameter manifestData: A `Data` object that represents a HLS manifest
+     - parameter playlistData: A `Data` object that represents a HLS playlist
      (typically from a web request)
      
      - parameter customData: Whatever custom data class you have defined for
-     your concrete `HLSManifestCore` object.
+     your concrete `HLSPlaylistCore` object.
      
-     - parameter hlsManifestConstructor: A closure that can construct your
-     concrete `HLSManifestCore` object from the `HLSTag` array, your custom
-     data class, a RegisteredHLSTags object, and the manifestData. See
-     the `constructHLSManifest` function for an example.
+     - parameter hlsPlaylistConstructor: A closure that can construct your
+     concrete `HLSPlaylistCore` object from the `HLSTag` array, your custom
+     data class, a RegisteredHLSTags object, and the playlistData. See
+     the `constructHLSPlaylist` function for an example.
      
-     - parameter success: A closure callback called with a concrete `HLSManifestCore`
+     - parameter success: A closure callback called with a concrete `HLSPlaylistCore`
      structure when the parse has sucessfully completed.
      
      - parameter failure: A closure callback called when the incoming HLS
-     manifest had some structural problem that prevented us from parsing.
+     playlist had some structural problem that prevented us from parsing.
      */
-    public func parse<D>(manifestData data: Data,
+    public func parse<D>(playlistData data: Data,
                          customData: D,
-                         hlsManifestConstructor: @escaping ([HLSTag], D, RegisteredHLSTags, Data) -> HLSManifestCore<D>,
-                         success: @escaping (HLSManifestCore<D>) -> (Swift.Void),
+                         hlsPlaylistConstructor: @escaping ([HLSTag], D, RegisteredHLSTags, Data) -> HLSPlaylistCore<D>,
+                         success: @escaping (HLSPlaylistCore<D>) -> (Swift.Void),
                          failure: @escaping HLSParserFailure) {
         
         let registeredTagsCopy = registeredTags
@@ -161,8 +161,8 @@ public final class HLSParser {
                                     data: data,
                                     parser: self,
                                     success: { (tags) in
-                                        let manifest = hlsManifestConstructor(tags, customData, registeredTagsCopy, data)
-                                        success(manifest) },
+                                        let playlist = hlsPlaylistConstructor(tags, customData, registeredTagsCopy, data)
+                                        success(playlist) },
                                     failure: failure)
         
         queue.sync {
@@ -173,50 +173,50 @@ public final class HLSParser {
     }
 
     /**
-     Generic parser for your concrete `HLSManifestCore` objects, if you need one. Most
-     users will be using the built-in `HLSManifest` concrete object, so you probably
+     Generic parser for your concrete `HLSPlaylistCore` objects, if you need one. Most
+     users will be using the built-in `HLSPlaylist` concrete object, so you probably
      don't need to use this method.
      
      - warning: this method, to improve performance, keeps references to the
-     original `manifestData` in the final `HLSManifest` structure. (This allows us
+     original `playlistData` in the final `HLSPlaylist` structure. (This allows us
      to not allocate very much memory during parsing, which keeps this method
-     performant). The final `HLSManifest` will keep a reference to the `manifestData`
+     performant). The final `HLSPlaylist` will keep a reference to the `playlistData`
      so the caller does not have to keep a reference, but be aware that if a
      mutable data object is passed in and is mutated during parsing or afterward
-     while manipulating the manifest, the caller will get undefined behavior.
+     while manipulating the playlist, the caller will get undefined behavior.
      
-     - parameter manifestData: A `Data` object that represents a HLS manifest
+     - parameter playlistData: A `Data` object that represents a HLS playlist
      (typically from a web request)
      
      - parameter customData: Whatever custom data class you have defined for
-     your concrete `HLSManifestCore` object.
+     your concrete `HLSPlaylistCore` object.
      
-     - parameter hlsManifestConstructor: A closure that can construct your
-     concrete `HLSManifestCore` object from the `HLSTag` array, your custom
-     data class, a RegisteredHLSTags object, and the manifestData. See
-     the `constructHLSManifest` function for an example.
+     - parameter hlsPlaylistConstructor: A closure that can construct your
+     concrete `HLSPlaylistCore` object from the `HLSTag` array, your custom
+     data class, a RegisteredHLSTags object, and the playlistData. See
+     the `constructHLSPlaylist` function for an example.
      
      - parameter timeout: The timeout in seconds. If the timeout is exceeded, an
      `HLSParserError` with the `timedOut` code will be thrown.
      
-     - returns: A parsed concrete `HLSManifestCore`.
+     - returns: A parsed concrete `HLSPlaylistCore`.
      
-     - throws: If the manifest cannot be parsed, throws an `HLSParserError`.
+     - throws: If the playlist cannot be parsed, throws an `HLSParserError`.
      */
-    public func parse<D>(manifestData data: Data,
+    public func parse<D>(playlistData data: Data,
                          customData: D,
-                         hlsManifestConstructor: @escaping ([HLSTag], D, RegisteredHLSTags, Data) -> HLSManifestCore<D>,
-                         timeout: Int = 1) throws -> HLSManifestCore<D> {
+                         hlsPlaylistConstructor: @escaping ([HLSTag], D, RegisteredHLSTags, Data) -> HLSPlaylistCore<D>,
+                         timeout: Int = 1) throws -> HLSPlaylistCore<D> {
         
         let semaphore = DispatchSemaphore(value: 0)
-        var manifest: HLSManifestCore<D>?
+        var playlist: HLSPlaylistCore<D>?
         var error: HLSParserError?
         
-        self.parse(manifestData: data,
+        self.parse(playlistData: data,
                    customData: customData,
-                   hlsManifestConstructor: hlsManifestConstructor,
-                   success: { (newManifest) -> (Void) in
-                    manifest = newManifest
+                   hlsPlaylistConstructor: hlsPlaylistConstructor,
+                   success: { (newPlaylist) -> (Void) in
+                    playlist = newPlaylist
                     semaphore.signal() },
                    failure: { (result) -> (Void) in
                     error = result
@@ -230,9 +230,9 @@ public final class HLSParser {
             throw error
         }
         
-        guard let result = manifest else {
-            assertionFailure("No error, but manifest was nil!")
-            throw HLSParserError.unknown(description: "No error found, but no manifest was generated.")
+        guard let result = playlist else {
+            assertionFailure("No error, but playlist was nil!")
+            throw HLSParserError.unknown(description: "No error found, but no playlist was generated.")
         }
         
         return result
@@ -248,14 +248,14 @@ public final class HLSParser {
     }
 }
 
-public typealias HLSManifestParserSuccess = (HLSManifest) -> (Swift.Void)
-public typealias HLSManifestParserFailure = (HLSParserError) -> (Swift.Void)
+public typealias HLSPlaylistParserSuccess = (HLSPlaylist) -> (Swift.Void)
+public typealias HLSPlaylistParserFailure = (HLSParserError) -> (Swift.Void)
 
 public typealias HLSParserSuccess = ([HLSTag]) -> (Swift.Void)
 public typealias HLSParserFailure = (HLSParserError) -> (Swift.Void)
 
-private func constructHLSManifest(withTags tags: [HLSTag], customData: HLSManifestURLData, registeredHLSTags: RegisteredHLSTags, hlsData: Data) -> HLSManifest {
-    return HLSManifest(tags: tags, registeredTags: registeredHLSTags, hlsData: hlsData, customData: customData)
+private func constructHLSPlaylist(withTags tags: [HLSTag], customData: HLSPlaylistURLData, registeredHLSTags: RegisteredHLSTags, hlsData: Data) -> HLSPlaylist {
+    return HLSPlaylist(tags: tags, registeredTags: registeredHLSTags, hlsData: hlsData, customData: customData)
 }
 
 fileprivate final class HLSParseWorker: NSObject, HLSRapidParserCallback {

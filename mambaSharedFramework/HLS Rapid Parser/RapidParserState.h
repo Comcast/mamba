@@ -63,7 +63,7 @@ const static uint8_t numberOfScanningParseStates = 13;
  Parse State Machine:
  
  We start in the Scanning state. We scan through each character in the 
- manifest in reverse and move to different states based on that character.
+ playlist in reverse and move to different states based on that character.
  
  We may take other actions based on the character value, but those are not
  part of the state machine and are not documented here. The actions taken

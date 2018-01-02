@@ -24,7 +24,7 @@ import XCTest
 class HLSWriterTests: XCTestCase {
     
     let roundTripTestFixture = "hls_writer_parser_roundtrip_tester.txt"
-    let positionOfSEQUENCETag = 66 // the position of a #EXT-X-MEDIA-SEQUENCE tag in the manifest
+    let positionOfSEQUENCETag = 66 // the position of a #EXT-X-MEDIA-SEQUENCE tag in the playlist
     
     // MARK: Test Success Paths
     
@@ -36,11 +36,11 @@ class HLSWriterTests: XCTestCase {
         
         do {
             let writer = HLSWriter(suppressMambaIdentityString: true)
-            let manifest = parseManifest(inString: hlsString)
+            let playlist = parsePlaylist(inString: hlsString)
             
             let stream = OutputStream.toMemory()
             stream.open()
-            try writer.write(hlsManifest: manifest, toStream: stream)
+            try writer.write(hlsPlaylist: playlist, toStream: stream)
             guard let data = stream.property(forKey: .dataWrittenToMemoryStreamKey) as? Data else {
                 XCTFail("No data written in write from HLSWriter")
                 return
@@ -68,21 +68,21 @@ class HLSWriterTests: XCTestCase {
         stream.open()
         do {
             let writer = HLSWriter()
-            var manifest = parseManifest(inString: hlsString)
+            var playlist = parsePlaylist(inString: hlsString)
             
             // remove a required value to force a failure of the writer
-            XCTAssert(manifest.tags[positionOfSEQUENCETag].tagDescriptor == PantosTag.EXT_X_MEDIA_SEQUENCE, "If this fails, the \"\(roundTripTestFixture)\" fixture has been edited so that a EXT_X_MEDIA_SEQUENCE tag is no longer in the \(positionOfSEQUENCETag)st spot. Adjust the number so that we grab the correct tag.")
+            XCTAssert(playlist.tags[positionOfSEQUENCETag].tagDescriptor == PantosTag.EXT_X_MEDIA_SEQUENCE, "If this fails, the \"\(roundTripTestFixture)\" fixture has been edited so that a EXT_X_MEDIA_SEQUENCE tag is no longer in the \(positionOfSEQUENCETag)st spot. Adjust the number so that we grab the correct tag.")
             
-            var tag = manifest.tags[positionOfSEQUENCETag]
+            var tag = playlist.tags[positionOfSEQUENCETag]
             
             tag.removeValue(forValueIdentifier: PantosValue.sequence)
             // we have to have a single value for a single-value tag, so replace the removed sequence number with this dummy value
             tag.set(value: "dummy_value", forKey: "dummy_key")
             
-            manifest.delete(atIndex: positionOfSEQUENCETag)
-            manifest.insert(tag: tag, atIndex: positionOfSEQUENCETag)
+            playlist.delete(atIndex: positionOfSEQUENCETag)
+            playlist.insert(tag: tag, atIndex: positionOfSEQUENCETag)
 
-            try writer.write(hlsManifest: manifest, toStream: stream)
+            try writer.write(hlsPlaylist: playlist, toStream: stream)
 
             XCTAssert(false, "Expecting an exception")
         }
@@ -104,11 +104,11 @@ class HLSWriterTests: XCTestCase {
         do {
             let sampleIdentityString = " Sample Ident String"
             let writer = HLSWriter(identityString: sampleIdentityString)
-            let manifest = parseManifest(inString: hlsString)
+            let playlist = parsePlaylist(inString: hlsString)
             
             let stream = OutputStream.toMemory()
             stream.open()
-            try writer.write(hlsManifest: manifest, toStream: stream)
+            try writer.write(hlsPlaylist: playlist, toStream: stream)
             guard let data = stream.property(forKey: .dataWrittenToMemoryStreamKey) as? Data else {
                 XCTFail("No data written in write from HLSWriter")
                 return
@@ -131,11 +131,11 @@ class HLSWriterTests: XCTestCase {
         
         do {
             let writer = HLSWriter()
-            let manifest = parseManifest(inString: hlsString)
+            let playlist = parsePlaylist(inString: hlsString)
             
             let stream = OutputStream.toMemory()
             stream.open()
-            try writer.write(hlsManifest: manifest, toStream: stream)
+            try writer.write(hlsPlaylist: playlist, toStream: stream)
             guard let data = stream.property(forKey: .dataWrittenToMemoryStreamKey) as? Data else {
                 XCTFail("No data written in write from HLSWriter")
                 return

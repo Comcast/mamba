@@ -104,7 +104,7 @@
     return self.stringCopy;
 }
 
-// This method uses strictly fixed-point arithmetic to compute EXTINF fragment durations.
+// This method uses strictly fixed-point arithmetic to compute EXTINF segment durations.
 // Using floating-point math can cause rounding errors on the order of .0001 seconds that make
 // timelines non-continuous.
 - (CMTime)EXTINFSegmentDuration {

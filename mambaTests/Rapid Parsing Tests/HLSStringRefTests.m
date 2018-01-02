@@ -71,7 +71,7 @@ static const int32_t testTimescale = 100000;
     __block HLSStringRef *stringRef = nil;
     
     @autoreleasepool {
-        NSURL *baseURL = [NSURL URLWithString:@"https://not.a.server.nowhere/media/manifest.m3u8"];
+        NSURL *baseURL = [NSURL URLWithString:@"https://not.a.server.nowhere/media/playlist.m3u8"];
         // By creating a relative URL, we ensure that memory is dynamically allocated for the URL's storage.
         // Thus, we should see a crash in a use-after-free case, whereas a URL that points to a static string
         // might return a pointer that would still be valid even after it is "freed".

@@ -21,7 +21,7 @@
 
 /*
  This is where we define the masterParseArray, which contains a 2D array of 
- function pointers to parse HLS manifests.
+ function pointers to parse HLS playlists.
  
  The first dimension of the array is the current state of the parser (defined 
  in RapidParserState.h)

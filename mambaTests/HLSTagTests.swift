@@ -144,7 +144,7 @@ class HLSTagTests: XCTestCase {
     
     func testTagConvenienceExtensions() {
         
-        let testManifestString = """
+        let testPlaylistString = """
 #EXTM3U
 #EXT-X-STREAM-INF:BANDWIDTH=1000000,CODECS="avc1.4d401f,mp4a.40.5",RESOLUTION=1280x720
 dummy1.m3u8
@@ -161,15 +161,15 @@ dummy11.m3u8
 #EXT-X-STREAM-INF:BANDWIDTH=3922800
 dummy13.m3u8
 """
-        let manifest = parseManifest(inString: testManifestString)
+        let playlist = parsePlaylist(inString: testPlaylistString)
         
-        let tag_audiocodec_videocodec_resolution = manifest.tags[0]
-        let tag_audiocodec = manifest.tags[2]
-        let tag_videocodec_resolution = manifest.tags[4]
-        let tag_audiocodec_videocodec = manifest.tags[6]
-        let tag_videocodec = manifest.tags[8]
-        let tag_resolution = manifest.tags[10]
-        let tag_nostreamdata = manifest.tags[12]
+        let tag_audiocodec_videocodec_resolution = playlist.tags[0]
+        let tag_audiocodec = playlist.tags[2]
+        let tag_videocodec_resolution = playlist.tags[4]
+        let tag_audiocodec_videocodec = playlist.tags[6]
+        let tag_videocodec = playlist.tags[8]
+        let tag_resolution = playlist.tags[10]
+        let tag_nostreamdata = playlist.tags[12]
         
         XCTAssert(tag_audiocodec_videocodec_resolution.codecs() != nil)
         XCTAssert(tag_audiocodec_videocodec_resolution.bandwidth() != nil)
@@ -220,7 +220,7 @@ dummy13.m3u8
         XCTAssert(tag_nostreamdata.isVideoStream() == .INDETERMINATE)
         XCTAssert(tag_nostreamdata.isAudioVideoStream() == .INDETERMINATE)
         
-        let tag_location = manifest.tags[1] // non #EXT-X-STREAM-INF tag
+        let tag_location = playlist.tags[1] // non #EXT-X-STREAM-INF tag
         
         XCTAssert(tag_location.codecs() == nil)
         XCTAssert(tag_location.bandwidth() == nil)

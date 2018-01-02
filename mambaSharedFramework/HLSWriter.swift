@@ -19,17 +19,17 @@
 
 import Foundation
 
-/// Class responsible for writing in memory HLS manifests to concrete manifests suitable for streaming or other parsers
+/// Class responsible for writing in memory HLS playlists to concrete playlists suitable for streaming or other parsers
 public class HLSWriter {
     
     /**
-     Constructs a writer for HLS manifests.
+     Constructs a writer for HLS playlists.
      
      - parameter identityString: This optional string will be used as a HLS 'comment' to easily
-     identify manifests parsed and written by this system.
+     identify playlists parsed and written by this system.
      
      - parameter suppressMambaIdentityString: If set to true, the writer will not add a comment
-     identifying that mamba generated the HLS manifest. If set to false (or not set at all) the
+     identifying that mamba generated the HLS playlist. If set to false (or not set at all) the
      write will output a comment (this is seperate from the identityString above)
      */
     public init(identityString: String? = nil,
@@ -38,8 +38,8 @@ public class HLSWriter {
         self.suppressMambaIdentityString = suppressMambaIdentityString
     }
     
-    /// Writes a `HLSManifest` object to a stream. Caller is assumed to be responsible for opening and closing this stream.
-    public func write(hlsManifest: HLSManifestInterface, toStream stream: OutputStream) throws {
+    /// Writes a `HLSPlaylist` object to a stream. Caller is assumed to be responsible for opening and closing this stream.
+    public func write(hlsPlaylist: HLSPlaylistInterface, toStream stream: OutputStream) throws {
         
         // write initial #EXTM3U
         try write(string: PantosTag.EXTM3U.toString(), toStream: stream)
@@ -53,10 +53,10 @@ public class HLSWriter {
         }
         
         // write tags
-        for tag in hlsManifest.tags {
+        for tag in hlsPlaylist.tags {
             if tag.isDirty {
-                guard let writer = hlsManifest.registeredTags.writer(forTag: tag.tagDescriptor) else {
-                    throw HLSWriterError.invalidManifest(description: "Cannot write dirty tag with unknown descriptor: \(tag.tagDescriptor.toString())")
+                guard let writer = hlsPlaylist.registeredTags.writer(forTag: tag.tagDescriptor) else {
+                    throw HLSWriterError.invalidPlaylist(description: "Cannot write dirty tag with unknown descriptor: \(tag.tagDescriptor.toString())")
                 }
                 try writer.write(tag: tag, toStream: stream)
             }
@@ -80,6 +80,6 @@ public class HLSWriter {
 
 /// Possible HLSWriter error conditions
 public enum HLSWriterError: Error {
-    case invalidManifest(description: String?)
+    case invalidPlaylist(description: String?)
 }
 

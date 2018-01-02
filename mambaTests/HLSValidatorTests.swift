@@ -117,8 +117,8 @@ class HLSValidatorTests: XCTestCase {
             return
         }
         
-        let manifest = parseManifest(inString: hlsString)
-        guard let validationIssues = HLSMasterManifestValidator.validate(hlsManifest: manifest) else {
+        let playlist = parsePlaylist(inString: hlsString)
+        guard let validationIssues = HLSMasterPlaylistValidator.validate(hlsPlaylist: playlist) else {
             return
         }
         if validationIssues.count > 0 {
@@ -126,10 +126,10 @@ class HLSValidatorTests: XCTestCase {
         }
     }
     
-    private func validate(validator: HLSManifestValidator.Type, manifest: String, expected: Int) {
+    private func validate(validator: HLSPlaylistValidator.Type, playlist: String, expected: Int) {
         
-        let m = parseManifest(inString: manifest)
-        guard let validationIssues = validator.validate(hlsManifest: m) else {
+        let m = parsePlaylist(inString: playlist)
+        guard let validationIssues = validator.validate(hlsPlaylist: m) else {
             if expected > 0 {
                 XCTAssert(false, "Found unexpected validation Issues should have \(expected) actually has 0")
             }
@@ -147,7 +147,7 @@ class HLSValidatorTests: XCTestCase {
         
         let u = EXT_X_MEDIARenditionGroupTYPEValidator.self
         let hlsLoadString = EXT_X_MEDIA_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
 
     func testEXT_X_MEDIARenditionGroupTYPEValidatorNonMatchingTypes() {
@@ -155,7 +155,7 @@ class HLSValidatorTests: XCTestCase {
         let u = EXT_X_MEDIARenditionGroupTYPEValidator.self
         EXT_X_MEDIA_txt.append("#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID=\"g104000\",NAME=\"English\",LANGUAGE=\"en\",DEFAULT=YES,AUTOSELECT=YES\n")
         let hlsLoadString = EXT_X_MEDIA_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
     func testEXT_X_MEDIARenditionGroupTYPEValidatorMultipleNonMatchingTypes() {
@@ -165,7 +165,7 @@ class HLSValidatorTests: XCTestCase {
             "#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID=\"g104000\",NAME=\"English\",LANGUAGE=\"en\",DEFAULT=YES,AUTOSELECT=YES\n",
             "#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID=\"g147200\",NAME=\"English\",LANGUAGE=\"en\",DEFAULT=YES,AUTOSELECT=YES\n"]
         let hlsLoadString = EXT_X_MEDIA_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 2)
+        validate(validator: u, playlist: hlsLoadString, expected: 2)
     }
     
     func testEXT_X_MEDIARenditionGroupTYPEValidatorMissingType() {
@@ -173,7 +173,7 @@ class HLSValidatorTests: XCTestCase {
         let u = EXT_X_MEDIARenditionGroupTYPEValidator.self
         EXT_X_MEDIA_txt.append("#EXT-X-MEDIA:GROUP-ID=\"g104000\",NAME=\"English\",LANGUAGE=\"en\",DEFAULT=YES,AUTOSELECT=YES\n")
         let hlsLoadString = EXT_X_MEDIA_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
     func testEXT_X_MEDIARenditionGroupTYPEValidatorMissingGroup() {
@@ -181,14 +181,14 @@ class HLSValidatorTests: XCTestCase {
         let u = EXT_X_MEDIARenditionGroupTYPEValidator.self
         EXT_X_MEDIA_txt.append("#EXT-X-MEDIA:NAME=\"English\",LANGUAGE=\"en\",DEFAULT=YES,AUTOSELECT=YES\n")
         let hlsLoadString = EXT_X_MEDIA_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testEXT_X_MEDIARenditionGroupNAMEValidatorOK() {
         
         let u = EXT_X_MEDIARenditionGroupNAMEValidator.self
         let hlsLoadString = EXT_X_MEDIA_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testEXT_X_MEDIARenditionGroupNAMEValidatorDuplicateName() {
@@ -196,7 +196,7 @@ class HLSValidatorTests: XCTestCase {
         let u = EXT_X_MEDIARenditionGroupNAMEValidator.self
         EXT_X_MEDIA_txt.append("#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID=\"g104000\",NAME=\"English\",LANGUAGE=\"en\",DEFAULT=YES,AUTOSELECT=YES\n")
         let hlsLoadString = EXT_X_MEDIA_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
     func testEXT_X_MEDIARenditionGroupNAMEValidatorMultipleDuplicateNames() {
@@ -206,7 +206,7 @@ class HLSValidatorTests: XCTestCase {
             "#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID=\"g104000\",NAME=\"English\",LANGUAGE=\"en\",DEFAULT=YES,AUTOSELECT=YES\n",
             "#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID=\"g147200\",NAME=\"English\",LANGUAGE=\"en\",DEFAULT=YES,AUTOSELECT=YES\n"]
         let hlsLoadString = EXT_X_MEDIA_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 2)
+        validate(validator: u, playlist: hlsLoadString, expected: 2)
     }
     
     func testEXT_X_MEDIARenditionGroupNAMEValidatorMissingName() {
@@ -214,7 +214,7 @@ class HLSValidatorTests: XCTestCase {
         let u = EXT_X_MEDIARenditionGroupNAMEValidator.self
         EXT_X_MEDIA_txt.append("#EXT-X-MEDIA:GROUP-ID=\"g104000\",LANGUAGE=\"en\",DEFAULT=YES,AUTOSELECT=YES\n")
         let hlsLoadString = EXT_X_MEDIA_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
     func testEXT_X_MEDIARenditionGroupNAMEValidatorMissingGroup() {
@@ -222,14 +222,14 @@ class HLSValidatorTests: XCTestCase {
         let u = EXT_X_MEDIARenditionGroupNAMEValidator.self
         EXT_X_MEDIA_txt.append("#EXT-X-MEDIA:LANGUAGE=\"en\",DEFAULT=YES,AUTOSELECT=YES\n")
         let hlsLoadString = EXT_X_MEDIA_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testEXT_X_MEDIARenditionGroupDEFAULTValidator() {
         
         let u = EXT_X_MEDIARenditionGroupDEFAULTValidator.self
         let hlsLoadString = EXT_X_MEDIA_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testEXT_X_MEDIARenditionGroupDEFAULTValidatorExtraValueOK() {
@@ -237,7 +237,7 @@ class HLSValidatorTests: XCTestCase {
         let u = EXT_X_MEDIARenditionGroupDEFAULTValidator.self
         EXT_X_MEDIA_txt.append("#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID=\"g104000\",NAME=\"English\",LANGUAGE=\"en\",DEFAULT=NO,AUTOSELECT=YES\n")
         let hlsLoadString = EXT_X_MEDIA_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testEXT_X_MEDIARenditionGroupDEFAULTValidatorExtraValue() {
@@ -245,7 +245,7 @@ class HLSValidatorTests: XCTestCase {
         let u = EXT_X_MEDIARenditionGroupDEFAULTValidator.self
         EXT_X_MEDIA_txt.append("#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID=\"g104000\",NAME=\"English\",LANGUAGE=\"en\",DEFAULT=YES,AUTOSELECT=YES\n")
         let hlsLoadString = EXT_X_MEDIA_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
     func testEXT_X_MEDIARenditionGroupDEFAULTValidatorExtraMissingValue() {
@@ -253,14 +253,14 @@ class HLSValidatorTests: XCTestCase {
         let u = EXT_X_MEDIARenditionGroupDEFAULTValidator.self
         EXT_X_MEDIA_txt.append("#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID=\"g104000\",NAME=\"English\",LANGUAGE=\"en\",DEFAULT=,AUTOSELECT=YES\n")
         let hlsLoadString = EXT_X_MEDIA_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testEXT_X_MEDIARenditionGroupAUTOSELECTValidator() {
         
         let u = EXT_X_MEDIARenditionGroupAUTOSELECTValidator.self
         let hlsLoadString = EXT_X_MEDIA_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testEXT_X_MEDIARenditionGroupAUTOSELECTValidatorDuplicateValue() {
@@ -268,7 +268,7 @@ class HLSValidatorTests: XCTestCase {
         let u = EXT_X_MEDIARenditionGroupAUTOSELECTValidator.self
         EXT_X_MEDIA_txt.append("#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID=\"g104000\",NAME=\"English\",LANGUAGE=\"en\",DEFAULT=YES,AUTOSELECT=YES\n")
         let hlsLoadString = EXT_X_MEDIA_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
     func testEXT_X_MEDIARenditionGroupAUTOSELECTValidatorValidExtraValue() {
@@ -276,107 +276,107 @@ class HLSValidatorTests: XCTestCase {
         let u = EXT_X_MEDIARenditionGroupAUTOSELECTValidator.self
         EXT_X_MEDIA_txt.append("#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID=\"g104000\",NAME=\"English\",LANGUAGE=\"fr\",DEFAULT=YES,AUTOSELECT=YES\n")
         let hlsLoadString = EXT_X_MEDIA_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
-    func testHLSManifestAggregateTagGroupValidatorOK() {
+    func testHLSPlaylistAggregateTagGroupValidatorOK() {
         
-        let u = HLSManifestRenditionGroupValidator.self
+        let u = HLSPlaylistRenditionGroupValidator.self
         let hlsLoadString = EXT_X_MEDIA_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
-    func testHLSManifestAggregateTagGroupValidatorMultipleFails() {
+    func testHLSPlaylistAggregateTagGroupValidatorMultipleFails() {
         
-        let u = HLSManifestRenditionGroupValidator.self
+        let u = HLSPlaylistRenditionGroupValidator.self
         EXT_X_MEDIA_txt.append("#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID=\"g104000\",NAME=\"English\",LANGUAGE=\"fr\",DEFAULT=YES,AUTOSELECT=YES\n")
         let hlsLoadString = EXT_X_MEDIA_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 4)
+        validate(validator: u, playlist: hlsLoadString, expected: 4)
     }
     
-    func testHLSManifestAggregateTagCardinalityValidatorOK() {
+    func testHLSPlaylistAggregateTagCardinalityValidatorOK() {
 
-        let u = HLSManifestAggregateTagCardinalityValidator.self
+        let u = HLSPlaylistAggregateTagCardinalityValidator.self
         let hlsLoadString = EXT_X_MEDIA_SEQUENCE_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
-    func testHLSManifestAggregateTagCardinalityValidatorDuplicate() {
+    func testHLSPlaylistAggregateTagCardinalityValidatorDuplicate() {
         
         EXT_X_MEDIA_SEQUENCE_txt.append("\n#EXT-X-MEDIA-SEQUENCE:2\n")
-        let u = HLSManifestAggregateTagCardinalityValidator.self
+        let u = HLSPlaylistAggregateTagCardinalityValidator.self
         let hlsLoadString = EXT_X_MEDIA_SEQUENCE_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
-    func testHLSManifestAggregateTagCardinalityValidatorDuplicateTARGET_DURATION() {
+    func testHLSPlaylistAggregateTagCardinalityValidatorDuplicateTARGET_DURATION() {
         
         EXT_X_MEDIA_SEQUENCE_txt.append("\n#EXT-X-TARGETDURATION:10\n")
-        let u = HLSManifestAggregateTagCardinalityValidator.self
+        let u = HLSPlaylistAggregateTagCardinalityValidator.self
         let hlsLoadString = EXT_X_MEDIA_SEQUENCE_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
-    func testHLSManifestAggregateTagCardinalityValidatorMissingTARGET_DURATION() {
+    func testHLSPlaylistAggregateTagCardinalityValidatorMissingTARGET_DURATION() {
         
         EXT_X_MEDIA_SEQUENCE_txt.remove(at: 5)
-        let u = HLSManifestAggregateTagCardinalityValidator.self
+        let u = HLSPlaylistAggregateTagCardinalityValidator.self
         let hlsLoadString = EXT_X_MEDIA_SEQUENCE_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
-    func testHLSManifestAggregateTagCardinalityValidatorMultipleDuplicates() {
+    func testHLSPlaylistAggregateTagCardinalityValidatorMultipleDuplicates() {
         
         EXT_X_MEDIA_SEQUENCE_txt.append("\n#EXT-X-MEDIA-SEQUENCE:2\n")
         EXT_X_MEDIA_SEQUENCE_txt.append("\n#EXT-X-ENDLIST\n")
-        let u = HLSManifestAggregateTagCardinalityValidator.self
+        let u = HLSPlaylistAggregateTagCardinalityValidator.self
         let hlsLoadString = EXT_X_MEDIA_SEQUENCE_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 2)
+        validate(validator: u, playlist: hlsLoadString, expected: 2)
     }
     
-    func testHLSManifestAggregateTagCardinalityValidatorMissing() {
+    func testHLSPlaylistAggregateTagCardinalityValidatorMissing() {
 
         EXT_X_MEDIA_SEQUENCE_txt.remove(at: 6)
-        let u = HLSManifestAggregateTagCardinalityValidator.self
+        let u = HLSPlaylistAggregateTagCardinalityValidator.self
         let hlsLoadString = EXT_X_MEDIA_SEQUENCE_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testAudioGroupOK() {
         
-        let u = HLSManifestRenditionGroupAUDIOValidator.self
+        let u = HLSPlaylistRenditionGroupAUDIOValidator.self
         let hlsLoadString = AudioVideoGroup_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testAudioGroupNoCommonCodec() {
         
-        let u = HLSManifestRenditionGroupAUDIOValidator.self
+        let u = HLSPlaylistRenditionGroupAUDIOValidator.self
         AudioVideoGroup_txt.append("\n#EXT-X-STREAM-INF:BANDWIDTH=560400,AUDIO=\"g104000\",PROGRAM-ID=1,CODECS=\"badcodec\",RESOLUTION=320x180\n")
         let hlsLoadString = AudioVideoGroup_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
     func testVideoGroupOK() {
         
         let hlsLoadString = AudioVideoGroup_txt.map { $0.replacingOccurrences(of: "AUDIO", with: "VIDEO") }.joined()
-        let u = HLSManifestRenditionGroupVIDEOValidator.self
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        let u = HLSPlaylistRenditionGroupVIDEOValidator.self
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testVideoGroupNoCommonCodec() {
         
         AudioVideoGroup_txt.append("\n#EXT-X-STREAM-INF:BANDWIDTH=560400,VIDEO=\"g104000\",PROGRAM-ID=1,CODECS=\"badcodec\",RESOLUTION=320x180\n")
         let hlsLoadString = AudioVideoGroup_txt.map { $0.replacingOccurrences(of: "AUDIO", with: "VIDEO") }.joined()
-        let u = HLSManifestRenditionGroupVIDEOValidator.self
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        let u = HLSPlaylistRenditionGroupVIDEOValidator.self
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
     func testEXT_X_STREAM_INFRenditionGroupAUDIOValidatorOK() {
         
         let u = EXT_X_STREAM_INFRenditionGroupAUDIOValidator.self
         let hlsLoadString = AudioVideoGroup_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     
@@ -386,7 +386,7 @@ class HLSValidatorTests: XCTestCase {
         AudioVideoGroup_txt.remove(at: 1)
         AudioVideoGroup_txt.remove(at: 2)
         let hlsLoadString = AudioVideoGroup_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
     func testEXT_X_STREAM_INFRenditionGroupAUDIOValidatorMissingEXT_X_STREAM_INF() {
@@ -395,14 +395,14 @@ class HLSValidatorTests: XCTestCase {
         AudioVideoGroup_txt.remove(at: AudioVideoGroup_txt.count - 2)
         AudioVideoGroup_txt.remove(at: 5)
         let hlsLoadString = AudioVideoGroup_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testEXT_X_STREAM_INFRenditionGroupSUBTITLESValidatorOK() {
         
         let u = EXT_X_STREAM_INFRenditionGroupSUBTITLESValidator.self
         let hlsLoadString = SubtitlesAndCCGroup_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testEXT_X_STREAM_INFRenditionGroupSUBTITLESValidatorMissingEXT_X_MEDIA() {
@@ -412,7 +412,7 @@ class HLSValidatorTests: XCTestCase {
         SubtitlesGroupTxt.remove(at: 2)
         SubtitlesGroupTxt.remove(at: 1)
         let hlsLoadString = SubtitlesGroupTxt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
     func testEXT_X_STREAM_INFRenditionGroupSUBTITLESValidatorMissingEXT_X_STREAM_INF() {
@@ -424,14 +424,14 @@ class HLSValidatorTests: XCTestCase {
         SubtitlesGroupTxt.remove(at: 5)
         SubtitlesGroupTxt.remove(at: 4)
         let hlsLoadString = SubtitlesGroupTxt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testEXT_X_STREAM_INFRenditionGroupVIDEOValidatorOK() {
         
         let hlsLoadString = AudioVideoGroup_txt.map { $0.replacingOccurrences(of: "AUDIO", with: "VIDEO") }.joined()
         let u = EXT_X_STREAM_INFRenditionGroupVIDEOValidator.self
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testEXT_X_STREAM_INFRenditionGroupVIDEOValidatorMissingEXT_X_MEDIA() {
@@ -440,7 +440,7 @@ class HLSValidatorTests: XCTestCase {
         AudioVideoGroup_txt.remove(at: 2)
         let hlsLoadString = AudioVideoGroup_txt.map { $0.replacingOccurrences(of: "AUDIO", with: "VIDEO") }.joined()
         let u = EXT_X_STREAM_INFRenditionGroupVIDEOValidator.self
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
     func testEXT_X_STREAM_INFRenditionGroupVIDEOValidatorMissingEXT_X_STREAM_INF() {
@@ -449,7 +449,7 @@ class HLSValidatorTests: XCTestCase {
         AudioVideoGroup_txt.remove(at: AudioVideoGroup_txt.count - 2)
         AudioVideoGroup_txt.remove(at: 5)
         let hlsLoadString = AudioVideoGroup_txt.map { $0.replacingOccurrences(of: "AUDIO", with: "VIDEO") }.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testEXT_X_STREAM_INFRenditionGroupVIDEOValidatorMissingAllEXT_X_STREAM_INF() {
@@ -457,14 +457,14 @@ class HLSValidatorTests: XCTestCase {
         let u = EXT_X_STREAM_INFRenditionGroupVIDEOValidator.self
         let newGroup = AudioVideoGroup_txt[0...4]
         let hlsLoadString = newGroup.map { $0.replacingOccurrences(of: "AUDIO", with: "VIDEO") }.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testEXT_X_TARGETDURATIONLengthValidationOK() {
         
         let hlsLoadString = EXT_X_MEDIA_SEQUENCE_txt.joined()
         let u = EXT_X_TARGETDURATIONLengthValidator.self
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testEXT_X_TARGETDURATIONLengthValidationTooLong() {
@@ -472,78 +472,78 @@ class HLSValidatorTests: XCTestCase {
         EXT_X_MEDIA_SEQUENCE_txt.append("\n#EXTINF:11,1\n")
         let hlsLoadString = EXT_X_MEDIA_SEQUENCE_txt.joined()
         let u = EXT_X_TARGETDURATIONLengthValidator.self
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
 
     func testMatchingPROGRAM_IDValidatorOK() {
         
         let hlsLoadString = AudioVideoGroup_txt.joined()
-        let u = HLSManifestRenditionGroupMatchingPROGRAM_IDValidator.self
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        let u = HLSPlaylistRenditionGroupMatchingPROGRAM_IDValidator.self
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testMatchingPROGRAM_IDValidatorMisMatch() {
         
         AudioVideoGroup_txt.append("\n#EXT-X-STREAM-INF:BANDWIDTH=560400,VIDEO=\"g104000\",PROGRAM-ID=2,CODECS=\"badcodec\",RESOLUTION=320x180\n")
         let hlsLoadString = AudioVideoGroup_txt.joined()
-        let u = HLSManifestRenditionGroupMatchingPROGRAM_IDValidator.self
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        let u = HLSPlaylistRenditionGroupMatchingPROGRAM_IDValidator.self
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
     func testMatchingPROGRAM_IDValidatorMissing() {
         
         AudioVideoGroup_txt.append("\n#EXT-X-STREAM-INF:BANDWIDTH=560400,VIDEO=\"g104000\",PROGRAM-ID=,CODECS=\"badcodec\",RESOLUTION=320x180\n")
         let hlsLoadString = AudioVideoGroup_txt.joined()
-        let u = HLSManifestRenditionGroupMatchingPROGRAM_IDValidator.self
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        let u = HLSPlaylistRenditionGroupMatchingPROGRAM_IDValidator.self
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
     func testRenditionGroupMatchingNAMELANGUAGEValidatorOK() {
         
         let hlsLoadString = AudioVideoGroup_txt.joined()
-        let u = HLSManifestRenditionGroupMatchingNAMELANGUAGEValidator.self
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        let u = HLSPlaylistRenditionGroupMatchingNAMELANGUAGEValidator.self
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testRenditionGroupMatchingNAMELANGUAGEValidatorExtraName() {
         
         AudioVideoGroup_txt.append("\n#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID=\"g104000\",NAME=\"French\",LANGUAGE=\"en\",DEFAULT=NO,AUTOSELECT=YES\n")
         let hlsLoadString = AudioVideoGroup_txt.joined()
-        let u = HLSManifestRenditionGroupMatchingNAMELANGUAGEValidator.self
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        let u = HLSPlaylistRenditionGroupMatchingNAMELANGUAGEValidator.self
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
     func testRenditionGroupMatchingNAMELANGUAGEValidatorExtraLanguage() {
         
         AudioVideoGroup_txt.append("\n#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID=\"g104000\",NAME=\"Spanish\",LANGUAGE=\"fr\",DEFAULT=NO,AUTOSELECT=YES\n")
         let hlsLoadString = AudioVideoGroup_txt.joined()
-        let u = HLSManifestRenditionGroupMatchingNAMELANGUAGEValidator.self
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        let u = HLSPlaylistRenditionGroupMatchingNAMELANGUAGEValidator.self
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
     func testRenditionGroupMatchingNAMELANGUAGEValidatorExtraBoth() {
         
         AudioVideoGroup_txt.append("\n#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID=\"g104000\",NAME=\"French\",LANGUAGE=\"fr\",DEFAULT=NO,AUTOSELECT=YES\n")
         let hlsLoadString = AudioVideoGroup_txt.joined()
-        let u = HLSManifestRenditionGroupMatchingNAMELANGUAGEValidator.self
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        let u = HLSPlaylistRenditionGroupMatchingNAMELANGUAGEValidator.self
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
     func testRenditionGroupMatchingNAMELANGUAGEValidatorMissingName() {
         
         AudioVideoGroup_txt.append("\n#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID=\"g104000\",LANGUAGE=\"dr\",DEFAULT=NO,AUTOSELECT=YES\n")
         let hlsLoadString = AudioVideoGroup_txt.joined()
-        let u = HLSManifestRenditionGroupMatchingNAMELANGUAGEValidator.self
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        let u = HLSPlaylistRenditionGroupMatchingNAMELANGUAGEValidator.self
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
     func testEXT_X_DISCONTINUITY_SEQUENCEValidationOK() {
         
-        let u = HLSManifestAggregateTagCardinalityValidator.self
+        let u = HLSPlaylistAggregateTagCardinalityValidator.self
         var DiscontinuitySequenceTxt = EXT_X_MEDIA_SEQUENCE_txt
         DiscontinuitySequenceTxt.insert("#EXT-X-DISCONTINUITY-SEQUENCE:1\n", at: 11)
         let hlsLoadString = DiscontinuitySequenceTxt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testEXT_X_DISCONTINUITY_SEQUENCEValidationDuplicate() {
@@ -552,15 +552,15 @@ class HLSValidatorTests: XCTestCase {
         DiscontinuitySequenceTxt.insert("#EXT-X-DISCONTINUITY-SEQUENCE:1\n", at: 11)
         DiscontinuitySequenceTxt.append("\n#EXT-X-DISCONTINUITY-SEQUENCE:2\n")
         let hlsLoadString = DiscontinuitySequenceTxt.joined()
-        let u = HLSManifestAggregateTagCardinalityValidator.self
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        let u = HLSPlaylistAggregateTagCardinalityValidator.self
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
     func testEXT_X_STARTTimeOffsetValidatorOK() {
         
         let hlsLoadString = EXT_X_MEDIA_SEQUENCE2_txt.joined()
         let u = EXT_X_STARTTimeOffsetValidator.self
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     
@@ -568,7 +568,7 @@ class HLSValidatorTests: XCTestCase {
         
         let hlsLoadString = EXT_X_MEDIA_SEQUENCE2_txt.map { $0.replacingOccurrences(of: "TIME-OFFSET=30", with: "TIME-OFFSET=60") }.joined()
         let u = EXT_X_STARTTimeOffsetValidator.self
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
     func testEXT_X_STARTTimeOffsetWithEndListValidatorOK() {
@@ -576,7 +576,7 @@ class HLSValidatorTests: XCTestCase {
         var hlsLoadString = EXT_X_MEDIA_SEQUENCE2_txt.joined()
         hlsLoadString.append("\n#EXT-X-ENDLIST\n")
         let u = EXT_X_STARTTimeOffsetValidator.self
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testEXT_X_STARTTimeOffsetsetWithEndListValidatorNearEndTime() {
@@ -584,7 +584,7 @@ class HLSValidatorTests: XCTestCase {
         var hlsLoadString = EXT_X_MEDIA_SEQUENCE2_txt.map { $0.replacingOccurrences(of: "TIME-OFFSET=30", with: "TIME-OFFSET=60") }.joined()
         hlsLoadString.append("\n#EXT-X-ENDLIST\n")
         let u = EXT_X_STARTTimeOffsetValidator.self
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testEXT_X_STARTTimeOffsetsetWithEndListValidatorExceedEndTime() {
@@ -592,14 +592,14 @@ class HLSValidatorTests: XCTestCase {
         var hlsLoadString = EXT_X_MEDIA_SEQUENCE2_txt.map { $0.replacingOccurrences(of: "TIME-OFFSET=30", with: "TIME-OFFSET=90") }.joined()
         hlsLoadString.append("\n#EXT-X-ENDLIST\n")
         let u = EXT_X_STARTTimeOffsetValidator.self
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
     func testEXT_X_STREAM_INFRenditionGroupCLOSEDCAPTIONSValidatorOK() {
         
         let u = EXT_X_STREAM_INFRenditionGroupCLOSEDCAPTIONSValidator.self
         let hlsLoadString = SubtitlesAndCCGroup_txt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testEXT_X_STREAM_INFRenditionGroupCCValidator_ValueNONE_OK() {
@@ -610,7 +610,7 @@ class HLSValidatorTests: XCTestCase {
         SubtitlesGroupTxt.remove(at: 3)
         SubtitlesGroupTxt.insert("\n#EXT-X-STREAM-INF:BANDWIDTH=41457,CODECS=\"mp4a.40.2\",CLOSED-CAPTIONS=NONE,SUBTITLES=\"subs\"\n", at: 5)
         let hlsLoadString = SubtitlesGroupTxt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testEXT_X_STREAM_INFRenditionGroupCCValidator_MissingEXT_X_MEDIA() {
@@ -619,7 +619,7 @@ class HLSValidatorTests: XCTestCase {
         var SubtitlesGroupTxt = SubtitlesAndCCGroup_txt
         SubtitlesGroupTxt.remove(at: 3)
         let hlsLoadString = SubtitlesGroupTxt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
     
     func testEXT_X_STREAM_INFRenditionGroupCCValidator_MissingEXT_X_STREAM_INF() {
@@ -629,7 +629,7 @@ class HLSValidatorTests: XCTestCase {
         SubtitlesGroupTxt.remove(at: 7)
         SubtitlesGroupTxt.remove(at: 6)
         let hlsLoadString = SubtitlesGroupTxt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 0)
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
     }
     
     func testEXT_X_MEDIARenditionINSTREAMIDValidatorNoINSTREAMID() {
@@ -639,7 +639,7 @@ class HLSValidatorTests: XCTestCase {
         SubtitlesGroupTxt.remove(at: 3)
         SubtitlesGroupTxt.append("\n#EXT-X-MEDIA:TYPE=CLOSED-CAPTIONS,GROUP-ID=\"cc1\",LANGUAGE=\"en\",NAME=\"English\",AUTOSELECT=YES,DEFAULT=YES\n")
         let hlsLoadString = SubtitlesGroupTxt.joined()
-        validate(validator: u, manifest: hlsLoadString, expected: 1)
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
 
 }

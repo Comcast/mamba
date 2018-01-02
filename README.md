@@ -10,13 +10,13 @@ Mamba
 
 Mamba is a Swift iOS and tvOS framework to parse, validate and write [HTTP Live Streaming (HLS)](https://tools.ietf.org/html/draft-pantos-http-live-streaming-23) data.
 
-This framework is used in Comcast applications to parse, validate, edit and write HLS manifests to deliver video to millions of customers. It was written by the [Comcast VIPER](https://stackoverflow.com/jobs/companies/comcast-viper) Player Platform team.
+This framework is used in Comcast applications to parse, validate, edit and write HLS playlists to deliver video to millions of customers. It was written by the [Comcast VIPER](https://stackoverflow.com/jobs/companies/comcast-viper) Player Platform team.
 
 _Mamba Project Goals:_
 
-* **Simple-to-use parsing, editing and writing** of HLS manifests.
+* **Simple-to-use parsing, editing and writing** of HLS playlists.
 
-* **Maximum performance**. We required our parsing library to parse very large HLS manifests (12 hour Video-On-Demand) on low end phones in a few milliseconds. A internal core C library is used for very fast parsing of large manifests.
+* **Maximum performance**. We required our parsing library to parse very large HLS playlists (12 hour Video-On-Demand) on low end phones in a few milliseconds. A internal core C library is used for very fast parsing of large playlists.
 
 ## Requires
 
@@ -26,7 +26,7 @@ _Mamba Project Goals:_
 
 ## Usage
 
-### _Parsing a HLS Manifest_
+### _Parsing a HLS Playlist_
 
 Create an `HLSParser`. 
 
@@ -34,65 +34,65 @@ Create an `HLSParser`.
 let parser = HLSParser()
 ```
 
-Parse your HLS manifest using the parser. Here's the asynchronous version:
+Parse your HLS playlist using the parser. Here's the callback version:
 
 ```swift
-let myManifestData: Data = ... // source of HLS data
-let myManifestURL: URL = ... // the URL of this manifest resource
+let myPlaylistData: Data = ... // source of HLS data
+let myPlaylistURL: URL = ... // the URL of this playlist resource
 
-parser.parse(manifestData: myManifestData,
-             url: myManifestURL,
-             success: { manifest in
-                  // do something with the parsed HLSManifest object
+parser.parse(playlistData: myPlaylistData,
+             url: myPlaylistURL,
+             success: { playlist in
+                  // do something with the parsed HLSPlaylist object
              },
              failure: { parserError in
                   // handle the HLSParserError
              })
 ```
 
-And here's the synchronous version:
+And here's the inline version:
 
 ```swift
-let manifest: HLSManifest
+let playlist: HLSPlaylist
 do {
-    // note: could take several milliseconds for large manifests!
-    manifest = try parser.parse(manifestData: myManifestData,
-                                url: myManifestURL)
+    // note: could take several milliseconds for large playlists!
+    playlist = try parser.parse(playlistData: myPlaylistData,
+                                url: myPlaylistURL)
 }
 catch {
-    // we received an error in parsing this manifest
+    // we received an error in parsing this playlist
 }
-// do something with the parsed HLSManifest
+// do something with the parsed HLSPlaylist
 ```
 
-You now have an HLS manifest object.
+You now have an HLS playlist object.
 
-### _HLSManifest_
+### _HLSPlaylist_
 
-This struct is a in-memory representation of a HLS manifest.
+This struct is a in-memory representation of a HLS playlist.
 
 It includes:
 
-* The `URL` of the manifest.
-* An array of `HLSTag`s that represent each line in the HLS manifest. This array is editable, so you can make edits to the manifest.
-* Utility functions to tell if a manifest is a master or variant, and if it is a Live, VOD or Event style playlist.
-* Helpful functionality around the structure of a manifest, including calculated references to the "header", "footer" and all the video fragments and the metadata around them. This structure is kept up to date behind the scenes as the manifest is edited.
+* The `URL` of the playlist.
+* An array of `HLSTag`s that represent each line in the HLS playlist. This array is editable, so you can make edits to the playlist.
+* Utility functions to tell if a playlist is a master or variant, and if it is a Live, VOD or Event style playlist.
+* Helpful functionality around the structure of a playlist, including calculated references to the "header", "footer" and all the video segments and the metadata around them. This structure is kept up to date behind the scenes as the playlist is edited.
 
-`HLSManifest` objects are highly editable.
+`HLSPlaylist` objects are highly editable.
 
-### _Validating a HLS Manifest_
+### _Validating a HLS Playlist_
 
-Validate your HLS Manifest using the `HLSCompleteManifestValidator`.
+Validate your HLS Playlist using the `HLSCompletePlaylistValidator`.
 
 ```swift
-let issues = try HLSCompleteManifestValidator.validate(hlsManifest: manifest)
+let issues = try HLSCompletePlaylistValidator.validate(hlsPlaylist: playlist)
 ```
 
-It returns an array of `HLSValidationIssue`s found with the HLS Manifest. They each have a description and a severity associated with them.
+It returns an array of `HLSValidationIssue`s found with the HLS Playlist. They each have a description and a severity associated with them.
 
 *We currently implement only a subset of the HLS validation rules as described in the [HLS specification](https://tools.ietf.org/html/draft-pantos-http-live-streaming-23). Improving our HLS validation coverage would be a most welcome pull request!*
 
-### _Writing a HLS Manifest_
+### _Writing a HLS Playlist_
 
 Create a `HLSWriter`.
 
@@ -100,13 +100,13 @@ Create a `HLSWriter`.
 let writer = HLSWriter()
 ```
 
-Write your HLS manifest to a stream.
+Write your HLS playlist to a stream.
 
 ```swift
-let stream: OutputStream = ... // stream to receive the HLS Manifest
+let stream: OutputStream = ... // stream to receive the HLS Playlist
 
 do {
-    try writer.write(hlsManifest: manifest, toStream: stream)
+    try writer.write(hlsPlaylist: playlist, toStream: stream)
 }
 catch {
     // there was an error severe enough for us to stop writing the data
@@ -158,12 +158,8 @@ You can now look through `HLSTag` objects for your custom tag values just as if 
 
 In order to achieve our performance goals, the internal C parser for HLS had to minimize the amount of heap memory allocated.
 
-This meant that, for each `HLSTag` object that is included in a `HLSManifest`, instead of using a swift `String` to represent data, we use a `HLSStringRef`, which is a object that is a reference into the memory of the original data used to parse the manifest. This greatly speeds parsing, but comes at a cost: **these `HLSTag` objects are unsafe to use beyond the lifetime of their parent `HLSManifest`**. 
+This meant that, for each `HLSTag` object that is included in a `HLSPlaylist`, instead of using a swift `String` to represent data, we use a `HLSStringRef`, which is a object that is a reference into the memory of the original data used to parse the playlist. This greatly speeds parsing, but comes at a cost: **these `HLSTag` objects are unsafe to use beyond the lifetime of their parent `HLSPlaylist`**. 
 
-In general, this is no problem. Normal usage of a `HLSManifest` would be (1) Parse the manifest, (2) Edit by manipulating `HLSTag`s (3) Write the manifest. 
+In general, this is no problem. Normal usage of a `HLSPlaylist` would be (1) Parse the playlist, (2) Edit by manipulating `HLSTag`s (3) Write the playlist. 
 
-If you do, for some reason, need to access `HLSTag` data beyond the lifetime of the parent `HLSManifest` object, you'll need to make a copy of all `HLSStringRef` data of interest into a regular swift `String`. There's a string conversion function in `HLSStringRef` to accomplish this.
-
-### _Nomenclature_
-
-This project and its documentation use the words "fragment" and "segment" and also the words "manifest" and "playlist" interchangably. See the [HLS specification](https://tools.ietf.org/html/draft-pantos-http-live-streaming-23) for more details about segment and playlist definitions.
+If you do, for some reason, need to access `HLSTag` data beyond the lifetime of the parent `HLSPlaylist` object, you'll need to make a copy of all `HLSStringRef` data of interest into a regular swift `String`. There's a string conversion function in `HLSStringRef` to accomplish this.

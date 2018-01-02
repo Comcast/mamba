@@ -84,7 +84,7 @@ public struct RegisteredHLSTags: CustomDebugStringConvertible {
         // It's a programming error to have a dirty tag that does not have a registered writer.
         // It means that a different registeredTags was used to write than was used to parse, or
         // that semantics have changed and a previously un-editable tag can be edited.
-        // In either case, it should fail to write rather than writing an incorrect manifest.
+        // In either case, it should fail to write rather than writing an incorrect playlist.
         assertionFailure("Could not find a writer for tag \(tag.toString())")
         return nil
     }
