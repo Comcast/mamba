@@ -2,8 +2,8 @@
 [![Code Coverage from codecov](https://codecov.io/gh/Comcast/mamba/branch/develop/graph/badge.svg)](https://codecov.io/gh/Comcast/mamba)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![GitHub release](https://img.shields.io/github/release/Comcast/mamba.svg)](https://github.com/Comcast/mamba/releases)
-[![License](https://img.shields.io/cocoapods/l/Mamba.svg)](https://raw.githubusercontent.com/Comcast/mamba/master/LICENSE.md)
-[![Platform](https://img.shields.io/cocoapods/p/Mamba.svg?style=flat)]()
+[![License](https://img.shields.io/cocoapods/l/mamba.svg)](https://raw.githubusercontent.com/Comcast/mamba/master/LICENSE.md)
+[![Platform](https://img.shields.io/cocoapods/p/mamba.svg?style=flat)]()
 
 Mamba
 ===
