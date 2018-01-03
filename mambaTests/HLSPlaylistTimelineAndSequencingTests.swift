@@ -397,31 +397,31 @@ class HLSPlaylistTimelineAndSequencingTests: XCTestCase {
  */
 
 
-fileprivate let sampleVariantPlaylist_mediaSequenceMissing = sampleVariantPlaylist_begin + sampleVariantPlaylist_end
-fileprivate let sampleVariantPlaylist_mediaSequence4 = sampleVariantPlaylist_begin + "#EXT-X-MEDIA-SEQUENCE:4\n" + sampleVariantPlaylist_end
+fileprivate let sampleVariantPlaylist_mediaSequenceMissing = sampleVariantPlaylist_begin + "\n" + sampleVariantPlaylist_end
+fileprivate let sampleVariantPlaylist_mediaSequence4 = sampleVariantPlaylist_begin + "\n#EXT-X-MEDIA-SEQUENCE:4\n" + sampleVariantPlaylist_end
 
 fileprivate let sampleVariantPlaylist_begin = """
-#EXTM3U\n
-#EXT-X-VERSION:4\n
-#EXT-X-PLAYLIST-TYPE:VOD\n
-#EXT-X-TARGETDURATION:2\n
+#EXTM3U
+#EXT-X-VERSION:4
+#EXT-X-PLAYLIST-TYPE:VOD
+#EXT-X-TARGETDURATION:2
 """
 
 fileprivate let sampleVariantPlaylist_end = """
-#EXTINF:2.002,\n
-http://not.a.server.nowhere/segment1.ts\n
-#EXTINF:1.0,\n
-#EXT-X-DISCONTINUITY\n
-#EXT-X-KEY:METHOD=AES-128,URI=\"https://not.a.server.nowhere/key.php?r=52\",IV=0x9c7db8778570d05c3177c349fd9236aa/\n
-#EXT-X-BYTERANGE:82112@752321\n
-http://not.a.server.nowhere/segment2.ts\n
-#EXTINF:2.002,\n
-http://not.a.server.nowhere/segment3.ts\n
-#EXTINF:2.002,\n
-http://not.a.server.nowhere/segment4.ts\n
-#EXTINF:2.002,\n
-http://not.a.server.nowhere/segment5.ts\n
-#EXTINF:2.002,\n
-http://not.a.server.nowhere/segment6.ts\n
-#EXT-X-ENDLIST\n"
+#EXTINF:2.002,
+http://not.a.server.nowhere/segment1.ts
+#EXTINF:1.0,
+#EXT-X-DISCONTINUITY
+#EXT-X-KEY:METHOD=AES-128,URI=\"https://not.a.server.nowhere/key.php?r=52\",IV=0x9c7db8778570d05c3177c349fd9236aa/
+#EXT-X-BYTERANGE:82112@752321
+http://not.a.server.nowhere/segment2.ts
+#EXTINF:2.002,
+http://not.a.server.nowhere/segment3.ts
+#EXTINF:2.002,
+http://not.a.server.nowhere/segment4.ts
+#EXTINF:2.002,
+http://not.a.server.nowhere/segment5.ts
+#EXTINF:2.002,
+http://not.a.server.nowhere/segment6.ts
+#EXT-X-ENDLIST
 """
