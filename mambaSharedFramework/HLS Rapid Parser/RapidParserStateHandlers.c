@@ -58,7 +58,7 @@ uint8_t endOfLineForURLAndContinueScanning(const void *parentparser, const unsig
     // index is currently a newline. we do not want to include it
     lineState->start = index + 1;
     
-    if ( lineState->end <= lineState->start ) {
+    if ( lineState->end < lineState->start ) {
         // this is either a blank line or a \n\r pair. We're not going to parse this, just keep moving
         lineState->end = index - 1;
         return Scanning;

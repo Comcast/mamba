@@ -408,6 +408,20 @@ class HLSParserTest: XCTestCase {
         runParseExpectingFailure(withManfiestString: playlistString)
     }
     
+    func testParserWithShortTag() {
+        let playlistString = """
+#EXT3MU
+#EXTINF:5000
+a
+"""
+        let playlist = parsePlaylist(inString: playlistString)
+        
+        XCTAssert(playlist.tags.count == 3, "Unexpected number of tags")
+        XCTAssert(playlist.tags[1].tagDescriptor == PantosTag.EXTINF, "Second tag is not an EXTINF")
+        XCTAssert(playlist.tags[2].tagDescriptor == PantosTag.Location, "Third tag is not a Location")
+        XCTAssert(playlist.tags[2].tagData.isEqual(to: "a"), "Location tag does not have expected value")
+    }
+    
     func runParseExpectingFailure(withManfiestString playlistString: String) {
         let url: URL = fakePlaylistURL()
         let parser = HLSParser()
