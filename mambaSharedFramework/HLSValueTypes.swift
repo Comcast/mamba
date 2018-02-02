@@ -27,8 +27,8 @@ public typealias HLSMediaGroupIndexRange = CountableClosedRange<Int>
 ///
 /// Can be initialized with a string in the form of "1280x720"
 public struct HLSResolution: Equatable, Comparable, FailableStringLiteralConvertible {
-    let w: Int
-    let h: Int
+    public let w: Int
+    public let h: Int
     public init?(string: String) {
         self.init(resolution: string)
     }
@@ -47,9 +47,9 @@ public struct HLSResolution: Equatable, Comparable, FailableStringLiteralConvert
     
     static let ratio16x9: Float = 16.0 / 9.0
     static let ratio4x3: Float = 4.0 / 3.0
-    var ratio: Float { return Float(w)/Float(h) }
-    var is16x9: Bool { return fabs(ratio - HLSResolution.ratio16x9) < 0.01 }
-    var is4x3: Bool { return fabs(ratio - HLSResolution.ratio4x3) < 0.01 }
+    public var ratio: Float { return Float(w)/Float(h) }
+    public var is16x9: Bool { return fabs(ratio - HLSResolution.ratio16x9) < 0.01 }
+    public var is4x3: Bool { return fabs(ratio - HLSResolution.ratio4x3) < 0.01 }
 }
 
 public func ==(lhs: HLSResolution, rhs: HLSResolution) -> Bool {
