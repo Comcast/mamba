@@ -369,8 +369,8 @@ extension PantosTag: HLSTagDescriptor, Equatable {
             return GenericSingleTagValidator<Date>(tag: pantostag,
                                                    singleValueIdentifier:PantosValue.programDateTime)
         case .EXT_X_DISCONTINUITY_SEQUENCE:
-            return GenericSingleTagValidator<Date>(tag: pantostag,
-                                                   singleValueIdentifier:PantosValue.discontinuitySequence)
+            return GenericSingleTagValidator<Int>(tag: pantostag,
+                                                  singleValueIdentifier:PantosValue.discontinuitySequence)
             
         case .EXT_X_STREAM_INF:
             return GenericDictionaryTagValidator(tag: pantostag, dictionaryValueIdentifiers: [
