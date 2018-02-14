@@ -120,4 +120,15 @@ class PantosTagTests: XCTestCase {
         // (3) Add the new tag to the `PantosTagTests.testStringRefLookup.runStringRefLookupTest` above as well.
         // If you don't do these steps, this tag will not be recognized by the PantosTag, and will be treated like an unknown tag.
     }
+    
+    func testDISCONTINUITYSEQUENCEValidator() {
+        guard let validator = PantosTag.validator(forTag: PantosTag.EXT_X_DISCONTINUITY_SEQUENCE) else {
+            XCTFail("Could not find validator for PantosTag.EXT_X_DISCONTINUITY_SEQUENCE")
+            return
+        }
+        let issues = validator.validate(tag: HLSTag(tagDescriptor: PantosTag.EXT_X_DISCONTINUITY_SEQUENCE,
+                                                    stringTagData: "0",
+                                                    parsedValues: [PantosValue.discontinuitySequence.toString(): HLSValueData(value: "0")]))
+        XCTAssertNil(issues, "Expecting no issues from validator")
+    }
 }
