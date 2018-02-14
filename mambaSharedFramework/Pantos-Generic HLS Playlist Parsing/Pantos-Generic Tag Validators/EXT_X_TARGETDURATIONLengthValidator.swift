@@ -31,11 +31,11 @@ class EXT_X_TARGETDURATIONLengthValidator: HLSPlaylistOneToManyValidator {
             
             guard let one = one,
                 let many = many,
-                let max: CMTime = one.value(forValueIdentifier: PantosValue.targetDurationSeconds)
+                let max: Double = one.value(forValueIdentifier: PantosValue.targetDurationSeconds)
                 else { return nil }
             
             for tag in many {
-                if tag.duration > max {
+                if tag.duration.seconds.rounded(.toNearestOrAwayFromZero) > max {
                     return [HLSValidationIssue(description: IssueDescription.EXT_X_TARGETDURATIONLengthValidator, severity: IssueSeverity.error)]
                 }
             }
