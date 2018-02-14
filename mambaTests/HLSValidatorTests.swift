@@ -475,6 +475,32 @@ class HLSValidatorTests: XCTestCase {
         validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
 
+    func testEXT_X_TARGETDURATIONLengthValidationEXTINFDurationAtLimit() {
+        
+        let hlsLoadString = """
+#EXTM3U
+#EXT-X-PLAYLIST-TYPE:VOD
+#EXT-X-TARGETDURATION:6
+#EXTINF:6.999
+frag1.ts
+"""
+        let u = EXT_X_TARGETDURATIONLengthValidator.self
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
+    }
+
+    func testEXT_X_TARGETDURATIONLengthValidationEXTINFDurationBeyondLimit() {
+        
+        let hlsLoadString = """
+#EXTM3U
+#EXT-X-PLAYLIST-TYPE:VOD
+#EXT-X-TARGETDURATION:6
+#EXTINF:7.00
+frag1.ts
+"""
+        let u = EXT_X_TARGETDURATIONLengthValidator.self
+        validate(validator: u, playlist: hlsLoadString, expected: 1)
+    }
+
     func testMatchingPROGRAM_IDValidatorOK() {
         
         let hlsLoadString = AudioVideoGroup_txt.joined()
