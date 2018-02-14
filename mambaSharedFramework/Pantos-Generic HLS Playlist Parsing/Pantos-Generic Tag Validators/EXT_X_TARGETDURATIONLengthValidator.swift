@@ -35,7 +35,7 @@ class EXT_X_TARGETDURATIONLengthValidator: HLSPlaylistOneToManyValidator {
                 else { return nil }
             
             for tag in many {
-                if tag.duration.seconds.rounded(.down) > max {
+                if tag.duration.seconds.rounded(.toNearestOrAwayFromZero) > max {
                     return [HLSValidationIssue(description: IssueDescription.EXT_X_TARGETDURATIONLengthValidator, severity: IssueSeverity.error)]
                 }
             }

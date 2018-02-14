@@ -481,7 +481,7 @@ class HLSValidatorTests: XCTestCase {
 #EXTM3U
 #EXT-X-PLAYLIST-TYPE:VOD
 #EXT-X-TARGETDURATION:6
-#EXTINF:6.999
+#EXTINF:6.49
 frag1.ts
 """
         let u = EXT_X_TARGETDURATIONLengthValidator.self
@@ -494,7 +494,7 @@ frag1.ts
 #EXTM3U
 #EXT-X-PLAYLIST-TYPE:VOD
 #EXT-X-TARGETDURATION:6
-#EXTINF:7.00
+#EXTINF:6.7
 frag1.ts
 """
         let u = EXT_X_TARGETDURATIONLengthValidator.self
