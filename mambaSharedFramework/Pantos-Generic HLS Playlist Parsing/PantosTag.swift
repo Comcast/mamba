@@ -105,8 +105,6 @@ extension PantosTag: HLSTagDescriptor, Equatable {
             fallthrough
         case .EXT_X_DISCONTINUITY:
             fallthrough
-        case .EXT_X_DISCONTINUITY_SEQUENCE:
-            fallthrough
         case .EXTINF:
             return .mediaSegment
             
@@ -131,6 +129,8 @@ extension PantosTag: HLSTagDescriptor, Equatable {
         case .EXT_X_INDEPENDENT_SEGMENTS:
             fallthrough
         case .EXT_X_START:
+            fallthrough
+        case .EXT_X_DISCONTINUITY_SEQUENCE:
             fallthrough
         case .EXT_X_TARGETDURATION:
             return .wholePlaylist
