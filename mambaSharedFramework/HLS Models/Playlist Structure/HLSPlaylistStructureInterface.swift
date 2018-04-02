@@ -104,7 +104,7 @@ extension HLSPlaylistStructureInterface {
         var results = [MediaSegmentTagGroup]()
         
         for group in mediaSegmentGroups {
-            let tagNames: Set<HLSStringRef> = Set(tags[group.range].flatMap { $0.tagName })
+            let tagNames: Set<HLSStringRef> = Set(tags[group.range].compactMap { $0.tagName })
             if queryTagNameSet.intersection(tagNames).count > 0 {
                 results.append(group)
             }
