@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
 s.name              = "mamba"
-s.version           = "1.0.3"
+s.version           = "1.0.4"
 s.license           = { :type => 'Apache License, Version 2.0',
                         :text => <<-LICENSE
                             Copyright 2017 Comcast Cable Communications Management, LLC
@@ -21,6 +21,7 @@ s.author            = "Comcast"
 
 s.ios.deployment_target     = '9.0'
 s.tvos.deployment_target    = '10.0'
+s.osx.deployment_target     = '10.13'
 
 s.source            = { :git => "https://github.com/Comcast/mamba.git", :tag => "#{s.version}" }
 s.source_files      = 'mambaSharedFramework/**/*.{h,m,swift,c}'
