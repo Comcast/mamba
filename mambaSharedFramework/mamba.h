@@ -17,7 +17,13 @@
 //  limitations under the License.
 //
 
+#import "Availability.h"
+
+#ifdef __MAC_OS_X_VERSION_MAX_ALLOWED
+#import <Cocoa/Cocoa.h>
+#else
 #import <UIKit/UIKit.h>
+#endif
 
 //! Project version number for mamba.
 FOUNDATION_EXPORT double mambaVersionNumber;

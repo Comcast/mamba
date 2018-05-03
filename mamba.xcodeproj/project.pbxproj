@@ -90,6 +90,111 @@
 		EC1705471DFB490A00C969F9 /* linear_ad_insertion_CONTENT_mid_ad.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC17053E1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_mid_ad.m3u8 */; };
 		EC1705481DFB490A00C969F9 /* linear_ad_insertion_CONTENT_start_ad.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC17053F1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_start_ad.m3u8 */; };
 		EC1705491DFB490A00C969F9 /* linear_ad_insertion_CONTENT_start_ad.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC17053F1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_start_ad.m3u8 */; };
+		EC1CCCE0209A2AF8006B59FF /* mamba.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1CCCD7209A2AF8006B59FF /* mamba.framework */; };
+		EC1CCCEE209A2CF9006B59FF /* HLSPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFAA6571E6DD93C00398D66 /* HLSPlaylist.swift */; };
+		EC1CCCEF209A2CF9006B59FF /* HLSPlaylistCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A3C811F7C497400A50EED /* HLSPlaylistCore.swift */; };
+		EC1CCCF0209A2CF9006B59FF /* HLSPlaylistInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7F0A461EA6808E0011F44B /* HLSPlaylistInterface.swift */; };
+		EC1CCCF1209A2CF9006B59FF /* HLSPlaylistTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491421DD299B400AF4E20 /* HLSPlaylistTypes.swift */; };
+		EC1CCCF2209A2CF9006B59FF /* HLSTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491521DD29AED00AF4E20 /* HLSTag.swift */; };
+		EC1CCCF3209A2CF9006B59FF /* HLSPlaylistStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4424881E95A69C00AECFAB /* HLSPlaylistStructure.swift */; };
+		EC1CCCF4209A2CF9006B59FF /* HLSPlaylistStructureInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A3C841F7C4D3000A50EED /* HLSPlaylistStructureInterface.swift */; };
+		EC1CCCF5209A2CF9006B59FF /* HLSPlaylistTimelineTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE36DE01F2A9D94005E5DA7 /* HLSPlaylistTimelineTranslator.swift */; };
+		EC1CCCF6209A2CF9006B59FF /* HLSTagGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44248B1E9694C600AECFAB /* HLSTagGroup.swift */; };
+		EC1CCCF7209A2CF9006B59FF /* StructureState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC4105F1EA02F4800B4E3C8 /* StructureState.swift */; };
+		EC1CCCF8209A2CF9006B59FF /* HLSTagCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74914A1DD29ACF00AF4E20 /* HLSTagCriteria.swift */; };
+		EC1CCCF9209A2CF9006B59FF /* HLSTagCriterion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74914B1DD29ACF00AF4E20 /* HLSTagCriterion.swift */; };
+		EC1CCCFA209A2CF9006B59FF /* HLSStringRef.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6441E5CC56B00BF1F97 /* HLSStringRef.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC1CCCFB209A2CF9006B59FF /* HLSStringRef.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6451E5CC56B00BF1F97 /* HLSStringRef.m */; };
+		EC1CCCFC209A2CF9006B59FF /* HLSStringRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6461E5CC56B00BF1F97 /* HLSStringRef.swift */; };
+		EC1CCCFD209A2CF9006B59FF /* HLSStringRefFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F73183731E78758B00ED8E59 /* HLSStringRefFactory.h */; };
+		EC1CCCFE209A2CF9006B59FF /* HLSStringRefFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F73183741E78758B00ED8E59 /* HLSStringRefFactory.m */; };
+		EC1CCCFF209A2CF9006B59FF /* HLSStringRef_ConcreteNSData.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD3B1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.h */; };
+		EC1CCD00209A2CF9006B59FF /* HLSStringRef_ConcreteNSData.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD3C1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.m */; };
+		EC1CCD01209A2CF9006B59FF /* HLSStringRef_ConcreteNSString.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD351E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.h */; };
+		EC1CCD02209A2CF9006B59FF /* HLSStringRef_ConcreteNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD361E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.m */; };
+		EC1CCD03209A2CF9006B59FF /* HLSStringRef_ConcreteUnownedBytes.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD2F1E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.h */; };
+		EC1CCD04209A2CF9006B59FF /* HLSStringRef_ConcreteUnownedBytes.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD301E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.m */; };
+		EC1CCD06209A2CF9006B59FF /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */; };
+		EC1CCD07209A2CF9006B59FF /* RapidParserMasterParseArray.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B63C1E5CC55800BF1F97 /* RapidParserMasterParseArray.h */; };
+		EC1CCD15209A2CF9006B59FF /* HLSRapidParser.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6411E5CC56B00BF1F97 /* HLSRapidParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC1CCD16209A2CF9006B59FF /* HLSRapidParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6421E5CC56B00BF1F97 /* HLSRapidParser.m */; };
+		EC1CCD17209A2CF9006B59FF /* HLSRapidParserCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6431E5CC56B00BF1F97 /* HLSRapidParserCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC1CCD18209A2CF9006B59FF /* RapidParser.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6471E5CC56B00BF1F97 /* RapidParser.c */; };
+		EC1CCD19209A2CF9006B59FF /* RapidParser.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6481E5CC56B00BF1F97 /* RapidParser.h */; };
+		EC1CCD1A209A2CF9006B59FF /* RapidParserDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6491E5CC56B00BF1F97 /* RapidParserDebug.h */; };
+		EC1CCD1B209A2CF9006B59FF /* RapidParserError.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64B1E5CC56B00BF1F97 /* RapidParserError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC1CCD1C209A2CF9006B59FF /* RapidParserError.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B64A1E5CC56B00BF1F97 /* RapidParserError.m */; };
+		EC1CCD1D209A2CF9006B59FF /* RapidParserLineState.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B64C1E5CC56B00BF1F97 /* RapidParserLineState.c */; };
+		EC1CCD1E209A2CF9006B59FF /* RapidParserLineState.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64D1E5CC56B00BF1F97 /* RapidParserLineState.h */; };
+		EC1CCD1F209A2CF9006B59FF /* RapidParserNewTagCallbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64E1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h */; };
+		EC1CCD20209A2CF9006B59FF /* RapidParserState.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64F1E5CC56B00BF1F97 /* RapidParserState.h */; };
+		EC1CCD21209A2CF9006B59FF /* RapidParserStateHandlers.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6501E5CC56B00BF1F97 /* RapidParserStateHandlers.c */; };
+		EC1CCD22209A2CF9006B59FF /* RapidParserStateHandlers.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6511E5CC56B00BF1F97 /* RapidParserStateHandlers.h */; };
+		EC1CCD23209A2CF9006B59FF /* CollectionType+FindExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74916B1DD29B5D00AF4E20 /* CollectionType+FindExtensions.swift */; };
+		EC1CCD24209A2CF9006B59FF /* CollectionType+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74916C1DD29B5D00AF4E20 /* CollectionType+Safe.swift */; };
+		EC1CCD25209A2CF9006B59FF /* HLSTagArray+RenditionGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB018C1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift */; };
+		EC1CCD26209A2CF9006B59FF /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74916D1DD29B5D00AF4E20 /* OrderedDictionary.swift */; };
+		EC1CCD27209A2CF9006B59FF /* CoreMedia+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74915F1DD29B0F00AF4E20 /* CoreMedia+Util.swift */; };
+		EC1CCD28209A2CF9006B59FF /* FailableStringLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491601DD29B0F00AF4E20 /* FailableStringLiteralConvertible.swift */; };
+		EC1CCD29209A2CF9006B59FF /* HLSStringRef+mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95477E1E5CC80800962535 /* HLSStringRef+mamba.swift */; };
+		EC1CCD2A209A2CF9006B59FF /* HLSTag+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E03761E3BAC9F00126B52 /* HLSTag+Util.swift */; };
+		EC1CCD2B209A2CF9006B59FF /* IndeterminateBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC42A5F11FD9B88E00317EA5 /* IndeterminateBool.swift */; };
+		EC1CCD2C209A2CF9006B59FF /* OutputStream+HLSWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95477B1E5CC7C800962535 /* OutputStream+HLSWriting.swift */; };
+		EC1CCD2D209A2CF9006B59FF /* RegisteredHLSTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491611DD29B0F00AF4E20 /* RegisteredHLSTags.swift */; };
+		EC1CCD2E209A2CF9006B59FF /* CMTimeMakeFromString.c in Sources */ = {isa = PBXBuildFile; fileRef = F7CFF2771F38CACF009F4C82 /* CMTimeMakeFromString.c */; };
+		EC1CCD2F209A2CF9006B59FF /* CMTimeMakeFromString.h in Headers */ = {isa = PBXBuildFile; fileRef = F7CFF2781F38CACF009F4C82 /* CMTimeMakeFromString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC1CCD30209A2CF9006B59FF /* String+DateParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917A1DD29C3500AF4E20 /* String+DateParsing.swift */; };
+		EC1CCD31209A2CF9006B59FF /* String+HLSTypeEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917B1DD29C3500AF4E20 /* String+HLSTypeEquatable.swift */; };
+		EC1CCD32209A2CF9006B59FF /* String+Trim.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917C1DD29C3500AF4E20 /* String+Trim.swift */; };
+		EC1CCD33209A2CF9006B59FF /* GenericDictionaryTagParserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491831DD29CCB00AF4E20 /* GenericDictionaryTagParserHelper.swift */; };
+		EC1CCD34209A2CF9006B59FF /* StringArrayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491841DD29CCB00AF4E20 /* StringArrayParser.swift */; };
+		EC1CCD35209A2CF9006B59FF /* StringDictionaryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491851DD29CCB00AF4E20 /* StringDictionaryParser.swift */; };
+		EC1CCD36209A2CF9006B59FF /* URL+hlsplaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9826011DD3A113003BCDA5 /* URL+hlsplaylist.swift */; };
+		EC1CCD37209A2CF9006B59FF /* GenericDictionaryTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491D21DD29D9600AF4E20 /* GenericDictionaryTagParser.swift */; };
+		EC1CCD38209A2CF9006B59FF /* GenericNoDataTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491D31DD29D9600AF4E20 /* GenericNoDataTagParser.swift */; };
+		EC1CCD39209A2CF9006B59FF /* GenericSingleValueTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491D41DD29D9600AF4E20 /* GenericSingleValueTagParser.swift */; };
+		EC1CCD3A209A2CF9006B59FF /* NoOpTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547841E5CC83C00962535 /* NoOpTagParser.swift */; };
+		EC1CCD3B209A2CF9006B59FF /* EXTINFValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95478A1E5CC86300962535 /* EXTINFValidator.swift */; };
+		EC1CCD3C209A2CF9006B59FF /* EXT_X_KEYValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B019E1DD4D47900B512E3 /* EXT_X_KEYValidator.swift */; };
+		EC1CCD3D209A2CF9006B59FF /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B019F1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift */; };
+		EC1CCD3E209A2CF9006B59FF /* EXT_X_MEDIARenditionGroupDEFAULTValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01A01DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupDEFAULTValidator.swift */; };
+		EC1CCD3F209A2CF9006B59FF /* EXT_X_MEDIARenditionGroupNAMEValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01A11DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupNAMEValidator.swift */; };
+		EC1CCD40209A2CF9006B59FF /* EXT_X_MEDIARenditionGroupTYPEValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01A21DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupTYPEValidator.swift */; };
+		EC1CCD41209A2CF9006B59FF /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE4EFC1E564DBE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift */; };
+		EC1CCD42209A2CF9006B59FF /* EXT_X_STARTTimeOffsetValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE4EFA1E564DA300EEE800 /* EXT_X_STARTTimeOffsetValidator.swift */; };
+		EC1CCD43209A2CF9006B59FF /* EXT_X_STREAM_INFRenditionGroupValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01A31DD4D47900B512E3 /* EXT_X_STREAM_INFRenditionGroupValidator.swift */; };
+		EC1CCD44209A2CF9006B59FF /* EXT_X_TARGETDURATIONLengthValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01A41DD4D47900B512E3 /* EXT_X_TARGETDURATIONLengthValidator.swift */; };
+		EC1CCD45209A2CF9006B59FF /* GenericDictionaryTagValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491F51DD29DD300AF4E20 /* GenericDictionaryTagValidator.swift */; };
+		EC1CCD46209A2CF9006B59FF /* GenericSingleTagValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491F61DD29DD300AF4E20 /* GenericSingleTagValidator.swift */; };
+		EC1CCD47209A2CF9006B59FF /* HLSDictionaryTagValueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491F71DD29DD300AF4E20 /* HLSDictionaryTagValueIdentifier.swift */; };
+		EC1CCD48209A2CF9006B59FF /* HLSPlaylistCardinalityValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01B31DD4D49A00B512E3 /* HLSPlaylistCardinalityValidator.swift */; };
+		EC1CCD49209A2CF9006B59FF /* HLSPlaylistCollectionValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01B41DD4D49A00B512E3 /* HLSPlaylistCollectionValidator.swift */; };
+		EC1CCD4A209A2CF9006B59FF /* HLSPlaylistOneToManyValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01B51DD4D49A00B512E3 /* HLSPlaylistOneToManyValidator.swift */; };
+		EC1CCD4B209A2CF9006B59FF /* HLSPlaylistRenditionGroupAudioVideoValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01B61DD4D49A00B512E3 /* HLSPlaylistRenditionGroupAudioVideoValidator.swift */; };
+		EC1CCD4C209A2CF9006B59FF /* HLSPlaylistRenditionGroupMatchingNAMELANGUAGEValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01B71DD4D49A00B512E3 /* HLSPlaylistRenditionGroupMatchingNAMELANGUAGEValidator.swift */; };
+		EC1CCD4D209A2CF9006B59FF /* HLSPlaylistRenditionGroupMatchingPROGRAM_IDValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01B81DD4D49A00B512E3 /* HLSPlaylistRenditionGroupMatchingPROGRAM_IDValidator.swift */; };
+		EC1CCD4E209A2CF9006B59FF /* HLSPlaylistRenditionGroupValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01B91DD4D49A00B512E3 /* HLSPlaylistRenditionGroupValidator.swift */; };
+		EC1CCD4F209A2CF9006B59FF /* HLSPlaylistTagCardinalityValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01BA1DD4D49A00B512E3 /* HLSPlaylistTagCardinalityValidation.swift */; };
+		EC1CCD50209A2CF9006B59FF /* HLSPlaylistTagGroupValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01BB1DD4D49A00B512E3 /* HLSPlaylistTagGroupValidator.swift */; };
+		EC1CCD51209A2CF9006B59FF /* HLSPlaylistValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01BC1DD4D49A00B512E3 /* HLSPlaylistValidator.swift */; };
+		EC1CCD52209A2CF9006B59FF /* HLSPlaylistValidatorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B01BD1DD4D49A00B512E3 /* HLSPlaylistValidatorImpl.swift */; };
+		EC1CCD53209A2CF9006B59FF /* GenericDictionaryTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491E21DD29DBB00AF4E20 /* GenericDictionaryTagWriter.swift */; };
+		EC1CCD54209A2CF9006B59FF /* GenericSingleTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491E41DD29DBB00AF4E20 /* GenericSingleTagWriter.swift */; };
+		EC1CCD55209A2CF9006B59FF /* GenericTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547811E5CC82500962535 /* GenericTagWriter.swift */; };
+		EC1CCD56209A2CF9006B59FF /* LocationTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491E51DD29DBB00AF4E20 /* LocationTagWriter.swift */; };
+		EC1CCD57209A2CF9006B59FF /* PantosTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491CB1DD29D7C00AF4E20 /* PantosTag.swift */; };
+		EC1CCD58209A2CF9006B59FF /* PantosValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491CC1DD29D7C00AF4E20 /* PantosValue.swift */; };
+		EC1CCD59209A2CF9006B59FF /* HLSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491A81DD29D5C00AF4E20 /* HLSParser.swift */; };
+		EC1CCD5A209A2CF9006B59FF /* HLSParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70E9E991E8C43C8006022C6 /* HLSParserError.swift */; };
+		EC1CCD5B209A2CF9006B59FF /* HLSTagDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AA1DD29D5C00AF4E20 /* HLSTagDescriptor.swift */; };
+		EC1CCD5C209A2CF9006B59FF /* HLSTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AB1DD29D5C00AF4E20 /* HLSTagParser.swift */; };
+		EC1CCD5D209A2CF9006B59FF /* HLSTagValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AC1DD29D5C00AF4E20 /* HLSTagValidator.swift */; };
+		EC1CCD5E209A2CF9006B59FF /* HLSTagValueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AD1DD29D5C00AF4E20 /* HLSTagValueIdentifier.swift */; };
+		EC1CCD5F209A2CF9006B59FF /* HLSTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AE1DD29D5C00AF4E20 /* HLSTagWriter.swift */; };
+		EC1CCD60209A2CF9006B59FF /* HLSValidationIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AF1DD29D5C00AF4E20 /* HLSValidationIssue.swift */; };
+		EC1CCD61209A2CF9006B59FF /* HLSValueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B11DD29D5C00AF4E20 /* HLSValueTypes.swift */; };
+		EC1CCD62209A2CF9006B59FF /* HLSWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B21DD29D5C00AF4E20 /* HLSWriter.swift */; };
+		EC1CCD63209A2CF9006B59FF /* Mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547871E5CC84700962535 /* Mamba.swift */; };
 		EC37A8D71E9C16C7005E8342 /* HLSPlaylistStructureAndEditingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC37A8D61E9C16C7005E8342 /* HLSPlaylistStructureAndEditingTests.swift */; };
 		EC37A8D81E9C16C7005E8342 /* HLSPlaylistStructureAndEditingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC37A8D61E9C16C7005E8342 /* HLSPlaylistStructureAndEditingTests.swift */; };
 		EC3B01A51DD4D47900B512E3 /* EXT_X_KEYValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B019E1DD4D47900B512E3 /* EXT_X_KEYValidator.swift */; };
@@ -334,6 +439,85 @@
 		ECC4106B1EA1687500B4E3C8 /* HLSPlaylistStructureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC410691EA1687500B4E3C8 /* HLSPlaylistStructureTests.swift */; };
 		ECCF2DAD1E23F54100D7C48B /* HLSTagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF2DAC1E23F54100D7C48B /* HLSTagTests.swift */; };
 		ECCF2DAE1E23F54100D7C48B /* HLSTagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF2DAC1E23F54100D7C48B /* HLSTagTests.swift */; };
+		ECE253BA209A485E00D388CE /* mamba.h in Headers */ = {isa = PBXBuildFile; fileRef = EC1521511DD28536006FB265 /* mamba.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ECE253BB209A508700D388CE /* linear_ad_insertion_AD.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC17053B1DFB490A00C969F9 /* linear_ad_insertion_AD.m3u8 */; };
+		ECE253BC209A508700D388CE /* linear_ad_insertion_CONTENT_end_ad_forced.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC17053C1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_forced.m3u8 */; };
+		ECE253BD209A508700D388CE /* linear_ad_insertion_CONTENT_end_ad_natural.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC17053D1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_natural.m3u8 */; };
+		ECE253BE209A508700D388CE /* linear_ad_insertion_CONTENT_mid_ad.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC17053E1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_mid_ad.m3u8 */; };
+		ECE253BF209A508700D388CE /* linear_ad_insertion_CONTENT_start_ad.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC17053F1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_start_ad.m3u8 */; };
+		ECE253C0209A508700D388CE /* Super8_muxed1_4242.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492031DD29E2900AF4E20 /* Super8_muxed1_4242.m3u8 */; };
+		ECE253C1209A508700D388CE /* Super8_muxed2_1376214110461.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492041DD29E2900AF4E20 /* Super8_muxed2_1376214110461.m3u8 */; };
+		ECE253C2209A508700D388CE /* Super8_muxed3_HD_VOD_VDS_TELENOVELA_02152016_LVLH08.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492051DD29E2900AF4E20 /* Super8_muxed3_HD_VOD_VDS_TELENOVELA_02152016_LVLH08.m3u8 */; };
+		ECE253C3209A508700D388CE /* ThirdPartyHLSTagsTestFixture.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC7492091DD29E2900AF4E20 /* ThirdPartyHLSTagsTestFixture.txt */; };
+		ECE253C4209A508700D388CE /* bipbopall.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7491FE1DD29E2900AF4E20 /* bipbopall.m3u8 */; };
+		ECE253C5209A508700D388CE /* hls_ad_master_playlist.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3401EAA9E500010320B /* hls_ad_master_playlist.m3u8 */; };
+		ECE253C6209A508700D388CE /* hls_ad_variant_playlist.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3411EAA9E500010320B /* hls_ad_variant_playlist.m3u8 */; };
+		ECE253C7209A508700D388CE /* hls_master_playlist.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3431EAA9E500010320B /* hls_master_playlist.m3u8 */; };
+		ECE253C8209A508700D388CE /* hls_master_playlist_sap.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3421EAA9E500010320B /* hls_master_playlist_sap.m3u8 */; };
+		ECE253C9209A508700D388CE /* hls_sampleMasterFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC7491FF1DD29E2900AF4E20 /* hls_sampleMasterFile.txt */; };
+		ECE253CA209A508700D388CE /* hls_sampleMediaFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC7492001DD29E2900AF4E20 /* hls_sampleMediaFile.txt */; };
+		ECE253CB209A508700D388CE /* hls_singleMediaFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC7492011DD29E2900AF4E20 /* hls_singleMediaFile.txt */; };
+		ECE253CC209A508700D388CE /* hls_variant_playlist.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3441EAA9E500010320B /* hls_variant_playlist.m3u8 */; };
+		ECE253CD209A508700D388CE /* hls_writer_parser_roundtrip_tester.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC7492021DD29E2900AF4E20 /* hls_writer_parser_roundtrip_tester.txt */; };
+		ECE253CE209A508700D388CE /* super8demuxed1_4242.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492061DD29E2900AF4E20 /* super8demuxed1_4242.m3u8 */; };
+		ECE253CF209A508700D388CE /* super8demuxed2_IP_1080p24_51_TS.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492071DD29E2900AF4E20 /* super8demuxed2_IP_1080p24_51_TS.m3u8 */; };
+		ECE253D0209A508700D388CE /* super8demuxed3_1376214110461.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492081DD29E2900AF4E20 /* super8demuxed3_1376214110461.m3u8 */; };
+		ECE253D1209A509000D388CE /* FixtureLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492221DD29E4A00AF4E20 /* FixtureLoader.swift */; };
+		ECE253D2209A509000D388CE /* HLSPlaylist+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492241DD29E4A00AF4E20 /* HLSPlaylist+Convenience.swift */; };
+		ECE253D3209A509000D388CE /* HLSPlaylistMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492251DD29E4A00AF4E20 /* HLSPlaylistMock.swift */; };
+		ECE253D4209A509000D388CE /* HLSTagParserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492271DD29E4A00AF4E20 /* HLSTagParserMock.swift */; };
+		ECE253D5209A509000D388CE /* XCTestCase+mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD9021E5CCAAF00379FC2 /* XCTestCase+mamba.swift */; };
+		ECE253D6209A509900D388CE /* HLSPlaylistInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6F38911EA95882006BC30E /* HLSPlaylistInterfaceTests.swift */; };
+		ECE253D7209A509900D388CE /* HLSPlaylistStructureAndEditingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC37A8D61E9C16C7005E8342 /* HLSPlaylistStructureAndEditingTests.swift */; };
+		ECE253D8209A509900D388CE /* HLSPlaylistStructureMasterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4367C3721EAE83C000685945 /* HLSPlaylistStructureMasterTests.swift */; };
+		ECE253D9209A509900D388CE /* HLSPlaylistStructureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC410691EA1687500B4E3C8 /* HLSPlaylistStructureTests.swift */; };
+		ECE253DA209A509900D388CE /* HLSPlaylistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC402B921F7D5A8B00730C74 /* HLSPlaylistTests.swift */; };
+		ECE253DB209A509900D388CE /* HLSPlaylistTimelineAndSequencingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE36DE31F2A9F10005E5DA7 /* HLSPlaylistTimelineAndSequencingTests.swift */; };
+		ECE253DC209A509900D388CE /* HLSMediaSpanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE4EFE1E564E1500EEE800 /* HLSMediaSpanTests.swift */; };
+		ECE253DD209A509900D388CE /* HLSParser_Super8DemuxedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492351DD29E7300AF4E20 /* HLSParser_Super8DemuxedTests.swift */; };
+		ECE253DE209A509900D388CE /* HLSParser_Super8MuxedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492361DD29E7300AF4E20 /* HLSParser_Super8MuxedTests.swift */; };
+		ECE253DF209A509900D388CE /* HLSParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492371DD29E7300AF4E20 /* HLSParserTest.swift */; };
+		ECE253E0209A509900D388CE /* HLSStringRefExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883290551EA172170064588B /* HLSStringRefExtensionTests.swift */; };
+		ECE253E1209A509900D388CE /* HLSTagCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F591FE072DC00689228 /* HLSTagCollectionTests.swift */; };
+		ECE253E2209A509900D388CE /* HLSTagCriterionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F561FE0572400689228 /* HLSTagCriterionTests.swift */; };
+		ECE253E3209A509900D388CE /* HLSTagGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC410661EA1527700B4E3C8 /* HLSTagGroupTests.swift */; };
+		ECE253E4209A509900D388CE /* HLSTagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF2DAC1E23F54100D7C48B /* HLSTagTests.swift */; };
+		ECE253E5209A509900D388CE /* HLSTagWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492521DD29E9A00AF4E20 /* HLSTagWriting.swift */; };
+		ECE253E6209A509900D388CE /* HLSValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74923A1DD29E7300AF4E20 /* HLSValidatorTests.swift */; };
+		ECE253E7209A509900D388CE /* HLSWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74923B1DD29E7300AF4E20 /* HLSWriterTests.swift */; };
+		ECE253E8209A509C00D388CE /* OutputStreamExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F5C1FE0840000689228 /* OutputStreamExtensionTests.swift */; };
+		ECE253E9209A509C00D388CE /* PantosTagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD9141E5CCCB100379FC2 /* PantosTagTests.swift */; };
+		ECE253EA209A50A100D388CE /* HLSStringRefTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD90B1E5CCC2200379FC2 /* HLSStringRefTests.m */; };
+		ECE253EB209A50A100D388CE /* ParseArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD90C1E5CCC2200379FC2 /* ParseArrayTests.m */; };
+		ECE253EC209A50A100D388CE /* RapidParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD90D1E5CCC2200379FC2 /* RapidParserTests.swift */; };
+		ECE253ED209A50A600D388CE /* ReadMeUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEF4F01F7AC58A0051078F /* ReadMeUnitTests.swift */; };
+		ECE253EE209A50A600D388CE /* StructureStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC410631EA1518E00B4E3C8 /* StructureStateTests.swift */; };
+		ECE253EF209A50B500D388CE /* EXT_X_ALLOW_CACHETagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492671DD29EC800AF4E20 /* EXT_X_ALLOW_CACHETagParserTests.swift */; };
+		ECE253F0209A50B500D388CE /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492681DD29EC800AF4E20 /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift */; };
+		ECE253F1209A50B500D388CE /* EXT_X_KEYTagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492691DD29EC800AF4E20 /* EXT_X_KEYTagParserTests.swift */; };
+		ECE253F2209A50B500D388CE /* EXT_X_MAPTagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD2E791DE4D46F002510E7 /* EXT_X_MAPTagParserTests.swift */; };
+		ECE253F3209A50B500D388CE /* EXT_X_MEDIATagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74926A1DD29EC800AF4E20 /* EXT_X_MEDIATagParserTests.swift */; };
+		ECE253F4209A50B500D388CE /* EXT_X_PROGRAM_DATE_TIMEParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74926B1DD29EC800AF4E20 /* EXT_X_PROGRAM_DATE_TIMEParserTests.swift */; };
+		ECE253F5209A50B500D388CE /* GenericNoDataTagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74926D1DD29EC800AF4E20 /* GenericNoDataTagParserTests.swift */; };
+		ECE253F6209A50B500D388CE /* GenericSingleValueTagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74926E1DD29EC800AF4E20 /* GenericSingleValueTagParserTests.swift */; };
+		ECE253F7209A50B500D388CE /* StringArrayParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74926F1DD29EC800AF4E20 /* StringArrayParserTests.swift */; };
+		ECE253F8209A50B500D388CE /* StringDictionaryParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492701DD29EC800AF4E20 /* StringDictionaryParserTests.swift */; };
+		ECE253F9209A50B500D388CE /* GenericDictionaryTagValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492881DD29F1500AF4E20 /* GenericDictionaryTagValidatorTests.swift */; };
+		ECE253FA209A50B500D388CE /* GenericSingleTagValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492891DD29F1500AF4E20 /* GenericSingleTagValidatorTests.swift */; };
+		ECE253FB209A50B500D388CE /* GenericDictionaryTagWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492901DD29F3B00AF4E20 /* GenericDictionaryTagWriterTests.swift */; };
+		ECE253FC209A50B500D388CE /* GenericSingleTagWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492921DD29F3B00AF4E20 /* GenericSingleTagWriterTests.swift */; };
+		ECE253FD209A50B500D388CE /* ThirdPartyTagListSupportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492A01DD29F4600AF4E20 /* ThirdPartyTagListSupportTests.swift */; };
+		ECE253FE209A50B500D388CE /* CMTimeMakeFromStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CFF27D1F392009009F4C82 /* CMTimeMakeFromStringTests.swift */; };
+		ECE253FF209A50B500D388CE /* CollectionTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492A31DD29F7000AF4E20 /* CollectionTypeTests.swift */; };
+		ECE25400209A50B500D388CE /* IndeterminateBoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC42A5F41FD9BF0500317EA5 /* IndeterminateBoolTests.swift */; };
+		ECE25401209A50B500D388CE /* MambaUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492A41DD29F7000AF4E20 /* MambaUtilTests.swift */; };
+		ECE25402209A50B500D388CE /* OrderedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492A51DD29F7000AF4E20 /* OrderedDictionaryTests.swift */; };
+		ECE25403209A50B500D388CE /* String+Helio.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F5F1FE08F7500689228 /* String+Helio.swift */; };
+		ECE25404209A50B500D388CE /* URL+hlsplaylistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492A61DD29F7000AF4E20 /* URL+hlsplaylistTests.swift */; };
+		ECE25405209A50B500D388CE /* HLSCodecArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492AF1DD29F8900AF4E20 /* HLSCodecArrayTests.swift */; };
+		ECE25406209A50B500D388CE /* HLSMediaTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B01DD29F8900AF4E20 /* HLSMediaTypeTests.swift */; };
+		ECE25407209A50B500D388CE /* HLSPlaylistTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B11DD29F8900AF4E20 /* HLSPlaylistTypeTests.swift */; };
+		ECE25408209A50B500D388CE /* HLSResolutionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B21DD29F8900AF4E20 /* HLSResolutionTests.swift */; };
 		ECE36DE11F2A9D94005E5DA7 /* HLSPlaylistTimelineTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE36DE01F2A9D94005E5DA7 /* HLSPlaylistTimelineTranslator.swift */; };
 		ECE36DE21F2A9D94005E5DA7 /* HLSPlaylistTimelineTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE36DE01F2A9D94005E5DA7 /* HLSPlaylistTimelineTranslator.swift */; };
 		ECE36DE41F2A9F10005E5DA7 /* HLSPlaylistTimelineAndSequencingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE36DE31F2A9F10005E5DA7 /* HLSPlaylistTimelineAndSequencingTests.swift */; };
@@ -391,6 +575,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = EC15216A1DD2856F006FB265;
 			remoteInfo = mambaTVOS;
+		};
+		EC1CCCE1209A2AF8006B59FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC6C8F5C1D08C526007C1C99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC1CCCD6209A2AF8006B59FF;
+			remoteInfo = mambaMacOS;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -459,6 +650,10 @@
 		EC17053D1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_natural.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = linear_ad_insertion_CONTENT_end_ad_natural.m3u8; sourceTree = "<group>"; };
 		EC17053E1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_mid_ad.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = linear_ad_insertion_CONTENT_mid_ad.m3u8; sourceTree = "<group>"; };
 		EC17053F1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_start_ad.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = linear_ad_insertion_CONTENT_start_ad.m3u8; sourceTree = "<group>"; };
+		EC1CCCD7209A2AF8006B59FF /* mamba.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mamba.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC1CCCDA209A2AF8006B59FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC1CCCDF209A2AF8006B59FF /* mambaMacOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mambaMacOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC1CCCE6209A2AF8006B59FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC37A8D61E9C16C7005E8342 /* HLSPlaylistStructureAndEditingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HLSPlaylistStructureAndEditingTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EC3B019E1DD4D47900B512E3 /* EXT_X_KEYValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_KEYValidator.swift; sourceTree = "<group>"; };
 		EC3B019F1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift; sourceTree = "<group>"; };
@@ -633,6 +828,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC1521741DD2856F006FB265 /* mamba.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC1CCCD3209A2AF8006B59FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC1CCCDC209A2AF8006B59FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC1CCCE0209A2AF8006B59FF /* mamba.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -825,6 +1035,22 @@
 			path = "Linear Ad Insertion Playlists";
 			sourceTree = "<group>";
 		};
+		EC1CCCD8209A2AF8006B59FF /* mambaMacOS */ = {
+			isa = PBXGroup;
+			children = (
+				EC1CCCDA209A2AF8006B59FF /* Info.plist */,
+			);
+			path = mambaMacOS;
+			sourceTree = "<group>";
+		};
+		EC1CCCE3209A2AF8006B59FF /* mambaMacOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC1CCCE6209A2AF8006B59FF /* Info.plist */,
+			);
+			path = mambaMacOSTests;
+			sourceTree = "<group>";
+		};
 		EC3B57F41D36CCE7006656C3 /* Tag Parser Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -900,11 +1126,13 @@
 			isa = PBXGroup;
 			children = (
 				EC5B87A81D947B59005F68C4 /* Frameworks */,
-				EC6C8F661D08C526007C1C99 /* Products */,
 				EC1521501DD28536006FB265 /* mamba */,
+				EC1CCCD8209A2AF8006B59FF /* mambaMacOS */,
+				EC1CCCE3209A2AF8006B59FF /* mambaMacOSTests */,
 				EC1521821DD2857B006FB265 /* mambaSharedFramework */,
-				EC15216C1DD2856F006FB265 /* mambaTVOS */,
 				EC15215B1DD28536006FB265 /* mambaTests */,
+				EC15216C1DD2856F006FB265 /* mambaTVOS */,
+				EC6C8F661D08C526007C1C99 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -915,6 +1143,8 @@
 				EC1521571DD28536006FB265 /* mambaTests.xctest */,
 				EC15216B1DD2856F006FB265 /* mamba.framework */,
 				EC1521731DD2856F006FB265 /* mambaTVOSTests.xctest */,
+				EC1CCCD7209A2AF8006B59FF /* mamba.framework */,
+				EC1CCCDF209A2AF8006B59FF /* mambaMacOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1136,6 +1366,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EC1CCCD4209A2AF8006B59FF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC1CCD01209A2CF9006B59FF /* HLSStringRef_ConcreteNSString.h in Headers */,
+				EC1CCD17209A2CF9006B59FF /* HLSRapidParserCallback.h in Headers */,
+				ECE253BA209A485E00D388CE /* mamba.h in Headers */,
+				EC1CCD15209A2CF9006B59FF /* HLSRapidParser.h in Headers */,
+				EC1CCCFA209A2CF9006B59FF /* HLSStringRef.h in Headers */,
+				EC1CCD03209A2CF9006B59FF /* HLSStringRef_ConcreteUnownedBytes.h in Headers */,
+				EC1CCD19209A2CF9006B59FF /* RapidParser.h in Headers */,
+				EC1CCD07209A2CF9006B59FF /* RapidParserMasterParseArray.h in Headers */,
+				EC1CCD1A209A2CF9006B59FF /* RapidParserDebug.h in Headers */,
+				EC1CCCFD209A2CF9006B59FF /* HLSStringRefFactory.h in Headers */,
+				EC1CCCFF209A2CF9006B59FF /* HLSStringRef_ConcreteNSData.h in Headers */,
+				EC1CCD20209A2CF9006B59FF /* RapidParserState.h in Headers */,
+				EC1CCD2F209A2CF9006B59FF /* CMTimeMakeFromString.h in Headers */,
+				EC1CCD1F209A2CF9006B59FF /* RapidParserNewTagCallbacks.h in Headers */,
+				EC1CCD1B209A2CF9006B59FF /* RapidParserError.h in Headers */,
+				EC1CCD1E209A2CF9006B59FF /* RapidParserLineState.h in Headers */,
+				EC1CCD22209A2CF9006B59FF /* RapidParserStateHandlers.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -1211,13 +1465,49 @@
 			productReference = EC1521731DD2856F006FB265 /* mambaTVOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		EC1CCCD6209A2AF8006B59FF /* mambaMacOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC1CCCEC209A2AF8006B59FF /* Build configuration list for PBXNativeTarget "mambaMacOS" */;
+			buildPhases = (
+				EC1CCCD2209A2AF8006B59FF /* Sources */,
+				EC1CCCD3209A2AF8006B59FF /* Frameworks */,
+				EC1CCCD4209A2AF8006B59FF /* Headers */,
+				EC1CCCD5209A2AF8006B59FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mambaMacOS;
+			productName = mambaMacOS;
+			productReference = EC1CCCD7209A2AF8006B59FF /* mamba.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EC1CCCDE209A2AF8006B59FF /* mambaMacOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC1CCCED209A2AF8006B59FF /* Build configuration list for PBXNativeTarget "mambaMacOSTests" */;
+			buildPhases = (
+				EC1CCCDB209A2AF8006B59FF /* Sources */,
+				EC1CCCDC209A2AF8006B59FF /* Frameworks */,
+				EC1CCCDD209A2AF8006B59FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC1CCCE2209A2AF8006B59FF /* PBXTargetDependency */,
+			);
+			name = mambaMacOSTests;
+			productName = mambaMacOSTests;
+			productReference = EC1CCCDF209A2AF8006B59FF /* mambaMacOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		EC6C8F5C1D08C526007C1C99 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Comcast Corporation.\n//  Licensed under the Apache License, Version 2.0 (the \"License\");\n//  you may not use this file except in compliance with the License.\n//  You may obtain a copy of the License at\n//\n//  http://www.apache.org/licenses/LICENSE-2.0\n//\n//  Unless required by applicable law or agreed to in writing, software\n//  distributed under the License is distributed on an \"AS IS\" BASIS,\n//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n//  See the License for the specific language governing permissions and\n//  limitations under the License.";
 				TargetAttributes = {
@@ -1241,6 +1531,14 @@
 						LastSwiftMigration = "";
 						ProvisioningStyle = Automatic;
 					};
+					EC1CCCD6209A2AF8006B59FF = {
+						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
+					};
+					EC1CCCDE209A2AF8006B59FF = {
+						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = EC6C8F5F1D08C526007C1C99 /* Build configuration list for PBXProject "mamba" */;
@@ -1258,8 +1556,10 @@
 			targets = (
 				EC15214E1DD28536006FB265 /* mamba */,
 				EC15216A1DD2856F006FB265 /* mambaTVOS */,
+				EC1CCCD6209A2AF8006B59FF /* mambaMacOS */,
 				EC1521561DD28536006FB265 /* mambaTests */,
 				EC1521721DD2856F006FB265 /* mambaTVOSTests */,
+				EC1CCCDE209A2AF8006B59FF /* mambaMacOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1334,6 +1634,42 @@
 				EC74920F1DD29E2900AF4E20 /* hls_sampleMediaFile.txt in Resources */,
 				EC7492111DD29E2900AF4E20 /* hls_singleMediaFile.txt in Resources */,
 				EC7492131DD29E2900AF4E20 /* hls_writer_parser_roundtrip_tester.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC1CCCD5209A2AF8006B59FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC1CCCDD209A2AF8006B59FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECE253CF209A508700D388CE /* super8demuxed2_IP_1080p24_51_TS.m3u8 in Resources */,
+				ECE253C4209A508700D388CE /* bipbopall.m3u8 in Resources */,
+				ECE253BC209A508700D388CE /* linear_ad_insertion_CONTENT_end_ad_forced.m3u8 in Resources */,
+				ECE253C2209A508700D388CE /* Super8_muxed3_HD_VOD_VDS_TELENOVELA_02152016_LVLH08.m3u8 in Resources */,
+				ECE253C8209A508700D388CE /* hls_master_playlist_sap.m3u8 in Resources */,
+				ECE253C1209A508700D388CE /* Super8_muxed2_1376214110461.m3u8 in Resources */,
+				ECE253C0209A508700D388CE /* Super8_muxed1_4242.m3u8 in Resources */,
+				ECE253CE209A508700D388CE /* super8demuxed1_4242.m3u8 in Resources */,
+				ECE253CB209A508700D388CE /* hls_singleMediaFile.txt in Resources */,
+				ECE253C7209A508700D388CE /* hls_master_playlist.m3u8 in Resources */,
+				ECE253BF209A508700D388CE /* linear_ad_insertion_CONTENT_start_ad.m3u8 in Resources */,
+				ECE253BD209A508700D388CE /* linear_ad_insertion_CONTENT_end_ad_natural.m3u8 in Resources */,
+				ECE253C6209A508700D388CE /* hls_ad_variant_playlist.m3u8 in Resources */,
+				ECE253CD209A508700D388CE /* hls_writer_parser_roundtrip_tester.txt in Resources */,
+				ECE253D0209A508700D388CE /* super8demuxed3_1376214110461.m3u8 in Resources */,
+				ECE253C9209A508700D388CE /* hls_sampleMasterFile.txt in Resources */,
+				ECE253C5209A508700D388CE /* hls_ad_master_playlist.m3u8 in Resources */,
+				ECE253BE209A508700D388CE /* linear_ad_insertion_CONTENT_mid_ad.m3u8 in Resources */,
+				ECE253CC209A508700D388CE /* hls_variant_playlist.m3u8 in Resources */,
+				ECE253CA209A508700D388CE /* hls_sampleMediaFile.txt in Resources */,
+				ECE253C3209A508700D388CE /* ThirdPartyHLSTagsTestFixture.txt in Resources */,
+				ECE253BB209A508700D388CE /* linear_ad_insertion_AD.m3u8 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1656,6 +1992,164 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EC1CCCD2209A2AF8006B59FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC1CCD04209A2CF9006B59FF /* HLSStringRef_ConcreteUnownedBytes.m in Sources */,
+				EC1CCD56209A2CF9006B59FF /* LocationTagWriter.swift in Sources */,
+				EC1CCD00209A2CF9006B59FF /* HLSStringRef_ConcreteNSData.m in Sources */,
+				EC1CCD36209A2CF9006B59FF /* URL+hlsplaylist.swift in Sources */,
+				EC1CCD32209A2CF9006B59FF /* String+Trim.swift in Sources */,
+				EC1CCD46209A2CF9006B59FF /* GenericSingleTagValidator.swift in Sources */,
+				EC1CCD59209A2CF9006B59FF /* HLSParser.swift in Sources */,
+				EC1CCD30209A2CF9006B59FF /* String+DateParsing.swift in Sources */,
+				EC1CCD53209A2CF9006B59FF /* GenericDictionaryTagWriter.swift in Sources */,
+				EC1CCD55209A2CF9006B59FF /* GenericTagWriter.swift in Sources */,
+				EC1CCD60209A2CF9006B59FF /* HLSValidationIssue.swift in Sources */,
+				EC1CCD40209A2CF9006B59FF /* EXT_X_MEDIARenditionGroupTYPEValidator.swift in Sources */,
+				EC1CCD21209A2CF9006B59FF /* RapidParserStateHandlers.c in Sources */,
+				EC1CCD23209A2CF9006B59FF /* CollectionType+FindExtensions.swift in Sources */,
+				EC1CCD52209A2CF9006B59FF /* HLSPlaylistValidatorImpl.swift in Sources */,
+				EC1CCD4A209A2CF9006B59FF /* HLSPlaylistOneToManyValidator.swift in Sources */,
+				EC1CCD4D209A2CF9006B59FF /* HLSPlaylistRenditionGroupMatchingPROGRAM_IDValidator.swift in Sources */,
+				EC1CCD24209A2CF9006B59FF /* CollectionType+Safe.swift in Sources */,
+				EC1CCCF5209A2CF9006B59FF /* HLSPlaylistTimelineTranslator.swift in Sources */,
+				EC1CCD58209A2CF9006B59FF /* PantosValue.swift in Sources */,
+				EC1CCD63209A2CF9006B59FF /* Mamba.swift in Sources */,
+				EC1CCD44209A2CF9006B59FF /* EXT_X_TARGETDURATIONLengthValidator.swift in Sources */,
+				EC1CCD48209A2CF9006B59FF /* HLSPlaylistCardinalityValidator.swift in Sources */,
+				EC1CCD57209A2CF9006B59FF /* PantosTag.swift in Sources */,
+				EC1CCD4B209A2CF9006B59FF /* HLSPlaylistRenditionGroupAudioVideoValidator.swift in Sources */,
+				EC1CCCFB209A2CF9006B59FF /* HLSStringRef.m in Sources */,
+				EC1CCD2E209A2CF9006B59FF /* CMTimeMakeFromString.c in Sources */,
+				EC1CCD25209A2CF9006B59FF /* HLSTagArray+RenditionGroups.swift in Sources */,
+				EC1CCD50209A2CF9006B59FF /* HLSPlaylistTagGroupValidator.swift in Sources */,
+				EC1CCCFE209A2CF9006B59FF /* HLSStringRefFactory.m in Sources */,
+				EC1CCD3A209A2CF9006B59FF /* NoOpTagParser.swift in Sources */,
+				EC1CCD5D209A2CF9006B59FF /* HLSTagValidator.swift in Sources */,
+				EC1CCD62209A2CF9006B59FF /* HLSWriter.swift in Sources */,
+				EC1CCCF8209A2CF9006B59FF /* HLSTagCriteria.swift in Sources */,
+				EC1CCCF4209A2CF9006B59FF /* HLSPlaylistStructureInterface.swift in Sources */,
+				EC1CCD61209A2CF9006B59FF /* HLSValueTypes.swift in Sources */,
+				EC1CCD39209A2CF9006B59FF /* GenericSingleValueTagParser.swift in Sources */,
+				EC1CCD34209A2CF9006B59FF /* StringArrayParser.swift in Sources */,
+				EC1CCD18209A2CF9006B59FF /* RapidParser.c in Sources */,
+				EC1CCD3E209A2CF9006B59FF /* EXT_X_MEDIARenditionGroupDEFAULTValidator.swift in Sources */,
+				EC1CCCF6209A2CF9006B59FF /* HLSTagGroup.swift in Sources */,
+				EC1CCD3D209A2CF9006B59FF /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift in Sources */,
+				EC1CCD41209A2CF9006B59FF /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift in Sources */,
+				EC1CCD3B209A2CF9006B59FF /* EXTINFValidator.swift in Sources */,
+				EC1CCD27209A2CF9006B59FF /* CoreMedia+Util.swift in Sources */,
+				EC1CCD26209A2CF9006B59FF /* OrderedDictionary.swift in Sources */,
+				EC1CCD54209A2CF9006B59FF /* GenericSingleTagWriter.swift in Sources */,
+				EC1CCD29209A2CF9006B59FF /* HLSStringRef+mamba.swift in Sources */,
+				EC1CCD3C209A2CF9006B59FF /* EXT_X_KEYValidator.swift in Sources */,
+				EC1CCD5E209A2CF9006B59FF /* HLSTagValueIdentifier.swift in Sources */,
+				EC1CCD06209A2CF9006B59FF /* RapidParserMasterParseArray.c in Sources */,
+				EC1CCCF0209A2CF9006B59FF /* HLSPlaylistInterface.swift in Sources */,
+				EC1CCD42209A2CF9006B59FF /* EXT_X_STARTTimeOffsetValidator.swift in Sources */,
+				EC1CCD33209A2CF9006B59FF /* GenericDictionaryTagParserHelper.swift in Sources */,
+				EC1CCD3F209A2CF9006B59FF /* EXT_X_MEDIARenditionGroupNAMEValidator.swift in Sources */,
+				EC1CCCEF209A2CF9006B59FF /* HLSPlaylistCore.swift in Sources */,
+				EC1CCCEE209A2CF9006B59FF /* HLSPlaylist.swift in Sources */,
+				EC1CCD5B209A2CF9006B59FF /* HLSTagDescriptor.swift in Sources */,
+				EC1CCCF3209A2CF9006B59FF /* HLSPlaylistStructure.swift in Sources */,
+				EC1CCD1C209A2CF9006B59FF /* RapidParserError.m in Sources */,
+				EC1CCCF1209A2CF9006B59FF /* HLSPlaylistTypes.swift in Sources */,
+				EC1CCD4E209A2CF9006B59FF /* HLSPlaylistRenditionGroupValidator.swift in Sources */,
+				EC1CCCFC209A2CF9006B59FF /* HLSStringRef.swift in Sources */,
+				EC1CCD2A209A2CF9006B59FF /* HLSTag+Util.swift in Sources */,
+				EC1CCD31209A2CF9006B59FF /* String+HLSTypeEquatable.swift in Sources */,
+				EC1CCD2D209A2CF9006B59FF /* RegisteredHLSTags.swift in Sources */,
+				EC1CCD5A209A2CF9006B59FF /* HLSParserError.swift in Sources */,
+				EC1CCD47209A2CF9006B59FF /* HLSDictionaryTagValueIdentifier.swift in Sources */,
+				EC1CCCF2209A2CF9006B59FF /* HLSTag.swift in Sources */,
+				EC1CCD4F209A2CF9006B59FF /* HLSPlaylistTagCardinalityValidation.swift in Sources */,
+				EC1CCD2B209A2CF9006B59FF /* IndeterminateBool.swift in Sources */,
+				EC1CCCF9209A2CF9006B59FF /* HLSTagCriterion.swift in Sources */,
+				EC1CCD43209A2CF9006B59FF /* EXT_X_STREAM_INFRenditionGroupValidator.swift in Sources */,
+				EC1CCD35209A2CF9006B59FF /* StringDictionaryParser.swift in Sources */,
+				EC1CCD02209A2CF9006B59FF /* HLSStringRef_ConcreteNSString.m in Sources */,
+				EC1CCD38209A2CF9006B59FF /* GenericNoDataTagParser.swift in Sources */,
+				EC1CCD51209A2CF9006B59FF /* HLSPlaylistValidator.swift in Sources */,
+				EC1CCD5F209A2CF9006B59FF /* HLSTagWriter.swift in Sources */,
+				EC1CCD49209A2CF9006B59FF /* HLSPlaylistCollectionValidator.swift in Sources */,
+				EC1CCD37209A2CF9006B59FF /* GenericDictionaryTagParser.swift in Sources */,
+				EC1CCD28209A2CF9006B59FF /* FailableStringLiteralConvertible.swift in Sources */,
+				EC1CCCF7209A2CF9006B59FF /* StructureState.swift in Sources */,
+				EC1CCD5C209A2CF9006B59FF /* HLSTagParser.swift in Sources */,
+				EC1CCD2C209A2CF9006B59FF /* OutputStream+HLSWriting.swift in Sources */,
+				EC1CCD16209A2CF9006B59FF /* HLSRapidParser.m in Sources */,
+				EC1CCD4C209A2CF9006B59FF /* HLSPlaylistRenditionGroupMatchingNAMELANGUAGEValidator.swift in Sources */,
+				EC1CCD1D209A2CF9006B59FF /* RapidParserLineState.c in Sources */,
+				EC1CCD45209A2CF9006B59FF /* GenericDictionaryTagValidator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC1CCCDB209A2AF8006B59FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECE253E8209A509C00D388CE /* OutputStreamExtensionTests.swift in Sources */,
+				ECE253EE209A50A600D388CE /* StructureStateTests.swift in Sources */,
+				ECE253EF209A50B500D388CE /* EXT_X_ALLOW_CACHETagParserTests.swift in Sources */,
+				ECE253F9209A50B500D388CE /* GenericDictionaryTagValidatorTests.swift in Sources */,
+				ECE253DE209A509900D388CE /* HLSParser_Super8MuxedTests.swift in Sources */,
+				ECE253F0209A50B500D388CE /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift in Sources */,
+				ECE25405209A50B500D388CE /* HLSCodecArrayTests.swift in Sources */,
+				ECE253EA209A50A100D388CE /* HLSStringRefTests.m in Sources */,
+				ECE253F7209A50B500D388CE /* StringArrayParserTests.swift in Sources */,
+				ECE25401209A50B500D388CE /* MambaUtilTests.swift in Sources */,
+				ECE253FB209A50B500D388CE /* GenericDictionaryTagWriterTests.swift in Sources */,
+				ECE25407209A50B500D388CE /* HLSPlaylistTypeTests.swift in Sources */,
+				ECE253D5209A509000D388CE /* XCTestCase+mamba.swift in Sources */,
+				ECE253E9209A509C00D388CE /* PantosTagTests.swift in Sources */,
+				ECE253E4209A509900D388CE /* HLSTagTests.swift in Sources */,
+				ECE25402209A50B500D388CE /* OrderedDictionaryTests.swift in Sources */,
+				ECE253D8209A509900D388CE /* HLSPlaylistStructureMasterTests.swift in Sources */,
+				ECE253E1209A509900D388CE /* HLSTagCollectionTests.swift in Sources */,
+				ECE253DD209A509900D388CE /* HLSParser_Super8DemuxedTests.swift in Sources */,
+				ECE253DC209A509900D388CE /* HLSMediaSpanTests.swift in Sources */,
+				ECE253E7209A509900D388CE /* HLSWriterTests.swift in Sources */,
+				ECE253D1209A509000D388CE /* FixtureLoader.swift in Sources */,
+				ECE253D2209A509000D388CE /* HLSPlaylist+Convenience.swift in Sources */,
+				ECE25406209A50B500D388CE /* HLSMediaTypeTests.swift in Sources */,
+				ECE253ED209A50A600D388CE /* ReadMeUnitTests.swift in Sources */,
+				ECE253D6209A509900D388CE /* HLSPlaylistInterfaceTests.swift in Sources */,
+				ECE25404209A50B500D388CE /* URL+hlsplaylistTests.swift in Sources */,
+				ECE253F8209A50B500D388CE /* StringDictionaryParserTests.swift in Sources */,
+				ECE253D7209A509900D388CE /* HLSPlaylistStructureAndEditingTests.swift in Sources */,
+				ECE253EB209A50A100D388CE /* ParseArrayTests.m in Sources */,
+				ECE253DB209A509900D388CE /* HLSPlaylistTimelineAndSequencingTests.swift in Sources */,
+				ECE253E5209A509900D388CE /* HLSTagWriting.swift in Sources */,
+				ECE253D3209A509000D388CE /* HLSPlaylistMock.swift in Sources */,
+				ECE253F5209A50B500D388CE /* GenericNoDataTagParserTests.swift in Sources */,
+				ECE253D4209A509000D388CE /* HLSTagParserMock.swift in Sources */,
+				ECE253E3209A509900D388CE /* HLSTagGroupTests.swift in Sources */,
+				ECE253F2209A50B500D388CE /* EXT_X_MAPTagParserTests.swift in Sources */,
+				ECE253E0209A509900D388CE /* HLSStringRefExtensionTests.swift in Sources */,
+				ECE253F3209A50B500D388CE /* EXT_X_MEDIATagParserTests.swift in Sources */,
+				ECE253E2209A509900D388CE /* HLSTagCriterionTests.swift in Sources */,
+				ECE253E6209A509900D388CE /* HLSValidatorTests.swift in Sources */,
+				ECE253FF209A50B500D388CE /* CollectionTypeTests.swift in Sources */,
+				ECE253FE209A50B500D388CE /* CMTimeMakeFromStringTests.swift in Sources */,
+				ECE253D9209A509900D388CE /* HLSPlaylistStructureTests.swift in Sources */,
+				ECE253EC209A50A100D388CE /* RapidParserTests.swift in Sources */,
+				ECE253FC209A50B500D388CE /* GenericSingleTagWriterTests.swift in Sources */,
+				ECE253DA209A509900D388CE /* HLSPlaylistTests.swift in Sources */,
+				ECE253F4209A50B500D388CE /* EXT_X_PROGRAM_DATE_TIMEParserTests.swift in Sources */,
+				ECE253FD209A50B500D388CE /* ThirdPartyTagListSupportTests.swift in Sources */,
+				ECE25408209A50B500D388CE /* HLSResolutionTests.swift in Sources */,
+				ECE253F6209A50B500D388CE /* GenericSingleValueTagParserTests.swift in Sources */,
+				ECE253FA209A50B500D388CE /* GenericSingleTagValidatorTests.swift in Sources */,
+				ECE253DF209A509900D388CE /* HLSParserTest.swift in Sources */,
+				ECE253F1209A50B500D388CE /* EXT_X_KEYTagParserTests.swift in Sources */,
+				ECE25403209A50B500D388CE /* String+Helio.swift in Sources */,
+				ECE25400209A50B500D388CE /* IndeterminateBoolTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1668,6 +2162,11 @@
 			isa = PBXTargetDependency;
 			target = EC15216A1DD2856F006FB265 /* mambaTVOS */;
 			targetProxy = EC1521751DD2856F006FB265 /* PBXContainerItemProxy */;
+		};
+		EC1CCCE2209A2AF8006B59FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC1CCCD6209A2AF8006B59FF /* mambaMacOS */;
+			targetProxy = EC1CCCE1209A2AF8006B59FF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1862,6 +2361,116 @@
 			};
 			name = Release;
 		};
+		EC1CCCE8209A2AF8006B59FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = mambaMacOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
+				PRODUCT_MODULE_NAME = mamba;
+				PRODUCT_NAME = mamba;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		EC1CCCE9209A2AF8006B59FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = mambaMacOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
+				PRODUCT_MODULE_NAME = mamba;
+				PRODUCT_NAME = mamba;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		EC1CCCEA209A2AF8006B59FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = mambaMacOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba.mambaMacOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		EC1CCCEB209A2AF8006B59FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = mambaMacOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba.mambaMacOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 		EC6C8F771D08C526007C1C99 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2011,6 +2620,24 @@
 			buildConfigurations = (
 				EC1521801DD2856F006FB265 /* Debug */,
 				EC1521811DD2856F006FB265 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC1CCCEC209A2AF8006B59FF /* Build configuration list for PBXNativeTarget "mambaMacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC1CCCE8209A2AF8006B59FF /* Debug */,
+				EC1CCCE9209A2AF8006B59FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC1CCCED209A2AF8006B59FF /* Build configuration list for PBXNativeTarget "mambaMacOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC1CCCEA209A2AF8006B59FF /* Debug */,
+				EC1CCCEB209A2AF8006B59FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

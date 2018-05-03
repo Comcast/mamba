@@ -9,7 +9,7 @@
 Mamba
 ===
 
-Mamba is a Swift iOS and tvOS framework to parse, validate and write [HTTP Live Streaming (HLS)](https://tools.ietf.org/html/draft-pantos-http-live-streaming-23) data.
+Mamba is a Swift iOS, tvOS and macOS framework to parse, validate and write [HTTP Live Streaming (HLS)](https://tools.ietf.org/html/draft-pantos-http-live-streaming-23) data.
 
 This framework is used in Comcast applications to parse, validate, edit and write HLS playlists to deliver video to millions of customers. It was written by the [Comcast VIPER](https://stackoverflow.com/jobs/companies/comcast-viper) Player Platform team.
 
@@ -23,7 +23,7 @@ _Mamba Project Goals:_
 
 * XCode 9+
 * Swift 3+ (written in Swift 4)
-* iOS 9+ _or_ tvOS 10+
+* iOS 9+ _or_ tvOS 10+ _or_ macOS 10.13+
 
 ## Usage
 
@@ -35,7 +35,7 @@ Create an `HLSParser`.
 let parser = HLSParser()
 ```
 
-Parse your HLS playlist using the parser. Here's the callback version:
+Parse your HLS playlist using the parser. Here's the asynchronous version:
 
 ```swift
 let myPlaylistData: Data = ... // source of HLS data
@@ -51,7 +51,7 @@ parser.parse(playlistData: myPlaylistData,
              })
 ```
 
-And here's the inline version:
+And here's the  synchronous version:
 
 ```swift
 let playlist: HLSPlaylist
