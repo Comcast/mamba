@@ -105,7 +105,7 @@ class HLSPlaylistInterfaceTests: XCTestCase {
         XCTAssertNil(playlistMaster.timeRange(forTagIndex: 0))
         XCTAssertNil(playlistMaster.timeRange(forMediaSequence: 0))
         XCTAssertNil(playlistMaster.tagIndexes(forTime: kCMTimeZero))
-        XCTAssertNil(playlistMaster.tagIndexes(forMediaSequence: 0))
+        XCTAssertNotNil(playlistMaster.tagIndexes(forMediaSequence: 0))
     }
     
     func testTagIndexesForVodPlaylist() {
@@ -178,6 +178,6 @@ class HLSPlaylistInterfaceTests: XCTestCase {
         let parsed = parsePlaylist(inString: playlist)
         
         let tagIndexes = parsed.tagIndexes(forMediaSequence: 0)
-        XCTAssertNil(tagIndexes, "Tag indexes should be nil")
+        XCTAssertNotNil(tagIndexes, "Tag indexes should not be nil")
     }
 }
