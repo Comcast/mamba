@@ -89,8 +89,6 @@ extension HLSPlaylistInterface {
     }
     
     public func mediaSequence(forTagIndex tagIndex: Int) -> MediaSequence? {
-        guard canQueryTimeline() else { return nil }
-        
         guard let segmentGroup = segmentGroup(forTagIndex: tagIndex) else { return nil }
         
         return segmentGroup.mediaSequence
@@ -113,8 +111,6 @@ extension HLSPlaylistInterface {
     }
     
     public func tagIndexes(forMediaSequence mediaSequence: MediaSequence) -> HLSTagIndexRange? {
-        guard canQueryTimeline() else { return nil }
-        
         guard let segmentGroup = segmentGroup(forMediaSequence: mediaSequence) else { return nil }
         
         return segmentGroup.startIndex...segmentGroup.endIndex
