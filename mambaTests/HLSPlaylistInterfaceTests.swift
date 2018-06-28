@@ -105,6 +105,79 @@ class HLSPlaylistInterfaceTests: XCTestCase {
         XCTAssertNil(playlistMaster.timeRange(forTagIndex: 0))
         XCTAssertNil(playlistMaster.timeRange(forMediaSequence: 0))
         XCTAssertNil(playlistMaster.tagIndexes(forTime: kCMTimeZero))
-        XCTAssertNil(playlistMaster.tagIndexes(forMediaSequence: 0))
+        XCTAssertNotNil(playlistMaster.tagIndexes(forMediaSequence: 0))
+    }
+    
+    func testTagIndexesForVodPlaylist() {
+        let playlist = """
+                        #EXTM3U
+                        #EXT-X-PLAYLIST-TYPE:VOD
+                        #EXT-X-MEDIA-SEQUENCE:0
+                        #EXT-X-TARGETDURATION:3
+                        #EXT-X-VERSION:3
+                        #EXTINF:2.96130,
+                        fileSequence0.ts
+                        #EXTINF:2.96130,
+                        fileSequence1.ts
+                        #EXTINF:2.96129,
+                        fileSequence2.ts
+                        #EXTINF:2.96129,
+                        fileSequence3.ts
+                        #EXTINF:2.96130,
+                        fileSequence4.ts
+                        #EXTINF:2.96130,
+                        fileSequence5.ts
+                        #EXTINF:2.96129,
+                        fileSequence6.ts
+                        #EXTINF:2.96129,
+                        fileSequence7.ts
+                        #EXTINF:2.96130,
+                        fileSequence8.ts
+                        #EXTINF:2.96130,
+                        fileSequence9.ts
+                        #EXTINF:2.96129,
+                        fileSequence10.ts
+                        """
+        
+        let parsed = parsePlaylist(inString: playlist)
+        
+        let tagIndexes = parsed.tagIndexes(forMediaSequence: 0)
+        XCTAssertNotNil(tagIndexes, "Tag indexes should not be nil")
+    }
+    
+    func testTagIndexesForImpliedLivePlaylist() {
+        let playlist = """
+                        #EXTM3U
+                        #EXT-X-MEDIA-SEQUENCE:0
+                        #EXT-X-TARGETDURATION:3
+                        #EXT-X-VERSION:3
+                        #EXTINF:2.96130,
+                        fileSequence0.ts
+                        #EXTINF:2.96130,
+                        fileSequence1.ts
+                        #EXTINF:2.96129,
+                        fileSequence2.ts
+                        #EXTINF:2.96129,
+                        fileSequence3.ts
+                        #EXTINF:2.96130,
+                        fileSequence4.ts
+                        #EXTINF:2.96130,
+                        fileSequence5.ts
+                        #EXTINF:2.96129,
+                        fileSequence6.ts
+                        #EXTINF:2.96129,
+                        fileSequence7.ts
+                        #EXTINF:2.96130,
+                        fileSequence8.ts
+                        #EXTINF:2.96130,
+                        fileSequence9.ts
+                        #EXTINF:2.96129,
+                        fileSequence10.ts
+                        """
+        
+        let parsed = parsePlaylist(inString: playlist)
+        
+        let tagIndexes = parsed.tagIndexes(forMediaSequence: 0)
+        XCTAssertNotNil(tagIndexes, "Tag indexes should not be nil")
     }
 }
