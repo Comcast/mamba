@@ -282,6 +282,11 @@ fileprivate final class HLSParseWorker: NSObject, HLSRapidParserCallback {
     }
     
     func startParse() {
+        // special case if data is empty return an empty array of tags
+        if self.data.isEmpty {
+            self.parseComplete()
+            return
+        }
         fastParser.parseHLSData(self.data, callback: self)
     }
 
