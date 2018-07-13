@@ -162,7 +162,11 @@ public struct HLSPlaylistCore<T>: HLSPlaylistInterface, CustomDebugStringConvert
     }
     
     public var playlistCoreDebugDescription: String {
-        return "registeredTags:\(registeredTags) \nstructure:\(structure)\n"
+        guard let stream = try? self.write(),
+            let debugDescription = String(data: stream, encoding: .utf8) else {
+            return "Stream write failure. Raw Data: registeredTags:\(registeredTags) \nstructure:\(structure)\n"
+        }
+        return String(debugDescription)
     }
     
     /**
