@@ -35,7 +35,7 @@ void parseHLS(const void *parentparser, const unsigned char *bytes, const uint64
     
     rapid_parser_debug_print("Begining parse of hls data with length %llu\n", length);
     
-    do {
+    while (index > 0 && state != ErrorEarlyExit) {
         
         index -= 1;
         
@@ -43,7 +43,7 @@ void parseHLS(const void *parentparser, const unsigned char *bytes, const uint64
         
         rapid_parser_debug_print("State %i after processing character %c at index %llu\n", (int)state, bytes[index], index);
         
-    } while (index > 0 && state != ErrorEarlyExit);
+    }
     
     if (index == 0 && state != ErrorEarlyExit) {
         // handle the final line, force a line completion
