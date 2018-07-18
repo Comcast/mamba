@@ -381,6 +381,108 @@ class HLSParserTest: XCTestCase {
         XCTAssert(playlist2?.tags.count == 5, "Unexpected number of tags")
     }
     
+    func testEmptyDataParse() {
+        
+        let data = Data()
+        
+        let parser = HLSParser()
+        
+        let expectation = self.expectation(description: "parse completion")
+        
+        var playlist: HLSPlaylist? = nil
+        
+        let url = URL(string: "http://test.nowhere")!
+        
+        parser.parse(playlistData: data,
+                     url: url,
+                     success: { (m) in
+                        playlist = m
+                        expectation.fulfill()
+        },
+                     failure: { (error) in
+                        XCTFail("testParserWithURL failure")
+                        expectation.fulfill()
+        })
+        
+        waitForExpectations(timeout: 2.0, handler: {
+            error in
+            if (error != nil) {
+                print("Parse timeout in testParserWithURL: \(error!)")
+                XCTFail()
+            }
+        })
+        
+        XCTAssert(playlist?.tags.count == 0, "playlist should be empty")
+    }
+    
+    func testNearlyEmptyDataParse() {
+        
+        let data = " ".data(using: .utf8)!
+        
+        let parser = HLSParser()
+        
+        let expectation = self.expectation(description: "parse completion")
+        
+        var playlist: HLSPlaylist? = nil
+        
+        let url = URL(string: "http://test.nowhere")!
+        
+        parser.parse(playlistData: data,
+                     url: url,
+                     success: { (m) in
+                        playlist = m
+                        expectation.fulfill()
+        },
+                     failure: { (error) in
+                        XCTFail("testParserWithURL failure")
+                        expectation.fulfill()
+        })
+        
+        waitForExpectations(timeout: 2.0, handler: {
+            error in
+            if (error != nil) {
+                print("Parse timeout in testParserWithURL: \(error!)")
+                XCTFail()
+            }
+        })
+        
+        XCTAssertNotNil(playlist, "playlist should exist")
+    }
+    
+    func testNewlineDataParse() {
+        
+        let data = "\n".data(using: .utf8)!
+        
+        let parser = HLSParser()
+        
+        let expectation = self.expectation(description: "parse completion")
+        
+        var playlist: HLSPlaylist? = nil
+        
+        let url = URL(string: "http://test.nowhere")!
+        
+        parser.parse(playlistData: data,
+                     url: url,
+                     success: { (m) in
+                        playlist = m
+                        expectation.fulfill()
+        },
+                     failure: { (error) in
+                        XCTFail("testParserWithURL failure")
+                        expectation.fulfill()
+        })
+        
+        waitForExpectations(timeout: 2.0, handler: {
+            error in
+            if (error != nil) {
+                print("Parse timeout in testParserWithURL: \(error!)")
+                XCTFail()
+            }
+        })
+        
+        XCTAssertNotNil(playlist, "playlist should exist")
+    }
+    
     func testParseInvalidEXTINF_no_colon() {
         
         let playlistString = """
