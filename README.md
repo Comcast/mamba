@@ -155,6 +155,8 @@ extension MyCustomValueIdentifiers: HLSTagValueIdentifier {
 
 You can now look through `HLSTag` objects for your custom tag values just as if it were a valuetype defined in the HLS specification.
 
+#### See the playground included in the workspace for more example code.
+
 ### _Important Note About Memory Safety_
 
 In order to achieve our performance goals, the internal C parser for HLS had to minimize the amount of heap memory allocated.

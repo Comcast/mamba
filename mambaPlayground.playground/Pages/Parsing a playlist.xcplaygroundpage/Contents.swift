@@ -2,7 +2,7 @@ import Foundation
 import mamba
 
 /*: # Parsing a playlist
- In General to parse a playlist you'll need: a `HLSParser`, the source of HLS `Data`, and the `URL` of the playlist resource. */
+ To parse a playlist you'll need: a `HLSParser`, the source of HLS `Data`, and the `URL` of the playlist resource. */
 let parser = HLSParser()
 let playlistData: Data = SamplePlaylist.master
 let playlistUrl: URL = URL(string: "http://nowhere")!
