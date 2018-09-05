@@ -20,15 +20,15 @@
 import Foundation
 
 /// Generic writer for HLS tags that have just one single value (e.g. `#EXT-X-TARGETDURATION:10`)
-struct GenericSingleTagWriter: HLSTagWriter {
+public struct GenericSingleTagWriter: HLSTagWriter {
     
     fileprivate let singleTagValueIdentifier: HLSTagValueIdentifier
     
-    init(singleTagValueIdentifier: HLSTagValueIdentifier) {
+    public init(singleTagValueIdentifier: HLSTagValueIdentifier) {
         self.singleTagValueIdentifier = singleTagValueIdentifier
     }
     
-    func write(tag: HLSTag, toStream stream: OutputStream) throws {
+    public func write(tag: HLSTag, toStream stream: OutputStream) throws {
         
         guard tag.keys.count == 1 else {
             throw OutputStreamError.invalidData(description:"\(tag.tagDescriptor.toString()) Tag requires a \(singleTagValueIdentifier.toString()) value. Found \(tag.keys.count) values instead. Keys found: \(tag.keys)")
