@@ -53,4 +53,49 @@
     XCTAssert(strcmp(remainder, "\0") == 0);
 }
 
+- (void)testNoRemainder {
+    const char *c = "1.0";
+    const char *remainder = NULL;
+    CMTime time = mamba_CMTimeMakeFromString(c, 5, &remainder);
+    XCTAssert(CMTIME_IS_NUMERIC(time));
+    XCTAssert(time.value == 100000);
+    XCTAssert(strcmp(remainder, "\0") == 0);
+}
+
+- (void)testLongCommaRemainder {
+    const char *c = "2.002,";
+    const char *remainder = NULL;
+    CMTime time = mamba_CMTimeMakeFromString(c, 5, &remainder);
+    XCTAssert(CMTIME_IS_NUMERIC(time));
+    XCTAssert(time.value == 200200);
+    XCTAssert(strcmp(remainder, ",") == 0);
+}
+
+- (void)testLongWordRemainder {
+    const char *c = "2.002word";
+    const char *remainder = NULL;
+    CMTime time = mamba_CMTimeMakeFromString(c, 5, &remainder);
+    XCTAssert(CMTIME_IS_NUMERIC(time));
+    XCTAssert(time.value == 200200);
+    XCTAssert(strcmp(remainder, "word") == 0);
+}
+
+- (void)testLongNullRemainder {
+    const char *c = "2.002\0";
+    const char *remainder = NULL;
+    CMTime time = mamba_CMTimeMakeFromString(c, 5, &remainder);
+    XCTAssert(CMTIME_IS_NUMERIC(time));
+    XCTAssert(time.value == 200200);
+    XCTAssert(strcmp(remainder, "\0") == 0);
+}
+
+- (void)testLongNoRemainder {
+    const char *c = "2.002";
+    const char *remainder = NULL;
+    CMTime time = mamba_CMTimeMakeFromString(c, 5, &remainder);
+    XCTAssert(CMTIME_IS_NUMERIC(time));
+    XCTAssert(time.value == 200200);
+    XCTAssert(strcmp(remainder, "\0") == 0);
+}
+
 @end
