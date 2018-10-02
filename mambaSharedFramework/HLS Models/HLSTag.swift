@@ -104,7 +104,7 @@ public struct HLSTag: CustomDebugStringConvertible {
                 tagData: HLSStringRef,
                 tagName: HLSStringRef,
                 parsedValues: HLSTagDictionary? = nil,
-                duration: CMTime = kCMTimeInvalid) {
+                duration: CMTime = CMTime.invalid) {
         
         self.tagDescriptor = tagDescriptor
         self.tagData = tagData
@@ -127,7 +127,7 @@ public struct HLSTag: CustomDebugStringConvertible {
         self.tagDescriptor = tagDescriptor
         self.tagData = tagData
         self.tagName = nil
-        self.duration = kCMTimeInvalid
+        self.duration = CMTime.invalid
     }
     
     /**
@@ -155,7 +155,7 @@ public struct HLSTag: CustomDebugStringConvertible {
         }
         self.parsedValues = parsedValues
         self.isDirty = parsedValues != nil
-        self.duration = kCMTimeInvalid
+        self.duration = CMTime.invalid
     }
     
     /**

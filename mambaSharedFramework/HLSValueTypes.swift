@@ -48,8 +48,8 @@ public struct HLSResolution: Equatable, Comparable, FailableStringLiteralConvert
     static let ratio16x9: Float = 16.0 / 9.0
     static let ratio4x3: Float = 4.0 / 3.0
     public var ratio: Float { return Float(w)/Float(h) }
-    public var is16x9: Bool { return fabs(ratio - HLSResolution.ratio16x9) < 0.01 }
-    public var is4x3: Bool { return fabs(ratio - HLSResolution.ratio4x3) < 0.01 }
+    public var is16x9: Bool { return abs(ratio - HLSResolution.ratio16x9) < 0.01 }
+    public var is4x3: Bool { return abs(ratio - HLSResolution.ratio4x3) < 0.01 }
 }
 
 public func ==(lhs: HLSResolution, rhs: HLSResolution) -> Bool {
