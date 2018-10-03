@@ -33,10 +33,9 @@ static inline int32_t int32exp10(uint8_t exp) {
 }
 
 CMTime mamba_CMTimeMakeFromString(const char * _Nullable string, uint8_t decimal_places, const char * _Nullable * _Nullable remainder) {
-    // head points to where we currently are in the string
-    const char *head = string;
-    
     CMTime result = kCMTimeInvalid;
+    
+    size_t charsRead = 0;
     
     if (string == NULL) {
         goto end;
@@ -50,10 +49,7 @@ CMTime mamba_CMTimeMakeFromString(const char * _Nullable string, uint8_t decimal
     // Cannot represent more than 9 decimal places with a power of 10 in int32_t
     char decimalString[10];
     
-    size_t charsRead = 0;
-    
     int argsRead = sscanf(string, " %20[-0-9]%zn%1[.]%zn%9[0-9]%zn", integralString, &charsRead, &decimalPoint, &charsRead, decimalString, &charsRead);
-    head += charsRead;
     
     // must read one integer, or two separated by a period
     // should not accept "1234."
@@ -105,7 +101,7 @@ CMTime mamba_CMTimeMakeFromString(const char * _Nullable string, uint8_t decimal
     
 end:
     if (remainder != NULL) {
-        *remainder = head;
+        *remainder = string + charsRead;
     }
     return result;
 }

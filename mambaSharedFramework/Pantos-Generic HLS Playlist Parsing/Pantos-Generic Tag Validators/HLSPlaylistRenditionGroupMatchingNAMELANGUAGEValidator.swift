@@ -23,9 +23,11 @@ import Foundation
 class HLSPlaylistRenditionGroupMatchingNAMELANGUAGEValidator: HLSPlaylistTagCrossGroupValidator {
     static let tagIdentifierPairs: [HLSTagIdentifierPair] = tagIdentifierPairsWithDefaultValueIdentifier(descriptors: [PantosTag.EXT_X_MEDIA])
     
+    private static let standardError = HLSValidationIssue(description: IssueDescription.HLSPlaylistRenditionGroupMatchingNAMELANGUAGEValidator,
+                                                          severity: IssueSeverity.error)
+    
     static var crossGroupValidation: ([String:[HLSTag]]) -> [HLSValidationIssue]? {
         return { (groups: [String:[HLSTag]]) -> [HLSValidationIssue]? in
-            var issues:[HLSValidationIssue] = []
             var names:Set<String>?
             var languages: Set<String>?
             for tags in groups.values {
@@ -34,18 +36,18 @@ class HLSPlaylistRenditionGroupMatchingNAMELANGUAGEValidator: HLSPlaylistTagCros
                     let localLanguages = tags.extractValues(tagDescriptor: PantosTag.EXT_X_MEDIA, valueIdentifier: PantosValue.language)
                     
                     if localNames.count != names.count || localLanguages.count != languages.count {
-                        issues += [HLSValidationIssue(description: IssueDescription.HLSPlaylistRenditionGroupMatchingNAMELANGUAGEValidator, severity: IssueSeverity.error)]
+                        return [standardError]
                     }
                     
                     for localName in localNames {
                         if !names.contains(where: { (name) -> Bool in return localName == name }) {
-                            issues += [HLSValidationIssue(description: IssueDescription.HLSPlaylistRenditionGroupMatchingNAMELANGUAGEValidator, severity: IssueSeverity.error)]
+                            return [standardError]
                         }
                     }
                     
                     for localLanguage in localLanguages {
                         if !languages.contains(where: { (language) -> Bool in return localLanguage == language }) {
-                            issues += [HLSValidationIssue(description: IssueDescription.HLSPlaylistRenditionGroupMatchingNAMELANGUAGEValidator, severity: IssueSeverity.error)]
+                            return [standardError]
                         }
                     }
                 }
@@ -54,7 +56,7 @@ class HLSPlaylistRenditionGroupMatchingNAMELANGUAGEValidator: HLSPlaylistTagCros
                     languages = tags.extractValues(tagDescriptor: PantosTag.EXT_X_MEDIA, valueIdentifier: PantosValue.language)
                 }
             }
-            return issues.isEmpty ? nil : issues
+            return nil
         }
     }
 }

@@ -69,6 +69,8 @@
 		EC03B6711E5CC56B00BF1F97 /* RapidParserStateHandlers.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6501E5CC56B00BF1F97 /* RapidParserStateHandlers.c */; };
 		EC03B6721E5CC56B00BF1F97 /* RapidParserStateHandlers.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6511E5CC56B00BF1F97 /* RapidParserStateHandlers.h */; };
 		EC03B6731E5CC56B00BF1F97 /* RapidParserStateHandlers.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6511E5CC56B00BF1F97 /* RapidParserStateHandlers.h */; };
+		EC0677DC21641FE500E715D1 /* CMTimeMakeFromStringCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0677DB21641FE500E715D1 /* CMTimeMakeFromStringCTests.m */; };
+		EC0677DD21641FE500E715D1 /* CMTimeMakeFromStringCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0677DB21641FE500E715D1 /* CMTimeMakeFromStringCTests.m */; };
 		EC073F571FE0572400689228 /* HLSTagCriterionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F561FE0572400689228 /* HLSTagCriterionTests.swift */; };
 		EC073F581FE0572400689228 /* HLSTagCriterionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F561FE0572400689228 /* HLSTagCriterionTests.swift */; };
 		EC073F5A1FE072DC00689228 /* HLSTagCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F591FE072DC00689228 /* HLSTagCollectionTests.swift */; };
@@ -633,6 +635,7 @@
 		EC03B64F1E5CC56B00BF1F97 /* RapidParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserState.h; sourceTree = "<group>"; };
 		EC03B6501E5CC56B00BF1F97 /* RapidParserStateHandlers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RapidParserStateHandlers.c; sourceTree = "<group>"; };
 		EC03B6511E5CC56B00BF1F97 /* RapidParserStateHandlers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserStateHandlers.h; sourceTree = "<group>"; };
+		EC0677DB21641FE500E715D1 /* CMTimeMakeFromStringCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMTimeMakeFromStringCTests.m; sourceTree = "<group>"; };
 		EC073F561FE0572400689228 /* HLSTagCriterionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSTagCriterionTests.swift; sourceTree = "<group>"; };
 		EC073F591FE072DC00689228 /* HLSTagCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSTagCollectionTests.swift; sourceTree = "<group>"; };
 		EC073F5C1FE0840000689228 /* OutputStreamExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputStreamExtensionTests.swift; sourceTree = "<group>"; };
@@ -1227,6 +1230,7 @@
 		EC86853F1D667907004551B8 /* Util Tests */ = {
 			isa = PBXGroup;
 			children = (
+				EC0677DB21641FE500E715D1 /* CMTimeMakeFromStringCTests.m */,
 				F7CFF27D1F392009009F4C82 /* CMTimeMakeFromStringTests.swift */,
 				EC7492A31DD29F7000AF4E20 /* CollectionTypeTests.swift */,
 				EC42A5F41FD9BF0500317EA5 /* IndeterminateBoolTests.swift */,
@@ -1513,12 +1517,12 @@
 				TargetAttributes = {
 					EC15214E1DD28536006FB265 = {
 						CreatedOnToolsVersion = 8.1;
-						LastSwiftMigration = "";
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Manual;
 					};
 					EC1521561DD28536006FB265 = {
 						CreatedOnToolsVersion = 8.1;
-						LastSwiftMigration = "";
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					EC15216A1DD2856F006FB265 = {
@@ -1795,6 +1799,7 @@
 				ECCF2DAD1E23F54100D7C48B /* HLSTagTests.swift in Sources */,
 				EC7492801DD29EC800AF4E20 /* GenericSingleValueTagParserTests.swift in Sources */,
 				ECC410641EA1518E00B4E3C8 /* StructureStateTests.swift in Sources */,
+				EC0677DC21641FE500E715D1 /* CMTimeMakeFromStringCTests.m in Sources */,
 				EC7492821DD29EC800AF4E20 /* StringArrayParserTests.swift in Sources */,
 				EC74927A1DD29EC800AF4E20 /* EXT_X_PROGRAM_DATE_TIMEParserTests.swift in Sources */,
 				EC74929C1DD29F3B00AF4E20 /* GenericSingleTagWriterTests.swift in Sources */,
@@ -1953,6 +1958,7 @@
 				EC7492B61DD29F8900AF4E20 /* HLSMediaTypeTests.swift in Sources */,
 				ECC410651EA1518E00B4E3C8 /* StructureStateTests.swift in Sources */,
 				EC7492811DD29EC800AF4E20 /* GenericSingleValueTagParserTests.swift in Sources */,
+				EC0677DD21641FE500E715D1 /* CMTimeMakeFromStringCTests.m in Sources */,
 				EC7492831DD29EC800AF4E20 /* StringArrayParserTests.swift in Sources */,
 				EC74927B1DD29EC800AF4E20 /* EXT_X_PROGRAM_DATE_TIMEParserTests.swift in Sources */,
 				EC74929D1DD29F3B00AF4E20 /* GenericSingleTagWriterTests.swift in Sources */,

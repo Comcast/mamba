@@ -74,6 +74,12 @@ class CMTimeMakeFromStringTests: XCTestCase {
         XCTAssertEqual(time.value, 2002)
     }
     
+    func testSmallFloat() {
+        let time = mamba_CMTimeMakeFromString("1.0", 5, nil)
+        XCTAssert(time.isNumeric)
+        XCTAssertEqual(time.value, 100000)
+    }
+
     func testRejectBadFormats() {
         var time: CMTime
         
