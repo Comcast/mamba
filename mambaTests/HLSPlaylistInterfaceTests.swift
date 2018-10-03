@@ -100,11 +100,11 @@ class HLSPlaylistInterfaceTests: XCTestCase {
         XCTAssertFalse(playlistMaster.canQueryTimeline())
         XCTAssertTrue(playlistVariant.canQueryTimeline())
         
-        XCTAssertNil(playlistMaster.mediaSequence(forTime: CMTime.zero))
+        XCTAssertNil(playlistMaster.mediaSequence(forTime: kCMTimeZero))
         XCTAssertNil(playlistMaster.mediaSequence(forTagIndex: 0))
         XCTAssertNil(playlistMaster.timeRange(forTagIndex: 0))
         XCTAssertNil(playlistMaster.timeRange(forMediaSequence: 0))
-        XCTAssertNil(playlistMaster.tagIndexes(forTime: CMTime.zero))
+        XCTAssertNil(playlistMaster.tagIndexes(forTime: kCMTimeZero))
         XCTAssertNotNil(playlistMaster.tagIndexes(forMediaSequence: 0))
     }
     

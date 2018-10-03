@@ -67,7 +67,7 @@ extension HLSPlaylistStructureInterface {
      The CMTime will be kCMTimeInvalid if we cannot determine a start time.
      */
     public var startTime: CMTime {
-        guard let timeRange = mediaSegmentGroups.first?.timeRange else { return CMTime.invalid }
+        guard let timeRange = mediaSegmentGroups.first?.timeRange else { return kCMTimeInvalid }
         return timeRange.start
     }
     
@@ -77,7 +77,7 @@ extension HLSPlaylistStructureInterface {
      The CMTime will be kCMTimeInvalid if we cannot determine a end time.
      */
     public var endTime: CMTime {
-        guard let timeRange = mediaSegmentGroups.last?.timeRange else { return CMTime.invalid }
+        guard let timeRange = mediaSegmentGroups.last?.timeRange else { return kCMTimeInvalid }
         return timeRange.end
     }
     
@@ -88,7 +88,7 @@ extension HLSPlaylistStructureInterface {
      */
     public var duration: CMTime {
         guard startTime.isNumeric && endTime.isNumeric else {
-            return CMTime.invalid
+            return kCMTimeInvalid
         }
         return CMTimeSubtract(endTime, startTime)
     }

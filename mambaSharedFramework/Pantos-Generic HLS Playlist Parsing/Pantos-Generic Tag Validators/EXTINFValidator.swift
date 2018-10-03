@@ -24,7 +24,7 @@ class EXTINFValidator: HLSTagValidator {
     
     public func validate(tag: HLSTag) -> [HLSValidationIssue]? {
         
-        if !(tag.duration.isNumeric && tag.duration > CMTime.zero) {
+        if !(tag.duration.isNumeric && tag.duration > kCMTimeZero) {
             return [HLSValidationIssue(description: IssueDescription.EXTINFTagsRequireADurationValidator, severity: IssueSeverity.error)]
         }
         return nil
