@@ -20,11 +20,11 @@
 import Foundation
 
 // Variant Playlists MUST contain an EXT-X-STREAM-INF tag or EXT-X-I-FRAME-STREAM-INF tag for each variant stream. Each tag identifying an encoding of the same presentation MUST have the same PROGRAM-ID attribute value.
-class HLSPlaylistRenditionGroupMatchingPROGRAM_IDValidator: HLSPlaylistCollectionValidator {
+class HLSPlaylistRenditionGroupMatchingPROGRAM_IDValidator: HLSPlaylistCollectionValidator {    
     
-   static let tagIdentifierPairs: [HLSTagIdentifierPair] = [(tagDescriptor: PantosTag.EXT_X_STREAM_INF, valueIdentifier: PantosValue.programId),
-                                                            (tagDescriptor: PantosTag.EXT_X_I_FRAME_STREAM_INF, valueIdentifier: PantosValue.programId)]
-
+    static let tagIdentifierPairs: [HLSTagIdentifierPair] = [(tagDescriptor: PantosTag.EXT_X_STREAM_INF, valueIdentifier: PantosValue.programId),
+                                                             (tagDescriptor: PantosTag.EXT_X_I_FRAME_STREAM_INF, valueIdentifier: PantosValue.programId)]
+    
     class var validation: ([HLSTag]) -> [HLSValidationIssue]? {
         get {
             return { (tags: [HLSTag]) -> [HLSValidationIssue]? in
