@@ -71,6 +71,10 @@
 		EC03B6731E5CC56B00BF1F97 /* RapidParserStateHandlers.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6511E5CC56B00BF1F97 /* RapidParserStateHandlers.h */; };
 		EC0677DC21641FE500E715D1 /* CMTimeMakeFromStringCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0677DB21641FE500E715D1 /* CMTimeMakeFromStringCTests.m */; };
 		EC0677DD21641FE500E715D1 /* CMTimeMakeFromStringCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0677DB21641FE500E715D1 /* CMTimeMakeFromStringCTests.m */; };
+		EC0677DE2165753500E715D1 /* CMTimeMakeFromStringCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0677DB21641FE500E715D1 /* CMTimeMakeFromStringCTests.m */; };
+		EC0677E02166C7CC00E715D1 /* HLSParser_EventUpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0677DF2166C7CC00E715D1 /* HLSParser_EventUpdateTests.swift */; };
+		EC0677E12166C7CC00E715D1 /* HLSParser_EventUpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0677DF2166C7CC00E715D1 /* HLSParser_EventUpdateTests.swift */; };
+		EC0677E22166C7CC00E715D1 /* HLSParser_EventUpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0677DF2166C7CC00E715D1 /* HLSParser_EventUpdateTests.swift */; };
 		EC073F571FE0572400689228 /* HLSTagCriterionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F561FE0572400689228 /* HLSTagCriterionTests.swift */; };
 		EC073F581FE0572400689228 /* HLSTagCriterionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F561FE0572400689228 /* HLSTagCriterionTests.swift */; };
 		EC073F5A1FE072DC00689228 /* HLSTagCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F591FE072DC00689228 /* HLSTagCollectionTests.swift */; };
@@ -636,6 +640,7 @@
 		EC03B6501E5CC56B00BF1F97 /* RapidParserStateHandlers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RapidParserStateHandlers.c; sourceTree = "<group>"; };
 		EC03B6511E5CC56B00BF1F97 /* RapidParserStateHandlers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserStateHandlers.h; sourceTree = "<group>"; };
 		EC0677DB21641FE500E715D1 /* CMTimeMakeFromStringCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMTimeMakeFromStringCTests.m; sourceTree = "<group>"; };
+		EC0677DF2166C7CC00E715D1 /* HLSParser_EventUpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSParser_EventUpdateTests.swift; sourceTree = "<group>"; };
 		EC073F561FE0572400689228 /* HLSTagCriterionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSTagCriterionTests.swift; sourceTree = "<group>"; };
 		EC073F591FE072DC00689228 /* HLSTagCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSTagCollectionTests.swift; sourceTree = "<group>"; };
 		EC073F5C1FE0840000689228 /* OutputStreamExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputStreamExtensionTests.swift; sourceTree = "<group>"; };
@@ -961,16 +966,17 @@
 			children = (
 				EC6C8F821D08C78C007C1C99 /* Fixtures */,
 				EC6C8F831D08C793007C1C99 /* Helpers */,
+				43DE4EFE1E564E1500EEE800 /* HLSMediaSpanTests.swift */,
+				EC0677DF2166C7CC00E715D1 /* HLSParser_EventUpdateTests.swift */,
+				EC7492351DD29E7300AF4E20 /* HLSParser_Super8DemuxedTests.swift */,
+				EC7492361DD29E7300AF4E20 /* HLSParser_Super8MuxedTests.swift */,
+				EC7492371DD29E7300AF4E20 /* HLSParserTest.swift */,
 				EC6F38911EA95882006BC30E /* HLSPlaylistInterfaceTests.swift */,
 				EC37A8D61E9C16C7005E8342 /* HLSPlaylistStructureAndEditingTests.swift */,
 				4367C3721EAE83C000685945 /* HLSPlaylistStructureMasterTests.swift */,
 				ECC410691EA1687500B4E3C8 /* HLSPlaylistStructureTests.swift */,
 				EC402B921F7D5A8B00730C74 /* HLSPlaylistTests.swift */,
 				ECE36DE31F2A9F10005E5DA7 /* HLSPlaylistTimelineAndSequencingTests.swift */,
-				43DE4EFE1E564E1500EEE800 /* HLSMediaSpanTests.swift */,
-				EC7492351DD29E7300AF4E20 /* HLSParser_Super8DemuxedTests.swift */,
-				EC7492361DD29E7300AF4E20 /* HLSParser_Super8MuxedTests.swift */,
-				EC7492371DD29E7300AF4E20 /* HLSParserTest.swift */,
 				883290551EA172170064588B /* HLSStringRefExtensionTests.swift */,
 				EC073F591FE072DC00689228 /* HLSTagCollectionTests.swift */,
 				EC073F561FE0572400689228 /* HLSTagCriterionTests.swift */,
@@ -1825,6 +1831,7 @@
 				EC74928A1DD29F1500AF4E20 /* GenericDictionaryTagValidatorTests.swift in Sources */,
 				EC073F601FE08F7500689228 /* String+Helio.swift in Sources */,
 				EC74922C1DD29E4A00AF4E20 /* HLSPlaylist+Convenience.swift in Sources */,
+				EC0677E02166C7CC00E715D1 /* HLSParser_EventUpdateTests.swift in Sources */,
 				EC7492B71DD29F8900AF4E20 /* HLSPlaylistTypeTests.swift in Sources */,
 				ECFBD9101E5CCC2200379FC2 /* ParseArrayTests.m in Sources */,
 				EC7492B31DD29F8900AF4E20 /* HLSCodecArrayTests.swift in Sources */,
@@ -1984,6 +1991,7 @@
 				EC74924B1DD29E7300AF4E20 /* HLSWriterTests.swift in Sources */,
 				EC073F611FE08F7500689228 /* String+Helio.swift in Sources */,
 				EC74928B1DD29F1500AF4E20 /* GenericDictionaryTagValidatorTests.swift in Sources */,
+				EC0677E12166C7CC00E715D1 /* HLSParser_EventUpdateTests.swift in Sources */,
 				EC74922D1DD29E4A00AF4E20 /* HLSPlaylist+Convenience.swift in Sources */,
 				ECFBD9111E5CCC2200379FC2 /* ParseArrayTests.m in Sources */,
 				EC7492B81DD29F8900AF4E20 /* HLSPlaylistTypeTests.swift in Sources */,
@@ -2117,6 +2125,7 @@
 				ECE253E1209A509900D388CE /* HLSTagCollectionTests.swift in Sources */,
 				ECE253DD209A509900D388CE /* HLSParser_Super8DemuxedTests.swift in Sources */,
 				ECE253DC209A509900D388CE /* HLSMediaSpanTests.swift in Sources */,
+				EC0677DE2165753500E715D1 /* CMTimeMakeFromStringCTests.m in Sources */,
 				ECE253E7209A509900D388CE /* HLSWriterTests.swift in Sources */,
 				ECE253D1209A509000D388CE /* FixtureLoader.swift in Sources */,
 				ECE253D2209A509000D388CE /* HLSPlaylist+Convenience.swift in Sources */,
@@ -2142,6 +2151,7 @@
 				ECE253FE209A50B500D388CE /* CMTimeMakeFromStringTests.swift in Sources */,
 				ECE253D9209A509900D388CE /* HLSPlaylistStructureTests.swift in Sources */,
 				ECE253EC209A50A100D388CE /* RapidParserTests.swift in Sources */,
+				EC0677E22166C7CC00E715D1 /* HLSParser_EventUpdateTests.swift in Sources */,
 				ECE253FC209A50B500D388CE /* GenericSingleTagWriterTests.swift in Sources */,
 				ECE253DA209A509900D388CE /* HLSPlaylistTests.swift in Sources */,
 				ECE253F4209A50B500D388CE /* EXT_X_PROGRAM_DATE_TIMEParserTests.swift in Sources */,

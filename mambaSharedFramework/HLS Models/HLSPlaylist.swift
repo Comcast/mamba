@@ -34,7 +34,7 @@ public extension HLSPlaylistCore where T == HLSPlaylistURLData {
         self.init(url: playlist.url, tags: playlist.tags, registeredTags: playlist.registeredTags, hlsData: playlist.hlsData)
     }
 
-    // care should be taken when constructing `HLSPlaylist` manually. Most users should construct these objects using `HLSParser`
+    // care should be taken when constructing `HLSPlaylist` manually. Users should construct these objects using `HLSParser`
     public init(url: URL, tags: [HLSTag], registeredTags: RegisteredHLSTags, hlsData: Data) {
         let customData = HLSPlaylistURLData(url: url)
         self.init(tags: tags, registeredTags: registeredTags, hlsData: hlsData, customData: customData)
@@ -50,12 +50,20 @@ public extension HLSPlaylistCore where T == HLSPlaylistURLData {
         }
     }
     
+    /// The time this playlist was created. Based on `CACurrentMediaTime`, so only comparable with that time system.
+    public var creationTime: TimeInterval {
+        get {
+            return customData.creationTime
+        }
+    }
+    
     public var debugDescription: String {
-        return "HLSPlaylist url:\(url)\n\(self.playlistCoreDebugDescription)"
+        return "HLSPlaylist url:\(url) createTime:\(creationTime)\n\(self.playlistCoreDebugDescription)"
     }
 }
 
 /// A type used internally by HLSPlaylist
 public struct HLSPlaylistURLData {
     var url: URL
+    let creationTime = CACurrentMediaTime()
 }

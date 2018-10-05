@@ -35,24 +35,25 @@ void parseHLS(const void *parentparser, const unsigned char *bytes, const uint64
     
     rapid_parser_debug_print("Begining parse of hls data with length %llu\n", length);
     
-    while (index > 0 && state != ErrorEarlyExit) {
+    while (index > 0 && state < numberOfScanningParseStates) {
         
         index -= 1;
         
         state = (*masterParseArray[state][bytes[index]]) (parentparser, bytes[index], index, state, &lineState);
         
         rapid_parser_debug_print("State %i after processing character %c at index %llu\n", (int)state, bytes[index], index);
-        
     }
     
-    if (index == 0 && state != ErrorEarlyExit) {
+    // if we are in ErrorEarlyExit or EarlyExit we do not have to handle the final line
+    if (index == 0 && state < numberOfScanningParseStates) {
         // handle the final line, force a line completion
         // note that we pass "-1" as the index, because we are pretending that there is a newline at position -1
         (*masterParseArray[state]['\n']) (parentparser, '\n', -1, state, &lineState);
     }
     
     // if we are in ErrorEarlyExit another part of the code already called ParseError to exit out
-    if (state != ErrorEarlyExit) {
+    // if we are in EarlyExit, its because the client has asked us to exit and they know that parsing is complete
+    if (state < numberOfScanningParseStates) {
         
         rapid_parser_debug_print("Ending parse of hls data with length %llu\n", length);
         

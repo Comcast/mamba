@@ -21,31 +21,64 @@ import XCTest
 
 @testable import mamba
 
-class RapidParserTests: XCTestCase, HLSRapidParserCallback {
+class RapidParserTests: XCTestCase {
 
-    var lines = [TestLine]()
-    var expectation: XCTestExpectation?
-    
     func testParser() {
+
+        let mock = MockRapidParserCallback()
         
-        expectation = self.expectation(description: "Parsing complete")
+        mock.expectation = self.expectation(description: "Parsing complete")
+        mock.expectedNumberOfLines = 19
                 
         let data = FixtureLoader.load(fixtureName: "hls_sampleMediaFile.txt")! as Data
         
         let parser = HLSRapidParser()
         
-        parser.parseHLSData(data, callback: self)
+        parser.parseHLSData(data, callback: mock)
         
         self.waitForExpectations(timeout: 1, handler: { (error) in
             XCTAssertNil(error, "Unexpected error: \(error!)")
         })
     }
     
+    func testEventShunt() {
+        
+        let mock = MockRapidParserCallback()
+        mock.expectedNumberOfLines = 6
+        mock.shuntOnFragmentUrl = "http://media.example.com/entire.ts"
+        
+        mock.expectation = self.expectation(description: "Parsing complete")
+        
+        let data = FixtureLoader.load(fixtureName: "hls_sampleMediaFile.txt")! as Data
+        
+        let parser = HLSRapidParser()
+        
+        parser.parseHLSData(data, callback: mock)
+        
+        self.waitForExpectations(timeout: 1, handler: { (error) in
+            XCTAssertNil(error, "Unexpected error: \(error!)")
+        })
+    }
+}
+
+private class MockRapidParserCallback: NSObject, HLSRapidParserCallback {
     
+    var lines = [TestLine]()
+    var expectation: XCTestExpectation?
+    var expectedNumberOfLines: Int = 0
+    var shuntOnFragmentUrl: String? = nil
+
     // MARK: HLSRapidParserCallback
     
-    func addedURLLine(_ url: HLSStringRef) {
+    func addedURLLine(_ url: HLSStringRef) -> Bool {
+        if
+            let shuntOnFragmentUrl = shuntOnFragmentUrl,
+            url.stringValue() == shuntOnFragmentUrl {
+            runParseTest()
+            return false
+        }
         lines.insert(TestLine(url: url, comment: nil, tagName: nil, tagValue: nil), at: 0)
+        return true
     }
     
     func addedCommentLine(_ comment: HLSStringRef) {
@@ -68,21 +101,24 @@ class RapidParserTests: XCTestCase, HLSRapidParserCallback {
     }
     
     func parseComplete() {
-        print(lines)
-        XCTAssert(lines.count == 19, "Unexpected number of lines")
+        runParseTest()
+    }
+    
+    func parseError(_ error: String, errorNumber: UInt32) {
+        XCTFail("Received Parse Error: \(errorNumber) \(error)")
+    }
+    
+    private func runParseTest() {
+        XCTAssert(lines.count == expectedNumberOfLines, "Unexpected number of lines got \(lines.count) expected \(expectedNumberOfLines)")
         guard let expectation = expectation else {
             XCTFail("No expectation")
             return
         }
         expectation.fulfill()
     }
-    
-    func parseError(_ error: String, errorNumber: UInt32) {
-        XCTFail("Received Parse Error: \(errorNumber) \(error)")
-    }
 }
 
-struct TestLine: CustomDebugStringConvertible {
+private struct TestLine: CustomDebugStringConvertible {
     let url: HLSStringRef?
     let comment: HLSStringRef?
     let tagName: HLSStringRef?

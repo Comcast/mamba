@@ -20,11 +20,14 @@
 #ifndef RapidParserCallback_h
 #define RapidParserCallback_h
 
+#include <stdbool.h>
+
 void NewTagCallback(const void *parentparser, const uint64_t startTagName, const uint64_t endTagName, const uint64_t startTagData, const uint64_t endTagData);
 void NewTagNoDataCallback(const void *parentparser, const uint64_t startTagName, const uint64_t endTagName);
 void NewEXTINFTagNoDataCallback(const void *parentparser, const uint64_t startTagName, const uint64_t endTagName, const uint64_t startDuration, const uint64_t endDuration, const uint64_t startTagData, const uint64_t endTagData);
 void NewCommentCallback(const void *parentparser, const uint64_t startComment, const uint64_t endComment);
-void NewURLCallback(const void *parentparser, const uint64_t startURL, const uint64_t endURL);
+// return true to NewURLCallback to continue scanning, false to trigger an early exit and stop the parse
+bool NewURLCallback(const void *parentparser, const uint64_t startURL, const uint64_t endURL);
 void ParseComplete(const void *parentparser);
 void ParseError(const void *parentparser, const uint32_t errorNum, const char *errorString);
 
