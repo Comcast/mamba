@@ -24,7 +24,7 @@
 @protocol HLSRapidParserCallback <NSObject>
 
 - (void)addedCommentLine:(HLSStringRef * _Nonnull)comment;
-- (void)addedURLLine:(HLSStringRef * _Nonnull)url;
+- (BOOL)addedURLLine:(HLSStringRef * _Nonnull)url;
 - (void)addedNoValueTagWithName:(HLSStringRef * _Nonnull)tagName;
 - (void)addedTagWithName:(HLSStringRef * _Nonnull)tagName
                    value:(HLSStringRef * _Nonnull)value;

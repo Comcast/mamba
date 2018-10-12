@@ -101,10 +101,11 @@ static const NSInteger foundError = 7;
     self.endData = endComment;
 }
 
-- (void)newURLWithStart:(UInt64)startURL end:(UInt64)endURL {
+- (BOOL)newURLWithStart:(UInt64)startURL end:(UInt64)endURL {
     self.hit = newURL;
     self.startData = startURL;
     self.endData = endURL;
+    return YES;
 }
 
 - (void)parseComplete {
@@ -133,7 +134,7 @@ static const int64_t colonposition = 90;
     uint8_t newState = 0;
     MockHLSRapidParser *mockParser = [MockHLSRapidParser new];
     
-    for(uint8_t state = Scanning; state < ErrorEarlyExit; state++) {
+    for(uint8_t state = Scanning; state < numberOfScanningParseStates; state++) {
         for(unsigned char c = 0; c < 255; c++) {
             
             initializeLineState(&lineState);

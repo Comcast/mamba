@@ -63,10 +63,10 @@ uint8_t endOfLineForURLAndContinueScanning(const void *parentparser, const unsig
         lineState->end = index - 1;
         return Scanning;
     }
-    NewURLCallback(parentparser, lineState->start, lineState->end);
+    bool shouldContinue = NewURLCallback(parentparser, lineState->start, lineState->end);
     initializeLineState(lineState);
     lineState->end = index - 1;
-    return Scanning;
+    return shouldContinue ? Scanning : EarlyExit;
 }
 
 // Scanning Handlers for LookingForX state
@@ -195,6 +195,5 @@ uint8_t foundNewlineCompletingEXTINFBeginAndContinueScanning(const void *parentp
     initializeLineState(lineState);
     lineState->end = index - 1;
     return Scanning;
-
 }
 

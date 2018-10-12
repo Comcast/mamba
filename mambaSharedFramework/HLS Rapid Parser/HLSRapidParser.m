@@ -42,7 +42,7 @@
                           endTagData:(UInt64)endRemainingTagData;
 - (void)newCommentWithStart:(UInt64)startComment
                         end:(UInt64)endComment;
-- (void)newURLWithStart:(UInt64)startURL
+- (BOOL)newURLWithStart:(UInt64)startURL
                     end:(UInt64)endURL;
 - (void)parseComplete;
 - (void)parseError:(NSString *)errorString
@@ -83,9 +83,9 @@ void NewCommentCallback(const void *parentparser, const uint64_t startComment, c
     [parser newCommentWithStart:startComment end:endComment];
 }
 
-void NewURLCallback(const void *parentparser, const uint64_t startURL, const uint64_t endURL) {
+bool NewURLCallback(const void *parentparser, const uint64_t startURL, const uint64_t endURL) {
     HLSRapidParser *parser = (__bridge HLSRapidParser *)(parentparser);
-    [parser newURLWithStart:startURL end:endURL];
+    return [parser newURLWithStart:startURL end:endURL] == YES;
 }
 
 void ParseComplete(const void *parentparser) {
@@ -186,12 +186,12 @@ void ParseError(const void *parentparser, const uint32_t errorNum, const char *e
     [self.callback addedCommentLine:comment];
 }
 
-- (void)newURLWithStart:(UInt64)startURL
+- (BOOL)newURLWithStart:(UInt64)startURL
                     end:(UInt64)endURL {
     
     HLSStringRef *url = [[HLSStringRef alloc] initWithBytesNoCopy:[self.data bytes] + startURL length:(NSUInteger)(endURL - startURL + 1)];
         
-    [self.callback addedURLLine:url];
+    return [self.callback addedURLLine:url];
 }
 
 - (void)parseComplete {

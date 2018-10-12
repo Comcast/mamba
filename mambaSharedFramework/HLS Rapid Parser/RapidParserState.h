@@ -49,6 +49,8 @@ enum ParseState {
     LookingForHashForEXTINF,
     // when we find a #, we start looking for a newline to possibly complete a #EXTINF and make a tag
     LookingForNewlineForEXTINF,
+    // signal an early exit (not an error, but the client has requested a stop scanning) (THIS NEEDS TO BE SECOND TO LAST IN THE PARSE STATE LIST)
+    EarlyExit,
     // when we encounter an error, signal an early exit (THIS NEEDS TO BE LAST IN THE PARSE STATE LIST)
     ErrorEarlyExit
 };
