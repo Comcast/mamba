@@ -19,6 +19,9 @@
 		1D9D9E9E1EAFC0E300CC7274 /* hls_master_playlist.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3431EAA9E500010320B /* hls_master_playlist.m3u8 */; };
 		1D9D9E9F1EAFC0E600CC7274 /* hls_variant_playlist.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3441EAA9E500010320B /* hls_variant_playlist.m3u8 */; };
 		1D9D9EA01EAFC0F700CC7274 /* HLSStringRefExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883290551EA172170064588B /* HLSStringRefExtensionTests.swift */; };
+		3D933C1A2193367C0029069F /* EXT-X-BITRATETagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D933C192193367C0029069F /* EXT-X-BITRATETagParserTests.swift */; };
+		3D933C1B219336970029069F /* EXT-X-BITRATETagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D933C192193367C0029069F /* EXT-X-BITRATETagParserTests.swift */; };
+		3D933C1C219336970029069F /* EXT-X-BITRATETagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D933C192193367C0029069F /* EXT-X-BITRATETagParserTests.swift */; };
 		4367C3731EAE83C000685945 /* HLSPlaylistStructureMasterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4367C3721EAE83C000685945 /* HLSPlaylistStructureMasterTests.swift */; };
 		43DE4EFB1E564DA300EEE800 /* EXT_X_STARTTimeOffsetValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE4EFA1E564DA300EEE800 /* EXT_X_STARTTimeOffsetValidator.swift */; };
 		43DE4EFD1E564DBE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE4EFC1E564DBE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift */; };
@@ -598,6 +601,7 @@
 		1D28F3421EAA9E500010320B /* hls_master_playlist_sap.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_master_playlist_sap.m3u8; sourceTree = "<group>"; };
 		1D28F3431EAA9E500010320B /* hls_master_playlist.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_master_playlist.m3u8; sourceTree = "<group>"; };
 		1D28F3441EAA9E500010320B /* hls_variant_playlist.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_variant_playlist.m3u8; sourceTree = "<group>"; };
+		3D933C192193367C0029069F /* EXT-X-BITRATETagParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EXT-X-BITRATETagParserTests.swift"; sourceTree = "<group>"; };
 		4367C3721EAE83C000685945 /* HLSPlaylistStructureMasterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSPlaylistStructureMasterTests.swift; sourceTree = "<group>"; };
 		43DE4EFA1E564DA300EEE800 /* EXT_X_STARTTimeOffsetValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EXT_X_STARTTimeOffsetValidator.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		43DE4EFC1E564DBE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_MEDIARenditionINSTREAMIDValidator.swift; sourceTree = "<group>"; };
@@ -1063,6 +1067,7 @@
 		EC3B57F41D36CCE7006656C3 /* Tag Parser Tests */ = {
 			isa = PBXGroup;
 			children = (
+				3D933C192193367C0029069F /* EXT-X-BITRATETagParserTests.swift */,
 				EC7492671DD29EC800AF4E20 /* EXT_X_ALLOW_CACHETagParserTests.swift */,
 				EC7492681DD29EC800AF4E20 /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift */,
 				EC7492691DD29EC800AF4E20 /* EXT_X_KEYTagParserTests.swift */,
@@ -1818,6 +1823,7 @@
 				ECFBD9031E5CCAAF00379FC2 /* XCTestCase+mamba.swift in Sources */,
 				EC7492A11DD29F4600AF4E20 /* ThirdPartyTagListSupportTests.swift in Sources */,
 				EC073F571FE0572400689228 /* HLSTagCriterionTests.swift in Sources */,
+				3D933C1A2193367C0029069F /* EXT-X-BITRATETagParserTests.swift in Sources */,
 				EC37A8D71E9C16C7005E8342 /* HLSPlaylistStructureAndEditingTests.swift in Sources */,
 				EC073F5D1FE0840000689228 /* OutputStreamExtensionTests.swift in Sources */,
 				ECC410671EA1527700B4E3C8 /* HLSTagGroupTests.swift in Sources */,
@@ -1978,6 +1984,7 @@
 				EC7492851DD29EC800AF4E20 /* StringDictionaryParserTests.swift in Sources */,
 				EC7492AE1DD29F7000AF4E20 /* URL+hlsplaylistTests.swift in Sources */,
 				EC073F581FE0572400689228 /* HLSTagCriterionTests.swift in Sources */,
+				3D933C1C219336970029069F /* EXT-X-BITRATETagParserTests.swift in Sources */,
 				ECFBD9041E5CCAAF00379FC2 /* XCTestCase+mamba.swift in Sources */,
 				EC073F5E1FE0840000689228 /* OutputStreamExtensionTests.swift in Sources */,
 				EC37A8D81E9C16C7005E8342 /* HLSPlaylistStructureAndEditingTests.swift in Sources */,
@@ -2138,6 +2145,7 @@
 				ECE253EB209A50A100D388CE /* ParseArrayTests.m in Sources */,
 				ECE253DB209A509900D388CE /* HLSPlaylistTimelineAndSequencingTests.swift in Sources */,
 				ECE253E5209A509900D388CE /* HLSTagWriting.swift in Sources */,
+				3D933C1B219336970029069F /* EXT-X-BITRATETagParserTests.swift in Sources */,
 				ECE253D3209A509000D388CE /* HLSPlaylistMock.swift in Sources */,
 				ECE253F5209A50B500D388CE /* GenericNoDataTagParserTests.swift in Sources */,
 				ECE253D4209A509000D388CE /* HLSTagParserMock.swift in Sources */,

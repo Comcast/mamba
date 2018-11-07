@@ -67,6 +67,7 @@ public enum PantosTag: String {
     
     // MARK: Variant playlist - Media segment tags
     case EXTINF = "EXTINF"
+    case EXT_X_BITRATE = "EXT_X_BITRATE"
     case EXT_X_BYTERANGE = "EXT-X-BYTERANGE"
     case EXT_X_KEY = "EXT-X-KEY"
     case EXT_X_MAP = "EXT-X-MAP"
@@ -135,6 +136,8 @@ extension PantosTag: HLSTagDescriptor, Equatable {
         case .EXT_X_TARGETDURATION:
             return .wholePlaylist
         
+        case .EXT_X_BITRATE:
+            fallthrough
         case .EXT_X_MAP:
             fallthrough
         case .EXT_X_KEY:
@@ -161,6 +164,8 @@ extension PantosTag: HLSTagDescriptor, Equatable {
         case .EXT_X_ENDLIST:
             return .noValue
             
+        case .EXT_X_BITRATE:
+            fallthrough
         case .EXT_X_BYTERANGE:
             fallthrough
         case .EXT_X_PROGRAM_DATE_TIME:
@@ -247,7 +252,10 @@ extension PantosTag: HLSTagDescriptor, Equatable {
         case .EXT_X_DISCONTINUITY_SEQUENCE:
             return GenericSingleValueTagParser(tag: pantostag,
                                                singleValueIdentifier:PantosValue.discontinuitySequence)
-            
+        case .EXT_X_BITRATE:
+            return GenericSingleValueTagParser(tag: pantostag,
+                                               singleValueIdentifier:PantosValue.bandwidthBPS)
+
         // GenericDictionaryTagParser
             
         case .EXT_X_STREAM_INF:
@@ -307,7 +315,9 @@ extension PantosTag: HLSTagDescriptor, Equatable {
             return GenericSingleTagWriter(singleTagValueIdentifier: PantosValue.byterange)
         case .EXT_X_DISCONTINUITY_SEQUENCE:
             return GenericSingleTagWriter(singleTagValueIdentifier: PantosValue.discontinuitySequence)
-            
+        case .EXT_X_BITRATE:
+            return GenericSingleTagWriter(singleTagValueIdentifier: PantosValue.bandwidthBPS)
+
         // GenericDictionaryTagWriter
             
         case .EXT_X_STREAM_INF:
@@ -371,7 +381,10 @@ extension PantosTag: HLSTagDescriptor, Equatable {
         case .EXT_X_DISCONTINUITY_SEQUENCE:
             return GenericSingleTagValidator<Int>(tag: pantostag,
                                                   singleValueIdentifier:PantosValue.discontinuitySequence)
-            
+        case .EXT_X_BITRATE:
+            return GenericSingleTagValidator<Double>(tag: pantostag,
+                                                  singleValueIdentifier:PantosValue.bandwidthBPS)
+
         case .EXT_X_STREAM_INF:
             return GenericDictionaryTagValidator(tag: pantostag, dictionaryValueIdentifiers: [
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.bandwidthBPS, optional: false, expectedType: Int.self),
@@ -481,8 +494,9 @@ extension PantosTag: HLSTagDescriptor, Equatable {
                        PantosTag.EXT_X_DISCONTINUITY_SEQUENCE,
                        PantosTag.EXT_X_INDEPENDENT_SEGMENTS,
                        PantosTag.EXT_X_START,
-                       PantosTag.EXT_X_DISCONTINUITY]
-        
+                       PantosTag.EXT_X_DISCONTINUITY,
+                       PantosTag.EXT_X_BITRATE]
+
         var dictionary = [UInt: [(descriptor: PantosTag, string: HLSStringRef)]]()
         
         for tag in tagList {

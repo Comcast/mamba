@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/jpierc213/Documents/Development/mamba/mambaPlayground.playground">
+      location = "group:mambaPlayground.playground">
    </FileRef>
    <FileRef
       location = "group:mamba.xcodeproj">
