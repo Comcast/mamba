@@ -67,7 +67,7 @@ public enum PantosTag: String {
     
     // MARK: Variant playlist - Media segment tags
     case EXTINF = "EXTINF"
-    case EXT_X_BITRATE = "EXT_X_BITRATE"
+    case EXT_X_BITRATE = "EXT-X-BITRATE"
     case EXT_X_BYTERANGE = "EXT-X-BYTERANGE"
     case EXT_X_KEY = "EXT-X-KEY"
     case EXT_X_MAP = "EXT-X-MAP"

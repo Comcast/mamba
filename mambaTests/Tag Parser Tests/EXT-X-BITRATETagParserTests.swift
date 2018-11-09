@@ -23,14 +23,14 @@ import XCTest
 
 class EXT_X_BITRATETagParserTests: XCTestCase {
     
-    func testFullTag() {
+    func testValidTag() {
         let parser = PantosTag.parser(forTag: PantosTag.EXT_X_BITRATE)
         
         do {
             let valueDictionary = try parser!.parseTag(fromTagString: "3492800")
             
-            XCTAssert(valueDictionary[PantosValue.bandwidthBPS.rawValue]?.value == "3492800", "Tag did not parse properly")
-            XCTAssert(valueDictionary[PantosValue.bandwidthBPS.rawValue]?.quoteEscaped == false, "Tag did not parse properly")
+            XCTAssertEqual(valueDictionary[PantosValue.bandwidthBPS.rawValue]?.value, "3492800", "Expected \"3492800\"")
+            XCTAssertEqual(valueDictionary[PantosValue.bandwidthBPS.rawValue]?.quoteEscaped, false, "Expected \"false\"")
         }
         catch {
             XCTAssert(false, "Parser should not throw")
