@@ -383,7 +383,7 @@ extension PantosTag: HLSTagDescriptor, Equatable {
                                                   singleValueIdentifier:PantosValue.discontinuitySequence)
         case .EXT_X_BITRATE:
             return GenericSingleTagValidator<Double>(tag: pantostag,
-                                                  singleValueIdentifier:PantosValue.bandwidthBPS)
+                                                     singleValueIdentifier:PantosValue.bandwidthBPS)
 
         case .EXT_X_STREAM_INF:
             return GenericDictionaryTagValidator(tag: pantostag, dictionaryValueIdentifiers: [
