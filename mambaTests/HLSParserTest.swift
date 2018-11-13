@@ -27,23 +27,25 @@ class HLSParserTest: XCTestCase {
         
         let playlist = parsePlaylist(inString: hlsString)
         
-        XCTAssert(playlist.tags.count == 4, "Misparsed the HLS")
+        XCTAssert(playlist.tags.count == 5, "Misparsed the HLS")
         
         XCTAssert(playlist.tags[0].tagDescriptor == PantosTag.EXT_X_TARGETDURATION, "Tag did not parse properly")
-        XCTAssert(playlist.tags[1].tagDescriptor == PantosTag.EXTINF, "Tag did not parse properly")
-        XCTAssert(playlist.tags[2].tagDescriptor == PantosTag.Location, "Tag did not parse properly")
-        XCTAssert(playlist.tags[3].tagDescriptor == PantosTag.EXT_X_ENDLIST, "Tag did not parse properly")
+        XCTAssert(playlist.tags[1].tagDescriptor.toString() == PantosTag.EXT_X_BITRATE.rawValue, "Tag did not parse properly")
+        XCTAssert(playlist.tags[2].tagDescriptor == PantosTag.EXTINF, "Tag did not parse properly")
+        XCTAssert(playlist.tags[3].tagDescriptor == PantosTag.Location, "Tag did not parse properly")
+        XCTAssert(playlist.tags[4].tagDescriptor == PantosTag.EXT_X_ENDLIST, "Tag did not parse properly")
         
         XCTAssert(playlist.tags[0].tagName! == "#\(PantosTag.EXT_X_TARGETDURATION.toString())", "Tag did not parse properly")
-        XCTAssert(playlist.tags[1].tagName! == "#\(PantosTag.EXTINF.toString())", "Tag did not parse properly")
-        XCTAssert(playlist.tags[2].tagName == nil, "Tag did not parse properly") // locations do not have tag names
-        XCTAssert(playlist.tags[3].tagName! == "#\(PantosTag.EXT_X_ENDLIST.toString())", "Tag did not parse properly")
+        XCTAssert(playlist.tags[1].tagName! == "#\(PantosTag.EXT_X_BITRATE.toString())", "Tag did not parse properly")
+        XCTAssert(playlist.tags[2].tagName! == "#\(PantosTag.EXTINF.toString())", "Tag did not parse properly")
+        XCTAssert(playlist.tags[3].tagName == nil, "Tag did not parse properly") // locations do not have tag names
+        XCTAssert(playlist.tags[4].tagName! == "#\(PantosTag.EXT_X_ENDLIST.toString())", "Tag did not parse properly")
         
         XCTAssert(playlist.tags[0].value(forValueIdentifier: PantosValue.targetDurationSeconds) == 10, "Tag did not parse properly")
         
-        XCTAssert(playlist.tags[1].duration.seconds == 5220.0, "Tag did not parse properly")
+        XCTAssert(playlist.tags[2].duration.seconds == 5220.0, "Tag did not parse properly")
         
-        XCTAssert(playlist.tags[2].tagData == "http://media.example.com/entire.ts", "Tag did not parse properly")
+        XCTAssert(playlist.tags[3].tagData == "http://media.example.com/entire.ts", "Tag did not parse properly")
         
         let testNilValue: String? = playlist.tags[3].value(forValueIdentifier: PantosValue.targetDurationSeconds)
         XCTAssert(testNilValue == nil, "Tag did not parse properly")

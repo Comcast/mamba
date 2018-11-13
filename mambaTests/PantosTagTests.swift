@@ -41,7 +41,8 @@ class PantosTagTests: XCTestCase {
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_MEDIA)
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_I_FRAME_STREAM_INF)
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_ENDLIST)
-        
+        runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_BITRATE)
+
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_INDEPENDENT_SEGMENTS)
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_START)
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_TARGETDURATION)
@@ -93,6 +94,8 @@ class PantosTagTests: XCTestCase {
         case .EXT_X_TARGETDURATION:
             fallthrough
         case .EXT_X_MAP:
+            fallthrough
+        case .EXT_X_BITRATE:
             fallthrough
         case .EXTINF:
             let stringRef = HLSStringRef(string: "#\(descriptor.toString())")

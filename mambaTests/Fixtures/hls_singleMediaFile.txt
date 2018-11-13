@@ -1,5 +1,6 @@
 #EXTM3U
 #EXT-X-TARGETDURATION:10
+#EXT-X-BITRATE:3000000
 #EXTINF:5220,
 http://media.example.com/entire.ts
 #EXT-X-ENDLIST
