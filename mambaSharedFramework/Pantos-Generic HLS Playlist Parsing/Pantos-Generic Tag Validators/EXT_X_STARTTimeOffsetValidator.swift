@@ -46,7 +46,7 @@ class  EXT_X_STARTTimeOffsetValidator: HLSPlaylistValidator {
             let targetDuration: CMTime = targetDurationTag?.value(forValueIdentifier: PantosValue.targetDurationSeconds)
             else { return nil }
         
-        let latestAllowedStartTime = playlist.endTime - CMTimeMultiply(targetDuration, 3)
+        let latestAllowedStartTime = playlist.endTime - CMTimeMultiply(targetDuration, multiplier: 3)
         
         if (startTimeOffSet > playlist.endTime) || (!endListExist && startTimeOffSet > latestAllowedStartTime) {
             return [HLSValidationIssue(description: IssueDescription.EXT_X_STARTTimeOffsetValidator, severity: IssueSeverity.error)]
