@@ -368,8 +368,8 @@ fileprivate struct HLSPlaylistStructureConstructor {
         var mediaSegmentGroups = [MediaSegmentTagGroup]()
         
         var currentMediaSequence: MediaSequence = defaultMediaSequence
-        var lastRecordedTime: CMTime = kCMTimeInvalid
-        var currentSegmentDuration: CMTime = kCMTimeInvalid
+        var lastRecordedTime: CMTime = CMTime.invalid
+        var currentSegmentDuration: CMTime = CMTime.invalid
         var discontinuity = false
         let tagDescriptor = self.tagDescriptor(forTags: tags)
         
@@ -466,7 +466,7 @@ fileprivate struct HLSPlaylistStructureConstructor {
                 mediaGroupBeginIndex = tagIndex + 1
                 
                 // reset for next media group
-                currentSegmentDuration = kCMTimeInvalid
+                currentSegmentDuration = CMTime.invalid
                 discontinuity = false
             }
         }
