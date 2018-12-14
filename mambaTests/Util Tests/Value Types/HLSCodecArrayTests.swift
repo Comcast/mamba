@@ -74,6 +74,10 @@ class HLSCodecArrayTests: XCTestCase {
         // testing two audio codecs
         runAVTest(onCodecString: "avc1.4d401f,mp4a.40.5,ec-3", expectingAudioOnly: false, expectingVideo: true, expectingAudio: true)
         runAVTest(onCodecString: "mp4a.40.5,ec-3", expectingAudioOnly: true, expectingVideo: false, expectingAudio: true)
+        
+        // testing unknown codecs
+        runAVTest(onCodecString: "avc1.4d401f,mp4a.40.5,unknown", expectingAudioOnly: false, expectingVideo: true, expectingAudio: true)
+        runAVTest(onCodecString: "unknown", expectingAudioOnly: false, expectingVideo: false, expectingAudio: false)
     }
     
     func runAVTest(onCodecString codecString: String,
