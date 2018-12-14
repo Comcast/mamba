@@ -45,6 +45,48 @@ class HLSCodecArrayTests: XCTestCase {
     func testHLSCodecArrayWithSpaces() {
         let _ = runTestsOn(codecString: "avc1.4d401f, mp4a.40.5")
     }
+
+    func testAudioVideoCodecDetection() {
+        // audio + video
+        runAVTest(onCodecString: "avc1.4d401f,mp4a.40.5", expectingAudioOnly: false, expectingVideo: true, expectingAudio: true)
+        // audio only
+        runAVTest(onCodecString: "mp4a.40.5", expectingAudioOnly: true, expectingVideo: false, expectingAudio: true)
+        // video only
+        runAVTest(onCodecString: "avc1.4d401f", expectingAudioOnly: false, expectingVideo: true, expectingAudio: false)
+        
+        // testing different audio codec strings
+        runAVTest(onCodecString: "avc1.4d401f,ec-3", expectingAudioOnly: false, expectingVideo: true, expectingAudio: true)
+        runAVTest(onCodecString: "avc1.4d401f,ac-3", expectingAudioOnly: false, expectingVideo: true, expectingAudio: true)
+        runAVTest(onCodecString: "avc1.4d401f,mp3", expectingAudioOnly: false, expectingVideo: true, expectingAudio: true)
+
+        // testing different video codec strings
+        runAVTest(onCodecString: "mp4v.20.9,mp4a.40.5", expectingAudioOnly: false, expectingVideo: true, expectingAudio: true)
+        runAVTest(onCodecString: "svc,mp4a.40.5", expectingAudioOnly: false, expectingVideo: true, expectingAudio: true)
+        runAVTest(onCodecString: "mvc1.800030,mp4a.40.5", expectingAudioOnly: false, expectingVideo: true, expectingAudio: true)
+        runAVTest(onCodecString: "sevc,mp4a.40.5", expectingAudioOnly: false, expectingVideo: true, expectingAudio: true)
+        runAVTest(onCodecString: "s263,mp4a.40.5", expectingAudioOnly: false, expectingVideo: true, expectingAudio: true)
+        runAVTest(onCodecString: "hvc1.1.c.L120.90,mp4a.40.5", expectingAudioOnly: false, expectingVideo: true, expectingAudio: true)
+        runAVTest(onCodecString: "vp9,mp4a.40.5", expectingAudioOnly: false, expectingVideo: true, expectingAudio: true)
+        
+        // testing two video codecs
+        runAVTest(onCodecString: "avc1.4d401f,hvc1.1.c.L120.90,mp4a.40.5", expectingAudioOnly: false, expectingVideo: true, expectingAudio: true)
+        runAVTest(onCodecString: "avc1.4d401f,hvc1.1.c.L120.90", expectingAudioOnly: false, expectingVideo: true, expectingAudio: false)
+        // testing two audio codecs
+        runAVTest(onCodecString: "avc1.4d401f,mp4a.40.5,ec-3", expectingAudioOnly: false, expectingVideo: true, expectingAudio: true)
+        runAVTest(onCodecString: "mp4a.40.5,ec-3", expectingAudioOnly: true, expectingVideo: false, expectingAudio: true)
+    }
+    
+    func runAVTest(onCodecString codecString: String,
+                   expectingAudioOnly: Bool,
+                   expectingVideo: Bool,
+                   expectingAudio: Bool) {
+        
+        let codecs = HLSCodecArray(string: codecString)
+        
+        XCTAssert(codecs?.containsAudioOnly() == expectingAudioOnly, "Expecting a audio only value of \(expectingAudioOnly) for codecs: \"\(codecString)\"")
+        XCTAssert(codecs?.containsVideo() == expectingVideo, "Expecting a video value of \(expectingVideo) for codecs: \"\(codecString)\"")
+        XCTAssert(codecs?.containsAudio() == expectingAudio, "Expecting a audio value of \(expectingAudio) for codecs: \"\(codecString)\"")
+    }
     
     func runTestsOn(codecString: String) -> HLSCodecArray {
         let codecs1 = HLSCodecArray(string: codecString)
