@@ -1,4 +1,4 @@
-#Mamba Version 2.0 Request for Comment from Users
+# Mamba Version 2.0 Request for Comment from Users
 
 The core mamba team has identified weaknesses in the design of mamba as we have worked with the library over the past couple of years. We're going to start work on a updated version soon. To free ourselves to make the best choices, this will be a breaking change (although we will try to keep huge changes to a minimum).
 
@@ -14,7 +14,7 @@ Here's a list of the Comcast teams' desired updates:
 
 * Comcast has privately written some code to figure out if a given master playlist has totally demuxed audio and video, partially demuxed audio/video (i.e. some video/audio that is muxed and some audio and/or video that is demuxed (typically SAP), or totally muxed audio/video. We should make that public since it might be useful to others. <https://github.com/Comcast/mamba/issues/40>
 
-* The `playlistType: PlaylistType` for a `HLSPlaylist` should be cached instead of calculated every time. Also it should only be present if we are a `VariantPlaylist` (we don't have enough info in a master to figure this out). Also, it should be cached, but if a user makes HLS content changes we should throw away the tag (it's technically possible for a user to transform a "EVENT" style playlist into "LIVE" if they really wanted to.). Therefore, this should be part of `HLSPlaylistStructure` at some level so we know when the cache should be vacated. <https://github.com/Comcast/mamba/issues/41>
+* The `playlistType: PlaylistType` for a `HLSPlaylist` should be cached instead of calculated every time. Also the `playlistType` should only be present if we are a `VariantPlaylist` (we don't have enough info in a master playlist to figure this out). Also, if a user makes HLS content changes we should throw away the cached value (it's technically possible for a user to transform a "EVENT" style playlist into "LIVE" if they really wanted to.). Therefore, this should be part of `HLSPlaylistStructure` at some level so we know when the cache should be vacated. <https://github.com/Comcast/mamba/issues/41>
 
 * It seems like getting the time where some tags occur in variant playlists (possibly with particular data associated with the tag) in the playlist is a common request (at Comcast, we do this, and a user has asked for it as well <https://github.com/Comcast/mamba/issues/29>). We should add some syntatic sugar for this to turn it into a one liner function. <https://github.com/Comcast/mamba/issues/42>
 
