@@ -9,6 +9,8 @@
 Mamba
 ===
 
+_Note: The core Comcast mamba team is planning a 2.0 release of mamba. If you'd like more info about this look at [our request for comment.](./MAMBA_2_REQUEST_FOR_COMMENT.md)_
+
 Mamba is a Swift iOS, tvOS and macOS framework to parse, validate and write [HTTP Live Streaming (HLS)](https://tools.ietf.org/html/draft-pantos-http-live-streaming-23) data.
 
 This framework is used in Comcast applications to parse, validate, edit and write HLS playlists to deliver video to millions of customers. It was written by the [Comcast VIPER](https://stackoverflow.com/jobs/companies/comcast-viper) Player Platform team.
