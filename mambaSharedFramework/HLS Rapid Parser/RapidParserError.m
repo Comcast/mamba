@@ -20,9 +20,9 @@
 #include "RapidParserError.h"
 #import <mamba/mamba-Swift.h>
 
-const uint32_t RapidParserErrorMissingTagData = HLSParserInternalErrorCodeMissingTagData;
+const uint32_t RapidParserErrorMissingTagData = ParserInternalErrorCodeMissingTagData;
 
-const uint32_t RapidParserErrorMissingTagDataForEXTINF = HLSParserInternalErrorCodeMissingTagDataForEXTINF;
+const uint32_t RapidParserErrorMissingTagDataForEXTINF = ParserInternalErrorCodeMissingTagDataForEXTINF;
 
 const char * RapidParserErrorMissingTagData_Message = "Found a tag with missing tag data";
 

@@ -23,10 +23,10 @@ import XCTest
 
 class HLSTagWriting: XCTestCase {
     
-    static let samplePlaylist = "#EXTM3U\n#EXT-X-KEY:METHOD=AES-128,URI=\"https://priv.example.com/key.php?r=52\",IV=0x9c7db8778570d05c3177c349fd9236aa"
+    static let samplePlaylist = "#EXTM3U\n#EXT-X-KEY:METHOD=AES-128,URI=\"https://priv.example.com/key.php?r=52\",IV=0x9c7db8778570d05c3177c349fd9236aa\n#EXTINF:2\n"
     
     func testWriteExisting_byString() {
-        let playlist = parsePlaylist(inString: HLSTagWriting.samplePlaylist)
+        let playlist = parseVariantPlaylist(inString: HLSTagWriting.samplePlaylist)
         
         let numberValues = playlist.tags[0].numberOfParsedValues()
         var tag = playlist.tags[0]
@@ -40,7 +40,7 @@ class HLSTagWriting: XCTestCase {
     }
     
     func testWriteExisting_byValueIdentifier() {
-        let playlist = parsePlaylist(inString: HLSTagWriting.samplePlaylist)
+        let playlist = parseVariantPlaylist(inString: HLSTagWriting.samplePlaylist)
         
         let numberValues = playlist.tags[0].numberOfParsedValues()
         var tag = playlist.tags[0]
@@ -54,7 +54,7 @@ class HLSTagWriting: XCTestCase {
     }
     
     func testWriteNew_byString() {
-        let playlist = parsePlaylist(inString: HLSTagWriting.samplePlaylist)
+        let playlist = parseVariantPlaylist(inString: HLSTagWriting.samplePlaylist)
         
         let numberValues = playlist.tags[0].numberOfParsedValues()
         var tag = playlist.tags[0]
@@ -66,7 +66,7 @@ class HLSTagWriting: XCTestCase {
     }
     
     func testWriteNew_byValueIdentifier() {
-        let playlist = parsePlaylist(inString: HLSTagWriting.samplePlaylist)
+        let playlist = parseVariantPlaylist(inString: HLSTagWriting.samplePlaylist)
         
         let numberValues = playlist.tags[0].numberOfParsedValues()
         var tag = playlist.tags[0]

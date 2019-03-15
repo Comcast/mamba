@@ -100,7 +100,7 @@ class EXT_X_KEYTagParserTests: XCTestCase {
             let _ = try parser.parseTag(fromTagString: nil)
             XCTAssert(false, "Parser should throw")
         }
-        catch HLSParserError.malformedHLSTag {
+        catch ParserError.malformedHLSTag {
             //Expected result
         }
         catch {

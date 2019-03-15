@@ -36,11 +36,11 @@ class HLSWriterTests: XCTestCase {
         
         do {
             let writer = HLSWriter(suppressMambaIdentityString: true)
-            let playlist = parsePlaylist(inString: hlsString)
+            let playlist = parseMasterPlaylist(inString: hlsString)
             
             let stream = OutputStream.toMemory()
             stream.open()
-            try writer.write(hlsPlaylist: playlist, toStream: stream)
+            try writer.write(playlist: playlist, toStream: stream)
             guard let data = stream.property(forKey: .dataWrittenToMemoryStreamKey) as? Data else {
                 XCTFail("No data written in write from HLSWriter")
                 return
@@ -68,7 +68,7 @@ class HLSWriterTests: XCTestCase {
         stream.open()
         do {
             let writer = HLSWriter()
-            var playlist = parsePlaylist(inString: hlsString)
+            var playlist = parseMasterPlaylist(inString: hlsString)
             
             // remove a required value to force a failure of the writer
             XCTAssert(playlist.tags[positionOfSEQUENCETag].tagDescriptor == PantosTag.EXT_X_MEDIA_SEQUENCE, "If this fails, the \"\(roundTripTestFixture)\" fixture has been edited so that a EXT_X_MEDIA_SEQUENCE tag is no longer in the \(positionOfSEQUENCETag)st spot. Adjust the number so that we grab the correct tag.")
@@ -82,7 +82,7 @@ class HLSWriterTests: XCTestCase {
             playlist.delete(atIndex: positionOfSEQUENCETag)
             playlist.insert(tag: tag, atIndex: positionOfSEQUENCETag)
 
-            try writer.write(hlsPlaylist: playlist, toStream: stream)
+            try writer.write(playlist: playlist, toStream: stream)
 
             XCTAssert(false, "Expecting an exception")
         }
@@ -104,11 +104,11 @@ class HLSWriterTests: XCTestCase {
         do {
             let sampleIdentityString = " Sample Ident String"
             let writer = HLSWriter(identityString: sampleIdentityString)
-            let playlist = parsePlaylist(inString: hlsString)
+            let playlist = parseVariantPlaylist(inString: hlsString)
             
             let stream = OutputStream.toMemory()
             stream.open()
-            try writer.write(hlsPlaylist: playlist, toStream: stream)
+            try writer.write(playlist: playlist, toStream: stream)
             guard let data = stream.property(forKey: .dataWrittenToMemoryStreamKey) as? Data else {
                 XCTFail("No data written in write from HLSWriter")
                 return
@@ -131,11 +131,11 @@ class HLSWriterTests: XCTestCase {
         
         do {
             let writer = HLSWriter()
-            let playlist = parsePlaylist(inString: hlsString)
+            let playlist = parseVariantPlaylist(inString: hlsString)
             
             let stream = OutputStream.toMemory()
             stream.open()
-            try writer.write(hlsPlaylist: playlist, toStream: stream)
+            try writer.write(playlist: playlist, toStream: stream)
             guard let data = stream.property(forKey: .dataWrittenToMemoryStreamKey) as? Data else {
                 XCTFail("No data written in write from HLSWriter")
                 return

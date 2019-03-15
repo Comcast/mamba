@@ -32,9 +32,9 @@ class ThirdPartyTagListSupportTests: XCTestCase {
             return
         }
         
-        let playlist = parsePlaylist(inString: hlsString, tagTypes:[HLSTagString_ThirdParty1.self, HLSTagString_ThirdParty2.self])
+        let playlist = parseVariantPlaylist(inString: hlsString, tagTypes:[HLSTagString_ThirdParty1.self, HLSTagString_ThirdParty2.self])
         
-        XCTAssert(playlist.tags.count == 7, "Misparsed the HLS")
+        XCTAssert(playlist.tags.count == 8, "Misparsed the HLS")
         
         XCTAssert(playlist.tags[0].tagDescriptor == PantosTag.EXT_X_TARGETDURATION, "Tag did not parse properly")
         XCTAssert(playlist.tags[0].value(forValueIdentifier: PantosValue.targetDurationSeconds) == "10", "Tag did not parse properly")
@@ -59,7 +59,7 @@ class ThirdPartyTagListSupportTests: XCTestCase {
         XCTAssert(playlist.tags[5].value(forValueIdentifier: HLSTagValueIdentifier_ThirdParty.Value2) == "TEST_I", "Tag did not parse properly")
         XCTAssert(playlist.tags[5].value(forValueIdentifier: HLSTagValueIdentifier_ThirdParty.Value3) == "TEST_J", "Tag did not parse properly")
         
-        XCTAssert(playlist.tags[6].tagDescriptor == PantosTag.EXT_X_ENDLIST, "Tag did not parse properly")
+        XCTAssert(playlist.tags[7].tagDescriptor == PantosTag.EXT_X_ENDLIST, "Tag did not parse properly")
     }
 }
 

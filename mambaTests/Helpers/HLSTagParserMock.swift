@@ -167,7 +167,6 @@ class EXT_THIRD_PARTY1_1TagParser: HLSTagParser {
         do {
             return try GenericDictionaryTagParserHelper.parseTag(fromParsableString: string,
                                                                  tag: tag)
-            
         }
         catch {
             throw error
@@ -190,7 +189,6 @@ class EXT_THIRD_PARTY1_2TagParser: HLSTagParser {
         do {
             return try GenericDictionaryTagParserHelper.parseTag(fromParsableString: string,
                                                                  tag: tag)
-            
         }
         catch {
             throw error
@@ -213,7 +211,6 @@ class EXT_THIRD_PARTY2_1TagParser: HLSTagParser {
         do {
             return try GenericDictionaryTagParserHelper.parseTag(fromParsableString: string,
                                                                  tag: tag)
-            
         }
         catch {
             throw error

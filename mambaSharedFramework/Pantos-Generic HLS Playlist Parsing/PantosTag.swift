@@ -373,7 +373,7 @@ extension PantosTag: HLSTagDescriptor, Equatable {
             return GenericSingleTagValidator<Bool>(tag: pantostag,
                                                    singleValueIdentifier:PantosValue.allowCache)
         case .EXT_X_PLAYLIST_TYPE:
-            return GenericSingleTagValidator<HLSPlaylistType>(tag: pantostag,
+            return GenericSingleTagValidator<PlaylistHLSType>(tag: pantostag,
                                                               singleValueIdentifier:PantosValue.playlistType)
         case .EXT_X_PROGRAM_DATE_TIME:
             return GenericSingleTagValidator<Date>(tag: pantostag,
@@ -387,54 +387,54 @@ extension PantosTag: HLSTagDescriptor, Equatable {
 
         case .EXT_X_STREAM_INF:
             return GenericDictionaryTagValidator(tag: pantostag, dictionaryValueIdentifiers: [
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.bandwidthBPS, optional: false, expectedType: Int.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.programId, optional: true, expectedType: Int.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.codecs, optional: true, expectedType: HLSCodecArray.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.resolution, optional: true, expectedType: HLSResolution.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.audioGroup, optional: true, expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.videoGroup, optional: true, expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.subtitlesGroup, optional: true, expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.closedCaptionsGroup, optional: true, expectedType: HLSClosedCaptions.self)
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.bandwidthBPS, optional: false, expectedType: Int.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.programId, optional: true, expectedType: Int.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.codecs, optional: true, expectedType: HLSCodecArray.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.resolution, optional: true, expectedType: HLSResolution.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.audioGroup, optional: true, expectedType: String.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.videoGroup, optional: true, expectedType: String.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.subtitlesGroup, optional: true, expectedType: String.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.closedCaptionsGroup, optional: true, expectedType: HLSClosedCaptions.self)
                 ])
             
         case .EXT_X_MEDIA:
             return GenericDictionaryTagValidator(tag: pantostag, dictionaryValueIdentifiers: [
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.uri, optional: true, expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.type, optional: true, expectedType: HLSMediaType.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.groupId, optional: true, expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.language, optional: true, expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.assocLanguage, optional: true, expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.name, optional: true, expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.defaultMedia, optional: true, expectedType: Bool.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.autoselect, optional: true, expectedType: Bool.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.forced, optional: true, expectedType: Bool.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.instreamId, optional: true, expectedType: HLSInstreamId.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.characteristics, optional: true, expectedType: String.self)
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.uri, optional: true, expectedType: String.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.type, optional: true, expectedType: HLSMediaType.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.groupId, optional: true, expectedType: String.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.language, optional: true, expectedType: String.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.assocLanguage, optional: true, expectedType: String.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.name, optional: true, expectedType: String.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.defaultMedia, optional: true, expectedType: Bool.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.autoselect, optional: true, expectedType: Bool.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.forced, optional: true, expectedType: Bool.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.instreamId, optional: true, expectedType: HLSInstreamId.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.characteristics, optional: true, expectedType: String.self)
                 ])
             
         case .EXT_X_I_FRAME_STREAM_INF:
             return GenericDictionaryTagValidator(tag: pantostag, dictionaryValueIdentifiers: [
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.bandwidthBPS, optional: false, expectedType: Int.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.programId, optional: true, expectedType: Int.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.codecs, optional: true, expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.resolution, optional: true, expectedType: HLSResolution.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.uri, optional: false, expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.videoGroup, optional: true, expectedType: String.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.bandwidthBPS, optional: false, expectedType: Int.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.programId, optional: true, expectedType: Int.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.codecs, optional: true, expectedType: String.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.resolution, optional: true, expectedType: HLSResolution.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.uri, optional: false, expectedType: String.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.videoGroup, optional: true, expectedType: String.self),
                 ])
             
         case .EXT_X_KEY:
             return EXT_X_KEYValidator(tag: pantostag, dictionaryValueIdentifiers: [
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.method, optional: true, expectedType: HLSEncryptionMethodType.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.uri, optional: true, expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.ivector, optional: true, expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.keyformat, optional: true, expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.keyformatVersions, optional: true, expectedType: String.self)
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.method, optional: true, expectedType: HLSEncryptionMethodType.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.uri, optional: true, expectedType: String.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.ivector, optional: true, expectedType: String.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.keyformat, optional: true, expectedType: String.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.keyformatVersions, optional: true, expectedType: String.self)
                 ])
             
         case .EXT_X_MAP:
             return GenericDictionaryTagValidator(tag: pantostag, dictionaryValueIdentifiers: [
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.uri, optional: false, expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.byterange, optional: true, expectedType: String.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.uri, optional: false, expectedType: String.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.byterange, optional: true, expectedType: String.self),
                 ])
             
         case .EXTINF:
@@ -442,13 +442,13 @@ extension PantosTag: HLSTagDescriptor, Equatable {
             
         case .EXT_X_BYTERANGE:
             return GenericDictionaryTagValidator(tag: pantostag, dictionaryValueIdentifiers: [
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.byterange, optional: true, expectedType: String.self)
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.byterange, optional: true, expectedType: String.self)
                 ])
         
         case .EXT_X_START:
             return GenericDictionaryTagValidator(tag: pantostag, dictionaryValueIdentifiers: [
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.startTimeOffset, optional: false, expectedType: Float.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.precise, optional: true, expectedType: Bool.self)
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.startTimeOffset, optional: false, expectedType: Float.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.precise, optional: true, expectedType: Bool.self)
                 ])
             
         case .Location:

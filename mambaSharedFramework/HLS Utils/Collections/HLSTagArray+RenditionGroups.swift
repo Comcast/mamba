@@ -19,6 +19,16 @@
 
 import Foundation
 
+/// the hls file type (i.e. master vs media/variant vs indeterminate)
+public enum FileType {
+    /// cannot determine (likely a invalid playlist)
+    case unknown
+    /// a master playlist
+    case master
+    /// a variant/media playlist
+    case media
+}
+
 public extension Collection where Iterator.Element == HLSTag {
     
     /// returns the FileType of this tag collection (i.e. master vs. variant)

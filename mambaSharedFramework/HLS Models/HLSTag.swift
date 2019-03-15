@@ -24,13 +24,13 @@ import Foundation
  
  *Important memory safety note:* This struct contains `HLSStringRef`s. Those objects
  may contain unsafe pointers to a external `Data` object (typically this Data object
- is the one parsed by `HLSParser` to create a `HLSPlaylist` containing many
+ is the one parsed by `Parser` to create a playlist containing many
  `HLSTag`s). If this Data is deallocted before this `HLSTag` is deallocated,
  accessing any `HLSString`s may result in undefined behavior.
  
  The rule for safety is, as long as a paricular `HLSTag` is accessed while its
- parent `HLSPlaylist` is still allocated, that is safe. If you need to access
- any `HLSTag` data after its parent `HLSPlaylist` is deallocated, you'll need to
+ parent `PlaylistInterface` is still allocated, that is safe. If you need to access
+ any `HLSTag` data after its parent `PlaylistInterface` is deallocated, you'll need to
  make a copy of any relevant `HLSStringRef`s via it's `stringValue` function.
  
  This un-swift-like memory safety issue was done for performance reasons. Allocating

@@ -22,7 +22,7 @@ import Foundation
 /// Generically validates dictionary style HLS tags.
 public class GenericDictionaryTagValidator: HLSTagValidator {
     
-    private let dictionaryValueIdentifiers: [HLSDictionaryTagValueIdentifier]
+    private let dictionaryValueIdentifiers: [DictionaryTagValueIdentifier]
     private let tag: HLSTagDescriptor
     
     /**
@@ -32,7 +32,7 @@ public class GenericDictionaryTagValidator: HLSTagValidator {
      
      - parameter dictionaryValueIdentifiers: An array of HLSDictionaryTagValueIdentifier objects describing the expected data in this tag
      */
-    public init(tag: HLSTagDescriptor, dictionaryValueIdentifiers: [HLSDictionaryTagValueIdentifier]) {
+    public init(tag: HLSTagDescriptor, dictionaryValueIdentifiers: [DictionaryTagValueIdentifier]) {
         self.tag = tag
         self.dictionaryValueIdentifiers = dictionaryValueIdentifiers
     }

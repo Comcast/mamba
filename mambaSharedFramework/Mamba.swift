@@ -25,7 +25,7 @@ public enum Mamba {
     /// returns the version of the mamba framework
     public static var version: String {
         
-        let bundle = Bundle(for: HLSParser.self)
+        let bundle = Bundle(for: Parser.self)
         
         guard let version = bundle.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String else {
             assertionFailure("Unable to find version string in framework bundle")

@@ -133,9 +133,9 @@ public func ==(lhs: HLSEncryptionMethodType, rhs: HLSEncryptionMethodType) -> Bo
 /// Represents a playlist type
 ///
 /// Can be initialized with a string "EVENT" or "VOD" for a valid value
-public struct HLSPlaylistType: Equatable, FailableStringLiteralConvertible {
-    public let type: PlaylistType
-    public enum PlaylistType: String {
+public struct PlaylistHLSType: Equatable, FailableStringLiteralConvertible {
+    public let type: PlaylistTypeString
+    public enum PlaylistTypeString: String {
         case Event = "EVENT"
         case VOD = "VOD"
     }
@@ -143,17 +143,17 @@ public struct HLSPlaylistType: Equatable, FailableStringLiteralConvertible {
         self.init(playlistType: string)
     }
     public init?(playlistType: String) {
-        guard let type = PlaylistType.init(rawValue: playlistType) else {
+        guard let type = PlaylistTypeString.init(rawValue: playlistType) else {
             return nil
         }
         self.type = type
     }
-    public init(type: PlaylistType) {
+    public init(type: PlaylistTypeString) {
         self.type = type
     }
 }
 
-public func ==(lhs: HLSPlaylistType, rhs: HLSPlaylistType) -> Bool {
+public func ==(lhs: PlaylistHLSType, rhs: PlaylistHLSType) -> Bool {
     return lhs.type == rhs.type
 }
 

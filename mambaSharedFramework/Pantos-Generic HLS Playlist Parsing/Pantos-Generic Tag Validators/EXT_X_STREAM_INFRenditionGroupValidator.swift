@@ -19,13 +19,13 @@
 
 import Foundation
 
-protocol EXT_X_STREAM_INFRenditionGroupValidator: HLSPlaylistTagGroupValidator {
+protocol EXT_X_STREAM_INFRenditionGroupValidator: MasterPlaylistTagGroupValidator {
     static var description: IssueDescription { get }
 }
 
 extension EXT_X_STREAM_INFRenditionGroupValidator {
-    static var validation: ([HLSTag]) -> [HLSValidationIssue]? {
-        return { (tags) -> [HLSValidationIssue]? in
+    static var validation: ([HLSTag]) -> [HLSValidationIssue] {
+        return { (tags) -> [HLSValidationIssue] in
             
             let requiredTags: [HLSTagDescriptor] = [PantosTag.EXT_X_MEDIA, PantosTag.EXT_X_STREAM_INF]
             let remainingTags = requiredTags.filter({ (tag) -> Bool in
@@ -44,7 +44,7 @@ extension EXT_X_STREAM_INFRenditionGroupValidator {
                     }
                 }
             }
-            return nil
+            return [HLSValidationIssue]()
         }
     }
 }
@@ -52,7 +52,7 @@ extension EXT_X_STREAM_INFRenditionGroupValidator {
 // EXT-X-STREAM-INF - AUDIO The value is a quoted-string. It MUST match the value of the GROUP-ID attribute of an EXT-X-MEDIA tag elsewhere in the Playlist whose TYPE attribute is AUDIO.
 class EXT_X_STREAM_INFRenditionGroupAUDIOValidator: EXT_X_STREAM_INFRenditionGroupValidator {
     static let description:IssueDescription = IssueDescription.EXT_X_STREAM_INFRenditionGroupAUDIOValidator
-    static let tagIdentifierPairs:[HLSTagIdentifierPair] = [(PantosTag.EXT_X_MEDIA, PantosValue.groupId),
+    static let tagIdentifierPairs:[TagIdentifierPair] = [(PantosTag.EXT_X_MEDIA, PantosValue.groupId),
                                                                        (PantosTag.EXT_X_STREAM_INF, PantosValue.audioGroup)]
 
 }
@@ -60,14 +60,14 @@ class EXT_X_STREAM_INFRenditionGroupAUDIOValidator: EXT_X_STREAM_INFRenditionGro
 // EXT-X-STREAM-INF - VIDEO The value is a quoted-string. It MUST match the value of the GROUP-ID attribute of an EXT-X-MEDIA tag elsewhere in the Playlist whose TYPE attribute is VIDEO.
 class EXT_X_STREAM_INFRenditionGroupVIDEOValidator: EXT_X_STREAM_INFRenditionGroupValidator {
     static let description:IssueDescription = IssueDescription.EXT_X_STREAM_INFRenditionGroupVIDEOValidator
-    static let tagIdentifierPairs:[HLSTagIdentifierPair] = [(PantosTag.EXT_X_MEDIA, PantosValue.groupId),
+    static let tagIdentifierPairs:[TagIdentifierPair] = [(PantosTag.EXT_X_MEDIA, PantosValue.groupId),
                                                            (PantosTag.EXT_X_STREAM_INF, PantosValue.videoGroup)]
 }
 
 // EXT-X-STREAM-INF - SUBTITLES The value is a quoted-string. It MUST match the value of the GROUP-ID attribute of an EXT-X-MEDIA tag elsewhere in the Playlist whose TYPE attribute is SUBTITLES.
 class EXT_X_STREAM_INFRenditionGroupSUBTITLESValidator: EXT_X_STREAM_INFRenditionGroupValidator {
     static let description:IssueDescription = IssueDescription.EXT_X_STREAM_INFRenditionGroupSUBTITLESValidator
-    static let tagIdentifierPairs:[HLSTagIdentifierPair] = [(PantosTag.EXT_X_MEDIA, PantosValue.groupId),
+    static let tagIdentifierPairs:[TagIdentifierPair] = [(PantosTag.EXT_X_MEDIA, PantosValue.groupId),
                                                             (PantosTag.EXT_X_STREAM_INF, PantosValue.subtitlesGroup)]
 
 }
@@ -75,6 +75,6 @@ class EXT_X_STREAM_INFRenditionGroupSUBTITLESValidator: EXT_X_STREAM_INFRenditio
 // EXT-X-STREAM-INF - CLOSED-CAPTIONS The value is a quoted-string or an enumerated-string NONE. If the value is a quoted-string, it MUST match the value of the GROUP-ID attribute of an EXT-X-MEDIA tag elsewhere in the Playlist whose TYPE attribute is CLOSED-CAPTIONS. If it is NONE, all EXT-X-STREAM-INF tags MUST have this attribute with a value of NONE.
 class EXT_X_STREAM_INFRenditionGroupCLOSEDCAPTIONSValidator: EXT_X_STREAM_INFRenditionGroupValidator {
     static let description:IssueDescription = IssueDescription.EXT_X_STREAM_INFRenditionGroupCLOSEDCAPTIONSValidator
-    static let tagIdentifierPairs:[HLSTagIdentifierPair] = [(PantosTag.EXT_X_MEDIA, PantosValue.groupId),
+    static let tagIdentifierPairs:[TagIdentifierPair] = [(PantosTag.EXT_X_MEDIA, PantosValue.groupId),
                                                             (PantosTag.EXT_X_STREAM_INF, PantosValue.closedCaptionsGroup)]
 }

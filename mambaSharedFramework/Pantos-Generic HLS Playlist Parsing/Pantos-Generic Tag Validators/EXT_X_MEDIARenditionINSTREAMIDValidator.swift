@@ -20,12 +20,12 @@
 import Foundation
 
 // INSTREAM-ID attribute is REQUIRED if the TYPE attribute is CLOSED-CAPTIONS
-class EXT_X_MEDIARenditionINSTREAMIDValidator: HLSPlaylistTagGroupValidator {
+class EXT_X_MEDIARenditionINSTREAMIDValidator: MasterPlaylistTagGroupValidator {
     
-    static let tagIdentifierPairs: [HLSTagIdentifierPair] = tagIdentifierPairsWithDefaultValueIdentifier(descriptors: [PantosTag.EXT_X_MEDIA])
+    static let tagIdentifierPairs: [TagIdentifierPair] = tagIdentifierPairsWithDefaultValueIdentifier(descriptors: [PantosTag.EXT_X_MEDIA])
     
-    class var validation: ([HLSTag]) -> [HLSValidationIssue]? {
-        return { (tags) -> [HLSValidationIssue]? in
+    class var validation: ([HLSTag]) -> [HLSValidationIssue] {
+        return { (tags) -> [HLSValidationIssue] in
             
             let variantPlaylistTag: [HLSTag]  = tags.filter { (tag) -> Bool in tag.value(forValueIdentifier: PantosValue.type) == HLSMediaType.Media.ClosedCaptions.rawValue  }
             for tag in variantPlaylistTag {
@@ -33,7 +33,7 @@ class EXT_X_MEDIARenditionINSTREAMIDValidator: HLSPlaylistTagGroupValidator {
                     return [HLSValidationIssue(description: IssueDescription.EXT_X_MEDIA_InstreamIdValidation, severity: IssueSeverity.error)]
                 }
             }
-            return nil
+            return [HLSValidationIssue]()
         }
     }
 }
