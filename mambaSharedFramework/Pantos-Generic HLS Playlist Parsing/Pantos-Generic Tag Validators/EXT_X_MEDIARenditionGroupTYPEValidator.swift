@@ -20,12 +20,12 @@
 import Foundation
 
 // All EXT-X-MEDIA tags in the same group MUST have the same TYPE attribute.
-class EXT_X_MEDIARenditionGroupTYPEValidator: HLSPlaylistTagGroupValidator {
+class EXT_X_MEDIARenditionGroupTYPEValidator: MasterPlaylistTagGroupValidator {
     
-    static let tagIdentifierPairs: [HLSTagIdentifierPair] = tagIdentifierPairsWithDefaultValueIdentifier(descriptors: [PantosTag.EXT_X_MEDIA])
+    static let tagIdentifierPairs: [TagIdentifierPair] = tagIdentifierPairsWithDefaultValueIdentifier(descriptors: [PantosTag.EXT_X_MEDIA])
     
-    class var validation: ([HLSTag]) -> [HLSValidationIssue]? {
-        return { (tags: [HLSTag]) -> [HLSValidationIssue]? in
+    class var validation: ([HLSTag]) -> [HLSValidationIssue] {
+        return { (tags: [HLSTag]) -> [HLSValidationIssue] in
             
             let type: String? = tags.first?.value(forValueIdentifier: PantosValue.type)
             let count = tags.filter({ (tag) -> Bool in
@@ -36,7 +36,7 @@ class EXT_X_MEDIARenditionGroupTYPEValidator: HLSPlaylistTagGroupValidator {
                 return [HLSValidationIssue(description: .EXT_X_MEDIARenditionGroupTYPEValidator, severity: IssueSeverity.error)]
             }
             
-            return nil
+            return [HLSValidationIssue]()
         }
     }
 }

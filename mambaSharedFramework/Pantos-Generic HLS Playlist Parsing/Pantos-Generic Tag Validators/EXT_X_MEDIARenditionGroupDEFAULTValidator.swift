@@ -20,19 +20,18 @@
 import Foundation
 
 // A group MUST NOT have more than one member with a DEFAULT attribute of YES.
-class EXT_X_MEDIARenditionGroupDEFAULTValidator: HLSPlaylistTagGroupValidator {
-    static let tagIdentifierPairs: [HLSTagIdentifierPair] = tagIdentifierPairsWithDefaultValueIdentifier(descriptors: [PantosTag.EXT_X_MEDIA])
+class EXT_X_MEDIARenditionGroupDEFAULTValidator: MasterPlaylistTagGroupValidator {
+    static let tagIdentifierPairs: [TagIdentifierPair] = tagIdentifierPairsWithDefaultValueIdentifier(descriptors: [PantosTag.EXT_X_MEDIA])
     
-    class var validation: ([HLSTag]) -> [HLSValidationIssue]? {
-        return { (tags) -> [HLSValidationIssue]? in
+    class var validation: ([HLSTag]) -> [HLSValidationIssue] {
+        return { (tags) -> [HLSValidationIssue] in
             
             let count = tags.reduce(0) { return $1.value(forValueIdentifier: PantosValue.defaultMedia) == Bool.YesNo.Yes.rawValue ? $0 + 1 : $0 }
             if (count > 1) {
                 return [HLSValidationIssue(description: .EXT_X_MEDIARenditionGroupDEFAULTValidator, severity: IssueSeverity.error)]
             }
             
-            return nil
+            return [HLSValidationIssue]()
         }
     }
-    
 }

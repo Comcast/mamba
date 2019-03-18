@@ -23,123 +23,101 @@ import XCTest
 
 extension XCTestCase {
     
-    public func parsePlaylist(inFixtureName fixtureName: String,
-                              tagTypes:[HLSTagDescriptor.Type]? = nil,
-                              url: URL? = fakePlaylistURL()) -> HLSPlaylist {
-        
-        let data = FixtureLoader.load(fixtureName: fixtureName as NSString)
-        
-        return parsePlaylist(inData: data! as Data, tagTypes: tagTypes, url: url!)
+    public func parseMasterPlaylist(inData data: Data,
+                                    tagTypes: [HLSTagDescriptor.Type]? = nil,
+                                    url: URL = fakePlaylistURL()) -> MasterPlaylist {
+        let result = _parsePlaylist(inData: data, tagTypes: tagTypes, url: url)
+        switch result {
+        case .parseError(let error):
+            assertionFailure("HLS Parse failed: \(error.localizedDescription)")
+            break
+        case .parsedMaster(let master):
+            return master
+        case .parsedVariant(_):
+            assertionFailure("HLS Parse failed: Got variant instead of master)")
+            break
+        }
+        // we've already stopped the test at this point
+        return nil!
     }
     
-    public func parsePlaylist(inString playlistString: String,
-                              tagTypes:[HLSTagDescriptor.Type]? = nil,
-                              url: URL? = fakePlaylistURL()) -> HLSPlaylist {
+    public func parseMasterPlaylist(inString playlistString: String,
+                                    tagTypes: [HLSTagDescriptor.Type]? = nil,
+                                    url: URL? = fakePlaylistURL()) -> MasterPlaylist {
         
         let data = playlistString.data(using: .utf8)
         
-        return parsePlaylist(inData: data!, tagTypes: tagTypes, url: url!)
+        return parseMasterPlaylist(inData: data!, tagTypes: tagTypes, url: url!)
     }
     
-    public func parsePlaylist(inData data: Data,
-                              tagTypes:[HLSTagDescriptor.Type]? = nil,
-                              url: URL = fakePlaylistURL()) -> HLSPlaylist {
+    public func parseMasterPlaylist(inFixtureName fixtureName: String,
+                                    tagTypes: [HLSTagDescriptor.Type]? = nil,
+                                    url: URL? = fakePlaylistURL()) -> MasterPlaylist {
         
-        let parser = HLSParser(tagTypes: tagTypes)
+        let data = FixtureLoader.load(fixtureName: fixtureName as NSString)
         
-        var registeredTags = RegisteredHLSTags()
-        if let tagTypes = tagTypes {
-            for tagType in tagTypes {
-                registeredTags.register(tagDescriptorType: tagType)
-            }
+        return parseMasterPlaylist(inData: data! as Data, tagTypes: tagTypes, url: url!)
+    }
+    
+    public func parseVariantPlaylist(inData data: Data,
+                                     tagTypes: [HLSTagDescriptor.Type]? = nil,
+                                     url: URL = fakePlaylistURL()) -> VariantPlaylist {
+        let result = _parsePlaylist(inData: data, tagTypes: tagTypes, url: url)
+        switch result {
+        case .parseError(let error):
+            assertionFailure("HLS Parse failed: \(error.localizedDescription)")
+            break
+        case .parsedVariant(let variant):
+            return variant
+        case .parsedMaster(_):
+            assertionFailure("HLS Parse failed: Got master instead of variant)")
+            break
         }
+        // we've already stopped the test at this point
+        return nil!
+    }
+    
+    public func parseVariantPlaylist(inString playlistString: String,
+                                     tagTypes: [HLSTagDescriptor.Type]? = nil,
+                                     url: URL? = fakePlaylistURL()) -> VariantPlaylist {
         
-        let expectation = self.expectation(description: "parseAndTestPlaylist completion")
+        let data = playlistString.data(using: .utf8)
         
-        var playlist: HLSPlaylist? = nil
+        return parseVariantPlaylist(inData: data!, tagTypes: tagTypes, url: url!)
+    }
+    
+    public func parseVariantPlaylist(inFixtureName fixtureName: String,
+                                     tagTypes: [HLSTagDescriptor.Type]? = nil,
+                                     url: URL? = fakePlaylistURL()) -> VariantPlaylist {
+        
+        let data = FixtureLoader.load(fixtureName: fixtureName as NSString)
+        
+        return parseVariantPlaylist(inData: data! as Data, tagTypes: tagTypes, url: url!)
+    }
+    
+    private func _parsePlaylist(inData data: Data,
+                                tagTypes: [HLSTagDescriptor.Type]? = nil,
+                                url: URL = fakePlaylistURL()) -> ParserResult {
+        
+        let parser = Parser(tagTypes: tagTypes)
+        
+        let semaphore = DispatchSemaphore(value: 0)
+        
+        var result: ParserResult? = nil
         
         parser.parse(playlistData: data,
                      url: url,
-                     success: { (m) in
-                        playlist = m
-                        expectation.fulfill()
-        },
-                     failure: { (error) in
-                        print("Failure in parseAndTestPlaylist in the \"\(String(describing: type(of: self)))\" unit test. Error \(error.localizedDescription)")
-                        XCTFail()
-                        expectation.fulfill()
+                     callback: { r in
+                        result = r
+                        semaphore.signal()
         })
         
-        waitForExpectations(timeout: 2.0, handler: {
-            error in
-            if (error != nil) {
-                print("Parse timeout in parseAndTestPlaylist in the \"\(String(describing: type(of: self)))\" unit test: \(error!)")
-                XCTFail()
-            }
-        })
+        if semaphore.wait(timeout: DispatchTime.now() + DispatchTimeInterval.seconds(2)) == .timedOut {
+            print("Parse timeout in parseAndTestPlaylist in the \"\(String(describing: type(of: self)))\" unit test")
+            assertionFailure()
+        }
         
-        return playlist!
-    }
-    
-    public func parsePlaylists(inFirstString playlistString1: String,
-                               inSecondString playlistString2: String) -> (playlist1: HLSPlaylist, playlist2: HLSPlaylist) {
-        
-        let data1 = playlistString1.data(using: .utf8)
-        let data2 = playlistString2.data(using: .utf8)
-        
-        let expectation1 = self.expectation(description: "parseAndTestPlaylist1 completion")
-        
-        let parser = HLSParser()
-        
-        var playlist1: HLSPlaylist? = nil
-        var playlist2: HLSPlaylist? = nil
-        
-        let url1 = fakePlaylistURL()
-        let url2 = fakePlaylistURL()
-        
-        parser.parse(playlistData: data1!,
-                     url: url1,
-                     success: { (m) in
-                        playlist1 = m
-                        expectation1.fulfill()
-        },
-                     failure: { _ in
-                        print("Failure in parseAndTestPlaylist 1 in the \"\(String(describing: type(of: self)))\" unit test")
-                        XCTFail()
-                        expectation1.fulfill()
-        })
-        
-        waitForExpectations(timeout: 2.0, handler: {
-            error in
-            if (error != nil) {
-                print("Parse timeout in parseAndTestPlaylist 1 in the \"\(String(describing: type(of: self)))\" unit test: \(error!)")
-                XCTFail()
-            }
-        })
-        
-        let expectation2 = self.expectation(description: "parseAndTestPlaylist2 completion")
-        
-        parser.parse(playlistData: data2!,
-                     url: url2,
-                     success: { (m) in
-                        playlist2 = m
-                        expectation2.fulfill()
-        },
-                     failure: { _ in
-                        print("Failure in parseAndTestPlaylist 1 in the \"\(String(describing: type(of: self)))\" unit test")
-                        XCTFail()
-                        expectation2.fulfill()
-        })
-        
-        waitForExpectations(timeout: 2.0, handler: {
-            error in
-            if (error != nil) {
-                print("Parse timeout in parseAndTestPlaylist 2 in the \"\(String(describing: type(of: self)))\" unit test: \(error!)")
-                XCTFail()
-            }
-        })
-        
-        return (playlist1!, playlist2!)
+        return result!
     }
     
     public func writeToString(withTag tag: HLSTag, withWriter writer: HLSTagWriter) throws -> String {
@@ -153,10 +131,6 @@ extension XCTestCase {
         }
         stream.close()
         return String(data: data, encoding: .utf8)!
-    }
-    
-    public func createPlaylist(fromTags tags: [HLSTag]) -> HLSPlaylist {
-        return HLSPlaylist(url: fakePlaylistURL(), tags: tags, registeredTags: RegisteredHLSTags(), hlsData: Data())
     }
 }
 
@@ -175,7 +149,7 @@ public func createHLSTag(tagDescriptor descriptor: HLSTagDescriptor, tagData: St
     }
     
     var parsedValues: HLSTagDictionary? = nil
-
+    
     if descriptor.type() == .keyValue || descriptor.type() == .singleValue {
         let regTags: RegisteredHLSTags = (registeredTags != nil) ? registeredTags! : RegisteredHLSTags()
         

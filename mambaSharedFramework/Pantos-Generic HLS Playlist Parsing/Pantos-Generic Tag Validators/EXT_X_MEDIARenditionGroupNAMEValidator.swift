@@ -20,12 +20,12 @@
 import Foundation
 
 // All EXT-X-MEDIA tags in the same group MUST have different NAME attributes.
-class EXT_X_MEDIARenditionGroupNAMEValidator: HLSPlaylistTagGroupValidator {
+class EXT_X_MEDIARenditionGroupNAMEValidator: MasterPlaylistTagGroupValidator {
     
-    static let tagIdentifierPairs: [HLSTagIdentifierPair] = tagIdentifierPairsWithDefaultValueIdentifier(descriptors: [PantosTag.EXT_X_MEDIA])
+    static let tagIdentifierPairs: [TagIdentifierPair] = tagIdentifierPairsWithDefaultValueIdentifier(descriptors: [PantosTag.EXT_X_MEDIA])
     
-    class var validation: ([HLSTag]) -> [HLSValidationIssue]? {
-        return { (tags) -> [HLSValidationIssue]? in
+    class var validation: ([HLSTag]) -> [HLSValidationIssue] {
+        return { (tags) -> [HLSValidationIssue] in
             
             let uniqueValues = tags.reduce(Set<String>()) { (result, tag) in
                 var r = result
@@ -40,7 +40,7 @@ class EXT_X_MEDIARenditionGroupNAMEValidator: HLSPlaylistTagGroupValidator {
                                            severity: IssueSeverity.error)]
             }
             
-            return nil
+            return [HLSValidationIssue]()
         }
     }
     

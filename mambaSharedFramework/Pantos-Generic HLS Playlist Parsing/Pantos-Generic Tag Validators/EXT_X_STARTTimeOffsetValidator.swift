@@ -22,18 +22,18 @@ import CoreMedia
 
 // The EXT-X-START tag indicates a preferred point at which to start playing a Playlist. If the variant does not contain EXT-X-ENDLIST, the TIME-OFFSET should not be within 3 target durations from the end, else TIME-OFFSET absolute value should never be longer than the playlist
 //#EXT-X-START:TIME-OFFSET=30,PRECISE=YES
-class  EXT_X_STARTTimeOffsetValidator: HLSPlaylistValidator {
-    
-    static func validate(hlsPlaylist playlist: HLSPlaylistInterface) -> [HLSValidationIssue]? {
+class  EXT_X_STARTTimeOffsetValidator: VariantPlaylistValidator {
+
+    static func validate(variantPlaylist: VariantPlaylistInterface) -> [HLSValidationIssue] {
         
         var startTag, targetDurationTag: HLSTag?
         var endListExist = false
-        if let range = playlist.footer?.range {
-            let footerTags = playlist.tags[range]
+        if let range = variantPlaylist.footer?.range {
+            let footerTags = variantPlaylist.tags[range]
             endListExist = footerTags.contains(where: { (tag) -> Bool in return tag.tagDescriptor == PantosTag.EXT_X_ENDLIST })
         }
-        if let header = playlist.header {
-            let headerTags = playlist.tags[header.range]
+        if let header = variantPlaylist.header {
+            let headerTags = variantPlaylist.tags[header.range]
             for tag in headerTags {
                 if tag.tagDescriptor == PantosTag.EXT_X_START {
                     startTag = tag
@@ -44,14 +44,14 @@ class  EXT_X_STARTTimeOffsetValidator: HLSPlaylistValidator {
         }
         guard let startTimeOffSet: CMTime = startTag?.value(forValueIdentifier: PantosValue.startTimeOffset),
             let targetDuration: CMTime = targetDurationTag?.value(forValueIdentifier: PantosValue.targetDurationSeconds)
-            else { return nil }
+            else { return [HLSValidationIssue]() }
         
-        let latestAllowedStartTime = playlist.endTime - CMTimeMultiply(targetDuration, multiplier: 3)
+        let latestAllowedStartTime = variantPlaylist.endTime - CMTimeMultiply(targetDuration, multiplier: 3)
         
-        if (startTimeOffSet > playlist.endTime) || (!endListExist && startTimeOffSet > latestAllowedStartTime) {
+        if (startTimeOffSet > variantPlaylist.endTime) || (!endListExist && startTimeOffSet > latestAllowedStartTime) {
             return [HLSValidationIssue(description: IssueDescription.EXT_X_STARTTimeOffsetValidator, severity: IssueSeverity.error)]
         }
-    
-        return nil
+        
+        return [HLSValidationIssue]()
     }
 }

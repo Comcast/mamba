@@ -1,5 +1,5 @@
 #EXTM3U
-# Note that the media name indicates the HLSPlaylist atg array index for convenience in debugging and writing unit tests  -  (this line is index 0)
+# Note that the media name indicates the PlaylistInterface atg array index for convenience in debugging and writing unit tests  -  (this line is index 0)
 # This is a 60 second ad, 12 segments of 5 seconds each  -  (this line is index 1)
 #   -  (this line is index 2)
 #EXT-X-MEDIA-SEQUENCE:0

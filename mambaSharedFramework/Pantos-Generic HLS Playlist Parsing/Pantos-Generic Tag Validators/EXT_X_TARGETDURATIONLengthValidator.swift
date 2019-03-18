@@ -20,19 +20,19 @@
 import Foundation
 
 // The EXT-X-TARGETDURATION tag specifies the maximum media segment duration. The EXTINF duration of each media segment in the Playlist file MUST be less than or equal to the target duration.
-class EXT_X_TARGETDURATIONLengthValidator: HLSPlaylistOneToManyValidator {
+class EXT_X_TARGETDURATIONLengthValidator: VariantPlaylistOneToManyValidator {
     
     static let oneTagDescriptor:HLSTagDescriptor = PantosTag.EXT_X_TARGETDURATION
     static let manyTagDescriptor:HLSTagDescriptor = PantosTag.EXTINF
     
-    class var validation: (HLSTag?, [HLSTag]?) -> [HLSValidationIssue]? {
+    class var validation: (HLSTag?, [HLSTag]?) -> [HLSValidationIssue] {
         
-        return { (one, many) -> [HLSValidationIssue]? in
+        return { (one, many) -> [HLSValidationIssue] in
             
             guard let one = one,
                 let many = many,
                 let max: Double = one.value(forValueIdentifier: PantosValue.targetDurationSeconds)
-                else { return nil }
+                else { return [HLSValidationIssue]() }
             
             for tag in many {
                 if tag.duration.seconds.rounded(.toNearestOrAwayFromZero) > max {
@@ -40,7 +40,7 @@ class EXT_X_TARGETDURATIONLengthValidator: HLSPlaylistOneToManyValidator {
                 }
             }
             
-            return nil
+            return [HLSValidationIssue]()
         }
     }
 }

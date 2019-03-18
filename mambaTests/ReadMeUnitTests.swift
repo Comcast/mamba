@@ -31,39 +31,67 @@ class ReadMeUnitTests: XCTestCase {
     
     func testMambaReadmeCode() {
         
+        func myVariantPlaylistFactoryFunction() -> VariantPlaylistInterface {
+            return parseVariantPlaylist(inFixtureName: "hls_sampleMediaFile.txt")
+        }
+        func myMasterPlaylistFactoryFunction() -> MasterPlaylistInterface {
+            return parseMasterPlaylist(inFixtureName: "hls_sampleMasterFile.txt")
+        }
+
         // Parsing a HLS Playlist
         //***********************
         
-        let parser = HLSParser()
+        let parser = Parser()
         
         let myPlaylistData: Data = FixtureLoader.load(fixtureName: "bipbopall.m3u8")! as Data // source of HLS data
         let myPlaylistURL: URL = URL(string: "https://not.a.real.server/main.m3u8")! // the URL of this playlist resource
         
         parser.parse(playlistData: myPlaylistData,
                      url: myPlaylistURL,
-                     success: { playlist in
-                        // do something with the parsed HLSPlaylist object
-        },
-                     failure: { parserError in
-                        // handle the HLSParserError
+                     callback: { result in
+                        switch result {
+                        case .parsedVariant(let variant):
+                            // do something with the parsed VariantPlaylist object
+                            myVariantPlaylistHandler(variantPlaylist: variant)
+                            break
+                        case .parsedMaster(let master):
+                            // do something with the parsed MasterPlaylist object
+                            myMasterPlaylistHandler(masterPlaylist: master)
+                            break
+                        case .parseError(let error):
+                            // handle the ParserError
+                            myErrorHandler(error: error)
+                            break
+                        }
         })
         
-        let playlist: HLSPlaylist
-        do {
-            // note: could take several milliseconds for large transcripts!
-            playlist = try parser.parse(playlistData: myPlaylistData,
-                                        url: myPlaylistURL)
-        }
-        catch {
-            // we received an error in parsing this playlist
-            return
+        // note: could take several milliseconds for large transcripts!
+        let result = parser.parse(playlistData: myPlaylistData,
+                                  url: myPlaylistURL)
+        switch result {
+        case .parsedVariant(let variant):
+            // do something with the parsed VariantPlaylist object
+            myVariantPlaylistHandler(variantPlaylist: variant)
+            break
+        case .parsedMaster(let master):
+            // do something with the parsed MasterPlaylist object
+            myMasterPlaylistHandler(masterPlaylist: master)
+            break
+        case .parseError(let error):
+            // handle the ParserError
+            myErrorHandler(error: error)
+            break
         }
         
         // Validating a HLS Playlist
         //**************************
         
-        let issues = HLSCompletePlaylistValidator.validate(hlsPlaylist: playlist)
+        let variantPlaylist: VariantPlaylistInterface = myVariantPlaylistFactoryFunction()
+        let masterPlaylist: MasterPlaylistInterface = myMasterPlaylistFactoryFunction()
         
+        let variantissues = PlaylistValidator.validate(variantPlaylist: variantPlaylist)
+        let masterissues = PlaylistValidator.validate(masterPlaylist: masterPlaylist)
+
         // Writing a HLS Playlist
         //***********************
         
@@ -73,7 +101,20 @@ class ReadMeUnitTests: XCTestCase {
         stream.open()
         
         do {
-            try writer.write(hlsPlaylist: playlist, toStream: stream)
+            try writer.write(playlist: variantPlaylist, toStream: stream)
+            try writer.write(playlist: masterPlaylist, toStream: stream)
+        }
+        catch {
+            // there was an error severe enough for us to stop writing the data
+        }
+        
+        do {
+            let variantData = try variantPlaylist.write()
+            let masterData = try masterPlaylist.write()
+            
+            // do something with the resulting data
+            myDataHandler(data: variantData)
+            myDataHandler(data: masterData)
         }
         catch {
             // there was an error severe enough for us to stop writing the data
@@ -82,7 +123,8 @@ class ReadMeUnitTests: XCTestCase {
         // Cleanup code
         //*************
         
-        XCTAssertNil(issues)
+        XCTAssertTrue(variantissues.isEmpty)
+        XCTAssertTrue(masterissues.isEmpty)
         stream.close()
     }
 }
@@ -133,7 +175,7 @@ extension MyCustomTagSet: HLSTagDescriptor {
     }
 }
 
-let customParser = HLSParser(tagTypes: [MyCustomTagSet.self])
+let customParser = Parser(tagTypes: [MyCustomTagSet.self])
 
 enum MyCustomValueIdentifiers: String {
     // define your custom value identifiers here
@@ -148,3 +190,8 @@ extension MyCustomValueIdentifiers: HLSTagValueIdentifier {
         return self.rawValue
     }
 }
+
+func myVariantPlaylistHandler(variantPlaylist: VariantPlaylistInterface) {}
+func myMasterPlaylistHandler(masterPlaylist: MasterPlaylistInterface) {}
+func myErrorHandler(error: Error) {}
+func myDataHandler(data: Data) {}

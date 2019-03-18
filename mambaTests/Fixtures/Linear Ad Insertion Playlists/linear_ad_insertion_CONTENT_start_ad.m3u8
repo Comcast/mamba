@@ -1,5 +1,5 @@
 #EXTM3U
-# Note that the media name and segment ts file name indicate the HLSPlaylist atg array index for convenience in debugging and writing unit tests  -  (this line is index 0)
+# Note that the media name and segment ts file name indicate the PlaylistInterface atg array index for convenience in debugging and writing unit tests  -  (this line is index 0)
 # This is a 30 second window of 15 2.0 second segments  -  (this line is index 1)
 # Note that we have some custom tags to indicate Ad Insertion start and end (EXT-X-MAMBA-AD-START, EXT-X-MAMBA-AD-END)  -  (this line is index 2)
 # This is a sample for start ad insertion, we should insert the 60 second ad starting at media sequence 10006  -  (this line is index 3)

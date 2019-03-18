@@ -6,10 +6,14 @@
 [![License](https://img.shields.io/cocoapods/l/mamba.svg)](https://raw.githubusercontent.com/Comcast/mamba/master/LICENSE.md)
 [![Platform](https://img.shields.io/cocoapods/p/mamba.svg?style=flat)]()
 
-Mamba
+Mamba 2.0
 ===
 
 _Note: The core Comcast mamba team is planning a 2.0 release of mamba. If you'd like more info about this look at [our request for comment.](./MAMBA_2_REQUEST_FOR_COMMENT.md)_
+
+_This README covers mamba 2.x. If you're using mamba 1.x, you can look at the README at [our master 1.x branch](https://github.com/Comcast/mamba/tree/master_1.x). 2.x is still under development. We recommend sticking with 1.x until we have an official 2.x release._
+
+--
 
 Mamba is a Swift iOS, tvOS and macOS framework to parse, validate and write [HTTP Live Streaming (HLS)](https://tools.ietf.org/html/draft-pantos-http-live-streaming-23) data.
 
@@ -31,10 +35,10 @@ _Mamba Project Goals:_
 
 ### _Parsing a HLS Playlist_
 
-Create an `HLSParser`. 
+Create an `Parser`. 
 
 ```swift
-let parser = HLSParser()
+let parser = Parser()
 ```
 
 Parse your HLS playlist using the parser. Here's the asynchronous version:
@@ -45,53 +49,76 @@ let myPlaylistURL: URL = ... // the URL of this playlist resource
 
 parser.parse(playlistData: myPlaylistData,
              url: myPlaylistURL,
-             success: { playlist in
-                  // do something with the parsed HLSPlaylist object
-             },
-             failure: { parserError in
-                  // handle the HLSParserError
-             })
+             callback: { result in
+                switch result {
+                case .parsedVariant(let variant):
+                    // do something with the parsed VariantPlaylist 
+                    myVariantPlaylistHandler(variantPlaylist: variant)
+                    break
+                case .parsedMaster(let master):
+                    // do something with the parsed MasterPlaylist 
+                    myMasterPlaylistHandler(masterPlaylist: master)
+                    break
+                case .parseError(let error):
+                    // handle the ParserError
+                    myErrorHandler(error: error)
+                    break
+                }
+})
 ```
 
 And here's the  synchronous version:
 
 ```swift
-let playlist: HLSPlaylist
-do {
-    // note: could take several milliseconds for large playlists!
-    playlist = try parser.parse(playlistData: myPlaylistData,
-                                url: myPlaylistURL)
+// note: could take several milliseconds for large transcripts!
+let result = parser.parse(playlistData: myPlaylistData,
+                          url: myPlaylistURL)
+switch result {
+case .parsedVariant(let variant):
+    // do something with the parsed VariantPlaylist object
+    myVariantPlaylistHandler(variantPlaylist: variant)
+    break
+case .parsedMaster(let master):
+    // do something with the parsed MasterPlaylist object
+    myMasterPlaylistHandler(masterPlaylist: master)
+    break
+case .parseError(let error):
+    // handle the ParserError
+    myErrorHandler(error: error)
+    break
 }
-catch {
-    // we received an error in parsing this playlist
-}
-// do something with the parsed HLSPlaylist
 ```
 
 You now have an HLS playlist object.
 
-### _HLSPlaylist_
+### _MasterPlaylist and VariantPlaylist_
 
-This struct is a in-memory representation of a HLS playlist.
+These structs are in-memory representations of a HLS playlist.
 
-It includes:
+They include:
 
 * The `URL` of the playlist.
 * An array of `HLSTag`s that represent each line in the HLS playlist. This array is editable, so you can make edits to the playlist.
-* Utility functions to tell if a playlist is a master or variant, and if it is a Live, VOD or Event style playlist.
-* Helpful functionality around the structure of a playlist, including calculated references to the "header", "footer" and all the video segments and the metadata around them. This structure is kept up to date behind the scenes as the playlist is edited.
+* Utility functions to tell if a variant playlist is a Live, VOD or Event style playlist.
+* Helpful functionality around the structure of a playlist. This structure is kept up to date behind the scenes as the playlist is edited.
+ *  `VariantPlaylist`: includes calculated references to the "header", "footer" and all the video segments and the metadata around them. 
+ *  `MasterPlaylist`: includes calculated references to the variant streams and their URL's.
 
-`HLSPlaylist` objects are highly editable.
+`MasterPlaylist` and `VariantPlaylist` objects are highly editable.
 
-### _Validating a HLS Playlist_
+### _Validating a Playlist_
 
-Validate your HLS Playlist using the `HLSCompletePlaylistValidator`.
+Validate your playlist using the `PlaylistValidator`.
 
 ```swift
-let issues = try HLSCompletePlaylistValidator.validate(hlsPlaylist: playlist)
+let variantPlaylist: VariantPlaylistInterface = myVariantPlaylistFactoryFunction()
+let masterPlaylist: MasterPlaylistInterface = myMasterPlaylistFactoryFunction()
+
+let variantissues = PlaylistValidator.validate(variantPlaylist: variantPlaylist)
+let masterissues = PlaylistValidator.validate(masterPlaylist: masterPlaylist)
 ```
 
-It returns an array of `HLSValidationIssue`s found with the HLS Playlist. They each have a description and a severity associated with them.
+It returns an array of `HLSValidationIssue`s found with the playlist. They each have a description and a severity associated with them.
 
 *We currently implement only a subset of the HLS validation rules as described in the [HLS specification](https://tools.ietf.org/html/draft-pantos-http-live-streaming-23). Improving our HLS validation coverage would be a most welcome pull request!*
 
@@ -109,12 +136,29 @@ Write your HLS playlist to a stream.
 let stream: OutputStream = ... // stream to receive the HLS Playlist
 
 do {
-    try writer.write(hlsPlaylist: playlist, toStream: stream)
+   try writer.write(playlist: variantPlaylist, toStream: stream)
+   try writer.write(playlist: masterPlaylist, toStream: stream)
 }
 catch {
     // there was an error severe enough for us to stop writing the data
 }
-``` 
+```
+
+There is also a utility function in the playlist to write out the playlist to a `Data` object.
+
+```
+do {
+    let variantData = try variantPlaylist.write()
+    let masterData = try masterPlaylist.write()
+    
+    // do something with the resulting data
+    myDataHandler(data: variantData)
+    myDataHandler(data: masterData)
+}
+catch {
+    // there was an error severe enough for us to stop writing the data
+}
+```
 
 ### _Using Custom Tags_
 
@@ -132,7 +176,7 @@ extension MyCustomTagSet: HLSTagDescriptor {
     ... // conform to HLSTagDescriptor here
 }
 
-let customParser = HLSParser(tagTypes: [MyCustomTagSet.self])
+let customParser = Parser(tagTypes: [MyCustomTagSet.self])
 ```
 
 If there is specfic data inside your custom tag that you'd like to access, e.g.
@@ -157,14 +201,12 @@ extension MyCustomValueIdentifiers: HLSTagValueIdentifier {
 
 You can now look through `HLSTag` objects for your custom tag values just as if it were a valuetype defined in the HLS specification.
 
-#### See the playground included in the workspace for more example code.
-
 ### _Important Note About Memory Safety_
 
 In order to achieve our performance goals, the internal C parser for HLS had to minimize the amount of heap memory allocated.
 
-This meant that, for each `HLSTag` object that is included in a `HLSPlaylist`, instead of using a swift `String` to represent data, we use a `HLSStringRef`, which is a object that is a reference into the memory of the original data used to parse the playlist. This greatly speeds parsing, but comes at a cost: **these `HLSTag` objects are unsafe to use beyond the lifetime of their parent `HLSPlaylist`**. 
+This meant that, for each `HLSTag` object that is included in a `MasterPlaylist/VariantPlaylist`, instead of using a swift `String` to represent data, we use a `HLSStringRef`, which is a object that is a reference into the memory of the original data used to parse the playlist. This greatly speeds parsing, but comes at a cost: **these `HLSTag` objects are unsafe to use beyond the lifetime of their parent `MasterPlaylist/VariantPlaylist`**. 
 
-In general, this is no problem. Normal usage of a `HLSPlaylist` would be (1) Parse the playlist, (2) Edit by manipulating `HLSTag`s (3) Write the playlist. 
+In general, this is no problem. Normal usage of a `MasterPlaylist/VariantPlaylist` would be (1) Parse the playlist, (2) Edit by manipulating `HLSTag`s (3) Write the playlist. 
 
-If you do, for some reason, need to access `HLSTag` data beyond the lifetime of the parent `HLSPlaylist` object, you'll need to make a copy of all `HLSStringRef` data of interest into a regular swift `String`. There's a string conversion function in `HLSStringRef` to accomplish this.
+If you do, for some reason, need to access `HLSTag` data beyond the lifetime of the parent `MasterPlaylist/VariantPlaylist` object, you'll need to make a copy of all `HLSStringRef` data of interest into a regular swift `String`. There's a string conversion function in `HLSStringRef` to accomplish this.

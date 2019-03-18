@@ -24,7 +24,7 @@ import mamba
 class HLSTagCriterionTests: XCTestCase {
     
     func test_HLSStringMatchTagCriteron() {
-        let playlist = parsePlaylist(inFixtureName: "hls_ad_master_playlist.m3u8")
+        let playlist = parseMasterPlaylist(inFixtureName: "hls_ad_master_playlist.m3u8")
         
         let crit = HLSStringMatchTagCriteron(valueIdentifer: PantosValue.codecs, value: "avc1.4d401f,mp4a.40.5")
         
@@ -33,7 +33,7 @@ class HLSTagCriterionTests: XCTestCase {
     }
     
     func test_HLSAllTagCriteron() {
-        let playlist = parsePlaylist(inFixtureName: "hls_ad_master_playlist.m3u8")
+        let playlist = parseMasterPlaylist(inFixtureName: "hls_ad_master_playlist.m3u8")
 
         let crit = HLSAllTagCriteron(tagDescriptor: PantosTag.EXT_X_STREAM_INF)
 
@@ -42,7 +42,7 @@ class HLSTagCriterionTests: XCTestCase {
     }
     
     func test_HLSHasValueCriteron() {
-        let playlist = parsePlaylist(inFixtureName: "hls_ad_master_playlist.m3u8")
+        let playlist = parseMasterPlaylist(inFixtureName: "hls_ad_master_playlist.m3u8")
 
         let crit = HLSHasValueCriteron(valueIdentifer: PantosValue.bandwidthBPS)
 
@@ -51,7 +51,7 @@ class HLSTagCriterionTests: XCTestCase {
     }
     
     func test_HLSHasNoValueCriteron() {
-        let playlist = parsePlaylist(inFixtureName: "hls_ad_master_playlist.m3u8")
+        let playlist = parseMasterPlaylist(inFixtureName: "hls_ad_master_playlist.m3u8")
 
         let crit = HLSHasNoValueCriteron(valueIdentifer: PantosValue.bandwidthBPS)
 
@@ -60,7 +60,7 @@ class HLSTagCriterionTests: XCTestCase {
     }
     
     func test_HLSStringMatchTagNameCriteron() {
-        let playlist = parsePlaylist(inFixtureName: "hls_ad_master_playlist.m3u8")
+        let playlist = parseMasterPlaylist(inFixtureName: "hls_ad_master_playlist.m3u8")
 
         let crit = HLSStringMatchTagNameCriteron(tagName: "#EXT-X-STREAM-INF")
 
@@ -70,7 +70,7 @@ class HLSTagCriterionTests: XCTestCase {
     }
     
     func test_HLSContainsStringTagCriteron() {
-        let playlist = parsePlaylist(inFixtureName: "hls_ad_master_playlist.m3u8")
+        let playlist = parseMasterPlaylist(inFixtureName: "hls_ad_master_playlist.m3u8")
 
         let crit = HLSContainsStringTagCriteron(valueIdentifer: PantosValue.codecs, containsValue: "avc1.4d401f")
 
@@ -83,7 +83,7 @@ class HLSTagCriterionTests: XCTestCase {
     }
     
     func test_HLSDoesNotContainStringTagCriteron() {
-        let playlist = parsePlaylist(inFixtureName: "hls_ad_master_playlist.m3u8")
+        let playlist = parseMasterPlaylist(inFixtureName: "hls_ad_master_playlist.m3u8")
         
         let crit = HLSDoesNotContainStringTagCriteron(valueIdentifer: PantosValue.codecs, containsValue: "avc1.4d401f")
         
@@ -96,7 +96,7 @@ class HLSTagCriterionTests: XCTestCase {
     }
     
     func test_HLSIntTagCriteron() {
-        let playlist = parsePlaylist(inFixtureName: "hls_ad_master_playlist.m3u8")
+        let playlist = parseMasterPlaylist(inFixtureName: "hls_ad_master_playlist.m3u8")
 
         let crit_equals = HLSIntTagCriteron(valueIdentifer: PantosValue.bandwidthBPS, value: 1397600, comparison: .equals)
         let crit_lessThan = HLSIntTagCriteron(valueIdentifer: PantosValue.bandwidthBPS, value: 1397600, comparison: .lessThan)
@@ -129,7 +129,7 @@ class HLSTagCriterionTests: XCTestCase {
     }
     
     func test_HLSResolutionTagCriteron() {
-        let playlist = parsePlaylist(inFixtureName: "hls_ad_master_playlist.m3u8")
+        let playlist = parseMasterPlaylist(inFixtureName: "hls_ad_master_playlist.m3u8")
         
         let crit_equals = HLSResolutionTagCriteron(valueIdentifer: PantosValue.resolution, value: HLSResolution(width: 640, height: 360), comparison: .equals)
         let crit_lessThan = HLSResolutionTagCriteron(valueIdentifer: PantosValue.resolution, value: HLSResolution(width: 640, height: 360), comparison: .lessThan)
@@ -159,7 +159,7 @@ class HLSTagCriterionTests: XCTestCase {
     }
     
     func test_HLSTagCriteria() {
-        let playlist = parsePlaylist(inFixtureName: "hls_ad_master_playlist.m3u8")
+        let playlist = parseMasterPlaylist(inFixtureName: "hls_ad_master_playlist.m3u8")
 
         let crit_bandwidth_is_1397600 = HLSIntTagCriteron(valueIdentifer: PantosValue.bandwidthBPS, value: 1397600, comparison: .equals)
         let crit_codecs_contains_avc1_4d401f = HLSContainsStringTagCriteron(valueIdentifer: PantosValue.codecs, containsValue: "avc1.4d401f")

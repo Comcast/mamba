@@ -23,8 +23,8 @@ import XCTest
 class HLSTagCollectionTests: XCTestCase {
     
     func testSAP() {
-        let sapMaster = parsePlaylist(inFixtureName: "super8demuxed1_4242.m3u8")
-        let nonsapMaster = parsePlaylist(inFixtureName: "hls_sampleMasterFile.txt")
+        let sapMaster = parseMasterPlaylist(inFixtureName: "super8demuxed1_4242.m3u8")
+        let nonsapMaster = parseMasterPlaylist(inFixtureName: "hls_sampleMasterFile.txt")
         
         XCTAssertTrue(sapMaster.tags.hasSap())
         XCTAssertFalse(nonsapMaster.tags.hasSap())
@@ -34,8 +34,8 @@ class HLSTagCollectionTests: XCTestCase {
     }
     
     func testAudioOnlyStream() {
-        let audioOnlyMaster = parsePlaylist(inFixtureName: "super8demuxed1_4242.m3u8")
-        let nonAudioOnlyMaster = parsePlaylist(inFixtureName: "hls_sampleMasterFile.txt")
+        let audioOnlyMaster = parseMasterPlaylist(inFixtureName: "super8demuxed1_4242.m3u8")
+        let nonAudioOnlyMaster = parseMasterPlaylist(inFixtureName: "hls_sampleMasterFile.txt")
 
         XCTAssertTrue(audioOnlyMaster.tags.hasAudioOnlyStream())
         XCTAssertFalse(nonAudioOnlyMaster.tags.hasAudioOnlyStream())
@@ -45,14 +45,14 @@ class HLSTagCollectionTests: XCTestCase {
     }
     
     func testFilteredBy() {
-        let master = parsePlaylist(inFixtureName: "super8demuxed1_4242.m3u8")
+        let master = parseMasterPlaylist(inFixtureName: "super8demuxed1_4242.m3u8")
 
         XCTAssertEqual(master.tags.filtered(by: PantosTag.EXT_X_MEDIA).count, 4)
         XCTAssertEqual(master.tags.filteredByVideoCodec().count, 7)
     }
     
     func testSortedBy() {
-        let master = parsePlaylist(inFixtureName: "super8demuxed1_4242.m3u8")
+        let master = parseMasterPlaylist(inFixtureName: "super8demuxed1_4242.m3u8")
 
         let tags = master.tags.sortedByResolutionBandwidth().filtered(by: PantosTag.EXT_X_STREAM_INF)
         

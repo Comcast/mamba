@@ -38,8 +38,8 @@ public class HLSWriter {
         self.suppressMambaIdentityString = suppressMambaIdentityString
     }
     
-    /// Writes a `HLSPlaylist` object to a stream. Caller is assumed to be responsible for opening and closing this stream.
-    public func write(hlsPlaylist: HLSPlaylistInterface, toStream stream: OutputStream) throws {
+    /// Writes a object implementing `PlaylistInterface` object to a stream. Caller is assumed to be responsible for opening and closing this stream.
+    public func write(playlist: PlaylistInterface, toStream stream: OutputStream) throws {
         
         // write initial #EXTM3U
         try write(string: PantosTag.EXTM3U.toString(), toStream: stream)
@@ -53,9 +53,9 @@ public class HLSWriter {
         }
         
         // write tags
-        for tag in hlsPlaylist.tags {
+        for tag in playlist.tags {
             if tag.isDirty {
-                guard let writer = hlsPlaylist.registeredTags.writer(forTag: tag.tagDescriptor) else {
+                guard let writer = playlist.registeredTags.writer(forTag: tag.tagDescriptor) else {
                     throw HLSWriterError.invalidPlaylist(description: "Cannot write dirty tag with unknown descriptor: \(tag.tagDescriptor.toString())")
                 }
                 try writer.write(tag: tag, toStream: stream)
@@ -67,6 +67,34 @@ public class HLSWriter {
         }
     }
     
+    public func write(playlist: PlaylistInterface) throws -> Data {
+        
+        let stream = OutputStream.toMemory()
+        stream.open()
+        
+        defer {
+            stream.close()
+        }
+        
+        try write(playlist: playlist, toStream: stream)
+        if let error = stream.streamError {
+            throw OutputStreamError.couldNotWriteToStream(error as NSError)
+        }
+        guard let data = stream.property(forKey: .dataWrittenToMemoryStreamKey) as? Data else {
+            assertionFailure("This method is expected to always return an NSData instance. Update this code to throw a more descriptive error.")
+            throw OutputStreamError.couldNotWriteToStream(nil)
+        }
+        return data
+    }
+
+    public func write(playlist: PlaylistInterface) throws -> String {
+        let data: Data = try write(playlist: playlist)
+        guard let string = String(data: data, encoding: .utf8) else {
+            throw OutputStreamError.invalidData(description: "Writing playlist fialure: unable to convert to utf8 coded string")
+        }
+        return string
+    }
+
     private func write(string: String, toStream stream: OutputStream) throws {
         
         try stream.write(unicodeScalar: HLSTagWritingSeparators.hash)

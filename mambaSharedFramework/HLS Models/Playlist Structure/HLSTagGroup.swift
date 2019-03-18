@@ -25,7 +25,7 @@ import CoreMedia
  */
 public protocol TagGroupProtocol {
     /**
-     The range of this group within the HLSPlaylistInterface's `tags` array.
+     The range of this group within the PlaylistInterface's `tags` array.
      
      Note that this is a closed style range, i.e. 12...17.
      */
@@ -46,7 +46,7 @@ public extension TagGroupProtocol {
 }
 
 /**
- An object to model a group of related and contiguous tags within a HLSPlaylistInterface.
+ An object to model a group of related and contiguous tags within a PlaylistInterface.
  */
 public struct TagGroup: TagGroupProtocol, CustomDebugStringConvertible {
     
@@ -59,7 +59,7 @@ public struct TagGroup: TagGroupProtocol, CustomDebugStringConvertible {
 
 /**
  An object to model a group of related and contiguous tags that represent a "media segment"
- within a HLSPlaylistInterface.
+ within a PlaylistInterface.
  
  Note that we currently also use this to model variant playlist "groups" in master playlists.
  This is convenient but not semantically correct.

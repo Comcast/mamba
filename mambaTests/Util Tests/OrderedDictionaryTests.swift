@@ -37,7 +37,7 @@ class OrderedDictionaryTests: XCTestCase {
     }
     
     func testOrderedDictionary_literal() {
-        var orderedDict:StringStringOrderedDictionary = ["1": "1", "2":"2", "3":"3", "4":"4"]
+        var orderedDict:StringStringOrderedDictionary = ["1":"1", "2":"2", "3":"3", "4":"4"]
         runTestsOnOrderedDict(orderedDict: &orderedDict)
     }
     
@@ -53,7 +53,7 @@ class OrderedDictionaryTests: XCTestCase {
     }
     
     func testOrderedDictionary_removeValueForKey() {
-        var orderedDict:OrderedDictionary = ["1": "1", "2":"2", "3":"3", "4":"4"]
+        var orderedDict:OrderedDictionary = ["1":"1", "2":"2", "3":"3", "4":"4"]
         
         let removedValue = orderedDict.removeValue(forKey: "2")
         
@@ -67,7 +67,7 @@ class OrderedDictionaryTests: XCTestCase {
     }
     
     func testOrderedDictionary_indexForKey() {
-        let od:OrderedDictionary = ["0": "0", "1": "1", "2":"2", "3":"3"]
+        let od:OrderedDictionary = ["0":"0", "1":"1", "2":"2", "3":"3"]
         
         XCTAssert(od.indexForKey("0") == 0, "Not in expected position")
         XCTAssert(od.indexForKey("1") == 1, "Not in expected position")
@@ -76,7 +76,7 @@ class OrderedDictionaryTests: XCTestCase {
     }
     
     func testOrderedDictionary_addAlreadyExistingKeyInNewPosition_AtSamePosition() {
-        var od:OrderedDictionary = ["0": "0", "1": "1", "2":"2", "3":"3"]
+        var od:OrderedDictionary = ["0":"0", "1":"1", "2":"2", "3":"3"]
         
         od[1] = ("1","a")
         
@@ -92,7 +92,7 @@ class OrderedDictionaryTests: XCTestCase {
     }
     
     func testOrderedDictionary_addAlreadyExistingKeyInNewPosition_AtPreviousPosition() {
-        var od:OrderedDictionary = ["0": "0", "1": "1", "2":"2", "3":"3"]
+        var od:OrderedDictionary = ["0":"0", "1":"1", "2":"2", "3":"3"]
         
         od[1] = ("2","a")
         
@@ -106,7 +106,7 @@ class OrderedDictionaryTests: XCTestCase {
     }
     
     func testOrderedDictionary_addAlreadyExistingKeyInNewPosition_AtLaterPosition() {
-        var od:OrderedDictionary = ["0": "0", "1": "1", "2":"2", "3":"3"]
+        var od:OrderedDictionary = ["0":"0", "1":"1", "2":"2", "3":"3"]
         
         od[3] = ("1","a")
         
@@ -120,7 +120,7 @@ class OrderedDictionaryTests: XCTestCase {
     }
     
     func testOrderedDictionary_addANewKeyViaSubscript() {
-        var od:OrderedDictionary = ["0": "0", "1": "1", "2":"2", "3":"3"]
+        var od:OrderedDictionary = ["0":"0", "1":"1", "2":"2", "3":"3"]
         
         od[1] = ("a","a")
         
@@ -136,7 +136,7 @@ class OrderedDictionaryTests: XCTestCase {
     }
     
     func testOrderedDictionary_updateValue_Existing() {
-        var od:OrderedDictionary = ["1": "1", "2":"2", "3":"3", "4":"4"]
+        var od:OrderedDictionary = ["1":"1", "2":"2", "3":"3", "4":"4"]
         
         XCTAssert(od.updateValue("a", forKey: "2") == "2", "Update value did not return old value")
         
@@ -152,7 +152,7 @@ class OrderedDictionaryTests: XCTestCase {
     }
     
     func testOrderedDictionary_updateValue_New() {
-        var od:OrderedDictionary = ["1": "1", "2":"2", "3":"3", "4":"4"]
+        var od:OrderedDictionary = ["1":"1", "2":"2", "3":"3", "4":"4"]
         
         XCTAssert(od.updateValue("a", forKey: "5") == nil, "Update value did not return nil value for new key")
         
@@ -170,7 +170,7 @@ class OrderedDictionaryTests: XCTestCase {
     }
     
     func testOrderedDictionary_removeAtIndex() {
-        var od:OrderedDictionary = ["1": "1", "2":"2", "3":"3", "4":"4"]
+        var od:OrderedDictionary = ["1":"1", "2":"2", "3":"3", "4":"4"]
         
         od.remove(at: 2)
         
@@ -184,7 +184,7 @@ class OrderedDictionaryTests: XCTestCase {
     }
     
     func testOrderedDictionary_removeAll() {
-        var od:OrderedDictionary = ["1": "1", "2":"2", "3":"3", "4":"4"]
+        var od:OrderedDictionary = ["1":"1", "2":"2", "3":"3", "4":"4"]
         
         od.removeAll()
         
@@ -192,7 +192,7 @@ class OrderedDictionaryTests: XCTestCase {
     }
     
     func testOrderedDictionary_removeAll_keepCapacity() {
-        var od:OrderedDictionary = ["1": "1", "2":"2", "3":"3", "4":"4"]
+        var od:OrderedDictionary = ["1":"1", "2":"2", "3":"3", "4":"4"]
         
         od.removeAll(keepingCapacity: true)
         
@@ -200,7 +200,7 @@ class OrderedDictionaryTests: XCTestCase {
     }
     
     func testOrderedDictionary_isEmpty() {
-        var od:OrderedDictionary = ["1": "1", "2":"2", "3":"3", "4":"4"]
+        var od:OrderedDictionary = ["1":"1", "2":"2", "3":"3", "4":"4"]
         
         XCTAssert(od.isEmpty == false, "isEmpty not returning correct value")
         
@@ -210,8 +210,8 @@ class OrderedDictionaryTests: XCTestCase {
     }
     
     func testOrderedDictionary_AddUnique() {
-        var od:OrderedDictionary = ["1": "1", "2":"2", "3":"3"]
-        let odnew:OrderedDictionary = ["4": "4", "5":"5"]
+        var od:OrderedDictionary = ["1":"1", "2":"2", "3":"3"]
+        let odnew:OrderedDictionary = ["4":"4", "5":"5"]
         
         od.add(orderedDictionary: odnew)
         
@@ -229,7 +229,7 @@ class OrderedDictionaryTests: XCTestCase {
     }
     
     func testOrderedDictionary_AddDuplicateDict() {
-        var od:OrderedDictionary = ["1": "1", "2":"2", "3":"3"]
+        var od:OrderedDictionary = ["1":"1", "2":"2", "3":"3"]
         let odnew:OrderedDictionary = ["2": "A", "4":"4"]
         
         od.add(orderedDictionary: odnew)
@@ -246,8 +246,8 @@ class OrderedDictionaryTests: XCTestCase {
     }
     
     func testOrderedDictionary_AddNormalDict() {
-        var od:OrderedDictionary = ["1": "1", "2":"2", "3":"3"]
-        let dnew = ["4": "4", "5":"5"]
+        var od:OrderedDictionary = ["1":"1", "2":"2", "3":"3"]
+        let dnew = ["4":"4", "5":"5"]
         
         od.add(dictionary: dnew)
         

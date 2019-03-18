@@ -161,7 +161,7 @@ dummy11.m3u8
 #EXT-X-STREAM-INF:BANDWIDTH=3922800
 dummy13.m3u8
 """
-        let playlist = parsePlaylist(inString: testPlaylistString)
+        let playlist = parseMasterPlaylist(inString: testPlaylistString)
         
         let tag_audiocodec_videocodec_resolution = playlist.tags[0]
         let tag_audiocodec = playlist.tags[2]

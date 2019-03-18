@@ -27,7 +27,7 @@ struct GenericDictionaryTagParserHelper {
         throws -> HLSTagDictionary {
             
             guard let string = string else {
-                throw HLSParserError.malformedHLSTag(tag: tag.toString(), tagBody: nil)
+                throw ParserError.malformedHLSTag(tag: tag.toString(), tagBody: nil)
             }
             
             var results: HLSTagDictionary
@@ -35,7 +35,7 @@ struct GenericDictionaryTagParserHelper {
                 results = try StringDictionaryParser.parseToHLSTagDictionary(fromParsableString:string as String)
             }
             catch {
-                throw HLSParserError.malformedHLSTag(tag: tag.toString(), tagBody: string)
+                throw ParserError.malformedHLSTag(tag: tag.toString(), tagBody: string)
             }
                         
             return results

@@ -39,7 +39,7 @@ public class GenericSingleValueTagParser: HLSTagParser {
     
     public func parseTag(fromTagString string: String?) throws -> HLSTagDictionary {
         guard let string = string , !string.isEmpty else {
-            throw HLSParserError.malformedHLSTag(tag: tag.toString(), tagBody: nil)
+            throw ParserError.malformedHLSTag(tag: tag.toString(), tagBody: nil)
         }
         return [singleValueIdentifier.toString(): HLSValueData(value: string)]
     }

@@ -21,7 +21,7 @@ import Foundation
 
 // MARK: Base HLSTagCriterion entities
 
-/// Describes a object used to filter HLSTags from a HLSPlaylist
+/// Describes a object used to filter HLSTags from a playlist
 public protocol HLSTagCriterion {
     func evaluate(tag: HLSTag) -> Bool
 }

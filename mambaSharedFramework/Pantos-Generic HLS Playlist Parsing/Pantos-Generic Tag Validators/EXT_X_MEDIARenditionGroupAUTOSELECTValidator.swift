@@ -20,12 +20,12 @@
 import Foundation
 
 // All members of a group whose AUTOSELECT attribute has a value YES MUST have LANGUAGE [RFC5646] attributes with unique values.
-class EXT_X_MEDIARenditionGroupAUTOSELECTValidator: HLSPlaylistTagGroupValidator {
+class EXT_X_MEDIARenditionGroupAUTOSELECTValidator: MasterPlaylistTagGroupValidator {
     
-    static let tagIdentifierPairs: [HLSTagIdentifierPair] = tagIdentifierPairsWithDefaultValueIdentifier(descriptors: [PantosTag.EXT_X_MEDIA])
+    static let tagIdentifierPairs: [TagIdentifierPair] = tagIdentifierPairsWithDefaultValueIdentifier(descriptors: [PantosTag.EXT_X_MEDIA])
     
-    class var validation: ([HLSTag]) -> [HLSValidationIssue]? {
-        return { (tags) -> [HLSValidationIssue]? in
+    class var validation: ([HLSTag]) -> [HLSValidationIssue] {
+        return { (tags) -> [HLSValidationIssue] in
             
             let autoselect = tags.reduce(0) { return $1.value(forValueIdentifier: PantosValue.autoselect) == Bool.YesNo.Yes.rawValue ? $0 + 1 : $0 } > 0
             if (autoselect) {
@@ -44,7 +44,7 @@ class EXT_X_MEDIARenditionGroupAUTOSELECTValidator: HLSPlaylistTagGroupValidator
                 }
                 
             }
-            return nil
+            return [HLSValidationIssue]()
         }
     }
 }

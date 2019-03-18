@@ -19,7 +19,7 @@
 
 import Foundation
 
-enum StructureState {
+public enum StructureState {
     case clean
     case dirtyWithTagChanges([TagChangeRecord])
     case dirtyRequiresRebuild
@@ -28,7 +28,7 @@ enum StructureState {
 extension StructureState: Equatable {
 }
 
-func ==(lhs: StructureState, rhs: StructureState) -> Bool {
+public func ==(lhs: StructureState, rhs: StructureState) -> Bool {
     switch (lhs, rhs) {
     case (.clean, .clean):
         return true
@@ -44,7 +44,7 @@ func ==(lhs: StructureState, rhs: StructureState) -> Bool {
     }
 }
 
-struct TagChangeRecord {
+public struct TagChangeRecord {
     let tagChangeCount: Int
     let index: Int
 }

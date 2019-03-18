@@ -146,7 +146,7 @@ class GenericSingleTagValidatorTests: XCTestCase {
     func constructPlayListTypeValidator(_ tagValue:String) -> (HLSTagValidator, HLSTag) {
         let tag = createHLSTag(tagDescriptor: PantosTag.EXT_X_PLAYLIST_TYPE, tagData: tagValue)
         
-        return (GenericSingleTagValidator<HLSPlaylistType>(tag: PantosTag.EXT_X_PLAYLIST_TYPE,
+        return (GenericSingleTagValidator<PlaylistHLSType>(tag: PantosTag.EXT_X_PLAYLIST_TYPE,
             singleValueIdentifier:PantosValue.playlistType), tag)
     }
 }
