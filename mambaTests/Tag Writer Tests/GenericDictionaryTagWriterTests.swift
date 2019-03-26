@@ -34,10 +34,10 @@ class GenericDictionaryTagWriterTests: XCTestCase {
     
     func testGenericDictionaryTagWriter() {
         
-        var tag = HLSTag(tagDescriptor: arbitraryTag,
-                         stringTagData: "",
-                         parsedValues: [key1: HLSValueData(value: value1),
-                                        key2: HLSValueData(value: value2)])
+        var tag = PlaylistTag(tagDescriptor: arbitraryTag,
+                              stringTagData: "",
+                              parsedValues: [key1: PlaylistTagValueData(value: value1),
+                                             key2: PlaylistTagValueData(value: value2)])
         // force isDirty
         tag.set(value: value1, forKey: key1)
         
@@ -55,8 +55,8 @@ class GenericDictionaryTagWriterTests: XCTestCase {
     
     func testGenericDictionaryTagWriter_NoTags() {
         
-        let tag = HLSTag(tagDescriptor: arbitraryTag,
-                         stringTagData: "")
+        let tag = PlaylistTag(tagDescriptor: arbitraryTag,
+                              stringTagData: "")
         
         let writer = GenericDictionaryTagWriter()
         

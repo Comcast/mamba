@@ -43,7 +43,7 @@ class GenericSingleValueTagParserTests: XCTestCase {
             let _ = try parser.parseTag(fromTagString: nil)
             XCTAssert(false, "Parser should throw")
         }
-        catch ParserError.malformedHLSTag {
+        catch PlaylistParserError.malformedTag {
             // expected result
         }
         catch {

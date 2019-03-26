@@ -24,7 +24,7 @@ import XCTest
 extension XCTestCase {
     
     public func parseMasterPlaylist(inData data: Data,
-                                    tagTypes: [HLSTagDescriptor.Type]? = nil,
+                                    tagTypes: [PlaylistTagDescriptor.Type]? = nil,
                                     url: URL = fakePlaylistURL()) -> MasterPlaylist {
         let result = _parsePlaylist(inData: data, tagTypes: tagTypes, url: url)
         switch result {
@@ -42,7 +42,7 @@ extension XCTestCase {
     }
     
     public func parseMasterPlaylist(inString playlistString: String,
-                                    tagTypes: [HLSTagDescriptor.Type]? = nil,
+                                    tagTypes: [PlaylistTagDescriptor.Type]? = nil,
                                     url: URL? = fakePlaylistURL()) -> MasterPlaylist {
         
         let data = playlistString.data(using: .utf8)
@@ -51,7 +51,7 @@ extension XCTestCase {
     }
     
     public func parseMasterPlaylist(inFixtureName fixtureName: String,
-                                    tagTypes: [HLSTagDescriptor.Type]? = nil,
+                                    tagTypes: [PlaylistTagDescriptor.Type]? = nil,
                                     url: URL? = fakePlaylistURL()) -> MasterPlaylist {
         
         let data = FixtureLoader.load(fixtureName: fixtureName as NSString)
@@ -60,7 +60,7 @@ extension XCTestCase {
     }
     
     public func parseVariantPlaylist(inData data: Data,
-                                     tagTypes: [HLSTagDescriptor.Type]? = nil,
+                                     tagTypes: [PlaylistTagDescriptor.Type]? = nil,
                                      url: URL = fakePlaylistURL()) -> VariantPlaylist {
         let result = _parsePlaylist(inData: data, tagTypes: tagTypes, url: url)
         switch result {
@@ -78,7 +78,7 @@ extension XCTestCase {
     }
     
     public func parseVariantPlaylist(inString playlistString: String,
-                                     tagTypes: [HLSTagDescriptor.Type]? = nil,
+                                     tagTypes: [PlaylistTagDescriptor.Type]? = nil,
                                      url: URL? = fakePlaylistURL()) -> VariantPlaylist {
         
         let data = playlistString.data(using: .utf8)
@@ -87,7 +87,7 @@ extension XCTestCase {
     }
     
     public func parseVariantPlaylist(inFixtureName fixtureName: String,
-                                     tagTypes: [HLSTagDescriptor.Type]? = nil,
+                                     tagTypes: [PlaylistTagDescriptor.Type]? = nil,
                                      url: URL? = fakePlaylistURL()) -> VariantPlaylist {
         
         let data = FixtureLoader.load(fixtureName: fixtureName as NSString)
@@ -96,10 +96,10 @@ extension XCTestCase {
     }
     
     private func _parsePlaylist(inData data: Data,
-                                tagTypes: [HLSTagDescriptor.Type]? = nil,
+                                tagTypes: [PlaylistTagDescriptor.Type]? = nil,
                                 url: URL = fakePlaylistURL()) -> ParserResult {
         
-        let parser = Parser(tagTypes: tagTypes)
+        let parser = PlaylistParser(tagTypes: tagTypes)
         
         let semaphore = DispatchSemaphore(value: 0)
         
@@ -120,12 +120,12 @@ extension XCTestCase {
         return result!
     }
     
-    public func writeToString(withTag tag: HLSTag, withWriter writer: HLSTagWriter) throws -> String {
+    public func writeToString(withTag tag: PlaylistTag, withWriter writer: PlaylistTagWriter) throws -> String {
         let stream = OutputStream.toMemory()
         stream.open()
         try writer.write(tag: tag, toStream: stream)
         guard let data = stream.property(forKey: .dataWrittenToMemoryStreamKey) as? Data else {
-            print("No data written in writeToString from HLSWriter \"\(String(describing: type(of: writer)))\" in unit test \"\(String(describing: type(of: self)))\" with tag \"\(tag)\"")
+            print("No data written in writeToString from Writer \"\(String(describing: type(of: writer)))\" in unit test \"\(String(describing: type(of: self)))\" with tag \"\(tag)\"")
             XCTFail()
             return "FAILED_TO_WRITE_DATA"
         }
@@ -134,24 +134,24 @@ extension XCTestCase {
     }
 }
 
-public func createHLSTag(tagDescriptor descriptor: HLSTagDescriptor, tagData: String, registeredTags: RegisteredHLSTags? = nil) -> HLSTag {
+public func createTag(tagDescriptor descriptor: PlaylistTagDescriptor, tagData: String, registeredTags: RegisteredTags? = nil) -> PlaylistTag {
     
     if descriptor == PantosTag.Location || descriptor == PantosTag.Comment {
-        return HLSTag(tagDescriptor: descriptor, tagData: HLSStringRef(string: tagData))
+        return PlaylistTag(tagDescriptor: descriptor, tagData: MambaStringRef(string: tagData))
     }
     if descriptor == PantosTag.EXTINF {
-        let duration = HLSStringRef(string: tagData).extinfSegmentDuration()
-        return HLSTag(tagDescriptor: descriptor,
-                      tagData: HLSStringRef(string: tagData),
-                      tagName: HLSStringRef(descriptor: descriptor),
-                      parsedValues: nil,
-                      duration: duration)
+        let duration = MambaStringRef(string: tagData).extinfSegmentDuration()
+        return PlaylistTag(tagDescriptor: descriptor,
+                           tagData: MambaStringRef(string: tagData),
+                           tagName: MambaStringRef(descriptor: descriptor),
+                           parsedValues: nil,
+                           duration: duration)
     }
     
-    var parsedValues: HLSTagDictionary? = nil
+    var parsedValues: PlaylistTagDictionary? = nil
     
     if descriptor.type() == .keyValue || descriptor.type() == .singleValue {
-        let regTags: RegisteredHLSTags = (registeredTags != nil) ? registeredTags! : RegisteredHLSTags()
+        let regTags: RegisteredTags = (registeredTags != nil) ? registeredTags! : RegisteredTags()
         
         let tagParser = regTags.parser(forTag: descriptor)
         if type(of: tagParser) != NoOpTagParser.self {
@@ -165,6 +165,6 @@ public func createHLSTag(tagDescriptor descriptor: HLSTagDescriptor, tagData: St
         }
     }
     
-    return HLSTag(tagDescriptor: descriptor, stringTagData: tagData, parsedValues: parsedValues)
+    return PlaylistTag(tagDescriptor: descriptor, stringTagData: tagData, parsedValues: parsedValues)
 }
 

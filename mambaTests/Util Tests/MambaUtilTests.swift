@@ -98,9 +98,9 @@ class MambaUtilTests: XCTestCase {
     
     func testConvenienceString() {
         let desc = String(describing: PantosTag.EXTINF)
-        XCTAssert(PantosTag(rawValue: desc) == PantosTag.EXTINF, "Round trip HLSTagDescriptor->String->HLSTagDescriptor did not work")
+        XCTAssert(PantosTag(rawValue: desc) == PantosTag.EXTINF, "Round trip TagDescriptor->String->TagDescriptor did not work")
         let val = String(describing: PantosValue.Comment_Text)
-        XCTAssert(PantosValue(rawValue: val) == PantosValue.Comment_Text, "Round trip HLSTagValueIdentifier->String->HLSTagValueIdentifier did not work")
+        XCTAssert(PantosValue(rawValue: val) == PantosValue.Comment_Text, "Round trip TagValueIdentifier->String->TagValueIdentifier did not work")
     }
     
     // MARK: Date Tests - common functions

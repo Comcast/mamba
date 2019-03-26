@@ -23,9 +23,9 @@ import XCTest
 class PlaylistTests: XCTestCase {
     
     func testInit() {
-        let tags = [HLSTag]()
+        let tags = [PlaylistTag]()
         let url = URL(string:"http://test.server")!
-        let registeredTags = RegisteredHLSTags()
+        let registeredTags = RegisteredTags()
         let data = Data()
         
         let variant1 = VariantPlaylist(url: url, tags: tags, registeredTags: registeredTags, playlistData: data)
@@ -50,10 +50,10 @@ class PlaylistTests: XCTestCase {
     }
     
     func testUrlChange() {
-        let tags = [HLSTag]()
+        let tags = [PlaylistTag]()
         let url1 = URL(string:"http://test.server1")!
         let url2 = URL(string:"http://test.server2")!
-        let registeredTags = RegisteredHLSTags()
+        let registeredTags = RegisteredTags()
         let data = Data()
         
         var playlist = VariantPlaylist(url: url1, tags: tags, registeredTags: registeredTags, playlistData: data)

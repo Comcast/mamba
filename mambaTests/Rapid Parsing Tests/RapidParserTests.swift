@@ -32,7 +32,7 @@ class RapidParserTests: XCTestCase {
                 
         let data = FixtureLoader.load(fixtureName: "hls_sampleMediaFile.txt")! as Data
         
-        let parser = HLSRapidParser()
+        let parser = RapidParser()
         
         parser.parseHLSData(data, callback: mock)
         
@@ -51,7 +51,7 @@ class RapidParserTests: XCTestCase {
         
         let data = FixtureLoader.load(fixtureName: "hls_sampleMediaFile.txt")! as Data
         
-        let parser = HLSRapidParser()
+        let parser = RapidParser()
         
         parser.parseHLSData(data, callback: mock)
         
@@ -61,16 +61,16 @@ class RapidParserTests: XCTestCase {
     }
 }
 
-private class MockRapidParserCallback: NSObject, HLSRapidParserCallback {
+private class MockRapidParserCallback: NSObject, RapidParserCallback {
     
     var lines = [TestLine]()
     var expectation: XCTestExpectation?
     var expectedNumberOfLines: Int = 0
     var shuntOnFragmentUrl: String? = nil
 
-    // MARK: HLSRapidParserCallback
+    // MARK: RapidParserCallback
     
-    func addedURLLine(_ url: HLSStringRef) -> Bool {
+    func addedURLLine(_ url: MambaStringRef) -> Bool {
         if
             let shuntOnFragmentUrl = shuntOnFragmentUrl,
             url.stringValue() == shuntOnFragmentUrl {
@@ -81,19 +81,19 @@ private class MockRapidParserCallback: NSObject, HLSRapidParserCallback {
         return true
     }
     
-    func addedCommentLine(_ comment: HLSStringRef) {
+    func addedCommentLine(_ comment: MambaStringRef) {
         lines.insert(TestLine(url: nil, comment: comment, tagName: nil, tagValue: nil), at: 0)
     }
     
-    func addedNoValueTag(withName tagName: HLSStringRef) {
+    func addedNoValueTag(withName tagName: MambaStringRef) {
         lines.insert(TestLine(url: nil, comment: nil, tagName: tagName, tagValue: nil), at: 0)
     }
     
-    func addedTag(withName tagName: HLSStringRef, value: HLSStringRef) {
+    func addedTag(withName tagName: MambaStringRef, value: MambaStringRef) {
         lines.insert(TestLine(url: nil, comment: nil, tagName: tagName, tagValue: value), at: 0)
     }
     
-    public func addedEXTINFTag(withName tagName: HLSStringRef, duration: HLSStringRef, value: HLSStringRef) {
+    public func addedEXTINFTag(withName tagName: MambaStringRef, duration: MambaStringRef, value: MambaStringRef) {
         lines.insert(TestLine(url: nil,
                               comment: nil,
                               tagName: tagName,
@@ -119,19 +119,19 @@ private class MockRapidParserCallback: NSObject, HLSRapidParserCallback {
 }
 
 private struct TestLine: CustomDebugStringConvertible {
-    let url: HLSStringRef?
-    let comment: HLSStringRef?
-    let tagName: HLSStringRef?
-    let tagValue: HLSStringRef?
+    let url: MambaStringRef?
+    let comment: MambaStringRef?
+    let tagName: MambaStringRef?
+    let tagValue: MambaStringRef?
     var debugDescription: String {
-        if let u: HLSStringRef = url {
+        if let u: MambaStringRef = url {
             return "\(u.stringValue())\n"
         }
-        if let c: HLSStringRef = comment {
+        if let c: MambaStringRef = comment {
             return "\(c.stringValue())\n"
         }
-        if let n: HLSStringRef = tagName {
-            if let v: HLSStringRef = tagValue {
+        if let n: MambaStringRef = tagName {
+            if let v: MambaStringRef = tagValue {
                 return "\(n.stringValue()):\(v.stringValue())\n"
             }
             return "\(n.stringValue())\n"

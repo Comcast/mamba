@@ -22,21 +22,21 @@ import Foundation
 @testable import mamba
 
 /*
- It's a PITA to have to manage RegisteredHLSTags all over the place.
+ It's a PITA to have to manage RegisteredTags all over the place.
  
- This extension has utilities to just create a standard Pantos RegisteredHLSTags.
+ This extension has utilities to just create a standard Pantos RegisteredTags.
  
- Unit tests can create their own RegisteredHLSTags using the mamba versions if they want, this is just if the test doesn't care
+ Unit tests can create their own RegisteredTags using the mamba versions if they want, this is just if the test doesn't care
  */
 public extension PlaylistCore where PT.customPlaylistDataType == PlaylistURLData {
     
     init() {
-        let registeredTags = RegisteredHLSTags()
-        self.init(url: fakePlaylistURL(), tags: [HLSTag](), registeredTags: registeredTags, playlistData: Data())
+        let registeredTags = RegisteredTags()
+        self.init(url: fakePlaylistURL(), tags: [PlaylistTag](), registeredTags: registeredTags, playlistData: Data())
     }
     
-    init(tags: [HLSTag]) {
-        let registeredTags = RegisteredHLSTags()
+    init(tags: [PlaylistTag]) {
+        let registeredTags = RegisteredTags()
         self.init(url: fakePlaylistURL(), tags: tags, registeredTags: registeredTags, playlistData: Data())
     }
     

@@ -22,7 +22,7 @@ import mamba
 
 class String_HelioTests: XCTestCase {
     
-    func testHLSTagDescriptor() {
+    func testTagDescriptor() {
         
         let descriptor = PantosTag.EXT_X_ALLOW_CACHE
         let string = descriptor.toString()
@@ -41,7 +41,7 @@ class String_HelioTests: XCTestCase {
         XCTAssertTrue(descriptor != dummyString)
     }
 
-    func testHLSTagValueIdentifier() {
+    func testTagValueIdentifier() {
         
         let valueid = PantosValue.bandwidthBPS
         let string = valueid.toString()

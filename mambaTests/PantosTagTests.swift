@@ -98,7 +98,7 @@ class PantosTagTests: XCTestCase {
         case .EXT_X_BITRATE:
             fallthrough
         case .EXTINF:
-            let stringRef = HLSStringRef(string: "#\(descriptor.toString())")
+            let stringRef = MambaStringRef(string: "#\(descriptor.toString())")
             guard let newDescriptor = PantosTag.constructDescriptor(fromStringRef: stringRef) else {
                 XCTFail("PantosTag \(descriptor.toString()) is missing from stringRefLookup table.")
                 return
@@ -129,9 +129,9 @@ class PantosTagTests: XCTestCase {
             XCTFail("Could not find validator for PantosTag.EXT_X_DISCONTINUITY_SEQUENCE")
             return
         }
-        let issues = validator.validate(tag: HLSTag(tagDescriptor: PantosTag.EXT_X_DISCONTINUITY_SEQUENCE,
-                                                    stringTagData: "0",
-                                                    parsedValues: [PantosValue.discontinuitySequence.toString(): HLSValueData(value: "0")]))
+        let issues = validator.validate(tag: PlaylistTag(tagDescriptor: PantosTag.EXT_X_DISCONTINUITY_SEQUENCE,
+                                                         stringTagData: "0",
+                                                         parsedValues: [PantosValue.discontinuitySequence.toString(): PlaylistTagValueData(value: "0")]))
         XCTAssertNil(issues, "Expecting no issues from validator")
     }
 }

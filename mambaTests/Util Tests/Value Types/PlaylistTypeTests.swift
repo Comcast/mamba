@@ -24,37 +24,37 @@ import XCTest
 class PlaylistTypeTests: XCTestCase {
     
     func testPlaylistType() {
-        let vodType = PlaylistHLSType(playlistType: "VOD")
+        let vodType = PlaylistValueType(playlistType: "VOD")
         
         XCTAssert(vodType != nil, "not created")
-        XCTAssert(vodType!.type == PlaylistHLSType.PlaylistTypeString.VOD, "assignment incorrect")
+        XCTAssert(vodType!.type == PlaylistValueType.PlaylistTypeString.VOD, "assignment incorrect")
         
-        let eventType = PlaylistHLSType(playlistType: "EVENT")
+        let eventType = PlaylistValueType(playlistType: "EVENT")
         
         XCTAssert(eventType != nil, "not created")
-        XCTAssert(eventType!.type == PlaylistHLSType.PlaylistTypeString.Event, "assignment incorrect")
+        XCTAssert(eventType!.type == PlaylistValueType.PlaylistTypeString.Event, "assignment incorrect")
     }
     
     func testPlaylistType1_Failure() {
-        let playlistType = PlaylistHLSType(playlistType: "")
+        let playlistType = PlaylistValueType(playlistType: "")
         
         XCTAssert(playlistType == nil, "should not have been created")
     }
     
     func testPlaylistType2_Failure() {
-        let playlistType = PlaylistHLSType(playlistType: "a")
+        let playlistType = PlaylistValueType(playlistType: "a")
         
         XCTAssert(playlistType == nil, "should not have been created")
     }
     
     func testPlaylistType3_Failure() {
-        let playlistType = PlaylistHLSType(playlistType: "VOD1")
+        let playlistType = PlaylistValueType(playlistType: "VOD1")
         
         XCTAssert(playlistType == nil, "should not have been created")
     }
     
     func testPlaylistType4_Failure() {
-        let playlistType = PlaylistHLSType(playlistType: "1VOD")
+        let playlistType = PlaylistValueType(playlistType: "1VOD")
         
         XCTAssert(playlistType == nil, "should not have been created")
     }

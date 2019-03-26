@@ -44,7 +44,7 @@ class EXT_X_PROGRAM_DATE_TIMEParserTests: XCTestCase {
             
             XCTAssert(false, "Parser should throw")
         }
-        catch ParserError.malformedHLSTag {
+        catch PlaylistParserError.malformedTag {
             // expected result
         }
         catch {

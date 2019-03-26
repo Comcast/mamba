@@ -161,7 +161,7 @@ class PlaylistStructureAndEditingTests: XCTestCase {
         // access the playlist structure to force a build and set us in the .clean state
         XCTAssert(playlist.mediaSegmentGroups.count > 0)
         
-        let tag = HLSTag(tagDescriptor: PantosTag.Comment, tagData:HLSStringRef(string: " Just a comment tag"))
+        let tag = PlaylistTag(tagDescriptor: PantosTag.Comment, tagData:MambaStringRef(string: " Just a comment tag"))
         
         playlist.insert(tag: tag, atIndex: 8)
         
@@ -227,8 +227,8 @@ class PlaylistStructureAndEditingTests: XCTestCase {
         // access the playlist structure to force a build and set us in the .clean state
         XCTAssert(playlist.mediaSegmentGroups.count > 0)
         
-        let tags = [HLSTag(tagDescriptor: PantosTag.Comment, tagData:HLSStringRef(string: " Test Comment Number 1")),
-                    HLSTag(tagDescriptor: PantosTag.Comment, tagData:HLSStringRef(string: " Test Comment Number 2"))]
+        let tags = [PlaylistTag(tagDescriptor: PantosTag.Comment, tagData:MambaStringRef(string: " Test Comment Number 1")),
+                    PlaylistTag(tagDescriptor: PantosTag.Comment, tagData:MambaStringRef(string: " Test Comment Number 2"))]
         
         playlist.insert(tags: tags, atIndex: 8)
         
@@ -294,8 +294,8 @@ class PlaylistStructureAndEditingTests: XCTestCase {
         // access the playlist structure to force a build and set us in the .clean state
         XCTAssert(playlist.mediaSegmentGroups.count > 0)
         
-        let tag1 = HLSTag(tagDescriptor: PantosTag.Comment, tagData:HLSStringRef(string: " Test Comment Number 1"))
-        let tag2 = HLSTag(tagDescriptor: PantosTag.Comment, tagData:HLSStringRef(string: " Test Comment Number 2"))
+        let tag1 = PlaylistTag(tagDescriptor: PantosTag.Comment, tagData:MambaStringRef(string: " Test Comment Number 1"))
+        let tag2 = PlaylistTag(tagDescriptor: PantosTag.Comment, tagData:MambaStringRef(string: " Test Comment Number 2"))
         
         playlist.insert(tag: tag2, atIndex: 8)
         playlist.insert(tag: tag1, atIndex: 8)
@@ -603,11 +603,11 @@ class PlaylistStructureAndEditingTests: XCTestCase {
         // access the playlist structure to force a build and set us in the .clean state
         XCTAssert(playlist.mediaSegmentGroups.count > 0)
         
-        let extinfTagData = HLSStringRef(string: "2.002")
-        let tags = [HLSTag(tagDescriptor: PantosTag.EXTINF, tagData:extinfTagData, tagName: HLSStringRef(string: PantosTag.EXTINF.toString()), duration: extinfTagData.extinfSegmentDuration()),
-                    HLSTag(tagDescriptor: PantosTag.Location, tagData:HLSStringRef(string: "http://not-a-real.url/adSegment1.ts")),
-                    HLSTag(tagDescriptor: PantosTag.EXTINF, tagData:extinfTagData, tagName: HLSStringRef(string: PantosTag.EXTINF.toString()), duration: extinfTagData.extinfSegmentDuration()),
-                    HLSTag(tagDescriptor: PantosTag.Location, tagData:HLSStringRef(string: "http://not-a-real.url/adSegment2.ts"))] // insert two new media groups
+        let extinfTagData = MambaStringRef(string: "2.002")
+        let tags = [PlaylistTag(tagDescriptor: PantosTag.EXTINF, tagData:extinfTagData, tagName: MambaStringRef(string: PantosTag.EXTINF.toString()), duration: extinfTagData.extinfSegmentDuration()),
+                    PlaylistTag(tagDescriptor: PantosTag.Location, tagData:MambaStringRef(string: "http://not-a-real.url/adSegment1.ts")),
+                    PlaylistTag(tagDescriptor: PantosTag.EXTINF, tagData:extinfTagData, tagName: MambaStringRef(string: PantosTag.EXTINF.toString()), duration: extinfTagData.extinfSegmentDuration()),
+                    PlaylistTag(tagDescriptor: PantosTag.Location, tagData:MambaStringRef(string: "http://not-a-real.url/adSegment2.ts"))] // insert two new media groups
         
         playlist.insert(tags: tags, atIndex: 10) // inserting between segment 2 and 3
         
@@ -671,7 +671,7 @@ class PlaylistStructureAndEditingTests: XCTestCase {
         XCTAssert(playlist.mediaSpans[2].tagMediaSpan.count == 3)
     }
     
-    func runTestForMediaGroupValidity(playlist: VariantPlaylistInterface, mediaGroup: MediaSegmentTagGroup) -> Bool {
+    func runTestForMediaGroupValidity(playlist: VariantPlaylistInterface, mediaGroup: MediaSegmentPlaylistTagGroup) -> Bool {
         let tags = playlist.tags(forMediaGroup: mediaGroup)
         if tags.filter({ $0.tagDescriptor == PantosTag.EXTINF }).count != 1 {
             return false
@@ -708,7 +708,7 @@ class PlaylistStructureAndEditingTests: XCTestCase {
         do {
             try playlist.transform({ tag in
                 if tag.tagDescriptor == PantosTag.Location {
-                    return HLSTag(tagDescriptor: PantosTag.Location, tagData: HLSStringRef(string: fakeSegment))
+                    return PlaylistTag(tagDescriptor: PantosTag.Location, tagData: MambaStringRef(string: fakeSegment))
                 }
                 return tag
             })
@@ -737,7 +737,7 @@ class PlaylistStructureAndEditingTests: XCTestCase {
         
         XCTAssert(playlist1.tags.count == playlist2.tags.count, "Expecting same count")
         
-        let tag = HLSTag(tagDescriptor: PantosTag.Comment, tagData:HLSStringRef(string: " Just a comment tag"))
+        let tag = PlaylistTag(tagDescriptor: PantosTag.Comment, tagData:MambaStringRef(string: " Just a comment tag"))
         
         playlist1.insert(tag: tag, atIndex: 8)
         

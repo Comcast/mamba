@@ -21,7 +21,7 @@
 #import "RapidParserState.h"
 #import "RapidParserLineState.h"
 #import "RapidParserMasterParseArray.h"
-#import "HLSRapidParser.h"
+#import "RapidParser.h"
 
 static const NSInteger noHit = 0;
 static const NSInteger newTag = 1;
@@ -32,7 +32,7 @@ static const NSInteger newURL = 5;
 static const NSInteger completed = 6;
 static const NSInteger foundError = 7;
 
-@interface MockHLSRapidParser: HLSRapidParser
+@interface MockRapidParser: RapidParser
 
 @property (nonatomic, assign) UInt64 startName;
 @property (nonatomic, assign) UInt64 endName;
@@ -44,7 +44,7 @@ static const NSInteger foundError = 7;
 
 @end
 
-@implementation MockHLSRapidParser
+@implementation MockRapidParser
 
 - (void)clear {
     self.hit = noHit;
@@ -132,7 +132,7 @@ static const int64_t colonposition = 90;
     
     struct LineState lineState;
     uint8_t newState = 0;
-    MockHLSRapidParser *mockParser = [MockHLSRapidParser new];
+    MockRapidParser *mockParser = [MockRapidParser new];
     
     for(uint8_t state = Scanning; state < numberOfScanningParseStates; state++) {
         for(unsigned char c = 0; c < 255; c++) {
@@ -160,7 +160,7 @@ static const int64_t colonposition = 90;
 
 - (void)evaluateNewState:(uint8_t)newState
             andLineState:(struct LineState)lineState
-           andMockParser:(MockHLSRapidParser *)mockParser
+           andMockParser:(MockRapidParser *)mockParser
          forCurrentState:(uint8_t)state
             forCharacter:(unsigned char)c {
     
@@ -357,7 +357,7 @@ static const int64_t colonposition = 90;
     
     struct LineState lineState;
     uint8_t newState = 0;
-    MockHLSRapidParser *mockParser = [MockHLSRapidParser new];
+    MockRapidParser *mockParser = [MockRapidParser new];
     uint8_t state = LookingForNewLineForEXT;
     
     initializeLineState(&lineState);

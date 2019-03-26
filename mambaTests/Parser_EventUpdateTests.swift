@@ -36,7 +36,7 @@ class Parser_EventUpdateTests: XCTestCase {
         XCTAssertEqual(event1.tags.count, 15)
         
         // create a special parser that will always do an update on event style variants
-        let parser = Parser(updateEventPlaylistParams: UpdateEventPlaylistParams(minimalBytesToTriggerUpdate: 0,
+        let parser = PlaylistParser(updateEventPlaylistParams: UpdateEventPlaylistParams(minimalBytesToTriggerUpdate: 0,
                                                                                     maximumAmountOfTimeBetweenUpdatesToTrigger: 60 * 60))
         let event2 = try! parser.update(eventVariantPlaylist: event1,
                                         withPlaylistData: eventHLS2.data(using: .utf8)!,
@@ -62,7 +62,7 @@ class Parser_EventUpdateTests: XCTestCase {
         XCTAssertEqual(event1.tags.count, 15)
         
         // create a special parser that will always do an update on event style variants
-        let parser = Parser(updateEventPlaylistParams: UpdateEventPlaylistParams(minimalBytesToTriggerUpdate: 0,
+        let parser = PlaylistParser(updateEventPlaylistParams: UpdateEventPlaylistParams(minimalBytesToTriggerUpdate: 0,
                                                                                     maximumAmountOfTimeBetweenUpdatesToTrigger: 60 * 60))
         let event2 = try! parser.update(eventVariantPlaylist: event1,
                                         withPlaylistData: eventHLS1.data(using: .utf8)!,
@@ -81,7 +81,7 @@ class Parser_EventUpdateTests: XCTestCase {
         XCTAssertEqual(event1.tags.count, 15)
         
         // create a special parser that will have a large playlist size required to trigger and update. this will fail the update on our small playlists
-        let parser = Parser(updateEventPlaylistParams: UpdateEventPlaylistParams(minimalBytesToTriggerUpdate: 100000,
+        let parser = PlaylistParser(updateEventPlaylistParams: UpdateEventPlaylistParams(minimalBytesToTriggerUpdate: 100000,
                                                                                     maximumAmountOfTimeBetweenUpdatesToTrigger: 60 * 60))
         let event2 = try! parser.update(eventVariantPlaylist: event1,
                                         withPlaylistData: eventHLS2.data(using: .utf8)!,
@@ -100,7 +100,7 @@ class Parser_EventUpdateTests: XCTestCase {
         XCTAssertEqual(event1.tags.count, 15)
         
         // create a special parser that will have a very small 10 millisecond max time between updates before it will fail and just do a normal parse
-        let parser = Parser(updateEventPlaylistParams: UpdateEventPlaylistParams(minimalBytesToTriggerUpdate: 0,
+        let parser = PlaylistParser(updateEventPlaylistParams: UpdateEventPlaylistParams(minimalBytesToTriggerUpdate: 0,
                                                                                     maximumAmountOfTimeBetweenUpdatesToTrigger: 0.010))
         
         usleep(20 * 1000) // sleep for 20 millseconds to trigger the failure
@@ -122,7 +122,7 @@ class Parser_EventUpdateTests: XCTestCase {
         XCTAssertEqual(vod1.tags.count, 11)
         
         // create a special parser that will always do an update on event style variants
-        let parser = Parser(updateEventPlaylistParams: UpdateEventPlaylistParams(minimalBytesToTriggerUpdate: 0,
+        let parser = PlaylistParser(updateEventPlaylistParams: UpdateEventPlaylistParams(minimalBytesToTriggerUpdate: 0,
                                                                                     maximumAmountOfTimeBetweenUpdatesToTrigger: 60 * 60))
         
         let vod2 = try! parser.update(eventVariantPlaylist: vod1,
@@ -143,7 +143,7 @@ class Parser_EventUpdateTests: XCTestCase {
         XCTAssertEqual(event1.url, testURL1)
         
         // create a special parser that will always do an update on event style variants
-        let parser = Parser(updateEventPlaylistParams: UpdateEventPlaylistParams(minimalBytesToTriggerUpdate: 0,
+        let parser = PlaylistParser(updateEventPlaylistParams: UpdateEventPlaylistParams(minimalBytesToTriggerUpdate: 0,
                                                                                     maximumAmountOfTimeBetweenUpdatesToTrigger: 60 * 60))
         
         let event2 = try! parser.update(eventVariantPlaylist: event1,
@@ -180,7 +180,7 @@ missing.ts
         XCTAssertEqual(event1.tags.count, 3)
         
         // create a special parser that will always do an update on event style variants
-        let parser = Parser(updateEventPlaylistParams: UpdateEventPlaylistParams(minimalBytesToTriggerUpdate: 0,
+        let parser = PlaylistParser(updateEventPlaylistParams: UpdateEventPlaylistParams(minimalBytesToTriggerUpdate: 0,
                                                                                     maximumAmountOfTimeBetweenUpdatesToTrigger: 60 * 60))
         
         let event2 = try! parser.update(eventVariantPlaylist: event1,
