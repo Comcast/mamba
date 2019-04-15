@@ -98,7 +98,10 @@ public extension Collection where Iterator.Element == HLSTag {
             if let aResolution: HLSResolution = a.resolution(),
                 let bResolution: HLSResolution = b.resolution() {
                 if aResolution < bResolution { return true }
-                if bResolution > aResolution { return false }
+                if aResolution > bResolution { return false }
+            }
+            else if let _ = b.resolution() {
+                return true
             }
             
             if let aBandwidth: Double = a.bandwidth(),
