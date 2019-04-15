@@ -156,7 +156,7 @@ extension XCTestCase {
     }
     
     public func createPlaylist(fromTags tags: [HLSTag]) -> HLSPlaylist {
-        return HLSPlaylist(url: fakePlaylistURL(), tags: tags, registeredTags: RegisteredHLSTags(), hlsData: Data())
+        return HLSPlaylist(url: fakePlaylistURL(), tags: tags, registeredTags: RegisteredHLSTags(), hlsBuffer: MambaStaticMemoryBuffer())
     }
 }
 

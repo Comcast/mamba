@@ -26,19 +26,19 @@ class HLSPlaylistTests: XCTestCase {
         let tags = [HLSTag]()
         let url = URL(string:"http://test.server")!
         let registeredTags = RegisteredHLSTags()
-        let data = Data()
+        let buffer = MambaStaticMemoryBuffer()
         
-        let playlist1 = HLSPlaylist(url: url, tags: tags, registeredTags: registeredTags, hlsData: data)
+        let playlist1 = HLSPlaylist(url: url, tags: tags, registeredTags: registeredTags, hlsBuffer: buffer)
         
         XCTAssert(playlist1.url == url, "Expecting the url to match")
         XCTAssert(playlist1.tags.count == tags.count, "Expecting the tags to match")
-        XCTAssert(playlist1.hlsData == data, "Expecting the hls data to match")
+        XCTAssert(playlist1.hlsBuffer == buffer, "Expecting the hls data to match")
         
         let playlist2 = HLSPlaylist(playlist: playlist1)
 
         XCTAssert(playlist1.url == playlist2.url, "Expecting the url to match")
         XCTAssert(playlist1.tags.count == playlist2.tags.count, "Expecting the tags to match")
-        XCTAssert(playlist1.hlsData == playlist2.hlsData, "Expecting the hls data to match")
+        XCTAssert(playlist1.hlsBuffer == playlist2.hlsBuffer, "Expecting the hls data to match")
     }
     
     func testUrlChange() {
@@ -46,9 +46,9 @@ class HLSPlaylistTests: XCTestCase {
         let url1 = URL(string:"http://test.server1")!
         let url2 = URL(string:"http://test.server2")!
         let registeredTags = RegisteredHLSTags()
-        let data = Data()
-        
-        var playlist = HLSPlaylist(url: url1, tags: tags, registeredTags: registeredTags, hlsData: data)
+        let buffer = MambaStaticMemoryBuffer()
+
+        var playlist = HLSPlaylist(url: url1, tags: tags, registeredTags: registeredTags, hlsBuffer: buffer)
         playlist.url = url2
         
         XCTAssert(playlist.url == url2, "Expecting the url to change")

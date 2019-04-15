@@ -31,13 +31,13 @@ public typealias HLSPlaylist = HLSPlaylistCore<HLSPlaylistURLData>
 public extension HLSPlaylistCore where T == HLSPlaylistURLData {
     
     public init(playlist: HLSPlaylist) {
-        self.init(url: playlist.url, tags: playlist.tags, registeredTags: playlist.registeredTags, hlsData: playlist.hlsData)
+        self.init(url: playlist.url, tags: playlist.tags, registeredTags: playlist.registeredTags, hlsBuffer: playlist.hlsBuffer)
     }
 
     // care should be taken when constructing `HLSPlaylist` manually. Users should construct these objects using `HLSParser`
-    public init(url: URL, tags: [HLSTag], registeredTags: RegisteredHLSTags, hlsData: Data) {
+    public init(url: URL, tags: [HLSTag], registeredTags: RegisteredHLSTags, hlsBuffer: MambaStaticMemoryBuffer) {
         let customData = HLSPlaylistURLData(url: url)
-        self.init(tags: tags, registeredTags: registeredTags, hlsData: hlsData, customData: customData)
+        self.init(tags: tags, registeredTags: registeredTags, hlsBuffer: hlsBuffer, customData: customData)
     }
 
     /// The URL where this playlist is located

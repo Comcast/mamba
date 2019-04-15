@@ -37,4 +37,5 @@ FOUNDATION_EXPORT const unsigned char mambaVersionString[];
 #import <mamba/HLSRapidParser.h>
 #import <mamba/HLSRapidParserCallback.h>
 #import <mamba/CMTimeMakeFromString.h>
+#import <mamba/MambaStaticMemoryBuffer.h>
 
