@@ -22,7 +22,7 @@ import Foundation
 public extension Collection {
     
     // Finds the first index _after_ the parameter index that matches the predicate
-    public func findIndexAfterIndex(index:Self.Index, predicate: (Self.SubSequence.Iterator.Element) throws -> Bool) rethrows -> Self.Index? {
+    func findIndexAfterIndex(index:Self.Index, predicate: (Self.SubSequence.Iterator.Element) throws -> Bool) rethrows -> Self.Index? {
         
         guard indicies(containsIndex: index) else { return nil }
         
@@ -42,7 +42,7 @@ public extension Collection {
     }
     
     // Finds the first index _before_ the parameter index that matches the predicate
-    public func findIndexBeforeIndex(index:Self.Index, predicate: (Self.SubSequence.Iterator.Element) throws -> Bool) rethrows -> Self.Index? {
+    func findIndexBeforeIndex(index:Self.Index, predicate: (Self.SubSequence.Iterator.Element) throws -> Bool) rethrows -> Self.Index? {
         
         guard indicies(containsIndex: index) || index == self.endIndex else { return nil }
 

@@ -33,7 +33,7 @@ public protocol HLSExtensibleValidator: HLSPlaylistValidator {
  */
 public extension HLSExtensibleValidator {
     
-    public static func validate(hlsPlaylist: HLSPlaylistInterface) -> [HLSValidationIssue]? {
+    static func validate(hlsPlaylist: HLSPlaylistInterface) -> [HLSValidationIssue]? {
         var validationIssueList:[HLSValidationIssue] = []
         
         // tags
