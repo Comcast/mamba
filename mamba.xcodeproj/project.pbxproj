@@ -190,6 +190,15 @@
 		EC1CCD61209A2CF9006B59FF /* HLSValueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B11DD29D5C00AF4E20 /* HLSValueTypes.swift */; };
 		EC1CCD62209A2CF9006B59FF /* HLSWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B21DD29D5C00AF4E20 /* HLSWriter.swift */; };
 		EC1CCD63209A2CF9006B59FF /* Mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547871E5CC84700962535 /* Mamba.swift */; };
+		EC318B51226534AF00969E2D /* StaticMemoryStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = EC318B4F226534AF00969E2D /* StaticMemoryStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC318B52226534AF00969E2D /* StaticMemoryStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = EC318B4F226534AF00969E2D /* StaticMemoryStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC318B53226534AF00969E2D /* StaticMemoryStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = EC318B4F226534AF00969E2D /* StaticMemoryStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC318B54226534AF00969E2D /* StaticMemoryStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = EC318B50226534AF00969E2D /* StaticMemoryStorage.m */; };
+		EC318B55226534AF00969E2D /* StaticMemoryStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = EC318B50226534AF00969E2D /* StaticMemoryStorage.m */; };
+		EC318B56226534AF00969E2D /* StaticMemoryStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = EC318B50226534AF00969E2D /* StaticMemoryStorage.m */; };
+		EC318B58226534F400969E2D /* StaticMemoryStorageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC318B57226534F400969E2D /* StaticMemoryStorageTests.m */; };
+		EC318B59226534F400969E2D /* StaticMemoryStorageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC318B57226534F400969E2D /* StaticMemoryStorageTests.m */; };
+		EC318B5A226534F400969E2D /* StaticMemoryStorageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC318B57226534F400969E2D /* StaticMemoryStorageTests.m */; };
 		EC349AC12236BFAC0077432B /* PlaylistCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC349AC02236BFAC0077432B /* PlaylistCore.swift */; };
 		EC349AC22236BFAC0077432B /* PlaylistCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC349AC02236BFAC0077432B /* PlaylistCore.swift */; };
 		EC349AC32236BFAC0077432B /* PlaylistCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC349AC02236BFAC0077432B /* PlaylistCore.swift */; };
@@ -684,6 +693,9 @@
 		EC1CCCDA209A2AF8006B59FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC1CCCDF209A2AF8006B59FF /* mambaMacOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mambaMacOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1CCCE6209A2AF8006B59FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC318B4F226534AF00969E2D /* StaticMemoryStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaticMemoryStorage.h; sourceTree = "<group>"; };
+		EC318B50226534AF00969E2D /* StaticMemoryStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StaticMemoryStorage.m; sourceTree = "<group>"; };
+		EC318B57226534F400969E2D /* StaticMemoryStorageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StaticMemoryStorageTests.m; sourceTree = "<group>"; };
 		EC349AC02236BFAC0077432B /* PlaylistCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCore.swift; sourceTree = "<group>"; };
 		EC349AC42236BFF10077432B /* PlaylistInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistInterface.swift; sourceTree = "<group>"; };
 		EC349AC92236C1520077432B /* PlaylistTypeInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTypeInterface.swift; sourceTree = "<group>"; };
@@ -933,11 +945,11 @@
 		EC03B62B1E5CC51C00BF1F97 /* HLS Rapid Parser */ = {
 			isa = PBXGroup;
 			children = (
-				F73183721E7872AB00ED8E59 /* HLSStringRef */,
-				EC03B62C1E5CC52C00BF1F97 /* Master Parse Array */,
 				EC03B6411E5CC56B00BF1F97 /* HLSRapidParser.h */,
 				EC03B6421E5CC56B00BF1F97 /* HLSRapidParser.m */,
 				EC03B6431E5CC56B00BF1F97 /* HLSRapidParserCallback.h */,
+				F73183721E7872AB00ED8E59 /* HLSStringRef */,
+				EC03B62C1E5CC52C00BF1F97 /* Master Parse Array */,
 				EC03B6471E5CC56B00BF1F97 /* RapidParser.c */,
 				EC03B6481E5CC56B00BF1F97 /* RapidParser.h */,
 				EC03B6491E5CC56B00BF1F97 /* RapidParserDebug.h */,
@@ -949,6 +961,8 @@
 				EC03B64F1E5CC56B00BF1F97 /* RapidParserState.h */,
 				EC03B6501E5CC56B00BF1F97 /* RapidParserStateHandlers.c */,
 				EC03B6511E5CC56B00BF1F97 /* RapidParserStateHandlers.h */,
+				EC318B4F226534AF00969E2D /* StaticMemoryStorage.h */,
+				EC318B50226534AF00969E2D /* StaticMemoryStorage.m */,
 			);
 			path = "HLS Rapid Parser";
 			sourceTree = "<group>";
@@ -1021,6 +1035,7 @@
 				ECAFFA25223ADF0500A6D5F4 /* PlaylistTimelineAndSequencingTests.swift */,
 				ECFBD9081E5CCBFF00379FC2 /* Rapid Parsing Tests */,
 				ECBEF4F01F7AC58A0051078F /* ReadMeUnitTests.swift */,
+				EC318B57226534F400969E2D /* StaticMemoryStorageTests.m */,
 				ECC410631EA1518E00B4E3C8 /* StructureStateTests.swift */,
 				EC3B57F41D36CCE7006656C3 /* Tag Parser Tests */,
 				0173AB081D5BB304005DE51B /* Tag Validator Tests */,
@@ -1387,6 +1402,7 @@
 				EC03B6621E5CC56B00BF1F97 /* RapidParserDebug.h in Headers */,
 				F700CD371E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.h in Headers */,
 				EC03B6721E5CC56B00BF1F97 /* RapidParserStateHandlers.h in Headers */,
+				EC318B51226534AF00969E2D /* StaticMemoryStorage.h in Headers */,
 				EC03B66C1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h in Headers */,
 				EC03B66A1E5CC56B00BF1F97 /* RapidParserLineState.h in Headers */,
 				EC03B66E1E5CC56B00BF1F97 /* RapidParserState.h in Headers */,
@@ -1411,6 +1427,7 @@
 				EC03B6631E5CC56B00BF1F97 /* RapidParserDebug.h in Headers */,
 				F700CD381E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.h in Headers */,
 				EC03B6731E5CC56B00BF1F97 /* RapidParserStateHandlers.h in Headers */,
+				EC318B52226534AF00969E2D /* StaticMemoryStorage.h in Headers */,
 				EC03B66D1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h in Headers */,
 				ECFBD9011E5CCA0900379FC2 /* mamba.h in Headers */,
 				EC03B66B1E5CC56B00BF1F97 /* RapidParserLineState.h in Headers */,
@@ -1435,6 +1452,7 @@
 				EC1CCCFA209A2CF9006B59FF /* HLSStringRef.h in Headers */,
 				EC1CCD03209A2CF9006B59FF /* HLSStringRef_ConcreteUnownedBytes.h in Headers */,
 				EC1CCD19209A2CF9006B59FF /* RapidParser.h in Headers */,
+				EC318B53226534AF00969E2D /* StaticMemoryStorage.h in Headers */,
 				EC1CCD07209A2CF9006B59FF /* RapidParserMasterParseArray.h in Headers */,
 				EC1CCD1A209A2CF9006B59FF /* RapidParserDebug.h in Headers */,
 				EC1CCCFD209A2CF9006B59FF /* HLSStringRefFactory.h in Headers */,
@@ -1566,17 +1584,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Comcast Corporation.\n//  Licensed under the Apache License, Version 2.0 (the \"License\");\n//  you may not use this file except in compliance with the License.\n//  You may obtain a copy of the License at\n//\n//  http://www.apache.org/licenses/LICENSE-2.0\n//\n//  Unless required by applicable law or agreed to in writing, software\n//  distributed under the License is distributed on an \"AS IS\" BASIS,\n//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n//  See the License for the specific language governing permissions and\n//  limitations under the License.";
 				TargetAttributes = {
 					EC15214E1DD28536006FB265 = {
 						CreatedOnToolsVersion = 8.1;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Manual;
 					};
 					EC1521561DD28536006FB265 = {
 						CreatedOnToolsVersion = 8.1;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					EC15216A1DD2856F006FB265 = {
@@ -1605,6 +1623,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1798,6 +1817,7 @@
 				EC7491591DD29AED00AF4E20 /* HLSTag.swift in Sources */,
 				EC3B01AF1DD4D47900B512E3 /* EXT_X_STREAM_INFRenditionGroupValidator.swift in Sources */,
 				EC3B01CB1DD4D49A00B512E3 /* PlaylistRenditionGroupValidator.swift in Sources */,
+				EC318B54226534AF00969E2D /* StaticMemoryStorage.m in Sources */,
 				EC03B6701E5CC56B00BF1F97 /* RapidParserStateHandlers.c in Sources */,
 				EC7491F81DD29DD300AF4E20 /* GenericDictionaryTagValidator.swift in Sources */,
 				EC7491631DD29B0F00AF4E20 /* CoreMedia+Util.swift in Sources */,
@@ -1861,6 +1881,7 @@
 				EC42A5F51FD9BF0500317EA5 /* IndeterminateBoolTests.swift in Sources */,
 				ECAFFA122239B38300A6D5F4 /* PlaylistInterfaceTests.swift in Sources */,
 				ECFBD9121E5CCC2200379FC2 /* RapidParserTests.swift in Sources */,
+				EC318B58226534F400969E2D /* StaticMemoryStorageTests.m in Sources */,
 				ECCF2DAD1E23F54100D7C48B /* HLSTagTests.swift in Sources */,
 				EC7492801DD29EC800AF4E20 /* GenericSingleValueTagParserTests.swift in Sources */,
 				ECC410641EA1518E00B4E3C8 /* StructureStateTests.swift in Sources */,
@@ -1966,6 +1987,7 @@
 				EC3B01C61DD4D49A00B512E3 /* PlaylistRenditionGroupAudioVideoValidator.swift in Sources */,
 				EC74915A1DD29AED00AF4E20 /* HLSTag.swift in Sources */,
 				EC3B01B01DD4D47900B512E3 /* EXT_X_STREAM_INFRenditionGroupValidator.swift in Sources */,
+				EC318B55226534AF00969E2D /* StaticMemoryStorage.m in Sources */,
 				EC03B6711E5CC56B00BF1F97 /* RapidParserStateHandlers.c in Sources */,
 				EC3B01CC1DD4D49A00B512E3 /* PlaylistRenditionGroupValidator.swift in Sources */,
 				EC7491F91DD29DD300AF4E20 /* GenericDictionaryTagValidator.swift in Sources */,
@@ -2029,6 +2051,7 @@
 				ECFBD9131E5CCC2200379FC2 /* RapidParserTests.swift in Sources */,
 				EC42A5F61FD9BF0500317EA5 /* IndeterminateBoolTests.swift in Sources */,
 				ECAFFA132239B38300A6D5F4 /* PlaylistInterfaceTests.swift in Sources */,
+				EC318B59226534F400969E2D /* StaticMemoryStorageTests.m in Sources */,
 				ECCF2DAE1E23F54100D7C48B /* HLSTagTests.swift in Sources */,
 				EC7492B61DD29F8900AF4E20 /* HLSMediaTypeTests.swift in Sources */,
 				ECC410651EA1518E00B4E3C8 /* StructureStateTests.swift in Sources */,
@@ -2134,6 +2157,7 @@
 				EC1CCD42209A2CF9006B59FF /* EXT_X_STARTTimeOffsetValidator.swift in Sources */,
 				EC1CCD33209A2CF9006B59FF /* GenericDictionaryTagParserHelper.swift in Sources */,
 				EC1CCD3F209A2CF9006B59FF /* EXT_X_MEDIARenditionGroupNAMEValidator.swift in Sources */,
+				EC318B56226534AF00969E2D /* StaticMemoryStorage.m in Sources */,
 				ECDE184A22381E6C008566BB /* URLDataPlaylistExtensions.swift in Sources */,
 				EC1CCD5B209A2CF9006B59FF /* HLSTagDescriptor.swift in Sources */,
 				EC1CCD1C209A2CF9006B59FF /* RapidParserError.m in Sources */,
@@ -2197,6 +2221,7 @@
 				ECE253E9209A509C00D388CE /* PantosTagTests.swift in Sources */,
 				ECE253E4209A509900D388CE /* HLSTagTests.swift in Sources */,
 				ECE25402209A50B500D388CE /* OrderedDictionaryTests.swift in Sources */,
+				EC318B5A226534F400969E2D /* StaticMemoryStorageTests.m in Sources */,
 				ECAFFA142239B38300A6D5F4 /* PlaylistInterfaceTests.swift in Sources */,
 				ECE253E1209A509900D388CE /* HLSTagCollectionTests.swift in Sources */,
 				ECAFFA182239B81100A6D5F4 /* PlaylistStructureAndEditingTests.swift in Sources */,
@@ -2564,6 +2589,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -2624,6 +2650,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

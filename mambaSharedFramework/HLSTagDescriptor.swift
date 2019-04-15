@@ -113,4 +113,9 @@ extension HLSTagDescriptor {
     public var hashValue: Int {
         return self.toString().hash
     }
+
+    // Hasher shunt to work around Hashable issues with protocols
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(self.toString())
+    }
 }

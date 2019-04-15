@@ -42,14 +42,14 @@ class Parser_EventUpdateTests: XCTestCase {
                                         withPlaylistData: eventHLS2.data(using: .utf8)!,
                                         atUrl: testURL1)
         
-        XCTAssertEqual(event1.playlistData, event2.playlistData)
+        XCTAssertEqual(event1.playlistMemoryStorage, event2.playlistMemoryStorage)
         XCTAssertEqual(event2.tags.count, 19)
         
         let event3 = try! parser.update(eventVariantPlaylist: event2,
                                         withPlaylistData: eventHLS3.data(using: .utf8)!,
                                         atUrl: testURL1)
         
-        XCTAssertEqual(event1.playlistData, event3.playlistData)
+        XCTAssertEqual(event1.playlistMemoryStorage, event3.playlistMemoryStorage)
         XCTAssertEqual(event3.tags.count, 27)
     }
     
@@ -68,7 +68,7 @@ class Parser_EventUpdateTests: XCTestCase {
                                         withPlaylistData: eventHLS1.data(using: .utf8)!,
                                         atUrl: testURL1)
         
-        XCTAssertEqual(event1.playlistData, event2.playlistData)
+        XCTAssertEqual(event1.playlistMemoryStorage, event2.playlistMemoryStorage)
         XCTAssertEqual(event2.tags.count, 15)
     }
     
@@ -87,7 +87,7 @@ class Parser_EventUpdateTests: XCTestCase {
                                         withPlaylistData: eventHLS2.data(using: .utf8)!,
                                         atUrl: testURL1)
         
-        XCTAssertNotEqual(event1.playlistData, event2.playlistData)
+        XCTAssertNotEqual(event1.playlistMemoryStorage, event2.playlistMemoryStorage)
         XCTAssertEqual(event2.tags.count, 19)
     }
     
@@ -109,7 +109,7 @@ class Parser_EventUpdateTests: XCTestCase {
                                         withPlaylistData: eventHLS2.data(using: .utf8)!,
                                         atUrl: testURL1)
         
-        XCTAssertNotEqual(event1.playlistData, event2.playlistData)
+        XCTAssertNotEqual(event1.playlistMemoryStorage, event2.playlistMemoryStorage)
         XCTAssertEqual(event2.tags.count, 19)
     }
     
@@ -129,7 +129,7 @@ class Parser_EventUpdateTests: XCTestCase {
                                       withPlaylistData: vodHLS2.data(using: .utf8)!,
                                       atUrl: testURL1)
         
-        XCTAssertNotEqual(vod1.playlistData, vod2.playlistData)
+        XCTAssertNotEqual(vod1.playlistMemoryStorage, vod2.playlistMemoryStorage)
         XCTAssertEqual(vod2.tags.count, 15)
     }
     
@@ -150,7 +150,7 @@ class Parser_EventUpdateTests: XCTestCase {
                                         withPlaylistData: eventHLS2.data(using: .utf8)!,
                                         atUrl: testURL2)
         
-        XCTAssertNotEqual(event1.playlistData, event2.playlistData)
+        XCTAssertNotEqual(event1.playlistMemoryStorage, event2.playlistMemoryStorage)
         XCTAssertEqual(event2.tags.count, 19)
         XCTAssertEqual(event2.url, testURL2)
         XCTAssertNotEqual(event2.url, testURL1)
@@ -187,7 +187,7 @@ missing.ts
                                         withPlaylistData: eventHLS2.data(using: .utf8)!,
                                         atUrl: testURL1)
         
-        XCTAssertNotEqual(event1.playlistData, event2.playlistData)
+        XCTAssertNotEqual(event1.playlistMemoryStorage, event2.playlistMemoryStorage)
         XCTAssertEqual(event2.tags.count, 19)
     }
 }
