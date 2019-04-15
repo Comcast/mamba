@@ -31,7 +31,7 @@ class RapidParserTests: XCTestCase {
         mock.expectedNumberOfLines = 19
                 
         let data = FixtureLoader.load(fixtureName: "hls_sampleMediaFile.txt")! as Data
-        let buffer = MambaStaticMemoryBuffer(data: data)
+        let buffer = StaticMemoryStorage(data: data)
         
         let parser = HLSRapidParser()
         
@@ -51,7 +51,7 @@ class RapidParserTests: XCTestCase {
         mock.expectation = self.expectation(description: "Parsing complete")
         
         let data = FixtureLoader.load(fixtureName: "hls_sampleMediaFile.txt")! as Data
-        let buffer = MambaStaticMemoryBuffer(data: data)
+        let buffer = StaticMemoryStorage(data: data)
 
         let parser = HLSRapidParser()
         

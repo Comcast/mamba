@@ -104,7 +104,7 @@ void ParseError(const void *parentparser, const uint32_t errorNum, const char *e
 @interface HLSRapidParser ()
 
 @property (nonatomic, strong) dispatch_queue_t queue;
-@property (nonatomic, strong) MambaStaticMemoryBuffer *buffer;
+@property (nonatomic, strong) StaticMemoryStorage *buffer;
 @property (nonatomic, weak) id<HLSRapidParserCallback> callback;
 
 @end
@@ -124,7 +124,7 @@ void ParseError(const void *parentparser, const uint32_t errorNum, const char *e
 
 #pragma mark Main Parser Method
 
-- (void)parseHLSData:(MambaStaticMemoryBuffer * _Nonnull)buffer callback:(id<HLSRapidParserCallback> _Nonnull)callback {
+- (void)parseHLSData:(StaticMemoryStorage * _Nonnull)buffer callback:(id<HLSRapidParserCallback> _Nonnull)callback {
     
     self.buffer = buffer;
     self.callback = callback;

@@ -1,5 +1,5 @@
 //
-//  MambaStaticMemoryBufferTests.m
+//  StaticMemoryStorageTests.m
 //  mamba
 //
 //  Created by David Coufal on 4/15/19.
@@ -20,15 +20,15 @@
 #import <XCTest/XCTest.h>
 @import mamba;
 
-@interface MambaStaticMemoryBufferTests : XCTestCase
+@interface StaticMemoryStorageTests : XCTestCase
 
 @end
 
-@implementation MambaStaticMemoryBufferTests
+@implementation StaticMemoryStorageTests
 
 - (void)testMemoryCopy {
     NSData *data = [NSData dataWithBytes:"abcdefg" length:7];
-    MambaStaticMemoryBuffer *buffer = [[MambaStaticMemoryBuffer alloc] initWithData:data];
+    StaticMemoryStorage *buffer = [[StaticMemoryStorage alloc] initWithData:data];
     
     const char * databytes = data.bytes;
     const char * bufferbytes = buffer.bytes;
@@ -42,6 +42,13 @@
     XCTAssertEqual(databytes[6], bufferbytes[6]);
     
     XCTAssertEqual(data.length, buffer.length);
+}
+
+- (void)testEmptyBuffer {
+    StaticMemoryStorage *buffer = [[StaticMemoryStorage alloc] init];
+    
+    XCTAssertEqual(buffer.bytes, (char *)0);
+    XCTAssertEqual(buffer.length, 0);
 }
 
 @end

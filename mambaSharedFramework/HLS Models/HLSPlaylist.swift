@@ -30,18 +30,18 @@ public typealias HLSPlaylist = HLSPlaylistCore<HLSPlaylistURLData>
 
 public extension HLSPlaylistCore where T == HLSPlaylistURLData {
     
-    public init(playlist: HLSPlaylist) {
+    init(playlist: HLSPlaylist) {
         self.init(url: playlist.url, tags: playlist.tags, registeredTags: playlist.registeredTags, hlsBuffer: playlist.hlsBuffer)
     }
 
     // care should be taken when constructing `HLSPlaylist` manually. Users should construct these objects using `HLSParser`
-    public init(url: URL, tags: [HLSTag], registeredTags: RegisteredHLSTags, hlsBuffer: MambaStaticMemoryBuffer) {
+    init(url: URL, tags: [HLSTag], registeredTags: RegisteredHLSTags, hlsBuffer: StaticMemoryStorage) {
         let customData = HLSPlaylistURLData(url: url)
         self.init(tags: tags, registeredTags: registeredTags, hlsBuffer: hlsBuffer, customData: customData)
     }
 
     /// The URL where this playlist is located
-    public var url: URL {
+    var url: URL {
         get {
             return customData.url
         }
@@ -51,13 +51,13 @@ public extension HLSPlaylistCore where T == HLSPlaylistURLData {
     }
     
     /// The time this playlist was created. Based on `CACurrentMediaTime`, so only comparable with that time system.
-    public var creationTime: TimeInterval {
+    var creationTime: TimeInterval {
         get {
             return customData.creationTime
         }
     }
     
-    public var debugDescription: String {
+    var debugDescription: String {
         return "HLSPlaylist url:\(url) createTime:\(creationTime)\n\(self.playlistCoreDebugDescription)"
     }
 }

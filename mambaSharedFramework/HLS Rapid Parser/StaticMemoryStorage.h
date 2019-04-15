@@ -1,5 +1,5 @@
 //
-//  MambaStaticMemoryBuffer.h
+//  StaticMemoryStorage.h
 //  mamba
 //
 //  Created by David Coufal on 4/15/19.
@@ -20,21 +20,26 @@
 #import <Foundation/Foundation.h>
 
 /**
- Minimal memory buffer wrapper class. This class wraps a contiguous section of memory for reference.
+ Minimal memory storage wrapper.
  
- MambaStaticMemoryBuffer will allocate and deallocate this memory on initialization and deinitialization,
+ This class takes a NSData instance and makes a static copy of the memory for reference.
+ 
+ StaticMemoryStorage will allocate and deallocate this memory on initialization and deinitialization,
  respectively.
+ 
+ This is done so that mamba can construct `HLSStringRef` objects that refer to this static memory
+ storage. See `HLSPlaylistCore` for where we keep a reference to this `StaticMemoryStorage` object.
  */
-@interface MambaStaticMemoryBuffer : NSObject
+@interface StaticMemoryStorage : NSObject
 
 /**
- Instantiates an MambaStaticMemoryBuffer with the contents of the provided NSData.
- This will make a static copy of the data in the NSData object owned by the MambaStaticMemoryBuffer.
+ Instantiates an StaticMemoryStorage with the contents of the provided NSData.
+ This will make a static copy of the data in the NSData object, owned by the StaticMemoryStorage.
  */
 - (instancetype _Nonnull)initWithData:(NSData * _Nonnull)data;
 
 /**
- Instantiates an empty MambaStaticMemoryBuffer.
+ Instantiates an empty StaticMemoryStorage. `length` and `bytes` will be zero.
  */
 - (instancetype _Nonnull)init;
 
@@ -50,6 +55,6 @@
  
  @warning You must not modify memory in this area. This is a read-only object.
  */
-@property (nonatomic, readonly) const void * bytes;
+@property (nonatomic, readonly) const void * _Nullable bytes;
 
 @end

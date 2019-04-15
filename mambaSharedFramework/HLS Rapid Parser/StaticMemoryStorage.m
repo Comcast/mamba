@@ -1,5 +1,5 @@
 //
-//  MambaStaticMemoryBuffer.m
+//  StaticMemoryStorage.m
 //  mamba
 //
 //  Created by David Coufal on 4/15/19.
@@ -17,9 +17,9 @@
 //  limitations under the License. All rights reserved.
 //
 
-#import "MambaStaticMemoryBuffer.h"
+#import "StaticMemoryStorage.h"
 
-@implementation MambaStaticMemoryBuffer
+@implementation StaticMemoryStorage
 
 - (instancetype)init {
     self = [super init];
@@ -51,7 +51,7 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"MambaStaticMemoryBuffer bytes:%lu length:%lu", (unsigned long)[self bytes], [self length]];
+    return [NSString stringWithFormat:@"StaticMemoryStorage bytes:%lu length:%lu", (unsigned long)[self bytes], [self length]];
 }
 
 - (id)debugQuickLookObject {

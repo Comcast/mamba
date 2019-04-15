@@ -19,12 +19,12 @@
 
 @import Foundation;
 #include "RapidParserError.h"
-#include "MambaStaticMemoryBuffer.h"
+#include "StaticMemoryStorage.h"
 
 @protocol HLSRapidParserCallback;
 
 @interface HLSRapidParser : NSObject
 
-- (void)parseHLSData:(MambaStaticMemoryBuffer * _Nonnull)buffer callback:(id<HLSRapidParserCallback> _Nonnull)callback;
+- (void)parseHLSData:(StaticMemoryStorage * _Nonnull)buffer callback:(id<HLSRapidParserCallback> _Nonnull)callback;
 
 @end
