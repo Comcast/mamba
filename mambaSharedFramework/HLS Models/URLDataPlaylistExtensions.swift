@@ -28,13 +28,13 @@ public struct PlaylistURLData {
 extension PlaylistCore: PlaylistURLDataInterface where PT.customPlaylistDataType == PlaylistURLData {
     
     public init(playlist: PlaylistCore) {
-        self.init(url: playlist.url, tags: playlist.tags, registeredTags: playlist.registeredTags, playlistData: playlist.playlistData)
+        self.init(url: playlist.url, tags: playlist.tags, registeredTags: playlist.registeredTags, playlistMemoryStorage: playlist.playlistMemoryStorage)
     }
     
     // care should be taken when constructing `Playlist`s manually. Users should construct these objects using `Parser`.
-    public init(url: URL, tags: [HLSTag], registeredTags: RegisteredHLSTags, playlistData: Data) {
+    public init(url: URL, tags: [HLSTag], registeredTags: RegisteredHLSTags, playlistMemoryStorage: StaticMemoryStorage) {
         let customData = PlaylistURLData(url: url)
-        self.init(tags: tags, registeredTags: registeredTags, playlistData: playlistData, customData: customData)
+        self.init(tags: tags, registeredTags: registeredTags, playlistMemoryStorage: playlistMemoryStorage, customData: customData)
     }
     
     public var url: URL {

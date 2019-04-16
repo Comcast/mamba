@@ -35,12 +35,12 @@ public protocol TagGroupProtocol {
 public extension TagGroupProtocol {
     
     /// Convenience function to get the start index of the range of this TagGroup
-    public var startIndex: Int {
+    var startIndex: Int {
         return range.lowerBound
     }
     
     /// Convenience function to get the end index of the range of this TagGroup
-    public var endIndex: Int {
+    var endIndex: Int {
         return range.upperBound
     }
 }

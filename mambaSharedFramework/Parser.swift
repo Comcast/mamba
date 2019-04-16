@@ -197,7 +197,7 @@ public final class Parser {
                                  data: data,
                                  parser: self,
                                  parserMode: .parsingEventPlaylistLookingForFragmentURL(fragmentURL: lastFragmentTag.tagData.stringValue()),
-                                 success: { [weak self] (tags) in
+                                 success: { [weak self] (tags, storage) in
                                     self?.constructAndReturnEventVariantUpdate(fromEventVariantPlaylist: eventVariantPlaylist,
                                                                                insertingNewTags: tags,
                                                                                afterTagPosition: lastMediaSegmentGroup.endIndex,
@@ -247,7 +247,7 @@ public final class Parser {
         let newPlaylist = VariantPlaylist(url: eventVariantPlaylist.url,
                                           tags: Array(tags),
                                           registeredTags: registeredTags,
-                                          playlistData: eventVariantPlaylist.playlistData)
+                                          playlistMemoryStorage: eventVariantPlaylist.playlistMemoryStorage)
         success(newPlaylist)
     }
     
@@ -364,12 +364,12 @@ public final class Parser {
         
         let registeredTagsCopy = registeredTags
         
-        let success: ParserSuccess = { tags in
-            let result = playlistConstructor(BaseParserResult.success(tags), customData, registeredTagsCopy, data)
+        let success: ParserSuccess = { tags, storage in
+            let result = playlistConstructor(BaseParserResult.success(tags), customData, registeredTagsCopy, storage)
             resultCallback(result)
         }
         let failure: ParserFailure = { error in
-            let result = playlistConstructor(BaseParserResult.failure(error), customData, registeredTagsCopy, data)
+            let result = playlistConstructor(BaseParserResult.failure(error), customData, registeredTagsCopy, StaticMemoryStorage())
             resultCallback(result)
         }
         
@@ -431,7 +431,7 @@ public final class Parser {
         
         let semaphore = DispatchSemaphore(value: 0)
         let registeredTagsCopy = registeredTags
-        var result: R = playlistConstructor(BaseParserResult.failure(.timedOut), customData, registeredTagsCopy, playlistData)
+        var result: R = playlistConstructor(BaseParserResult.failure(.timedOut), customData, registeredTagsCopy, StaticMemoryStorage())
         
         self.parse(playlistData: playlistData,
                    customData: customData,
@@ -484,7 +484,7 @@ public enum ParserResult {
  A "R" is the result you'd like to send. It's typically a enum with success and
  failure cases, but the actual type is up to you.
  */
-public typealias PlaylistConstructor<CD, R> = (BaseParserResult, CD, RegisteredHLSTags, Data) -> (R)
+public typealias PlaylistConstructor<CD, R> = (BaseParserResult, CD, RegisteredHLSTags, StaticMemoryStorage) -> (R)
 
 public enum BaseParserResult {
     case success([HLSTag])
@@ -495,15 +495,15 @@ public enum BaseParserResult {
 private func constructMasterOrVariantPlaylist(withBaseParserResult baseParserResult: BaseParserResult,
                                               andUrlData urlData: PlaylistURLData,
                                               andregisteredHLSTags registeredHLSTags: RegisteredHLSTags,
-                                              andPlaylistData playlistData: Data) -> ParserResult {
+                                              andPlaylistMemoryStorage playlistMemoryStorage: StaticMemoryStorage) -> ParserResult {
     
     switch baseParserResult {
     case .success(let tags):
         switch tags.type() {
         case .master:
-            return ParserResult.parsedMaster(MasterPlaylist(tags: tags, registeredTags: registeredHLSTags, playlistData: playlistData, customData: urlData))
+            return ParserResult.parsedMaster(MasterPlaylist(tags: tags, registeredTags: registeredHLSTags, playlistMemoryStorage: playlistMemoryStorage, customData: urlData))
         case .media:
-            return ParserResult.parsedVariant(VariantPlaylist(tags: tags, registeredTags: registeredHLSTags, playlistData: playlistData, customData: urlData))
+            return ParserResult.parsedVariant(VariantPlaylist(tags: tags, registeredTags: registeredHLSTags, playlistMemoryStorage: playlistMemoryStorage, customData: urlData))
         case .unknown:
             return ParserResult.parseError(.unableToDeterminePlaylistType)
         }
@@ -512,7 +512,7 @@ private func constructMasterOrVariantPlaylist(withBaseParserResult baseParserRes
     }
 }
 
-public typealias ParserSuccess = ([HLSTag]) -> (Swift.Void)
+public typealias ParserSuccess = ([HLSTag], StaticMemoryStorage) -> (Swift.Void)
 public typealias ParserFailure = (ParserError) -> (Swift.Void)
 
 public typealias VariantPlaylistParserSuccess = (VariantPlaylist) -> (Swift.Void)
@@ -523,7 +523,7 @@ fileprivate final class ParseWorker: NSObject, HLSRapidParserCallback {
     
     let fastParser = HLSRapidParser()
     var tags = [HLSTag]()
-    let data: Data
+    let playlistMemoryStorage: StaticMemoryStorage
     // strong ref to parent parser while parsing is happening
     // we release when parsing is over to prevent retain cycles
     // see `parseFail, `parseSuccess` and `parseEventUpdateSuccess` for where we do that.
@@ -540,7 +540,7 @@ fileprivate final class ParseWorker: NSObject, HLSRapidParserCallback {
          success: @escaping ParserSuccess,
          failure: @escaping ParserFailure) {
         
-        self.data = data
+        self.playlistMemoryStorage = StaticMemoryStorage(data: data)
         self.parser = parser
         self.registeredTags = registeredTags
         self.parserMode = parserMode
@@ -549,7 +549,7 @@ fileprivate final class ParseWorker: NSObject, HLSRapidParserCallback {
     }
     
     func startParse() {
-        fastParser.parseHLSData(self.data, callback: self)
+        fastParser.parseHLSData(self.playlistMemoryStorage, callback: self)
     }
     
     private func scrubHLSStringRef(_ ref: HLSStringRef) -> HLSStringRef {
@@ -673,14 +673,14 @@ fileprivate final class ParseWorker: NSObject, HLSRapidParserCallback {
     }
     
     private func parseSucceed(tags: [HLSTag]) {
-        success(tags)
+        success(tags, playlistMemoryStorage)
         parser?.parseComplete(withWorker: self)
         parser = nil
     }
     
     private func parseEventUpdateSuccess() {
         tags = tags.reversed()
-        success(tags)
+        success(tags, playlistMemoryStorage)
         parser?.parseComplete(withWorker: self)
         parser = nil
     }

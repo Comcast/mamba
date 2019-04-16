@@ -45,9 +45,9 @@ public struct PlaylistCore<PT>: PlaylistInterface, CustomDebugStringConvertible 
     /// custom playlist data
     public var customData: PT.customPlaylistDataType
     
-    /// Many of the tags in this playlist contain `HLSStringRef`s with pointers to memory within a `Data` object.
+    /// Many of the tags in this playlist contain `HLSStringRef`s with pointers to memory within a `StaticMemoryStorage` object.
     /// This reference is here to assure that the data will not go out of scope.
-    public let playlistData: Data
+    public let playlistMemoryStorage: StaticMemoryStorage
     
     /// The registered tag types for this playlist
     public private(set) var registeredTags: RegisteredHLSTags
@@ -57,12 +57,12 @@ public struct PlaylistCore<PT>: PlaylistInterface, CustomDebugStringConvertible 
     /// Initializes PlaylistCore
     public init(tags: [HLSTag],
                 registeredTags: RegisteredHLSTags,
-                playlistData: Data,
+                playlistMemoryStorage: StaticMemoryStorage,
                 customData: PT.customPlaylistDataType) {
         self.registeredTags = registeredTags
         self.structure = PT.playlistStructureType(withTags: tags)
         self.customData = customData
-        self.playlistData = playlistData
+        self.playlistMemoryStorage = playlistMemoryStorage
     }
     
     /**

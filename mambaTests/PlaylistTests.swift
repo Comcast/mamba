@@ -27,26 +27,27 @@ class PlaylistTests: XCTestCase {
         let url = URL(string:"http://test.server")!
         let registeredTags = RegisteredHLSTags()
         let data = Data()
+        let playlistMemoryStorage = StaticMemoryStorage(data: data)
         
-        let variant1 = VariantPlaylist(url: url, tags: tags, registeredTags: registeredTags, playlistData: data)
-        let master1 = MasterPlaylist(url: url, tags: tags, registeredTags: registeredTags, playlistData: data)
+        let variant1 = VariantPlaylist(url: url, tags: tags, registeredTags: registeredTags, playlistMemoryStorage: playlistMemoryStorage)
+        let master1 = MasterPlaylist(url: url, tags: tags, registeredTags: registeredTags, playlistMemoryStorage: playlistMemoryStorage)
 
         XCTAssert(variant1.url == url, "Expecting the url to match")
         XCTAssert(variant1.tags.count == tags.count, "Expecting the tags to match")
-        XCTAssert(variant1.playlistData == data, "Expecting the hls data to match")
+        XCTAssert(variant1.playlistMemoryStorage == playlistMemoryStorage, "Expecting the hls data to match")
         XCTAssert(master1.url == url, "Expecting the url to match")
         XCTAssert(master1.tags.count == tags.count, "Expecting the tags to match")
-        XCTAssert(master1.playlistData == data, "Expecting the hls data to match")
+        XCTAssert(master1.playlistMemoryStorage == playlistMemoryStorage, "Expecting the hls data to match")
 
         let variant2 = VariantPlaylist(playlist: variant1)
         let master2 = MasterPlaylist(playlist: master1)
 
         XCTAssert(variant2.url == variant1.url, "Expecting the url to match")
         XCTAssert(variant2.tags.count == variant1.tags.count, "Expecting the tags to match")
-        XCTAssert(variant2.playlistData == variant1.playlistData, "Expecting the hls data to match")
+        XCTAssert(variant2.playlistMemoryStorage == variant1.playlistMemoryStorage, "Expecting the hls data to match")
         XCTAssert(master2.url == master1.url, "Expecting the url to match")
         XCTAssert(master2.tags.count == master1.tags.count, "Expecting the tags to match")
-        XCTAssert(master2.playlistData == master1.playlistData, "Expecting the hls data to match")
+        XCTAssert(master2.playlistMemoryStorage == master1.playlistMemoryStorage, "Expecting the hls data to match")
     }
     
     func testUrlChange() {
@@ -55,8 +56,9 @@ class PlaylistTests: XCTestCase {
         let url2 = URL(string:"http://test.server2")!
         let registeredTags = RegisteredHLSTags()
         let data = Data()
-        
-        var playlist = VariantPlaylist(url: url1, tags: tags, registeredTags: registeredTags, playlistData: data)
+        let playlistMemoryStorage = StaticMemoryStorage(data: data)
+
+        var playlist = VariantPlaylist(url: url1, tags: tags, registeredTags: registeredTags, playlistMemoryStorage: playlistMemoryStorage)
         playlist.url = url2
         
         XCTAssert(playlist.url == url2, "Expecting the url to change")
