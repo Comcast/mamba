@@ -34,7 +34,7 @@ extension Collection {
 /// http://stackoverflow.com/questions/25329186/safe-bounds-checked-array-lookup-in-swift-through-optional-bindings
 public extension Collection {
     /// Returns the element at the specified index iff it is within bounds, otherwise nil.
-    public subscript (safe index: Index) -> Iterator.Element? {
+    subscript (safe index: Index) -> Iterator.Element? {
         return indicies(containsIndex: index) ? self[index] : nil
     }
 }

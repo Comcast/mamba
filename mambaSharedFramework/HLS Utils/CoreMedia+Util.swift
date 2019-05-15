@@ -31,7 +31,7 @@ public extension CMTime {
 
 public extension CMTimeScale {
     // the default CMTime time scale for Mamba
-    static public var defaultMambaTimeScale:Int32 {
+    static var defaultMambaTimeScale:Int32 {
         return Int32(__exp10(Double(CMTime.defaultMambaPrecision)))
     }
 }

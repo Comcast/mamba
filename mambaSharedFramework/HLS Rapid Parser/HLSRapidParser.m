@@ -104,7 +104,7 @@ void ParseError(const void *parentparser, const uint32_t errorNum, const char *e
 @interface HLSRapidParser ()
 
 @property (nonatomic, strong) dispatch_queue_t queue;
-@property (nonatomic, strong) NSData *data;
+@property (nonatomic, strong) StaticMemoryStorage *buffer;
 @property (nonatomic, weak) id<HLSRapidParserCallback> callback;
 
 @end
@@ -124,13 +124,13 @@ void ParseError(const void *parentparser, const uint32_t errorNum, const char *e
 
 #pragma mark Main Parser Method
 
-- (void)parseHLSData:(NSData * _Nonnull)data callback:(id<HLSRapidParserCallback> _Nonnull)callback {
+- (void)parseHLSData:(StaticMemoryStorage * _Nonnull)buffer callback:(id<HLSRapidParserCallback> _Nonnull)callback {
     
-    self.data = data;
+    self.buffer = buffer;
     self.callback = callback;
     
-    const unsigned char *bytes = [data bytes];
-    const uint64_t length = [data length];
+    const unsigned char *bytes = [buffer bytes];
+    const uint64_t length = [buffer length];
     
     dispatch_async(self.queue, ^{
         parseHLS((__bridge const void *)(self), bytes, length);
@@ -148,8 +148,8 @@ void ParseError(const void *parentparser, const uint32_t errorNum, const char *e
                   startTagData:(UInt64)startTagData
                     endTagData:(UInt64)endTagData {
     
-    HLSStringRef *tagName = [[HLSStringRef alloc] initWithBytesNoCopy:[self.data bytes] + startTagName length:(NSUInteger)(endTagName - startTagName + 1)];
-    HLSStringRef *tagData = [[HLSStringRef alloc] initWithBytesNoCopy:[self.data bytes] + startTagData length:(NSUInteger)(endTagData - startTagData + 1)];
+    HLSStringRef *tagName = [[HLSStringRef alloc] initWithBytesNoCopy:[self.buffer bytes] + startTagName length:(NSUInteger)(endTagName - startTagName + 1)];
+    HLSStringRef *tagData = [[HLSStringRef alloc] initWithBytesNoCopy:[self.buffer bytes] + startTagData length:(NSUInteger)(endTagData - startTagData + 1)];
     
     [self.callback addedTagWithName:tagName value:tagData];
 }
@@ -157,7 +157,7 @@ void ParseError(const void *parentparser, const uint32_t errorNum, const char *e
 - (void)newNoDataTagWithStartTagName:(UInt64)startTagName
                           endTagName:(UInt64)endTagName {
     
-    HLSStringRef *tagName = [[HLSStringRef alloc] initWithBytesNoCopy:[self.data bytes] + startTagName length:(NSUInteger)(endTagName - startTagName + 1)];
+    HLSStringRef *tagName = [[HLSStringRef alloc] initWithBytesNoCopy:[self.buffer bytes] + startTagName length:(NSUInteger)(endTagName - startTagName + 1)];
     
     [self.callback addedNoValueTagWithName:tagName];
 }
@@ -169,9 +169,9 @@ void ParseError(const void *parentparser, const uint32_t errorNum, const char *e
                         startTagData:(UInt64)startTagData
                           endTagData:(UInt64)endTagData {
     
-    HLSStringRef *tagName = [[HLSStringRef alloc] initWithBytesNoCopy:[self.data bytes] + startTagName length:(NSUInteger)(endTagName - startTagName + 1)];
-    HLSStringRef *duration = [[HLSStringRef alloc] initWithBytesNoCopy:[self.data bytes] + startDuration length:(NSUInteger)(endDuration - startDuration + 1)];
-    HLSStringRef *tagData = [[HLSStringRef alloc] initWithBytesNoCopy:[self.data bytes] + startTagData length:(NSUInteger)(endTagData - startTagData + 1)];
+    HLSStringRef *tagName = [[HLSStringRef alloc] initWithBytesNoCopy:[self.buffer bytes] + startTagName length:(NSUInteger)(endTagName - startTagName + 1)];
+    HLSStringRef *duration = [[HLSStringRef alloc] initWithBytesNoCopy:[self.buffer bytes] + startDuration length:(NSUInteger)(endDuration - startDuration + 1)];
+    HLSStringRef *tagData = [[HLSStringRef alloc] initWithBytesNoCopy:[self.buffer bytes] + startTagData length:(NSUInteger)(endTagData - startTagData + 1)];
     
     [self.callback addedEXTINFTagWithName:tagName
                                  duration:duration
@@ -181,7 +181,7 @@ void ParseError(const void *parentparser, const uint32_t errorNum, const char *e
 - (void)newCommentWithStart:(UInt64)startComment
                         end:(UInt64)endComment {
     
-    HLSStringRef *comment = [[HLSStringRef alloc] initWithBytesNoCopy:[self.data bytes] + startComment length:(NSUInteger)(endComment - startComment + 1)];
+    HLSStringRef *comment = [[HLSStringRef alloc] initWithBytesNoCopy:[self.buffer bytes] + startComment length:(NSUInteger)(endComment - startComment + 1)];
     
     [self.callback addedCommentLine:comment];
 }
@@ -189,21 +189,21 @@ void ParseError(const void *parentparser, const uint32_t errorNum, const char *e
 - (BOOL)newURLWithStart:(UInt64)startURL
                     end:(UInt64)endURL {
     
-    HLSStringRef *url = [[HLSStringRef alloc] initWithBytesNoCopy:[self.data bytes] + startURL length:(NSUInteger)(endURL - startURL + 1)];
+    HLSStringRef *url = [[HLSStringRef alloc] initWithBytesNoCopy:[self.buffer bytes] + startURL length:(NSUInteger)(endURL - startURL + 1)];
         
     return [self.callback addedURLLine:url];
 }
 
 - (void)parseComplete {
     [self.callback parseComplete];
-    self.data = nil;
+    self.buffer = nil;
     self.callback = nil;
 }
 
 - (void)parseError:(NSString *)errorString
        errorNumber:(UInt32)errorNumber {
     [self.callback parseError:errorString errorNumber:errorNumber];
-    self.data = nil;
+    self.buffer = nil;
     self.callback = nil;
 }
 
