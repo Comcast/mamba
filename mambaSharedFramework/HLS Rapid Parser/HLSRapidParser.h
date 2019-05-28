@@ -19,12 +19,11 @@
 
 @import Foundation;
 #include "RapidParserError.h"
-#include "StaticMemoryStorage.h"
 
 @protocol HLSRapidParserCallback;
 
 @interface HLSRapidParser : NSObject
 
-- (void)parseHLSData:(StaticMemoryStorage * _Nonnull)buffer callback:(id<HLSRapidParserCallback> _Nonnull)callback;
+- (void)parseHLSData:(NSData * _Nonnull)data callback:(id<HLSRapidParserCallback> _Nonnull)callback;
 
 @end

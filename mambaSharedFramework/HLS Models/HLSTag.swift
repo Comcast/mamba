@@ -359,15 +359,12 @@ public func ==(lhs: HLSTag, rhs: HLSTag) -> Bool {
 }
 
 extension HLSTag: Hashable {
-    public func hash(into hasher: inout Hasher) {
+    public var hashValue: Int {
         if let tagName = tagName {
-            hasher.combine(tagData)
-            hasher.combine(tagName)
-            tagDescriptor.hash(into: &hasher)
+            return tagData.hashValue ^ tagName.hashValue ^ tagDescriptor.hashValue
         }
         else {
-            hasher.combine(tagData)
-            tagDescriptor.hash(into: &hasher)
+            return tagData.hashValue ^ tagDescriptor.hashValue
         }
     }
 }

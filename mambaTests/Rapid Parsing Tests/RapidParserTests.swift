@@ -31,11 +31,10 @@ class RapidParserTests: XCTestCase {
         mock.expectedNumberOfLines = 19
                 
         let data = FixtureLoader.load(fixtureName: "hls_sampleMediaFile.txt")! as Data
-        let buffer = StaticMemoryStorage(data: data)
         
         let parser = HLSRapidParser()
         
-        parser.parseHLSData(buffer, callback: mock)
+        parser.parseHLSData(data, callback: mock)
         
         self.waitForExpectations(timeout: 1, handler: { (error) in
             XCTAssertNil(error, "Unexpected error: \(error!)")
@@ -51,11 +50,10 @@ class RapidParserTests: XCTestCase {
         mock.expectation = self.expectation(description: "Parsing complete")
         
         let data = FixtureLoader.load(fixtureName: "hls_sampleMediaFile.txt")! as Data
-        let buffer = StaticMemoryStorage(data: data)
-
+        
         let parser = HLSRapidParser()
         
-        parser.parseHLSData(buffer, callback: mock)
+        parser.parseHLSData(data, callback: mock)
         
         self.waitForExpectations(timeout: 1, handler: { (error) in
             XCTAssertNil(error, "Unexpected error: \(error!)")

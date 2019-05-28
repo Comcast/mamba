@@ -194,8 +194,8 @@ public struct HLSClosedCaptions: FailableStringLiteralConvertible {
 /// We are currently not parsing these values further
 public struct HLSCodec: Equatable {
     
-    static let audioPrefixes: [String] = ["mp4a", "mp3", "ec-3", "ac-3"]
-    static let videoPrefixes: [String] = ["avc", "mp4v", "svc", "mvc", "sevc", "s263", "hvc", "vp9"]
+    static let audioPrefix = "mp4a"
+    static let videoPrefix = "avc"
     public let codecDescriptor: String
     
     init(codecDescriptor: String) {
@@ -236,15 +236,15 @@ public struct HLSCodecArray: Equatable, FailableStringLiteralConvertible {
     }
 
     public func containsAudioOnly() -> Bool {
-        return containsAudio() && !containsVideo()
+        return self.codecs.filter({ $0.codecDescriptor.hasPrefix(HLSCodec.audioPrefix)}).count == self.codecs.count
     }
 
     public func containsAudio() -> Bool {
-        return HLSCodec.audioPrefixes.filter( { audioPrefix in return self.codecs.filter( { $0.codecDescriptor.hasPrefix(audioPrefix) } ).count > 0 } ).count > 0
+        return self.contains(codecTypeTest: { return $0.codecDescriptor.hasPrefix(HLSCodec.audioPrefix) })
     }
    
     public func containsVideo() -> Bool {
-        return HLSCodec.videoPrefixes.filter( { videoPrefix in return self.codecs.filter( { $0.codecDescriptor.hasPrefix(videoPrefix) } ).count > 0 } ).count > 0
+        return self.contains(codecTypeTest: { return $0.codecDescriptor.hasPrefix(HLSCodec.videoPrefix) })
     }
     
     public func containsAudioVideo() -> Bool {

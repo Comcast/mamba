@@ -22,7 +22,7 @@ import Foundation
 public extension Collection where Iterator.Element == HLSTag {
     
     /// returns the FileType of this tag collection (i.e. master vs. variant)
-    func type() -> FileType {
+    public func type() -> FileType {
         
         for tag in self {
             if tag.tagDescriptor == PantosTag.EXTINF {
@@ -36,14 +36,14 @@ public extension Collection where Iterator.Element == HLSTag {
     }
     
     /// returns true if we can detect a SAP stream (only works for master playlists)
-    func hasSap() -> Bool {
+    public func hasSap() -> Bool {
         
         let languages = Set(self.extractValues(tagDescriptor: PantosTag.EXT_X_MEDIA, valueIdentifier: PantosValue.language))
         return languages.count > 1
     }
     
     /// returns the #EXT-X-MEDIA tags for SAP audio streams if present (only works for master playlists)
-    func sapStreams() -> [HLSTag]? {
+    public func sapStreams() -> [HLSTag]? {
         
         return self.filter({ $0.tagDescriptor == PantosTag.EXT_X_MEDIA }).filter({
             return $0.value(forValueIdentifier: PantosValue.language) != nil
@@ -51,7 +51,7 @@ public extension Collection where Iterator.Element == HLSTag {
     }
     
     /// Convenience function to return all the values for a particular HLSTagValueIdentifier in a particular HLSTagDescriptor
-    func extractValues(tagDescriptor: HLSTagDescriptor, valueIdentifier: HLSTagValueIdentifier) -> Set<String> {
+    public func extractValues(tagDescriptor: HLSTagDescriptor, valueIdentifier: HLSTagValueIdentifier) -> Set<String> {
         
         var values = Set<String>()
         let media = self.filter({ $0.tagDescriptor == tagDescriptor })
@@ -67,41 +67,38 @@ public extension Collection where Iterator.Element == HLSTag {
     }
     
     /// returns true if we are a master playlist and have a audio only stream
-    func hasAudioOnlyStream() -> Bool {
+    public func hasAudioOnlyStream() -> Bool {
         
         guard let _ = firstAudioOnlyStreamInfTag() else { return false }
         return true
     }
     
     /// returns the first audio only #EXT-X-STREAMINF tag found in this HLSTag collection
-    func firstAudioOnlyStreamInfTag() -> HLSTag? {
+    public func firstAudioOnlyStreamInfTag() -> HLSTag? {
         return first(where: { $0.tagDescriptor == PantosTag.EXT_X_STREAM_INF && $0.isAudioOnlyStream() == .TRUE })
     }
     
     /// Convenience function to filter HLSTag collections by a particular HLSTagDescriptor
-    func filtered(by tagDescriptor: HLSTagDescriptor) -> [HLSTag] {
+    public func filtered(by tagDescriptor: HLSTagDescriptor) -> [HLSTag] {
         
         return self.filter({ $0.tagDescriptor == tagDescriptor })
     }
 
     /// Convenience function to return just the video streams in a HLSTag collection
-    func filteredByVideoCodec() -> [HLSTag] {
+    public func filteredByVideoCodec() -> [HLSTag] {
         
         return self.filter { return $0.isVideoStream() == .TRUE }
     }
     
     /// returns a new HLSTag Array that's sorted by resolution and bandwidth (in that order)
-    func sortedByResolutionBandwidth(tolerance: Double = 1.0) -> [HLSTag] {
+    public func sortedByResolutionBandwidth(tolerance: Double = 1.0) -> [HLSTag] {
         
         return self.sorted { (a, b) -> Bool in
         
             if let aResolution: HLSResolution = a.resolution(),
                 let bResolution: HLSResolution = b.resolution() {
                 if aResolution < bResolution { return true }
-                if aResolution > bResolution { return false }
-            }
-            else if let _ = b.resolution() {
-                return true
+                if bResolution > aResolution { return false }
             }
             
             if let aBandwidth: Double = a.bandwidth(),

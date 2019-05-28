@@ -155,7 +155,7 @@ public final class HLSParser {
                                     data: data,
                                     parser: self,
                                     parserMode: .parsingEventPlaylistLookingForFragmentURL(fragmentURL: lastFragmentTag.tagData.stringValue()),
-                                    success: { [weak self] (tags, buffer) in
+                                    success: { [weak self] (tags) in
                                         self?.constructAndReturnEventVariantUpdate(fromEventVariantPlaylist: eventVariantPlaylist,
                                                                                    insertingNewTags: tags,
                                                                                    afterTagPosition: lastMediaSegmentGroup.endIndex,
@@ -181,7 +181,7 @@ public final class HLSParser {
         let newPlaylist = HLSPlaylist(url: eventVariantPlaylist.url,
                                       tags: Array(tags),
                                       registeredTags: registeredTags,
-                                      hlsBuffer: eventVariantPlaylist.hlsBuffer)
+                                      hlsData: eventVariantPlaylist.hlsData)
         success(newPlaylist)
     }
 
@@ -253,7 +253,7 @@ public final class HLSParser {
      */
     public func parse<D>(playlistData data: Data,
                          customData: D,
-                         hlsPlaylistConstructor: @escaping ([HLSTag], D, RegisteredHLSTags, StaticMemoryStorage) -> HLSPlaylistCore<D>,
+                         hlsPlaylistConstructor: @escaping ([HLSTag], D, RegisteredHLSTags, Data) -> HLSPlaylistCore<D>,
                          success: @escaping (HLSPlaylistCore<D>) -> (Swift.Void),
                          failure: @escaping HLSParserFailure) {
         
@@ -262,8 +262,8 @@ public final class HLSParser {
         let worker = HLSParseWorker(registeredTags: registeredTags,
                                     data: data,
                                     parser: self,
-                                    success: { (tags, buffer) in
-                                        let playlist = hlsPlaylistConstructor(tags, customData, registeredTagsCopy, buffer)
+                                    success: { (tags) in
+                                        let playlist = hlsPlaylistConstructor(tags, customData, registeredTagsCopy, data)
                                         success(playlist) },
                                     failure: failure)
         
@@ -307,7 +307,7 @@ public final class HLSParser {
      */
     public func parse<D>(playlistData data: Data,
                          customData: D,
-                         hlsPlaylistConstructor: @escaping ([HLSTag], D, RegisteredHLSTags, StaticMemoryStorage) -> HLSPlaylistCore<D>,
+                         hlsPlaylistConstructor: @escaping ([HLSTag], D, RegisteredHLSTags, Data) -> HLSPlaylistCore<D>,
                          timeout: Int = 1) throws -> HLSPlaylistCore<D> {
         
         let semaphore = DispatchSemaphore(value: 0)
@@ -353,7 +353,7 @@ public final class HLSParser {
 public typealias HLSPlaylistParserSuccess = (HLSPlaylist) -> (Swift.Void)
 public typealias HLSPlaylistParserFailure = (HLSParserError) -> (Swift.Void)
 
-public typealias HLSParserSuccess = ([HLSTag], StaticMemoryStorage) -> (Swift.Void)
+public typealias HLSParserSuccess = ([HLSTag]) -> (Swift.Void)
 public typealias HLSParserFailure = (HLSParserError) -> (Swift.Void)
 
 /**
@@ -394,15 +394,15 @@ public struct UpdateEventPlaylistParams {
     }
 }
 
-private func constructHLSPlaylist(withTags tags: [HLSTag], customData: HLSPlaylistURLData, registeredHLSTags: RegisteredHLSTags, hlsBuffer: StaticMemoryStorage) -> HLSPlaylist {
-    return HLSPlaylist(tags: tags, registeredTags: registeredHLSTags, hlsBuffer: hlsBuffer, customData: customData)
+private func constructHLSPlaylist(withTags tags: [HLSTag], customData: HLSPlaylistURLData, registeredHLSTags: RegisteredHLSTags, hlsData: Data) -> HLSPlaylist {
+    return HLSPlaylist(tags: tags, registeredTags: registeredHLSTags, hlsData: hlsData, customData: customData)
 }
 
 fileprivate final class HLSParseWorker: NSObject, HLSRapidParserCallback {
     
     let fastParser = HLSRapidParser()
     var tags = [HLSTag]()
-    let buffer: StaticMemoryStorage
+    let data: Data
     // strong ref to parent parser while parsing is happening
     // we release when parsing is over to prevent retain cycles
     // see `parseFail, `parseSuccess` and `parseEventUpdateSuccess` for where we do that.
@@ -419,7 +419,7 @@ fileprivate final class HLSParseWorker: NSObject, HLSRapidParserCallback {
          success: @escaping HLSParserSuccess,
          failure: @escaping HLSParserFailure) {
         
-        self.buffer = StaticMemoryStorage(data: data)
+        self.data = data
         self.parser = parser
         self.registeredTags = registeredTags
         self.parserMode = parserMode
@@ -428,7 +428,7 @@ fileprivate final class HLSParseWorker: NSObject, HLSRapidParserCallback {
     }
     
     func startParse() {
-        fastParser.parseHLSData(self.buffer, callback: self)
+        fastParser.parseHLSData(self.data, callback: self)
     }
     
     private func scrubHLSStringRef(_ ref: HLSStringRef) -> HLSStringRef {
@@ -552,14 +552,14 @@ fileprivate final class HLSParseWorker: NSObject, HLSRapidParserCallback {
     }
     
     private func parseSucceed(tags: [HLSTag]) {
-        success(tags, buffer)
+        success(tags)
         parser?.parseComplete(withWorker: self)
         parser = nil
     }
     
     private func parseEventUpdateSuccess() {
         tags = tags.reversed()
-        success(tags, buffer)
+        success(tags)
         parser?.parseComplete(withWorker: self)
         parser = nil
     }

@@ -32,12 +32,12 @@ public extension HLSPlaylistCore where T == HLSPlaylistURLData {
     
     init() {
         let registeredTags = RegisteredHLSTags()
-        self.init(url: fakePlaylistURL(), tags: [HLSTag](), registeredTags: registeredTags, hlsBuffer: StaticMemoryStorage())
+        self.init(url: fakePlaylistURL(), tags: [HLSTag](), registeredTags: registeredTags, hlsData: Data())
     }
     
     init(tags: [HLSTag]) {
         let registeredTags = RegisteredHLSTags()
-        self.init(url: fakePlaylistURL(), tags: tags, registeredTags: registeredTags, hlsBuffer: StaticMemoryStorage())
+        self.init(url: fakePlaylistURL(), tags: tags, registeredTags: registeredTags, hlsData: Data())
     }
 
 }

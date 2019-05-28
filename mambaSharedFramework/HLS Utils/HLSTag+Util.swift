@@ -22,17 +22,17 @@ import Foundation
 public extension HLSTag {
     
     /// convenience function to return the resolution of this tag (if present)
-    func resolution() -> HLSResolution? {
+    public func resolution() -> HLSResolution? {
         return self.value(forValueIdentifier: PantosValue.resolution)
     }
     
     /// convenience function to return the bandwidth of this tag (if present)
-    func bandwidth() -> Double? {
+    public func bandwidth() -> Double? {
         return self.value(forValueIdentifier: PantosValue.bandwidthBPS)
     }
     
     /// convenience function to return the codecs of this tag (if present)
-    func codecs() -> HLSCodecArray? {
+    public func codecs() -> HLSCodecArray? {
         if let value: String = self.value(forValueIdentifier: PantosValue.codecs) {
             return HLSCodecArray(string: value)
         }
@@ -41,12 +41,12 @@ public extension HLSTag {
     }
     
     /// convenience function to return the language of this tag (if present)
-    func language() -> String? {
+    public func language() -> String? {
         return self.value(forValueIdentifier: PantosValue.language)
     }
     
     /// convenience function to determine if this tag contains only an audio stream (will return false if called on a non-#EXT-X-STREAM-INF tag)
-    func isAudioOnlyStream() -> IndeterminateBool {
+    public func isAudioOnlyStream() -> IndeterminateBool {
         guard tagDescriptor == PantosTag.EXT_X_STREAM_INF else {
             return .FALSE
         }
@@ -62,7 +62,7 @@ public extension HLSTag {
     }
     
     /// convenience function to determine if this tag contains a video stream (will return false if called on a non-#EXT-X-STREAM-INF tag)
-    func isVideoStream() -> IndeterminateBool {
+    public func isVideoStream() -> IndeterminateBool {
         guard tagDescriptor == PantosTag.EXT_X_STREAM_INF else {
             return .FALSE
         }
@@ -78,7 +78,7 @@ public extension HLSTag {
     }
     
     /// convenience function to determine if this tag contains both an audio and a video stream (will return false if called on a non-#EXT-X-STREAM-INF tag)
-    func isAudioVideoStream() -> IndeterminateBool {
+    public func isAudioVideoStream() -> IndeterminateBool {
         guard tagDescriptor == PantosTag.EXT_X_STREAM_INF else {
             return .FALSE
         }
@@ -90,7 +90,7 @@ public extension HLSTag {
     }
 
     /// convenience function to determine if this tag is a SAP audio stream (will return false if we are not an appropriate tag to query for this info)
-    func isSapStream() -> Bool {
+    public func isSapStream() -> Bool {
         return self.language() != nil
     }
 }

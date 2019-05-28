@@ -21,11 +21,11 @@ import Foundation
 
 public extension HLSStringRef {
     
-    convenience init(descriptor: HLSTagDescriptor) {
+    public convenience init(descriptor: HLSTagDescriptor) {
         self.init(string: "#\(descriptor.toString())")
     }
 
-    convenience init(valueIdentifier: HLSTagValueIdentifier) {
+    public convenience init(valueIdentifier: HLSTagValueIdentifier) {
         self.init(string: valueIdentifier.toString())
     }
 }

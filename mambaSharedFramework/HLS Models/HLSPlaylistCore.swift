@@ -59,16 +59,16 @@ public struct HLSPlaylistCore<T>: HLSPlaylistInterface, CustomDebugStringConvert
     /// custom playlist data
     public var customData: T
     
-    /// Many of the tags in this playlist contain `HLSStringRef`s with pointers to memory within a `StaticMemoryStorage` object.
+    /// Many of the tags in this playlist contain `HLSStringRef`s with pointers to memory within a `Data` object.
     /// This reference is here to assure that the data will not go out of scope.
-    public let hlsBuffer: StaticMemoryStorage
+    public var hlsData: Data
     
     /// Initializes HLSPlaylistCore
-    public init(tags: [HLSTag], registeredTags: RegisteredHLSTags, hlsBuffer: StaticMemoryStorage, customData: T) {
+    public init(tags: [HLSTag], registeredTags: RegisteredHLSTags, hlsData: Data, customData: T) {
         self.registeredTags = registeredTags
         self.structure = HLSPlaylistStructure(withTags: tags)
         self.customData = customData
-        self.hlsBuffer = hlsBuffer
+        self.hlsData = hlsData
     }
     
     /**

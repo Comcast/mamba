@@ -40,14 +40,14 @@ class HLSParser_EventUpdateTests: XCTestCase {
                                         withPlaylistData: eventHLS2.data(using: .utf8)!,
                                         atUrl: testURL1)
         
-        XCTAssertEqual(event1.hlsBuffer, event2.hlsBuffer)
+        XCTAssertEqual(event1.hlsData, event2.hlsData)
         XCTAssertEqual(event2.tags.count, 19)
         
         let event3 = try! parser.update(eventVariantPlaylist: event2,
                                         withPlaylistData: eventHLS3.data(using: .utf8)!,
                                         atUrl: testURL1)
         
-        XCTAssertEqual(event1.hlsBuffer, event3.hlsBuffer)
+        XCTAssertEqual(event1.hlsData, event3.hlsData)
         XCTAssertEqual(event3.tags.count, 27)
     }
 
@@ -66,7 +66,7 @@ class HLSParser_EventUpdateTests: XCTestCase {
                                         withPlaylistData: eventHLS1.data(using: .utf8)!,
                                         atUrl: testURL1)
         
-        XCTAssertEqual(event1.hlsBuffer, event2.hlsBuffer)
+        XCTAssertEqual(event1.hlsData, event2.hlsData)
         XCTAssertEqual(event2.tags.count, 15)
     }
 
@@ -85,7 +85,7 @@ class HLSParser_EventUpdateTests: XCTestCase {
                                         withPlaylistData: eventHLS2.data(using: .utf8)!,
                                         atUrl: testURL1)
         
-        XCTAssertNotEqual(event1.hlsBuffer, event2.hlsBuffer)
+        XCTAssertNotEqual(event1.hlsData, event2.hlsData)
         XCTAssertEqual(event2.tags.count, 19)
     }
     
@@ -107,7 +107,7 @@ class HLSParser_EventUpdateTests: XCTestCase {
                                         withPlaylistData: eventHLS2.data(using: .utf8)!,
                                         atUrl: testURL1)
         
-        XCTAssertNotEqual(event1.hlsBuffer, event2.hlsBuffer)
+        XCTAssertNotEqual(event1.hlsData, event2.hlsData)
         XCTAssertEqual(event2.tags.count, 19)
     }
 
@@ -127,7 +127,7 @@ class HLSParser_EventUpdateTests: XCTestCase {
                                       withPlaylistData: vodHLS2.data(using: .utf8)!,
                                       atUrl: testURL1)
         
-        XCTAssertNotEqual(vod1.hlsBuffer, vod2.hlsBuffer)
+        XCTAssertNotEqual(vod1.hlsData, vod2.hlsData)
         XCTAssertEqual(vod2.tags.count, 15)
     }
 
@@ -148,7 +148,7 @@ class HLSParser_EventUpdateTests: XCTestCase {
                                         withPlaylistData: eventHLS2.data(using: .utf8)!,
                                         atUrl: testURL2)
         
-        XCTAssertNotEqual(event1.hlsBuffer, event2.hlsBuffer)
+        XCTAssertNotEqual(event1.hlsData, event2.hlsData)
         XCTAssertEqual(event2.tags.count, 19)
         XCTAssertEqual(event2.url, testURL2)
         XCTAssertNotEqual(event2.url, testURL1)
@@ -178,7 +178,7 @@ class HLSParser_EventUpdateTests: XCTestCase {
                                         withPlaylistData: eventHLS2.data(using: .utf8)!,
                                         atUrl: testURL1)
         
-        XCTAssertNotEqual(event1.hlsBuffer, event2.hlsBuffer)
+        XCTAssertNotEqual(event1.hlsData, event2.hlsData)
         XCTAssertEqual(event2.tags.count, 19)
     }
 }
