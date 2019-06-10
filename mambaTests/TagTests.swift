@@ -42,7 +42,7 @@ class TagTests: XCTestCase {
         tagData += ","
         tagData += "\(testQuoteEscapedKey)=\"\(testValue)\"" // a unknown tag with a quote escaped value
         
-        let regTags = RegisteredTags()
+        let regTags = RegisteredPlaylistTags()
         let tagParser = regTags.parser(forTag: PantosTag.EXT_X_STREAM_INF)
         
         let parsedValues = try! tagParser.parseTag(fromTagString: tagData)

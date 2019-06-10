@@ -25,12 +25,12 @@ class PlaylistTests: XCTestCase {
     func testInit() {
         let tags = [PlaylistTag]()
         let url = URL(string:"http://test.server")!
-        let registeredTags = RegisteredTags()
+        let registeredPlaylistTags = RegisteredPlaylistTags()
         let data = Data()
         let playlistMemoryStorage = StaticMemoryStorage(data: data)
         
-        let variant1 = VariantPlaylist(url: url, tags: tags, registeredTags: registeredTags, playlistMemoryStorage: playlistMemoryStorage)
-        let master1 = MasterPlaylist(url: url, tags: tags, registeredTags: registeredTags, playlistMemoryStorage: playlistMemoryStorage)
+        let variant1 = VariantPlaylist(url: url, tags: tags, registeredPlaylistTags: registeredPlaylistTags, playlistMemoryStorage: playlistMemoryStorage)
+        let master1 = MasterPlaylist(url: url, tags: tags, registeredPlaylistTags: registeredPlaylistTags, playlistMemoryStorage: playlistMemoryStorage)
 
         XCTAssert(variant1.url == url, "Expecting the url to match")
         XCTAssert(variant1.tags.count == tags.count, "Expecting the tags to match")
@@ -54,11 +54,11 @@ class PlaylistTests: XCTestCase {
         let tags = [PlaylistTag]()
         let url1 = URL(string:"http://test.server1")!
         let url2 = URL(string:"http://test.server2")!
-        let registeredTags = RegisteredTags()
+        let registeredPlaylistTags = RegisteredPlaylistTags()
         let data = Data()
         let playlistMemoryStorage = StaticMemoryStorage(data: data)
 
-        var playlist = VariantPlaylist(url: url1, tags: tags, registeredTags: registeredTags, playlistMemoryStorage: playlistMemoryStorage)
+        var playlist = VariantPlaylist(url: url1, tags: tags, registeredPlaylistTags: registeredPlaylistTags, playlistMemoryStorage: playlistMemoryStorage)
         playlist.url = url2
         
         XCTAssert(playlist.url == url2, "Expecting the url to change")

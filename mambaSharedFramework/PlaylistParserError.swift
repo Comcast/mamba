@@ -22,7 +22,7 @@ import Foundation
 public enum PlaylistParserError: Error {
     case missingTagData(description: String)
     case missingTagDataForEXTINF(description: String)
-    case malformedTag(tag: String, tagBody: String?)
+    case malformedPlaylistTag(tag: String, tagBody: String?)
     case mismatchBetweenTagDescriptorAndTagData(description: String)
     case timedOut
     case unknown(description: String)

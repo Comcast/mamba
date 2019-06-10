@@ -1,5 +1,5 @@
 //
-//  String+TagUtil.swift
+//  String+Trim.swift
 //  mamba
 //
 //  Created by David Coufal on 6/27/16.

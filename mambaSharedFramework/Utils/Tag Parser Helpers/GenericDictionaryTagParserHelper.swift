@@ -27,15 +27,15 @@ struct GenericDictionaryTagParserHelper {
         throws -> PlaylistTagDictionary {
             
             guard let string = string else {
-                throw PlaylistParserError.malformedTag(tag: tag.toString(), tagBody: nil)
+                throw PlaylistParserError.malformedPlaylistTag(tag: tag.toString(), tagBody: nil)
             }
             
             var results: PlaylistTagDictionary
             do {
-                results = try StringDictionaryParser.parseToTagDictionary(fromParsableString:string as String)
+                results = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString:string as String)
             }
             catch {
-                throw PlaylistParserError.malformedTag(tag: tag.toString(), tagBody: string)
+                throw PlaylistParserError.malformedPlaylistTag(tag: tag.toString(), tagBody: string)
             }
                         
             return results

@@ -1,5 +1,5 @@
 //
-//  RegisteredTags.swift
+//  RegisteredPlaylistTags.swift
 //  mamba
 //
 //  Created by David Coufal on 7/12/16.
@@ -23,7 +23,7 @@ import Foundation
  This struct is the mechanism to register and deregister arbitrary PlaylistTagDescriptor and
  PlaylistTagValueIdentifier objects to support arbitrary playlist tag types.
  */
-public struct RegisteredTags: CustomDebugStringConvertible {
+public struct RegisteredPlaylistTags: CustomDebugStringConvertible {
     
     /**
      Register a `PlaylistTagDescriptor` type to support new tags
@@ -110,10 +110,10 @@ public struct RegisteredTags: CustomDebugStringConvertible {
     internal fileprivate(set) var registeredTagDescriptors = [PlaylistTagDescriptor.Type]()
     
     public var debugDescription: String {
-        return "RegisteredTags registeredTagDescriptors:\(registeredTagDescriptors)\n"
+        return "RegisteredPlaylistTags registeredTagDescriptors:\(registeredTagDescriptors)\n"
     }
 }
 
-public protocol RegisteredTagsProvider {
-    var registeredTags: RegisteredTags { get }
+public protocol RegisteredPlaylistTagsProvider {
+    var registeredPlaylistTags: RegisteredPlaylistTags { get }
 }

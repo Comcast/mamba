@@ -100,7 +100,7 @@ class EXT_X_KEYTagParserTests: XCTestCase {
             let _ = try parser.parseTag(fromTagString: nil)
             XCTAssert(false, "Parser should throw")
         }
-        catch PlaylistParserError.malformedTag {
+        catch PlaylistParserError.malformedPlaylistTag {
             //Expected result
         }
         catch {

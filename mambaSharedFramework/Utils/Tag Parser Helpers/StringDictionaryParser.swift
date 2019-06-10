@@ -29,7 +29,7 @@ struct StringDictionaryParser {
     /// parses a string in the format "<key1>=<value1>,<key2>=<value2>" to a dictionary [<key1>: <value1>, <key2>: <value2>]. Throws .malformedDictionaryString if string is not formatted as expected
     ///
     /// quotes should escape commas and equals, so "key1=value1,key2="value2,value3=value4"" should resolve to [key1: value1, key2: "value2,value3=value4"]
-    static func parseToTagDictionary(fromParsableString string: String) throws -> PlaylistTagDictionary {
+    static func parseToPlaylistTagDictionary(fromParsableString string: String) throws -> PlaylistTagDictionary {
         
         var dictionary = PlaylistTagDictionary()
         

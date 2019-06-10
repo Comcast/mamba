@@ -36,7 +36,7 @@ public extension ExtensiblePlaylistValidator {
         var issues = [PlaylistValidationIssue]()
         
         for tag in playlist.tags {
-            guard let validator = playlist.registeredTags.validator(forTag: tag.tagDescriptor) else {
+            guard let validator = playlist.registeredPlaylistTags.validator(forTag: tag.tagDescriptor) else {
                 continue
             }
             guard let newIssues = validator.validate(tag: tag) else {

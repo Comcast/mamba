@@ -50,16 +50,16 @@ public struct PlaylistCore<PT>: PlaylistInterface, CustomDebugStringConvertible 
     public let playlistMemoryStorage: StaticMemoryStorage
     
     /// The registered tag types for this playlist
-    public private(set) var registeredTags: RegisteredTags
+    public private(set) var registeredPlaylistTags: RegisteredPlaylistTags
     
     var structure: PT.playlistStructureType
 
     /// Initializes PlaylistCore
     public init(tags: [PlaylistTag],
-                registeredTags: RegisteredTags,
+                registeredPlaylistTags: RegisteredPlaylistTags,
                 playlistMemoryStorage: StaticMemoryStorage,
                 customData: PT.customPlaylistDataType) {
-        self.registeredTags = registeredTags
+        self.registeredPlaylistTags = registeredPlaylistTags
         self.structure = PT.playlistStructureType(withTags: tags)
         self.customData = customData
         self.playlistMemoryStorage = playlistMemoryStorage
@@ -134,7 +134,7 @@ public struct PlaylistCore<PT>: PlaylistInterface, CustomDebugStringConvertible 
         guard
             let stream = try? self.write(),
             let debugDescription = String(data: stream, encoding: .utf8) else {
-                return "Stream write failure. Raw Data: registeredTags:\(registeredTags) \nstructure:\(structure)\n"
+                return "Stream write failure. Raw Data: registeredPlaylistTags:\(registeredPlaylistTags) \nstructure:\(structure)\n"
         }
         return String(debugDescription)
     }

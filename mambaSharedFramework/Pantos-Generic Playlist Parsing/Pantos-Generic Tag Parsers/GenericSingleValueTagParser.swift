@@ -39,7 +39,7 @@ public class GenericSingleValueTagParser: PlaylistTagParser {
     
     public func parseTag(fromTagString string: String?) throws -> PlaylistTagDictionary {
         guard let string = string , !string.isEmpty else {
-            throw PlaylistParserError.malformedTag(tag: tag.toString(), tagBody: nil)
+            throw PlaylistParserError.malformedPlaylistTag(tag: tag.toString(), tagBody: nil)
         }
         return [singleValueIdentifier.toString(): PlaylistTagValueData(value: string)]
     }

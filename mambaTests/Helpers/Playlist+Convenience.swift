@@ -31,13 +31,13 @@ import Foundation
 public extension PlaylistCore where PT.customPlaylistDataType == PlaylistURLData {
     
     init() {
-        let registeredTags = RegisteredTags()
-        self.init(url: fakePlaylistURL(), tags: [PlaylistTag](), registeredTags: registeredTags, playlistMemoryStorage: StaticMemoryStorage())
+        let registeredPlaylistTags = RegisteredPlaylistTags()
+        self.init(url: fakePlaylistURL(), tags: [PlaylistTag](), registeredPlaylistTags: registeredPlaylistTags, playlistMemoryStorage: StaticMemoryStorage())
     }
     
     init(tags: [PlaylistTag]) {
-        let registeredTags = RegisteredTags()
-        self.init(url: fakePlaylistURL(), tags: tags, registeredTags: registeredTags, playlistMemoryStorage: StaticMemoryStorage())
+        let registeredPlaylistTags = RegisteredPlaylistTags()
+        self.init(url: fakePlaylistURL(), tags: tags, registeredPlaylistTags: registeredPlaylistTags, playlistMemoryStorage: StaticMemoryStorage())
     }
     
 }

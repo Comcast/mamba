@@ -125,7 +125,7 @@ extension XCTestCase {
         stream.open()
         try writer.write(tag: tag, toStream: stream)
         guard let data = stream.property(forKey: .dataWrittenToMemoryStreamKey) as? Data else {
-            print("No data written in writeToString from Writer \"\(String(describing: type(of: writer)))\" in unit test \"\(String(describing: type(of: self)))\" with tag \"\(tag)\"")
+            print("No data written in writeToString from PlaylistWriter \"\(String(describing: type(of: writer)))\" in unit test \"\(String(describing: type(of: self)))\" with tag \"\(tag)\"")
             XCTFail()
             return "FAILED_TO_WRITE_DATA"
         }
@@ -134,7 +134,7 @@ extension XCTestCase {
     }
 }
 
-public func createTag(tagDescriptor descriptor: PlaylistTagDescriptor, tagData: String, registeredTags: RegisteredTags? = nil) -> PlaylistTag {
+public func createTag(tagDescriptor descriptor: PlaylistTagDescriptor, tagData: String, registeredPlaylistTags: RegisteredPlaylistTags? = nil) -> PlaylistTag {
     
     if descriptor == PantosTag.Location || descriptor == PantosTag.Comment {
         return PlaylistTag(tagDescriptor: descriptor, tagData: MambaStringRef(string: tagData))
@@ -151,7 +151,7 @@ public func createTag(tagDescriptor descriptor: PlaylistTagDescriptor, tagData: 
     var parsedValues: PlaylistTagDictionary? = nil
     
     if descriptor.type() == .keyValue || descriptor.type() == .singleValue {
-        let regTags: RegisteredTags = (registeredTags != nil) ? registeredTags! : RegisteredTags()
+        let regTags: RegisteredPlaylistTags = (registeredPlaylistTags != nil) ? registeredPlaylistTags! : RegisteredPlaylistTags()
         
         let tagParser = regTags.parser(forTag: descriptor)
         if type(of: tagParser) != NoOpTagParser.self {

@@ -42,7 +42,7 @@ class PlaylistWriterTests: XCTestCase {
             stream.open()
             try writer.write(playlist: playlist, toStream: stream)
             guard let data = stream.property(forKey: .dataWrittenToMemoryStreamKey) as? Data else {
-                XCTFail("No data written in write from Writer")
+                XCTFail("No data written in write from PlaylistWriter")
                 return
             }
             let hlsOut = String(data: data, encoding: .utf8)!
@@ -110,7 +110,7 @@ class PlaylistWriterTests: XCTestCase {
             stream.open()
             try writer.write(playlist: playlist, toStream: stream)
             guard let data = stream.property(forKey: .dataWrittenToMemoryStreamKey) as? Data else {
-                XCTFail("No data written in write from Writer")
+                XCTFail("No data written in write from PlaylistWriter")
                 return
             }
             let hlsOut = String(data: data, encoding: .utf8)!
@@ -137,7 +137,7 @@ class PlaylistWriterTests: XCTestCase {
             stream.open()
             try writer.write(playlist: playlist, toStream: stream)
             guard let data = stream.property(forKey: .dataWrittenToMemoryStreamKey) as? Data else {
-                XCTFail("No data written in write from Writer")
+                XCTFail("No data written in write from PlaylistWriter")
                 return
             }
             let hlsOut = String(data: data, encoding: .utf8)!

@@ -73,7 +73,7 @@ public struct PlaylistTag: CustomDebugStringConvertible {
      * For all other tags (including #EXTINF), this value will be the data after
      the colon (or a zero-length string if there was no data after the colon).
      
-     Note that for `TagDescriptor`s of type .singleValue and .keyValue, the
+     Note that for `PlaylistTagDescriptor`s of type .singleValue and .keyValue, the
      `tagData` will be further processed into our local `parsedValues` dictionary,
      and available for reading via the `value` functions and for writing to via
      the `set` function.
@@ -88,7 +88,7 @@ public struct PlaylistTag: CustomDebugStringConvertible {
     public let duration: CMTime
     
     /**
-     Initializer for creating `Tags` while parsing HLS.
+     Initializer for creating `PlaylistTag`s while parsing HLS.
      
      - parameter tagDescriptor: An PlaylistTagDescriptor.
      
@@ -114,7 +114,7 @@ public struct PlaylistTag: CustomDebugStringConvertible {
     }
     
     /**
-     Initializer for creating `Tags` while parsing HLS. Specialized for tags that do not have tag
+     Initializer for creating `PlaylistTag`s while parsing HLS. Specialized for tags that do not have tag
      names (i.e. PantosTag.Comment and PantosTag.Location)
      
      - parameter tagDescriptor: An PlaylistTagDescriptor.
@@ -185,8 +185,8 @@ public struct PlaylistTag: CustomDebugStringConvertible {
      Get the PlaylistTagValueData of a possible data item in this tag if it exists.
      
      - parameter forKey: The key to use for the specified value, as a String. Note that there
-     is a `TagValueIdentifier` version of this function that should be used if you know
-     your `TagValueIdentifier`, for type safety.
+     is a `PlaylistTagValueIdentifier` version of this function that should be used if you know
+     your `PlaylistTagValueIdentifier`, for type safety.
      
      - returns: An optional PlaylistTagValueData.
      */
@@ -209,8 +209,8 @@ public struct PlaylistTag: CustomDebugStringConvertible {
      Get the String value of a possible data item in this tag if it exists.
      
      - parameter forKey: The key to use for the specified value, as a String. Note that there
-     is a `TagValueIdentifier` version of this function that should be used if you know
-     your `TagValueIdentifier`, for type safety.
+     is a `PlaylistTagValueIdentifier` version of this function that should be used if you know
+     your `PlaylistTagValueIdentifier`, for type safety.
      
      - returns: An optional String.
      */
@@ -248,8 +248,8 @@ public struct PlaylistTag: CustomDebugStringConvertible {
      Get the typed value (where the type is a FailableStringLiteralConvertible) of a possible data item in this tag if it exists.
      
      - parameter forKey: The key to use for the specified value, as a String. Note that there
-     is a `TagValueIdentifier` version of this function that should be used if you know
-     your `TagValueIdentifier`, for type safety.
+     is a `PlaylistTagValueIdentifier` version of this function that should be used if you know
+     your `PlaylistTagValueIdentifier`, for type safety.
      
      - returns: An optional FailableStringLiteralConvertible.
      */
@@ -269,8 +269,8 @@ public struct PlaylistTag: CustomDebugStringConvertible {
      - parameter value: The value to set to the key for this tag
      
      - parameter forKey: The key to use for the specified value, as a String. Note that there
-     is a `TagValueIdentifier` version of this function that should be used if you know
-     your `TagValueIdentifier`, for type safety.
+     is a `PlaylistTagValueIdentifier` version of this function that should be used if you know
+     your `PlaylistTagValueIdentifier`, for type safety.
      
      - parameter shouldBeQuoteEscaped: The default behavior for this value (should it be quote
      escaped or not). (Optional - if not specified, will take the quote escaping behaviour of
@@ -311,8 +311,8 @@ public struct PlaylistTag: CustomDebugStringConvertible {
      Remove a value for a key in this tag.
      
      - parameter forKey: The key to use for the specified value, as a String. Note that there
-     is a `TagValueIdentifier` version of this function that should be used if you know
-     your `TagValueIdentifier`, for type safety.
+     is a `PlaylistTagValueIdentifier` version of this function that should be used if you know
+     your `PlaylistTagValueIdentifier`, for type safety.
      */
     public mutating func removeValue(forKey key: String) {
         guard let _ = parsedValues else {
@@ -340,7 +340,7 @@ public struct PlaylistTag: CustomDebugStringConvertible {
     internal private(set) var isDirty: Bool = false
     
     public var debugDescription: String {
-        return "Tag tagDescriptor:\(tagDescriptor.toString()) tagData:\(tagData.stringValue())\n tagName:\((tagName == nil) ? "nil tagName" : tagName!.stringValue())\n       parsedValues:\(String(describing: parsedValues)) isDirty:\(isDirty)"
+        return "PlaylistTag tagDescriptor:\(tagDescriptor.toString()) tagData:\(tagData.stringValue())\n tagName:\((tagName == nil) ? "nil tagName" : tagName!.stringValue())\n       parsedValues:\(String(describing: parsedValues)) isDirty:\(isDirty)"
     }
 }
 

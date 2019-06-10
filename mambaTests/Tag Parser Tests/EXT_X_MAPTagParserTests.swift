@@ -60,7 +60,7 @@ class EXT_X_MAPTagParserTests: XCTestCase {
             let _ = try parser.parseTag(fromTagString: nil)
             XCTAssert(false, "Parser should throw")
         }
-        catch PlaylistParserError.malformedTag {
+        catch PlaylistParserError.malformedPlaylistTag {
             //Expected result
         }
         catch {

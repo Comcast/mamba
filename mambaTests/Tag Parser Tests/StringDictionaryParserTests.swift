@@ -25,7 +25,7 @@ class StringDictionaryParserTests: XCTestCase {
     
     func testStringDictionaryParser0() {
         do {
-            let dict = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "key1=value1")
+            let dict = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "key1=value1")
             
             XCTAssert(dict.count == 1, "Unexpected dict count")
             XCTAssert(dict["key1"]?.value == "value1", "Did not find expected pair")
@@ -38,7 +38,7 @@ class StringDictionaryParserTests: XCTestCase {
     
     func testStringDictionaryParser1() {
         do {
-            let dict = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "key1=\"value1\"")
+            let dict = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "key1=\"value1\"")
             
             XCTAssert(dict.count == 1, "Unexpected dict count")
             XCTAssert(dict["key1"]?.value == "value1", "Did not find expected pair")
@@ -51,7 +51,7 @@ class StringDictionaryParserTests: XCTestCase {
     
     func testStringDictionaryParser2() {
         do {
-            let dict = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "key1=value1,key2=value2")
+            let dict = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "key1=value1,key2=value2")
             
             XCTAssert(dict.count == 2, "Unexpected dict count")
             XCTAssert(dict["key1"]?.value == "value1", "Did not find expected pair")
@@ -66,7 +66,7 @@ class StringDictionaryParserTests: XCTestCase {
 
     func testStringDictionaryParser3() {
         do {
-            let dict = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "key1=value1,key2=\"value2,value3\"")
+            let dict = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "key1=value1,key2=\"value2,value3\"")
             
             XCTAssert(dict.count == 2, "Unexpected dict count")
             XCTAssert(dict["key1"]?.value == "value1", "Did not find expected pair")
@@ -81,7 +81,7 @@ class StringDictionaryParserTests: XCTestCase {
 
     func testStringDictionaryParser4() {
         do {
-            let dict = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "key1=\"value1,value2\",key2=value3")
+            let dict = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "key1=\"value1,value2\",key2=value3")
             
             XCTAssert(dict.count == 2, "Unexpected dict count")
             XCTAssert(dict["key1"]?.value == "value1,value2", "Did not find expected pair")
@@ -96,7 +96,7 @@ class StringDictionaryParserTests: XCTestCase {
     
     func testStringDictionaryParser5() {
         do {
-            let dict = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "key1=\"value1,value2\",key2=\"value3,value4\"")
+            let dict = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "key1=\"value1,value2\",key2=\"value3,value4\"")
             
             XCTAssert(dict.count == 2, "Unexpected dict count")
             XCTAssert(dict["key1"]?.value == "value1,value2", "Did not find expected pair")
@@ -111,7 +111,7 @@ class StringDictionaryParserTests: XCTestCase {
 
     func testStringDictionaryParser6() {
         do {
-            let dict = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "key1=\"value1,value2,value3\",key2=\"value3,value4\"")
+            let dict = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "key1=\"value1,value2,value3\",key2=\"value3,value4\"")
             
             XCTAssert(dict.count == 2, "Unexpected dict count")
             XCTAssert(dict["key1"]?.value == "value1,value2,value3", "Did not find expected pair")
@@ -126,7 +126,7 @@ class StringDictionaryParserTests: XCTestCase {
     
     func testStringDictionaryParser7() {
         do {
-            let dict = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "key1=\"value1,value2\",key2=value3,key3=\"value5,value6\"")
+            let dict = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "key1=\"value1,value2\",key2=value3,key3=\"value5,value6\"")
             
             XCTAssert(dict.count == 3, "Unexpected dict count")
             XCTAssert(dict["key1"]?.value == "value1,value2", "Did not find expected pair")
@@ -143,7 +143,7 @@ class StringDictionaryParserTests: XCTestCase {
     
     func testStringDictionaryParser8() {
         do {
-            let dict = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "key1=value1,key2=\"value3,value4\",key3=\"value5,value6\"")
+            let dict = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "key1=value1,key2=\"value3,value4\",key3=\"value5,value6\"")
             
             XCTAssert(dict.count == 3, "Unexpected dict count")
             XCTAssert(dict["key1"]?.value == "value1", "Did not find expected pair")
@@ -160,7 +160,7 @@ class StringDictionaryParserTests: XCTestCase {
     
     func testStringDictionaryParser9() {
         do {
-            let dict = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "key1=\"value1,value2\",key2=\"value3,value4\",key3=value5")
+            let dict = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "key1=\"value1,value2\",key2=\"value3,value4\",key3=value5")
             
             XCTAssert(dict.count == 3, "Unexpected dict count")
             XCTAssert(dict["key1"]?.value == "value1,value2", "Did not find expected pair")
@@ -177,7 +177,7 @@ class StringDictionaryParserTests: XCTestCase {
     
     func testStringDictionaryParser10() {
         do {
-            let dict = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "text=\"text,text") // slightly misformatted, but we can deal with the missing closing quote
+            let dict = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "text=\"text,text") // slightly misformatted, but we can deal with the missing closing quote
             
             XCTAssert(dict.count == 1, "Unexpected dict count")
             XCTAssert(dict["text"]?.value == "\"text,text", "Did not find expected pair")
@@ -190,7 +190,7 @@ class StringDictionaryParserTests: XCTestCase {
     
     func testStringDictionaryParser11() {
         do {
-            let dict = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "key1=\"value1=value2\"")
+            let dict = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "key1=\"value1=value2\"")
             
             XCTAssert(dict.count == 1, "Unexpected dict count")
             XCTAssert(dict["key1"]?.value == "value1=value2", "Did not find expected pair")
@@ -203,7 +203,7 @@ class StringDictionaryParserTests: XCTestCase {
     
     func testStringDictionaryParser12() {
         do {
-            let dict = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "key1=value1,key2=\"value2=value3\"")
+            let dict = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "key1=value1,key2=\"value2=value3\"")
             
             XCTAssert(dict.count == 2, "Unexpected dict count")
             XCTAssert(dict["key1"]?.value == "value1", "Did not find expected pair")
@@ -218,7 +218,7 @@ class StringDictionaryParserTests: XCTestCase {
     
     func testStringDictionaryParser13() {
         do {
-            let dict = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "key1=\"value1=value2\",key2=\"value3=value4\"")
+            let dict = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "key1=\"value1=value2\",key2=\"value3=value4\"")
             
             XCTAssert(dict.count == 2, "Unexpected dict count")
             XCTAssert(dict["key1"]?.value == "value1=value2", "Did not find expected pair")
@@ -233,7 +233,7 @@ class StringDictionaryParserTests: XCTestCase {
     
     func testStringDictionaryParser14() {
         do {
-            let dict = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "key1=\"value1=value2\",key2=\"value3\",key3=\"value4=value5\"")
+            let dict = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "key1=\"value1=value2\",key2=\"value3\",key3=\"value4=value5\"")
             
             XCTAssert(dict.count == 3, "Unexpected dict count")
             XCTAssert(dict["key1"]?.value == "value1=value2", "Did not find expected pair")
@@ -250,7 +250,7 @@ class StringDictionaryParserTests: XCTestCase {
     
     func testStringDictionaryParser15() {
         do {
-            let dict = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "key1=\"value1,value2\",key2=\"value3=value4,value5=value6\",key3=value7")
+            let dict = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "key1=\"value1,value2\",key2=\"value3=value4,value5=value6\",key3=value7")
             
             XCTAssert(dict.count == 3, "Unexpected dict count")
             XCTAssert(dict["key1"]?.value == "value1,value2", "Did not find expected pair")
@@ -267,7 +267,7 @@ class StringDictionaryParserTests: XCTestCase {
     
     func testStringDictionaryParser16() {
         do {
-            let dict = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "text1=,text2=text3")
+            let dict = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "text1=,text2=text3")
             
             XCTAssert(dict.count == 2, "Unexpected dict count")
             XCTAssert(dict["text1"]?.value == "", "Did not find expected pair")
@@ -282,7 +282,7 @@ class StringDictionaryParserTests: XCTestCase {
     
     func testStringDictionaryParser17() {
         do {
-            let dict = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "text1=text2,text3=")
+            let dict = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "text1=text2,text3=")
             
             XCTAssert(dict.count == 2, "Unexpected dict count")
             XCTAssert(dict["text1"]?.value == "text2", "Did not find expected pair")
@@ -297,7 +297,7 @@ class StringDictionaryParserTests: XCTestCase {
     
     func testStringDictionaryParser18() {
         do {
-            let dict = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "text1=")
+            let dict = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "text1=")
             
             XCTAssert(dict.count == 1, "Unexpected dict count")
             XCTAssert(dict["text1"]?.value == "", "Did not find expected pair")
@@ -310,7 +310,7 @@ class StringDictionaryParserTests: XCTestCase {
     
     func testStringDictionaryParserFailure1() {
         do {
-            let _ = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "text")
+            let _ = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "text")
             
             XCTAssert(false, "should throw")
         }
@@ -321,7 +321,7 @@ class StringDictionaryParserTests: XCTestCase {
     
     func testStringDictionaryParserFailure2() {
         do {
-            let _ = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "text,")
+            let _ = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "text,")
             
             XCTAssert(false, "should throw")
         }
@@ -332,7 +332,7 @@ class StringDictionaryParserTests: XCTestCase {
     
     func testStringDictionaryParserFailure3() {
         do {
-            let _ = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "text,text")
+            let _ = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "text,text")
             
             XCTAssert(false, "should throw")
         }
@@ -343,7 +343,7 @@ class StringDictionaryParserTests: XCTestCase {
 
     func testStringDictionaryParserFailure4() {
         do {
-            let _ = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "text=text,text")
+            let _ = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "text=text,text")
             
             XCTAssert(false, "should throw")
         }
@@ -354,7 +354,7 @@ class StringDictionaryParserTests: XCTestCase {
     
     func testStringDictionaryParserFailure5() {
         do {
-            let _ = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "text,text=text")
+            let _ = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "text,text=text")
             
             XCTAssert(false, "should throw")
         }
@@ -365,7 +365,7 @@ class StringDictionaryParserTests: XCTestCase {
     
     func testStringDictionaryParserFailure6() {
         do {
-            let _ = try StringDictionaryParser.parseToTagDictionary(fromParsableString: "text=text,text,text=text")
+            let _ = try StringDictionaryParser.parseToPlaylistTagDictionary(fromParsableString: "text=text,text,text=text")
             
             XCTAssert(false, "should throw")
         }

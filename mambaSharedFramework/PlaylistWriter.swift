@@ -55,8 +55,8 @@ public class PlaylistWriter {
         // write tags
         for tag in playlist.tags {
             if tag.isDirty {
-                guard let writer = playlist.registeredTags.writer(forTag: tag.tagDescriptor) else {
-                    throw WriterError.invalidPlaylist(description: "Cannot write dirty tag with unknown descriptor: \(tag.tagDescriptor.toString())")
+                guard let writer = playlist.registeredPlaylistTags.writer(forTag: tag.tagDescriptor) else {
+                    throw PlaylistWriterError.invalidPlaylist(description: "Cannot write dirty tag with unknown descriptor: \(tag.tagDescriptor.toString())")
                 }
                 try writer.write(tag: tag, toStream: stream)
             }
@@ -106,8 +106,8 @@ public class PlaylistWriter {
     private let suppressMambaIdentityString: Bool
 }
 
-/// Possible Writer error conditions
-public enum WriterError: Error {
+/// Possible PlaylistWriter error conditions
+public enum PlaylistWriterError: Error {
     case invalidPlaylist(description: String?)
 }
 
