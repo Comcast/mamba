@@ -22,7 +22,7 @@ import Foundation
 public extension PlaylistTag {
     
     /// convenience function to return the resolution of this tag (if present)
-    public func resolution() -> ResolutionValueType? {
+    func resolution() -> ResolutionValueType? {
         return self.value(forValueIdentifier: PantosValue.resolution)
     }
     
@@ -32,7 +32,7 @@ public extension PlaylistTag {
     }
     
     /// convenience function to return the codecs of this tag (if present)
-    public func codecs() -> CodecValueTypeArray? {
+    func codecs() -> CodecValueTypeArray? {
         if let value: String = self.value(forValueIdentifier: PantosValue.codecs) {
             return CodecValueTypeArray(string: value)
         }

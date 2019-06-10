@@ -53,7 +53,7 @@ public extension Collection where Iterator.Element == PlaylistTag {
     }
     
     /// returns the #EXT-X-MEDIA tags for SAP audio streams if present (only works for master playlists)
-    public func sapStreams() -> [PlaylistTag]? {
+    func sapStreams() -> [PlaylistTag]? {
         
         return self.filter({ $0.tagDescriptor == PantosTag.EXT_X_MEDIA }).filter({
             return $0.value(forValueIdentifier: PantosValue.language) != nil
@@ -61,7 +61,7 @@ public extension Collection where Iterator.Element == PlaylistTag {
     }
     
     /// Convenience function to return all the values for a particular PlaylistTagValueIdentifier in a particular PlaylistTagDescriptor
-    public func extractValues(tagDescriptor: PlaylistTagDescriptor, valueIdentifier: PlaylistTagValueIdentifier) -> Set<String> {
+    func extractValues(tagDescriptor: PlaylistTagDescriptor, valueIdentifier: PlaylistTagValueIdentifier) -> Set<String> {
         
         var values = Set<String>()
         let media = self.filter({ $0.tagDescriptor == tagDescriptor })
@@ -84,23 +84,23 @@ public extension Collection where Iterator.Element == PlaylistTag {
     }
     
     /// returns the first audio only #EXT-X-STREAMINF tag found in this PlaylistTag collection
-    public func firstAudioOnlyStreamInfTag() -> PlaylistTag? {
+    func firstAudioOnlyStreamInfTag() -> PlaylistTag? {
         return first(where: { $0.tagDescriptor == PantosTag.EXT_X_STREAM_INF && $0.isAudioOnlyStream() == .TRUE })
     }
     
     /// Convenience function to filter PlaylistTag collections by a particular PlaylistTagDescriptor
-    public func filtered(by tagDescriptor: PlaylistTagDescriptor) -> [PlaylistTag] {
+    func filtered(by tagDescriptor: PlaylistTagDescriptor) -> [PlaylistTag] {
         return self.filter({ $0.tagDescriptor == tagDescriptor })
     }
 
     /// Convenience function to return just the video streams in a PlaylistTag collection
-    public func filteredByVideoCodec() -> [PlaylistTag] {
+    func filteredByVideoCodec() -> [PlaylistTag] {
         
         return self.filter { return $0.isVideoStream() == .TRUE }
     }
     
     /// returns a new PlaylistTag Array that's sorted by resolution and bandwidth (in that order)
-    public func sortedByResolutionBandwidth(tolerance: Double = 1.0) -> [PlaylistTag] {
+    func sortedByResolutionBandwidth(tolerance: Double = 1.0) -> [PlaylistTag] {
         
         return self.sorted { (a, b) -> Bool in
         
