@@ -47,7 +47,7 @@ public struct PlaylistCore<PT>: PlaylistInterface, CustomDebugStringConvertible 
     
     /// Many of the tags in this playlist contain `MambaStringRef`s with pointers to memory within a `Data` object.
     /// This reference is here to assure that the data will not go out of scope.
-    public let playlistData: Data
+    public let playlistMemoryStorage: StaticMemoryStorage
     
     /// The registered tag types for this playlist
     public private(set) var registeredTags: RegisteredTags
@@ -57,12 +57,12 @@ public struct PlaylistCore<PT>: PlaylistInterface, CustomDebugStringConvertible 
     /// Initializes PlaylistCore
     public init(tags: [PlaylistTag],
                 registeredTags: RegisteredTags,
-                playlistData: Data,
+                playlistMemoryStorage: StaticMemoryStorage,
                 customData: PT.customPlaylistDataType) {
         self.registeredTags = registeredTags
         self.structure = PT.playlistStructureType(withTags: tags)
         self.customData = customData
-        self.playlistData = playlistData
+        self.playlistMemoryStorage = playlistMemoryStorage
     }
     
     /**

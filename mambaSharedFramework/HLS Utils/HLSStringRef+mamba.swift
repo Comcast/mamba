@@ -1,8 +1,8 @@
 //
-//  RapidParser.h
+//  HLSStringRef+mamba.swift
 //  mamba
 //
-//  Created by David Coufal on 1/19/17.
+//  Created by David Coufal on 2/15/17.
 //  Copyright © 2017 Comcast Cable Communications Management, LLC
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -17,14 +17,15 @@
 //  limitations under the License.
 //
 
-@import Foundation;
-#include "RapidParserError.h"
-#include "StaticMemoryStorage.h"
+import Foundation
 
-@protocol RapidParserCallback;
+public extension HLSStringRef {
+    
+    convenience init(descriptor: HLSTagDescriptor) {
+        self.init(string: "#\(descriptor.toString())")
+    }
 
-@interface RapidParser : NSObject
-
-- (void)parseHLSData:(StaticMemoryStorage * _Nonnull)storage callback:(id<RapidParserCallback> _Nonnull)callback;
-
-@end
+    convenience init(valueIdentifier: HLSTagValueIdentifier) {
+        self.init(string: valueIdentifier.toString())
+    }
+}

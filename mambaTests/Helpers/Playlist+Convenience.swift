@@ -32,12 +32,12 @@ public extension PlaylistCore where PT.customPlaylistDataType == PlaylistURLData
     
     init() {
         let registeredTags = RegisteredTags()
-        self.init(url: fakePlaylistURL(), tags: [PlaylistTag](), registeredTags: registeredTags, playlistData: Data())
+        self.init(url: fakePlaylistURL(), tags: [PlaylistTag](), registeredTags: registeredTags, playlistMemoryStorage: StaticMemoryStorage())
     }
     
     init(tags: [PlaylistTag]) {
         let registeredTags = RegisteredTags()
-        self.init(url: fakePlaylistURL(), tags: tags, registeredTags: registeredTags, playlistData: Data())
+        self.init(url: fakePlaylistURL(), tags: tags, registeredTags: registeredTags, playlistMemoryStorage: StaticMemoryStorage())
     }
     
 }

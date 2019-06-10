@@ -32,7 +32,7 @@ public enum FileType {
 public extension Collection where Iterator.Element == PlaylistTag {
     
     /// returns the FileType of this tag collection (i.e. master vs. variant)
-    public func type() -> FileType {
+    func type() -> FileType {
         
         for tag in self {
             if tag.tagDescriptor == PantosTag.EXTINF {
@@ -46,7 +46,7 @@ public extension Collection where Iterator.Element == PlaylistTag {
     }
     
     /// returns true if we can detect a SAP stream (only works for master playlists)
-    public func hasSap() -> Bool {
+    func hasSap() -> Bool {
         
         let languages = Set(self.extractValues(tagDescriptor: PantosTag.EXT_X_MEDIA, valueIdentifier: PantosValue.language))
         return languages.count > 1
@@ -77,7 +77,7 @@ public extension Collection where Iterator.Element == PlaylistTag {
     }
     
     /// returns true if we are a master playlist and have a audio only stream
-    public func hasAudioOnlyStream() -> Bool {
+    func hasAudioOnlyStream() -> Bool {
         
         guard let _ = firstAudioOnlyStreamInfTag() else { return false }
         return true
@@ -90,7 +90,6 @@ public extension Collection where Iterator.Element == PlaylistTag {
     
     /// Convenience function to filter PlaylistTag collections by a particular PlaylistTagDescriptor
     public func filtered(by tagDescriptor: PlaylistTagDescriptor) -> [PlaylistTag] {
-        
         return self.filter({ $0.tagDescriptor == tagDescriptor })
     }
 
@@ -108,14 +107,17 @@ public extension Collection where Iterator.Element == PlaylistTag {
             if let aResolution: ResolutionValueType = a.resolution(),
                 let bResolution: ResolutionValueType = b.resolution() {
                 if aResolution < bResolution { return true }
-                if bResolution > aResolution { return false }
+                if aResolution > bResolution { return false }
+            }
+            else if let _ = b.resolution() {
+                return true
             }
             
             if let aBandwidth: Double = a.bandwidth(),
                 let bBandwidth: Double = b.bandwidth() {
                 if aBandwidth * tolerance < bBandwidth { return true }
             }
-
+            
             return false
         }
     }
