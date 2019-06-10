@@ -34,7 +34,7 @@ public protocol PlaylistInterface: RegisteredTagsProvider, PlaylistTagSource {
 }
 
 /**
- Defines an interface for a source of a `Tag` array.
+ Defines an interface for a source of a `PlaylistTag` array.
  */
 public protocol PlaylistTagSource {
     var tags: [PlaylistTag] { get }

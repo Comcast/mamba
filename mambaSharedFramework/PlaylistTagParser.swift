@@ -41,9 +41,9 @@ public protocol PlaylistTagParser: class {
      
      - parameter fromTagString: An optional string to parse. (Optional because some tags actually have no data)
      
-     - returns: An `TagDictionary` of all the key value pairs found in the tag (will contain values found in single-value tags as well, for convenience)
+     - returns: An `PlaylistTagDictionary` of all the key value pairs found in the tag (will contain values found in single-value tags as well, for convenience)
      
-     - throws: a TagParserError.malformedTag type if the tag is malformed or is missing pantos required data
+     - throws: a PlaylistTagParserError.malformedTag type if the tag is malformed or is missing pantos required data
      */
     func parseTag(fromTagString: String?) throws -> PlaylistTagDictionary
 }

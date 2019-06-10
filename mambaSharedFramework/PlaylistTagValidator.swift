@@ -19,13 +19,13 @@
 
 import Foundation
 
-/// A protocol describing the interface for a object that can validate a `Tag`'s adherence to a specification.
+/// A protocol describing the interface for a object that can validate a `PlaylistTag`'s adherence to a specification.
 public protocol PlaylistTagValidator {
     
     /**
-     Validates if a given `Tag` meets the specification.
+     Validates if a given `PlaylistTag` meets the specification.
      
-     - parameter tag: The `Tag` to validate.
+     - parameter tag: The `PlaylistTag` to validate.
      
      - returns: An array of `PlaylistValidationIssue`s, or nil if no issues were found.
      */

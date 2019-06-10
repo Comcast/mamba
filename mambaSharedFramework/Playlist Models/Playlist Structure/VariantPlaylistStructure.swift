@@ -73,14 +73,14 @@ extension PlaylistStructureCore: PlaylistTagSource, VariantPlaylistStructureInte
 
 public protocol VariantPlaylistStructureInterface: PlaylistTagSource {
     /**
-     The `header` is all tags that describe the playlist initially. All `Tag`s at the top of the playlist that
-     have the scope TagDescriptorScope.wholePlaylist or TagDescriptorScope.mediaSpanner are part of this
+     The `header` is all tags that describe the playlist initially. All `PlaylistTag`s at the top of the playlist that
+     have the scope PlaylistTagDescriptorScope.wholePlaylist or PlaylistTagDescriptorScope.mediaSpanner are part of this
      structure.
      */
     var header: PlaylistTagGroup? { get }
     
     /**
-     All the `Tag`s in the middle of the playlist that generally have the scope TagDescriptorScope.mediaSegment
+     All the `PlaylistTag`s in the middle of the playlist that generally have the scope PlaylistTagDescriptorScope.mediaSegment
      make up the `mediaSegmentGroups`. They are deliniated by "divider" tags, such as `#EXTINF`. Every divider tag
      begins a new media segment group. Each media segment group describes a segment (in the case of a variant
      playlist) or another playlist (in the case of a master playlist).
@@ -88,7 +88,7 @@ public protocol VariantPlaylistStructureInterface: PlaylistTagSource {
     var mediaSegmentGroups: [MediaSegmentPlaylistTagGroup] { get }
     
     /**
-     The `footer` is all `Tag`s at the end of the playlist that have the scope TagDescriptorScope.wholePlaylist.
+     The `footer` is all `PlaylistTag`s at the end of the playlist that have the scope PlaylistTagDescriptorScope.wholePlaylist.
      */
     var footer: PlaylistTagGroup? { get }
     
@@ -158,7 +158,7 @@ extension VariantPlaylistStructureInterface {
     }
     
     /**
-     Grab a ArraySlice representing the given Tag Group.
+     Grab a ArraySlice representing the given PlaylistTag Group.
      
      - parameter forMediaGroupIndex: The index of the media group used for the tag selection.
      

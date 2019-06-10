@@ -21,7 +21,7 @@ import Foundation
 
 /**
  This struct is the mechanism to register and deregister arbitrary PlaylistTagDescriptor and
- TagValueIdentifier objects to support arbitrary playlist tag types.
+ PlaylistTagValueIdentifier objects to support arbitrary playlist tag types.
  */
 public struct RegisteredTags: CustomDebugStringConvertible {
     
@@ -90,7 +90,7 @@ public struct RegisteredTags: CustomDebugStringConvertible {
     }
     
     /**
-     Get a TagValidator based on a PlaylistTagDescriptor
+     Get a PlaylistTagValidator based on a PlaylistTagDescriptor
      
      - parameter forTag: The PlaylistTagDescriptor to be parsed
      */

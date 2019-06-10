@@ -28,7 +28,7 @@ public class GenericSingleValueTagParser: PlaylistTagParser {
     /**
      Constructs a GenericSingleValueTagParser
      
-     - parameter tag: The TagDescriptor for the tag you are trying to parse
+     - parameter tag: The PlaylistTagDescriptor for the tag you are trying to parse
      - parameter singleValueIdentifier: The TagValueIdentifier for the value you are trying to parse out of the tag
      - parameter validator: The SingleValueValidator that will do any validation of the tag value. Just return true if no validation is required
     */

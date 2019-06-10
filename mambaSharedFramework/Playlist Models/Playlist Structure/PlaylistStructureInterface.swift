@@ -29,7 +29,7 @@ public protocol PlaylistStructureInterface: class {
     init(withStructure structure: Self)
 
     /**
-     This array is a list of every line in a HLS playlist. Each line is defined by a `Tag` object.
+     This array is a list of every line in a HLS playlist. Each line is defined by a `PlaylistTag` object.
      */
     var tags: [PlaylistTag] { get }
     

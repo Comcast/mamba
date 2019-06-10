@@ -22,7 +22,7 @@ import Foundation
 /**
  A class for generically parsing HLS tags with no data (i.e. `#EXT-X-DISCONTINUITY`)
  
- This is really a no-op class, as the TagDictionary returned from parseTag will always be empty.
+ This is really a no-op class, as the PlaylistTagDictionary returned from parseTag will always be empty.
  */
 public class GenericNoDataTagParser: PlaylistTagParser {
     

@@ -33,7 +33,7 @@ struct GenericTagWriter: PlaylistTagWriter {
         if let name = tag.tagName, name.length > 0 {
             try stream.write(stringRef: name)
             if tag.tagData.length > 0 {
-                try stream.write(unicodeScalar: TagWritingSeparators.colon)
+                try stream.write(unicodeScalar: PlaylistTagWritingSeparators.colon)
             }
         }
         

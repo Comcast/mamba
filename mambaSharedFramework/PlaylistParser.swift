@@ -50,7 +50,7 @@ public final class PlaylistParser {
     }
     
     /**
-     Adds a TagDescriptor to the registered tags list for this parser.
+     Adds a PlaylistTagDescriptor to the registered tags list for this parser.
      
      It's worth noting that playlist parsing proceeds with the registered tags that are
      present at the beginning of parsing.
@@ -140,7 +140,7 @@ public final class PlaylistParser {
      from scratch. It will use values from `UpdateEventPlaylistParams` to assist,
      so you can tune this method if the defaults are not good for you.
      
-     It will take care of memory usage, although the rules about not using `Tag`
+     It will take care of memory usage, although the rules about not using `PlaylistTag`
      after the parent playlist is deleted still apply.
      
      Asynchronous version.
@@ -259,7 +259,7 @@ public final class PlaylistParser {
      from scratch. It will use values from `UpdateEventPlaylistParams` to assist,
      so you can tune this method if the defaults are not good for you.
      
-     It will take care of memory usage, although the rules about not using `Tag`
+     It will take care of memory usage, although the rules about not using `PlaylistTag`
      after the parent playlist is deleted still apply.
      
      Synchronous version.
@@ -350,7 +350,7 @@ public final class PlaylistParser {
      
      - parameter playlistConstructor: A generic closure that can construct your
      concrete `PlaylistCore<PlaylistTypeInterface>` result from the either a
-     `Tag` array OR a parser error, your custom data class, a RegisteredTags
+     `PlaylistTag` array OR a parser error, your custom data class, a RegisteredTags
      object, and the playlistData. See the `constructMasterOrVariantPlaylist` function
      for an example.
      
@@ -415,7 +415,7 @@ public final class PlaylistParser {
      
      - parameter playlistConstructor: A generic closure that can construct your
      concrete `PlaylistCore<PlaylistTypeInterface>` result from the either a
-     `Tag` array OR a parser error, your custom data class, a RegisteredTags
+     `PlaylistTag` array OR a parser error, your custom data class, a RegisteredTags
      object, and the playlistData. See the `constructMasterOrVariantPlaylist` function
      for an example.
      
@@ -471,12 +471,12 @@ public enum ParserResult {
 
 /**
  A generic closure prototype to construct a "result" from a `BaseParserResult`, a "CD",
- a RegisteredTags, and the original Data used to produce the `Tag` array.
+ a RegisteredTags, and the original Data used to produce the `PlaylistTag` array.
  
  When using the generic functions of the `Parser`, this closure is required to
  interpret the tag array into whatever custom Playlist type you require.
  
- The `BaseParserResult` is going to either have an array of `Tag`s or a `ParserError`.
+ The `BaseParserResult` is going to either have an array of `PlaylistTag`s or a `ParserError`.
  
  A "CD" is the `customPlaylistDataType` from your `PlaylistTypeInterface` for your
  playlist.
@@ -599,7 +599,7 @@ fileprivate final class ParseWorker: NSObject, RapidParserCallback {
             return
         }
         guard descriptor.type() == .noValue else {
-            parseError = PlaylistParserError.mismatchBetweenTagDescriptorAndTagData(description:"The HLS Tag and the data contained within do not match: tagName:\"\(tagName.stringValue())\" tagValue:<no tag value> descriptor:\(descriptor)")
+            parseError = PlaylistParserError.mismatchBetweenTagDescriptorAndTagData(description:"The PlaylistTag and the data contained within do not match: tagName:\"\(tagName.stringValue())\" tagValue:<no tag value> descriptor:\(descriptor)")
             return
         }
         tags.append(PlaylistTag(tagDescriptor: descriptor, tagData: MambaStringRef(), tagName: scrubMambaStringRef(tagName)))
@@ -609,7 +609,7 @@ fileprivate final class ParseWorker: NSObject, RapidParserCallback {
         
         let descriptor = tagDescriptor(forTagName: tagName)
         guard descriptor.type() != .noValue else {
-            parseError = PlaylistParserError.mismatchBetweenTagDescriptorAndTagData(description:"The HLS Tag and the data contained within do not match: tagName:\"\(tagName.stringValue())\" tagValue:\"\(value.stringValue())\" descriptor:\(descriptor)")
+            parseError = PlaylistParserError.mismatchBetweenTagDescriptorAndTagData(description:"The PlaylistTag and the data contained within do not match: tagName:\"\(tagName.stringValue())\" tagValue:\"\(value.stringValue())\" descriptor:\(descriptor)")
             return
         }
         

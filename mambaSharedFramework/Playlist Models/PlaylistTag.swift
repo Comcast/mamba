@@ -25,12 +25,12 @@ import Foundation
  *Important memory safety note:* This struct contains `MambaStringRef`s. Those objects
  may contain unsafe pointers to a external `Data` object (typically this Data object
  is the one parsed by `Parser` to create a playlist containing many
- `Tag`s). If this Data is deallocted before this `Tag` is deallocated,
+ `PlaylistTag`s). If this Data is deallocted before this `PlaylistTag` is deallocated,
  accessing any `MambaStringRef`s may result in undefined behavior.
  
- The rule for safety is, as long as a paricular `Tag` is accessed while its
+ The rule for safety is, as long as a paricular `PlaylistTag` is accessed while its
  parent `PlaylistInterface` is still allocated, that is safe. If you need to access
- any `Tag` data after its parent `PlaylistInterface` is deallocated, you'll need to
+ any `PlaylistTag` data after its parent `PlaylistInterface` is deallocated, you'll need to
  make a copy of any relevant `MambaStringRef`s via it's `stringValue` function.
  
  This un-swift-like memory safety issue was done for performance reasons. Allocating

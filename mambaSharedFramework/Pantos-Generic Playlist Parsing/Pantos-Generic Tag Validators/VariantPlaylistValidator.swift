@@ -27,7 +27,7 @@ public protocol VariantPlaylistValidator {
      
      - parameter variantPlaylist: A `VariantPlaylistInterface` to validate
      
-     - returns: An array of `ValidationIssue`s. Will be empty if no issues are found.
+     - returns: An array of `PlaylistValidationIssue`s. Will be empty if no issues are found.
      */
     static func validate(variantPlaylist: VariantPlaylistInterface) -> [PlaylistValidationIssue]
 }
@@ -45,7 +45,7 @@ public extension ExtensibleVariantPlaylistValidator {
      
      - parameter variantPlaylist: A `VariantPlaylistInterface` to validate
      
-     - returns: An array of `ValidationIssue`s. Will be empty if no issues are found.
+     - returns: An array of `PlaylistValidationIssue`s. Will be empty if no issues are found.
      */
     static func combinedValidation(ofVariantPlaylist variantPlaylist: VariantPlaylistInterface) -> [PlaylistValidationIssue] {
         

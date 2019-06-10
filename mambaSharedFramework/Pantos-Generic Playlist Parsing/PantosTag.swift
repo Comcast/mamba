@@ -30,10 +30,10 @@ import Foundation
  
  `.Location`: will not have a `tagName`
  
- `.EXTM3U`: will not actually show up in Tag arrays for playlists. It's here as a convenience.
+ `.EXTM3U`: will not actually show up in PlaylistTag arrays for playlists. It's here as a convenience.
  
  `.EXTINF`: Since this is such a common tag and appears in great numbers, the duration is available as a direct
- property on `Tag`. This allows us to speed parsing of these tags.
+ property on `PlaylistTag`. This allows us to speed parsing of these tags.
  */
 public enum PantosTag: String {
     

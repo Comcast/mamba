@@ -28,7 +28,7 @@ public struct GenericDictionaryTagWriter: PlaylistTagWriter {
         try stream.write(stringRef: tag.tagName!)
         
         if tag.keys.count > 0 {
-            try stream.write(unicodeScalar: TagWritingSeparators.colon)
+            try stream.write(unicodeScalar: PlaylistTagWritingSeparators.colon)
             let pairs = tag.keys.map { key -> String in
                 var str = key
                 str.append("=")

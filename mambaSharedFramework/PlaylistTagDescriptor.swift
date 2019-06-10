@@ -55,23 +55,23 @@ public protocol PlaylistTagDescriptor {
      
      - parameter forTag: We want a writer for this PlaylistTagDescriptor
      
-     - returns: A optional PlaylistTagWriter. It's expected that `Tag`s that are not "dirty" will not require
-     a writer, as we can reconstruct any tag from `Tag` parsed data if not edited. Therefore, for tags
-     that are not editable, a TagWriter is not required, and a nil can be returned for those tags.
+     - returns: A optional PlaylistTagWriter. It's expected that `PlaylistTag`s that are not "dirty" will not require
+     a writer, as we can reconstruct any tag from `PlaylistTag` parsed data if not edited. Therefore, for tags
+     that are not editable, a PlaylistTagWriter is not required, and a nil can be returned for those tags.
      */
     static func writer(forTag: PlaylistTagDescriptor) -> PlaylistTagWriter?
     
     /**
-     Factory method to construct a TagValidator for this PlaylistTagDescriptor
+     Factory method to construct a PlaylistTagValidator for this PlaylistTagDescriptor
      
      - parameter forTag: We want a validator for this PlaylistTagDescriptor
      
-     - returns: A optional TagValidator. Some tags do not require validation. It's OK to return nil for
+     - returns: A optional PlaylistTagValidator. Some tags do not require validation. It's OK to return nil for
      those kinds of tags.
      */
     static func validator(forTag: PlaylistTagDescriptor) -> PlaylistTagValidator?
     
-    /// Method to get a TagDescriptor from a MambaStringRef
+    /// Method to get a PlaylistTagDescriptor from a MambaStringRef
     static func constructDescriptor(fromStringRef: MambaStringRef) -> PlaylistTagDescriptor?
 }
 

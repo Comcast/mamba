@@ -31,7 +31,7 @@ public class GenericDictionaryTagParser: PlaylistTagParser {
     /**
      Constructs a GenericDictionaryTagParser
      
-     - parameter tag: The TagDescriptor for the tag you are trying to parse
+     - parameter tag: The PlaylistTagDescriptor for the tag you are trying to parse
      */
     public init(tag: PlaylistTagDescriptor) {
         self.tag = tag

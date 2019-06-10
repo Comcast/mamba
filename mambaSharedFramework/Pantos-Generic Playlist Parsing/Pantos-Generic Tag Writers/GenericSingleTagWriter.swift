@@ -31,15 +31,15 @@ public struct GenericSingleTagWriter: PlaylistTagWriter {
     public func write(tag: PlaylistTag, toStream stream: OutputStream) throws {
         
         guard tag.keys.count == 1 else {
-            throw OutputStreamError.invalidData(description:"\(tag.tagDescriptor.toString()) Tag requires a \(singleTagValueIdentifier.toString()) value. Found \(tag.keys.count) values instead. Keys found: \(tag.keys)")
+            throw OutputStreamError.invalidData(description:"\(tag.tagDescriptor.toString()) PlaylistTag requires a \(singleTagValueIdentifier.toString()) value. Found \(tag.keys.count) values instead. Keys found: \(tag.keys)")
         }
         
         guard let value: String = tag.value(forValueIdentifier: singleTagValueIdentifier) else {
-            throw OutputStreamError.invalidData(description:"\(tag.tagDescriptor.toString()) Tag requires a \(singleTagValueIdentifier.toString()) value. The key found instead was \"\(tag.keys[0])\"")
+            throw OutputStreamError.invalidData(description:"\(tag.tagDescriptor.toString()) PlaylistTag requires a \(singleTagValueIdentifier.toString()) value. The key found instead was \"\(tag.keys[0])\"")
         }
         
         try stream.write(stringRef: tag.tagName!)
-        try stream.write(unicodeScalar: TagWritingSeparators.colon)
+        try stream.write(unicodeScalar: PlaylistTagWritingSeparators.colon)
         try stream.write(string: value)
     }
 }

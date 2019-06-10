@@ -28,7 +28,7 @@ public class GenericDictionaryTagValidator: PlaylistTagValidator {
     /**
      Initializer for GenericDictionaryTagValidator
      
-     - parameter tag: The TagDescriptor for this tag.
+     - parameter tag: The PlaylistTagDescriptor for this tag.
      
      - parameter dictionaryValueIdentifiers: An array of DictionaryTagValueIdentifier objects describing the expected data in this tag
      */

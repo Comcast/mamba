@@ -63,7 +63,7 @@ public class PlaylistWriter {
             else {
                 try GenericTagWriter.write(tag: tag, toStream: stream)
             }
-            try stream.write(unicodeScalar: TagWritingSeparators.newline)
+            try stream.write(unicodeScalar: PlaylistTagWritingSeparators.newline)
         }
     }
     
@@ -97,9 +97,9 @@ public class PlaylistWriter {
 
     private func write(string: String, toStream stream: OutputStream) throws {
         
-        try stream.write(unicodeScalar: TagWritingSeparators.hash)
+        try stream.write(unicodeScalar: PlaylistTagWritingSeparators.hash)
         try stream.write(string: string)
-        try stream.write(unicodeScalar: TagWritingSeparators.newline)
+        try stream.write(unicodeScalar: PlaylistTagWritingSeparators.newline)
     }
     
     private let identityString: String?

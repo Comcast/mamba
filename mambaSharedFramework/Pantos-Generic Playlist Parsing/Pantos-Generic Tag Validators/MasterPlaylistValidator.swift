@@ -27,7 +27,7 @@ public protocol MasterPlaylistValidator {
      
      - parameter masterPlaylist: A `MasterPlaylistInterface` to validate
      
-     - returns: An array of `ValidationIssue`s. Will be empty if no issues are found.
+     - returns: An array of `PlaylistValidationIssue`s. Will be empty if no issues are found.
      */
     static func validate(masterPlaylist: MasterPlaylistInterface) -> [PlaylistValidationIssue]
 }
@@ -45,7 +45,7 @@ public extension ExtensibleMasterPlaylistValidator {
      
      - parameter masterPlaylist: A `MasterPlaylistInterface` to validate
      
-     - returns: An array of `ValidationIssue`s. Will be empty if no issues are found.
+     - returns: An array of `PlaylistValidationIssue`s. Will be empty if no issues are found.
      */
     static func combinedValidation(ofMasterPlaylist masterPlaylist: MasterPlaylistInterface) -> [PlaylistValidationIssue] {
         

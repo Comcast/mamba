@@ -22,7 +22,7 @@ import Foundation
 /// A protocol describing what values are expected in a dictionary style playlist tag.
 public protocol DictionaryTagValueIdentifier {
 
-    /// The TagValueIdentifier of the key in the key value pair.
+    /// The PlaylistTagValueIdentifier of the key in the key value pair.
     var valueId: PlaylistTagValueIdentifier { get }
     /// Is the key-value pair optional or required?
     var optional: Bool { get }

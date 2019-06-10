@@ -35,7 +35,7 @@ public protocol PlaylistTagWriter {
     func write(tag: PlaylistTag, toStream: OutputStream) throws
 }
 
-internal struct TagWritingSeparators {
+internal struct PlaylistTagWritingSeparators {
     static let hash = UnicodeScalar("#")!
     static let colon = UnicodeScalar(":")!
     static let newline = UnicodeScalar("\n")!

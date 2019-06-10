@@ -37,7 +37,7 @@ import CoreMedia
  */
 public struct PlaylistCore<PT>: PlaylistInterface, CustomDebugStringConvertible where PT: PlaylistTypeInterface {
     
-    /// A read-only array of the `Tag`s in this playlist.
+    /// A read-only array of the `PlaylistTag`s in this playlist.
     public var tags: [PlaylistTag] {
         return structure.tags
     }
@@ -68,7 +68,7 @@ public struct PlaylistCore<PT>: PlaylistInterface, CustomDebugStringConvertible 
     /**
      Insert a single tag.
      
-     - parameter tag: A `Tag` to be inserted into the playlist.
+     - parameter tag: A `PlaylistTag` to be inserted into the playlist.
      
      - parameter atIndex: Position to insert the tag into the playlist. The tag will be added to an
      existing PlaylistTagGroupProtocol unless `withStructureRebuild` is set to true.
@@ -80,7 +80,7 @@ public struct PlaylistCore<PT>: PlaylistInterface, CustomDebugStringConvertible 
     /**
      Insert multiple tags.
      
-     - parameter tags: A `Tag` array to be inserted into the playlist.
+     - parameter tags: A `PlaylistTag` array to be inserted into the playlist.
      
      - parameter atIndex: Position to insert the tags into the playlist. The tags will be added to an
      existing PlaylistTagGroupProtocol unless `withStructureRebuild` is set to true.
@@ -140,7 +140,7 @@ public struct PlaylistCore<PT>: PlaylistInterface, CustomDebugStringConvertible 
     }
     
     /**
-     Grab a ArraySlice representing the given Tag Group.
+     Grab a ArraySlice representing the given PlaylistTag Group.
      
      - parameter forMediaGroup: The media group that is used for the tag selection.
      
