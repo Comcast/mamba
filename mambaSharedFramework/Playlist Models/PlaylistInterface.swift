@@ -21,7 +21,7 @@ import Foundation
 
 /**
  Defines an interface for `Playlist` objects. This should be used in situations where
- a generic `Playlist` type is enough to clearly define what it required.
+ a generic `Playlist` type is enough to clearly define what is required.
  */
 public protocol PlaylistInterface: RegisteredPlaylistTagsProvider, PlaylistTagSource {
     mutating func insert(tag: PlaylistTag, atIndex index: Int)
