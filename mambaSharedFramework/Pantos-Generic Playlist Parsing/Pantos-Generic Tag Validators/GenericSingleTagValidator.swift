@@ -47,7 +47,7 @@ public class GenericSingleTagValidator<S: FailableStringLiteralConvertible>: Pla
             issueList.append(PlaylistValidationIssue(description: "\(tag.tagDescriptor.toString()) value is empty.", severity: IssueSeverity.error))
             return issueList
         }
-        guard let _ = S(string: value) else {
+        guard let _ = S(failableInitWithString: value) else {
             issueList.append(PlaylistValidationIssue(description: "\(tag.tagDescriptor.toString()) (\(value)) is not an instance of the expected data type.", severity: IssueSeverity.error))
             return issueList
         }

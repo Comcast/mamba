@@ -26,17 +26,17 @@ class CodecValueTypeArrayTests: XCTestCase {
     func testCodecValueTypeArray() {
         let codecs1 = runTestsOn(codecString: "avc1.4d401f,mp4a.40.5")
         
-        let codecs2 = CodecValueTypeArray(string: "avc1.4d401f,mp4a.40.5")
-        let codecs3 = CodecValueTypeArray(string: "avc1.640029,mp4a.40.5")
+        let codecs2 = CodecValueTypeArray(failableInitWithString: "avc1.4d401f,mp4a.40.5")
+        let codecs3 = CodecValueTypeArray(failableInitWithString: "avc1.640029,mp4a.40.5")
         
         XCTAssertTrue(codecs1 == codecs2, "Equality operation should function")
         XCTAssertTrue(codecs1 != codecs3, "Equality operation should function")
         
-        let codecs4 = CodecValueTypeArray(string: "")
+        let codecs4 = CodecValueTypeArray(failableInitWithString: "")
         
         XCTAssertNil(codecs4, "Should have been created")
         
-        let codecs5 = CodecValueTypeArray(string: "mp4a.40.5")
+        let codecs5 = CodecValueTypeArray(failableInitWithString: "mp4a.40.5")
         XCTAssertTrue(codecs5?.containsAudio() ?? false, "Should contain audio")
         XCTAssertFalse(codecs5?.containsVideo() ?? false, "Should contain video")
         XCTAssertTrue(codecs5?.containsAudioOnly() ?? false, "Should contain only audio")
@@ -85,7 +85,7 @@ class CodecValueTypeArrayTests: XCTestCase {
                    expectingVideo: Bool,
                    expectingAudio: Bool) {
         
-        let codecs = CodecValueTypeArray(string: codecString)
+        let codecs = CodecValueTypeArray(failableInitWithString: codecString)
         
         XCTAssert(codecs?.containsAudioOnly() == expectingAudioOnly, "Expecting a audio only value of \(expectingAudioOnly) for codecs: \"\(codecString)\"")
         XCTAssert(codecs?.containsVideo() == expectingVideo, "Expecting a video value of \(expectingVideo) for codecs: \"\(codecString)\"")
@@ -93,7 +93,7 @@ class CodecValueTypeArrayTests: XCTestCase {
     }
     
     func runTestsOn(codecString: String) -> CodecValueTypeArray {
-        let codecs1 = CodecValueTypeArray(string: codecString)
+        let codecs1 = CodecValueTypeArray(failableInitWithString: codecString)
         
         XCTAssertNotNil(codecs1, "Should have been created")
         XCTAssert(codecs1?.codecs.count == 2, "Should have two codecs")

@@ -258,7 +258,7 @@ public struct PlaylistTag: CustomDebugStringConvertible {
             return nil
         }
         
-        return T(string: stringValue)
+        return T(failableInitWithString: stringValue)
     }
     
     // MARK: Value setters

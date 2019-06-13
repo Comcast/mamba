@@ -34,7 +34,7 @@ public extension PlaylistTag {
     /// convenience function to return the codecs of this tag (if present)
     func codecs() -> CodecValueTypeArray? {
         if let value: String = self.value(forValueIdentifier: PantosValue.codecs) {
-            return CodecValueTypeArray(string: value)
+            return CodecValueTypeArray(failableInitWithString: value)
         }
         
         return nil
