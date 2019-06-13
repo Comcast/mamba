@@ -102,6 +102,22 @@ public func ==(lhs: MediaType, rhs: MediaType) -> Bool {
     return lhs.type == rhs.type
 }
 
+public func ==(lhs: MediaType, rhs: MediaType.Media) -> Bool {
+    return lhs.type == rhs
+}
+
+public func ==(lhs: MediaType.Media, rhs: MediaType) -> Bool {
+    return lhs == rhs.type
+}
+
+public func !=(lhs: MediaType, rhs: MediaType.Media) -> Bool {
+    return !(lhs == rhs)
+}
+
+public func !=(lhs: MediaType.Media, rhs: MediaType) -> Bool {
+    return !(lhs == rhs)
+}
+
 /// Represents an encryption method
 ///
 /// Can be initialized with a string "NONE" or "AES-128" or "SAMPLE-AES" for a valid value

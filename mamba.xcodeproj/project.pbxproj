@@ -266,6 +266,12 @@
 		EC676A6C22B00269008920BB /* VariantPlaylistTagMatchSegmentInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC676A6B22B00269008920BB /* VariantPlaylistTagMatchSegmentInfoTests.swift */; };
 		EC676A6D22B00269008920BB /* VariantPlaylistTagMatchSegmentInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC676A6B22B00269008920BB /* VariantPlaylistTagMatchSegmentInfoTests.swift */; };
 		EC676A6E22B00269008920BB /* VariantPlaylistTagMatchSegmentInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC676A6B22B00269008920BB /* VariantPlaylistTagMatchSegmentInfoTests.swift */; };
+		EC676A7822B05BF0008920BB /* MasterPlaylistStreamSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC676A7722B05BF0008920BB /* MasterPlaylistStreamSummary.swift */; };
+		EC676A7922B05BF0008920BB /* MasterPlaylistStreamSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC676A7722B05BF0008920BB /* MasterPlaylistStreamSummary.swift */; };
+		EC676A7A22B05BF0008920BB /* MasterPlaylistStreamSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC676A7722B05BF0008920BB /* MasterPlaylistStreamSummary.swift */; };
+		EC676A7C22B1A99B008920BB /* MasterPlaylistStreamSummaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC676A7B22B1A99B008920BB /* MasterPlaylistStreamSummaryTests.swift */; };
+		EC676A7D22B1A99B008920BB /* MasterPlaylistStreamSummaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC676A7B22B1A99B008920BB /* MasterPlaylistStreamSummaryTests.swift */; };
+		EC676A7E22B1A99B008920BB /* MasterPlaylistStreamSummaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC676A7B22B1A99B008920BB /* MasterPlaylistStreamSummaryTests.swift */; };
 		EC7491461DD299B400AF4E20 /* PlaylistTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491421DD299B400AF4E20 /* PlaylistTypes.swift */; };
 		EC7491471DD299B400AF4E20 /* PlaylistTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491421DD299B400AF4E20 /* PlaylistTypes.swift */; };
 		EC7491591DD29AED00AF4E20 /* PlaylistTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491521DD29AED00AF4E20 /* PlaylistTag.swift */; };
@@ -720,6 +726,8 @@
 		EC5B87A91D947B59005F68C4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS10.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		EC676A6722AF0D8D008920BB /* VariantPlaylistTagMatchSegmentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantPlaylistTagMatchSegmentInfo.swift; sourceTree = "<group>"; };
 		EC676A6B22B00269008920BB /* VariantPlaylistTagMatchSegmentInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantPlaylistTagMatchSegmentInfoTests.swift; sourceTree = "<group>"; };
+		EC676A7722B05BF0008920BB /* MasterPlaylistStreamSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterPlaylistStreamSummary.swift; sourceTree = "<group>"; };
+		EC676A7B22B1A99B008920BB /* MasterPlaylistStreamSummaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterPlaylistStreamSummaryTests.swift; sourceTree = "<group>"; };
 		EC7491421DD299B400AF4E20 /* PlaylistTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTypes.swift; sourceTree = "<group>"; };
 		EC7491521DD29AED00AF4E20 /* PlaylistTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTag.swift; sourceTree = "<group>"; };
 		EC74915F1DD29B0F00AF4E20 /* CoreMedia+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreMedia+Util.swift"; sourceTree = "<group>"; };
@@ -1008,6 +1016,7 @@
 				EC6C8F831D08C793007C1C99 /* Helpers */,
 				EC15215E1DD28536006FB265 /* Info.plist */,
 				883290551EA172170064588B /* MambaStringRefExtensionTests.swift */,
+				EC676A7B22B1A99B008920BB /* MasterPlaylistStreamSummaryTests.swift */,
 				EC073F5C1FE0840000689228 /* OutputStreamExtensionTests.swift */,
 				ECFBD9141E5CCCB100379FC2 /* PantosTagTests.swift */,
 				ECAFFA002239A22800A6D5F4 /* Parser_EventUpdateTests.swift */,
@@ -1292,6 +1301,7 @@
 			isa = PBXGroup;
 			children = (
 				ECDE183F22381146008566BB /* MasterPlaylist.swift */,
+				EC676A7722B05BF0008920BB /* MasterPlaylistStreamSummary.swift */,
 				ECDE18432238114E008566BB /* VariantPlaylist.swift */,
 				EC676A6722AF0D8D008920BB /* VariantPlaylistTagMatchSegmentInfo.swift */,
 			);
@@ -1821,6 +1831,7 @@
 				EC74917D1DD29C3500AF4E20 /* String+DateParsing.swift in Sources */,
 				EC3B01AB1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupNAMEValidator.swift in Sources */,
 				EC7491651DD29B0F00AF4E20 /* FailableStringLiteralConvertible.swift in Sources */,
+				EC676A7822B05BF0008920BB /* MasterPlaylistStreamSummary.swift in Sources */,
 				EC7491461DD299B400AF4E20 /* PlaylistTypes.swift in Sources */,
 				EC349ACE2236C3A60077432B /* PlaylistStructureInterface.swift in Sources */,
 				EC3B01A71DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift in Sources */,
@@ -1850,6 +1861,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC676A7C22B1A99B008920BB /* MasterPlaylistStreamSummaryTests.swift in Sources */,
 				ECAFFA2A223AF6E700A6D5F4 /* ValidatorTests.swift in Sources */,
 				EC74928C1DD29F1500AF4E20 /* GenericSingleTagValidatorTests.swift in Sources */,
 				EC7492B91DD29F8900AF4E20 /* ResolutionTests.swift in Sources */,
@@ -1989,6 +2001,7 @@
 				EC3B01C81DD4D49A00B512E3 /* PlaylistRenditionGroupMatchingNAMELANGUAGEValidator.swift in Sources */,
 				EC74917E1DD29C3500AF4E20 /* String+DateParsing.swift in Sources */,
 				EC3B01AC1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupNAMEValidator.swift in Sources */,
+				EC676A7922B05BF0008920BB /* MasterPlaylistStreamSummary.swift in Sources */,
 				EC7491661DD29B0F00AF4E20 /* FailableStringLiteralConvertible.swift in Sources */,
 				EC349ACF2236C3A60077432B /* PlaylistStructureInterface.swift in Sources */,
 				EC7491471DD299B400AF4E20 /* PlaylistTypes.swift in Sources */,
@@ -2018,6 +2031,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC676A7D22B1A99B008920BB /* MasterPlaylistStreamSummaryTests.swift in Sources */,
 				ECAFFA2B223AF6E700A6D5F4 /* ValidatorTests.swift in Sources */,
 				EC74928D1DD29F1500AF4E20 /* GenericSingleTagValidatorTests.swift in Sources */,
 				EC7492BA1DD29F8900AF4E20 /* ResolutionTests.swift in Sources */,
@@ -2157,6 +2171,7 @@
 				EC349AE42236F58B0077432B /* VariantPlaylistType.swift in Sources */,
 				EC1CCD47209A2CF9006B59FF /* DictionaryTagValueIdentifier.swift in Sources */,
 				EC1CCCF2209A2CF9006B59FF /* PlaylistTag.swift in Sources */,
+				EC676A7A22B05BF0008920BB /* MasterPlaylistStreamSummary.swift in Sources */,
 				EC1CCD4F209A2CF9006B59FF /* PlaylistTagCardinalityValidation.swift in Sources */,
 				EC1CCD2B209A2CF9006B59FF /* IndeterminateBool.swift in Sources */,
 				EC349AD02236C3A60077432B /* PlaylistStructureInterface.swift in Sources */,
@@ -2186,6 +2201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC676A7E22B1A99B008920BB /* MasterPlaylistStreamSummaryTests.swift in Sources */,
 				ECAFFA2C223AF6E700A6D5F4 /* ValidatorTests.swift in Sources */,
 				ECE253E8209A509C00D388CE /* OutputStreamExtensionTests.swift in Sources */,
 				ECE253EE209A50A600D388CE /* StructureStateTests.swift in Sources */,
