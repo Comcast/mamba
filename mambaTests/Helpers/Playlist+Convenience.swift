@@ -22,11 +22,11 @@ import Foundation
 @testable import mamba
 
 /*
- It's a PITA to have to manage RegisteredTags all over the place.
+ It's a PITA to have to manage PlaylistRegisteredTags all over the place.
  
- This extension has utilities to just create a standard Pantos RegisteredTags.
+ This extension has utilities to just create a standard Pantos PlaylistRegisteredTags.
  
- Unit tests can create their own RegisteredTags using the mamba versions if they want, this is just if the test doesn't care
+ Unit tests can create their own PlaylistRegisteredTags using the mamba versions if they want, this is just if the test doesn't care
  */
 public extension PlaylistCore where PT.customPlaylistDataType == PlaylistURLData {
     
