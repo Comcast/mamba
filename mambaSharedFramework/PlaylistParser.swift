@@ -350,7 +350,7 @@ public final class PlaylistParser {
      
      - parameter playlistConstructor: A generic closure that can construct your
      concrete `PlaylistCore<PlaylistTypeInterface>` result from the either a
-     `PlaylistTag` array OR a parser error, your custom data class, a RegisteredTags
+     `PlaylistTag` array OR a parser error, your custom data class, a PlaylistRegisteredTags
      object, and the playlistData. See the `constructMasterOrVariantPlaylist` function
      for an example.
      
@@ -415,7 +415,7 @@ public final class PlaylistParser {
      
      - parameter playlistConstructor: A generic closure that can construct your
      concrete `PlaylistCore<PlaylistTypeInterface>` result from the either a
-     `PlaylistTag` array OR a parser error, your custom data class, a RegisteredTags
+     `PlaylistTag` array OR a parser error, your custom data class, a PlaylistRegisteredTags
      object, and the playlistData. See the `constructMasterOrVariantPlaylist` function
      for an example.
      
@@ -471,7 +471,7 @@ public enum ParserResult {
 
 /**
  A generic closure prototype to construct a "result" from a `BaseParserResult`, a "CD",
- a RegisteredTags, and the original Data used to produce the `PlaylistTag` array.
+ a PlaylistRegisteredTags, and the original Data used to produce the `PlaylistTag` array.
  
  When using the generic functions of the `Parser`, this closure is required to
  interpret the tag array into whatever custom Playlist type you require.
