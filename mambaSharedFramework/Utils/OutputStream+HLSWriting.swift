@@ -43,8 +43,12 @@ extension OutputStream {
             throw OutputStreamError.couldNotWriteToStream(self.streamError as NSError?)
         }
         
-        let written = data.withUnsafeBytes { bytes in
-            return self.write(bytes, maxLength: data.count)
+        let written = try data.withUnsafeBytes{ (unsafeRawBufferPointer: UnsafeRawBufferPointer) -> Int in
+            let bufferPointer = unsafeRawBufferPointer.bindMemory(to: UInt8.self)
+            guard let baseAddress = bufferPointer.baseAddress else {
+                throw OutputStreamError.invalidData(description: "Cannot find baseAddress for buffer pointer")
+            }
+            return self.write(baseAddress, maxLength: data.count)
         }
         
         guard written == data.count else {

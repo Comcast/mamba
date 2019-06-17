@@ -51,7 +51,7 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"StaticMemoryStorage bytes:%lu length:%lu", (unsigned long)[self bytes], [self length]];
+    return [NSString stringWithFormat:@"StaticMemoryStorage bytes:%lu length:%lu", (unsigned long)[self bytes], (unsigned long)[self length]];
 }
 
 - (id)debugQuickLookObject {

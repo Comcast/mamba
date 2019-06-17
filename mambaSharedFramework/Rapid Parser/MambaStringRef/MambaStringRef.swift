@@ -21,11 +21,11 @@ import Foundation
 
 public extension MambaStringRef {
     
-    public convenience init(descriptor: PlaylistTagDescriptor) {
+    convenience init(descriptor: PlaylistTagDescriptor) {
         self.init(string: "#\(descriptor.toString())")
     }
     
-    public convenience init(valueIdentifier: PlaylistTagValueIdentifier) {
+    convenience init(valueIdentifier: PlaylistTagValueIdentifier) {
         self.init(string: valueIdentifier.toString())
     }
 }

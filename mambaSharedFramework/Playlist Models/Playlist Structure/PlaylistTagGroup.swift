@@ -35,12 +35,12 @@ public protocol PlaylistTagGroupProtocol {
 public extension PlaylistTagGroupProtocol {
     
     /// Convenience function to get the start index of the range of this PlaylistTagGroup
-    public var startIndex: Int {
+    var startIndex: Int {
         return range.lowerBound
     }
     
     /// Convenience function to get the end index of the range of this PlaylistTagGroup
-    public var endIndex: Int {
+    var endIndex: Int {
         return range.upperBound
     }
 }
