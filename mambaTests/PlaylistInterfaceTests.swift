@@ -44,8 +44,8 @@ class PlaylistInterfaceTests: XCTestCase {
     func testMediaSegmentGroupsContainingTagsNamed() {
         let playlist = parseVariantPlaylist(inFixtureName: "hls_sampleMediaFile.txt")
         
-        let groupByteRange = playlist.mediaSegmentGroups(containingTagsNamed: [HLSStringRef(string:"#EXT-X-BYTERANGE")])
-        let groupExtInf = playlist.mediaSegmentGroups(containingTagsNamed: [HLSStringRef(string:"#EXTINF")])
+        let groupByteRange = playlist.mediaSegmentGroups(containingTagsNamed: [MambaStringRef(string:"#EXT-X-BYTERANGE")])
+        let groupExtInf = playlist.mediaSegmentGroups(containingTagsNamed: [MambaStringRef(string:"#EXTINF")])
         
         XCTAssert(groupByteRange.count == 1, "Expecting 1 group")
         XCTAssert(groupExtInf.count == 2, "Expecting 2 groups")

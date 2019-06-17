@@ -310,7 +310,7 @@ class BasicParserTest: XCTestCase {
         
         let data = FixtureLoader.load(fixtureName: "hls_sampleMediaFile.txt")
         
-        let parser = Parser()
+        let parser = PlaylistParser()
         
         let expectation = self.expectation(description: "parse completion")
         
@@ -351,7 +351,7 @@ class BasicParserTest: XCTestCase {
         let data1 = FixtureLoader.load(fixtureName: "hls_sampleMediaFile.txt")
         let data2 = FixtureLoader.load(fixtureName: "hls_sampleMasterFile.txt")
         
-        let parser = Parser()
+        let parser = PlaylistParser()
         
         let expectation1 = self.expectation(description: "parse completion 1")
         let expectation2 = self.expectation(description: "parse completion 2")
@@ -412,7 +412,7 @@ class BasicParserTest: XCTestCase {
         
         let data = Data()
         
-        let parser = Parser()
+        let parser = PlaylistParser()
         
         let expectation = self.expectation(description: "parse completion")
         
@@ -445,7 +445,7 @@ class BasicParserTest: XCTestCase {
         
         let data = " ".data(using: .utf8)!
         
-        let parser = Parser()
+        let parser = PlaylistParser()
         
         let expectation = self.expectation(description: "parse completion")
         
@@ -478,7 +478,7 @@ class BasicParserTest: XCTestCase {
         
         let data = "\n".data(using: .utf8)!
         
-        let parser = Parser()
+        let parser = PlaylistParser()
         
         let expectation = self.expectation(description: "parse completion")
         
@@ -513,7 +513,7 @@ class BasicParserTest: XCTestCase {
 #EXT3MU
 #EXTINF
 """
-        runParseExpectingFailure(withManfiestString: playlistString)
+        runParseExpectingFailure(withPlaylistString: playlistString)
     }
     
     func testParseInvalidEXTINF_no_data() {
@@ -522,7 +522,7 @@ class BasicParserTest: XCTestCase {
 #EXT3MU
 #EXTINF:
 """
-        runParseExpectingFailure(withManfiestString: playlistString)
+        runParseExpectingFailure(withPlaylistString: playlistString)
     }
     
     func testParseInvalidMEDIASEQUENCE_no_colon() {
@@ -531,7 +531,7 @@ class BasicParserTest: XCTestCase {
 #EXT3MU
 #EXT-X-MEDIA-SEQUENCE:
 """
-        runParseExpectingFailure(withManfiestString: playlistString)
+        runParseExpectingFailure(withPlaylistString: playlistString)
     }
     
     func testParserWithShortTag() {
@@ -548,9 +548,9 @@ a
         XCTAssert(playlist.tags[2].tagData.isEqual(to: "a"), "Location tag does not have expected value")
     }
     
-    func runParseExpectingFailure(withManfiestString playlistString: String) {
+    func runParseExpectingFailure(withPlaylistString playlistString: String) {
         let url: URL = fakePlaylistURL()
-        let parser = Parser()
+        let parser = PlaylistParser()
         let expectation = self.expectation(description: "parse complete")
         
         let data = playlistString.data(using: .utf8)!

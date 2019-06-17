@@ -30,7 +30,7 @@ class GenericSingleTagWriterTests: XCTestCase {
     
     func testGenericSingleTagWriterSuccess() {
         
-        let tag = createHLSTag(tagDescriptor: PantosTag.EXT_X_TARGETDURATION, tagData: "\(duration)")
+        let tag = createTag(tagDescriptor: PantosTag.EXT_X_TARGETDURATION, tagData: "\(duration)")
         
         let writer = GenericSingleTagWriter(singleTagValueIdentifier: PantosValue.targetDurationSeconds)
         
@@ -46,7 +46,7 @@ class GenericSingleTagWriterTests: XCTestCase {
     
     func testGenericSingleTagWriterFailure_MissingTags() {
         
-        let tag = HLSTag(tagDescriptor: PantosTag.EXT_X_STREAM_INF, stringTagData: "", parsedValues: ["notag":HLSValueData(value: "novalue")])
+        let tag = PlaylistTag(tagDescriptor: PantosTag.EXT_X_STREAM_INF, stringTagData: "", parsedValues: ["notag": PlaylistTagValueData(value: "novalue")])
         
         let writer = GenericSingleTagWriter(singleTagValueIdentifier: PantosValue.targetDurationSeconds)
         

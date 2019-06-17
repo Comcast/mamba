@@ -24,7 +24,7 @@ private let testString = "OutputStreamExtensionTests_TestString"
 
 class OutputStreamExtensionTests: XCTestCase {
     
-    func testHLSStringRefWrite() {
+    func testMambaStringRefWrite() {
         
         let stream = OutputStream.toMemory()
         stream.open()
@@ -33,7 +33,7 @@ class OutputStreamExtensionTests: XCTestCase {
             stream.close()
         }
         
-        let stringRef = HLSStringRef(string: testString)
+        let stringRef = MambaStringRef(string: testString)
         
         do { try stream.write(stringRef: stringRef) }
         catch {
@@ -86,7 +86,7 @@ class OutputStreamExtensionTests: XCTestCase {
         }
     }
     
-    func testDataHLSStringRefWrite() {
+    func testDataMambaStringRefWrite() {
         
         let stream = OutputStream.toMemory()
         stream.open()

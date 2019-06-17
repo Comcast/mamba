@@ -50,7 +50,7 @@ class EXT_X_ALLOW_CACHETagParserTests: XCTestCase {
             let _ = try parser!.parseTag(fromTagString: nil)
             XCTAssert(false, "Parser should throw")
         }
-        catch ParserError.malformedHLSTag {
+        catch PlaylistParserError.malformedPlaylistTag {
             // expected result
         }
         catch {

@@ -18,7 +18,7 @@
 		1D9D9E9D1EAFC0E100CC7274 /* hls_master_playlist_sap.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3421EAA9E500010320B /* hls_master_playlist_sap.m3u8 */; };
 		1D9D9E9E1EAFC0E300CC7274 /* hls_master_playlist.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3431EAA9E500010320B /* hls_master_playlist.m3u8 */; };
 		1D9D9E9F1EAFC0E600CC7274 /* hls_variant_playlist.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3441EAA9E500010320B /* hls_variant_playlist.m3u8 */; };
-		1D9D9EA01EAFC0F700CC7274 /* HLSStringRefExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883290551EA172170064588B /* HLSStringRefExtensionTests.swift */; };
+		1D9D9EA01EAFC0F700CC7274 /* MambaStringRefExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883290551EA172170064588B /* MambaStringRefExtensionTests.swift */; };
 		3D933C1A2193367C0029069F /* EXT-X-BITRATETagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D933C192193367C0029069F /* EXT-X-BITRATETagParserTests.swift */; };
 		3D933C1B219336970029069F /* EXT-X-BITRATETagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D933C192193367C0029069F /* EXT-X-BITRATETagParserTests.swift */; };
 		3D933C1C219336970029069F /* EXT-X-BITRATETagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D933C192193367C0029069F /* EXT-X-BITRATETagParserTests.swift */; };
@@ -26,31 +26,31 @@
 		43DE4EFD1E564DBE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE4EFC1E564DBE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift */; };
 		43DE4F0D1E564FEE00EEE800 /* EXT_X_STARTTimeOffsetValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE4EFA1E564DA300EEE800 /* EXT_X_STARTTimeOffsetValidator.swift */; };
 		43DE4F0E1E564FFE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE4EFC1E564DBE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift */; };
-		883290561EA172170064588B /* HLSStringRefExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883290551EA172170064588B /* HLSStringRefExtensionTests.swift */; };
-		D44E03771E3BAC9F00126B52 /* HLSTag+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E03761E3BAC9F00126B52 /* HLSTag+Util.swift */; };
-		D44E03781E3BAC9F00126B52 /* HLSTag+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E03761E3BAC9F00126B52 /* HLSTag+Util.swift */; };
-		D4BB018D1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB018C1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift */; };
-		D4BB018E1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB018C1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift */; };
+		883290561EA172170064588B /* MambaStringRefExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883290551EA172170064588B /* MambaStringRefExtensionTests.swift */; };
+		D44E03771E3BAC9F00126B52 /* PlaylistTag+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E03761E3BAC9F00126B52 /* PlaylistTag+Util.swift */; };
+		D44E03781E3BAC9F00126B52 /* PlaylistTag+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E03761E3BAC9F00126B52 /* PlaylistTag+Util.swift */; };
+		D4BB018D1E2EABD500CA006E /* PlaylistTagArray+RenditionGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB018C1E2EABD500CA006E /* PlaylistTagArray+RenditionGroups.swift */; };
+		D4BB018E1E2EABD500CA006E /* PlaylistTagArray+RenditionGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB018C1E2EABD500CA006E /* PlaylistTagArray+RenditionGroups.swift */; };
 		EC03B63D1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */; };
 		EC03B63E1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */; };
 		EC03B63F1E5CC55800BF1F97 /* RapidParserMasterParseArray.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B63C1E5CC55800BF1F97 /* RapidParserMasterParseArray.h */; };
 		EC03B6401E5CC55800BF1F97 /* RapidParserMasterParseArray.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B63C1E5CC55800BF1F97 /* RapidParserMasterParseArray.h */; };
-		EC03B6521E5CC56B00BF1F97 /* HLSRapidParser.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6411E5CC56B00BF1F97 /* HLSRapidParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC03B6531E5CC56B00BF1F97 /* HLSRapidParser.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6411E5CC56B00BF1F97 /* HLSRapidParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC03B6541E5CC56B00BF1F97 /* HLSRapidParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6421E5CC56B00BF1F97 /* HLSRapidParser.m */; };
-		EC03B6551E5CC56B00BF1F97 /* HLSRapidParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6421E5CC56B00BF1F97 /* HLSRapidParser.m */; };
-		EC03B6561E5CC56B00BF1F97 /* HLSRapidParserCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6431E5CC56B00BF1F97 /* HLSRapidParserCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC03B6571E5CC56B00BF1F97 /* HLSRapidParserCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6431E5CC56B00BF1F97 /* HLSRapidParserCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC03B6581E5CC56B00BF1F97 /* HLSStringRef.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6441E5CC56B00BF1F97 /* HLSStringRef.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC03B6591E5CC56B00BF1F97 /* HLSStringRef.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6441E5CC56B00BF1F97 /* HLSStringRef.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC03B65A1E5CC56B00BF1F97 /* HLSStringRef.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6451E5CC56B00BF1F97 /* HLSStringRef.m */; };
-		EC03B65B1E5CC56B00BF1F97 /* HLSStringRef.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6451E5CC56B00BF1F97 /* HLSStringRef.m */; };
-		EC03B65C1E5CC56B00BF1F97 /* HLSStringRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6461E5CC56B00BF1F97 /* HLSStringRef.swift */; };
-		EC03B65D1E5CC56B00BF1F97 /* HLSStringRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6461E5CC56B00BF1F97 /* HLSStringRef.swift */; };
-		EC03B65E1E5CC56B00BF1F97 /* RapidParser.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6471E5CC56B00BF1F97 /* RapidParser.c */; };
-		EC03B65F1E5CC56B00BF1F97 /* RapidParser.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6471E5CC56B00BF1F97 /* RapidParser.c */; };
-		EC03B6601E5CC56B00BF1F97 /* RapidParser.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6481E5CC56B00BF1F97 /* RapidParser.h */; };
-		EC03B6611E5CC56B00BF1F97 /* RapidParser.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6481E5CC56B00BF1F97 /* RapidParser.h */; };
+		EC03B6521E5CC56B00BF1F97 /* RapidParser.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6411E5CC56B00BF1F97 /* RapidParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC03B6531E5CC56B00BF1F97 /* RapidParser.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6411E5CC56B00BF1F97 /* RapidParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC03B6541E5CC56B00BF1F97 /* RapidParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6421E5CC56B00BF1F97 /* RapidParser.m */; };
+		EC03B6551E5CC56B00BF1F97 /* RapidParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6421E5CC56B00BF1F97 /* RapidParser.m */; };
+		EC03B6561E5CC56B00BF1F97 /* RapidParserCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6431E5CC56B00BF1F97 /* RapidParserCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC03B6571E5CC56B00BF1F97 /* RapidParserCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6431E5CC56B00BF1F97 /* RapidParserCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC03B6581E5CC56B00BF1F97 /* MambaStringRef.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6441E5CC56B00BF1F97 /* MambaStringRef.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC03B6591E5CC56B00BF1F97 /* MambaStringRef.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6441E5CC56B00BF1F97 /* MambaStringRef.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC03B65A1E5CC56B00BF1F97 /* MambaStringRef.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6451E5CC56B00BF1F97 /* MambaStringRef.m */; };
+		EC03B65B1E5CC56B00BF1F97 /* MambaStringRef.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6451E5CC56B00BF1F97 /* MambaStringRef.m */; };
+		EC03B65C1E5CC56B00BF1F97 /* MambaStringRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6461E5CC56B00BF1F97 /* MambaStringRef.swift */; };
+		EC03B65D1E5CC56B00BF1F97 /* MambaStringRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6461E5CC56B00BF1F97 /* MambaStringRef.swift */; };
+		EC03B65E1E5CC56B00BF1F97 /* parseHLS.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6471E5CC56B00BF1F97 /* parseHLS.c */; };
+		EC03B65F1E5CC56B00BF1F97 /* parseHLS.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6471E5CC56B00BF1F97 /* parseHLS.c */; };
+		EC03B6601E5CC56B00BF1F97 /* parseHLS.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6481E5CC56B00BF1F97 /* parseHLS.h */; };
+		EC03B6611E5CC56B00BF1F97 /* parseHLS.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6481E5CC56B00BF1F97 /* parseHLS.h */; };
 		EC03B6621E5CC56B00BF1F97 /* RapidParserDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6491E5CC56B00BF1F97 /* RapidParserDebug.h */; };
 		EC03B6631E5CC56B00BF1F97 /* RapidParserDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6491E5CC56B00BF1F97 /* RapidParserDebug.h */; };
 		EC03B6641E5CC56B00BF1F97 /* RapidParserError.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B64A1E5CC56B00BF1F97 /* RapidParserError.m */; };
@@ -72,10 +72,8 @@
 		EC0677DC21641FE500E715D1 /* CMTimeMakeFromStringCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0677DB21641FE500E715D1 /* CMTimeMakeFromStringCTests.m */; };
 		EC0677DD21641FE500E715D1 /* CMTimeMakeFromStringCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0677DB21641FE500E715D1 /* CMTimeMakeFromStringCTests.m */; };
 		EC0677DE2165753500E715D1 /* CMTimeMakeFromStringCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0677DB21641FE500E715D1 /* CMTimeMakeFromStringCTests.m */; };
-		EC073F571FE0572400689228 /* HLSTagCriterionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F561FE0572400689228 /* HLSTagCriterionTests.swift */; };
-		EC073F581FE0572400689228 /* HLSTagCriterionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F561FE0572400689228 /* HLSTagCriterionTests.swift */; };
-		EC073F5A1FE072DC00689228 /* HLSTagCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F591FE072DC00689228 /* HLSTagCollectionTests.swift */; };
-		EC073F5B1FE072DC00689228 /* HLSTagCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F591FE072DC00689228 /* HLSTagCollectionTests.swift */; };
+		EC073F5A1FE072DC00689228 /* TagCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F591FE072DC00689228 /* TagCollectionTests.swift */; };
+		EC073F5B1FE072DC00689228 /* TagCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F591FE072DC00689228 /* TagCollectionTests.swift */; };
 		EC073F5D1FE0840000689228 /* OutputStreamExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F5C1FE0840000689228 /* OutputStreamExtensionTests.swift */; };
 		EC073F5E1FE0840000689228 /* OutputStreamExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F5C1FE0840000689228 /* OutputStreamExtensionTests.swift */; };
 		EC073F601FE08F7500689228 /* String+Helio.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F5F1FE08F7500689228 /* String+Helio.swift */; };
@@ -95,30 +93,28 @@
 		EC1705491DFB490A00C969F9 /* linear_ad_insertion_CONTENT_start_ad.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC17053F1DFB490A00C969F9 /* linear_ad_insertion_CONTENT_start_ad.m3u8 */; };
 		EC1CCCE0209A2AF8006B59FF /* mamba.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1CCCD7209A2AF8006B59FF /* mamba.framework */; };
 		EC1CCCF1209A2CF9006B59FF /* PlaylistTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491421DD299B400AF4E20 /* PlaylistTypes.swift */; };
-		EC1CCCF2209A2CF9006B59FF /* HLSTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491521DD29AED00AF4E20 /* HLSTag.swift */; };
+		EC1CCCF2209A2CF9006B59FF /* PlaylistTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491521DD29AED00AF4E20 /* PlaylistTag.swift */; };
 		EC1CCCF5209A2CF9006B59FF /* PlaylistTimelineTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE36DE01F2A9D94005E5DA7 /* PlaylistTimelineTranslator.swift */; };
-		EC1CCCF6209A2CF9006B59FF /* HLSTagGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44248B1E9694C600AECFAB /* HLSTagGroup.swift */; };
+		EC1CCCF6209A2CF9006B59FF /* PlaylistTagGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44248B1E9694C600AECFAB /* PlaylistTagGroup.swift */; };
 		EC1CCCF7209A2CF9006B59FF /* StructureState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC4105F1EA02F4800B4E3C8 /* StructureState.swift */; };
-		EC1CCCF8209A2CF9006B59FF /* HLSTagCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74914A1DD29ACF00AF4E20 /* HLSTagCriteria.swift */; };
-		EC1CCCF9209A2CF9006B59FF /* HLSTagCriterion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74914B1DD29ACF00AF4E20 /* HLSTagCriterion.swift */; };
-		EC1CCCFA209A2CF9006B59FF /* HLSStringRef.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6441E5CC56B00BF1F97 /* HLSStringRef.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC1CCCFB209A2CF9006B59FF /* HLSStringRef.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6451E5CC56B00BF1F97 /* HLSStringRef.m */; };
-		EC1CCCFC209A2CF9006B59FF /* HLSStringRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6461E5CC56B00BF1F97 /* HLSStringRef.swift */; };
-		EC1CCCFD209A2CF9006B59FF /* HLSStringRefFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F73183731E78758B00ED8E59 /* HLSStringRefFactory.h */; };
-		EC1CCCFE209A2CF9006B59FF /* HLSStringRefFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F73183741E78758B00ED8E59 /* HLSStringRefFactory.m */; };
-		EC1CCCFF209A2CF9006B59FF /* HLSStringRef_ConcreteNSData.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD3B1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.h */; };
-		EC1CCD00209A2CF9006B59FF /* HLSStringRef_ConcreteNSData.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD3C1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.m */; };
-		EC1CCD01209A2CF9006B59FF /* HLSStringRef_ConcreteNSString.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD351E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.h */; };
-		EC1CCD02209A2CF9006B59FF /* HLSStringRef_ConcreteNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD361E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.m */; };
-		EC1CCD03209A2CF9006B59FF /* HLSStringRef_ConcreteUnownedBytes.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD2F1E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.h */; };
-		EC1CCD04209A2CF9006B59FF /* HLSStringRef_ConcreteUnownedBytes.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD301E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.m */; };
+		EC1CCCFA209A2CF9006B59FF /* MambaStringRef.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6441E5CC56B00BF1F97 /* MambaStringRef.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC1CCCFB209A2CF9006B59FF /* MambaStringRef.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6451E5CC56B00BF1F97 /* MambaStringRef.m */; };
+		EC1CCCFC209A2CF9006B59FF /* MambaStringRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6461E5CC56B00BF1F97 /* MambaStringRef.swift */; };
+		EC1CCCFD209A2CF9006B59FF /* MambaStringRefFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F73183731E78758B00ED8E59 /* MambaStringRefFactory.h */; };
+		EC1CCCFE209A2CF9006B59FF /* MambaStringRefFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F73183741E78758B00ED8E59 /* MambaStringRefFactory.m */; };
+		EC1CCCFF209A2CF9006B59FF /* MambaStringRef_ConcreteNSData.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD3B1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.h */; };
+		EC1CCD00209A2CF9006B59FF /* MambaStringRef_ConcreteNSData.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD3C1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.m */; };
+		EC1CCD01209A2CF9006B59FF /* MambaStringRef_ConcreteNSString.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD351E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.h */; };
+		EC1CCD02209A2CF9006B59FF /* MambaStringRef_ConcreteNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD361E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.m */; };
+		EC1CCD03209A2CF9006B59FF /* MambaStringRef_ConcreteUnownedBytes.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD2F1E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.h */; };
+		EC1CCD04209A2CF9006B59FF /* MambaStringRef_ConcreteUnownedBytes.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD301E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.m */; };
 		EC1CCD06209A2CF9006B59FF /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */; };
 		EC1CCD07209A2CF9006B59FF /* RapidParserMasterParseArray.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B63C1E5CC55800BF1F97 /* RapidParserMasterParseArray.h */; };
-		EC1CCD15209A2CF9006B59FF /* HLSRapidParser.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6411E5CC56B00BF1F97 /* HLSRapidParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC1CCD16209A2CF9006B59FF /* HLSRapidParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6421E5CC56B00BF1F97 /* HLSRapidParser.m */; };
-		EC1CCD17209A2CF9006B59FF /* HLSRapidParserCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6431E5CC56B00BF1F97 /* HLSRapidParserCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC1CCD18209A2CF9006B59FF /* RapidParser.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6471E5CC56B00BF1F97 /* RapidParser.c */; };
-		EC1CCD19209A2CF9006B59FF /* RapidParser.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6481E5CC56B00BF1F97 /* RapidParser.h */; };
+		EC1CCD15209A2CF9006B59FF /* RapidParser.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6411E5CC56B00BF1F97 /* RapidParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC1CCD16209A2CF9006B59FF /* RapidParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6421E5CC56B00BF1F97 /* RapidParser.m */; };
+		EC1CCD17209A2CF9006B59FF /* RapidParserCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6431E5CC56B00BF1F97 /* RapidParserCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC1CCD18209A2CF9006B59FF /* parseHLS.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6471E5CC56B00BF1F97 /* parseHLS.c */; };
+		EC1CCD19209A2CF9006B59FF /* parseHLS.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6481E5CC56B00BF1F97 /* parseHLS.h */; };
 		EC1CCD1A209A2CF9006B59FF /* RapidParserDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6491E5CC56B00BF1F97 /* RapidParserDebug.h */; };
 		EC1CCD1B209A2CF9006B59FF /* RapidParserError.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64B1E5CC56B00BF1F97 /* RapidParserError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC1CCD1C209A2CF9006B59FF /* RapidParserError.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B64A1E5CC56B00BF1F97 /* RapidParserError.m */; };
@@ -130,19 +126,18 @@
 		EC1CCD22209A2CF9006B59FF /* RapidParserStateHandlers.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6511E5CC56B00BF1F97 /* RapidParserStateHandlers.h */; };
 		EC1CCD23209A2CF9006B59FF /* CollectionType+FindExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74916B1DD29B5D00AF4E20 /* CollectionType+FindExtensions.swift */; };
 		EC1CCD24209A2CF9006B59FF /* CollectionType+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74916C1DD29B5D00AF4E20 /* CollectionType+Safe.swift */; };
-		EC1CCD25209A2CF9006B59FF /* HLSTagArray+RenditionGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB018C1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift */; };
+		EC1CCD25209A2CF9006B59FF /* PlaylistTagArray+RenditionGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB018C1E2EABD500CA006E /* PlaylistTagArray+RenditionGroups.swift */; };
 		EC1CCD26209A2CF9006B59FF /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74916D1DD29B5D00AF4E20 /* OrderedDictionary.swift */; };
 		EC1CCD27209A2CF9006B59FF /* CoreMedia+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74915F1DD29B0F00AF4E20 /* CoreMedia+Util.swift */; };
 		EC1CCD28209A2CF9006B59FF /* FailableStringLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491601DD29B0F00AF4E20 /* FailableStringLiteralConvertible.swift */; };
-		EC1CCD29209A2CF9006B59FF /* HLSStringRef+mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95477E1E5CC80800962535 /* HLSStringRef+mamba.swift */; };
-		EC1CCD2A209A2CF9006B59FF /* HLSTag+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E03761E3BAC9F00126B52 /* HLSTag+Util.swift */; };
+		EC1CCD2A209A2CF9006B59FF /* PlaylistTag+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E03761E3BAC9F00126B52 /* PlaylistTag+Util.swift */; };
 		EC1CCD2B209A2CF9006B59FF /* IndeterminateBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC42A5F11FD9B88E00317EA5 /* IndeterminateBool.swift */; };
 		EC1CCD2C209A2CF9006B59FF /* OutputStream+HLSWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95477B1E5CC7C800962535 /* OutputStream+HLSWriting.swift */; };
-		EC1CCD2D209A2CF9006B59FF /* RegisteredHLSTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491611DD29B0F00AF4E20 /* RegisteredHLSTags.swift */; };
+		EC1CCD2D209A2CF9006B59FF /* RegisteredPlaylistTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491611DD29B0F00AF4E20 /* RegisteredPlaylistTags.swift */; };
 		EC1CCD2E209A2CF9006B59FF /* CMTimeMakeFromString.c in Sources */ = {isa = PBXBuildFile; fileRef = F7CFF2771F38CACF009F4C82 /* CMTimeMakeFromString.c */; };
 		EC1CCD2F209A2CF9006B59FF /* CMTimeMakeFromString.h in Headers */ = {isa = PBXBuildFile; fileRef = F7CFF2781F38CACF009F4C82 /* CMTimeMakeFromString.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC1CCD30209A2CF9006B59FF /* String+DateParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917A1DD29C3500AF4E20 /* String+DateParsing.swift */; };
-		EC1CCD31209A2CF9006B59FF /* String+HLSTypeEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917B1DD29C3500AF4E20 /* String+HLSTypeEquatable.swift */; };
+		EC1CCD31209A2CF9006B59FF /* String+EquatableMambaTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917B1DD29C3500AF4E20 /* String+EquatableMambaTypes.swift */; };
 		EC1CCD32209A2CF9006B59FF /* String+Trim.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917C1DD29C3500AF4E20 /* String+Trim.swift */; };
 		EC1CCD33209A2CF9006B59FF /* GenericDictionaryTagParserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491831DD29CCB00AF4E20 /* GenericDictionaryTagParserHelper.swift */; };
 		EC1CCD34209A2CF9006B59FF /* StringArrayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491841DD29CCB00AF4E20 /* StringArrayParser.swift */; };
@@ -180,15 +175,15 @@
 		EC1CCD56209A2CF9006B59FF /* LocationTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491E51DD29DBB00AF4E20 /* LocationTagWriter.swift */; };
 		EC1CCD57209A2CF9006B59FF /* PantosTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491CB1DD29D7C00AF4E20 /* PantosTag.swift */; };
 		EC1CCD58209A2CF9006B59FF /* PantosValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491CC1DD29D7C00AF4E20 /* PantosValue.swift */; };
-		EC1CCD5A209A2CF9006B59FF /* ParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70E9E991E8C43C8006022C6 /* ParserError.swift */; };
-		EC1CCD5B209A2CF9006B59FF /* HLSTagDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AA1DD29D5C00AF4E20 /* HLSTagDescriptor.swift */; };
-		EC1CCD5C209A2CF9006B59FF /* HLSTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AB1DD29D5C00AF4E20 /* HLSTagParser.swift */; };
-		EC1CCD5D209A2CF9006B59FF /* HLSTagValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AC1DD29D5C00AF4E20 /* HLSTagValidator.swift */; };
-		EC1CCD5E209A2CF9006B59FF /* HLSTagValueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AD1DD29D5C00AF4E20 /* HLSTagValueIdentifier.swift */; };
-		EC1CCD5F209A2CF9006B59FF /* HLSTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AE1DD29D5C00AF4E20 /* HLSTagWriter.swift */; };
-		EC1CCD60209A2CF9006B59FF /* HLSValidationIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AF1DD29D5C00AF4E20 /* HLSValidationIssue.swift */; };
-		EC1CCD61209A2CF9006B59FF /* HLSValueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B11DD29D5C00AF4E20 /* HLSValueTypes.swift */; };
-		EC1CCD62209A2CF9006B59FF /* HLSWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B21DD29D5C00AF4E20 /* HLSWriter.swift */; };
+		EC1CCD5A209A2CF9006B59FF /* PlaylistParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70E9E991E8C43C8006022C6 /* PlaylistParserError.swift */; };
+		EC1CCD5B209A2CF9006B59FF /* PlaylistTagDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AA1DD29D5C00AF4E20 /* PlaylistTagDescriptor.swift */; };
+		EC1CCD5C209A2CF9006B59FF /* PlaylistTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AB1DD29D5C00AF4E20 /* PlaylistTagParser.swift */; };
+		EC1CCD5D209A2CF9006B59FF /* PlaylistTagValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AC1DD29D5C00AF4E20 /* PlaylistTagValidator.swift */; };
+		EC1CCD5E209A2CF9006B59FF /* PlaylistTagValueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AD1DD29D5C00AF4E20 /* PlaylistTagValueIdentifier.swift */; };
+		EC1CCD5F209A2CF9006B59FF /* PlaylistTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AE1DD29D5C00AF4E20 /* PlaylistTagWriter.swift */; };
+		EC1CCD60209A2CF9006B59FF /* PlaylistValidationIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AF1DD29D5C00AF4E20 /* PlaylistValidationIssue.swift */; };
+		EC1CCD61209A2CF9006B59FF /* ValueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B11DD29D5C00AF4E20 /* ValueTypes.swift */; };
+		EC1CCD62209A2CF9006B59FF /* PlaylistWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B21DD29D5C00AF4E20 /* PlaylistWriter.swift */; };
 		EC1CCD63209A2CF9006B59FF /* Mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547871E5CC84700962535 /* Mamba.swift */; };
 		EC318B51226534AF00969E2D /* StaticMemoryStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = EC318B4F226534AF00969E2D /* StaticMemoryStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC318B52226534AF00969E2D /* StaticMemoryStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = EC318B4F226534AF00969E2D /* StaticMemoryStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -262,23 +257,19 @@
 		EC42A5F31FD9B88E00317EA5 /* IndeterminateBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC42A5F11FD9B88E00317EA5 /* IndeterminateBool.swift */; };
 		EC42A5F51FD9BF0500317EA5 /* IndeterminateBoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC42A5F41FD9BF0500317EA5 /* IndeterminateBoolTests.swift */; };
 		EC42A5F61FD9BF0500317EA5 /* IndeterminateBoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC42A5F41FD9BF0500317EA5 /* IndeterminateBoolTests.swift */; };
-		EC44248C1E9694C600AECFAB /* HLSTagGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44248B1E9694C600AECFAB /* HLSTagGroup.swift */; };
-		EC44248D1E9694C600AECFAB /* HLSTagGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44248B1E9694C600AECFAB /* HLSTagGroup.swift */; };
+		EC44248C1E9694C600AECFAB /* PlaylistTagGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44248B1E9694C600AECFAB /* PlaylistTagGroup.swift */; };
+		EC44248D1E9694C600AECFAB /* PlaylistTagGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44248B1E9694C600AECFAB /* PlaylistTagGroup.swift */; };
 		EC44E7661DEE2F9E0087C890 /* EXT_X_MAPTagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD2E791DE4D46F002510E7 /* EXT_X_MAPTagParserTests.swift */; };
 		EC7491461DD299B400AF4E20 /* PlaylistTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491421DD299B400AF4E20 /* PlaylistTypes.swift */; };
 		EC7491471DD299B400AF4E20 /* PlaylistTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491421DD299B400AF4E20 /* PlaylistTypes.swift */; };
-		EC74914C1DD29ACF00AF4E20 /* HLSTagCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74914A1DD29ACF00AF4E20 /* HLSTagCriteria.swift */; };
-		EC74914D1DD29ACF00AF4E20 /* HLSTagCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74914A1DD29ACF00AF4E20 /* HLSTagCriteria.swift */; };
-		EC74914E1DD29ACF00AF4E20 /* HLSTagCriterion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74914B1DD29ACF00AF4E20 /* HLSTagCriterion.swift */; };
-		EC74914F1DD29ACF00AF4E20 /* HLSTagCriterion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74914B1DD29ACF00AF4E20 /* HLSTagCriterion.swift */; };
-		EC7491591DD29AED00AF4E20 /* HLSTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491521DD29AED00AF4E20 /* HLSTag.swift */; };
-		EC74915A1DD29AED00AF4E20 /* HLSTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491521DD29AED00AF4E20 /* HLSTag.swift */; };
+		EC7491591DD29AED00AF4E20 /* PlaylistTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491521DD29AED00AF4E20 /* PlaylistTag.swift */; };
+		EC74915A1DD29AED00AF4E20 /* PlaylistTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491521DD29AED00AF4E20 /* PlaylistTag.swift */; };
 		EC7491631DD29B0F00AF4E20 /* CoreMedia+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74915F1DD29B0F00AF4E20 /* CoreMedia+Util.swift */; };
 		EC7491641DD29B0F00AF4E20 /* CoreMedia+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74915F1DD29B0F00AF4E20 /* CoreMedia+Util.swift */; };
 		EC7491651DD29B0F00AF4E20 /* FailableStringLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491601DD29B0F00AF4E20 /* FailableStringLiteralConvertible.swift */; };
 		EC7491661DD29B0F00AF4E20 /* FailableStringLiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491601DD29B0F00AF4E20 /* FailableStringLiteralConvertible.swift */; };
-		EC7491671DD29B0F00AF4E20 /* RegisteredHLSTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491611DD29B0F00AF4E20 /* RegisteredHLSTags.swift */; };
-		EC7491681DD29B0F00AF4E20 /* RegisteredHLSTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491611DD29B0F00AF4E20 /* RegisteredHLSTags.swift */; };
+		EC7491671DD29B0F00AF4E20 /* RegisteredPlaylistTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491611DD29B0F00AF4E20 /* RegisteredPlaylistTags.swift */; };
+		EC7491681DD29B0F00AF4E20 /* RegisteredPlaylistTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491611DD29B0F00AF4E20 /* RegisteredPlaylistTags.swift */; };
 		EC74916E1DD29B5D00AF4E20 /* CollectionType+FindExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74916B1DD29B5D00AF4E20 /* CollectionType+FindExtensions.swift */; };
 		EC74916F1DD29B5D00AF4E20 /* CollectionType+FindExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74916B1DD29B5D00AF4E20 /* CollectionType+FindExtensions.swift */; };
 		EC7491701DD29B5D00AF4E20 /* CollectionType+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74916C1DD29B5D00AF4E20 /* CollectionType+Safe.swift */; };
@@ -287,8 +278,8 @@
 		EC7491731DD29B5D00AF4E20 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74916D1DD29B5D00AF4E20 /* OrderedDictionary.swift */; };
 		EC74917D1DD29C3500AF4E20 /* String+DateParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917A1DD29C3500AF4E20 /* String+DateParsing.swift */; };
 		EC74917E1DD29C3500AF4E20 /* String+DateParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917A1DD29C3500AF4E20 /* String+DateParsing.swift */; };
-		EC74917F1DD29C3500AF4E20 /* String+HLSTypeEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917B1DD29C3500AF4E20 /* String+HLSTypeEquatable.swift */; };
-		EC7491801DD29C3500AF4E20 /* String+HLSTypeEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917B1DD29C3500AF4E20 /* String+HLSTypeEquatable.swift */; };
+		EC74917F1DD29C3500AF4E20 /* String+EquatableMambaTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917B1DD29C3500AF4E20 /* String+EquatableMambaTypes.swift */; };
+		EC7491801DD29C3500AF4E20 /* String+EquatableMambaTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917B1DD29C3500AF4E20 /* String+EquatableMambaTypes.swift */; };
 		EC7491811DD29C3500AF4E20 /* String+Trim.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917C1DD29C3500AF4E20 /* String+Trim.swift */; };
 		EC7491821DD29C3500AF4E20 /* String+Trim.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917C1DD29C3500AF4E20 /* String+Trim.swift */; };
 		EC7491861DD29CCB00AF4E20 /* GenericDictionaryTagParserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491831DD29CCB00AF4E20 /* GenericDictionaryTagParserHelper.swift */; };
@@ -297,22 +288,22 @@
 		EC7491891DD29CCB00AF4E20 /* StringArrayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491841DD29CCB00AF4E20 /* StringArrayParser.swift */; };
 		EC74918A1DD29CCB00AF4E20 /* StringDictionaryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491851DD29CCB00AF4E20 /* StringDictionaryParser.swift */; };
 		EC74918B1DD29CCB00AF4E20 /* StringDictionaryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491851DD29CCB00AF4E20 /* StringDictionaryParser.swift */; };
-		EC7491B91DD29D5C00AF4E20 /* HLSTagDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AA1DD29D5C00AF4E20 /* HLSTagDescriptor.swift */; };
-		EC7491BA1DD29D5C00AF4E20 /* HLSTagDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AA1DD29D5C00AF4E20 /* HLSTagDescriptor.swift */; };
-		EC7491BB1DD29D5C00AF4E20 /* HLSTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AB1DD29D5C00AF4E20 /* HLSTagParser.swift */; };
-		EC7491BC1DD29D5C00AF4E20 /* HLSTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AB1DD29D5C00AF4E20 /* HLSTagParser.swift */; };
-		EC7491BD1DD29D5C00AF4E20 /* HLSTagValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AC1DD29D5C00AF4E20 /* HLSTagValidator.swift */; };
-		EC7491BE1DD29D5C00AF4E20 /* HLSTagValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AC1DD29D5C00AF4E20 /* HLSTagValidator.swift */; };
-		EC7491BF1DD29D5C00AF4E20 /* HLSTagValueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AD1DD29D5C00AF4E20 /* HLSTagValueIdentifier.swift */; };
-		EC7491C01DD29D5C00AF4E20 /* HLSTagValueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AD1DD29D5C00AF4E20 /* HLSTagValueIdentifier.swift */; };
-		EC7491C11DD29D5C00AF4E20 /* HLSTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AE1DD29D5C00AF4E20 /* HLSTagWriter.swift */; };
-		EC7491C21DD29D5C00AF4E20 /* HLSTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AE1DD29D5C00AF4E20 /* HLSTagWriter.swift */; };
-		EC7491C31DD29D5C00AF4E20 /* HLSValidationIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AF1DD29D5C00AF4E20 /* HLSValidationIssue.swift */; };
-		EC7491C41DD29D5C00AF4E20 /* HLSValidationIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AF1DD29D5C00AF4E20 /* HLSValidationIssue.swift */; };
-		EC7491C71DD29D5C00AF4E20 /* HLSValueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B11DD29D5C00AF4E20 /* HLSValueTypes.swift */; };
-		EC7491C81DD29D5C00AF4E20 /* HLSValueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B11DD29D5C00AF4E20 /* HLSValueTypes.swift */; };
-		EC7491C91DD29D5C00AF4E20 /* HLSWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B21DD29D5C00AF4E20 /* HLSWriter.swift */; };
-		EC7491CA1DD29D5C00AF4E20 /* HLSWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B21DD29D5C00AF4E20 /* HLSWriter.swift */; };
+		EC7491B91DD29D5C00AF4E20 /* PlaylistTagDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AA1DD29D5C00AF4E20 /* PlaylistTagDescriptor.swift */; };
+		EC7491BA1DD29D5C00AF4E20 /* PlaylistTagDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AA1DD29D5C00AF4E20 /* PlaylistTagDescriptor.swift */; };
+		EC7491BB1DD29D5C00AF4E20 /* PlaylistTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AB1DD29D5C00AF4E20 /* PlaylistTagParser.swift */; };
+		EC7491BC1DD29D5C00AF4E20 /* PlaylistTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AB1DD29D5C00AF4E20 /* PlaylistTagParser.swift */; };
+		EC7491BD1DD29D5C00AF4E20 /* PlaylistTagValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AC1DD29D5C00AF4E20 /* PlaylistTagValidator.swift */; };
+		EC7491BE1DD29D5C00AF4E20 /* PlaylistTagValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AC1DD29D5C00AF4E20 /* PlaylistTagValidator.swift */; };
+		EC7491BF1DD29D5C00AF4E20 /* PlaylistTagValueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AD1DD29D5C00AF4E20 /* PlaylistTagValueIdentifier.swift */; };
+		EC7491C01DD29D5C00AF4E20 /* PlaylistTagValueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AD1DD29D5C00AF4E20 /* PlaylistTagValueIdentifier.swift */; };
+		EC7491C11DD29D5C00AF4E20 /* PlaylistTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AE1DD29D5C00AF4E20 /* PlaylistTagWriter.swift */; };
+		EC7491C21DD29D5C00AF4E20 /* PlaylistTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AE1DD29D5C00AF4E20 /* PlaylistTagWriter.swift */; };
+		EC7491C31DD29D5C00AF4E20 /* PlaylistValidationIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AF1DD29D5C00AF4E20 /* PlaylistValidationIssue.swift */; };
+		EC7491C41DD29D5C00AF4E20 /* PlaylistValidationIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AF1DD29D5C00AF4E20 /* PlaylistValidationIssue.swift */; };
+		EC7491C71DD29D5C00AF4E20 /* ValueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B11DD29D5C00AF4E20 /* ValueTypes.swift */; };
+		EC7491C81DD29D5C00AF4E20 /* ValueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B11DD29D5C00AF4E20 /* ValueTypes.swift */; };
+		EC7491C91DD29D5C00AF4E20 /* PlaylistWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B21DD29D5C00AF4E20 /* PlaylistWriter.swift */; };
+		EC7491CA1DD29D5C00AF4E20 /* PlaylistWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B21DD29D5C00AF4E20 /* PlaylistWriter.swift */; };
 		EC7491CD1DD29D7C00AF4E20 /* PantosTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491CB1DD29D7C00AF4E20 /* PantosTag.swift */; };
 		EC7491CE1DD29D7C00AF4E20 /* PantosTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491CB1DD29D7C00AF4E20 /* PantosTag.swift */; };
 		EC7491CF1DD29D7C00AF4E20 /* PantosValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491CC1DD29D7C00AF4E20 /* PantosValue.swift */; };
@@ -357,18 +348,18 @@
 		EC74921D1DD29E2900AF4E20 /* super8demuxed2_IP_1080p24_51_TS.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492071DD29E2900AF4E20 /* super8demuxed2_IP_1080p24_51_TS.m3u8 */; };
 		EC74921E1DD29E2900AF4E20 /* super8demuxed3_1376214110461.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492081DD29E2900AF4E20 /* super8demuxed3_1376214110461.m3u8 */; };
 		EC74921F1DD29E2900AF4E20 /* super8demuxed3_1376214110461.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492081DD29E2900AF4E20 /* super8demuxed3_1376214110461.m3u8 */; };
-		EC7492201DD29E2900AF4E20 /* ThirdPartyHLSTagsTestFixture.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC7492091DD29E2900AF4E20 /* ThirdPartyHLSTagsTestFixture.txt */; };
-		EC7492211DD29E2900AF4E20 /* ThirdPartyHLSTagsTestFixture.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC7492091DD29E2900AF4E20 /* ThirdPartyHLSTagsTestFixture.txt */; };
+		EC7492201DD29E2900AF4E20 /* ThirdPartyTagsTestFixture.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC7492091DD29E2900AF4E20 /* ThirdPartyTagsTestFixture.txt */; };
+		EC7492211DD29E2900AF4E20 /* ThirdPartyTagsTestFixture.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC7492091DD29E2900AF4E20 /* ThirdPartyTagsTestFixture.txt */; };
 		EC7492281DD29E4A00AF4E20 /* FixtureLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492221DD29E4A00AF4E20 /* FixtureLoader.swift */; };
 		EC7492291DD29E4A00AF4E20 /* FixtureLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492221DD29E4A00AF4E20 /* FixtureLoader.swift */; };
 		EC74922C1DD29E4A00AF4E20 /* Playlist+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492241DD29E4A00AF4E20 /* Playlist+Convenience.swift */; };
 		EC74922D1DD29E4A00AF4E20 /* Playlist+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492241DD29E4A00AF4E20 /* Playlist+Convenience.swift */; };
-		EC7492321DD29E4A00AF4E20 /* HLSTagParserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492271DD29E4A00AF4E20 /* HLSTagParserMock.swift */; };
-		EC7492331DD29E4A00AF4E20 /* HLSTagParserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492271DD29E4A00AF4E20 /* HLSTagParserMock.swift */; };
-		EC74924A1DD29E7300AF4E20 /* HLSWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74923B1DD29E7300AF4E20 /* HLSWriterTests.swift */; };
-		EC74924B1DD29E7300AF4E20 /* HLSWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74923B1DD29E7300AF4E20 /* HLSWriterTests.swift */; };
-		EC7492611DD29E9A00AF4E20 /* HLSTagWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492521DD29E9A00AF4E20 /* HLSTagWriting.swift */; };
-		EC7492621DD29E9A00AF4E20 /* HLSTagWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492521DD29E9A00AF4E20 /* HLSTagWriting.swift */; };
+		EC7492321DD29E4A00AF4E20 /* TagParserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492271DD29E4A00AF4E20 /* TagParserMock.swift */; };
+		EC7492331DD29E4A00AF4E20 /* TagParserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492271DD29E4A00AF4E20 /* TagParserMock.swift */; };
+		EC74924A1DD29E7300AF4E20 /* PlaylistWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74923B1DD29E7300AF4E20 /* PlaylistWriterTests.swift */; };
+		EC74924B1DD29E7300AF4E20 /* PlaylistWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74923B1DD29E7300AF4E20 /* PlaylistWriterTests.swift */; };
+		EC7492611DD29E9A00AF4E20 /* TagWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492521DD29E9A00AF4E20 /* TagWriting.swift */; };
+		EC7492621DD29E9A00AF4E20 /* TagWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492521DD29E9A00AF4E20 /* TagWriting.swift */; };
 		EC7492721DD29EC800AF4E20 /* EXT_X_ALLOW_CACHETagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492671DD29EC800AF4E20 /* EXT_X_ALLOW_CACHETagParserTests.swift */; };
 		EC7492731DD29EC800AF4E20 /* EXT_X_ALLOW_CACHETagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492671DD29EC800AF4E20 /* EXT_X_ALLOW_CACHETagParserTests.swift */; };
 		EC7492741DD29EC800AF4E20 /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492681DD29EC800AF4E20 /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift */; };
@@ -405,18 +396,16 @@
 		EC7492AC1DD29F7000AF4E20 /* OrderedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492A51DD29F7000AF4E20 /* OrderedDictionaryTests.swift */; };
 		EC7492AD1DD29F7000AF4E20 /* URLSchemeChangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492A61DD29F7000AF4E20 /* URLSchemeChangeTests.swift */; };
 		EC7492AE1DD29F7000AF4E20 /* URLSchemeChangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492A61DD29F7000AF4E20 /* URLSchemeChangeTests.swift */; };
-		EC7492B31DD29F8900AF4E20 /* HLSCodecArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492AF1DD29F8900AF4E20 /* HLSCodecArrayTests.swift */; };
-		EC7492B41DD29F8900AF4E20 /* HLSCodecArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492AF1DD29F8900AF4E20 /* HLSCodecArrayTests.swift */; };
-		EC7492B51DD29F8900AF4E20 /* HLSMediaTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B01DD29F8900AF4E20 /* HLSMediaTypeTests.swift */; };
-		EC7492B61DD29F8900AF4E20 /* HLSMediaTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B01DD29F8900AF4E20 /* HLSMediaTypeTests.swift */; };
+		EC7492B31DD29F8900AF4E20 /* CodecArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492AF1DD29F8900AF4E20 /* CodecArrayTests.swift */; };
+		EC7492B41DD29F8900AF4E20 /* CodecArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492AF1DD29F8900AF4E20 /* CodecArrayTests.swift */; };
+		EC7492B51DD29F8900AF4E20 /* MediaTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B01DD29F8900AF4E20 /* MediaTypeTests.swift */; };
+		EC7492B61DD29F8900AF4E20 /* MediaTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B01DD29F8900AF4E20 /* MediaTypeTests.swift */; };
 		EC7492B71DD29F8900AF4E20 /* PlaylistTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B11DD29F8900AF4E20 /* PlaylistTypeTests.swift */; };
 		EC7492B81DD29F8900AF4E20 /* PlaylistTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B11DD29F8900AF4E20 /* PlaylistTypeTests.swift */; };
-		EC7492B91DD29F8900AF4E20 /* HLSResolutionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B21DD29F8900AF4E20 /* HLSResolutionTests.swift */; };
-		EC7492BA1DD29F8900AF4E20 /* HLSResolutionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B21DD29F8900AF4E20 /* HLSResolutionTests.swift */; };
+		EC7492B91DD29F8900AF4E20 /* ResolutionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B21DD29F8900AF4E20 /* ResolutionTests.swift */; };
+		EC7492BA1DD29F8900AF4E20 /* ResolutionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B21DD29F8900AF4E20 /* ResolutionTests.swift */; };
 		EC95477C1E5CC7C800962535 /* OutputStream+HLSWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95477B1E5CC7C800962535 /* OutputStream+HLSWriting.swift */; };
 		EC95477D1E5CC7C900962535 /* OutputStream+HLSWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95477B1E5CC7C800962535 /* OutputStream+HLSWriting.swift */; };
-		EC95477F1E5CC80800962535 /* HLSStringRef+mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95477E1E5CC80800962535 /* HLSStringRef+mamba.swift */; };
-		EC9547801E5CC80800962535 /* HLSStringRef+mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95477E1E5CC80800962535 /* HLSStringRef+mamba.swift */; };
 		EC9547821E5CC82500962535 /* GenericTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547811E5CC82500962535 /* GenericTagWriter.swift */; };
 		EC9547831E5CC82500962535 /* GenericTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547811E5CC82500962535 /* GenericTagWriter.swift */; };
 		EC9547851E5CC83C00962535 /* NoOpTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547841E5CC83C00962535 /* NoOpTagParser.swift */; };
@@ -466,22 +455,22 @@
 		ECC410611EA02F4800B4E3C8 /* StructureState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC4105F1EA02F4800B4E3C8 /* StructureState.swift */; };
 		ECC410641EA1518E00B4E3C8 /* StructureStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC410631EA1518E00B4E3C8 /* StructureStateTests.swift */; };
 		ECC410651EA1518E00B4E3C8 /* StructureStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC410631EA1518E00B4E3C8 /* StructureStateTests.swift */; };
-		ECC410671EA1527700B4E3C8 /* HLSTagGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC410661EA1527700B4E3C8 /* HLSTagGroupTests.swift */; };
-		ECC410681EA1527700B4E3C8 /* HLSTagGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC410661EA1527700B4E3C8 /* HLSTagGroupTests.swift */; };
-		ECCF2DAD1E23F54100D7C48B /* HLSTagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF2DAC1E23F54100D7C48B /* HLSTagTests.swift */; };
-		ECCF2DAE1E23F54100D7C48B /* HLSTagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF2DAC1E23F54100D7C48B /* HLSTagTests.swift */; };
+		ECC410671EA1527700B4E3C8 /* PlaylistTagGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC410661EA1527700B4E3C8 /* PlaylistTagGroupTests.swift */; };
+		ECC410681EA1527700B4E3C8 /* PlaylistTagGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC410661EA1527700B4E3C8 /* PlaylistTagGroupTests.swift */; };
+		ECCF2DAD1E23F54100D7C48B /* TagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF2DAC1E23F54100D7C48B /* TagTests.swift */; };
+		ECCF2DAE1E23F54100D7C48B /* TagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF2DAC1E23F54100D7C48B /* TagTests.swift */; };
 		ECDE184022381146008566BB /* MasterPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE183F22381146008566BB /* MasterPlaylist.swift */; };
 		ECDE184122381146008566BB /* MasterPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE183F22381146008566BB /* MasterPlaylist.swift */; };
 		ECDE184222381146008566BB /* MasterPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE183F22381146008566BB /* MasterPlaylist.swift */; };
 		ECDE18442238114E008566BB /* VariantPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE18432238114E008566BB /* VariantPlaylist.swift */; };
 		ECDE18452238114E008566BB /* VariantPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE18432238114E008566BB /* VariantPlaylist.swift */; };
 		ECDE18462238114E008566BB /* VariantPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE18432238114E008566BB /* VariantPlaylist.swift */; };
-		ECDE184822381E6C008566BB /* URLDataPlaylistExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE184722381E6C008566BB /* URLDataPlaylistExtensions.swift */; };
-		ECDE184922381E6C008566BB /* URLDataPlaylistExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE184722381E6C008566BB /* URLDataPlaylistExtensions.swift */; };
-		ECDE184A22381E6C008566BB /* URLDataPlaylistExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE184722381E6C008566BB /* URLDataPlaylistExtensions.swift */; };
-		ECDE184C22383230008566BB /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE184B22383230008566BB /* Parser.swift */; };
-		ECDE184D22383230008566BB /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE184B22383230008566BB /* Parser.swift */; };
-		ECDE184E22383230008566BB /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE184B22383230008566BB /* Parser.swift */; };
+		ECDE184822381E6C008566BB /* PlaylistURLDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE184722381E6C008566BB /* PlaylistURLDataExtensions.swift */; };
+		ECDE184922381E6C008566BB /* PlaylistURLDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE184722381E6C008566BB /* PlaylistURLDataExtensions.swift */; };
+		ECDE184A22381E6C008566BB /* PlaylistURLDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE184722381E6C008566BB /* PlaylistURLDataExtensions.swift */; };
+		ECDE184C22383230008566BB /* PlaylistParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE184B22383230008566BB /* PlaylistParser.swift */; };
+		ECDE184D22383230008566BB /* PlaylistParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE184B22383230008566BB /* PlaylistParser.swift */; };
+		ECDE184E22383230008566BB /* PlaylistParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE184B22383230008566BB /* PlaylistParser.swift */; };
 		ECDE185122387257008566BB /* VariantPlaylistMediaSpanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE185022387257008566BB /* VariantPlaylistMediaSpanTests.swift */; };
 		ECDE185222387257008566BB /* VariantPlaylistMediaSpanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE185022387257008566BB /* VariantPlaylistMediaSpanTests.swift */; };
 		ECDE185322387257008566BB /* VariantPlaylistMediaSpanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDE185022387257008566BB /* VariantPlaylistMediaSpanTests.swift */; };
@@ -503,7 +492,7 @@
 		ECE253C0209A508700D388CE /* Super8_muxed1_4242.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492031DD29E2900AF4E20 /* Super8_muxed1_4242.m3u8 */; };
 		ECE253C1209A508700D388CE /* Super8_muxed2_1376214110461.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492041DD29E2900AF4E20 /* Super8_muxed2_1376214110461.m3u8 */; };
 		ECE253C2209A508700D388CE /* Super8_muxed3_HD_VOD_VDS_TELENOVELA_02152016_LVLH08.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492051DD29E2900AF4E20 /* Super8_muxed3_HD_VOD_VDS_TELENOVELA_02152016_LVLH08.m3u8 */; };
-		ECE253C3209A508700D388CE /* ThirdPartyHLSTagsTestFixture.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC7492091DD29E2900AF4E20 /* ThirdPartyHLSTagsTestFixture.txt */; };
+		ECE253C3209A508700D388CE /* ThirdPartyTagsTestFixture.txt in Resources */ = {isa = PBXBuildFile; fileRef = EC7492091DD29E2900AF4E20 /* ThirdPartyTagsTestFixture.txt */; };
 		ECE253C4209A508700D388CE /* bipbopall.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7491FE1DD29E2900AF4E20 /* bipbopall.m3u8 */; };
 		ECE253C5209A508700D388CE /* hls_ad_master_playlist.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3401EAA9E500010320B /* hls_ad_master_playlist.m3u8 */; };
 		ECE253C6209A508700D388CE /* hls_ad_variant_playlist.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3411EAA9E500010320B /* hls_ad_variant_playlist.m3u8 */; };
@@ -519,18 +508,17 @@
 		ECE253D0209A508700D388CE /* super8demuxed3_1376214110461.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = EC7492081DD29E2900AF4E20 /* super8demuxed3_1376214110461.m3u8 */; };
 		ECE253D1209A509000D388CE /* FixtureLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492221DD29E4A00AF4E20 /* FixtureLoader.swift */; };
 		ECE253D2209A509000D388CE /* Playlist+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492241DD29E4A00AF4E20 /* Playlist+Convenience.swift */; };
-		ECE253D4209A509000D388CE /* HLSTagParserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492271DD29E4A00AF4E20 /* HLSTagParserMock.swift */; };
+		ECE253D4209A509000D388CE /* TagParserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492271DD29E4A00AF4E20 /* TagParserMock.swift */; };
 		ECE253D5209A509000D388CE /* XCTestCase+mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD9021E5CCAAF00379FC2 /* XCTestCase+mamba.swift */; };
-		ECE253E0209A509900D388CE /* HLSStringRefExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883290551EA172170064588B /* HLSStringRefExtensionTests.swift */; };
-		ECE253E1209A509900D388CE /* HLSTagCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F591FE072DC00689228 /* HLSTagCollectionTests.swift */; };
-		ECE253E2209A509900D388CE /* HLSTagCriterionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F561FE0572400689228 /* HLSTagCriterionTests.swift */; };
-		ECE253E3209A509900D388CE /* HLSTagGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC410661EA1527700B4E3C8 /* HLSTagGroupTests.swift */; };
-		ECE253E4209A509900D388CE /* HLSTagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF2DAC1E23F54100D7C48B /* HLSTagTests.swift */; };
-		ECE253E5209A509900D388CE /* HLSTagWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492521DD29E9A00AF4E20 /* HLSTagWriting.swift */; };
-		ECE253E7209A509900D388CE /* HLSWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74923B1DD29E7300AF4E20 /* HLSWriterTests.swift */; };
+		ECE253E0209A509900D388CE /* MambaStringRefExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883290551EA172170064588B /* MambaStringRefExtensionTests.swift */; };
+		ECE253E1209A509900D388CE /* TagCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F591FE072DC00689228 /* TagCollectionTests.swift */; };
+		ECE253E3209A509900D388CE /* PlaylistTagGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC410661EA1527700B4E3C8 /* PlaylistTagGroupTests.swift */; };
+		ECE253E4209A509900D388CE /* TagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCF2DAC1E23F54100D7C48B /* TagTests.swift */; };
+		ECE253E5209A509900D388CE /* TagWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492521DD29E9A00AF4E20 /* TagWriting.swift */; };
+		ECE253E7209A509900D388CE /* PlaylistWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74923B1DD29E7300AF4E20 /* PlaylistWriterTests.swift */; };
 		ECE253E8209A509C00D388CE /* OutputStreamExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F5C1FE0840000689228 /* OutputStreamExtensionTests.swift */; };
 		ECE253E9209A509C00D388CE /* PantosTagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD9141E5CCCB100379FC2 /* PantosTagTests.swift */; };
-		ECE253EA209A50A100D388CE /* HLSStringRefTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD90B1E5CCC2200379FC2 /* HLSStringRefTests.m */; };
+		ECE253EA209A50A100D388CE /* MambaStringRefTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD90B1E5CCC2200379FC2 /* MambaStringRefTests.m */; };
 		ECE253EB209A50A100D388CE /* ParseArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD90C1E5CCC2200379FC2 /* ParseArrayTests.m */; };
 		ECE253EC209A50A100D388CE /* RapidParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD90D1E5CCC2200379FC2 /* RapidParserTests.swift */; };
 		ECE253ED209A50A600D388CE /* ReadMeUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBEF4F01F7AC58A0051078F /* ReadMeUnitTests.swift */; };
@@ -557,41 +545,41 @@
 		ECE25402209A50B500D388CE /* OrderedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492A51DD29F7000AF4E20 /* OrderedDictionaryTests.swift */; };
 		ECE25403209A50B500D388CE /* String+Helio.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC073F5F1FE08F7500689228 /* String+Helio.swift */; };
 		ECE25404209A50B500D388CE /* URLSchemeChangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492A61DD29F7000AF4E20 /* URLSchemeChangeTests.swift */; };
-		ECE25405209A50B500D388CE /* HLSCodecArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492AF1DD29F8900AF4E20 /* HLSCodecArrayTests.swift */; };
-		ECE25406209A50B500D388CE /* HLSMediaTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B01DD29F8900AF4E20 /* HLSMediaTypeTests.swift */; };
+		ECE25405209A50B500D388CE /* CodecArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492AF1DD29F8900AF4E20 /* CodecArrayTests.swift */; };
+		ECE25406209A50B500D388CE /* MediaTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B01DD29F8900AF4E20 /* MediaTypeTests.swift */; };
 		ECE25407209A50B500D388CE /* PlaylistTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B11DD29F8900AF4E20 /* PlaylistTypeTests.swift */; };
-		ECE25408209A50B500D388CE /* HLSResolutionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B21DD29F8900AF4E20 /* HLSResolutionTests.swift */; };
+		ECE25408209A50B500D388CE /* ResolutionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7492B21DD29F8900AF4E20 /* ResolutionTests.swift */; };
 		ECE36DE11F2A9D94005E5DA7 /* PlaylistTimelineTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE36DE01F2A9D94005E5DA7 /* PlaylistTimelineTranslator.swift */; };
 		ECE36DE21F2A9D94005E5DA7 /* PlaylistTimelineTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE36DE01F2A9D94005E5DA7 /* PlaylistTimelineTranslator.swift */; };
 		ECFBD9011E5CCA0900379FC2 /* mamba.h in Headers */ = {isa = PBXBuildFile; fileRef = EC1521511DD28536006FB265 /* mamba.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ECFBD9031E5CCAAF00379FC2 /* XCTestCase+mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD9021E5CCAAF00379FC2 /* XCTestCase+mamba.swift */; };
 		ECFBD9041E5CCAAF00379FC2 /* XCTestCase+mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD9021E5CCAAF00379FC2 /* XCTestCase+mamba.swift */; };
-		ECFBD90E1E5CCC2200379FC2 /* HLSStringRefTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD90B1E5CCC2200379FC2 /* HLSStringRefTests.m */; };
-		ECFBD90F1E5CCC2200379FC2 /* HLSStringRefTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD90B1E5CCC2200379FC2 /* HLSStringRefTests.m */; };
+		ECFBD90E1E5CCC2200379FC2 /* MambaStringRefTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD90B1E5CCC2200379FC2 /* MambaStringRefTests.m */; };
+		ECFBD90F1E5CCC2200379FC2 /* MambaStringRefTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD90B1E5CCC2200379FC2 /* MambaStringRefTests.m */; };
 		ECFBD9101E5CCC2200379FC2 /* ParseArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD90C1E5CCC2200379FC2 /* ParseArrayTests.m */; };
 		ECFBD9111E5CCC2200379FC2 /* ParseArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD90C1E5CCC2200379FC2 /* ParseArrayTests.m */; };
 		ECFBD9121E5CCC2200379FC2 /* RapidParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD90D1E5CCC2200379FC2 /* RapidParserTests.swift */; };
 		ECFBD9131E5CCC2200379FC2 /* RapidParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD90D1E5CCC2200379FC2 /* RapidParserTests.swift */; };
 		ECFBD9151E5CCCB100379FC2 /* PantosTagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD9141E5CCCB100379FC2 /* PantosTagTests.swift */; };
 		ECFBD9161E5CCCB100379FC2 /* PantosTagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD9141E5CCCB100379FC2 /* PantosTagTests.swift */; };
-		F700CD311E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD2F1E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.h */; };
-		F700CD321E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD2F1E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.h */; };
-		F700CD331E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD301E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.m */; };
-		F700CD341E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD301E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.m */; };
-		F700CD371E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD351E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.h */; };
-		F700CD381E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD351E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.h */; };
-		F700CD391E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD361E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.m */; };
-		F700CD3A1E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD361E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.m */; };
-		F700CD3D1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD3B1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.h */; };
-		F700CD3E1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD3B1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.h */; };
-		F700CD3F1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD3C1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.m */; };
-		F700CD401E78AA57001C9487 /* HLSStringRef_ConcreteNSData.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD3C1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.m */; };
-		F70E9E9A1E8C43C8006022C6 /* ParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70E9E991E8C43C8006022C6 /* ParserError.swift */; };
-		F70E9E9B1E8C43C8006022C6 /* ParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70E9E991E8C43C8006022C6 /* ParserError.swift */; };
-		F73183751E78758B00ED8E59 /* HLSStringRefFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F73183731E78758B00ED8E59 /* HLSStringRefFactory.h */; };
-		F73183761E78758B00ED8E59 /* HLSStringRefFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F73183731E78758B00ED8E59 /* HLSStringRefFactory.h */; };
-		F73183771E78758B00ED8E59 /* HLSStringRefFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F73183741E78758B00ED8E59 /* HLSStringRefFactory.m */; };
-		F73183781E78758B00ED8E59 /* HLSStringRefFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F73183741E78758B00ED8E59 /* HLSStringRefFactory.m */; };
+		F700CD311E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD2F1E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.h */; };
+		F700CD321E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD2F1E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.h */; };
+		F700CD331E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD301E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.m */; };
+		F700CD341E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD301E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.m */; };
+		F700CD371E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD351E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.h */; };
+		F700CD381E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD351E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.h */; };
+		F700CD391E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD361E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.m */; };
+		F700CD3A1E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD361E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.m */; };
+		F700CD3D1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD3B1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.h */; };
+		F700CD3E1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD3B1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.h */; };
+		F700CD3F1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD3C1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.m */; };
+		F700CD401E78AA57001C9487 /* MambaStringRef_ConcreteNSData.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD3C1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.m */; };
+		F70E9E9A1E8C43C8006022C6 /* PlaylistParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70E9E991E8C43C8006022C6 /* PlaylistParserError.swift */; };
+		F70E9E9B1E8C43C8006022C6 /* PlaylistParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70E9E991E8C43C8006022C6 /* PlaylistParserError.swift */; };
+		F73183751E78758B00ED8E59 /* MambaStringRefFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F73183731E78758B00ED8E59 /* MambaStringRefFactory.h */; };
+		F73183761E78758B00ED8E59 /* MambaStringRefFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F73183731E78758B00ED8E59 /* MambaStringRefFactory.h */; };
+		F73183771E78758B00ED8E59 /* MambaStringRefFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F73183741E78758B00ED8E59 /* MambaStringRefFactory.m */; };
+		F73183781E78758B00ED8E59 /* MambaStringRefFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F73183741E78758B00ED8E59 /* MambaStringRefFactory.m */; };
 		F7CFF2791F38CACF009F4C82 /* CMTimeMakeFromString.c in Sources */ = {isa = PBXBuildFile; fileRef = F7CFF2771F38CACF009F4C82 /* CMTimeMakeFromString.c */; };
 		F7CFF27A1F38CACF009F4C82 /* CMTimeMakeFromString.c in Sources */ = {isa = PBXBuildFile; fileRef = F7CFF2771F38CACF009F4C82 /* CMTimeMakeFromString.c */; };
 		F7CFF27B1F38CACF009F4C82 /* CMTimeMakeFromString.h in Headers */ = {isa = PBXBuildFile; fileRef = F7CFF2781F38CACF009F4C82 /* CMTimeMakeFromString.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -634,9 +622,9 @@
 		3D933C192193367C0029069F /* EXT-X-BITRATETagParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EXT-X-BITRATETagParserTests.swift"; sourceTree = "<group>"; };
 		43DE4EFA1E564DA300EEE800 /* EXT_X_STARTTimeOffsetValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EXT_X_STARTTimeOffsetValidator.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		43DE4EFC1E564DBE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_MEDIARenditionINSTREAMIDValidator.swift; sourceTree = "<group>"; };
-		883290551EA172170064588B /* HLSStringRefExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSStringRefExtensionTests.swift; sourceTree = "<group>"; };
-		D44E03761E3BAC9F00126B52 /* HLSTag+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLSTag+Util.swift"; sourceTree = "<group>"; };
-		D4BB018C1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLSTagArray+RenditionGroups.swift"; sourceTree = "<group>"; };
+		883290551EA172170064588B /* MambaStringRefExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MambaStringRefExtensionTests.swift; sourceTree = "<group>"; };
+		D44E03761E3BAC9F00126B52 /* PlaylistTag+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlaylistTag+Util.swift"; sourceTree = "<group>"; };
+		D4BB018C1E2EABD500CA006E /* PlaylistTagArray+RenditionGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlaylistTagArray+RenditionGroups.swift"; sourceTree = "<group>"; };
 		EC02E9761E26E77900D4CEAC /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/tvOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		EC03B62D1E5CC54900BF1F97 /* PrototypeRapidParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrototypeRapidParseArray.include; sourceTree = "<group>"; };
 		EC03B62E1E5CC54900BF1F97 /* RapidParser_LookingForEForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForEForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
@@ -654,14 +642,14 @@
 		EC03B63A1E5CC54900BF1F97 /* RapidParser_ScanningState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_ScanningState_ParseArray.include; sourceTree = "<group>"; };
 		EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RapidParserMasterParseArray.c; sourceTree = "<group>"; };
 		EC03B63C1E5CC55800BF1F97 /* RapidParserMasterParseArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserMasterParseArray.h; sourceTree = "<group>"; };
-		EC03B6411E5CC56B00BF1F97 /* HLSRapidParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSRapidParser.h; sourceTree = "<group>"; };
-		EC03B6421E5CC56B00BF1F97 /* HLSRapidParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLSRapidParser.m; sourceTree = "<group>"; };
-		EC03B6431E5CC56B00BF1F97 /* HLSRapidParserCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSRapidParserCallback.h; sourceTree = "<group>"; };
-		EC03B6441E5CC56B00BF1F97 /* HLSStringRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSStringRef.h; sourceTree = "<group>"; };
-		EC03B6451E5CC56B00BF1F97 /* HLSStringRef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLSStringRef.m; sourceTree = "<group>"; };
-		EC03B6461E5CC56B00BF1F97 /* HLSStringRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSStringRef.swift; sourceTree = "<group>"; };
-		EC03B6471E5CC56B00BF1F97 /* RapidParser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RapidParser.c; sourceTree = "<group>"; };
-		EC03B6481E5CC56B00BF1F97 /* RapidParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParser.h; sourceTree = "<group>"; };
+		EC03B6411E5CC56B00BF1F97 /* RapidParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParser.h; sourceTree = "<group>"; };
+		EC03B6421E5CC56B00BF1F97 /* RapidParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RapidParser.m; sourceTree = "<group>"; };
+		EC03B6431E5CC56B00BF1F97 /* RapidParserCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserCallback.h; sourceTree = "<group>"; };
+		EC03B6441E5CC56B00BF1F97 /* MambaStringRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MambaStringRef.h; sourceTree = "<group>"; };
+		EC03B6451E5CC56B00BF1F97 /* MambaStringRef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MambaStringRef.m; sourceTree = "<group>"; };
+		EC03B6461E5CC56B00BF1F97 /* MambaStringRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MambaStringRef.swift; sourceTree = "<group>"; };
+		EC03B6471E5CC56B00BF1F97 /* parseHLS.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = parseHLS.c; sourceTree = "<group>"; };
+		EC03B6481E5CC56B00BF1F97 /* parseHLS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parseHLS.h; sourceTree = "<group>"; };
 		EC03B6491E5CC56B00BF1F97 /* RapidParserDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserDebug.h; sourceTree = "<group>"; };
 		EC03B64A1E5CC56B00BF1F97 /* RapidParserError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RapidParserError.m; sourceTree = "<group>"; };
 		EC03B64B1E5CC56B00BF1F97 /* RapidParserError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserError.h; sourceTree = "<group>"; };
@@ -672,8 +660,7 @@
 		EC03B6501E5CC56B00BF1F97 /* RapidParserStateHandlers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RapidParserStateHandlers.c; sourceTree = "<group>"; };
 		EC03B6511E5CC56B00BF1F97 /* RapidParserStateHandlers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserStateHandlers.h; sourceTree = "<group>"; };
 		EC0677DB21641FE500E715D1 /* CMTimeMakeFromStringCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMTimeMakeFromStringCTests.m; sourceTree = "<group>"; };
-		EC073F561FE0572400689228 /* HLSTagCriterionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSTagCriterionTests.swift; sourceTree = "<group>"; };
-		EC073F591FE072DC00689228 /* HLSTagCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSTagCollectionTests.swift; sourceTree = "<group>"; };
+		EC073F591FE072DC00689228 /* TagCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionTests.swift; sourceTree = "<group>"; };
 		EC073F5C1FE0840000689228 /* OutputStreamExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputStreamExtensionTests.swift; sourceTree = "<group>"; };
 		EC073F5F1FE08F7500689228 /* String+Helio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helio.swift"; sourceTree = "<group>"; };
 		EC15214F1DD28536006FB265 /* mamba.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mamba.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -723,32 +710,30 @@
 		EC3B01BB1DD4D49A00B512E3 /* PlaylistTagGroupValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTagGroupValidator.swift; sourceTree = "<group>"; };
 		EC42A5F11FD9B88E00317EA5 /* IndeterminateBool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndeterminateBool.swift; sourceTree = "<group>"; };
 		EC42A5F41FD9BF0500317EA5 /* IndeterminateBoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndeterminateBoolTests.swift; sourceTree = "<group>"; };
-		EC44248B1E9694C600AECFAB /* HLSTagGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagGroup.swift; sourceTree = "<group>"; };
+		EC44248B1E9694C600AECFAB /* PlaylistTagGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTagGroup.swift; sourceTree = "<group>"; };
 		EC5B87A91D947B59005F68C4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS10.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		EC7491421DD299B400AF4E20 /* PlaylistTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTypes.swift; sourceTree = "<group>"; };
-		EC74914A1DD29ACF00AF4E20 /* HLSTagCriteria.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagCriteria.swift; sourceTree = "<group>"; };
-		EC74914B1DD29ACF00AF4E20 /* HLSTagCriterion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagCriterion.swift; sourceTree = "<group>"; };
-		EC7491521DD29AED00AF4E20 /* HLSTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTag.swift; sourceTree = "<group>"; };
+		EC7491521DD29AED00AF4E20 /* PlaylistTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTag.swift; sourceTree = "<group>"; };
 		EC74915F1DD29B0F00AF4E20 /* CoreMedia+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreMedia+Util.swift"; sourceTree = "<group>"; };
 		EC7491601DD29B0F00AF4E20 /* FailableStringLiteralConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FailableStringLiteralConvertible.swift; sourceTree = "<group>"; };
-		EC7491611DD29B0F00AF4E20 /* RegisteredHLSTags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisteredHLSTags.swift; sourceTree = "<group>"; };
+		EC7491611DD29B0F00AF4E20 /* RegisteredPlaylistTags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisteredPlaylistTags.swift; sourceTree = "<group>"; };
 		EC74916B1DD29B5D00AF4E20 /* CollectionType+FindExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionType+FindExtensions.swift"; sourceTree = "<group>"; };
 		EC74916C1DD29B5D00AF4E20 /* CollectionType+Safe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionType+Safe.swift"; sourceTree = "<group>"; };
 		EC74916D1DD29B5D00AF4E20 /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
 		EC74917A1DD29C3500AF4E20 /* String+DateParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+DateParsing.swift"; sourceTree = "<group>"; };
-		EC74917B1DD29C3500AF4E20 /* String+HLSTypeEquatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HLSTypeEquatable.swift"; sourceTree = "<group>"; };
+		EC74917B1DD29C3500AF4E20 /* String+EquatableMambaTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+EquatableMambaTypes.swift"; sourceTree = "<group>"; };
 		EC74917C1DD29C3500AF4E20 /* String+Trim.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Trim.swift"; sourceTree = "<group>"; };
 		EC7491831DD29CCB00AF4E20 /* GenericDictionaryTagParserHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDictionaryTagParserHelper.swift; sourceTree = "<group>"; };
 		EC7491841DD29CCB00AF4E20 /* StringArrayParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringArrayParser.swift; sourceTree = "<group>"; };
 		EC7491851DD29CCB00AF4E20 /* StringDictionaryParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringDictionaryParser.swift; sourceTree = "<group>"; };
-		EC7491AA1DD29D5C00AF4E20 /* HLSTagDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagDescriptor.swift; sourceTree = "<group>"; };
-		EC7491AB1DD29D5C00AF4E20 /* HLSTagParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagParser.swift; sourceTree = "<group>"; };
-		EC7491AC1DD29D5C00AF4E20 /* HLSTagValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagValidator.swift; sourceTree = "<group>"; };
-		EC7491AD1DD29D5C00AF4E20 /* HLSTagValueIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagValueIdentifier.swift; sourceTree = "<group>"; };
-		EC7491AE1DD29D5C00AF4E20 /* HLSTagWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagWriter.swift; sourceTree = "<group>"; };
-		EC7491AF1DD29D5C00AF4E20 /* HLSValidationIssue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSValidationIssue.swift; sourceTree = "<group>"; };
-		EC7491B11DD29D5C00AF4E20 /* HLSValueTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSValueTypes.swift; sourceTree = "<group>"; };
-		EC7491B21DD29D5C00AF4E20 /* HLSWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSWriter.swift; sourceTree = "<group>"; };
+		EC7491AA1DD29D5C00AF4E20 /* PlaylistTagDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTagDescriptor.swift; sourceTree = "<group>"; };
+		EC7491AB1DD29D5C00AF4E20 /* PlaylistTagParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTagParser.swift; sourceTree = "<group>"; };
+		EC7491AC1DD29D5C00AF4E20 /* PlaylistTagValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTagValidator.swift; sourceTree = "<group>"; };
+		EC7491AD1DD29D5C00AF4E20 /* PlaylistTagValueIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTagValueIdentifier.swift; sourceTree = "<group>"; };
+		EC7491AE1DD29D5C00AF4E20 /* PlaylistTagWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTagWriter.swift; sourceTree = "<group>"; };
+		EC7491AF1DD29D5C00AF4E20 /* PlaylistValidationIssue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistValidationIssue.swift; sourceTree = "<group>"; };
+		EC7491B11DD29D5C00AF4E20 /* ValueTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueTypes.swift; sourceTree = "<group>"; };
+		EC7491B21DD29D5C00AF4E20 /* PlaylistWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistWriter.swift; sourceTree = "<group>"; };
 		EC7491CB1DD29D7C00AF4E20 /* PantosTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantosTag.swift; sourceTree = "<group>"; };
 		EC7491CC1DD29D7C00AF4E20 /* PantosValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantosValue.swift; sourceTree = "<group>"; };
 		EC7491D21DD29D9600AF4E20 /* GenericDictionaryTagParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDictionaryTagParser.swift; sourceTree = "<group>"; };
@@ -771,12 +756,12 @@
 		EC7492061DD29E2900AF4E20 /* super8demuxed1_4242.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = super8demuxed1_4242.m3u8; sourceTree = "<group>"; };
 		EC7492071DD29E2900AF4E20 /* super8demuxed2_IP_1080p24_51_TS.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = super8demuxed2_IP_1080p24_51_TS.m3u8; sourceTree = "<group>"; };
 		EC7492081DD29E2900AF4E20 /* super8demuxed3_1376214110461.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = super8demuxed3_1376214110461.m3u8; sourceTree = "<group>"; };
-		EC7492091DD29E2900AF4E20 /* ThirdPartyHLSTagsTestFixture.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ThirdPartyHLSTagsTestFixture.txt; sourceTree = "<group>"; };
+		EC7492091DD29E2900AF4E20 /* ThirdPartyTagsTestFixture.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ThirdPartyTagsTestFixture.txt; sourceTree = "<group>"; };
 		EC7492221DD29E4A00AF4E20 /* FixtureLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixtureLoader.swift; sourceTree = "<group>"; };
 		EC7492241DD29E4A00AF4E20 /* Playlist+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Playlist+Convenience.swift"; sourceTree = "<group>"; };
-		EC7492271DD29E4A00AF4E20 /* HLSTagParserMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagParserMock.swift; sourceTree = "<group>"; };
-		EC74923B1DD29E7300AF4E20 /* HLSWriterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HLSWriterTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		EC7492521DD29E9A00AF4E20 /* HLSTagWriting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagWriting.swift; sourceTree = "<group>"; };
+		EC7492271DD29E4A00AF4E20 /* TagParserMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagParserMock.swift; sourceTree = "<group>"; };
+		EC74923B1DD29E7300AF4E20 /* PlaylistWriterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PlaylistWriterTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EC7492521DD29E9A00AF4E20 /* TagWriting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagWriting.swift; sourceTree = "<group>"; };
 		EC7492671DD29EC800AF4E20 /* EXT_X_ALLOW_CACHETagParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_ALLOW_CACHETagParserTests.swift; sourceTree = "<group>"; };
 		EC7492681DD29EC800AF4E20 /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_I_FRAME_STREAM_INFTagParserTests.swift; sourceTree = "<group>"; };
 		EC7492691DD29EC800AF4E20 /* EXT_X_KEYTagParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_KEYTagParserTests.swift; sourceTree = "<group>"; };
@@ -795,12 +780,11 @@
 		EC7492A41DD29F7000AF4E20 /* MambaUtilTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MambaUtilTests.swift; sourceTree = "<group>"; };
 		EC7492A51DD29F7000AF4E20 /* OrderedDictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionaryTests.swift; sourceTree = "<group>"; };
 		EC7492A61DD29F7000AF4E20 /* URLSchemeChangeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSchemeChangeTests.swift; sourceTree = "<group>"; };
-		EC7492AF1DD29F8900AF4E20 /* HLSCodecArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSCodecArrayTests.swift; sourceTree = "<group>"; };
-		EC7492B01DD29F8900AF4E20 /* HLSMediaTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSMediaTypeTests.swift; sourceTree = "<group>"; };
+		EC7492AF1DD29F8900AF4E20 /* CodecArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodecArrayTests.swift; sourceTree = "<group>"; };
+		EC7492B01DD29F8900AF4E20 /* MediaTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTypeTests.swift; sourceTree = "<group>"; };
 		EC7492B11DD29F8900AF4E20 /* PlaylistTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTypeTests.swift; sourceTree = "<group>"; };
-		EC7492B21DD29F8900AF4E20 /* HLSResolutionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSResolutionTests.swift; sourceTree = "<group>"; };
+		EC7492B21DD29F8900AF4E20 /* ResolutionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResolutionTests.swift; sourceTree = "<group>"; };
 		EC95477B1E5CC7C800962535 /* OutputStream+HLSWriting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OutputStream+HLSWriting.swift"; sourceTree = "<group>"; };
-		EC95477E1E5CC80800962535 /* HLSStringRef+mamba.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLSStringRef+mamba.swift"; sourceTree = "<group>"; };
 		EC9547811E5CC82500962535 /* GenericTagWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTagWriter.swift; sourceTree = "<group>"; };
 		EC9547841E5CC83C00962535 /* NoOpTagParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoOpTagParser.swift; sourceTree = "<group>"; };
 		EC9547871E5CC84700962535 /* Mamba.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mamba.swift; sourceTree = "<group>"; };
@@ -820,33 +804,33 @@
 		ECBEF4F01F7AC58A0051078F /* ReadMeUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMeUnitTests.swift; sourceTree = "<group>"; };
 		ECC4105F1EA02F4800B4E3C8 /* StructureState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructureState.swift; sourceTree = "<group>"; };
 		ECC410631EA1518E00B4E3C8 /* StructureStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructureStateTests.swift; sourceTree = "<group>"; };
-		ECC410661EA1527700B4E3C8 /* HLSTagGroupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagGroupTests.swift; sourceTree = "<group>"; };
-		ECCF2DAC1E23F54100D7C48B /* HLSTagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSTagTests.swift; sourceTree = "<group>"; };
+		ECC410661EA1527700B4E3C8 /* PlaylistTagGroupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTagGroupTests.swift; sourceTree = "<group>"; };
+		ECCF2DAC1E23F54100D7C48B /* TagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTests.swift; sourceTree = "<group>"; };
 		ECD1EA4E1E2595AE00A88101 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		ECD1EA5A1E25A36000A88101 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = Carthage/Build/iOS/OCMock.framework; sourceTree = "<group>"; };
 		ECDE183F22381146008566BB /* MasterPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterPlaylist.swift; sourceTree = "<group>"; };
 		ECDE18432238114E008566BB /* VariantPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantPlaylist.swift; sourceTree = "<group>"; };
-		ECDE184722381E6C008566BB /* URLDataPlaylistExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDataPlaylistExtensions.swift; sourceTree = "<group>"; };
-		ECDE184B22383230008566BB /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		ECDE184722381E6C008566BB /* PlaylistURLDataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistURLDataExtensions.swift; sourceTree = "<group>"; };
+		ECDE184B22383230008566BB /* PlaylistParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistParser.swift; sourceTree = "<group>"; };
 		ECDE185022387257008566BB /* VariantPlaylistMediaSpanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantPlaylistMediaSpanTests.swift; sourceTree = "<group>"; };
 		ECDE185422396833008566BB /* VariantPlaylistValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantPlaylistValidator.swift; sourceTree = "<group>"; };
 		ECDE185822396846008566BB /* MasterPlaylistValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterPlaylistValidator.swift; sourceTree = "<group>"; };
 		ECDE185C22396E7D008566BB /* PlaylistValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistValidator.swift; sourceTree = "<group>"; };
 		ECE36DE01F2A9D94005E5DA7 /* PlaylistTimelineTranslator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTimelineTranslator.swift; sourceTree = "<group>"; };
 		ECFBD9021E5CCAAF00379FC2 /* XCTestCase+mamba.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+mamba.swift"; sourceTree = "<group>"; };
-		ECFBD90B1E5CCC2200379FC2 /* HLSStringRefTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = HLSStringRefTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		ECFBD90B1E5CCC2200379FC2 /* MambaStringRefTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MambaStringRefTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		ECFBD90C1E5CCC2200379FC2 /* ParseArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseArrayTests.m; sourceTree = "<group>"; };
 		ECFBD90D1E5CCC2200379FC2 /* RapidParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidParserTests.swift; sourceTree = "<group>"; };
 		ECFBD9141E5CCCB100379FC2 /* PantosTagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantosTagTests.swift; sourceTree = "<group>"; };
-		F700CD2F1E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSStringRef_ConcreteUnownedBytes.h; sourceTree = "<group>"; };
-		F700CD301E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLSStringRef_ConcreteUnownedBytes.m; sourceTree = "<group>"; };
-		F700CD351E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSStringRef_ConcreteNSString.h; sourceTree = "<group>"; };
-		F700CD361E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLSStringRef_ConcreteNSString.m; sourceTree = "<group>"; };
-		F700CD3B1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSStringRef_ConcreteNSData.h; sourceTree = "<group>"; };
-		F700CD3C1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLSStringRef_ConcreteNSData.m; sourceTree = "<group>"; };
-		F70E9E991E8C43C8006022C6 /* ParserError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserError.swift; sourceTree = "<group>"; };
-		F73183731E78758B00ED8E59 /* HLSStringRefFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSStringRefFactory.h; sourceTree = "<group>"; };
-		F73183741E78758B00ED8E59 /* HLSStringRefFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLSStringRefFactory.m; sourceTree = "<group>"; };
+		F700CD2F1E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MambaStringRef_ConcreteUnownedBytes.h; sourceTree = "<group>"; };
+		F700CD301E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MambaStringRef_ConcreteUnownedBytes.m; sourceTree = "<group>"; };
+		F700CD351E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MambaStringRef_ConcreteNSString.h; sourceTree = "<group>"; };
+		F700CD361E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MambaStringRef_ConcreteNSString.m; sourceTree = "<group>"; };
+		F700CD3B1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MambaStringRef_ConcreteNSData.h; sourceTree = "<group>"; };
+		F700CD3C1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MambaStringRef_ConcreteNSData.m; sourceTree = "<group>"; };
+		F70E9E991E8C43C8006022C6 /* PlaylistParserError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistParserError.swift; sourceTree = "<group>"; };
+		F73183731E78758B00ED8E59 /* MambaStringRefFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MambaStringRefFactory.h; sourceTree = "<group>"; };
+		F73183741E78758B00ED8E59 /* MambaStringRefFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MambaStringRefFactory.m; sourceTree = "<group>"; };
 		F7CFF2771F38CACF009F4C82 /* CMTimeMakeFromString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CMTimeMakeFromString.c; sourceTree = "<group>"; };
 		F7CFF2781F38CACF009F4C82 /* CMTimeMakeFromString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMTimeMakeFromString.h; sourceTree = "<group>"; };
 		F7CFF27D1F392009009F4C82 /* CMTimeMakeFromStringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMTimeMakeFromStringTests.swift; sourceTree = "<group>"; };
@@ -942,16 +926,16 @@
 			path = "Pantos-Generic Tag Validators";
 			sourceTree = "<group>";
 		};
-		EC03B62B1E5CC51C00BF1F97 /* HLS Rapid Parser */ = {
+		EC03B62B1E5CC51C00BF1F97 /* Rapid Parser */ = {
 			isa = PBXGroup;
 			children = (
-				EC03B6411E5CC56B00BF1F97 /* HLSRapidParser.h */,
-				EC03B6421E5CC56B00BF1F97 /* HLSRapidParser.m */,
-				EC03B6431E5CC56B00BF1F97 /* HLSRapidParserCallback.h */,
-				F73183721E7872AB00ED8E59 /* HLSStringRef */,
+				F73183721E7872AB00ED8E59 /* MambaStringRef */,
+				EC03B6411E5CC56B00BF1F97 /* RapidParser.h */,
+				EC03B6421E5CC56B00BF1F97 /* RapidParser.m */,
+				EC03B6431E5CC56B00BF1F97 /* RapidParserCallback.h */,
 				EC03B62C1E5CC52C00BF1F97 /* Master Parse Array */,
-				EC03B6471E5CC56B00BF1F97 /* RapidParser.c */,
-				EC03B6481E5CC56B00BF1F97 /* RapidParser.h */,
+				EC03B6471E5CC56B00BF1F97 /* parseHLS.c */,
+				EC03B6481E5CC56B00BF1F97 /* parseHLS.h */,
 				EC03B6491E5CC56B00BF1F97 /* RapidParserDebug.h */,
 				EC03B64B1E5CC56B00BF1F97 /* RapidParserError.h */,
 				EC03B64A1E5CC56B00BF1F97 /* RapidParserError.m */,
@@ -964,7 +948,7 @@
 				EC318B4F226534AF00969E2D /* StaticMemoryStorage.h */,
 				EC318B50226534AF00969E2D /* StaticMemoryStorage.m */,
 			);
-			path = "HLS Rapid Parser";
+			path = "Rapid Parser";
 			sourceTree = "<group>";
 		};
 		EC03B62C1E5CC52C00BF1F97 /* Master Parse Array */ = {
@@ -1014,14 +998,8 @@
 				ECAFFA0D2239AD5700A6D5F4 /* BasicParserTest.swift */,
 				EC6C8F821D08C78C007C1C99 /* Fixtures */,
 				EC6C8F831D08C793007C1C99 /* Helpers */,
-				883290551EA172170064588B /* HLSStringRefExtensionTests.swift */,
-				EC073F591FE072DC00689228 /* HLSTagCollectionTests.swift */,
-				EC073F561FE0572400689228 /* HLSTagCriterionTests.swift */,
-				ECC410661EA1527700B4E3C8 /* HLSTagGroupTests.swift */,
-				ECCF2DAC1E23F54100D7C48B /* HLSTagTests.swift */,
-				EC7492521DD29E9A00AF4E20 /* HLSTagWriting.swift */,
-				EC74923B1DD29E7300AF4E20 /* HLSWriterTests.swift */,
 				EC15215E1DD28536006FB265 /* Info.plist */,
+				883290551EA172170064588B /* MambaStringRefExtensionTests.swift */,
 				EC073F5C1FE0840000689228 /* OutputStreamExtensionTests.swift */,
 				ECFBD9141E5CCCB100379FC2 /* PantosTagTests.swift */,
 				ECAFFA002239A22800A6D5F4 /* Parser_EventUpdateTests.swift */,
@@ -1033,6 +1011,7 @@
 				ECAFFA1D223AC85000A6D5F4 /* PlaylistStructureTests.swift */,
 				ECAFFA21223ADAC900A6D5F4 /* PlaylistTests.swift */,
 				ECAFFA25223ADF0500A6D5F4 /* PlaylistTimelineAndSequencingTests.swift */,
+				EC74923B1DD29E7300AF4E20 /* PlaylistWriterTests.swift */,
 				ECFBD9081E5CCBFF00379FC2 /* Rapid Parsing Tests */,
 				ECBEF4F01F7AC58A0051078F /* ReadMeUnitTests.swift */,
 				EC318B57226534F400969E2D /* StaticMemoryStorageTests.m */,
@@ -1040,6 +1019,10 @@
 				EC3B57F41D36CCE7006656C3 /* Tag Parser Tests */,
 				0173AB081D5BB304005DE51B /* Tag Validator Tests */,
 				EC3B57F51D36CD11006656C3 /* Tag Writer Tests */,
+				EC073F591FE072DC00689228 /* TagCollectionTests.swift */,
+				ECC410661EA1527700B4E3C8 /* PlaylistTagGroupTests.swift */,
+				ECCF2DAC1E23F54100D7C48B /* TagTests.swift */,
+				EC7492521DD29E9A00AF4E20 /* TagWriting.swift */,
 				EC7492A01DD29F4600AF4E20 /* ThirdPartyTagListSupportTests.swift */,
 				EC86853F1D667907004551B8 /* Util Tests */,
 				ECAFFA29223AF6E700A6D5F4 /* ValidatorTests.swift */,
@@ -1059,23 +1042,22 @@
 		EC1521821DD2857B006FB265 /* mambaSharedFramework */ = {
 			isa = PBXGroup;
 			children = (
-				F795EAF01D909D1900534F7E /* HLS Models */,
-				EC8685381D651C0F004551B8 /* HLS Query Language */,
-				EC03B62B1E5CC51C00BF1F97 /* HLS Rapid Parser */,
-				EC7ECA011D30177A000EEB7D /* HLS Utils */,
-				EC7491AA1DD29D5C00AF4E20 /* HLSTagDescriptor.swift */,
-				EC7491AB1DD29D5C00AF4E20 /* HLSTagParser.swift */,
-				EC7491AC1DD29D5C00AF4E20 /* HLSTagValidator.swift */,
-				EC7491AD1DD29D5C00AF4E20 /* HLSTagValueIdentifier.swift */,
-				EC7491AE1DD29D5C00AF4E20 /* HLSTagWriter.swift */,
-				EC7491AF1DD29D5C00AF4E20 /* HLSValidationIssue.swift */,
-				EC7491B11DD29D5C00AF4E20 /* HLSValueTypes.swift */,
-				EC7491B21DD29D5C00AF4E20 /* HLSWriter.swift */,
 				EC1521511DD28536006FB265 /* mamba.h */,
 				EC9547871E5CC84700962535 /* Mamba.swift */,
-				ECBE47001D33F4100081D096 /* Pantos-Generic HLS Playlist Parsing */,
-				ECDE184B22383230008566BB /* Parser.swift */,
-				F70E9E991E8C43C8006022C6 /* ParserError.swift */,
+				ECBE47001D33F4100081D096 /* Pantos-Generic Playlist Parsing */,
+				F795EAF01D909D1900534F7E /* Playlist Models */,
+				ECDE184B22383230008566BB /* PlaylistParser.swift */,
+				F70E9E991E8C43C8006022C6 /* PlaylistParserError.swift */,
+				EC7491AA1DD29D5C00AF4E20 /* PlaylistTagDescriptor.swift */,
+				EC7491AB1DD29D5C00AF4E20 /* PlaylistTagParser.swift */,
+				EC7491AC1DD29D5C00AF4E20 /* PlaylistTagValidator.swift */,
+				EC7491AD1DD29D5C00AF4E20 /* PlaylistTagValueIdentifier.swift */,
+				EC7491AE1DD29D5C00AF4E20 /* PlaylistTagWriter.swift */,
+				EC7491AF1DD29D5C00AF4E20 /* PlaylistValidationIssue.swift */,
+				EC7491B21DD29D5C00AF4E20 /* PlaylistWriter.swift */,
+				EC03B62B1E5CC51C00BF1F97 /* Rapid Parser */,
+				EC7ECA011D30177A000EEB7D /* Utils */,
+				EC7491B11DD29D5C00AF4E20 /* ValueTypes.swift */,
 			);
 			path = mambaSharedFramework;
 			sourceTree = "<group>";
@@ -1108,14 +1090,14 @@
 			path = mambaMacOSTests;
 			sourceTree = "<group>";
 		};
-		EC349AC82236C0CC0077432B /* Playlist Type Generics */ = {
+		EC349AC82236C0CC0077432B /* Playlist Generic Types */ = {
 			isa = PBXGroup;
 			children = (
 				EC349ADD2236F57F0077432B /* MasterPlaylistType.swift */,
 				EC349AC92236C1520077432B /* PlaylistTypeInterface.swift */,
 				EC349AE12236F58B0077432B /* VariantPlaylistType.swift */,
 			);
-			path = "Playlist Type Generics";
+			path = "Playlist Generic Types";
 			sourceTree = "<group>";
 		};
 		EC3B57F41D36CCE7006656C3 /* Tag Parser Tests */ = {
@@ -1173,7 +1155,7 @@
 				F7CFF2771F38CACF009F4C82 /* CMTimeMakeFromString.c */,
 				F7CFF2781F38CACF009F4C82 /* CMTimeMakeFromString.h */,
 				EC74917A1DD29C3500AF4E20 /* String+DateParsing.swift */,
-				EC74917B1DD29C3500AF4E20 /* String+HLSTypeEquatable.swift */,
+				EC74917B1DD29C3500AF4E20 /* String+EquatableMambaTypes.swift */,
 				EC74917C1DD29C3500AF4E20 /* String+Trim.swift */,
 			);
 			path = "String Util";
@@ -1184,8 +1166,8 @@
 			children = (
 				EC74916B1DD29B5D00AF4E20 /* CollectionType+FindExtensions.swift */,
 				EC74916C1DD29B5D00AF4E20 /* CollectionType+Safe.swift */,
-				D4BB018C1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift */,
 				EC74916D1DD29B5D00AF4E20 /* OrderedDictionary.swift */,
+				D4BB018C1E2EABD500CA006E /* PlaylistTagArray+RenditionGroups.swift */,
 			);
 			path = Collections;
 			sourceTree = "<group>";
@@ -1224,7 +1206,7 @@
 				EC7492031DD29E2900AF4E20 /* Super8_muxed1_4242.m3u8 */,
 				EC7492041DD29E2900AF4E20 /* Super8_muxed2_1376214110461.m3u8 */,
 				EC7492051DD29E2900AF4E20 /* Super8_muxed3_HD_VOD_VDS_TELENOVELA_02152016_LVLH08.m3u8 */,
-				EC7492091DD29E2900AF4E20 /* ThirdPartyHLSTagsTestFixture.txt */,
+				EC7492091DD29E2900AF4E20 /* ThirdPartyTagsTestFixture.txt */,
 				EC7491FE1DD29E2900AF4E20 /* bipbopall.m3u8 */,
 				1D28F3401EAA9E500010320B /* hls_ad_master_playlist.m3u8 */,
 				1D28F3411EAA9E500010320B /* hls_ad_variant_playlist.m3u8 */,
@@ -1247,7 +1229,7 @@
 			children = (
 				EC7492221DD29E4A00AF4E20 /* FixtureLoader.swift */,
 				EC7492241DD29E4A00AF4E20 /* Playlist+Convenience.swift */,
-				EC7492271DD29E4A00AF4E20 /* HLSTagParserMock.swift */,
+				EC7492271DD29E4A00AF4E20 /* TagParserMock.swift */,
 				ECFBD9021E5CCAAF00379FC2 /* XCTestCase+mamba.swift */,
 			);
 			path = Helpers;
@@ -1264,31 +1246,21 @@
 			path = "Pantos-Generic Tag Parsers";
 			sourceTree = "<group>";
 		};
-		EC7ECA011D30177A000EEB7D /* HLS Utils */ = {
+		EC7ECA011D30177A000EEB7D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				EC60B5941D52682100421ACF /* Collections */,
 				EC74915F1DD29B0F00AF4E20 /* CoreMedia+Util.swift */,
 				EC7491601DD29B0F00AF4E20 /* FailableStringLiteralConvertible.swift */,
-				EC95477E1E5CC80800962535 /* HLSStringRef+mamba.swift */,
-				D44E03761E3BAC9F00126B52 /* HLSTag+Util.swift */,
 				EC42A5F11FD9B88E00317EA5 /* IndeterminateBool.swift */,
 				EC95477B1E5CC7C800962535 /* OutputStream+HLSWriting.swift */,
-				EC7491611DD29B0F00AF4E20 /* RegisteredHLSTags.swift */,
+				EC7491611DD29B0F00AF4E20 /* RegisteredPlaylistTags.swift */,
 				EC60B5931D52681100421ACF /* String Util */,
 				EC1418351D21BAD000B5CE32 /* Tag Parser Helpers */,
+				D44E03761E3BAC9F00126B52 /* PlaylistTag+Util.swift */,
 				EC9826011DD3A113003BCDA5 /* URLSchemeChangeExtension.swift */,
 			);
-			path = "HLS Utils";
-			sourceTree = "<group>";
-		};
-		EC8685381D651C0F004551B8 /* HLS Query Language */ = {
-			isa = PBXGroup;
-			children = (
-				EC74914A1DD29ACF00AF4E20 /* HLSTagCriteria.swift */,
-				EC74914B1DD29ACF00AF4E20 /* HLSTagCriterion.swift */,
-			);
-			path = "HLS Query Language";
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		EC86853F1D667907004551B8 /* Util Tests */ = {
@@ -1307,18 +1279,27 @@
 			path = "Util Tests";
 			sourceTree = "<group>";
 		};
+		EC941C8A224A8F37001F6C81 /* Playlist Concrete Types */ = {
+			isa = PBXGroup;
+			children = (
+				ECDE183F22381146008566BB /* MasterPlaylist.swift */,
+				ECDE18432238114E008566BB /* VariantPlaylist.swift */,
+			);
+			path = "Playlist Concrete Types";
+			sourceTree = "<group>";
+		};
 		EC9BCAA21D749D8B0032BEBE /* Value Types */ = {
 			isa = PBXGroup;
 			children = (
-				EC7492AF1DD29F8900AF4E20 /* HLSCodecArrayTests.swift */,
-				EC7492B01DD29F8900AF4E20 /* HLSMediaTypeTests.swift */,
-				EC7492B21DD29F8900AF4E20 /* HLSResolutionTests.swift */,
+				EC7492AF1DD29F8900AF4E20 /* CodecArrayTests.swift */,
+				EC7492B01DD29F8900AF4E20 /* MediaTypeTests.swift */,
+				EC7492B21DD29F8900AF4E20 /* ResolutionTests.swift */,
 				EC7492B11DD29F8900AF4E20 /* PlaylistTypeTests.swift */,
 			);
 			path = "Value Types";
 			sourceTree = "<group>";
 		};
-		ECBE47001D33F4100081D096 /* Pantos-Generic HLS Playlist Parsing */ = {
+		ECBE47001D33F4100081D096 /* Pantos-Generic Playlist Parsing */ = {
 			isa = PBXGroup;
 			children = (
 				EC7D1C791D343B5A007F971D /* Pantos-Generic Tag Parsers */,
@@ -1327,17 +1308,17 @@
 				EC7491CB1DD29D7C00AF4E20 /* PantosTag.swift */,
 				EC7491CC1DD29D7C00AF4E20 /* PantosValue.swift */,
 			);
-			path = "Pantos-Generic HLS Playlist Parsing";
+			path = "Pantos-Generic Playlist Parsing";
 			sourceTree = "<group>";
 		};
 		ECC410621EA03AD000B4E3C8 /* Playlist Structure */ = {
 			isa = PBXGroup;
 			children = (
-				ECE36DE01F2A9D94005E5DA7 /* PlaylistTimelineTranslator.swift */,
-				EC44248B1E9694C600AECFAB /* HLSTagGroup.swift */,
 				EC349AD52236F55F0077432B /* MasterPlaylistStructure.swift */,
 				EC349AD12236CB860077432B /* PlaylistStructureCore.swift */,
 				EC349ACD2236C3A60077432B /* PlaylistStructureInterface.swift */,
+				EC44248B1E9694C600AECFAB /* PlaylistTagGroup.swift */,
+				ECE36DE01F2A9D94005E5DA7 /* PlaylistTimelineTranslator.swift */,
 				ECC4105F1EA02F4800B4E3C8 /* StructureState.swift */,
 				EC349AD92236F56A0077432B /* VariantPlaylistStructure.swift */,
 			);
@@ -1347,45 +1328,44 @@
 		ECFBD9081E5CCBFF00379FC2 /* Rapid Parsing Tests */ = {
 			isa = PBXGroup;
 			children = (
-				ECFBD90B1E5CCC2200379FC2 /* HLSStringRefTests.m */,
+				ECFBD90B1E5CCC2200379FC2 /* MambaStringRefTests.m */,
 				ECFBD90C1E5CCC2200379FC2 /* ParseArrayTests.m */,
 				ECFBD90D1E5CCC2200379FC2 /* RapidParserTests.swift */,
 			);
 			path = "Rapid Parsing Tests";
 			sourceTree = "<group>";
 		};
-		F73183721E7872AB00ED8E59 /* HLSStringRef */ = {
+		F73183721E7872AB00ED8E59 /* MambaStringRef */ = {
 			isa = PBXGroup;
 			children = (
-				EC03B6441E5CC56B00BF1F97 /* HLSStringRef.h */,
-				EC03B6451E5CC56B00BF1F97 /* HLSStringRef.m */,
-				EC03B6461E5CC56B00BF1F97 /* HLSStringRef.swift */,
-				F73183731E78758B00ED8E59 /* HLSStringRefFactory.h */,
-				F73183741E78758B00ED8E59 /* HLSStringRefFactory.m */,
-				F700CD3B1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.h */,
-				F700CD3C1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.m */,
-				F700CD351E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.h */,
-				F700CD361E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.m */,
-				F700CD2F1E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.h */,
-				F700CD301E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.m */,
+				EC03B6441E5CC56B00BF1F97 /* MambaStringRef.h */,
+				EC03B6451E5CC56B00BF1F97 /* MambaStringRef.m */,
+				EC03B6461E5CC56B00BF1F97 /* MambaStringRef.swift */,
+				F73183731E78758B00ED8E59 /* MambaStringRefFactory.h */,
+				F73183741E78758B00ED8E59 /* MambaStringRefFactory.m */,
+				F700CD3B1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.h */,
+				F700CD3C1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.m */,
+				F700CD351E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.h */,
+				F700CD361E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.m */,
+				F700CD2F1E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.h */,
+				F700CD301E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.m */,
 			);
-			path = HLSStringRef;
+			path = MambaStringRef;
 			sourceTree = "<group>";
 		};
-		F795EAF01D909D1900534F7E /* HLS Models */ = {
+		F795EAF01D909D1900534F7E /* Playlist Models */ = {
 			isa = PBXGroup;
 			children = (
-				EC7491521DD29AED00AF4E20 /* HLSTag.swift */,
-				ECDE183F22381146008566BB /* MasterPlaylist.swift */,
+				EC941C8A224A8F37001F6C81 /* Playlist Concrete Types */,
+				EC349AC82236C0CC0077432B /* Playlist Generic Types */,
 				ECC410621EA03AD000B4E3C8 /* Playlist Structure */,
-				EC349AC82236C0CC0077432B /* Playlist Type Generics */,
 				EC349AC02236BFAC0077432B /* PlaylistCore.swift */,
 				EC349AC42236BFF10077432B /* PlaylistInterface.swift */,
+				EC7491521DD29AED00AF4E20 /* PlaylistTag.swift */,
 				EC7491421DD299B400AF4E20 /* PlaylistTypes.swift */,
-				ECDE184722381E6C008566BB /* URLDataPlaylistExtensions.swift */,
-				ECDE18432238114E008566BB /* VariantPlaylist.swift */,
+				ECDE184722381E6C008566BB /* PlaylistURLDataExtensions.swift */,
 			);
-			path = "HLS Models";
+			path = "Playlist Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1396,22 +1376,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC03B63F1E5CC55800BF1F97 /* RapidParserMasterParseArray.h in Headers */,
-				EC03B6581E5CC56B00BF1F97 /* HLSStringRef.h in Headers */,
-				F73183751E78758B00ED8E59 /* HLSStringRefFactory.h in Headers */,
-				F700CD311E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.h in Headers */,
+				EC03B6581E5CC56B00BF1F97 /* MambaStringRef.h in Headers */,
+				F73183751E78758B00ED8E59 /* MambaStringRefFactory.h in Headers */,
+				F700CD311E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.h in Headers */,
 				EC03B6621E5CC56B00BF1F97 /* RapidParserDebug.h in Headers */,
-				F700CD371E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.h in Headers */,
+				F700CD371E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.h in Headers */,
 				EC03B6721E5CC56B00BF1F97 /* RapidParserStateHandlers.h in Headers */,
 				EC318B51226534AF00969E2D /* StaticMemoryStorage.h in Headers */,
 				EC03B66C1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h in Headers */,
 				EC03B66A1E5CC56B00BF1F97 /* RapidParserLineState.h in Headers */,
 				EC03B66E1E5CC56B00BF1F97 /* RapidParserState.h in Headers */,
-				EC03B6521E5CC56B00BF1F97 /* HLSRapidParser.h in Headers */,
-				F700CD3D1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.h in Headers */,
+				EC03B6521E5CC56B00BF1F97 /* RapidParser.h in Headers */,
+				F700CD3D1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.h in Headers */,
 				F7CFF27B1F38CACF009F4C82 /* CMTimeMakeFromString.h in Headers */,
 				EC15215F1DD28536006FB265 /* mamba.h in Headers */,
-				EC03B6601E5CC56B00BF1F97 /* RapidParser.h in Headers */,
-				EC03B6561E5CC56B00BF1F97 /* HLSRapidParserCallback.h in Headers */,
+				EC03B6601E5CC56B00BF1F97 /* parseHLS.h in Headers */,
+				EC03B6561E5CC56B00BF1F97 /* RapidParserCallback.h in Headers */,
 				EC03B6661E5CC56B00BF1F97 /* RapidParserError.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1421,22 +1401,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC03B6401E5CC55800BF1F97 /* RapidParserMasterParseArray.h in Headers */,
-				EC03B6591E5CC56B00BF1F97 /* HLSStringRef.h in Headers */,
-				F73183761E78758B00ED8E59 /* HLSStringRefFactory.h in Headers */,
-				F700CD321E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.h in Headers */,
+				EC03B6591E5CC56B00BF1F97 /* MambaStringRef.h in Headers */,
+				F73183761E78758B00ED8E59 /* MambaStringRefFactory.h in Headers */,
+				F700CD321E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.h in Headers */,
 				EC03B6631E5CC56B00BF1F97 /* RapidParserDebug.h in Headers */,
-				F700CD381E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.h in Headers */,
+				F700CD381E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.h in Headers */,
 				EC03B6731E5CC56B00BF1F97 /* RapidParserStateHandlers.h in Headers */,
 				EC318B52226534AF00969E2D /* StaticMemoryStorage.h in Headers */,
 				EC03B66D1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h in Headers */,
 				ECFBD9011E5CCA0900379FC2 /* mamba.h in Headers */,
 				EC03B66B1E5CC56B00BF1F97 /* RapidParserLineState.h in Headers */,
 				EC03B66F1E5CC56B00BF1F97 /* RapidParserState.h in Headers */,
-				F700CD3E1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.h in Headers */,
+				F700CD3E1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.h in Headers */,
 				F7CFF27C1F38CACF009F4C82 /* CMTimeMakeFromString.h in Headers */,
-				EC03B6531E5CC56B00BF1F97 /* HLSRapidParser.h in Headers */,
-				EC03B6611E5CC56B00BF1F97 /* RapidParser.h in Headers */,
-				EC03B6571E5CC56B00BF1F97 /* HLSRapidParserCallback.h in Headers */,
+				EC03B6531E5CC56B00BF1F97 /* RapidParser.h in Headers */,
+				EC03B6611E5CC56B00BF1F97 /* parseHLS.h in Headers */,
+				EC03B6571E5CC56B00BF1F97 /* RapidParserCallback.h in Headers */,
 				EC03B6671E5CC56B00BF1F97 /* RapidParserError.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1445,18 +1425,18 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC1CCD01209A2CF9006B59FF /* HLSStringRef_ConcreteNSString.h in Headers */,
-				EC1CCD17209A2CF9006B59FF /* HLSRapidParserCallback.h in Headers */,
+				EC1CCD01209A2CF9006B59FF /* MambaStringRef_ConcreteNSString.h in Headers */,
+				EC1CCD17209A2CF9006B59FF /* RapidParserCallback.h in Headers */,
 				ECE253BA209A485E00D388CE /* mamba.h in Headers */,
-				EC1CCD15209A2CF9006B59FF /* HLSRapidParser.h in Headers */,
-				EC1CCCFA209A2CF9006B59FF /* HLSStringRef.h in Headers */,
-				EC1CCD03209A2CF9006B59FF /* HLSStringRef_ConcreteUnownedBytes.h in Headers */,
-				EC1CCD19209A2CF9006B59FF /* RapidParser.h in Headers */,
+				EC1CCD15209A2CF9006B59FF /* RapidParser.h in Headers */,
+				EC1CCCFA209A2CF9006B59FF /* MambaStringRef.h in Headers */,
+				EC1CCD03209A2CF9006B59FF /* MambaStringRef_ConcreteUnownedBytes.h in Headers */,
+				EC1CCD19209A2CF9006B59FF /* parseHLS.h in Headers */,
 				EC318B53226534AF00969E2D /* StaticMemoryStorage.h in Headers */,
 				EC1CCD07209A2CF9006B59FF /* RapidParserMasterParseArray.h in Headers */,
 				EC1CCD1A209A2CF9006B59FF /* RapidParserDebug.h in Headers */,
-				EC1CCCFD209A2CF9006B59FF /* HLSStringRefFactory.h in Headers */,
-				EC1CCCFF209A2CF9006B59FF /* HLSStringRef_ConcreteNSData.h in Headers */,
+				EC1CCCFD209A2CF9006B59FF /* MambaStringRefFactory.h in Headers */,
+				EC1CCCFF209A2CF9006B59FF /* MambaStringRef_ConcreteNSData.h in Headers */,
 				EC1CCD20209A2CF9006B59FF /* RapidParserState.h in Headers */,
 				EC1CCD2F209A2CF9006B59FF /* CMTimeMakeFromString.h in Headers */,
 				EC1CCD1F209A2CF9006B59FF /* RapidParserNewTagCallbacks.h in Headers */,
@@ -1660,7 +1640,7 @@
 				EC74921C1DD29E2900AF4E20 /* super8demuxed2_IP_1080p24_51_TS.m3u8 in Resources */,
 				EC7492141DD29E2900AF4E20 /* Super8_muxed1_4242.m3u8 in Resources */,
 				EC1705461DFB490A00C969F9 /* linear_ad_insertion_CONTENT_mid_ad.m3u8 in Resources */,
-				EC7492201DD29E2900AF4E20 /* ThirdPartyHLSTagsTestFixture.txt in Resources */,
+				EC7492201DD29E2900AF4E20 /* ThirdPartyTagsTestFixture.txt in Resources */,
 				EC74920A1DD29E2900AF4E20 /* bipbopall.m3u8 in Resources */,
 				EC1705421DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_forced.m3u8 in Resources */,
 				EC74921A1DD29E2900AF4E20 /* super8demuxed1_4242.m3u8 in Resources */,
@@ -1696,7 +1676,7 @@
 				EC74921D1DD29E2900AF4E20 /* super8demuxed2_IP_1080p24_51_TS.m3u8 in Resources */,
 				EC7492151DD29E2900AF4E20 /* Super8_muxed1_4242.m3u8 in Resources */,
 				EC1705471DFB490A00C969F9 /* linear_ad_insertion_CONTENT_mid_ad.m3u8 in Resources */,
-				EC7492211DD29E2900AF4E20 /* ThirdPartyHLSTagsTestFixture.txt in Resources */,
+				EC7492211DD29E2900AF4E20 /* ThirdPartyTagsTestFixture.txt in Resources */,
 				EC74920B1DD29E2900AF4E20 /* bipbopall.m3u8 in Resources */,
 				EC1705431DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_forced.m3u8 in Resources */,
 				EC74921B1DD29E2900AF4E20 /* super8demuxed1_4242.m3u8 in Resources */,
@@ -1746,7 +1726,7 @@
 				ECE253BE209A508700D388CE /* linear_ad_insertion_CONTENT_mid_ad.m3u8 in Resources */,
 				ECE253CC209A508700D388CE /* hls_variant_playlist.m3u8 in Resources */,
 				ECE253CA209A508700D388CE /* hls_sampleMediaFile.txt in Resources */,
-				ECE253C3209A508700D388CE /* ThirdPartyHLSTagsTestFixture.txt in Resources */,
+				ECE253C3209A508700D388CE /* ThirdPartyTagsTestFixture.txt in Resources */,
 				ECE253BB209A508700D388CE /* linear_ad_insertion_AD.m3u8 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1762,11 +1742,11 @@
 				EC3B01C31DD4D49A00B512E3 /* PlaylistOneToManyValidator.swift in Sources */,
 				ECC410601EA02F4800B4E3C8 /* StructureState.swift in Sources */,
 				EC7491811DD29C3500AF4E20 /* String+Trim.swift in Sources */,
-				EC7491C31DD29D5C00AF4E20 /* HLSValidationIssue.swift in Sources */,
-				ECDE184C22383230008566BB /* Parser.swift in Sources */,
+				EC7491C31DD29D5C00AF4E20 /* PlaylistValidationIssue.swift in Sources */,
+				ECDE184C22383230008566BB /* PlaylistParser.swift in Sources */,
 				EC74916E1DD29B5D00AF4E20 /* CollectionType+FindExtensions.swift in Sources */,
 				EC7491DA1DD29D9600AF4E20 /* GenericNoDataTagParser.swift in Sources */,
-				EC7491C91DD29D5C00AF4E20 /* HLSWriter.swift in Sources */,
+				EC7491C91DD29D5C00AF4E20 /* PlaylistWriter.swift in Sources */,
 				EC3B01A51DD4D47900B512E3 /* EXT_X_KEYValidator.swift in Sources */,
 				EC349AD62236F55F0077432B /* MasterPlaylistStructure.swift in Sources */,
 				ECDE18442238114E008566BB /* VariantPlaylist.swift in Sources */,
@@ -1776,57 +1756,54 @@
 				EC9547851E5CC83C00962535 /* NoOpTagParser.swift in Sources */,
 				EC42A5F21FD9B88E00317EA5 /* IndeterminateBool.swift in Sources */,
 				EC349AC12236BFAC0077432B /* PlaylistCore.swift in Sources */,
-				EC74914E1DD29ACF00AF4E20 /* HLSTagCriterion.swift in Sources */,
-				EC7491BF1DD29D5C00AF4E20 /* HLSTagValueIdentifier.swift in Sources */,
+				EC7491BF1DD29D5C00AF4E20 /* PlaylistTagValueIdentifier.swift in Sources */,
 				EC3B01C91DD4D49A00B512E3 /* PlaylistRenditionGroupMatchingPROGRAM_IDValidator.swift in Sources */,
 				EC349AC52236BFF10077432B /* PlaylistInterface.swift in Sources */,
-				F700CD331E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.m in Sources */,
+				F700CD331E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.m in Sources */,
 				EC95478B1E5CC86300962535 /* EXTINFValidator.swift in Sources */,
-				EC95477F1E5CC80800962535 /* HLSStringRef+mamba.swift in Sources */,
 				EC9826021DD3A113003BCDA5 /* URLSchemeChangeExtension.swift in Sources */,
 				EC3B01CF1DD4D49A00B512E3 /* PlaylistTagGroupValidator.swift in Sources */,
-				EC44248C1E9694C600AECFAB /* HLSTagGroup.swift in Sources */,
+				EC44248C1E9694C600AECFAB /* PlaylistTagGroup.swift in Sources */,
 				ECE36DE11F2A9D94005E5DA7 /* PlaylistTimelineTranslator.swift in Sources */,
-				EC7491BD1DD29D5C00AF4E20 /* HLSTagValidator.swift in Sources */,
+				EC7491BD1DD29D5C00AF4E20 /* PlaylistTagValidator.swift in Sources */,
 				EC349AD22236CB860077432B /* PlaylistStructureCore.swift in Sources */,
-				EC74917F1DD29C3500AF4E20 /* String+HLSTypeEquatable.swift in Sources */,
-				EC03B65A1E5CC56B00BF1F97 /* HLSStringRef.m in Sources */,
-				EC03B6541E5CC56B00BF1F97 /* HLSRapidParser.m in Sources */,
-				F70E9E9A1E8C43C8006022C6 /* ParserError.swift in Sources */,
+				EC74917F1DD29C3500AF4E20 /* String+EquatableMambaTypes.swift in Sources */,
+				EC03B65A1E5CC56B00BF1F97 /* MambaStringRef.m in Sources */,
+				EC03B6541E5CC56B00BF1F97 /* RapidParser.m in Sources */,
+				F70E9E9A1E8C43C8006022C6 /* PlaylistParserError.swift in Sources */,
 				EC7491701DD29B5D00AF4E20 /* CollectionType+Safe.swift in Sources */,
-				EC7491BB1DD29D5C00AF4E20 /* HLSTagParser.swift in Sources */,
-				EC7491C11DD29D5C00AF4E20 /* HLSTagWriter.swift in Sources */,
+				EC7491BB1DD29D5C00AF4E20 /* PlaylistTagParser.swift in Sources */,
+				EC7491C11DD29D5C00AF4E20 /* PlaylistTagWriter.swift in Sources */,
 				EC3B01CD1DD4D49A00B512E3 /* PlaylistTagCardinalityValidation.swift in Sources */,
-				EC7491B91DD29D5C00AF4E20 /* HLSTagDescriptor.swift in Sources */,
+				EC7491B91DD29D5C00AF4E20 /* PlaylistTagDescriptor.swift in Sources */,
 				EC3B01AD1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupTYPEValidator.swift in Sources */,
 				EC3B01B11DD4D47900B512E3 /* EXT_X_TARGETDURATIONLengthValidator.swift in Sources */,
 				EC03B63D1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */,
 				ECDE185D22396E7D008566BB /* PlaylistValidator.swift in Sources */,
 				EC3B01C11DD4D49A00B512E3 /* PlaylistCollectionValidator.swift in Sources */,
 				EC9547821E5CC82500962535 /* GenericTagWriter.swift in Sources */,
-				F700CD3F1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.m in Sources */,
+				F700CD3F1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.m in Sources */,
 				F7CFF2791F38CACF009F4C82 /* CMTimeMakeFromString.c in Sources */,
 				EC349ADA2236F56A0077432B /* VariantPlaylistStructure.swift in Sources */,
 				EC7491FC1DD29DD300AF4E20 /* DictionaryTagValueIdentifier.swift in Sources */,
 				43DE4EFD1E564DBE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift in Sources */,
-				EC7491C71DD29D5C00AF4E20 /* HLSValueTypes.swift in Sources */,
+				EC7491C71DD29D5C00AF4E20 /* ValueTypes.swift in Sources */,
 				EC7491EF1DD29DBB00AF4E20 /* GenericSingleTagWriter.swift in Sources */,
-				EC03B65C1E5CC56B00BF1F97 /* HLSStringRef.swift in Sources */,
+				EC03B65C1E5CC56B00BF1F97 /* MambaStringRef.swift in Sources */,
 				EC3B01C51DD4D49A00B512E3 /* PlaylistRenditionGroupAudioVideoValidator.swift in Sources */,
-				ECDE184822381E6C008566BB /* URLDataPlaylistExtensions.swift in Sources */,
-				EC7491591DD29AED00AF4E20 /* HLSTag.swift in Sources */,
+				ECDE184822381E6C008566BB /* PlaylistURLDataExtensions.swift in Sources */,
+				EC7491591DD29AED00AF4E20 /* PlaylistTag.swift in Sources */,
 				EC3B01AF1DD4D47900B512E3 /* EXT_X_STREAM_INFRenditionGroupValidator.swift in Sources */,
 				EC3B01CB1DD4D49A00B512E3 /* PlaylistRenditionGroupValidator.swift in Sources */,
 				EC318B54226534AF00969E2D /* StaticMemoryStorage.m in Sources */,
 				EC03B6701E5CC56B00BF1F97 /* RapidParserStateHandlers.c in Sources */,
 				EC7491F81DD29DD300AF4E20 /* GenericDictionaryTagValidator.swift in Sources */,
 				EC7491631DD29B0F00AF4E20 /* CoreMedia+Util.swift in Sources */,
-				EC03B65E1E5CC56B00BF1F97 /* RapidParser.c in Sources */,
-				D44E03771E3BAC9F00126B52 /* HLSTag+Util.swift in Sources */,
+				EC03B65E1E5CC56B00BF1F97 /* parseHLS.c in Sources */,
+				D44E03771E3BAC9F00126B52 /* PlaylistTag+Util.swift in Sources */,
 				EC7491F11DD29DBB00AF4E20 /* LocationTagWriter.swift in Sources */,
 				ECDE185922396846008566BB /* MasterPlaylistValidator.swift in Sources */,
-				EC7491671DD29B0F00AF4E20 /* RegisteredHLSTags.swift in Sources */,
-				EC74914C1DD29ACF00AF4E20 /* HLSTagCriteria.swift in Sources */,
+				EC7491671DD29B0F00AF4E20 /* RegisteredPlaylistTags.swift in Sources */,
 				ECDE185522396833008566BB /* VariantPlaylistValidator.swift in Sources */,
 				EC95477C1E5CC7C800962535 /* OutputStream+HLSWriting.swift in Sources */,
 				EC349AE22236F58B0077432B /* VariantPlaylistType.swift in Sources */,
@@ -1837,13 +1814,13 @@
 				EC7491461DD299B400AF4E20 /* PlaylistTypes.swift in Sources */,
 				EC349ACE2236C3A60077432B /* PlaylistStructureInterface.swift in Sources */,
 				EC3B01A71DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift in Sources */,
-				F700CD391E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.m in Sources */,
+				F700CD391E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.m in Sources */,
 				43DE4EFB1E564DA300EEE800 /* EXT_X_STARTTimeOffsetValidator.swift in Sources */,
 				EC74918A1DD29CCB00AF4E20 /* StringDictionaryParser.swift in Sources */,
 				ECDE184022381146008566BB /* MasterPlaylist.swift in Sources */,
-				F73183771E78758B00ED8E59 /* HLSStringRefFactory.m in Sources */,
+				F73183771E78758B00ED8E59 /* MambaStringRefFactory.m in Sources */,
 				EC349ADE2236F57F0077432B /* MasterPlaylistType.swift in Sources */,
-				D4BB018D1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift in Sources */,
+				D4BB018D1E2EABD500CA006E /* PlaylistTagArray+RenditionGroups.swift in Sources */,
 				EC7491881DD29CCB00AF4E20 /* StringArrayParser.swift in Sources */,
 				EC7491D81DD29D9600AF4E20 /* GenericDictionaryTagParser.swift in Sources */,
 				EC03B6681E5CC56B00BF1F97 /* RapidParserLineState.c in Sources */,
@@ -1864,25 +1841,25 @@
 			files = (
 				ECAFFA2A223AF6E700A6D5F4 /* ValidatorTests.swift in Sources */,
 				EC74928C1DD29F1500AF4E20 /* GenericSingleTagValidatorTests.swift in Sources */,
-				EC7492B91DD29F8900AF4E20 /* HLSResolutionTests.swift in Sources */,
+				EC7492B91DD29F8900AF4E20 /* ResolutionTests.swift in Sources */,
 				ECAFFA052239A58100A6D5F4 /* Parser_Super8DemuxedTests.swift in Sources */,
 				EC7492A71DD29F7000AF4E20 /* CollectionTypeTests.swift in Sources */,
 				EC7492281DD29E4A00AF4E20 /* FixtureLoader.swift in Sources */,
 				EC7492761DD29EC800AF4E20 /* EXT_X_KEYTagParserTests.swift in Sources */,
-				883290561EA172170064588B /* HLSStringRefExtensionTests.swift in Sources */,
+				883290561EA172170064588B /* MambaStringRefExtensionTests.swift in Sources */,
 				ECDE185122387257008566BB /* VariantPlaylistMediaSpanTests.swift in Sources */,
 				EC7492A91DD29F7000AF4E20 /* MambaUtilTests.swift in Sources */,
 				EC7492741DD29EC800AF4E20 /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift in Sources */,
-				ECFBD90E1E5CCC2200379FC2 /* HLSStringRefTests.m in Sources */,
-				EC7492611DD29E9A00AF4E20 /* HLSTagWriting.swift in Sources */,
+				ECFBD90E1E5CCC2200379FC2 /* MambaStringRefTests.m in Sources */,
+				EC7492611DD29E9A00AF4E20 /* TagWriting.swift in Sources */,
 				ECAFFA012239A22800A6D5F4 /* Parser_EventUpdateTests.swift in Sources */,
 				EC7492981DD29F3B00AF4E20 /* GenericDictionaryTagWriterTests.swift in Sources */,
-				EC7492B51DD29F8900AF4E20 /* HLSMediaTypeTests.swift in Sources */,
+				EC7492B51DD29F8900AF4E20 /* MediaTypeTests.swift in Sources */,
 				EC42A5F51FD9BF0500317EA5 /* IndeterminateBoolTests.swift in Sources */,
 				ECAFFA122239B38300A6D5F4 /* PlaylistInterfaceTests.swift in Sources */,
 				ECFBD9121E5CCC2200379FC2 /* RapidParserTests.swift in Sources */,
+				ECCF2DAD1E23F54100D7C48B /* TagTests.swift in Sources */,
 				EC318B58226534F400969E2D /* StaticMemoryStorageTests.m in Sources */,
-				ECCF2DAD1E23F54100D7C48B /* HLSTagTests.swift in Sources */,
 				EC7492801DD29EC800AF4E20 /* GenericSingleValueTagParserTests.swift in Sources */,
 				ECC410641EA1518E00B4E3C8 /* StructureStateTests.swift in Sources */,
 				ECAFFA162239B81100A6D5F4 /* PlaylistStructureAndEditingTests.swift in Sources */,
@@ -1893,7 +1870,7 @@
 				EC7492821DD29EC800AF4E20 /* StringArrayParserTests.swift in Sources */,
 				EC74927A1DD29EC800AF4E20 /* EXT_X_PROGRAM_DATE_TIMEParserTests.swift in Sources */,
 				EC74929C1DD29F3B00AF4E20 /* GenericSingleTagWriterTests.swift in Sources */,
-				EC7492321DD29E4A00AF4E20 /* HLSTagParserMock.swift in Sources */,
+				EC7492321DD29E4A00AF4E20 /* TagParserMock.swift in Sources */,
 				ECFBD9151E5CCCB100379FC2 /* PantosTagTests.swift in Sources */,
 				ECAFFA22223ADAC900A6D5F4 /* PlaylistTests.swift in Sources */,
 				ECAFFA0E2239AD5700A6D5F4 /* BasicParserTest.swift in Sources */,
@@ -1901,23 +1878,22 @@
 				EC7492AD1DD29F7000AF4E20 /* URLSchemeChangeTests.swift in Sources */,
 				ECFBD9031E5CCAAF00379FC2 /* XCTestCase+mamba.swift in Sources */,
 				EC7492A11DD29F4600AF4E20 /* ThirdPartyTagListSupportTests.swift in Sources */,
-				EC073F571FE0572400689228 /* HLSTagCriterionTests.swift in Sources */,
 				3D933C1A2193367C0029069F /* EXT-X-BITRATETagParserTests.swift in Sources */,
 				EC073F5D1FE0840000689228 /* OutputStreamExtensionTests.swift in Sources */,
-				ECC410671EA1527700B4E3C8 /* HLSTagGroupTests.swift in Sources */,
+				ECC410671EA1527700B4E3C8 /* PlaylistTagGroupTests.swift in Sources */,
 				ECBEF4F11F7AC58A0051078F /* ReadMeUnitTests.swift in Sources */,
 				EC7492721DD29EC800AF4E20 /* EXT_X_ALLOW_CACHETagParserTests.swift in Sources */,
-				EC073F5A1FE072DC00689228 /* HLSTagCollectionTests.swift in Sources */,
+				EC073F5A1FE072DC00689228 /* TagCollectionTests.swift in Sources */,
 				F7CFF27E1F392009009F4C82 /* CMTimeMakeFromStringTests.swift in Sources */,
 				EC74927E1DD29EC800AF4E20 /* GenericNoDataTagParserTests.swift in Sources */,
-				EC74924A1DD29E7300AF4E20 /* HLSWriterTests.swift in Sources */,
+				EC74924A1DD29E7300AF4E20 /* PlaylistWriterTests.swift in Sources */,
 				EC74928A1DD29F1500AF4E20 /* GenericDictionaryTagValidatorTests.swift in Sources */,
 				EC073F601FE08F7500689228 /* String+Helio.swift in Sources */,
 				EC74922C1DD29E4A00AF4E20 /* Playlist+Convenience.swift in Sources */,
 				EC7492B71DD29F8900AF4E20 /* PlaylistTypeTests.swift in Sources */,
 				ECAFFA1A223AC6D900A6D5F4 /* PlaylistStructureMasterTests.swift in Sources */,
 				ECFBD9101E5CCC2200379FC2 /* ParseArrayTests.m in Sources */,
-				EC7492B31DD29F8900AF4E20 /* HLSCodecArrayTests.swift in Sources */,
+				EC7492B31DD29F8900AF4E20 /* CodecArrayTests.swift in Sources */,
 				01CD2E7A1DE4D46F002510E7 /* EXT_X_MAPTagParserTests.swift in Sources */,
 				EC7492AB1DD29F7000AF4E20 /* OrderedDictionaryTests.swift in Sources */,
 				EC7492781DD29EC800AF4E20 /* EXT_X_MEDIATagParserTests.swift in Sources */,
@@ -1933,14 +1909,14 @@
 				ECC410611EA02F4800B4E3C8 /* StructureState.swift in Sources */,
 				EC3B01AA1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupDEFAULTValidator.swift in Sources */,
 				EC3B01C41DD4D49A00B512E3 /* PlaylistOneToManyValidator.swift in Sources */,
-				ECDE184D22383230008566BB /* Parser.swift in Sources */,
+				ECDE184D22383230008566BB /* PlaylistParser.swift in Sources */,
 				EC7491821DD29C3500AF4E20 /* String+Trim.swift in Sources */,
-				EC7491C41DD29D5C00AF4E20 /* HLSValidationIssue.swift in Sources */,
+				EC7491C41DD29D5C00AF4E20 /* PlaylistValidationIssue.swift in Sources */,
 				EC74916F1DD29B5D00AF4E20 /* CollectionType+FindExtensions.swift in Sources */,
 				EC7491DB1DD29D9600AF4E20 /* GenericNoDataTagParser.swift in Sources */,
 				EC349AD72236F55F0077432B /* MasterPlaylistStructure.swift in Sources */,
 				ECDE18452238114E008566BB /* VariantPlaylist.swift in Sources */,
-				EC7491CA1DD29D5C00AF4E20 /* HLSWriter.swift in Sources */,
+				EC7491CA1DD29D5C00AF4E20 /* PlaylistWriter.swift in Sources */,
 				EC3B01A61DD4D47900B512E3 /* EXT_X_KEYValidator.swift in Sources */,
 				EC7491731DD29B5D00AF4E20 /* OrderedDictionary.swift in Sources */,
 				EC3B01C01DD4D49A00B512E3 /* PlaylistTagCardinalityValidator.swift in Sources */,
@@ -1948,28 +1924,26 @@
 				EC349AC22236BFAC0077432B /* PlaylistCore.swift in Sources */,
 				EC9547861E5CC83C00962535 /* NoOpTagParser.swift in Sources */,
 				EC7491FB1DD29DD300AF4E20 /* GenericSingleTagValidator.swift in Sources */,
-				EC74914F1DD29ACF00AF4E20 /* HLSTagCriterion.swift in Sources */,
 				EC349AC62236BFF10077432B /* PlaylistInterface.swift in Sources */,
-				F700CD341E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.m in Sources */,
+				F700CD341E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.m in Sources */,
 				EC95478C1E5CC86300962535 /* EXTINFValidator.swift in Sources */,
-				EC9547801E5CC80800962535 /* HLSStringRef+mamba.swift in Sources */,
-				EC7491C01DD29D5C00AF4E20 /* HLSTagValueIdentifier.swift in Sources */,
+				EC7491C01DD29D5C00AF4E20 /* PlaylistTagValueIdentifier.swift in Sources */,
 				EC3B01CA1DD4D49A00B512E3 /* PlaylistRenditionGroupMatchingPROGRAM_IDValidator.swift in Sources */,
 				EC9826031DD3A113003BCDA5 /* URLSchemeChangeExtension.swift in Sources */,
-				EC44248D1E9694C600AECFAB /* HLSTagGroup.swift in Sources */,
+				EC44248D1E9694C600AECFAB /* PlaylistTagGroup.swift in Sources */,
 				ECE36DE21F2A9D94005E5DA7 /* PlaylistTimelineTranslator.swift in Sources */,
 				EC349AD32236CB860077432B /* PlaylistStructureCore.swift in Sources */,
 				EC3B01D01DD4D49A00B512E3 /* PlaylistTagGroupValidator.swift in Sources */,
-				EC7491BE1DD29D5C00AF4E20 /* HLSTagValidator.swift in Sources */,
-				EC03B65B1E5CC56B00BF1F97 /* HLSStringRef.m in Sources */,
-				EC7491801DD29C3500AF4E20 /* String+HLSTypeEquatable.swift in Sources */,
-				F70E9E9B1E8C43C8006022C6 /* ParserError.swift in Sources */,
-				EC03B6551E5CC56B00BF1F97 /* HLSRapidParser.m in Sources */,
+				EC7491BE1DD29D5C00AF4E20 /* PlaylistTagValidator.swift in Sources */,
+				EC03B65B1E5CC56B00BF1F97 /* MambaStringRef.m in Sources */,
+				EC7491801DD29C3500AF4E20 /* String+EquatableMambaTypes.swift in Sources */,
+				F70E9E9B1E8C43C8006022C6 /* PlaylistParserError.swift in Sources */,
+				EC03B6551E5CC56B00BF1F97 /* RapidParser.m in Sources */,
 				EC7491711DD29B5D00AF4E20 /* CollectionType+Safe.swift in Sources */,
-				EC7491BC1DD29D5C00AF4E20 /* HLSTagParser.swift in Sources */,
-				EC7491C21DD29D5C00AF4E20 /* HLSTagWriter.swift in Sources */,
+				EC7491BC1DD29D5C00AF4E20 /* PlaylistTagParser.swift in Sources */,
+				EC7491C21DD29D5C00AF4E20 /* PlaylistTagWriter.swift in Sources */,
 				EC3B01CE1DD4D49A00B512E3 /* PlaylistTagCardinalityValidation.swift in Sources */,
-				EC7491BA1DD29D5C00AF4E20 /* HLSTagDescriptor.swift in Sources */,
+				EC7491BA1DD29D5C00AF4E20 /* PlaylistTagDescriptor.swift in Sources */,
 				EC03B63E1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */,
 				ECDE185E22396E7D008566BB /* PlaylistValidator.swift in Sources */,
 				EC3B01AE1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupTYPEValidator.swift in Sources */,
@@ -1977,43 +1951,42 @@
 				EC3B01C21DD4D49A00B512E3 /* PlaylistCollectionValidator.swift in Sources */,
 				F7CFF27A1F38CACF009F4C82 /* CMTimeMakeFromString.c in Sources */,
 				EC349ADB2236F56A0077432B /* VariantPlaylistStructure.swift in Sources */,
-				F700CD401E78AA57001C9487 /* HLSStringRef_ConcreteNSData.m in Sources */,
+				F700CD401E78AA57001C9487 /* MambaStringRef_ConcreteNSData.m in Sources */,
 				EC9547831E5CC82500962535 /* GenericTagWriter.swift in Sources */,
 				EC7491FD1DD29DD300AF4E20 /* DictionaryTagValueIdentifier.swift in Sources */,
-				EC7491C81DD29D5C00AF4E20 /* HLSValueTypes.swift in Sources */,
+				EC7491C81DD29D5C00AF4E20 /* ValueTypes.swift in Sources */,
 				EC7491F01DD29DBB00AF4E20 /* GenericSingleTagWriter.swift in Sources */,
-				EC03B65D1E5CC56B00BF1F97 /* HLSStringRef.swift in Sources */,
-				ECDE184922381E6C008566BB /* URLDataPlaylistExtensions.swift in Sources */,
+				EC03B65D1E5CC56B00BF1F97 /* MambaStringRef.swift in Sources */,
+				ECDE184922381E6C008566BB /* PlaylistURLDataExtensions.swift in Sources */,
 				EC3B01C61DD4D49A00B512E3 /* PlaylistRenditionGroupAudioVideoValidator.swift in Sources */,
-				EC74915A1DD29AED00AF4E20 /* HLSTag.swift in Sources */,
+				EC74915A1DD29AED00AF4E20 /* PlaylistTag.swift in Sources */,
 				EC3B01B01DD4D47900B512E3 /* EXT_X_STREAM_INFRenditionGroupValidator.swift in Sources */,
 				EC318B55226534AF00969E2D /* StaticMemoryStorage.m in Sources */,
 				EC03B6711E5CC56B00BF1F97 /* RapidParserStateHandlers.c in Sources */,
 				EC3B01CC1DD4D49A00B512E3 /* PlaylistRenditionGroupValidator.swift in Sources */,
 				EC7491F91DD29DD300AF4E20 /* GenericDictionaryTagValidator.swift in Sources */,
-				EC03B65F1E5CC56B00BF1F97 /* RapidParser.c in Sources */,
+				EC03B65F1E5CC56B00BF1F97 /* parseHLS.c in Sources */,
 				EC7491641DD29B0F00AF4E20 /* CoreMedia+Util.swift in Sources */,
-				D44E03781E3BAC9F00126B52 /* HLSTag+Util.swift in Sources */,
+				D44E03781E3BAC9F00126B52 /* PlaylistTag+Util.swift in Sources */,
 				ECDE185A22396846008566BB /* MasterPlaylistValidator.swift in Sources */,
 				EC7491F21DD29DBB00AF4E20 /* LocationTagWriter.swift in Sources */,
-				EC7491681DD29B0F00AF4E20 /* RegisteredHLSTags.swift in Sources */,
+				EC7491681DD29B0F00AF4E20 /* RegisteredPlaylistTags.swift in Sources */,
 				ECDE185622396833008566BB /* VariantPlaylistValidator.swift in Sources */,
 				EC95477D1E5CC7C900962535 /* OutputStream+HLSWriting.swift in Sources */,
 				EC349AE32236F58B0077432B /* VariantPlaylistType.swift in Sources */,
-				EC74914D1DD29ACF00AF4E20 /* HLSTagCriteria.swift in Sources */,
 				EC3B01C81DD4D49A00B512E3 /* PlaylistRenditionGroupMatchingNAMELANGUAGEValidator.swift in Sources */,
 				EC74917E1DD29C3500AF4E20 /* String+DateParsing.swift in Sources */,
 				EC3B01AC1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupNAMEValidator.swift in Sources */,
 				EC7491661DD29B0F00AF4E20 /* FailableStringLiteralConvertible.swift in Sources */,
 				EC349ACF2236C3A60077432B /* PlaylistStructureInterface.swift in Sources */,
 				EC7491471DD299B400AF4E20 /* PlaylistTypes.swift in Sources */,
-				F700CD3A1E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.m in Sources */,
+				F700CD3A1E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.m in Sources */,
 				EC3B01A81DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift in Sources */,
 				EC74918B1DD29CCB00AF4E20 /* StringDictionaryParser.swift in Sources */,
 				ECDE184122381146008566BB /* MasterPlaylist.swift in Sources */,
-				F73183781E78758B00ED8E59 /* HLSStringRefFactory.m in Sources */,
+				F73183781E78758B00ED8E59 /* MambaStringRefFactory.m in Sources */,
 				EC349ADF2236F57F0077432B /* MasterPlaylistType.swift in Sources */,
-				D4BB018E1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift in Sources */,
+				D4BB018E1E2EABD500CA006E /* PlaylistTagArray+RenditionGroups.swift in Sources */,
 				EC7491891DD29CCB00AF4E20 /* StringArrayParser.swift in Sources */,
 				EC7491D91DD29D9600AF4E20 /* GenericDictionaryTagParser.swift in Sources */,
 				EC03B6691E5CC56B00BF1F97 /* RapidParserLineState.c in Sources */,
@@ -2034,26 +2007,26 @@
 			files = (
 				ECAFFA2B223AF6E700A6D5F4 /* ValidatorTests.swift in Sources */,
 				EC74928D1DD29F1500AF4E20 /* GenericSingleTagValidatorTests.swift in Sources */,
-				EC7492BA1DD29F8900AF4E20 /* HLSResolutionTests.swift in Sources */,
+				EC7492BA1DD29F8900AF4E20 /* ResolutionTests.swift in Sources */,
 				ECAFFA062239A58100A6D5F4 /* Parser_Super8DemuxedTests.swift in Sources */,
-				1D9D9EA01EAFC0F700CC7274 /* HLSStringRefExtensionTests.swift in Sources */,
+				1D9D9EA01EAFC0F700CC7274 /* MambaStringRefExtensionTests.swift in Sources */,
 				EC7492A81DD29F7000AF4E20 /* CollectionTypeTests.swift in Sources */,
 				EC7492291DD29E4A00AF4E20 /* FixtureLoader.swift in Sources */,
 				F7CFF27F1F392009009F4C82 /* CMTimeMakeFromStringTests.swift in Sources */,
 				ECDE185222387257008566BB /* VariantPlaylistMediaSpanTests.swift in Sources */,
 				EC7492771DD29EC800AF4E20 /* EXT_X_KEYTagParserTests.swift in Sources */,
 				EC7492AA1DD29F7000AF4E20 /* MambaUtilTests.swift in Sources */,
-				ECFBD90F1E5CCC2200379FC2 /* HLSStringRefTests.m in Sources */,
+				ECFBD90F1E5CCC2200379FC2 /* MambaStringRefTests.m in Sources */,
 				EC7492751DD29EC800AF4E20 /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift in Sources */,
-				EC7492621DD29E9A00AF4E20 /* HLSTagWriting.swift in Sources */,
+				EC7492621DD29E9A00AF4E20 /* TagWriting.swift in Sources */,
 				ECAFFA022239A22800A6D5F4 /* Parser_EventUpdateTests.swift in Sources */,
 				EC7492991DD29F3B00AF4E20 /* GenericDictionaryTagWriterTests.swift in Sources */,
 				ECFBD9131E5CCC2200379FC2 /* RapidParserTests.swift in Sources */,
 				EC42A5F61FD9BF0500317EA5 /* IndeterminateBoolTests.swift in Sources */,
 				ECAFFA132239B38300A6D5F4 /* PlaylistInterfaceTests.swift in Sources */,
+				ECCF2DAE1E23F54100D7C48B /* TagTests.swift in Sources */,
+				EC7492B61DD29F8900AF4E20 /* MediaTypeTests.swift in Sources */,
 				EC318B59226534F400969E2D /* StaticMemoryStorageTests.m in Sources */,
-				ECCF2DAE1E23F54100D7C48B /* HLSTagTests.swift in Sources */,
-				EC7492B61DD29F8900AF4E20 /* HLSMediaTypeTests.swift in Sources */,
 				ECC410651EA1518E00B4E3C8 /* StructureStateTests.swift in Sources */,
 				EC7492811DD29EC800AF4E20 /* GenericSingleValueTagParserTests.swift in Sources */,
 				ECAFFA172239B81100A6D5F4 /* PlaylistStructureAndEditingTests.swift in Sources */,
@@ -2064,31 +2037,30 @@
 				EC7492831DD29EC800AF4E20 /* StringArrayParserTests.swift in Sources */,
 				EC74927B1DD29EC800AF4E20 /* EXT_X_PROGRAM_DATE_TIMEParserTests.swift in Sources */,
 				EC74929D1DD29F3B00AF4E20 /* GenericSingleTagWriterTests.swift in Sources */,
-				EC7492331DD29E4A00AF4E20 /* HLSTagParserMock.swift in Sources */,
+				EC7492331DD29E4A00AF4E20 /* TagParserMock.swift in Sources */,
 				ECFBD9161E5CCCB100379FC2 /* PantosTagTests.swift in Sources */,
 				ECAFFA23223ADAC900A6D5F4 /* PlaylistTests.swift in Sources */,
 				ECAFFA0F2239AD5700A6D5F4 /* BasicParserTest.swift in Sources */,
 				ECBEF4F21F7AC58A0051078F /* ReadMeUnitTests.swift in Sources */,
 				EC7492851DD29EC800AF4E20 /* StringDictionaryParserTests.swift in Sources */,
 				EC7492AE1DD29F7000AF4E20 /* URLSchemeChangeTests.swift in Sources */,
-				EC073F581FE0572400689228 /* HLSTagCriterionTests.swift in Sources */,
 				3D933C1C219336970029069F /* EXT-X-BITRATETagParserTests.swift in Sources */,
 				ECFBD9041E5CCAAF00379FC2 /* XCTestCase+mamba.swift in Sources */,
 				EC073F5E1FE0840000689228 /* OutputStreamExtensionTests.swift in Sources */,
-				ECC410681EA1527700B4E3C8 /* HLSTagGroupTests.swift in Sources */,
+				ECC410681EA1527700B4E3C8 /* PlaylistTagGroupTests.swift in Sources */,
 				EC7492A21DD29F4600AF4E20 /* ThirdPartyTagListSupportTests.swift in Sources */,
-				EC073F5B1FE072DC00689228 /* HLSTagCollectionTests.swift in Sources */,
+				EC073F5B1FE072DC00689228 /* TagCollectionTests.swift in Sources */,
 				EC7492731DD29EC800AF4E20 /* EXT_X_ALLOW_CACHETagParserTests.swift in Sources */,
 				EC44E7661DEE2F9E0087C890 /* EXT_X_MAPTagParserTests.swift in Sources */,
 				EC74927F1DD29EC800AF4E20 /* GenericNoDataTagParserTests.swift in Sources */,
-				EC74924B1DD29E7300AF4E20 /* HLSWriterTests.swift in Sources */,
+				EC74924B1DD29E7300AF4E20 /* PlaylistWriterTests.swift in Sources */,
 				EC073F611FE08F7500689228 /* String+Helio.swift in Sources */,
 				EC74928B1DD29F1500AF4E20 /* GenericDictionaryTagValidatorTests.swift in Sources */,
 				EC74922D1DD29E4A00AF4E20 /* Playlist+Convenience.swift in Sources */,
 				ECAFFA1B223AC6D900A6D5F4 /* PlaylistStructureMasterTests.swift in Sources */,
 				ECFBD9111E5CCC2200379FC2 /* ParseArrayTests.m in Sources */,
 				EC7492B81DD29F8900AF4E20 /* PlaylistTypeTests.swift in Sources */,
-				EC7492B41DD29F8900AF4E20 /* HLSCodecArrayTests.swift in Sources */,
+				EC7492B41DD29F8900AF4E20 /* CodecArrayTests.swift in Sources */,
 				EC7492AC1DD29F7000AF4E20 /* OrderedDictionaryTests.swift in Sources */,
 				EC7492791DD29EC800AF4E20 /* EXT_X_MEDIATagParserTests.swift in Sources */,
 			);
@@ -2098,17 +2070,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC1CCD04209A2CF9006B59FF /* HLSStringRef_ConcreteUnownedBytes.m in Sources */,
+				EC1CCD04209A2CF9006B59FF /* MambaStringRef_ConcreteUnownedBytes.m in Sources */,
 				EC1CCD56209A2CF9006B59FF /* LocationTagWriter.swift in Sources */,
-				EC1CCD00209A2CF9006B59FF /* HLSStringRef_ConcreteNSData.m in Sources */,
+				EC1CCD00209A2CF9006B59FF /* MambaStringRef_ConcreteNSData.m in Sources */,
 				EC1CCD36209A2CF9006B59FF /* URLSchemeChangeExtension.swift in Sources */,
 				EC1CCD32209A2CF9006B59FF /* String+Trim.swift in Sources */,
 				EC1CCD46209A2CF9006B59FF /* GenericSingleTagValidator.swift in Sources */,
-				ECDE184E22383230008566BB /* Parser.swift in Sources */,
+				ECDE184E22383230008566BB /* PlaylistParser.swift in Sources */,
 				EC1CCD30209A2CF9006B59FF /* String+DateParsing.swift in Sources */,
 				EC1CCD53209A2CF9006B59FF /* GenericDictionaryTagWriter.swift in Sources */,
 				EC1CCD55209A2CF9006B59FF /* GenericTagWriter.swift in Sources */,
-				EC1CCD60209A2CF9006B59FF /* HLSValidationIssue.swift in Sources */,
+				EC1CCD60209A2CF9006B59FF /* PlaylistValidationIssue.swift in Sources */,
 				EC349AD82236F55F0077432B /* MasterPlaylistStructure.swift in Sources */,
 				ECDE18462238114E008566BB /* VariantPlaylist.swift in Sources */,
 				EC1CCD40209A2CF9006B59FF /* EXT_X_MEDIARenditionGroupTYPEValidator.swift in Sources */,
@@ -2126,22 +2098,21 @@
 				EC1CCD48209A2CF9006B59FF /* PlaylistTagCardinalityValidator.swift in Sources */,
 				EC1CCD57209A2CF9006B59FF /* PantosTag.swift in Sources */,
 				EC1CCD4B209A2CF9006B59FF /* PlaylistRenditionGroupAudioVideoValidator.swift in Sources */,
-				EC1CCCFB209A2CF9006B59FF /* HLSStringRef.m in Sources */,
+				EC1CCCFB209A2CF9006B59FF /* MambaStringRef.m in Sources */,
 				EC1CCD2E209A2CF9006B59FF /* CMTimeMakeFromString.c in Sources */,
-				EC1CCD25209A2CF9006B59FF /* HLSTagArray+RenditionGroups.swift in Sources */,
+				EC1CCD25209A2CF9006B59FF /* PlaylistTagArray+RenditionGroups.swift in Sources */,
 				EC1CCD50209A2CF9006B59FF /* PlaylistTagGroupValidator.swift in Sources */,
-				EC1CCCFE209A2CF9006B59FF /* HLSStringRefFactory.m in Sources */,
+				EC1CCCFE209A2CF9006B59FF /* MambaStringRefFactory.m in Sources */,
 				EC349AD42236CB860077432B /* PlaylistStructureCore.swift in Sources */,
 				EC1CCD3A209A2CF9006B59FF /* NoOpTagParser.swift in Sources */,
-				EC1CCD5D209A2CF9006B59FF /* HLSTagValidator.swift in Sources */,
-				EC1CCD62209A2CF9006B59FF /* HLSWriter.swift in Sources */,
-				EC1CCCF8209A2CF9006B59FF /* HLSTagCriteria.swift in Sources */,
-				EC1CCD61209A2CF9006B59FF /* HLSValueTypes.swift in Sources */,
+				EC1CCD5D209A2CF9006B59FF /* PlaylistTagValidator.swift in Sources */,
+				EC1CCD62209A2CF9006B59FF /* PlaylistWriter.swift in Sources */,
+				EC1CCD61209A2CF9006B59FF /* ValueTypes.swift in Sources */,
 				EC1CCD39209A2CF9006B59FF /* GenericSingleValueTagParser.swift in Sources */,
 				EC1CCD34209A2CF9006B59FF /* StringArrayParser.swift in Sources */,
-				EC1CCD18209A2CF9006B59FF /* RapidParser.c in Sources */,
+				EC1CCD18209A2CF9006B59FF /* parseHLS.c in Sources */,
 				EC1CCD3E209A2CF9006B59FF /* EXT_X_MEDIARenditionGroupDEFAULTValidator.swift in Sources */,
-				EC1CCCF6209A2CF9006B59FF /* HLSTagGroup.swift in Sources */,
+				EC1CCCF6209A2CF9006B59FF /* PlaylistTagGroup.swift in Sources */,
 				EC1CCD3D209A2CF9006B59FF /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift in Sources */,
 				EC1CCD41209A2CF9006B59FF /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift in Sources */,
 				EC1CCD3B209A2CF9006B59FF /* EXTINFValidator.swift in Sources */,
@@ -2149,48 +2120,46 @@
 				EC1CCD27209A2CF9006B59FF /* CoreMedia+Util.swift in Sources */,
 				EC1CCD26209A2CF9006B59FF /* OrderedDictionary.swift in Sources */,
 				EC1CCD54209A2CF9006B59FF /* GenericSingleTagWriter.swift in Sources */,
-				EC1CCD29209A2CF9006B59FF /* HLSStringRef+mamba.swift in Sources */,
 				EC349ADC2236F56A0077432B /* VariantPlaylistStructure.swift in Sources */,
 				EC1CCD3C209A2CF9006B59FF /* EXT_X_KEYValidator.swift in Sources */,
-				EC1CCD5E209A2CF9006B59FF /* HLSTagValueIdentifier.swift in Sources */,
+				EC1CCD5E209A2CF9006B59FF /* PlaylistTagValueIdentifier.swift in Sources */,
 				EC1CCD06209A2CF9006B59FF /* RapidParserMasterParseArray.c in Sources */,
 				EC1CCD42209A2CF9006B59FF /* EXT_X_STARTTimeOffsetValidator.swift in Sources */,
 				EC1CCD33209A2CF9006B59FF /* GenericDictionaryTagParserHelper.swift in Sources */,
 				EC1CCD3F209A2CF9006B59FF /* EXT_X_MEDIARenditionGroupNAMEValidator.swift in Sources */,
+				ECDE184A22381E6C008566BB /* PlaylistURLDataExtensions.swift in Sources */,
+				EC1CCD5B209A2CF9006B59FF /* PlaylistTagDescriptor.swift in Sources */,
 				EC318B56226534AF00969E2D /* StaticMemoryStorage.m in Sources */,
-				ECDE184A22381E6C008566BB /* URLDataPlaylistExtensions.swift in Sources */,
-				EC1CCD5B209A2CF9006B59FF /* HLSTagDescriptor.swift in Sources */,
 				EC1CCD1C209A2CF9006B59FF /* RapidParserError.m in Sources */,
 				EC1CCCF1209A2CF9006B59FF /* PlaylistTypes.swift in Sources */,
 				EC1CCD4E209A2CF9006B59FF /* PlaylistRenditionGroupValidator.swift in Sources */,
-				EC1CCCFC209A2CF9006B59FF /* HLSStringRef.swift in Sources */,
-				EC1CCD2A209A2CF9006B59FF /* HLSTag+Util.swift in Sources */,
+				EC1CCCFC209A2CF9006B59FF /* MambaStringRef.swift in Sources */,
+				EC1CCD2A209A2CF9006B59FF /* PlaylistTag+Util.swift in Sources */,
 				ECDE185B22396846008566BB /* MasterPlaylistValidator.swift in Sources */,
-				EC1CCD31209A2CF9006B59FF /* String+HLSTypeEquatable.swift in Sources */,
-				EC1CCD2D209A2CF9006B59FF /* RegisteredHLSTags.swift in Sources */,
+				EC1CCD31209A2CF9006B59FF /* String+EquatableMambaTypes.swift in Sources */,
+				EC1CCD2D209A2CF9006B59FF /* RegisteredPlaylistTags.swift in Sources */,
 				ECDE185722396833008566BB /* VariantPlaylistValidator.swift in Sources */,
-				EC1CCD5A209A2CF9006B59FF /* ParserError.swift in Sources */,
+				EC1CCD5A209A2CF9006B59FF /* PlaylistParserError.swift in Sources */,
 				EC349AE42236F58B0077432B /* VariantPlaylistType.swift in Sources */,
 				EC1CCD47209A2CF9006B59FF /* DictionaryTagValueIdentifier.swift in Sources */,
-				EC1CCCF2209A2CF9006B59FF /* HLSTag.swift in Sources */,
+				EC1CCCF2209A2CF9006B59FF /* PlaylistTag.swift in Sources */,
 				EC1CCD4F209A2CF9006B59FF /* PlaylistTagCardinalityValidation.swift in Sources */,
 				EC1CCD2B209A2CF9006B59FF /* IndeterminateBool.swift in Sources */,
-				EC1CCCF9209A2CF9006B59FF /* HLSTagCriterion.swift in Sources */,
 				EC349AD02236C3A60077432B /* PlaylistStructureInterface.swift in Sources */,
 				EC1CCD43209A2CF9006B59FF /* EXT_X_STREAM_INFRenditionGroupValidator.swift in Sources */,
 				EC1CCD35209A2CF9006B59FF /* StringDictionaryParser.swift in Sources */,
-				EC1CCD02209A2CF9006B59FF /* HLSStringRef_ConcreteNSString.m in Sources */,
+				EC1CCD02209A2CF9006B59FF /* MambaStringRef_ConcreteNSString.m in Sources */,
 				EC1CCD38209A2CF9006B59FF /* GenericNoDataTagParser.swift in Sources */,
 				ECDE184222381146008566BB /* MasterPlaylist.swift in Sources */,
 				EC349AE02236F57F0077432B /* MasterPlaylistType.swift in Sources */,
-				EC1CCD5F209A2CF9006B59FF /* HLSTagWriter.swift in Sources */,
+				EC1CCD5F209A2CF9006B59FF /* PlaylistTagWriter.swift in Sources */,
 				EC1CCD49209A2CF9006B59FF /* PlaylistCollectionValidator.swift in Sources */,
 				EC1CCD37209A2CF9006B59FF /* GenericDictionaryTagParser.swift in Sources */,
 				EC1CCD28209A2CF9006B59FF /* FailableStringLiteralConvertible.swift in Sources */,
 				EC1CCCF7209A2CF9006B59FF /* StructureState.swift in Sources */,
-				EC1CCD5C209A2CF9006B59FF /* HLSTagParser.swift in Sources */,
+				EC1CCD5C209A2CF9006B59FF /* PlaylistTagParser.swift in Sources */,
 				EC1CCD2C209A2CF9006B59FF /* OutputStream+HLSWriting.swift in Sources */,
-				EC1CCD16209A2CF9006B59FF /* HLSRapidParser.m in Sources */,
+				EC1CCD16209A2CF9006B59FF /* RapidParser.m in Sources */,
 				EC1CCD4C209A2CF9006B59FF /* PlaylistRenditionGroupMatchingNAMELANGUAGEValidator.swift in Sources */,
 				EC349ACC2236C1520077432B /* PlaylistTypeInterface.swift in Sources */,
 				EC1CCD1D209A2CF9006B59FF /* RapidParserLineState.c in Sources */,
@@ -2210,8 +2179,8 @@
 				ECE253F9209A50B500D388CE /* GenericDictionaryTagValidatorTests.swift in Sources */,
 				ECE253F0209A50B500D388CE /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift in Sources */,
 				ECDE185322387257008566BB /* VariantPlaylistMediaSpanTests.swift in Sources */,
-				ECE25405209A50B500D388CE /* HLSCodecArrayTests.swift in Sources */,
-				ECE253EA209A50A100D388CE /* HLSStringRefTests.m in Sources */,
+				ECE25405209A50B500D388CE /* CodecArrayTests.swift in Sources */,
+				ECE253EA209A50A100D388CE /* MambaStringRefTests.m in Sources */,
 				ECE253F7209A50B500D388CE /* StringArrayParserTests.swift in Sources */,
 				ECE25401209A50B500D388CE /* MambaUtilTests.swift in Sources */,
 				ECE253FB209A50B500D388CE /* GenericDictionaryTagWriterTests.swift in Sources */,
@@ -2219,35 +2188,34 @@
 				ECE253D5209A509000D388CE /* XCTestCase+mamba.swift in Sources */,
 				ECAFFA032239A22800A6D5F4 /* Parser_EventUpdateTests.swift in Sources */,
 				ECE253E9209A509C00D388CE /* PantosTagTests.swift in Sources */,
-				ECE253E4209A509900D388CE /* HLSTagTests.swift in Sources */,
+				ECE253E4209A509900D388CE /* TagTests.swift in Sources */,
 				ECE25402209A50B500D388CE /* OrderedDictionaryTests.swift in Sources */,
 				EC318B5A226534F400969E2D /* StaticMemoryStorageTests.m in Sources */,
 				ECAFFA142239B38300A6D5F4 /* PlaylistInterfaceTests.swift in Sources */,
-				ECE253E1209A509900D388CE /* HLSTagCollectionTests.swift in Sources */,
+				ECE253E1209A509900D388CE /* TagCollectionTests.swift in Sources */,
 				ECAFFA182239B81100A6D5F4 /* PlaylistStructureAndEditingTests.swift in Sources */,
 				ECAFFA20223AC85000A6D5F4 /* PlaylistStructureTests.swift in Sources */,
 				EC0677DE2165753500E715D1 /* CMTimeMakeFromStringCTests.m in Sources */,
 				ECAFFA0C2239A7D800A6D5F4 /* Parser_Super8MuxedTests.swift in Sources */,
 				ECAFFA28223ADF0500A6D5F4 /* PlaylistTimelineAndSequencingTests.swift in Sources */,
-				ECE253E7209A509900D388CE /* HLSWriterTests.swift in Sources */,
+				ECE253E7209A509900D388CE /* PlaylistWriterTests.swift in Sources */,
 				ECE253D1209A509000D388CE /* FixtureLoader.swift in Sources */,
 				ECE253D2209A509000D388CE /* Playlist+Convenience.swift in Sources */,
-				ECE25406209A50B500D388CE /* HLSMediaTypeTests.swift in Sources */,
+				ECE25406209A50B500D388CE /* MediaTypeTests.swift in Sources */,
 				ECE253ED209A50A600D388CE /* ReadMeUnitTests.swift in Sources */,
 				ECAFFA24223ADAC900A6D5F4 /* PlaylistTests.swift in Sources */,
 				ECAFFA102239AD5700A6D5F4 /* BasicParserTest.swift in Sources */,
 				ECE25404209A50B500D388CE /* URLSchemeChangeTests.swift in Sources */,
 				ECE253F8209A50B500D388CE /* StringDictionaryParserTests.swift in Sources */,
 				ECE253EB209A50A100D388CE /* ParseArrayTests.m in Sources */,
-				ECE253E5209A509900D388CE /* HLSTagWriting.swift in Sources */,
+				ECE253E5209A509900D388CE /* TagWriting.swift in Sources */,
 				3D933C1B219336970029069F /* EXT-X-BITRATETagParserTests.swift in Sources */,
 				ECE253F5209A50B500D388CE /* GenericNoDataTagParserTests.swift in Sources */,
-				ECE253D4209A509000D388CE /* HLSTagParserMock.swift in Sources */,
-				ECE253E3209A509900D388CE /* HLSTagGroupTests.swift in Sources */,
+				ECE253D4209A509000D388CE /* TagParserMock.swift in Sources */,
+				ECE253E3209A509900D388CE /* PlaylistTagGroupTests.swift in Sources */,
 				ECE253F2209A50B500D388CE /* EXT_X_MAPTagParserTests.swift in Sources */,
-				ECE253E0209A509900D388CE /* HLSStringRefExtensionTests.swift in Sources */,
+				ECE253E0209A509900D388CE /* MambaStringRefExtensionTests.swift in Sources */,
 				ECE253F3209A50B500D388CE /* EXT_X_MEDIATagParserTests.swift in Sources */,
-				ECE253E2209A509900D388CE /* HLSTagCriterionTests.swift in Sources */,
 				ECE253FF209A50B500D388CE /* CollectionTypeTests.swift in Sources */,
 				ECE253FE209A50B500D388CE /* CMTimeMakeFromStringTests.swift in Sources */,
 				ECE253EC209A50A100D388CE /* RapidParserTests.swift in Sources */,
@@ -2255,7 +2223,7 @@
 				ECAFFA1C223AC6D900A6D5F4 /* PlaylistStructureMasterTests.swift in Sources */,
 				ECE253F4209A50B500D388CE /* EXT_X_PROGRAM_DATE_TIMEParserTests.swift in Sources */,
 				ECE253FD209A50B500D388CE /* ThirdPartyTagListSupportTests.swift in Sources */,
-				ECE25408209A50B500D388CE /* HLSResolutionTests.swift in Sources */,
+				ECE25408209A50B500D388CE /* ResolutionTests.swift in Sources */,
 				ECE253F6209A50B500D388CE /* GenericSingleValueTagParserTests.swift in Sources */,
 				ECE253FA209A50B500D388CE /* GenericSingleTagValidatorTests.swift in Sources */,
 				ECE253F1209A50B500D388CE /* EXT_X_KEYTagParserTests.swift in Sources */,

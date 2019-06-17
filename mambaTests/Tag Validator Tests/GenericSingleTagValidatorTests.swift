@@ -129,24 +129,24 @@ class GenericSingleTagValidatorTests: XCTestCase {
     }
     
     
-    func constructTargetDurationValidator(_ tagValue:String) -> (HLSTagValidator, HLSTag) {
-        let tag = createHLSTag(tagDescriptor: PantosTag.EXT_X_TARGETDURATION, tagData: tagValue)
+    func constructTargetDurationValidator(_ tagValue:String) -> (PlaylistTagValidator, PlaylistTag) {
+        let tag = createTag(tagDescriptor: PantosTag.EXT_X_TARGETDURATION, tagData: tagValue)
         
         return (GenericSingleTagValidator<Int>(tag: PantosTag.EXT_X_TARGETDURATION,
             singleValueIdentifier:PantosValue.targetDurationSeconds), tag)
     }
     
-    func constructAllowCacheValidator(_ tagValue:String) -> (HLSTagValidator, HLSTag) {
-        let tag = createHLSTag(tagDescriptor: PantosTag.EXT_X_ALLOW_CACHE, tagData: tagValue)
+    func constructAllowCacheValidator(_ tagValue:String) -> (PlaylistTagValidator, PlaylistTag) {
+        let tag = createTag(tagDescriptor: PantosTag.EXT_X_ALLOW_CACHE, tagData: tagValue)
         
         return (GenericSingleTagValidator<Bool>(tag: PantosTag.EXT_X_ALLOW_CACHE,
             singleValueIdentifier:PantosValue.allowCache), tag)
     }
     
-    func constructPlayListTypeValidator(_ tagValue:String) -> (HLSTagValidator, HLSTag) {
-        let tag = createHLSTag(tagDescriptor: PantosTag.EXT_X_PLAYLIST_TYPE, tagData: tagValue)
+    func constructPlayListTypeValidator(_ tagValue:String) -> (PlaylistTagValidator, PlaylistTag) {
+        let tag = createTag(tagDescriptor: PantosTag.EXT_X_PLAYLIST_TYPE, tagData: tagValue)
         
-        return (GenericSingleTagValidator<PlaylistHLSType>(tag: PantosTag.EXT_X_PLAYLIST_TYPE,
+        return (GenericSingleTagValidator<PlaylistValueType>(tag: PantosTag.EXT_X_PLAYLIST_TYPE,
             singleValueIdentifier:PantosValue.playlistType), tag)
     }
 }

@@ -41,7 +41,7 @@ class ReadMeUnitTests: XCTestCase {
         // Parsing a HLS Playlist
         //***********************
         
-        let parser = Parser()
+        let parser = PlaylistParser()
         
         let myPlaylistData: Data = FixtureLoader.load(fixtureName: "bipbopall.m3u8")! as Data // source of HLS data
         let myPlaylistURL: URL = URL(string: "https://not.a.real.server/main.m3u8")! // the URL of this playlist resource
@@ -59,7 +59,7 @@ class ReadMeUnitTests: XCTestCase {
                             myMasterPlaylistHandler(masterPlaylist: master)
                             break
                         case .parseError(let error):
-                            // handle the ParserError
+                            // handle the PlaylistParserError
                             myErrorHandler(error: error)
                             break
                         }
@@ -78,7 +78,7 @@ class ReadMeUnitTests: XCTestCase {
             myMasterPlaylistHandler(masterPlaylist: master)
             break
         case .parseError(let error):
-            // handle the ParserError
+            // handle the PlaylistParserError
             myErrorHandler(error: error)
             break
         }
@@ -95,7 +95,7 @@ class ReadMeUnitTests: XCTestCase {
         // Writing a HLS Playlist
         //***********************
         
-        let writer = HLSWriter()
+        let writer = PlaylistWriter()
         
         let stream = OutputStream.toMemory() // stream to receive the HLS Playlist
         stream.open()
@@ -139,43 +139,43 @@ enum MyCustomTagSet: String {
     case EXT_MY_CUSTOM_TAG = "EXT-MY-CUSTOM-TAG"
 }
 
-extension MyCustomTagSet: HLSTagDescriptor {
-    // conform to HLSTagDescriptor here
+extension MyCustomTagSet: PlaylistTagDescriptor {
+    // conform to PlaylistTagDescriptor here
     
     func toString() -> String {
         return self.rawValue
     }
     
-    func isEqual(toTagDescriptor: HLSTagDescriptor) -> Bool {
+    func isEqual(toTagDescriptor: PlaylistTagDescriptor) -> Bool {
         return false
     }
     
-    func scope() -> HLSTagDescriptorScope {
+    func scope() -> PlaylistTagDescriptorScope {
         return .unknown
     }
     
-    func type() -> HLSTagDescriptorType {
+    func type() -> PlaylistTagDescriptorType {
         return .keyValue
     }
     
-    static func parser(forTag: HLSTagDescriptor) -> HLSTagParser? {
+    static func parser(forTag: PlaylistTagDescriptor) -> PlaylistTagParser? {
         return nil
     }
     
-    static func writer(forTag: HLSTagDescriptor) -> HLSTagWriter? {
+    static func writer(forTag: PlaylistTagDescriptor) -> PlaylistTagWriter? {
         return nil
     }
     
-    static func validator(forTag: HLSTagDescriptor) -> HLSTagValidator? {
+    static func validator(forTag: PlaylistTagDescriptor) -> PlaylistTagValidator? {
         return nil
     }
     
-    static func constructDescriptor(fromStringRef: HLSStringRef) -> HLSTagDescriptor? {
+    static func constructDescriptor(fromStringRef: MambaStringRef) -> PlaylistTagDescriptor? {
         return nil
     }
 }
 
-let customParser = Parser(tagTypes: [MyCustomTagSet.self])
+let customParser = PlaylistParser(tagTypes: [MyCustomTagSet.self])
 
 enum MyCustomValueIdentifiers: String {
     // define your custom value identifiers here
@@ -183,8 +183,8 @@ enum MyCustomValueIdentifiers: String {
     case CUSTOMDATA2 = "CUSTOMDATA2"
 }
 
-extension MyCustomValueIdentifiers: HLSTagValueIdentifier {
-    // conform to HLSTagValueIdentifier here
+extension MyCustomValueIdentifiers: PlaylistTagValueIdentifier {
+    // conform to PlaylistTagValueIdentifier here
     
     func toString() -> String {
         return self.rawValue

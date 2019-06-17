@@ -56,13 +56,13 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
         XCTAssertEqual(count, numberOfErrors, "Incorrect number of errors")
     }
 
-    func parse(tagData: String, tag: PantosTag) -> HLSTagDictionary {
+    func parse(tagData: String, tag: PantosTag) -> PlaylistTagDictionary {
         
         return try! PantosTag.parser(forTag:tag)!.parseTag(fromTagString: tagData)
     }
     
-    func write(dictionary: HLSTagDictionary, tag: PantosTag) -> String {
-        let tagImpl = HLSTag(tagDescriptor: tag, stringTagData: "", parsedValues: dictionary)
+    func write(dictionary: PlaylistTagDictionary, tag: PantosTag) -> String {
+        let tagImpl = PlaylistTag(tagDescriptor: tag, stringTagData: "", parsedValues: dictionary)
                 
         let stream = OutputStream.toMemory()
         stream.open()
@@ -92,7 +92,7 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
     func replaceKey(tagData: String, key: String, value: String, tag: PantosTag) -> String {
         
         var dictionary = parse(tagData: tagData, tag: tag)
-        dictionary[key] = HLSValueData(value: value)
+        dictionary[key] = PlaylistTagValueData(value: value)
         return write(dictionary: dictionary, tag: tag)
     }
     
@@ -123,9 +123,9 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
         }
     }
     
-    func constructDictionaryValidator(_ tag: HLSTagDescriptor, data: String) -> (HLSTagValidator, HLSTag) {
+    func constructDictionaryValidator(_ tag: PlaylistTagDescriptor, data: String) -> (PlaylistTagValidator, PlaylistTag) {
         
-        let tagImpl = createHLSTag(tagDescriptor: tag, tagData: data)
+        let tagImpl = createTag(tagDescriptor: tag, tagData: data)
          
         return (PantosTag.validator(forTag:tag)!, tagImpl)
     }

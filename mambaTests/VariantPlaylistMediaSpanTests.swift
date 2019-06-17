@@ -53,7 +53,7 @@ class VariantPlaylistMediaSpanTests: XCTestCase {
             "ro650_8.ts\n",
             "#EXT-X-ENDLIST\n"]
     
-    func runTest(hlsString: String, expectedSpans: [HLSMediaGroupIndexRange]) {
+    func runTest(hlsString: String, expectedSpans: [MediaGroupIndexRange]) {
         
         let playlist = parseVariantPlaylist(inString: hlsString)
         let validationIssues = PlaylistValidator.validate(variantPlaylist: playlist)
