@@ -38,7 +38,13 @@ public extension Collection where Iterator.Element == PlaylistTag {
             if tag.tagDescriptor == PantosTag.EXTINF {
                 return .media
             }
+            if tag.tagDescriptor == PantosTag.EXT_X_TARGETDURATION {
+                return .media
+            }
             if tag.tagDescriptor == PantosTag.EXT_X_STREAM_INF {
+                return .master
+            }
+            if tag.tagDescriptor == PantosTag.EXT_X_MEDIA {
                 return .master
             }
         }

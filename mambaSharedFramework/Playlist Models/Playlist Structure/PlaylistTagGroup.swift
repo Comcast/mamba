@@ -64,7 +64,7 @@ public struct PlaylistTagGroup: PlaylistTagGroupProtocol, CustomDebugStringConve
  Note that we currently also use this to model variant playlist "groups" in master playlists.
  This is convenient but not semantically correct.
  */
-public struct MediaSegmentPlaylistTagGroup: PlaylistTagGroupProtocol, CustomDebugStringConvertible {
+public struct MediaSegmentPlaylistTagGroup: PlaylistTagGroupProtocol, CustomDebugStringConvertible, Equatable {
     
     public var range: PlaylistTagIndexRange
     
@@ -76,6 +76,15 @@ public struct MediaSegmentPlaylistTagGroup: PlaylistTagGroupProtocol, CustomDebu
         return "MediaSegmentPlaylistTagGroup startIndex: \(startIndex) endIndex:\(endIndex) mediaSequence:\(mediaSequence) timeRange:\(timeRange) discontinuity:\(discontinuity)"
     }
 }
+
+public func ==(lhs: MediaSegmentPlaylistTagGroup, rhs: MediaSegmentPlaylistTagGroup) -> Bool {
+    
+    return lhs.mediaSequence == rhs.mediaSequence &&
+        lhs.range == rhs.range &&
+        lhs.timeRange == rhs.timeRange &&
+        lhs.discontinuity == rhs.discontinuity
+}
+
 
 /**
  An object to model the tags that are all "spanned" by one particualr tag.
