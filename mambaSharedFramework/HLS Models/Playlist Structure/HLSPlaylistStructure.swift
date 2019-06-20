@@ -383,7 +383,7 @@ fileprivate struct HLSPlaylistStructureConstructor {
         }
         
         // find the "header" portion by finding the first ".mediaSegment" scoped tag
-        let mediaStartIndexOptional = tags.index(where: { $0.scope() == .mediaSegment })
+        let mediaStartIndexOptional = tags.firstIndex(where: { $0.scope() == .mediaSegment })
         
         guard let mediaStartIndex = mediaStartIndexOptional else {
             if tags.count == 0 {

@@ -75,7 +75,7 @@ public struct OrderedDictionary<K: Hashable, V>: MutableCollection, ExpressibleB
     }
     
     public func indexForKey(_ key: Key) -> Index? {
-        return keys.index(of: key)
+        return keys.firstIndex(of: key)
     }
     
     @discardableResult
@@ -146,7 +146,7 @@ public struct OrderedDictionary<K: Hashable, V>: MutableCollection, ExpressibleB
                 // we are replacing this keys' value
                 self[key] = new.1
             }
-            else if let oldIndex = keys.index(of: new.0) {
+            else if let oldIndex = keys.firstIndex(of: new.0) {
                 // we are replacing this keys value, but original key is in a different position
                 var newIndex = index
                 if oldIndex < index {
@@ -298,7 +298,7 @@ private struct OrderedDictionaryIterator<K: Hashable, V>: IteratorProtocol {
 
 private extension ContiguousArray where Element: Equatable {
     mutating func remove(element: Element) {
-        if let indexToRemove = index(of: element) {
+        if let indexToRemove = firstIndex(of: element) {
             remove(at: indexToRemove)
         }
     }
