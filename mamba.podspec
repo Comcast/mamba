@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
 s.name              = "mamba"
-s.version           = "1.2.0"
+s.version           = "1.3.0"
 s.license           = { :type => 'Apache License, Version 2.0',
                         :text => <<-LICENSE
                             Copyright 2017 Comcast Cable Communications Management, LLC
@@ -19,7 +19,7 @@ s.homepage          = "https://github.com/Comcast/mamba"
 s.summary           = "mamba - a library for parsing, validating and editing HLS manifests"
 s.author            = "Comcast"
 
-s.ios.deployment_target     = '9.0'
+s.ios.deployment_target     = '11.0'
 s.tvos.deployment_target    = '10.0'
 s.osx.deployment_target     = '10.13'
 
