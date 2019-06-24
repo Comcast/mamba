@@ -823,6 +823,53 @@ class PlaylistStructureAndEditingTests: XCTestCase {
         XCTAssert(playlist.footer?.range.count == 1, "Should have a footer")
         XCTAssert(playlist.mediaSpans.count == 2, "Should have 2 spans")
     }
+    
+    func testPlaylistTypeChanges() {
+        
+        let sampleLive = """
+#EXTM3U
+#EXT-X-VERSION:4
+#EXT-X-TARGETDURATION:2
+#EXTINF:2.002,
+fragment1.ts
+"""
+        
+        // Live -> VOD by adding a VOD playlist type
+        var playlist1 = parseVariantPlaylist(inString: sampleLive)
+        
+        XCTAssertEqual(playlist1.playlistType, .live)
+        
+        let parsedValues1: PlaylistTagDictionary = [PantosValue.playlistType.toString(): PlaylistTagValueData(value: "VOD")]
+        playlist1.insert(tag: PlaylistTag(tagDescriptor: PantosTag.EXT_X_PLAYLIST_TYPE,
+                                          stringTagData: "VOD",
+                                          parsedValues: parsedValues1),
+                         atIndex: 0)
+        
+        XCTAssertEqual(playlist1.playlistType, .vod)
+
+        // Live -> VOD by adding a ENDLIST
+        var playlist2 = parseVariantPlaylist(inString: sampleLive)
+        
+        XCTAssertEqual(playlist2.playlistType, .live)
+        
+        playlist2.insert(tag: PlaylistTag(tagDescriptor: PantosTag.EXT_X_ENDLIST),
+                         atIndex: 0)
+        
+        XCTAssertEqual(playlist2.playlistType, .vod)
+        
+        // Live -> Event by adding a EVENT playlist type
+        var playlist3 = parseVariantPlaylist(inString: sampleLive)
+        
+        XCTAssertEqual(playlist3.playlistType, .live)
+        
+        let parsedValues3: PlaylistTagDictionary = [PantosValue.playlistType.toString(): PlaylistTagValueData(value: "EVENT")]
+        playlist3.insert(tag: PlaylistTag(tagDescriptor: PantosTag.EXT_X_PLAYLIST_TYPE,
+                                          stringTagData: "EVENT",
+                                          parsedValues: parsedValues3),
+                         atIndex: 0)
+        
+        XCTAssertEqual(playlist3.playlistType, .event)
+    }
 }
 
 

@@ -36,21 +36,7 @@ extension PlaylistCore: PlaylistTypeDetermination, PlaylistTimelineTranslator, V
     // MARK: PlaylistTypeDetermination
 
     public var playlistType: PlaylistType {
-        get {
-            guard
-                let playlistTag = tags.first(where: { $0.tagDescriptor == PantosTag.EXT_X_PLAYLIST_TYPE }),
-                let playlistType: PlaylistValueType = playlistTag.value(forValueIdentifier: PantosValue.playlistType) else {
-                    // if the #EXT-X-PLAYLIST-TYPE tag is not present, it's not 100% clear from the Pantos spec what to do.
-                    // here, we choose to check for the #EXT-X-ENDLIST tag as well. If it is present, we can assume we are VOD.
-                    // otherwise we assume live.
-                    // other checks could be added here as needed.
-                    if let _ = tags.first(where: { $0.tagDescriptor == PantosTag.EXT_X_ENDLIST }) {
-                        return .vod
-                    }
-                    return .live
-            }
-            return playlistType.type == .VOD ? .vod : .event
-        }
+        return structure.playlistType
     }
     
     internal func canQueryTimeline() -> Bool {
@@ -183,4 +169,4 @@ extension PlaylistCore: PlaylistTypeDetermination, PlaylistTimelineTranslator, V
  
  This protocol should be used instead of the actual `VariantPlaylist` type when possible.
  */
-public protocol VariantPlaylistInterface: PlaylistInterface, VariantPlaylistStructureInterface, PlaylistTimelineTranslator, PlaylistTypeDetermination, PlaylistURLDataInterface {}
+public protocol VariantPlaylistInterface: PlaylistInterface, VariantPlaylistStructureInterface, PlaylistTimelineTranslator, PlaylistURLDataInterface {}

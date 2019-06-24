@@ -57,7 +57,7 @@ import Foundation
  */
 public typealias VariantPlaylistStructure = PlaylistStructureCore<MediaPlaylistStructureData, VariantPlaylistStructureDelegate>
 
-extension PlaylistStructureCore: PlaylistTagSource, VariantPlaylistStructureInterface where PSD == VariantPlaylistStructureDelegate {
+extension PlaylistStructureCore: PlaylistTagSource, PlaylistTypeDetermination, VariantPlaylistStructureInterface where PSD == VariantPlaylistStructureDelegate {
     
     convenience public init(withTags tags: [PlaylistTag]) {
         self.init(withTags: tags,
@@ -69,9 +69,10 @@ extension PlaylistStructureCore: PlaylistTagSource, VariantPlaylistStructureInte
     public var mediaSegmentGroups: [MediaSegmentPlaylistTagGroup] { return structureData.mediaSegmentGroups }
     public var footer: PlaylistTagGroup? { return structureData.footer }
     public var mediaSpans: [PlaylistTagSpan] { return structureData.mediaSpans }
+    public var playlistType: PlaylistType { return structureData.playlistType }
 }
 
-public protocol VariantPlaylistStructureInterface: PlaylistTagSource {
+public protocol VariantPlaylistStructureInterface: PlaylistTagSource, PlaylistTypeDetermination {
     /**
      The `header` is all tags that describe the playlist initially. All `PlaylistTag`s at the top of the playlist that
      have the scope PlaylistTagDescriptorScope.wholePlaylist or PlaylistTagDescriptorScope.mediaSpanner are part of this
@@ -170,15 +171,15 @@ extension VariantPlaylistStructureInterface {
         }
         return tags[range]
     }
-    
 }
 
-public struct MediaPlaylistStructureData: EmptyInitializerImplementor {
+public struct MediaPlaylistStructureData: EmptyInitializerImplementor, PlaylistTypeDetermination {
     public init() {
         self.header = nil
         self.mediaSegmentGroups = [MediaSegmentPlaylistTagGroup]()
         self.footer = nil
         self.mediaSpans = [PlaylistTagSpan]()
+        self.playlistType = .live
     }
     /// Use this constructor if we are unable to figure out structure
     public init(tags: [PlaylistTag]) {
@@ -186,17 +187,24 @@ public struct MediaPlaylistStructureData: EmptyInitializerImplementor {
         self.mediaSegmentGroups = [MediaSegmentPlaylistTagGroup]()
         self.footer = nil
         self.mediaSpans = [PlaylistTagSpan]()
+        self.playlistType = _playlistType(fromTags: tags)
     }
-    public init(header: PlaylistTagGroup?, mediaSegmentGroups: [MediaSegmentPlaylistTagGroup], footer: PlaylistTagGroup?, mediaSpans: [PlaylistTagSpan]) {
+    public init(header: PlaylistTagGroup?,
+                mediaSegmentGroups: [MediaSegmentPlaylistTagGroup],
+                footer: PlaylistTagGroup?,
+                mediaSpans: [PlaylistTagSpan],
+                playlistType: PlaylistType) {
         self.header = header
         self.mediaSegmentGroups = mediaSegmentGroups
         self.footer = footer
         self.mediaSpans = mediaSpans
+        self.playlistType = playlistType
     }
     var header: PlaylistTagGroup?
     var mediaSegmentGroups: [MediaSegmentPlaylistTagGroup]
     var footer: PlaylistTagGroup?
     var mediaSpans: [PlaylistTagSpan]
+    public var playlistType: PlaylistType
 }
 
 public final class VariantPlaylistStructureDelegate: PlaylistStructureDelegate, EmptyInitializerImplementor {
@@ -222,10 +230,13 @@ public final class VariantPlaylistStructureDelegate: PlaylistStructureDelegate, 
                                                                                  header: result.header,
                                                                                  mediaSegmentGroups: result.mediaSegmentGroups)
             
+            let playlistType = _playlistType(fromTags: tags)
+            
             return MediaPlaylistStructureData(header: result.header,
                                               mediaSegmentGroups: result.mediaSegmentGroups,
                                               footer: result.footer,
-                                              mediaSpans: mediaSpans)
+                                              mediaSpans: mediaSpans,
+                                              playlistType: playlistType)
         }
         catch {
             return MediaPlaylistStructureData(tags: tags)
@@ -305,11 +316,31 @@ public final class VariantPlaylistStructureDelegate: PlaylistStructureDelegate, 
             mediaSpans = [PlaylistTagSpan]()
         }
         
+        let playlistType = _playlistType(fromTags: tags)
+
         return PlaylistStructureChangeResult<MediaPlaylistStructureData>(hadToRebuildFromScratch: false,
                                                                          structure: MediaPlaylistStructureData(header: calc_header,
                                                                                                                mediaSegmentGroups: calc_mediaSegmentGroups,
                                                                                                                footer: calc_footer,
-                                                                                                               mediaSpans: mediaSpans))
+                                                                                                               mediaSpans: mediaSpans,
+                                                                                                               playlistType: playlistType))
         
     }
+}
+
+/// This function is where we can figure out a playlist type directly from an array of `PlaylistTag`s. It assumes the tags are from a Variant.
+fileprivate func _playlistType(fromTags tags: [PlaylistTag]) -> PlaylistType {
+    guard
+        let playlistTag = tags.first(where: { $0.tagDescriptor == PantosTag.EXT_X_PLAYLIST_TYPE }),
+        let playlistType: PlaylistValueType = playlistTag.value(forValueIdentifier: PantosValue.playlistType) else {
+            // if the #EXT-X-PLAYLIST-TYPE tag is not present, it's not 100% clear from the Pantos spec what to do.
+            // Here, we choose to check for the #EXT-X-ENDLIST tag as well. If it is present, we can assume we are VOD.
+            // Otherwise we assume live.
+            // Other checks could be added here as needed.
+            if let _ = tags.first(where: { $0.tagDescriptor == PantosTag.EXT_X_ENDLIST }) {
+                return .vod
+            }
+            return .live
+    }
+    return playlistType.type == .VOD ? .vod : .event
 }
