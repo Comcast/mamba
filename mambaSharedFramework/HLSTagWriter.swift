@@ -36,7 +36,7 @@ public protocol HLSTagWriter {
 }
 
 internal struct HLSTagWritingSeparators {
-    static let hash = UnicodeScalar("#")!
-    static let colon = UnicodeScalar(":")!
-    static let newline = UnicodeScalar("\n")!
+    static let hash = UnicodeScalar("#")
+    static let colon = UnicodeScalar(":")
+    static let newline = UnicodeScalar("\n")
 }

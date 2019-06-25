@@ -39,7 +39,7 @@ class CollectionTypeTests: XCTestCase {
         
         let array = ["a", "b", "c", "a", "b", "c"]
         
-        let first_b_index = array.index(where: { $0 == "b" })
+        let first_b_index = array.firstIndex(where: { $0 == "b" })
         XCTAssert(first_b_index == 1, "Our b location should be accurate")
         
         let second_a_index = array.findIndexAfterIndex(index: first_b_index!, predicate: { $0 == "a" })
@@ -82,7 +82,7 @@ class CollectionTypeTests: XCTestCase {
         
         let array = ["a", "b", "c", "a", "b", "c"]
         
-        let first_c_index = array.index(where: { $0 == "c" })
+        let first_c_index = array.firstIndex(where: { $0 == "c" })
         XCTAssert(first_c_index == 2, "Our c location should be accurate")
         
         let first_b_index = array.findIndexBeforeIndex(index: first_c_index!, predicate: { $0 == "b" })
