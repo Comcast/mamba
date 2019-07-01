@@ -71,7 +71,9 @@ extension PlaylistCore where PT == VariantPlaylistType {
                 matchingMediaGroup = mediaGroup
                 foundInHeader = false
             }
-            else if matchesInHeaderMatchToFirst, let firstMediaGroup = mediaSegmentGroups.first {
+            else if matchesInHeaderMatchToFirst,
+                let firstMediaGroup = mediaSegmentGroups.first,
+                header?.range.contains(tagIndex) == true {
                 matchingMediaGroup = firstMediaGroup
                 foundInHeader = true
             }
