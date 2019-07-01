@@ -37,11 +37,29 @@ public struct PlaylistValidationIssue: Error {
     }
 }
 
+extension PlaylistValidationIssue: CustomDebugStringConvertible {
+    
+    public var debugDescription: String {
+        return "\(severity.loggingPrefix) \(description)"
+    }
+}
+
 public enum IssueSeverity: Error {
     /// low severity
     case warning
     /// high severity
     case error
+}
+
+public extension IssueSeverity {
+    var loggingPrefix: String {
+        switch self {
+        case .warning:
+            return "Playlist Validation Warning:"
+        case .error:
+            return "Playlist Validation Error:"
+        }
+    }
 }
 
 public enum IssueDescription: String {
