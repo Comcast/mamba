@@ -32,7 +32,7 @@ extension PlaylistRenditionGroupAudioVideoValidator {
             for tag in tags.filter({ $0.tagDescriptor == PantosTag.EXT_X_STREAM_INF }) {
                 
                 if let value: String = tag.value(forValueIdentifier: PantosValue.codecs),
-                    let codecs = CodecValueTypeArray(string: value) {
+                    let codecs = CodecValueTypeArray(failableInitWithString: value) {
                     
                     if let _ = codecArray {
                         guard let previousCodecs = codecArray else { return [PlaylistValidationIssue]() }

@@ -21,23 +21,23 @@ import Foundation
 
 /// A protocol for objects that can be constructed from a string, but might fail.
 public protocol FailableStringLiteralConvertible {
-    init?(string: String)
+    init?(failableInitWithString: String)
 }
 
 extension Int: FailableStringLiteralConvertible {
-    public init?(string: String) {
+    public init?(failableInitWithString string: String) {
         self.init(string, radix: 10)
     }
 }
 
 extension Float: FailableStringLiteralConvertible {
-    public init?(string: String) {
+    public init?(failableInitWithString string: String) {
         self.init(string)
     }
 }
 
 extension Double: FailableStringLiteralConvertible {
-    public init?(string: String) {
+    public init?(failableInitWithString string: String) {
         self.init(string)
     }
 }
@@ -47,7 +47,7 @@ extension Bool: FailableStringLiteralConvertible {
         case No = "NO"
         case Yes = "YES"
     }
-    public init?(string: String) {
+    public init?(failableInitWithString string: String) {
         guard let value = YesNo.init(rawValue: string) else {
             return nil
         }
@@ -56,13 +56,13 @@ extension Bool: FailableStringLiteralConvertible {
 }
 
 extension String: FailableStringLiteralConvertible {
-    public init?(string: String) {
+    public init?(failableInitWithString string: String) {
         self.init(string)
     }
 }
 
 extension Date: FailableStringLiteralConvertible {
-    public init?(string: String) {
+    public init?(failableInitWithString string: String) {
         guard let date = string.parseISO8601Date() else {
             return nil
         }
@@ -72,7 +72,7 @@ extension Date: FailableStringLiteralConvertible {
 }
 
 extension CMTime: FailableStringLiteralConvertible {
-    public init?(string: String) {
+    public init?(failableInitWithString string: String) {
         self = mamba_CMTimeMakeFromString(string, UInt8(CMTime.defaultMambaPrecision), nil)
     }
 }

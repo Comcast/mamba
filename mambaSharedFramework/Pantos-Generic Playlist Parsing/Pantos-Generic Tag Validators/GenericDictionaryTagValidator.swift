@@ -44,7 +44,7 @@ public class GenericDictionaryTagValidator: PlaylistTagValidator {
             
             if let value: String = tag.value(forValueIdentifier: identifier.valueId) {
                 
-                guard let _ = identifier.expectedType.init(string: value) else {
+                guard let _ = identifier.expectedType.init(failableInitWithString: value) else {
                     issueList.append(PlaylistValidationIssue(description: "\(tag.tagDescriptor.toString()) \(identifier.valueId)=\(value) is not an instance of the expected data type \(identifier.expectedType).", severity: IssueSeverity.error))
                     continue
                 }

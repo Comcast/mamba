@@ -29,7 +29,7 @@ public typealias MediaGroupIndexRange = CountableClosedRange<Int>
 public struct ResolutionValueType: Equatable, Comparable, FailableStringLiteralConvertible {
     public let w: Int
     public let h: Int
-    public init?(string: String) {
+    public init?(failableInitWithString string: String) {
         self.init(resolution: string)
     }
     public init?(resolution: String) {
@@ -84,7 +84,7 @@ public struct MediaType: Equatable, FailableStringLiteralConvertible {
         case Subtitles = "SUBTITLES"
         case ClosedCaptions = "CLOSED-CAPTIONS"
     }
-    public init?(string: String) {
+    public init?(failableInitWithString string: String) {
         self.init(mediaType: string)
     }
     public init?(mediaType: String) {
@@ -128,7 +128,7 @@ public struct EncryptionMethodType: Equatable, FailableStringLiteralConvertible 
         case AES128 = "AES-128"
         case SampleAES = "SAMPLE-AES"
     }
-    public init?(string: String) {
+    public init?(failableInitWithString string: String) {
         self.init(encryption: string)
     }
     public init?(encryption: String) {
@@ -155,7 +155,7 @@ public struct PlaylistValueType: Equatable, FailableStringLiteralConvertible {
         case Event = "EVENT"
         case VOD = "VOD"
     }
-    public init?(string: String) {
+    public init?(failableInitWithString string: String) {
         self.init(playlistType: string)
     }
     public init?(playlistType: String) {
@@ -183,7 +183,7 @@ public enum InstreamId: String, FailableStringLiteralConvertible {
     case CC3 = "CC3"
     case CC4 = "CC4"
     
-    public init?(string: String) {
+    public init?(failableInitWithString string: String) {
         self.init(rawValue:string)
     }
     
@@ -195,7 +195,7 @@ public enum InstreamId: String, FailableStringLiteralConvertible {
 /// can be either a quoted-string or an enumerated-string with the value NONE for a valid value
 public struct ClosedCaptionsValueType: FailableStringLiteralConvertible {
     let value: String
-    public init?(string: String) {
+    public init?(failableInitWithString string: String) {
         if !(string.hasPrefix("\"") && string.hasSuffix("\"")){
             if string != "NONE" {
                 return nil
@@ -232,7 +232,7 @@ public struct CodecValueTypeArray: Equatable, FailableStringLiteralConvertible {
     
     public let codecs: [CodecValueType]
     
-    public init?(string: String) {
+    public init?(failableInitWithString string: String) {
         let stringArray = StringArrayParser.parseToArray(fromParsableString: string, ignoreQuotes: true)
         if (stringArray.count == 0) {
             return nil

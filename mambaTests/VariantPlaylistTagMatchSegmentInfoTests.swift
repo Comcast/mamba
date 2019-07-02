@@ -65,7 +65,7 @@ segment5.ts
             XCTFail("Not expecting this value")
         case .timeMatch(let timeRange):
             XCTAssertEqual(timeRange.start, CMTime.zero)
-            XCTAssertEqual(timeRange.duration, CMTime(string: "3.0000")!)
+            XCTAssertEqual(timeRange.duration, CMTime(failableInitWithString: "3.0000")!)
         }
         
         // testing if the "match in header means no match" feature works
@@ -89,8 +89,8 @@ segment5.ts
         case .noTimeMatchForNonVODPlaylist:
             XCTFail("Not expecting this value")
         case .timeMatch(let timeRange):
-            XCTAssertEqual(timeRange.start, CMTime(string: "6.0000")!)
-            XCTAssertEqual(timeRange.duration, CMTime(string: "3.0000")!)
+            XCTAssertEqual(timeRange.start, CMTime(failableInitWithString: "6.0000")!)
+            XCTAssertEqual(timeRange.duration, CMTime(failableInitWithString: "3.0000")!)
         }
         
         XCTAssertEqual(testSegmentTags[1].containsDiscontinuity, true)
@@ -103,8 +103,8 @@ segment5.ts
         case .noTimeMatchForNonVODPlaylist:
             XCTFail("Not expecting this value")
         case .timeMatch(let timeRange):
-            XCTAssertEqual(timeRange.start, CMTime(string: "12.0000")!)
-            XCTAssertEqual(timeRange.duration, CMTime(string: "3.0000")!)
+            XCTAssertEqual(timeRange.start, CMTime(failableInitWithString: "12.0000")!)
+            XCTAssertEqual(timeRange.duration, CMTime(failableInitWithString: "3.0000")!)
         }
         
         // quick test of testing more "normal" segment based tags with "match in header means no match"
