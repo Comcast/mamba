@@ -19,7 +19,7 @@
 
 import Foundation
 
-/// "No operation" Tag Parser. This is returned in cases when `RegisteredTags` cannot determine a `TagParser`. Usage of this class in production is a error.
+/// "No operation" Tag Parser. This is returned in cases when `PlaylistRegisteredTags` cannot determine a `PlaylistTagParser`. Usage of this class in production is a error.
 public class NoOpTagParser: PlaylistTagParser {
     
     public func parseTag(fromTagString string: String?) throws -> PlaylistTagDictionary {

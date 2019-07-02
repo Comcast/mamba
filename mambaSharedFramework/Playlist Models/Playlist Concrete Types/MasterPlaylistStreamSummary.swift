@@ -27,7 +27,7 @@ extension PlaylistCore where PT == MasterPlaylistType {
      It's worth noting that this function captures the state of the playlist when it's called. The
      `PlaylistStreamSummary` object that is returned will not update if the master playlist is edited.
      
-     This function is also not thread safe. Please esnure that no other threads are editing this master playlist
+     This function is also not thread safe. Please ensure that no other threads are editing this master playlist
      while executing.
      
      - returns: A `Result` object with either a `PlaylistStreamSummary` for success or a `StreamSummaryError` for failure.
