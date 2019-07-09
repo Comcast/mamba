@@ -20,7 +20,7 @@ s.summary           = "mamba - a library for parsing, validating and editing HLS
 s.author            = "Comcast"
 
 s.ios.deployment_target     = '9.0'
-s.tvos.deployment_target    = '10.0'
+s.tvos.deployment_target    = '9.0'
 s.osx.deployment_target     = '10.13'
 
 s.source            = { :git => "https://github.com/Comcast/mamba.git", :tag => "#{s.version}" }

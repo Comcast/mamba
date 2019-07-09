@@ -6,14 +6,8 @@
 [![License](https://img.shields.io/cocoapods/l/mamba.svg)](https://raw.githubusercontent.com/Comcast/mamba/master/LICENSE.md)
 [![Platform](https://img.shields.io/cocoapods/p/mamba.svg?style=flat)]()
 
-Mamba 2.0
+Mamba
 ===
-
-_Note: The core Comcast mamba team is planning a 2.0 release of mamba. If you'd like more info about this look at [our request for comment.](./MAMBA_2_REQUEST_FOR_COMMENT.md)_
-
-_This README covers mamba 2.x. If you're using mamba 1.x, you can look at the README at [our master 1.x branch](https://github.com/Comcast/mamba/tree/master_1.x). 2.x is still under development. We recommend sticking with 1.x until we have an official 2.x release._
-
---
 
 Mamba is a Swift iOS, tvOS and macOS framework to parse, validate and write [HTTP Live Streaming (HLS)](https://tools.ietf.org/html/draft-pantos-http-live-streaming-23) data.
 
@@ -27,9 +21,9 @@ _Mamba Project Goals:_
 
 ## Requires
 
-* XCode 10+
-* Swift 3+ (written in Swift 4.2)
-* iOS 9+ _or_ tvOS 10+ _or_ macOS 10.13+
+* XCode 10.2+
+* Swift 4+ (written in Swift 5)
+* iOS 9+ _or_ tvOS 9+ _or_ macOS 10.13+
 
 ## Usage
 
@@ -210,3 +204,9 @@ This meant that, for each `PlaylistTag` object that is included in a `MasterPlay
 In general, this is no problem. Normal usage of a `MasterPlaylist/VariantPlaylist` would be (1) Parse the playlist, (2) Edit by manipulating `PlaylistTag`s (3) Write the playlist. 
 
 If you do, for some reason, need to access `PlaylistTag` data beyond the lifetime of the parent `MasterPlaylist/VariantPlaylist` object, you'll need to make a copy of all `MambaStringRef` data of interest into a regular swift `String`. There's a string conversion function in `MambaStringRef` to accomplish this.
+
+--
+
+_Note: We have legacy branches for mamba 1.x at [our master 1.x branch](https://github.com/Comcast/mamba/tree/master_1.x) and [our develop 1.x branch](https://github.com/Comcast/mamba/tree/develop_1.x). However, we are not maintaining that branch actively. Users are welcome to submit pull requests against the 1.x branches or potentially fork if they do not want to move to 2.0_
+
+--
