@@ -24,7 +24,7 @@ import Foundation
  */
 public typealias VariantPlaylist = PlaylistCore<VariantPlaylistType>
 
-extension PlaylistCore: PlaylistTypeDetermination, PlaylistTimelineTranslator, VariantPlaylistStructureInterface, VariantPlaylistInterface where PT == VariantPlaylistType {
+extension PlaylistCore: PlaylistTypeDetermination, PlaylistTimelineTranslator, VariantPlaylistStructureInterface, PlaylistSegmentMatcher, VariantPlaylistInterface where PT == VariantPlaylistType {
     
     // MARK: VariantPlaylistStructureInterface
     
@@ -136,4 +136,4 @@ extension PlaylistCore: PlaylistTypeDetermination, PlaylistTimelineTranslator, V
  
  This protocol should be used instead of the actual `VariantPlaylist` type when possible.
  */
-public protocol VariantPlaylistInterface: PlaylistInterface, VariantPlaylistStructureInterface, PlaylistTimelineTranslator, PlaylistURLDataInterface {}
+public protocol VariantPlaylistInterface: PlaylistInterface, VariantPlaylistStructureInterface, PlaylistTimelineTranslator, PlaylistURLDataInterface, PlaylistSegmentMatcher {}

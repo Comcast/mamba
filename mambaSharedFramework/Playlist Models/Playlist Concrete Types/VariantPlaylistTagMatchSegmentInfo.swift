@@ -19,8 +19,7 @@
 
 import Foundation
 
-extension PlaylistCore where PT == VariantPlaylistType {
-    
+public protocol PlaylistSegmentMatcher {
     /**
      Query a variant playlist segment-based info with a predicate based on tags.
      
@@ -55,6 +54,18 @@ extension PlaylistCore where PT == VariantPlaylistType {
      - returns: An array of `VariantPlaylistTagMatchSegmentInfo` structs describing each hit. (Note that if you have
      more than one hit per segment your segment will show up more than once).
      */
+    func getPlaylistSegmentMatches(usingPredicate predicate: VariantPlaylistTagMatchPredicate,
+                                   withMatchesInHeaderMatchingToFirstMediaSegment matchesInHeaderMatchToFirst: Bool) -> [VariantPlaylistTagMatchSegmentInfo]
+}
+
+extension PlaylistSegmentMatcher {
+    func getPlaylistSegmentMatches(usingPredicate predicate: VariantPlaylistTagMatchPredicate) -> [VariantPlaylistTagMatchSegmentInfo] {
+        return getPlaylistSegmentMatches(usingPredicate: predicate, withMatchesInHeaderMatchingToFirstMediaSegment: true)
+    }
+}
+
+extension PlaylistCore where PT == VariantPlaylistType {
+    
     public func getPlaylistSegmentMatches(usingPredicate predicate: VariantPlaylistTagMatchPredicate,
                                           withMatchesInHeaderMatchingToFirstMediaSegment matchesInHeaderMatchToFirst: Bool = true) -> [VariantPlaylistTagMatchSegmentInfo] {
         

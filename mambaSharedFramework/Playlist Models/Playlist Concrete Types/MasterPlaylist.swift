@@ -24,7 +24,7 @@ import Foundation
  */
 public typealias MasterPlaylist = PlaylistCore<MasterPlaylistType>
 
-extension PlaylistCore: MasterPlaylistTagGroupProvider, MasterPlaylistInterface where PT == MasterPlaylistType {
+extension PlaylistCore: MasterPlaylistTagGroupProvider, MasterStreamSummaryCalculator, MasterPlaylistInterface where PT == MasterPlaylistType {
     public var variantTagGroups: [VariantTagGroup] { return structure.variantTagGroups }
 }
 
@@ -33,4 +33,4 @@ extension PlaylistCore: MasterPlaylistTagGroupProvider, MasterPlaylistInterface 
  
  This protocol should be used instead of the actual `MasterPlaylist` type when possible.
  */
-public protocol MasterPlaylistInterface: PlaylistInterface, MasterPlaylistTagGroupProvider, PlaylistURLDataInterface {}
+public protocol MasterPlaylistInterface: PlaylistInterface, MasterPlaylistTagGroupProvider, PlaylistURLDataInterface, MasterStreamSummaryCalculator {}
