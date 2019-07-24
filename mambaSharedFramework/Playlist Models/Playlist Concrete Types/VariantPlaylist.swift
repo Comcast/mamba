@@ -24,7 +24,7 @@ import Foundation
  */
 public typealias VariantPlaylist = PlaylistCore<VariantPlaylistType>
 
-extension PlaylistCore: PlaylistTypeDetermination, PlaylistTimelineTranslator, VariantPlaylistStructureInterface, VariantPlaylistInterface where PT == VariantPlaylistType {
+extension PlaylistCore: PlaylistTypeDetermination, PlaylistTimelineTranslator, VariantPlaylistStructureInterface, PlaylistSegmentMatcher, VariantPlaylistInterface where PT == VariantPlaylistType {
     
     // MARK: VariantPlaylistStructureInterface
     
@@ -90,15 +90,6 @@ extension PlaylistCore: PlaylistTypeDetermination, PlaylistTimelineTranslator, V
         return mediaGroup.startIndex...mediaGroup.endIndex
     }
     
-    // MARK: Utility functions to get media segment info from time/media sequence number/tag index
-    
-    /**
-     Returns the MediaSegmentPlaylistTagGroup for the given time, if the time is within our asset
-     
-     - parameter forTime: The CMTime that we are querying.
-     
-     - returns: The MediaSegmentPlaylistTagGroup that the time occurs within, or nil if the time is outside asset range.
-     */
     public func mediaGroup(forTime time: CMTime) -> MediaSegmentPlaylistTagGroup? {
         let segments = mediaSegmentGroups.filter { $0.timeRange.containsTime(time) }
         
@@ -113,13 +104,6 @@ extension PlaylistCore: PlaylistTypeDetermination, PlaylistTimelineTranslator, V
         return segment
     }
     
-    /**
-     Returns the MediaSegmentPlaylistTagGroup for the given tag index, if the index is within our tag array
-     
-     - parameter forTagIndex: The tag index that we are querying.
-     
-     - returns: The MediaSegmentPlaylistTagGroup that the tag index occurs within, or nil if the tag  is outside our tag array.
-     */
     public func mediaGroup(forTagIndex tagIndex: Int) -> MediaSegmentPlaylistTagGroup? {
         let segments = mediaSegmentGroups.filter { $0.startIndex <= tagIndex && $0.endIndex >= tagIndex }
         
@@ -128,13 +112,6 @@ extension PlaylistCore: PlaylistTypeDetermination, PlaylistTimelineTranslator, V
         return segment
     }
     
-    /**
-     Returns the MediaSegmentPlaylistTagGroup for the given MediaSequence, if the media sequence is within our asset
-     
-     - parameter forMediaSequence: The MediaSequence that we are querying.
-     
-     - returns: The MediaSegmentPlaylistTagGroup that the MediaSequence occurs within, or nil if the media sequence is outside our asset.
-     */
     public func mediaGroup(forMediaSequence mediaSequence: MediaSequence) -> MediaSegmentPlaylistTagGroup? {
         let segments = mediaSegmentGroups.filter { $0.mediaSequence == mediaSequence }
         
@@ -143,16 +120,6 @@ extension PlaylistCore: PlaylistTypeDetermination, PlaylistTimelineTranslator, V
         return segment
     }
     
-    /**
-     Returns the segment name of the media sequence, if that media sequence exists in this playlist.
-     
-     This function is intended to be useful in debugging and logging.
-     
-     - parameter forMediaSequence: The MediaSequence that we are querying.
-     
-     - returns: An optional String that is the segment name. Note that this could be a relative url or an absolute url, depending
-     on how the original playlist is written.
-     */
     public func segmentName(forMediaSequence mediaSequence: MediaSequence) -> String? {
         guard let group = mediaGroup(forMediaSequence: mediaSequence) else {
             return nil
@@ -169,4 +136,4 @@ extension PlaylistCore: PlaylistTypeDetermination, PlaylistTimelineTranslator, V
  
  This protocol should be used instead of the actual `VariantPlaylist` type when possible.
  */
-public protocol VariantPlaylistInterface: PlaylistInterface, VariantPlaylistStructureInterface, PlaylistTimelineTranslator, PlaylistURLDataInterface {}
+public protocol VariantPlaylistInterface: PlaylistInterface, VariantPlaylistStructureInterface, PlaylistTimelineTranslator, PlaylistURLDataInterface, PlaylistSegmentMatcher {}

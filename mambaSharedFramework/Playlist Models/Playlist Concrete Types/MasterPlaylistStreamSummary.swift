@@ -19,8 +19,7 @@
 
 import Foundation
 
-extension PlaylistCore where PT == MasterPlaylistType {
-    
+public protocol MasterStreamSummaryCalculator {
     /**
      Calculates a summary of all the independantly addressable (i.e. has a uri) streams in a given master HLS playlist.
      
@@ -32,6 +31,11 @@ extension PlaylistCore where PT == MasterPlaylistType {
      
      - returns: A `Result` object with either a `PlaylistStreamSummary` for success or a `StreamSummaryError` for failure.
      */
+    func calculateStreamSummary() -> Result<PlaylistStreamSummary, StreamSummaryError>
+}
+
+extension PlaylistCore where PT == MasterPlaylistType {
+    
     public func calculateStreamSummary() -> Result<PlaylistStreamSummary, StreamSummaryError> {
         
         var streams = [PlaylistStream]()

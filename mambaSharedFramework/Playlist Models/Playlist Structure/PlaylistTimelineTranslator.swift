@@ -80,6 +80,45 @@ public protocol PlaylistTimelineTranslator {
      */
     func tagIndexes(forTime time: CMTime) -> PlaylistTagIndexRange?
     
+    /**
+     Returns the MediaSegmentPlaylistTagGroup for the given time, if the time is within our asset
+     
+     - parameter forTime: The CMTime that we are querying.
+     
+     - returns: The MediaSegmentPlaylistTagGroup that the time occurs within, or nil if the time is outside asset range.
+     */
+    func mediaGroup(forTime time: CMTime) -> MediaSegmentPlaylistTagGroup?
+    
+    /**
+     Returns the MediaSegmentPlaylistTagGroup for the given tag index, if the index is within our tag array
+     
+     - parameter forTagIndex: The tag index that we are querying.
+     
+     - returns: The MediaSegmentPlaylistTagGroup that the tag index occurs within, or nil if the tag  is outside our tag array.
+     */
+    func mediaGroup(forTagIndex tagIndex: Int) -> MediaSegmentPlaylistTagGroup?
+    
+    /**
+     Returns the MediaSegmentPlaylistTagGroup for the given MediaSequence, if the media sequence is within our asset
+     
+     - parameter forMediaSequence: The MediaSequence that we are querying.
+     
+     - returns: The MediaSegmentPlaylistTagGroup that the MediaSequence occurs within, or nil if the media sequence is outside our asset.
+     */
+    func mediaGroup(forMediaSequence mediaSequence: MediaSequence) -> MediaSegmentPlaylistTagGroup?
+    
+    /**
+     Returns the segment name of the media sequence, if that media sequence exists in this playlist.
+     
+     This function is intended to be useful in debugging and logging.
+     
+     - parameter forMediaSequence: The MediaSequence that we are querying.
+     
+     - returns: An optional String that is the segment name. Note that this could be a relative url or an absolute url, depending
+     on how the original playlist is written.
+     */
+    func segmentName(forMediaSequence mediaSequence: MediaSequence) -> String?
+    
     /// Returns the start time of the timeline if valid and determinable, kCMTimeInvalid otherwise
     var startTime: CMTime { get }
     
