@@ -19,7 +19,7 @@ s.homepage          = "https://github.com/Comcast/mamba"
 s.summary           = "mamba - a library for parsing, validating and editing HLS manifests"
 s.author            = "Comcast"
 
-s.ios.deployment_target     = '11.0'
+s.ios.deployment_target     = '10.0'
 s.tvos.deployment_target    = '10.0'
 s.osx.deployment_target     = '10.13'
 
