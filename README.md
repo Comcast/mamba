@@ -23,7 +23,7 @@ _Mamba Project Goals:_
 
 * XCode 10+
 * Swift 3+ (written in Swift 4.2)
-* iOS 9+ _or_ tvOS 10+ _or_ macOS 10.13+
+* iOS 10+ _or_ tvOS 10+ _or_ macOS 10.13+
 
 ## Usage
 
