@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
 s.name              = "mamba"
-s.version           = "2.0.2"
+s.version           = "2.0.3"
 s.license           = { :type => 'Apache License, Version 2.0',
                         :text => <<-LICENSE
                             Copyright 2017 Comcast Cable Communications Management, LLC
