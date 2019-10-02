@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode10.2
+osx_image: xcode11
 
 
 env:
@@ -9,12 +9,12 @@ env:
   - IOS_SCHEME="mamba"
   - TVOS_SCHEME="mambaTVOS"
   - OSX_SCHEME="mambaMacOS"
-  - IOS_SDK=iphonesimulator11.0
-  - TVOS_SDK=appletvsimulator11.0
-  - OSX_SDK=macosx10.13
+  - IOS_SDK=iphonesimulator13.0
+  - TVOS_SDK=appletvsimulator13.0
+  - OSX_SDK=macosx10.15
   matrix:
-  - DESTINATION="OS=12.2,name=iPhone X"              SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES"
-  - DESTINATION="OS=12.2,name=Apple TV 4K"           SDK="$TVOS_SDK" SCHEME="$TVOS_SCHEME" RUN_TESTS="YES"
+  - DESTINATION="OS=13.0,name=iPhone X"              SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES"
+  - DESTINATION="OS=13.0,name=Apple TV 4K"           SDK="$TVOS_SDK" SCHEME="$TVOS_SCHEME" RUN_TESTS="YES"
   - DESTINATION="arch=x86_64"                        SDK="$OSX_SDK" SCHEME="$OSX_SCHEME" RUN_TESTS="YES"
 
 script:
