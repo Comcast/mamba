@@ -13,7 +13,7 @@ env:
   - TVOS_SDK=appletvsimulator13.0
   - OSX_SDK=macosx10.15
   matrix:
-  - DESTINATION="OS=13.0,name=iPhone X"              SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES"
+  - DESTINATION="OS=13.0,name=iPad Air (3rd generation)"              SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES"
   - DESTINATION="OS=13.0,name=Apple TV 4K"           SDK="$TVOS_SDK" SCHEME="$TVOS_SCHEME" RUN_TESTS="YES"
   - DESTINATION="arch=x86_64"                        SDK="$OSX_SDK" SCHEME="$OSX_SCHEME" RUN_TESTS="YES"
 
