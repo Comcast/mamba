@@ -28,7 +28,7 @@ class URL_hlsplaylistTests: XCTestCase {
         var url = URL(string: "http://comcast.com")
         
         XCTAssertTrue((url?.changeScheme(to: "mamba"))!, "Should be able to change schemes")
-        var components = URLComponents(url: url!, resolvingAgainstBaseURL: true)
+        let components = URLComponents(url: url!, resolvingAgainstBaseURL: true)
         
         XCTAssert(components?.scheme == "mamba", "Should have matching scheme name")
         XCTAssert(components?.host == "comcast.com", "Host should be the same")
