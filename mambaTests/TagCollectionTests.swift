@@ -22,35 +22,6 @@ import XCTest
 
 class TagCollectionTests: XCTestCase {
     
-    func testSAP() {
-        let sapMaster = parseMasterPlaylist(inFixtureName: "super8demuxed1_4242.m3u8")
-        let nonsapMaster = parseMasterPlaylist(inFixtureName: "hls_sampleMasterFile.txt")
-        
-        XCTAssertTrue(sapMaster.tags.hasSap())
-        XCTAssertFalse(nonsapMaster.tags.hasSap())
-        
-        XCTAssertEqual(sapMaster.tags.sapStreams()?.count, 4)
-        XCTAssertEqual(nonsapMaster.tags.sapStreams()?.count, 0)
-    }
-    
-    func testAudioOnlyStream() {
-        let audioOnlyMaster = parseMasterPlaylist(inFixtureName: "super8demuxed1_4242.m3u8")
-        let nonAudioOnlyMaster = parseMasterPlaylist(inFixtureName: "hls_sampleMasterFile.txt")
-
-        XCTAssertTrue(audioOnlyMaster.tags.hasAudioOnlyStream())
-        XCTAssertFalse(nonAudioOnlyMaster.tags.hasAudioOnlyStream())
-        
-        XCTAssertNotNil(audioOnlyMaster.tags.firstAudioOnlyStreamInfTag())
-        XCTAssertNil(nonAudioOnlyMaster.tags.firstAudioOnlyStreamInfTag())
-    }
-    
-    func testFilteredBy() {
-        let master = parseMasterPlaylist(inFixtureName: "super8demuxed1_4242.m3u8")
-
-        XCTAssertEqual(master.tags.filtered(by: PantosTag.EXT_X_MEDIA).count, 4)
-        XCTAssertEqual(master.tags.filteredByVideoCodec().count, 7)
-    }
-    
     func testSortedBy() {
         let master = parseMasterPlaylist(inFixtureName: "super8demuxed1_4242.m3u8")
 
