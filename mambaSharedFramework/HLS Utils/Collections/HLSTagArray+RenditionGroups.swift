@@ -35,21 +35,6 @@ public extension Collection where Iterator.Element == HLSTag {
         return .unknown
     }
     
-    /// returns true if we can detect a SAP stream (only works for master playlists)
-    func hasSap() -> Bool {
-        
-        let languages = Set(self.extractValues(tagDescriptor: PantosTag.EXT_X_MEDIA, valueIdentifier: PantosValue.language))
-        return languages.count > 1
-    }
-    
-    /// returns the #EXT-X-MEDIA tags for SAP audio streams if present (only works for master playlists)
-    func sapStreams() -> [HLSTag]? {
-        
-        return self.filter({ $0.tagDescriptor == PantosTag.EXT_X_MEDIA }).filter({
-            return $0.value(forValueIdentifier: PantosValue.language) != nil
-        })
-    }
-    
     /// Convenience function to return all the values for a particular HLSTagValueIdentifier in a particular HLSTagDescriptor
     func extractValues(tagDescriptor: HLSTagDescriptor, valueIdentifier: HLSTagValueIdentifier) -> Set<String> {
         
@@ -66,28 +51,10 @@ public extension Collection where Iterator.Element == HLSTag {
         return values
     }
     
-    /// returns true if we are a master playlist and have a audio only stream
-    func hasAudioOnlyStream() -> Bool {
-        
-        guard let _ = firstAudioOnlyStreamInfTag() else { return false }
-        return true
-    }
-    
-    /// returns the first audio only #EXT-X-STREAMINF tag found in this HLSTag collection
-    func firstAudioOnlyStreamInfTag() -> HLSTag? {
-        return first(where: { $0.tagDescriptor == PantosTag.EXT_X_STREAM_INF && $0.isAudioOnlyStream() == .TRUE })
-    }
-    
     /// Convenience function to filter HLSTag collections by a particular HLSTagDescriptor
     func filtered(by tagDescriptor: HLSTagDescriptor) -> [HLSTag] {
         
         return self.filter({ $0.tagDescriptor == tagDescriptor })
-    }
-
-    /// Convenience function to return just the video streams in a HLSTag collection
-    func filteredByVideoCodec() -> [HLSTag] {
-        
-        return self.filter { return $0.isVideoStream() == .TRUE }
     }
     
     /// returns a new HLSTag Array that's sorted by resolution and bandwidth (in that order)
