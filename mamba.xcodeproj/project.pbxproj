@@ -34,6 +34,9 @@
 		D44E03781E3BAC9F00126B52 /* HLSTag+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E03761E3BAC9F00126B52 /* HLSTag+Util.swift */; };
 		D4BB018D1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB018C1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift */; };
 		D4BB018E1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB018C1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift */; };
+		6DD9C898242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9C897242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 */; };
+		6DD9C899242CCE5300B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9C897242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 */; };
+		6DD9C89A242CCE5400B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9C897242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 */; };
 		EC03B63D1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */; };
 		EC03B63E1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */; };
 		EC03B63F1E5CC55800BF1F97 /* RapidParserMasterParseArray.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B63C1E5CC55800BF1F97 /* RapidParserMasterParseArray.h */; };
@@ -618,6 +621,7 @@
 		883290551EA172170064588B /* HLSStringRefExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSStringRefExtensionTests.swift; sourceTree = "<group>"; };
 		D44E03761E3BAC9F00126B52 /* HLSTag+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLSTag+Util.swift"; sourceTree = "<group>"; };
 		D4BB018C1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLSTagArray+RenditionGroups.swift"; sourceTree = "<group>"; };
+		6DD9C897242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 */ = {isa = PBXFileReference; lastKnownFileType = text; path = hls_variant_playlist_with_daterange_metadata.m3u8; sourceTree = "<group>"; };
 		EC02E9761E26E77900D4CEAC /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/tvOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		EC03B62D1E5CC54900BF1F97 /* PrototypeRapidParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrototypeRapidParseArray.include; sourceTree = "<group>"; };
 		EC03B62E1E5CC54900BF1F97 /* RapidParser_LookingForEForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForEForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
@@ -1195,6 +1199,7 @@
 				EC7492001DD29E2900AF4E20 /* hls_sampleMediaFile.txt */,
 				EC7492011DD29E2900AF4E20 /* hls_singleMediaFile.txt */,
 				1D28F3441EAA9E500010320B /* hls_variant_playlist.m3u8 */,
+				6DD9C897242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 */,
 				EC7492021DD29E2900AF4E20 /* hls_writer_parser_roundtrip_tester.txt */,
 				EC7492061DD29E2900AF4E20 /* super8demuxed1_4242.m3u8 */,
 				EC7492071DD29E2900AF4E20 /* super8demuxed2_IP_1080p24_51_TS.m3u8 */,
@@ -1619,6 +1624,7 @@
 				EC7492201DD29E2900AF4E20 /* ThirdPartyHLSTagsTestFixture.txt in Resources */,
 				EC74920A1DD29E2900AF4E20 /* bipbopall.m3u8 in Resources */,
 				EC1705421DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_forced.m3u8 in Resources */,
+				6DD9C898242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */,
 				EC74921A1DD29E2900AF4E20 /* super8demuxed1_4242.m3u8 in Resources */,
 				EC74921E1DD29E2900AF4E20 /* super8demuxed3_1376214110461.m3u8 in Resources */,
 				EC74920C1DD29E2900AF4E20 /* hls_sampleMasterFile.txt in Resources */,
@@ -1655,6 +1661,7 @@
 				EC7492211DD29E2900AF4E20 /* ThirdPartyHLSTagsTestFixture.txt in Resources */,
 				EC74920B1DD29E2900AF4E20 /* bipbopall.m3u8 in Resources */,
 				EC1705431DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_forced.m3u8 in Resources */,
+				6DD9C899242CCE5300B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */,
 				EC74921B1DD29E2900AF4E20 /* super8demuxed1_4242.m3u8 in Resources */,
 				EC74921F1DD29E2900AF4E20 /* super8demuxed3_1376214110461.m3u8 in Resources */,
 				EC74920D1DD29E2900AF4E20 /* hls_sampleMasterFile.txt in Resources */,
@@ -1691,6 +1698,7 @@
 				ECE253C0209A508700D388CE /* Super8_muxed1_4242.m3u8 in Resources */,
 				ECE253CE209A508700D388CE /* super8demuxed1_4242.m3u8 in Resources */,
 				ECE253CB209A508700D388CE /* hls_singleMediaFile.txt in Resources */,
+				6DD9C89A242CCE5400B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */,
 				ECE253C7209A508700D388CE /* hls_master_playlist.m3u8 in Resources */,
 				ECE253BF209A508700D388CE /* linear_ad_insertion_CONTENT_start_ad.m3u8 in Resources */,
 				ECE253BD209A508700D388CE /* linear_ad_insertion_CONTENT_end_ad_natural.m3u8 in Resources */,
