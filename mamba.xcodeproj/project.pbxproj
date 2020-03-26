@@ -26,6 +26,9 @@
 		43DE4EFD1E564DBE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE4EFC1E564DBE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift */; };
 		43DE4F0D1E564FEE00EEE800 /* EXT_X_STARTTimeOffsetValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE4EFA1E564DA300EEE800 /* EXT_X_STARTTimeOffsetValidator.swift */; };
 		43DE4F0E1E564FFE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE4EFC1E564DBE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift */; };
+		6DD9C898242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9C897242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 */; };
+		6DD9C899242CCE5300B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9C897242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 */; };
+		6DD9C89A242CCE5400B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9C897242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 */; };
 		883290561EA172170064588B /* MambaStringRefExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883290551EA172170064588B /* MambaStringRefExtensionTests.swift */; };
 		D44E03771E3BAC9F00126B52 /* PlaylistTag+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E03761E3BAC9F00126B52 /* PlaylistTag+Util.swift */; };
 		D44E03781E3BAC9F00126B52 /* PlaylistTag+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E03761E3BAC9F00126B52 /* PlaylistTag+Util.swift */; };
@@ -634,6 +637,7 @@
 		3D933C192193367C0029069F /* EXT-X-BITRATETagParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EXT-X-BITRATETagParserTests.swift"; sourceTree = "<group>"; };
 		43DE4EFA1E564DA300EEE800 /* EXT_X_STARTTimeOffsetValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EXT_X_STARTTimeOffsetValidator.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		43DE4EFC1E564DBE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_MEDIARenditionINSTREAMIDValidator.swift; sourceTree = "<group>"; };
+		6DD9C897242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 */ = {isa = PBXFileReference; lastKnownFileType = text; path = hls_variant_playlist_with_daterange_metadata.m3u8; sourceTree = "<group>"; };
 		883290551EA172170064588B /* MambaStringRefExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MambaStringRefExtensionTests.swift; sourceTree = "<group>"; };
 		D44E03761E3BAC9F00126B52 /* PlaylistTag+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlaylistTag+Util.swift"; sourceTree = "<group>"; };
 		D4BB018C1E2EABD500CA006E /* PlaylistTagArray+RenditionGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlaylistTagArray+RenditionGroups.swift"; sourceTree = "<group>"; };
@@ -1234,6 +1238,7 @@
 				EC7492001DD29E2900AF4E20 /* hls_sampleMediaFile.txt */,
 				EC7492011DD29E2900AF4E20 /* hls_singleMediaFile.txt */,
 				1D28F3441EAA9E500010320B /* hls_variant_playlist.m3u8 */,
+				6DD9C897242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 */,
 				EC7492021DD29E2900AF4E20 /* hls_writer_parser_roundtrip_tester.txt */,
 				EC7492061DD29E2900AF4E20 /* super8demuxed1_4242.m3u8 */,
 				EC7492071DD29E2900AF4E20 /* super8demuxed2_IP_1080p24_51_TS.m3u8 */,
@@ -1662,6 +1667,7 @@
 				EC7492201DD29E2900AF4E20 /* ThirdPartyTagsTestFixture.txt in Resources */,
 				EC74920A1DD29E2900AF4E20 /* bipbopall.m3u8 in Resources */,
 				EC1705421DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_forced.m3u8 in Resources */,
+				6DD9C898242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */,
 				EC74921A1DD29E2900AF4E20 /* super8demuxed1_4242.m3u8 in Resources */,
 				EC74921E1DD29E2900AF4E20 /* super8demuxed3_1376214110461.m3u8 in Resources */,
 				EC74920C1DD29E2900AF4E20 /* hls_sampleMasterFile.txt in Resources */,
@@ -1698,6 +1704,7 @@
 				EC7492211DD29E2900AF4E20 /* ThirdPartyTagsTestFixture.txt in Resources */,
 				EC74920B1DD29E2900AF4E20 /* bipbopall.m3u8 in Resources */,
 				EC1705431DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_forced.m3u8 in Resources */,
+				6DD9C899242CCE5300B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */,
 				EC74921B1DD29E2900AF4E20 /* super8demuxed1_4242.m3u8 in Resources */,
 				EC74921F1DD29E2900AF4E20 /* super8demuxed3_1376214110461.m3u8 in Resources */,
 				EC74920D1DD29E2900AF4E20 /* hls_sampleMasterFile.txt in Resources */,
@@ -1734,6 +1741,7 @@
 				ECE253C0209A508700D388CE /* Super8_muxed1_4242.m3u8 in Resources */,
 				ECE253CE209A508700D388CE /* super8demuxed1_4242.m3u8 in Resources */,
 				ECE253CB209A508700D388CE /* hls_singleMediaFile.txt in Resources */,
+				6DD9C89A242CCE5400B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */,
 				ECE253C7209A508700D388CE /* hls_master_playlist.m3u8 in Resources */,
 				ECE253BF209A508700D388CE /* linear_ad_insertion_CONTENT_start_ad.m3u8 in Resources */,
 				ECE253BD209A508700D388CE /* linear_ad_insertion_CONTENT_end_ad_natural.m3u8 in Resources */,

@@ -133,6 +133,63 @@ public enum PantosValue: String {
     /// Found in `.EXT_X_START`. Indicates client SHOULD NOT render media samples in that segment whose presentation times are prior to the TIME-OFFSET (YES or NO)
     case precise = "PRECISE"
     
+    /// Found in `.EXT_X_DATERANGE`.
+    /// A quoted-string that uniquely identifies a Date Range in the
+    /// Playlist.  This attribute is REQUIRED
+    case id = "ID"
+    
+    /// Found in `.EXT_X_DATERANGE`.
+    /// A client-defined quoted-string that specifies some set of
+    /// attributes and their associated value semantics.  All Date Ranges
+    /// with the same CLASS attribute value MUST adhere to these
+    /// semantics.  This attribute is OPTIONAL.
+    case classAttribute = "CLASS"
+
+    /// Found in `.EXT_X_DATERANGE`.
+    /// A quoted-string containing the [ISO_8601] date/time at which the
+    /// Date Range begins.  This attribute is REQUIRED.
+    case startDate = "START-DATE"
+
+    /// Found in `.EXT_X_DATERANGE`.
+    /// A quoted-string containing the [ISO_8601] date/time at which the
+    /// Date Range ends.  It MUST be equal to or later than the value of
+    /// the START-DATE attribute.  This attribute is OPTIONAL.
+    case endDate = "END-DATE"
+
+    /// Found in `.EXT_X_DATERANGE`.
+    /// The duration of the Date Range expressed as a decimal-floating-
+    /// point number of seconds.  It MUST NOT be negative.  A single
+    /// instant in time (e.g., crossing a finish line) SHOULD be
+    /// represented with a duration of 0.  This attribute is OPTIONAL.
+    case duration = "DURATION"
+
+    /// Found in `.EXT_X_DATERANGE`.
+    /// The expected duration of the Date Range expressed as a decimal-
+    /// floating-point number of seconds.  It MUST NOT be negative.  This
+    /// attribute SHOULD be used to indicate the expected duration of a
+    /// Date Range whose actual duration is not yet known.  It is
+    /// OPTIONAL.
+    case plannedDuration = "PLANNED-DURATION"
+
+    /// Found in `.EXT_X_DATERANGE`.
+    /// Used to carry SCTE-35 data.  These attributes are OPTIONAL.
+    case scte35Cmd = "SCTE35-CMD"
+    /// Found in `.EXT_X_DATERANGE`.
+    /// Used to carry SCTE-35 data.  These attributes are OPTIONAL.
+    case scte35Out = "SCTE35-OUT"
+    /// Found in `.EXT_X_DATERANGE`.
+    /// Used to carry SCTE-35 data.  These attributes are OPTIONAL.
+    case scte35In = "SCTE35-IN"
+
+    /// Found in `.EXT_X_DATERANGE`.
+    /// An enumerated-string whose value MUST be YES.  This attribute
+    /// indicates that the end of the range containing it is equal to the
+    /// START-DATE of its Following Range.  The Following Range is the
+    /// Date Range of the same CLASS that has the earliest START-DATE
+    /// after the START-DATE of the range in question.  This attribute is
+    /// OPTIONAL.
+    case endOnNext = "END-ON-NEXT"
+    
 }
 
 extension PantosValue: PlaylistTagValueIdentifier {
