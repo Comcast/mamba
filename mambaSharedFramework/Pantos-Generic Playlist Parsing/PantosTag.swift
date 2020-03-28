@@ -463,18 +463,7 @@ extension PantosTag: PlaylistTagDescriptor, Equatable {
                 ])
             
         case .EXT_X_DATERANGE:
-            return GenericDictionaryTagValidator(tag: pantostag, dictionaryValueIdentifiers: [
-                DictionaryTagValueIdentifierImpl(valueId: PantosValue.id, optional: false, expectedType: String.self),
-                DictionaryTagValueIdentifierImpl(valueId: PantosValue.classAttribute, optional: true, expectedType: String.self),
-                DictionaryTagValueIdentifierImpl(valueId: PantosValue.startDate, optional: false, expectedType: Date.self),
-                DictionaryTagValueIdentifierImpl(valueId: PantosValue.endDate, optional: true, expectedType: Date.self),
-                DictionaryTagValueIdentifierImpl(valueId: PantosValue.duration, optional: true, expectedType: Double.self),
-                DictionaryTagValueIdentifierImpl(valueId: PantosValue.plannedDuration, optional: true, expectedType: Double.self),
-                DictionaryTagValueIdentifierImpl(valueId: PantosValue.scte35Cmd, optional: true, expectedType: String.self),
-                DictionaryTagValueIdentifierImpl(valueId: PantosValue.scte35Out, optional: true, expectedType: String.self),
-                DictionaryTagValueIdentifierImpl(valueId: PantosValue.scte35In, optional: true, expectedType: String.self),
-                DictionaryTagValueIdentifierImpl(valueId: PantosValue.endOnNext, optional: true, expectedType: Bool.self)
-            ])
+            return EXT_X_DATERANGEValidator()
             
         case .Location:
             return nil
