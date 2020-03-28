@@ -748,6 +748,21 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
         validationIssues = []
         validateEXT_X_DATERANGE(tagData: data, expectedValidationIssues: validationIssues)
         
+        // END-DATE MUST be equal to or later than the value of the START-DATE attribute.
+        data = "ID=\"2-0x10-1585219520\",START-DATE=\"2020-03-26T10:45:20.894Z\",END-DATE=\"2020-03-26T10:45:20.000Z\""
+        validationIssues = [PlaylistValidationIssue(description: .EXT_X_DATERANGETagEND_DATEMustBeAfterSTART_DATE, severity: .error)]
+        validateEXT_X_DATERANGE(tagData: data, expectedValidationIssues: validationIssues)
+        
+        // DURATION MUST NOT be negative.
+        data = "ID=\"2-0x10-1585219520\",START-DATE=\"2020-03-26T10:45:20.894Z\",DURATION=-10.000"
+        validationIssues = [PlaylistValidationIssue(description: .EXT_X_DATERANGETagDURATIONMustNotBeNegative, severity: .error)]
+        validateEXT_X_DATERANGE(tagData: data, expectedValidationIssues: validationIssues)
+        
+        // PLANNED-DURATION MUST NOT be negative.
+        data = "ID=\"2-0x10-1585219520\",START-DATE=\"2020-03-26T10:45:20.894Z\",PLANNED-DURATION=-10.000"
+        validationIssues = [PlaylistValidationIssue(description: .EXT_X_DATERANGETagPLANNED_DURATIONMustNotBeNegative, severity: .error)]
+        validateEXT_X_DATERANGE(tagData: data, expectedValidationIssues: validationIssues)
+        
         // Testing a combination of issues are also possible
         data = "START-DATE=\"2020-03-26T10:45:20.894Z\",END-ON-NEXT=NO,DURATION=30.000,END-DATE=\"2020-03-26T10:46:20.000Z\""
         validationIssues = [HLSValidationIssue(description: .EXT_X_DATERANGEEND_ON_NEXTValueMustBeYES, severity: .error),
