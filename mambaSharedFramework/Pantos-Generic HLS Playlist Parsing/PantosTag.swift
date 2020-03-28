@@ -463,18 +463,7 @@ extension PantosTag: HLSTagDescriptor, Equatable {
                 ])
             
         case .EXT_X_DATERANGE:
-            return GenericDictionaryTagValidator(tag: pantostag, dictionaryValueIdentifiers: [
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.id, optional: false, expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.classAttribute, optional: true, expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.startDate, optional: false, expectedType: Date.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.endDate, optional: true, expectedType: Date.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.duration, optional: true, expectedType: Double.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.plannedDuration, optional: true, expectedType: Double.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.scte35Cmd, optional: true, expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.scte35Out, optional: true, expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.scte35In, optional: true, expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.endOnNext, optional: true, expectedType: Bool.self)
-            ])
+            return EXT_X_DATERANGEValidator()
             
         case .Location:
             return nil

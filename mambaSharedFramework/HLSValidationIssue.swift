@@ -67,5 +67,10 @@ public enum IssueDescription: String {
     case EXT_X_DISCONTINUITY_SEQUENCEValidator = "A Playlist file MUST NOT contain more than one EXT-X-DISCONTINUITY-SEQUENCE tag."
     case EXT_X_MEDIARenditionGroupDEFAULTValidator = "A group MUST NOT have more than one member with a DEFAULT attribute of YES."
     case EXTINFTagsRequireADurationValidator = "EXTINF tags require a positive duration."
+    case EXT_X_DATERANGEEND_ON_NEXTValueMustBeYES = "Value of END-ON-NEXT attribute within EXT-X-DATERANGE MUST be YES."
+    case EXT_X_DATERANGETagWithEND_ON_NEXTMustHaveCLASSAttribute = "An EXT-X-DATERANGE tag with an END-ON-NEXT=YES attribute MUST have a CLASS attribute."
+    case EXT_X_DATERANGETagWithEND_ON_NEXTMustNotContainDURATION = "An EXT-X-DATERANGE tag with an END-ON-NEXT=YES attribute MUST NOT contain DURATION attribute."
+    case EXT_X_DATERANGETagWithEND_ON_NEXTMustNotContainEND_DATE = "An EXT-X-DATERANGE tag with an END-ON-NEXT=YES attribute MUST NOT contain END-DATE attribute."
+    case EXT_X_DATERANGEValidatorDURATIONAndEND_DATEMustMatchWithSTART_DATE = "If a Date Range contains both a DURATION attribute and an END-DATE attribute, the value of the END-DATE attribute MUST be equal to the value of the START-DATE attribute plus the value of the DURATION attribute."
 }
 
