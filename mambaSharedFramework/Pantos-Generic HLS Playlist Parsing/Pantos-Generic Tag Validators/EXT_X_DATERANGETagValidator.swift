@@ -44,22 +44,31 @@ class EXT_X_DATERANGETagValidator: HLSTagValidator {
     }
     
     func validate(tag: HLSTag) -> [HLSValidationIssue]? {
-        let genericValidationIssues = genericDictionaryTagValidator.validate(tag: tag)
-        let endOnNextValidationIssues = endOnNextValidation(tag: tag)
-        let durationEndDateValidationIssues = durationEndDateValidation(tag: tag)
         
         var validationIssues: [HLSValidationIssue]?
-        if let genericIssues = genericValidationIssues {
+        if let genericIssues = genericDictionaryTagValidator.validate(tag: tag) {
             validationIssues = validationIssues ?? []
             validationIssues?.append(contentsOf: genericIssues)
         }
-        if let endOnNextIssues = endOnNextValidationIssues {
+        if let endOnNextIssues = endOnNextValidation(tag: tag) {
             validationIssues = validationIssues ?? []
             validationIssues?.append(contentsOf: endOnNextIssues)
         }
-        if let durationEndDateIssues = durationEndDateValidationIssues {
+        if let durationEndDateIssues = durationEndDateValidation(tag: tag) {
             validationIssues = validationIssues ?? []
             validationIssues?.append(contentsOf: durationEndDateIssues)
+        }
+        if let endDateIssues = endDateValidation(tag: tag) {
+            validationIssues = validationIssues ?? []
+            validationIssues?.append(contentsOf: endDateIssues)
+        }
+        if let negativeDurationIssues = negativeDurationValidation(tag: tag) {
+            validationIssues = validationIssues ?? []
+            validationIssues?.append(contentsOf: negativeDurationIssues)
+        }
+        if let negativePlannedDurationIssues = negativePlannedDurationValidation(tag: tag) {
+            validationIssues = validationIssues ?? []
+            validationIssues?.append(contentsOf: negativePlannedDurationIssues)
         }
         
         return validationIssues
@@ -124,5 +133,38 @@ class EXT_X_DATERANGETagValidator: HLSTagValidator {
         }
         
         return validationIssues.isEmpty ? nil : validationIssues
+    }
+    
+    // END-DATE MUST be equal to or later than the value of the START-DATE attribute.
+    private func endDateValidation(tag: HLSTag) -> [HLSValidationIssue]? {
+        guard let startDate = tag.value(forValueIdentifier: PantosValue.startDate) as Date? else {
+            // The failure will be caught in the generic validation, since start date is required.
+            return nil
+        }
+        guard let endDate = tag.value(forValueIdentifier: PantosValue.endDate) as Date? else {
+            return nil
+        }
+        switch startDate.compare(endDate) {
+        case .orderedAscending, .orderedSame:
+            return nil
+        case .orderedDescending:
+            return [HLSValidationIssue(description: .EXT_X_DATERANGETagEND_DATEMustBeAfterSTART_DATE, severity: .error)]
+        }
+    }
+    
+    // DURATION MUST NOT be negative.
+    private func negativeDurationValidation(tag: HLSTag) -> [HLSValidationIssue]? {
+        guard let duration = tag.value(forValueIdentifier: PantosValue.duration) as Double?, duration < 0 else {
+            return nil
+        }
+        return [HLSValidationIssue(description: .EXT_X_DATERANGETagDURATIONMustNotBeNegative, severity: .error)]
+    }
+    
+    // PLANNED-DURATION MUST NOT be negative.
+    private func negativePlannedDurationValidation(tag: HLSTag) -> [HLSValidationIssue]? {
+        guard let plannedDuration = tag.value(forValueIdentifier: PantosValue.plannedDuration) as Double?, plannedDuration < 0 else {
+            return nil
+        }
+        return [HLSValidationIssue(description: .EXT_X_DATERANGETagPLANNED_DURATIONMustNotBeNegative, severity: .error)]
     }
 }
