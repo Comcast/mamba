@@ -463,7 +463,7 @@ extension PantosTag: HLSTagDescriptor, Equatable {
                 ])
             
         case .EXT_X_DATERANGE:
-            return EXT_X_DATERANGEValidator()
+            return EXT_X_DATERANGETagValidator()
             
         case .Location:
             return nil

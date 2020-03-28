@@ -20,7 +20,7 @@
 import Foundation
 
 /// This class provides special validation for EXT-X-DATERANGE tags on top of the regular `GenericDictionaryTagValidator`.
-class EXT_X_DATERANGEValidator: HLSTagValidator {
+class EXT_X_DATERANGETagValidator: HLSTagValidator {
     
     private let genericDictionaryTagValidator: GenericDictionaryTagValidator
     

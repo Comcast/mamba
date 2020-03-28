@@ -72,5 +72,7 @@ public enum IssueDescription: String {
     case EXT_X_DATERANGETagWithEND_ON_NEXTMustNotContainDURATION = "An EXT-X-DATERANGE tag with an END-ON-NEXT=YES attribute MUST NOT contain DURATION attribute."
     case EXT_X_DATERANGETagWithEND_ON_NEXTMustNotContainEND_DATE = "An EXT-X-DATERANGE tag with an END-ON-NEXT=YES attribute MUST NOT contain END-DATE attribute."
     case EXT_X_DATERANGEValidatorDURATIONAndEND_DATEMustMatchWithSTART_DATE = "If a Date Range contains both a DURATION attribute and an END-DATE attribute, the value of the END-DATE attribute MUST be equal to the value of the START-DATE attribute plus the value of the DURATION attribute."
+    case EXT_X_DATERANGEExistsWithNoEXT_X_PROGRAM_DATE_TIME = "If a Playlist contains an EXT-X-DATERANGE tag, it MUST also contain at least one EXT-X-PROGRAM-DATE-TIME tag."
+    case EXT_X_DATERANGEAttributeMismatchForTagsWithSameID = "If a Playlist contains two EXT-X-DATERANGE tags with the same ID attribute value, then any AttributeName that appears in both tags MUST have the same AttributeValue."
 }
 

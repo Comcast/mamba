@@ -85,7 +85,8 @@ public class HLSVariantPlaylistValidator: HLSExtensibleValidator {
                                                         EXT_X_TARGETDURATIONLengthValidator.self,
                                                         HLSPlaylistRenditionGroupMatchingPROGRAM_IDValidator.self,
                                                         HLSPlaylistRenditionGroupMatchingNAMELANGUAGEValidator.self,
-                                                        EXT_X_STARTTimeOffsetValidator.self]
+                                                        EXT_X_STARTTimeOffsetValidator.self,
+                                                        EXT_X_DATERANGEPlaylistValidator.self]
 }
 
 /// A general purpose validator that will validate either a variant or a master playlist
