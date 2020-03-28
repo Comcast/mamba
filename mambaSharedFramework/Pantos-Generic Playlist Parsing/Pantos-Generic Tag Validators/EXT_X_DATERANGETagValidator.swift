@@ -20,7 +20,7 @@
 import Foundation
 
 /// This class provides special validation for EXT-X-DATERANGE tags on top of the regular `GenericDictionaryTagValidator`.
-class EXT_X_DATERANGEValidator: PlaylistTagValidator {
+class EXT_X_DATERANGETagValidator: PlaylistTagValidator {
     
     private let genericDictionaryTagValidator: GenericDictionaryTagValidator
     
