@@ -20,6 +20,11 @@
 import Foundation
 
 /// This class provides special validation for EXT-X-DATERANGE tags on top of the regular `GenericDictionaryTagValidator`.
+///
+/// All validation issues for EXT-X-DATERANGE are treated as `.warning` due to this comment in the HLS specification:
+///
+///     Clients SHOULD ignore EXT-X-DATERANGE tags with illegal syntax.
+///
 class EXT_X_DATERANGETagValidator: HLSTagValidator {
     
     private let genericDictionaryTagValidator: GenericDictionaryTagValidator
@@ -48,7 +53,10 @@ class EXT_X_DATERANGETagValidator: HLSTagValidator {
         var validationIssues: [HLSValidationIssue]?
         if let genericIssues = genericDictionaryTagValidator.validate(tag: tag) {
             validationIssues = validationIssues ?? []
-            validationIssues?.append(contentsOf: genericIssues)
+            // We re-map to have warning severity for any issue from the generic validator
+            // to ensure a date-range validation issue will not fail the manifest parsing.
+            let genericWarningIssues = genericIssues.map { HLSValidationIssue(description: $0.description, severity: .warning) }
+            validationIssues?.append(contentsOf: genericWarningIssues)
         }
         if let endOnNextIssues = endOnNextValidation(tag: tag) {
             validationIssues = validationIssues ?? []
@@ -92,20 +100,20 @@ class EXT_X_DATERANGETagValidator: HLSTagValidator {
         
         // value MUST be YES.
         if !endOnNext {
-            validationIssues.append(HLSValidationIssue(description: .EXT_X_DATERANGEEND_ON_NEXTValueMustBeYES, severity: .error))
+            validationIssues.append(HLSValidationIssue(description: .EXT_X_DATERANGEEND_ON_NEXTValueMustBeYES, severity: .warning))
         }
         
         // An EXT-X-DATERANGE tag with an END-ON-NEXT=YES attribute MUST have a CLASS attribute.
         if tag.value(forValueIdentifier: PantosValue.classAttribute) == nil {
-            validationIssues.append(HLSValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustHaveCLASSAttribute, severity: .error))
+            validationIssues.append(HLSValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustHaveCLASSAttribute, severity: .warning))
         }
         
         // An EXT-X-DATERANGE tag with an END-ON-NEXT=YES attribute MUST NOT contain DURATION or END-DATE attributes.
         if tag.value(forValueIdentifier: PantosValue.duration) != nil {
-            validationIssues.append(HLSValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustNotContainDURATION, severity: .error))
+            validationIssues.append(HLSValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustNotContainDURATION, severity: .warning))
         }
         if tag.value(forValueIdentifier: PantosValue.endDate) != nil {
-            validationIssues.append(HLSValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustNotContainEND_DATE, severity: .error))
+            validationIssues.append(HLSValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustNotContainEND_DATE, severity: .warning))
         }
         
         return validationIssues.isEmpty ? nil : validationIssues
@@ -129,7 +137,7 @@ class EXT_X_DATERANGETagValidator: HLSTagValidator {
         let expectedEndDate = startDate.addingTimeInterval(duration)
         if expectedEndDate != endDate {
             validationIssues.append(HLSValidationIssue(description: .EXT_X_DATERANGEValidatorDURATIONAndEND_DATEMustMatchWithSTART_DATE,
-                                                       severity: .error))
+                                                       severity: .warning))
         }
         
         return validationIssues.isEmpty ? nil : validationIssues
@@ -148,7 +156,7 @@ class EXT_X_DATERANGETagValidator: HLSTagValidator {
         case .orderedAscending, .orderedSame:
             return nil
         case .orderedDescending:
-            return [HLSValidationIssue(description: .EXT_X_DATERANGETagEND_DATEMustBeAfterSTART_DATE, severity: .error)]
+            return [HLSValidationIssue(description: .EXT_X_DATERANGETagEND_DATEMustBeAfterSTART_DATE, severity: .warning)]
         }
     }
     
@@ -157,7 +165,7 @@ class EXT_X_DATERANGETagValidator: HLSTagValidator {
         guard let duration = tag.value(forValueIdentifier: PantosValue.duration) as Double?, duration < 0 else {
             return nil
         }
-        return [HLSValidationIssue(description: .EXT_X_DATERANGETagDURATIONMustNotBeNegative, severity: .error)]
+        return [HLSValidationIssue(description: .EXT_X_DATERANGETagDURATIONMustNotBeNegative, severity: .warning)]
     }
     
     // PLANNED-DURATION MUST NOT be negative.
@@ -165,6 +173,6 @@ class EXT_X_DATERANGETagValidator: HLSTagValidator {
         guard let plannedDuration = tag.value(forValueIdentifier: PantosValue.plannedDuration) as Double?, plannedDuration < 0 else {
             return nil
         }
-        return [HLSValidationIssue(description: .EXT_X_DATERANGETagPLANNED_DURATIONMustNotBeNegative, severity: .error)]
+        return [HLSValidationIssue(description: .EXT_X_DATERANGETagPLANNED_DURATIONMustNotBeNegative, severity: .warning)]
     }
 }
