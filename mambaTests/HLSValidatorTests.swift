@@ -126,20 +126,36 @@ class HLSValidatorTests: XCTestCase {
         }
     }
     
-    private func validate(validator: HLSPlaylistValidator.Type, playlist: String, expected: Int) {
+    @discardableResult
+    private func validate(validator: HLSPlaylistValidator.Type, playlist: String, expected: Int) -> [HLSValidationIssue] {
         
         let m = parsePlaylist(inString: playlist)
         guard let validationIssues = validator.validate(hlsPlaylist: m) else {
             if expected > 0 {
                 XCTAssert(false, "Found unexpected validation Issues should have \(expected) actually has 0")
             }
-            return
+            return []
         }
         
         if validationIssues.count != expected {
             XCTAssert(false, "Found unexpected validation Issues should have \(expected) actually has \(validationIssues.count)")
         } else if expected == 0 {
             XCTAssert(false, "Validation issues should be nil, not empty, when 0 issues found")
+        }
+        
+        return validationIssues
+    }
+    
+    private func validate(validator: HLSPlaylistValidator.Type, playlist: String, expectedIssues: [HLSValidationIssue]) {
+        let issues = validate(validator: validator, playlist: playlist, expected: expectedIssues.count)
+        expectedIssues.forEach { expectedIssue in
+            guard let matchingIssue = issues.first(where: { $0.description == expectedIssue.description }) else {
+                return XCTFail("Expected issue \"\(expectedIssue.description)\" not found in variant playlist.\nIssues found:\n\(issues)")
+            }
+            XCTAssertEqual(expectedIssue.description, matchingIssue.description)
+            XCTAssertEqual(expectedIssue.severity,
+                           matchingIssue.severity,
+                           "Expected validation issue (\(expectedIssue.description)) had unexpected severity (\(matchingIssue.severity))")
         }
     }
     
@@ -735,7 +751,8 @@ frag1.ts
         // remove EXT-X-PROGRAM-DATE-TIME
         daterangePlaylist.remove(at: 4)
         let hlsLoadString = daterangePlaylist.joined()
-        validate(validator: u, playlist: hlsLoadString, expected: 1)
+        let expectedIssues = [HLSValidationIssue(description: .EXT_X_DATERANGEExistsWithNoEXT_X_PROGRAM_DATE_TIME, severity: .warning)]
+        validate(validator: u, playlist: hlsLoadString, expectedIssues: expectedIssues)
     }
     
     func testEXT_X_DATERANGEPlaylistValidator_MultipleTagsWithSameID_OK() {
@@ -765,7 +782,8 @@ frag1.ts
         daterangePlaylist.insert(EXT_X_DATERANGE_1, at: 8)
         
         let hlsLoadString = daterangePlaylist.joined()
-        validate(validator: u, playlist: hlsLoadString, expected: 1)
+        let expectedIssues = [HLSValidationIssue(description: .EXT_X_DATERANGEAttributeMismatchForTagsWithSameID, severity: .warning)]
+        validate(validator: u, playlist: hlsLoadString, expectedIssues: expectedIssues)
     }
     
 }
