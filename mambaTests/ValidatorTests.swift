@@ -126,13 +126,29 @@ class ValidatorTests: XCTestCase {
         }
     }
     
-    private func validate(validator: VariantPlaylistValidator.Type, playlist: String, expected: Int) {
+    @discardableResult
+    private func validate(validator: VariantPlaylistValidator.Type, playlist: String, expected: Int) -> [PlaylistValidationIssue] {
         
         let playlist = parseVariantPlaylist(inString: playlist)
         let validationIssues = validator.validate(variantPlaylist: playlist)
         
         if validationIssues.count != expected {
             XCTAssert(false, "Found unexpected validation Issues should have \(expected) actually has \(validationIssues.count)")
+        }
+        
+        return validationIssues
+    }
+    
+    private func validate(validator: VariantPlaylistValidator.Type, playlist: String, expectedIssues: [PlaylistValidationIssue]) {
+        let issues = validate(validator: validator, playlist: playlist, expected: expectedIssues.count)
+        expectedIssues.forEach { expectedIssue in
+            guard let matchingIssue = issues.first(where: { $0.description == expectedIssue.description }) else {
+                return XCTFail("Expected issue \"\(expectedIssue.description)\" not found in variant playlist.\nIssues found:\n\(issues)")
+            }
+            XCTAssertEqual(expectedIssue.description, matchingIssue.description)
+            XCTAssertEqual(expectedIssue.severity,
+                           matchingIssue.severity,
+                           "Expected validation issue (\(expectedIssue.description)) had unexpected severity (\(matchingIssue.severity))")
         }
     }
 
@@ -739,7 +755,8 @@ frag1.ts
         // remove EXT-X-PROGRAM-DATE-TIME
         daterangePlaylist.remove(at: 4)
         let hlsLoadString = daterangePlaylist.joined()
-        validate(validator: u, playlist: hlsLoadString, expected: 1)
+        let expectedIssues = [PlaylistValidationIssue(description: .EXT_X_DATERANGEExistsWithNoEXT_X_PROGRAM_DATE_TIME, severity: .warning)]
+        validate(validator: u, playlist: hlsLoadString, expectedIssues: expectedIssues)
     }
     
     func testEXT_X_DATERANGEPlaylistValidator_MultipleTagsWithSameID_OK() {
@@ -769,7 +786,8 @@ frag1.ts
         daterangePlaylist.insert(EXT_X_DATERANGE_1, at: 8)
         
         let hlsLoadString = daterangePlaylist.joined()
-        validate(validator: u, playlist: hlsLoadString, expected: 1)
+        let expectedIssues = [PlaylistValidationIssue(description: .EXT_X_DATERANGEAttributeMismatchForTagsWithSameID, severity: .warning)]
+        validate(validator: u, playlist: hlsLoadString, expectedIssues: expectedIssues)
     }
     
 }
