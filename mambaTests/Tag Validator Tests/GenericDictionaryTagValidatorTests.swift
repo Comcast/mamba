@@ -723,26 +723,26 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
         
         // END-ON-NEXT = An enumerated-string whose value MUST be YES.
         var data = "ID=\"2-0x10-1585219520\",START-DATE=\"2020-03-26T10:45:20.894Z\",END-ON-NEXT=NO,CLASS=\"my:scheme\""
-        var validationIssues = [HLSValidationIssue(description: .EXT_X_DATERANGEEND_ON_NEXTValueMustBeYES, severity: .error)]
+        var validationIssues = [HLSValidationIssue(description: .EXT_X_DATERANGEEND_ON_NEXTValueMustBeYES, severity: .warning)]
         validateEXT_X_DATERANGE(tagData: data, expectedValidationIssues: validationIssues)
         
         // An EXT-X-DATERANGE tag with an END-ON-NEXT=YES attribute MUST have a CLASS attribute.
         data = "ID=\"2-0x10-1585219520\",START-DATE=\"2020-03-26T10:45:20.894Z\",END-ON-NEXT=YES"
-        validationIssues = [HLSValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustHaveCLASSAttribute, severity: .error)]
+        validationIssues = [HLSValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustHaveCLASSAttribute, severity: .warning)]
         validateEXT_X_DATERANGE(tagData: data, expectedValidationIssues: validationIssues)
         
         // An EXT-X-DATERANGE tag with an END-ON-NEXT=YES attribute MUST NOT contain DURATION or END-DATE attributes.
         data = "ID=\"2-0x10-1585219520\",START-DATE=\"2020-03-26T10:45:20.894Z\",END-ON-NEXT=YES,CLASS=\"my:scheme\",DURATION=30.000"
-        validationIssues = [HLSValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustNotContainDURATION, severity: .error)]
+        validationIssues = [HLSValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustNotContainDURATION, severity: .warning)]
         validateEXT_X_DATERANGE(tagData: data, expectedValidationIssues: validationIssues)
         data = "ID=\"2-0x10-1585219520\",START-DATE=\"2020-03-26T10:45:20.894Z\",END-ON-NEXT=YES,CLASS=\"my:scheme\",END-DATE=\"2020-03-28T14:43:16.249Z\""
-        validationIssues = [HLSValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustNotContainEND_DATE, severity: .error)]
+        validationIssues = [HLSValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustNotContainEND_DATE, severity: .warning)]
         validateEXT_X_DATERANGE(tagData: data, expectedValidationIssues: validationIssues)
         
         // If a Date Range contains both a DURATION attribute and an END-DATE attribute, the value of the END-DATE attribute MUST be equal to the
         // value of the START-DATE attribute plus the value of the DURATION attribute.
         data = "ID=\"2-0x10-1585219520\",START-DATE=\"2020-03-26T10:45:20.894Z\",DURATION=30.000,END-DATE=\"2020-03-26T10:46:20.000Z\""
-        validationIssues = [HLSValidationIssue(description: .EXT_X_DATERANGEValidatorDURATIONAndEND_DATEMustMatchWithSTART_DATE, severity: .error)]
+        validationIssues = [HLSValidationIssue(description: .EXT_X_DATERANGEValidatorDURATIONAndEND_DATEMustMatchWithSTART_DATE, severity: .warning)]
         validateEXT_X_DATERANGE(tagData: data, expectedValidationIssues: validationIssues)
         data = "ID=\"2-0x10-1585219520\",START-DATE=\"2020-03-26T10:45:20.894Z\",DURATION=30.000,END-DATE=\"2020-03-26T10:45:50.894Z\""
         validationIssues = []
@@ -750,27 +750,27 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
         
         // END-DATE MUST be equal to or later than the value of the START-DATE attribute.
         data = "ID=\"2-0x10-1585219520\",START-DATE=\"2020-03-26T10:45:20.894Z\",END-DATE=\"2020-03-26T10:45:20.000Z\""
-        validationIssues = [HLSValidationIssue(description: .EXT_X_DATERANGETagEND_DATEMustBeAfterSTART_DATE, severity: .error)]
+        validationIssues = [HLSValidationIssue(description: .EXT_X_DATERANGETagEND_DATEMustBeAfterSTART_DATE, severity: .warning)]
         validateEXT_X_DATERANGE(tagData: data, expectedValidationIssues: validationIssues)
         
         // DURATION MUST NOT be negative.
         data = "ID=\"2-0x10-1585219520\",START-DATE=\"2020-03-26T10:45:20.894Z\",DURATION=-10.000"
-        validationIssues = [HLSValidationIssue(description: .EXT_X_DATERANGETagDURATIONMustNotBeNegative, severity: .error)]
+        validationIssues = [HLSValidationIssue(description: .EXT_X_DATERANGETagDURATIONMustNotBeNegative, severity: .warning)]
         validateEXT_X_DATERANGE(tagData: data, expectedValidationIssues: validationIssues)
         
         // PLANNED-DURATION MUST NOT be negative.
         data = "ID=\"2-0x10-1585219520\",START-DATE=\"2020-03-26T10:45:20.894Z\",PLANNED-DURATION=-10.000"
-        validationIssues = [HLSValidationIssue(description: .EXT_X_DATERANGETagPLANNED_DURATIONMustNotBeNegative, severity: .error)]
+        validationIssues = [HLSValidationIssue(description: .EXT_X_DATERANGETagPLANNED_DURATIONMustNotBeNegative, severity: .warning)]
         validateEXT_X_DATERANGE(tagData: data, expectedValidationIssues: validationIssues)
         
         // Testing a combination of issues are also possible
         data = "START-DATE=\"2020-03-26T10:45:20.894Z\",END-ON-NEXT=NO,DURATION=30.000,END-DATE=\"2020-03-26T10:46:20.000Z\""
-        validationIssues = [HLSValidationIssue(description: .EXT_X_DATERANGEEND_ON_NEXTValueMustBeYES, severity: .error),
-                            HLSValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustHaveCLASSAttribute, severity: .error),
-                            HLSValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustNotContainDURATION, severity: .error),
-                            HLSValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustNotContainEND_DATE, severity: .error),
-                            HLSValidationIssue(description: .EXT_X_DATERANGEValidatorDURATIONAndEND_DATEMustMatchWithSTART_DATE, severity: .error),
-                            HLSValidationIssue(description: "EXT-X-DATERANGE mandatory value id is missing.", severity: .error)]
+        validationIssues = [HLSValidationIssue(description: .EXT_X_DATERANGEEND_ON_NEXTValueMustBeYES, severity: .warning),
+                            HLSValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustHaveCLASSAttribute, severity: .warning),
+                            HLSValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustNotContainDURATION, severity: .warning),
+                            HLSValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustNotContainEND_DATE, severity: .warning),
+                            HLSValidationIssue(description: .EXT_X_DATERANGEValidatorDURATIONAndEND_DATEMustMatchWithSTART_DATE, severity: .warning),
+                            HLSValidationIssue(description: "EXT-X-DATERANGE mandatory value id is missing.", severity: .warning)]
         validateEXT_X_DATERANGE(tagData: data, expectedValidationIssues: validationIssues)
     }
     
@@ -784,13 +784,17 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
             return XCTFail("Expected EXT-X-DATERANGE validation issue\nTag data: \(tagData)\nExpected issues:\n\(expectedIssuesDescriptions)")
         }
         let actualIssuesDescriptions = errors.map { $0.description }.joined(separator: "\n")
-        XCTAssertEqual(errors.count, expectedValidationIssues.count, "Mismatch in expected issues and actual issues in EXT_X_DATERANGE validation.\nExpected issues:\n\(expectedIssuesDescriptions)\nActual issues:\n\(actualIssuesDescriptions)")
+        XCTAssertEqual(errors.count,
+                       expectedValidationIssues.count,
+                       "Mismatch in expected issues and actual issues in EXT_X_DATERANGE validation.\nExpected issues:\n\(expectedIssuesDescriptions)\nActual issues:\n\(actualIssuesDescriptions)")
         expectedValidationIssues.forEach { expectedValidationIssue in
             guard let matchingIssue = errors.first(where: { $0.description == expectedValidationIssue.description }) else {
                 return XCTFail("Expected issue \"\(expectedValidationIssue.description)\" not found for EXT-X-DATERANGE tag: \(tagData)\nIssues found:\n\(actualIssuesDescriptions)")
             }
             XCTAssertEqual(expectedValidationIssue.description, matchingIssue.description)
-            XCTAssertEqual(expectedValidationIssue.severity, matchingIssue.severity)
+            XCTAssertEqual(expectedValidationIssue.severity,
+                           matchingIssue.severity,
+                           "Expected EXT-X-DATERANGE validation issue (\(expectedValidationIssue.description)) had unexpected severity (\(matchingIssue.severity))")
         }
     }
 }
