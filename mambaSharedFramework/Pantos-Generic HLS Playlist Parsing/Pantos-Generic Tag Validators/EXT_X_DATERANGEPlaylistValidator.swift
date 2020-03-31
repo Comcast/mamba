@@ -19,6 +19,12 @@
 
 import Foundation
 
+/// This class provides the validation for EXT-X-DATERANGE tags for rules which require the whole playlist information.
+///
+/// All validation issues for EXT-X-DATERANGE are treated as `.warning` due to this comment in the HLS specification:
+///
+///     Clients SHOULD ignore EXT-X-DATERANGE tags with illegal syntax.
+///
 class EXT_X_DATERANGEPlaylistValidator: HLSPlaylistValidator {
     
     static func validate(hlsPlaylist playlist: HLSPlaylistInterface) -> [HLSValidationIssue]? {
@@ -47,7 +53,7 @@ class EXT_X_DATERANGEPlaylistValidator: HLSPlaylistValidator {
         guard daterangeTagsCount > 0, programDateTimeTagsCount == 0 else {
             return []
         }
-        return [HLSValidationIssue(description: .EXT_X_DATERANGEExistsWithNoEXT_X_PROGRAM_DATE_TIME, severity: .error)]
+        return [HLSValidationIssue(description: .EXT_X_DATERANGEExistsWithNoEXT_X_PROGRAM_DATE_TIME, severity: .warning)]
     }
     
     // If a Playlist contains two EXT-X-DATERANGE tags with the same ID
@@ -84,7 +90,7 @@ class EXT_X_DATERANGEPlaylistValidator: HLSPlaylistValidator {
                     }
                     if let matchingAttributeValue = attributeToValueMap[attribute] {
                         if attributeValue != matchingAttributeValue {
-                            validationIssues.append(HLSValidationIssue(description: .EXT_X_DATERANGEAttributeMismatchForTagsWithSameID, severity: .error))
+                            validationIssues.append(HLSValidationIssue(description: .EXT_X_DATERANGEAttributeMismatchForTagsWithSameID, severity: .warning))
                         }
                     } else {
                         attributeToValueMap[attribute] = attributeValue
