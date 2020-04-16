@@ -210,6 +210,120 @@ class HLSParserTest: XCTestCase {
         XCTAssert((validationIssues != nil) ? validationIssues!.count == 0 : true, "Should be no issues in the HLS fixtures")
     }
     
+    func testHLSVariantPlaylistWithDaterangeMetadata() {
+        let hlsLoadString = FixtureLoader.loadAsString(fixtureName: "hls_variant_playlist_with_daterange_metadata.m3u8")
+        
+        guard let hlsString = hlsLoadString else {
+            XCTAssert(false, "Fixture is missing?")
+            return
+        }
+        let playlist = parsePlaylist(inString: hlsString)
+        
+        XCTAssert(playlist.tags.count == 30, "Misparsed the HLS")
+        
+        XCTAssert(playlist.tags[0].tagDescriptor == PantosTag.EXT_X_VERSION, "Tag did not parse properly")
+        XCTAssert(playlist.tags[1].tagDescriptor == PantosTag.EXT_X_TARGETDURATION, "Tag did not parse properly")
+        XCTAssert(playlist.tags[2].tagDescriptor == PantosTag.EXT_X_MEDIA_SEQUENCE, "Tag did not parse properly")
+        XCTAssert(playlist.tags[3].tagDescriptor == PantosTag.EXT_X_DISCONTINUITY_SEQUENCE, "Tag did not parse properly")
+        XCTAssert(playlist.tags[4].tagDescriptor == PantosTag.EXT_X_PROGRAM_DATE_TIME, "Tag did not parse properly")
+        XCTAssert(playlist.tags[5].tagDescriptor == PantosTag.EXT_X_KEY, "Tag did not parse properly")
+        XCTAssert(playlist.tags[6].tagDescriptor == PantosTag.EXT_X_MAP, "Tag did not parse properly")
+        XCTAssert(playlist.tags[7].tagDescriptor == PantosTag.EXT_X_DATERANGE, "Tag did not parse properly")
+        XCTAssert(playlist.tags[8].tagDescriptor == PantosTag.EXT_X_DATERANGE, "Tag did not parse properly")
+        XCTAssert(playlist.tags[9].tagDescriptor == PantosTag.EXT_X_DATERANGE, "Tag did not parse properly")
+        XCTAssert(playlist.tags[10].tagDescriptor == PantosTag.EXT_X_DATERANGE, "Tag did not parse properly")
+        XCTAssert(playlist.tags[11].tagDescriptor == PantosTag.EXTINF, "Tag did not parse properly")
+        XCTAssert(playlist.tags[12].tagDescriptor == PantosTag.Location, "Tag did not parse properly")
+        XCTAssert(playlist.tags[13].tagDescriptor == PantosTag.EXTINF, "Tag did not parse properly")
+        XCTAssert(playlist.tags[14].tagDescriptor == PantosTag.Location, "Tag did not parse properly")
+        XCTAssert(playlist.tags[15].tagDescriptor == PantosTag.EXTINF, "Tag did not parse properly")
+        XCTAssert(playlist.tags[16].tagDescriptor == PantosTag.Location, "Tag did not parse properly")
+        XCTAssert(playlist.tags[17].tagDescriptor == PantosTag.EXTINF, "Tag did not parse properly")
+        XCTAssert(playlist.tags[18].tagDescriptor == PantosTag.Location, "Tag did not parse properly")
+        XCTAssert(playlist.tags[19].tagDescriptor == PantosTag.EXTINF, "Tag did not parse properly")
+        XCTAssert(playlist.tags[20].tagDescriptor == PantosTag.Location, "Tag did not parse properly")
+        XCTAssert(playlist.tags[21].tagDescriptor == PantosTag.EXT_X_DATERANGE, "Tag did not parse properly")
+        XCTAssert(playlist.tags[22].tagDescriptor == PantosTag.EXT_X_DATERANGE, "Tag did not parse properly")
+        XCTAssert(playlist.tags[23].tagDescriptor == PantosTag.EXT_X_DATERANGE, "Tag did not parse properly")
+        XCTAssert(playlist.tags[24].tagDescriptor == PantosTag.EXTINF, "Tag did not parse properly")
+        XCTAssert(playlist.tags[25].tagDescriptor == PantosTag.Location, "Tag did not parse properly")
+        XCTAssert(playlist.tags[26].tagDescriptor == PantosTag.EXTINF, "Tag did not parse properly")
+        XCTAssert(playlist.tags[27].tagDescriptor == PantosTag.Location, "Tag did not parse properly")
+        XCTAssert(playlist.tags[28].tagDescriptor == PantosTag.EXTINF, "Tag did not parse properly")
+        XCTAssert(playlist.tags[29].tagDescriptor == PantosTag.Location, "Tag did not parse properly")
+        
+        XCTAssert(playlist.tags[0].tagName! == "#\(PantosTag.EXT_X_VERSION.toString())", "Tag did not parse properly")
+        XCTAssert(playlist.tags[1].tagName! == "#\(PantosTag.EXT_X_TARGETDURATION.toString())", "Tag did not parse properly")
+        XCTAssert(playlist.tags[2].tagName! == "#\(PantosTag.EXT_X_MEDIA_SEQUENCE.toString())", "Tag did not parse properly")
+        XCTAssert(playlist.tags[3].tagName! == "#\(PantosTag.EXT_X_DISCONTINUITY_SEQUENCE.toString())", "Tag did not parse properly")
+        XCTAssert(playlist.tags[4].tagName! == "#\(PantosTag.EXT_X_PROGRAM_DATE_TIME.toString())", "Tag did not parse properly")
+        XCTAssert(playlist.tags[5].tagName! == "#\(PantosTag.EXT_X_KEY.toString())", "Tag did not parse properly")
+        XCTAssert(playlist.tags[6].tagName! == "#\(PantosTag.EXT_X_MAP.toString())", "Tag did not parse properly")
+        XCTAssert(playlist.tags[7].tagName! == "#\(PantosTag.EXT_X_DATERANGE.toString())", "Tag did not parse properly")
+        XCTAssert(playlist.tags[8].tagName! == "#\(PantosTag.EXT_X_DATERANGE.toString())", "Tag did not parse properly")
+        XCTAssert(playlist.tags[9].tagName! == "#\(PantosTag.EXT_X_DATERANGE.toString())", "Tag did not parse properly")
+        XCTAssert(playlist.tags[10].tagName! == "#\(PantosTag.EXT_X_DATERANGE.toString())", "Tag did not parse properly")
+        XCTAssert(playlist.tags[11].tagName! == "#\(PantosTag.EXTINF.toString())", "Tag did not parse properly")
+        XCTAssertNil(playlist.tags[12].tagName, "Tag did not parse properly") // locations do not have tag names
+        XCTAssert(playlist.tags[13].tagName! == "#\(PantosTag.EXTINF.toString())", "Tag did not parse properly")
+        XCTAssertNil(playlist.tags[14].tagName, "Tag did not parse properly") // locations do not have tag names
+        XCTAssert(playlist.tags[15].tagName! == "#\(PantosTag.EXTINF.toString())", "Tag did not parse properly")
+        XCTAssertNil(playlist.tags[16].tagName, "Tag did not parse properly") // locations do not have tag names
+        XCTAssert(playlist.tags[17].tagName! == "#\(PantosTag.EXTINF.toString())", "Tag did not parse properly")
+        XCTAssertNil(playlist.tags[18].tagName, "Tag did not parse properly") // locations do not have tag names
+        XCTAssert(playlist.tags[19].tagName! == "#\(PantosTag.EXTINF.toString())", "Tag did not parse properly")
+        XCTAssertNil(playlist.tags[20].tagName, "Tag did not parse properly") // locations do not have tag names
+        XCTAssert(playlist.tags[21].tagName! == "#\(PantosTag.EXT_X_DATERANGE.toString())", "Tag did not parse properly")
+        XCTAssert(playlist.tags[22].tagName! == "#\(PantosTag.EXT_X_DATERANGE.toString())", "Tag did not parse properly")
+        XCTAssert(playlist.tags[23].tagName! == "#\(PantosTag.EXT_X_DATERANGE.toString())", "Tag did not parse properly")
+        XCTAssert(playlist.tags[24].tagName! == "#\(PantosTag.EXTINF.toString())", "Tag did not parse properly")
+        XCTAssertNil(playlist.tags[25].tagName, "Tag did not parse properly") // locations do not have tag names
+        XCTAssert(playlist.tags[26].tagName! == "#\(PantosTag.EXTINF.toString())", "Tag did not parse properly")
+        XCTAssertNil(playlist.tags[27].tagName, "Tag did not parse properly") // locations do not have tag names
+        XCTAssert(playlist.tags[28].tagName! == "#\(PantosTag.EXTINF.toString())", "Tag did not parse properly")
+        XCTAssertNil(playlist.tags[29].tagName, "Tag did not parse properly") // locations do not have tag names
+        
+        // Check that values are obtained correctly for all EXT-X-DATERANGE tags
+        // #EXT-X-DATERANGE:ID="3-0x20-1585221432",START-DATE="2020-03-26T11:17:12.17Z",END-DATE="2020-03-26T11:26:25.123Z",SCTE35-IN=0xFC3039000000000000000000050680888462C900230221435545490000000300A00E1270636B5F45503030363739343031303331382104053ABE0441
+        XCTAssertEqual(playlist.tags[7].value(forValueIdentifier: PantosValue.id), "3-0x20-1585221432", "Tag did not parse properly")
+        XCTAssertEqual(playlist.tags[7].value(forValueIdentifier: PantosValue.startDate), "2020-03-26T11:17:12.17Z", "Tag did not parse properly")
+        XCTAssertEqual(playlist.tags[7].value(forValueIdentifier: PantosValue.endDate), "2020-03-26T11:26:25.123Z", "Tag did not parse properly")
+        XCTAssertEqual(playlist.tags[7].value(forValueIdentifier: PantosValue.scte35In), "0xFC3039000000000000000000050680888462C900230221435545490000000300A00E1270636B5F45503030363739343031303331382104053ABE0441", "Tag did not parse properly")
+        // #EXT-X-DATERANGE:ID="1-0x22-1585221985",START-DATE="2020-03-26T11:26:25.122Z",PLANNED-DURATION=30.000,SCTE35-OUT=0xFC303E000000000000000000050680888462C900280226435545490000000100E000002932E00E1270636B5F4550303036373934303130333138220404EDA3A9F9
+        XCTAssertEqual(playlist.tags[8].value(forValueIdentifier: PantosValue.id), "1-0x22-1585221985", "Tag did not parse properly")
+        XCTAssertEqual(playlist.tags[8].value(forValueIdentifier: PantosValue.startDate), "2020-03-26T11:26:25.122Z", "Tag did not parse properly")
+        XCTAssertEqual(playlist.tags[8].value(forValueIdentifier: PantosValue.plannedDuration), 30.000, "Tag did not parse properly")
+        XCTAssertEqual(playlist.tags[8].value(forValueIdentifier: PantosValue.scte35Out), "0xFC303E000000000000000000050680888462C900280226435545490000000100E000002932E00E1270636B5F4550303036373934303130333138220404EDA3A9F9", "Tag did not parse properly")
+        // #EXT-X-DATERANGE:ID="5-0x30-1585221985",START-DATE="2020-03-26T11:26:25.122Z",PLANNED-DURATION=30.000,SCTE35-OUT=0xFC303E000000000000000000050680888462C900280226435545490000000500E000002932E00E1270636B5F455030303637393430313033313830040475A00967
+        XCTAssertEqual(playlist.tags[9].value(forValueIdentifier: PantosValue.id), "5-0x30-1585221985", "Tag did not parse properly")
+        XCTAssertEqual(playlist.tags[9].value(forValueIdentifier: PantosValue.startDate), "2020-03-26T11:26:25.122Z", "Tag did not parse properly")
+        XCTAssertEqual(playlist.tags[9].value(forValueIdentifier: PantosValue.plannedDuration), 30.000, "Tag did not parse properly")
+        XCTAssertEqual(playlist.tags[9].value(forValueIdentifier: PantosValue.scte35Out), "0xFC303E000000000000000000050680888462C900280226435545490000000500E000002932E00E1270636B5F455030303637393430313033313830040475A00967", "Tag did not parse properly")
+        // #EXT-X-DATERANGE:ID="2-0x10-1585219520",START-DATE="2020-03-26T10:45:20.894Z",PLANNED-DURATION=2713.000,SCTE35-OUT=0xFC303E0000000000000000000506807B4C487A00280226435545490000000200E0000E8DBD100E1270636B5F45503030363739343031303331381001018E5BFFD0
+        XCTAssertEqual(playlist.tags[10].value(forValueIdentifier: PantosValue.id), "2-0x10-1585219520", "Tag did not parse properly")
+        XCTAssertEqual(playlist.tags[10].value(forValueIdentifier: PantosValue.startDate), "2020-03-26T10:45:20.894Z", "Tag did not parse properly")
+        XCTAssertEqual(playlist.tags[10].value(forValueIdentifier: PantosValue.plannedDuration), 2713.000, "Tag did not parse properly")
+        XCTAssertEqual(playlist.tags[10].value(forValueIdentifier: PantosValue.scte35Out), "0xFC303E0000000000000000000506807B4C487A00280226435545490000000200E0000E8DBD100E1270636B5F45503030363739343031303331381001018E5BFFD0", "Tag did not parse properly")
+        // #EXT-X-DATERANGE:ID="1-0x22-1585221985",START-DATE="2020-03-26T11:26:25.122Z",END-DATE="2020-03-26T11:26:55.119Z",SCTE35-IN=0xFC303900000000000000000005068088AD947A00230221435545490000000100A00E1270636B5F455030303637393430313033313823040432668403
+        XCTAssertEqual(playlist.tags[21].value(forValueIdentifier: PantosValue.id), "1-0x22-1585221985", "Tag did not parse properly")
+        XCTAssertEqual(playlist.tags[21].value(forValueIdentifier: PantosValue.startDate), "2020-03-26T11:26:25.122Z", "Tag did not parse properly")
+        XCTAssertEqual(playlist.tags[21].value(forValueIdentifier: PantosValue.endDate), "2020-03-26T11:26:55.119Z", "Tag did not parse properly")
+        XCTAssertEqual(playlist.tags[21].value(forValueIdentifier: PantosValue.scte35In), "0xFC303900000000000000000005068088AD947A00230221435545490000000100A00E1270636B5F455030303637393430313033313823040432668403", "Tag did not parse properly")
+        // #EXT-X-DATERANGE:ID="5-0x30-1585221985",START-DATE="2020-03-26T11:26:25.122Z",END-DATE="2020-03-26T11:26:55.119Z",SCTE35-IN=0xFC303900000000000000000005068088AD947A00230221435545490000000500A00E1270636B5F4550303036373934303130333138310404A150BE8C
+        XCTAssertEqual(playlist.tags[22].value(forValueIdentifier: PantosValue.id), "5-0x30-1585221985", "Tag did not parse properly")
+        XCTAssertEqual(playlist.tags[22].value(forValueIdentifier: PantosValue.startDate), "2020-03-26T11:26:25.122Z", "Tag did not parse properly")
+        XCTAssertEqual(playlist.tags[22].value(forValueIdentifier: PantosValue.endDate), "2020-03-26T11:26:55.119Z", "Tag did not parse properly")
+        XCTAssertEqual(playlist.tags[22].value(forValueIdentifier: PantosValue.scte35In), "0xFC303900000000000000000005068088AD947A00230221435545490000000500A00E1270636B5F4550303036373934303130333138310404A150BE8C", "Tag did not parse properly")
+        // #EXT-X-DATERANGE:ID="3-0x20-1585222015",START-DATE="2020-03-26T11:26:55.119Z",PLANNED-DURATION=218.000,SCTE35-OUT=0xFC303E00000000000000000005068088AD947A00280226435545490000000300E000012B60A00E1270636B5F45503030363739343031303331382005058B0ADF75
+        XCTAssertEqual(playlist.tags[23].value(forValueIdentifier: PantosValue.id), "3-0x20-1585222015", "Tag did not parse properly")
+        XCTAssertEqual(playlist.tags[23].value(forValueIdentifier: PantosValue.startDate), "2020-03-26T11:26:55.119Z", "Tag did not parse properly")
+        XCTAssertEqual(playlist.tags[23].value(forValueIdentifier: PantosValue.plannedDuration), 218.000, "Tag did not parse properly")
+        XCTAssertEqual(playlist.tags[23].value(forValueIdentifier: PantosValue.scte35Out), "0xFC303E00000000000000000005068088AD947A00280226435545490000000300E000012B60A00E1270636B5F45503030363739343031303331382005058B0ADF75", "Tag did not parse properly")
+        
+        let validationIssues = HLSVariantPlaylistValidator.validate(hlsPlaylist: playlist)
+        XCTAssertNil(validationIssues, "Should be no issues in the HLS fixtures")
+    }
+    
     func testHLS_UnknownTagArray() {
         
         let unknownTag = "EXT-MADE_UP_TAG_FOR_TEST"
