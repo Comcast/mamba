@@ -126,20 +126,36 @@ class HLSValidatorTests: XCTestCase {
         }
     }
     
-    private func validate(validator: HLSPlaylistValidator.Type, playlist: String, expected: Int) {
+    @discardableResult
+    private func validate(validator: HLSPlaylistValidator.Type, playlist: String, expected: Int) -> [HLSValidationIssue] {
         
         let m = parsePlaylist(inString: playlist)
         guard let validationIssues = validator.validate(hlsPlaylist: m) else {
             if expected > 0 {
                 XCTAssert(false, "Found unexpected validation Issues should have \(expected) actually has 0")
             }
-            return
+            return []
         }
         
         if validationIssues.count != expected {
             XCTAssert(false, "Found unexpected validation Issues should have \(expected) actually has \(validationIssues.count)")
         } else if expected == 0 {
             XCTAssert(false, "Validation issues should be nil, not empty, when 0 issues found")
+        }
+        
+        return validationIssues
+    }
+    
+    private func validate(validator: HLSPlaylistValidator.Type, playlist: String, expectedIssues: [HLSValidationIssue]) {
+        let issues = validate(validator: validator, playlist: playlist, expected: expectedIssues.count)
+        expectedIssues.forEach { expectedIssue in
+            guard let matchingIssue = issues.first(where: { $0.description == expectedIssue.description }) else {
+                return XCTFail("Expected issue \"\(expectedIssue.description)\" not found in variant playlist.\nIssues found:\n\(issues)")
+            }
+            XCTAssertEqual(expectedIssue.description, matchingIssue.description)
+            XCTAssertEqual(expectedIssue.severity,
+                           matchingIssue.severity,
+                           "Expected validation issue (\(expectedIssue.description)) had unexpected severity (\(matchingIssue.severity))")
         }
     }
     
@@ -699,5 +715,75 @@ frag1.ts
         let hlsLoadString = SubtitlesGroupTxt.joined()
         validate(validator: u, playlist: hlsLoadString, expected: 1)
     }
-
+    
+    let daterangePlaylist = ["#EXTM3U\n",
+                             "#EXT-X-VERSION:6\n",
+                             "#EXT-X-TARGETDURATION:11\n",
+                             "#EXT-X-MEDIA-SEQUENCE:0\n",
+                             "#EXT-X-PROGRAM-DATE-TIME:2020-03-28T18:06:24.492Z\n",
+                             "#EXT-X-DATERANGE:ID=\"2-0x10-1585219520\",START-DATE=\"2020-03-28T17:28:44.901Z\"\n",
+                             "#EXTINF:9.9766,1\n",
+                             "main-01.ts\n",
+                             "#EXTINF:9.1,2\n",
+                             "main-02.ts\n",
+                             "#EXTINF:10,3\n",
+                             "main-03.ts\n",
+                             "#EXTINF:9,4\n",
+                             "main-04.ts\n",
+                             "#EXTINF:10,5\n",
+                             "main-05.ts\n",
+                             "#EXTINF:9.5,6\n",
+                             "main-06.ts\n",
+                             "#EXTINF:9.3,6\n",
+                             "main-07.ts\n"]
+    
+    func testEXT_X_DATERANGEPlaylistValidator_OK() {
+        
+        let u = EXT_X_DATERANGEPlaylistValidator.self
+        let hlsLoadString = daterangePlaylist.joined()
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
+    }
+    
+    func testEXT_X_DATERANGEPlaylistValidator_MissingEXT_X_PROGRAM_DATE_TIME() {
+        
+        let u = EXT_X_DATERANGEPlaylistValidator.self
+        var daterangePlaylist = self.daterangePlaylist
+        // remove EXT-X-PROGRAM-DATE-TIME
+        daterangePlaylist.remove(at: 4)
+        let hlsLoadString = daterangePlaylist.joined()
+        let expectedIssues = [HLSValidationIssue(description: .EXT_X_DATERANGEExistsWithNoEXT_X_PROGRAM_DATE_TIME, severity: .warning)]
+        validate(validator: u, playlist: hlsLoadString, expectedIssues: expectedIssues)
+    }
+    
+    func testEXT_X_DATERANGEPlaylistValidator_MultipleTagsWithSameID_OK() {
+        
+        let u = EXT_X_DATERANGEPlaylistValidator.self
+        var daterangePlaylist = self.daterangePlaylist
+        
+        let EXT_X_DATERANGE_1 = "#EXT-X-DATERANGE:ID=\"5-0x30-1585419030\",START-DATE=\"2020-03-28T18:10:30.771Z\",PLANNED-DURATION=30.000\n"
+        let EXT_X_DATERANGE_2 = "#EXT-X-DATERANGE:ID=\"5-0x30-1585419030\",START-DATE=\"2020-03-28T18:10:30.771Z\",END-DATE=\"2020-03-28T18:11:00.768Z\"\n"
+        
+        daterangePlaylist.insert(EXT_X_DATERANGE_2, at: 14)
+        daterangePlaylist.insert(EXT_X_DATERANGE_1, at: 8)
+        
+        let hlsLoadString = daterangePlaylist.joined()
+        validate(validator: u, playlist: hlsLoadString, expected: 0)
+    }
+    
+    func testEXT_X_DATERANGEPlaylistValidator_MultipleTagsWithSameID_MismatchStartDate() {
+        
+        let u = EXT_X_DATERANGEPlaylistValidator.self
+        var daterangePlaylist = self.daterangePlaylist
+        
+        let EXT_X_DATERANGE_1 = "#EXT-X-DATERANGE:ID=\"5-0x30-1585419030\",START-DATE=\"2020-03-28T18:10:30.771Z\",PLANNED-DURATION=30.000\n"
+        let EXT_X_DATERANGE_2 = "#EXT-X-DATERANGE:ID=\"5-0x30-1585419030\",START-DATE=\"2020-03-28T18:10:20.771Z\",END-DATE=\"2020-03-28T18:11:00.768Z\"\n"
+        
+        daterangePlaylist.insert(EXT_X_DATERANGE_2, at: 14)
+        daterangePlaylist.insert(EXT_X_DATERANGE_1, at: 8)
+        
+        let hlsLoadString = daterangePlaylist.joined()
+        let expectedIssues = [HLSValidationIssue(description: .EXT_X_DATERANGEAttributeMismatchForTagsWithSameID, severity: .warning)]
+        validate(validator: u, playlist: hlsLoadString, expectedIssues: expectedIssues)
+    }
+    
 }

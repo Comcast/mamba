@@ -29,6 +29,15 @@
 		43DE4F001E564E1500EEE800 /* HLSMediaSpanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE4EFE1E564E1500EEE800 /* HLSMediaSpanTests.swift */; };
 		43DE4F0D1E564FEE00EEE800 /* EXT_X_STARTTimeOffsetValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE4EFA1E564DA300EEE800 /* EXT_X_STARTTimeOffsetValidator.swift */; };
 		43DE4F0E1E564FFE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DE4EFC1E564DBE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift */; };
+		6DD0A1AD242F85C800FF7AAE /* EXT_X_DATERANGETagValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD0A1AC242F85C800FF7AAE /* EXT_X_DATERANGETagValidator.swift */; };
+		6DD0A1AE242F85C800FF7AAE /* EXT_X_DATERANGETagValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD0A1AC242F85C800FF7AAE /* EXT_X_DATERANGETagValidator.swift */; };
+		6DD0A1AF242F85C800FF7AAE /* EXT_X_DATERANGETagValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD0A1AC242F85C800FF7AAE /* EXT_X_DATERANGETagValidator.swift */; };
+		6DD0A1B1242FADC600FF7AAE /* EXT_X_DATERANGEPlaylistValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD0A1B0242FADC600FF7AAE /* EXT_X_DATERANGEPlaylistValidator.swift */; };
+		6DD0A1B2242FADC600FF7AAE /* EXT_X_DATERANGEPlaylistValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD0A1B0242FADC600FF7AAE /* EXT_X_DATERANGEPlaylistValidator.swift */; };
+		6DD0A1B3242FADC600FF7AAE /* EXT_X_DATERANGEPlaylistValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD0A1B0242FADC600FF7AAE /* EXT_X_DATERANGEPlaylistValidator.swift */; };
+		6DD9C898242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9C897242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 */; };
+		6DD9C899242CCE5300B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9C897242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 */; };
+		6DD9C89A242CCE5400B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9C897242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 */; };
 		883290561EA172170064588B /* HLSStringRefExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883290551EA172170064588B /* HLSStringRefExtensionTests.swift */; };
 		D44E03771E3BAC9F00126B52 /* HLSTag+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E03761E3BAC9F00126B52 /* HLSTag+Util.swift */; };
 		D44E03781E3BAC9F00126B52 /* HLSTag+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E03761E3BAC9F00126B52 /* HLSTag+Util.swift */; };
@@ -615,6 +624,9 @@
 		43DE4EFA1E564DA300EEE800 /* EXT_X_STARTTimeOffsetValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EXT_X_STARTTimeOffsetValidator.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		43DE4EFC1E564DBE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_MEDIARenditionINSTREAMIDValidator.swift; sourceTree = "<group>"; };
 		43DE4EFE1E564E1500EEE800 /* HLSMediaSpanTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSMediaSpanTests.swift; sourceTree = "<group>"; };
+		6DD0A1AC242F85C800FF7AAE /* EXT_X_DATERANGETagValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXT_X_DATERANGETagValidator.swift; sourceTree = "<group>"; };
+		6DD0A1B0242FADC600FF7AAE /* EXT_X_DATERANGEPlaylistValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXT_X_DATERANGEPlaylistValidator.swift; sourceTree = "<group>"; };
+		6DD9C897242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 */ = {isa = PBXFileReference; lastKnownFileType = text; path = hls_variant_playlist_with_daterange_metadata.m3u8; sourceTree = "<group>"; };
 		883290551EA172170064588B /* HLSStringRefExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSStringRefExtensionTests.swift; sourceTree = "<group>"; };
 		D44E03761E3BAC9F00126B52 /* HLSTag+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLSTag+Util.swift"; sourceTree = "<group>"; };
 		D4BB018C1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLSTagArray+RenditionGroups.swift"; sourceTree = "<group>"; };
@@ -886,6 +898,8 @@
 			isa = PBXGroup;
 			children = (
 				EC95478A1E5CC86300962535 /* EXTINFValidator.swift */,
+				6DD0A1B0242FADC600FF7AAE /* EXT_X_DATERANGEPlaylistValidator.swift */,
+				6DD0A1AC242F85C800FF7AAE /* EXT_X_DATERANGETagValidator.swift */,
 				EC3B019E1DD4D47900B512E3 /* EXT_X_KEYValidator.swift */,
 				EC3B019F1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift */,
 				EC3B01A01DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupDEFAULTValidator.swift */,
@@ -1195,6 +1209,7 @@
 				EC7492001DD29E2900AF4E20 /* hls_sampleMediaFile.txt */,
 				EC7492011DD29E2900AF4E20 /* hls_singleMediaFile.txt */,
 				1D28F3441EAA9E500010320B /* hls_variant_playlist.m3u8 */,
+				6DD9C897242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 */,
 				EC7492021DD29E2900AF4E20 /* hls_writer_parser_roundtrip_tester.txt */,
 				EC7492061DD29E2900AF4E20 /* super8demuxed1_4242.m3u8 */,
 				EC7492071DD29E2900AF4E20 /* super8demuxed2_IP_1080p24_51_TS.m3u8 */,
@@ -1619,6 +1634,7 @@
 				EC7492201DD29E2900AF4E20 /* ThirdPartyHLSTagsTestFixture.txt in Resources */,
 				EC74920A1DD29E2900AF4E20 /* bipbopall.m3u8 in Resources */,
 				EC1705421DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_forced.m3u8 in Resources */,
+				6DD9C898242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */,
 				EC74921A1DD29E2900AF4E20 /* super8demuxed1_4242.m3u8 in Resources */,
 				EC74921E1DD29E2900AF4E20 /* super8demuxed3_1376214110461.m3u8 in Resources */,
 				EC74920C1DD29E2900AF4E20 /* hls_sampleMasterFile.txt in Resources */,
@@ -1655,6 +1671,7 @@
 				EC7492211DD29E2900AF4E20 /* ThirdPartyHLSTagsTestFixture.txt in Resources */,
 				EC74920B1DD29E2900AF4E20 /* bipbopall.m3u8 in Resources */,
 				EC1705431DFB490A00C969F9 /* linear_ad_insertion_CONTENT_end_ad_forced.m3u8 in Resources */,
+				6DD9C899242CCE5300B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */,
 				EC74921B1DD29E2900AF4E20 /* super8demuxed1_4242.m3u8 in Resources */,
 				EC74921F1DD29E2900AF4E20 /* super8demuxed3_1376214110461.m3u8 in Resources */,
 				EC74920D1DD29E2900AF4E20 /* hls_sampleMasterFile.txt in Resources */,
@@ -1691,6 +1708,7 @@
 				ECE253C0209A508700D388CE /* Super8_muxed1_4242.m3u8 in Resources */,
 				ECE253CE209A508700D388CE /* super8demuxed1_4242.m3u8 in Resources */,
 				ECE253CB209A508700D388CE /* hls_singleMediaFile.txt in Resources */,
+				6DD9C89A242CCE5400B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */,
 				ECE253C7209A508700D388CE /* hls_master_playlist.m3u8 in Resources */,
 				ECE253BF209A508700D388CE /* linear_ad_insertion_CONTENT_start_ad.m3u8 in Resources */,
 				ECE253BD209A508700D388CE /* linear_ad_insertion_CONTENT_end_ad_natural.m3u8 in Resources */,
@@ -1736,6 +1754,7 @@
 				EC3B01C91DD4D49A00B512E3 /* HLSPlaylistRenditionGroupMatchingPROGRAM_IDValidator.swift in Sources */,
 				F700CD331E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.m in Sources */,
 				EC318B482265041A00969E2D /* StaticMemoryStorage.m in Sources */,
+				6DD0A1AD242F85C800FF7AAE /* EXT_X_DATERANGETagValidator.swift in Sources */,
 				EC95478B1E5CC86300962535 /* EXTINFValidator.swift in Sources */,
 				EC95477F1E5CC80800962535 /* HLSStringRef+mamba.swift in Sources */,
 				EC8A3C851F7C4D3000A50EED /* HLSPlaylistStructureInterface.swift in Sources */,
@@ -1756,6 +1775,7 @@
 				EC7491C11DD29D5C00AF4E20 /* HLSTagWriter.swift in Sources */,
 				EC3B01CD1DD4D49A00B512E3 /* HLSPlaylistTagCardinalityValidation.swift in Sources */,
 				EC7491B91DD29D5C00AF4E20 /* HLSTagDescriptor.swift in Sources */,
+				6DD0A1B1242FADC600FF7AAE /* EXT_X_DATERANGEPlaylistValidator.swift in Sources */,
 				EC3B01AD1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupTYPEValidator.swift in Sources */,
 				EC3B01B11DD4D47900B512E3 /* EXT_X_TARGETDURATIONLengthValidator.swift in Sources */,
 				EC03B63D1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */,
@@ -1916,6 +1936,8 @@
 				EC7491B61DD29D5C00AF4E20 /* HLSParser.swift in Sources */,
 				F70E9E9B1E8C43C8006022C6 /* HLSParserError.swift in Sources */,
 				EC03B6551E5CC56B00BF1F97 /* HLSRapidParser.m in Sources */,
+				6DD0A1AE242F85C800FF7AAE /* EXT_X_DATERANGETagValidator.swift in Sources */,
+				6DD0A1B2242FADC600FF7AAE /* EXT_X_DATERANGEPlaylistValidator.swift in Sources */,
 				EC7491711DD29B5D00AF4E20 /* CollectionType+Safe.swift in Sources */,
 				EC7491BC1DD29D5C00AF4E20 /* HLSTagParser.swift in Sources */,
 				EC7491C21DD29D5C00AF4E20 /* HLSTagWriter.swift in Sources */,
@@ -2059,6 +2081,7 @@
 				EC1CCD4D209A2CF9006B59FF /* HLSPlaylistRenditionGroupMatchingPROGRAM_IDValidator.swift in Sources */,
 				EC1CCD24209A2CF9006B59FF /* CollectionType+Safe.swift in Sources */,
 				EC1CCCF5209A2CF9006B59FF /* HLSPlaylistTimelineTranslator.swift in Sources */,
+				6DD0A1AF242F85C800FF7AAE /* EXT_X_DATERANGETagValidator.swift in Sources */,
 				EC1CCD58209A2CF9006B59FF /* PantosValue.swift in Sources */,
 				EC1CCD63209A2CF9006B59FF /* Mamba.swift in Sources */,
 				EC318B4A2265041A00969E2D /* StaticMemoryStorage.m in Sources */,
@@ -2071,6 +2094,7 @@
 				EC1CCD25209A2CF9006B59FF /* HLSTagArray+RenditionGroups.swift in Sources */,
 				EC1CCD50209A2CF9006B59FF /* HLSPlaylistTagGroupValidator.swift in Sources */,
 				EC1CCCFE209A2CF9006B59FF /* HLSStringRefFactory.m in Sources */,
+				6DD0A1B3242FADC600FF7AAE /* EXT_X_DATERANGEPlaylistValidator.swift in Sources */,
 				EC1CCD3A209A2CF9006B59FF /* NoOpTagParser.swift in Sources */,
 				EC1CCD5D209A2CF9006B59FF /* HLSTagValidator.swift in Sources */,
 				EC1CCD62209A2CF9006B59FF /* HLSWriter.swift in Sources */,
@@ -2235,7 +2259,7 @@
 				INFOPLIST_FILE = mamba/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2260,7 +2284,7 @@
 				INFOPLIST_FILE = mamba/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2321,7 +2345,7 @@
 				INFOPLIST_FILE = mamba/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
 				PRODUCT_NAME = mamba;
 				SDKROOT = appletvos;
@@ -2351,7 +2375,7 @@
 				INFOPLIST_FILE = mamba/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
 				PRODUCT_NAME = mamba;
 				SDKROOT = appletvos;
@@ -2429,7 +2453,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
 				PRODUCT_MODULE_NAME = mamba;
 				PRODUCT_NAME = mamba;
@@ -2462,7 +2486,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
 				PRODUCT_MODULE_NAME = mamba;
 				PRODUCT_NAME = mamba;
