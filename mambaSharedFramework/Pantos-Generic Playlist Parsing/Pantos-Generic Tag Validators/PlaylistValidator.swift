@@ -69,5 +69,6 @@ public class PlaylistValidator: ExtensiblePlaylistValidator {
     
     public static let variantPlaylistValidators: [VariantPlaylistValidator.Type] = [PlaylistAggregateTagCardinalityValidator.self,
                                                                                     EXT_X_TARGETDURATIONLengthValidator.self,
-                                                                                    EXT_X_STARTTimeOffsetValidator.self]
+                                                                                    EXT_X_STARTTimeOffsetValidator.self,
+                                                                                    EXT_X_DATERANGEPlaylistValidator.self]
 }

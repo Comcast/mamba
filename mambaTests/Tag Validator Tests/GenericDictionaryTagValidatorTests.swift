@@ -601,4 +601,200 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
                  mandatory: mandatory,
                  badValues: badValues)
     }
+    
+    /*
+     The EXT-X-DATERANGE tag associates a Date Range (i.e., a range of
+     time defined by a starting and ending date) with a set of attribute/
+     value pairs.  Its format is:
+
+     #EXT-X-DATERANGE:<attribute-list>
+
+     where the defined attributes are:
+
+        ID
+
+        A quoted-string that uniquely identifies a Date Range in the
+        Playlist.  This attribute is REQUIRED.
+
+        CLASS
+
+        A client-defined quoted-string that specifies some set of
+        attributes and their associated value semantics.  All Date Ranges
+        with the same CLASS attribute value MUST adhere to these
+        semantics.  This attribute is OPTIONAL.
+
+        START-DATE
+
+        A quoted-string containing the [ISO_8601] date/time at which the
+        Date Range begins.  This attribute is REQUIRED.
+
+        END-DATE
+
+        A quoted-string containing the [ISO_8601] date/time at which the
+        Date Range ends.  It MUST be equal to or later than the value of
+        the START-DATE attribute.  This attribute is OPTIONAL.
+
+        DURATION
+
+        The duration of the Date Range expressed as a decimal-floating-
+        point number of seconds.  It MUST NOT be negative.  A single
+        instant in time (e.g., crossing a finish line) SHOULD be
+        represented with a duration of 0.  This attribute is OPTIONAL.
+
+        PLANNED-DURATION
+        The expected duration of the Date Range expressed as a decimal-
+        floating-point number of seconds.  It MUST NOT be negative.  This
+        attribute SHOULD be used to indicate the expected duration of a
+        Date Range whose actual duration is not yet known.  It is
+        OPTIONAL.
+
+        X-<client-attribute>
+
+        The "X-" prefix defines a namespace reserved for client-defined
+        attributes.  The client-attribute MUST be a legal AttributeName.
+        Clients SHOULD use a reverse-DNS syntax when defining their own
+        attribute names to avoid collisions.  The attribute value MUST be
+        a quoted-string, a hexadecimal-sequence, or a decimal-floating-
+        point.  An example of a client-defined attribute is X-COM-EXAMPLE-
+        AD-ID="XYZ123".  These attributes are OPTIONAL.
+
+        SCTE35-CMD, SCTE35-OUT, SCTE35-IN
+
+        Used to carry SCTE-35 data; see Section 4.4.5.1.1 for more
+        information.  These attributes are OPTIONAL.
+
+        END-ON-NEXT
+
+        An enumerated-string whose value MUST be YES.  This attribute
+        indicates that the end of the range containing it is equal to the
+        START-DATE of its Following Range.  The Following Range is the
+        Date Range of the same CLASS that has the earliest START-DATE
+        after the START-DATE of the range in question.  This attribute is
+        OPTIONAL.
+
+     An EXT-X-DATERANGE tag with an END-ON-NEXT=YES attribute MUST have a
+     CLASS attribute.  Other EXT-X-DATERANGE tags with the same CLASS
+     attribute MUST NOT specify Date Ranges that overlap.
+
+     An EXT-X-DATERANGE tag with an END-ON-NEXT=YES attribute MUST NOT
+     contain DURATION or END-DATE attributes.
+
+     A Date Range with neither a DURATION, an END-DATE, nor an END-ON-
+     NEXT=YES attribute has an unknown duration, even if it has a PLANNED-
+     DURATION.
+
+     If a Playlist contains an EXT-X-DATERANGE tag, it MUST also contain
+     at least one EXT-X-PROGRAM-DATE-TIME tag.
+
+     If a Playlist contains two EXT-X-DATERANGE tags with the same ID
+     attribute value, then any AttributeName that appears in both tags
+     MUST have the same AttributeValue.
+     
+     If a Date Range contains both a DURATION attribute and an END-DATE
+     attribute, the value of the END-DATE attribute MUST be equal to the
+     value of the START-DATE attribute plus the value of the DURATION
+     attribute.
+
+     Clients SHOULD ignore EXT-X-DATERANGE tags with illegal syntax.
+     */
+    func test_EXT_X_DATERANGE() {
+        let tagData = "ID=\"2-0x10-1585219520\",START-DATE=\"2020-03-26T10:45:20.894Z\",PLANNED-DURATION=2713.000,SCTE35-OUT=0xFC303E0000000000000000000506807B4C487A00280226435545490000000200E0000E8DBD100E1270636B5F45503030363739343031303331381001018E5BFFD0"
+        let optional: [PantosValue] = [.classAttribute,
+                                       .endDate,
+                                       .duration,
+                                       .plannedDuration,
+                                       .scte35Cmd,
+                                       .scte35Out,
+                                       .scte35In,
+                                       .endOnNext]
+        let mandatory: [PantosValue] = [.id,
+                                        .startDate]
+        let badValues: [PantosValue] = [.startDate,
+                                        .endDate,
+                                        .duration,
+                                        .plannedDuration,
+                                        .endOnNext]
+        
+        validate(tag: PantosTag.EXT_X_DATERANGE,
+                 tagData: tagData,
+                 optional: optional,
+                 mandatory: mandatory,
+                 badValues: badValues)
+        
+        // END-ON-NEXT = An enumerated-string whose value MUST be YES.
+        var data = "ID=\"2-0x10-1585219520\",START-DATE=\"2020-03-26T10:45:20.894Z\",END-ON-NEXT=NO,CLASS=\"my:scheme\""
+        var validationIssues = [PlaylistValidationIssue(description: .EXT_X_DATERANGEEND_ON_NEXTValueMustBeYES, severity: .warning)]
+        validateEXT_X_DATERANGE(tagData: data, expectedValidationIssues: validationIssues)
+        
+        // An EXT-X-DATERANGE tag with an END-ON-NEXT=YES attribute MUST have a CLASS attribute.
+        data = "ID=\"2-0x10-1585219520\",START-DATE=\"2020-03-26T10:45:20.894Z\",END-ON-NEXT=YES"
+        validationIssues = [PlaylistValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustHaveCLASSAttribute, severity: .warning)]
+        validateEXT_X_DATERANGE(tagData: data, expectedValidationIssues: validationIssues)
+        
+        // An EXT-X-DATERANGE tag with an END-ON-NEXT=YES attribute MUST NOT contain DURATION or END-DATE attributes.
+        data = "ID=\"2-0x10-1585219520\",START-DATE=\"2020-03-26T10:45:20.894Z\",END-ON-NEXT=YES,CLASS=\"my:scheme\",DURATION=30.000"
+        validationIssues = [PlaylistValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustNotContainDURATION, severity: .warning)]
+        validateEXT_X_DATERANGE(tagData: data, expectedValidationIssues: validationIssues)
+        data = "ID=\"2-0x10-1585219520\",START-DATE=\"2020-03-26T10:45:20.894Z\",END-ON-NEXT=YES,CLASS=\"my:scheme\",END-DATE=\"2020-03-28T14:43:16.249Z\""
+        validationIssues = [PlaylistValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustNotContainEND_DATE, severity: .warning)]
+        validateEXT_X_DATERANGE(tagData: data, expectedValidationIssues: validationIssues)
+        
+        // If a Date Range contains both a DURATION attribute and an END-DATE attribute, the value of the END-DATE attribute MUST be equal to the
+        // value of the START-DATE attribute plus the value of the DURATION attribute.
+        data = "ID=\"2-0x10-1585219520\",START-DATE=\"2020-03-26T10:45:20.894Z\",DURATION=30.000,END-DATE=\"2020-03-26T10:46:20.000Z\""
+        validationIssues = [PlaylistValidationIssue(description: .EXT_X_DATERANGEValidatorDURATIONAndEND_DATEMustMatchWithSTART_DATE, severity: .warning)]
+        validateEXT_X_DATERANGE(tagData: data, expectedValidationIssues: validationIssues)
+        data = "ID=\"2-0x10-1585219520\",START-DATE=\"2020-03-26T10:45:20.894Z\",DURATION=30.000,END-DATE=\"2020-03-26T10:45:50.894Z\""
+        validationIssues = []
+        validateEXT_X_DATERANGE(tagData: data, expectedValidationIssues: validationIssues)
+        
+        // END-DATE MUST be equal to or later than the value of the START-DATE attribute.
+        data = "ID=\"2-0x10-1585219520\",START-DATE=\"2020-03-26T10:45:20.894Z\",END-DATE=\"2020-03-26T10:45:20.000Z\""
+        validationIssues = [PlaylistValidationIssue(description: .EXT_X_DATERANGETagEND_DATEMustBeAfterSTART_DATE, severity: .warning)]
+        validateEXT_X_DATERANGE(tagData: data, expectedValidationIssues: validationIssues)
+        
+        // DURATION MUST NOT be negative.
+        data = "ID=\"2-0x10-1585219520\",START-DATE=\"2020-03-26T10:45:20.894Z\",DURATION=-10.000"
+        validationIssues = [PlaylistValidationIssue(description: .EXT_X_DATERANGETagDURATIONMustNotBeNegative, severity: .warning)]
+        validateEXT_X_DATERANGE(tagData: data, expectedValidationIssues: validationIssues)
+        
+        // PLANNED-DURATION MUST NOT be negative.
+        data = "ID=\"2-0x10-1585219520\",START-DATE=\"2020-03-26T10:45:20.894Z\",PLANNED-DURATION=-10.000"
+        validationIssues = [PlaylistValidationIssue(description: .EXT_X_DATERANGETagPLANNED_DURATIONMustNotBeNegative, severity: .warning)]
+        validateEXT_X_DATERANGE(tagData: data, expectedValidationIssues: validationIssues)
+        
+        // Testing a combination of issues are also possible
+        data = "START-DATE=\"2020-03-26T10:45:20.894Z\",END-ON-NEXT=NO,DURATION=30.000,END-DATE=\"2020-03-26T10:46:20.000Z\""
+        validationIssues = [PlaylistValidationIssue(description: .EXT_X_DATERANGEEND_ON_NEXTValueMustBeYES, severity: .warning),
+                            PlaylistValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustHaveCLASSAttribute, severity: .warning),
+                            PlaylistValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustNotContainDURATION, severity: .warning),
+                            PlaylistValidationIssue(description: .EXT_X_DATERANGETagWithEND_ON_NEXTMustNotContainEND_DATE, severity: .warning),
+                            PlaylistValidationIssue(description: .EXT_X_DATERANGEValidatorDURATIONAndEND_DATEMustMatchWithSTART_DATE, severity: .warning),
+                            PlaylistValidationIssue(description: "EXT-X-DATERANGE mandatory value id is missing.", severity: .warning)]
+        validateEXT_X_DATERANGE(tagData: data, expectedValidationIssues: validationIssues)
+    }
+    
+    private func validateEXT_X_DATERANGE(tagData: String, expectedValidationIssues: [PlaylistValidationIssue]) {
+        let expectedIssuesDescriptions = expectedValidationIssues.map { $0.description }.joined(separator: "\n")
+        let (validator, tag) = constructDictionaryValidator(PantosTag.EXT_X_DATERANGE, data: tagData)
+        guard let errors = validator.validate(tag: tag) else {
+            if expectedValidationIssues.isEmpty {
+                return // no issues as expected
+            }
+            return XCTFail("Expected EXT-X-DATERANGE validation issue\nTag data: \(tagData)\nExpected issues:\n\(expectedIssuesDescriptions)")
+        }
+        let actualIssuesDescriptions = errors.map { $0.description }.joined(separator: "\n")
+        XCTAssertEqual(errors.count,
+                       expectedValidationIssues.count,
+                       "Mismatch in expected issues and actual issues in EXT_X_DATERANGE validation.\nExpected issues:\n\(expectedIssuesDescriptions)\nActual issues:\n\(actualIssuesDescriptions)")
+        expectedValidationIssues.forEach { expectedValidationIssue in
+            guard let matchingIssue = errors.first(where: { $0.description == expectedValidationIssue.description }) else {
+                return XCTFail("Expected issue \"\(expectedValidationIssue.description)\" not found for EXT-X-DATERANGE tag: \(tagData)\nIssues found:\n\(actualIssuesDescriptions)")
+            }
+            XCTAssertEqual(expectedValidationIssue.description, matchingIssue.description)
+            XCTAssertEqual(expectedValidationIssue.severity,
+                           matchingIssue.severity,
+                           "Expected EXT-X-DATERANGE validation issue (\(expectedValidationIssue.description)) had unexpected severity (\(matchingIssue.severity))")
+        }
+    }
 }
