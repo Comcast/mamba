@@ -288,13 +288,13 @@ public extension PlaylistStream {
     // returns the `StreamType` for this stream if applicable.
     var streamType: StreamType? {
         switch self {
-        case .audioMediaStream(_):
+        case .audioMediaStream(_, _, _, _, _, _):
             return .demuxedAudio
-        case .videoMediaStream(_):
+        case .videoMediaStream(_, _, _, _, _, _):
             return .demuxedVideo
-        case .subtitlesMediaStream(_):
+        case .subtitlesMediaStream(_, _, _):
             return nil
-        case .iFrameStream(_):
+        case .iFrameStream(_, _):
             return nil
         case .stream(_, _, _, _, _, _, let streamType, _, _):
             return streamType
