@@ -18,7 +18,11 @@
 //
 
 #include "RapidParserError.h"
-#import <mamba/mamba-Swift.h>
+#if __has_include("mamba-Swift.h")
+    #import "mamba-Swift.h"
+#else
+    #import <mamba/mamba-Swift.h>
+#endif
 
 const uint32_t RapidParserErrorMissingTagData = PlaylistParserInternalErrorCodeMissingTagData;
 

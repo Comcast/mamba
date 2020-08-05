@@ -92,9 +92,9 @@ class MasterPlaylistStreamSummaryTests: XCTestCase {
                     XCTFail("Unexpected mediaIndex: \(mediaIndex)")
                 }
                 break
-            case .videoMediaStream(_):
+            case .videoMediaStream(_, _, _, _, _, _):
                 XCTFail("Unexpected video stream")
-            case .subtitlesMediaStream(_):
+            case .subtitlesMediaStream(_, _, _):
                 XCTFail("Unexpected subtitles stream")
             case .stream(let streamInfIndex, let locationIndex, let uri, let audioGroupId, let videoGroupId, let captionsGroupId, let streamType, let bandwidth, let resolution):
                 streamInfCount += 1
@@ -248,9 +248,9 @@ class MasterPlaylistStreamSummaryTests: XCTestCase {
                 default:
                     XCTFail("Unexpected mediaIndex: \(mediaIndex)")
                 }
-            case .videoMediaStream(_):
+            case .videoMediaStream(_, _, _, _, _, _):
                 XCTFail("Unexpected video stream")
-            case .subtitlesMediaStream(_):
+            case .subtitlesMediaStream(_, _, _):
                 XCTFail("Unexpected subtitles stream")
             case .stream(let streamInfIndex, let locationIndex, let uri, let audioGroupId, let videoGroupId, let captionsGroupId, let streamType, let bandwidth, let resolution):
                 streamInfCount += 1
@@ -363,7 +363,7 @@ class MasterPlaylistStreamSummaryTests: XCTestCase {
         
         for stream in summary.streams {
             switch stream {
-            case .iFrameStream(_):
+            case .iFrameStream(_, _):
                 XCTFail("Unexpected iframe stream")
             case .audioMediaStream(let mediaIndex, let uri, let groupId, let name, let language, let associatedLanguage):
                 audioCount += 1
@@ -379,9 +379,9 @@ class MasterPlaylistStreamSummaryTests: XCTestCase {
                 default:
                     XCTFail("Unexpected mediaIndex: \(mediaIndex)")
                 }
-            case .videoMediaStream(_):
+            case .videoMediaStream(_, _, _, _, _, _):
                 XCTFail("Unexpected video stream")
-            case .subtitlesMediaStream(_):
+            case .subtitlesMediaStream(_, _, _):
                 XCTFail("Unexpected subtitles stream")
             case .stream(let streamInfIndex, let locationIndex, let uri, let audioGroupId, let videoGroupId, let captionsGroupId, let streamType, let bandwidth, let resolution):
                 streamInfCount += 1
@@ -486,9 +486,9 @@ class MasterPlaylistStreamSummaryTests: XCTestCase {
         
         for stream in summary.streams {
             switch stream {
-            case .iFrameStream(_):
+            case .iFrameStream(_, _):
                 XCTFail("Unexpected iframe stream")
-            case .audioMediaStream(_):
+            case .audioMediaStream(_, _, _, _, _, _):
                 XCTFail("Unexpected audio stream")
             case .videoMediaStream(let mediaIndex, let uri, let groupId, let name, let language, let associatedLanguage):
                 videoCount += 1
@@ -580,13 +580,13 @@ class MasterPlaylistStreamSummaryTests: XCTestCase {
         
         for stream in summary.streams {
             switch stream {
-            case .iFrameStream(_):
+            case .iFrameStream(_, _):
                 XCTFail("Unexpected iframe stream")
-            case .audioMediaStream(_):
+            case .audioMediaStream(_, _, _, _, _, _):
                 XCTFail("Unexpected audio stream")
-            case .videoMediaStream(_):
+            case .videoMediaStream(_, _, _, _, _, _):
                 XCTFail("Unexpected video stream")
-            case .subtitlesMediaStream(_):
+            case .subtitlesMediaStream(_, _, _):
                 XCTFail("Unexpected subtitles stream")
             case .stream(let streamInfIndex, let locationIndex, let uri, let audioGroupId, let videoGroupId, let captionsGroupId, let streamType, let bandwidth, let resolution):
                 streamInfCount += 1

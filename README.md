@@ -207,6 +207,6 @@ If you do, for some reason, need to access `PlaylistTag` data beyond the lifetim
 
 --
 
-_Note: We have legacy branches for mamba 1.x at [our master 1.x branch](https://github.com/Comcast/mamba/tree/master_1.x) and [our develop 1.x branch](https://github.com/Comcast/mamba/tree/develop_1.x). However, we are not maintaining that branch actively. Users are welcome to submit pull requests against the 1.x branches or potentially fork if they do not want to move to 2.0_
+_Note: We have legacy branches for mamba 1.x at [our main 1.x branch](https://github.com/Comcast/mamba/tree/main_1.x) and [our develop 1.x branch](https://github.com/Comcast/mamba/tree/develop_1.x). We are maintaining that branch, but may stop updating in the near future. Users are welcome to submit pull requests against the 1.x branches or potentially fork if they do not want to move to 2.0_
 
 --
