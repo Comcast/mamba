@@ -41,7 +41,7 @@ import Foundation
  variantTagGroups[2]   3.m3u8
  ```
  */
-public typealias MasterPlaylistStructure = PlaylistStructureCore<MasterPlaylistStructureData, MasterPlaylistStructureDelegate>
+public typealias MasterPlaylistStructure = PlaylistStructureCore<MasterPlaylistStructureDelegate>
 
 extension PlaylistStructureCore: MasterPlaylistTagGroupProvider where PSD == MasterPlaylistStructureDelegate {
     
@@ -68,7 +68,7 @@ public protocol MasterPlaylistTagGroupProvider {
     var variantTagGroups: [VariantTagGroup] { get }
 }
 
-public struct MasterPlaylistStructureData: EmptyInitializerImplementor {
+public struct MasterPlaylistStructureData: PlaylistStructure {
     public init() {
         self.variantTagGroups = [VariantTagGroup]()
     }
@@ -78,7 +78,7 @@ public struct MasterPlaylistStructureData: EmptyInitializerImplementor {
     var variantTagGroups: [VariantTagGroup]
 }
 
-public final class MasterPlaylistStructureDelegate: PlaylistStructureDelegate, EmptyInitializerImplementor {
+public final class MasterPlaylistStructureDelegate: PlaylistStructureDelegate {
 
     public typealias T = MasterPlaylistStructureData
     

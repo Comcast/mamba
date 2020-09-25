@@ -17,7 +17,7 @@
 //  limitations under the License.
 //
 
-#import "Availability.h"
+#import <Availability.h>
 
 #ifdef __MAC_OS_X_VERSION_MAX_ALLOWED
 #import <Cocoa/Cocoa.h>
