@@ -17,7 +17,6 @@
 //  limitations under the License.
 //
 
-//#import <mamba/mamba.h>
 #import "HLSStringRef.h"
 
 @interface HLSStringRef_ConcreteNSData : HLSStringRef
