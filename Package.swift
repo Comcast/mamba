@@ -5,9 +5,6 @@ import PackageDescription
 
 let package = Package(
     name: "mamba",
-    platforms: [
-        .iOS(.v12), .tvOS(.v12)
-    ],
     products: [
         .library(
             name: "mamba",
