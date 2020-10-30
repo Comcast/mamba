@@ -18,6 +18,7 @@
 //
 
 #import "HLSStringRef_ConcreteUnownedBytes.h"
+#import <Foundation/Foundation.h>
 
 @interface HLSStringRef_ConcreteUnownedBytes ()
 

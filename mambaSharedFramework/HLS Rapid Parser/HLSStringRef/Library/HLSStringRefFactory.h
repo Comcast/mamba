@@ -17,7 +17,8 @@
 //  limitations under the License.
 //
 
-#import <mamba/mamba.h>
+//#import <mamba/mamba.h>
+#import "HLSStringRef.h"
 
 @interface HLSStringRefFactory : HLSStringRef
 
