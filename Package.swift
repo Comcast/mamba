@@ -10,15 +10,6 @@ let package = Package(
         .library(
             name: "mamba",
             targets: ["mamba"]),
-        .library(
-            name: "HLSStringRef",
-            targets: ["HLSStringRef"]),
-        .library(
-            name: "CMTimeMakeFromString",
-            targets: ["CMTimeMakeFromString"]),
-        .library(
-            name: "HLSRapidParser",
-            targets: ["HLSRapidParser"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -44,7 +35,7 @@ let package = Package(
         .target(
             name: "HLSRapidParser",
             path: "mambaSharedFramework/HLS Rapid Parser/Library"
-        )
+        ),
         
     ]
 )

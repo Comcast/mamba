@@ -21,7 +21,7 @@
 #include "RapidParserNewTagCallbacks.h"
 #include "RapidParserState.h"
 #include "RapidParserLineState.h"
-#include "../Master Parse Array/RapidParserMasterParseArray.h"
+#include "./Master Parse Array/RapidParserMasterParseArray.h"
 #include "RapidParserDebug.h"
 
 void parseHLS(const void *parentparser, const unsigned char *bytes, const uint64_t length) {
