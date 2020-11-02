@@ -19,7 +19,7 @@
 
 #import "HLSStringRef.h"
 #import "HLSStringRefFactory.h"
-#import "../../../HLS Utils/String Util/Library/CMTimeMakeFromString.h"
+#import "CMTimeMakeFromString.h"
 
 @interface HLSStringRef ()
 

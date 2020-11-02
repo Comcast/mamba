@@ -972,8 +972,7 @@
 				EC03B6391E5CC54900BF1F97 /* RapidParser_LookingForXForEXTState_ParseArray.include */,
 				EC03B63A1E5CC54900BF1F97 /* RapidParser_ScanningState_ParseArray.include */,
 			);
-			name = "Master Parse Array";
-			path = "Library/Master Parse Array";
+			path = "Master Parse Array";
 			sourceTree = "<group>";
 		};
 		EC1418351D21BAD000B5CE32 /* Tag Parser Helpers */ = {

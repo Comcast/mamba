@@ -20,7 +20,7 @@
 #import "HLSRapidParser.h"
 #import "HLSRapidParserCallback.h"
 #import "RapidParserNewTagCallbacks.h"
-#import "../HLSStringRef/Library/HLSStringRef.h"
+#import "HLSStringRef.h"
 #import "HLSRapidParserCallback.h"
 #import "RapidParser.h"
 
