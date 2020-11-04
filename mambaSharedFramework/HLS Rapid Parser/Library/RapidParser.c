@@ -25,7 +25,7 @@
 #if __has_include("RapidParserMasterParseArray.h")
 #include "RapidParserMasterParseArray.h"
 #else
-#include "./Master Parse Array/RapidParserMasterParseArray.h"
+#include "Master Parse Array/RapidParserMasterParseArray.h"
 #endif
 
 void parseHLS(const void *parentparser, const unsigned char *bytes, const uint64_t length) {

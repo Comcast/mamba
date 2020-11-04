@@ -18,7 +18,6 @@ let package = Package(
             exclude: [
                 "HLS Rapid Parser/HLSStringRef/Library",
                 "HLS Rapid Parser/Library",
-                "HLS Rapid Parser/Master Parse Array",
                 "HLS Utils/String Util/Library"
             ]
         ),
@@ -30,31 +29,27 @@ let package = Package(
         .target(
             name: "HLSRapidParser",
             dependencies: ["HLSStringRef"],
-            path: "mambaSharedFramework/HLS Rapid Parser/Library"
+            path: "mambaSharedFramework/HLS Rapid Parser/Library",
+            exclude: [
+                "Master Parse Array/PrototypeRapidParseArray.include",
+                "Master Parse Array/RapidParser_LookingForEForEXTINFState_ParseArray.include",
+                "Master Parse Array/RapidParser_LookingForEForEXTState_ParseArray.include",
+                "Master Parse Array/RapidParser_LookingForHashForEXTINFState_ParseArray.include",
+                "Master Parse Array/RapidParser_LookingForHashForEXTState_ParseArray.include",
+                "Master Parse Array/RapidParser_LookingForIForEXTINFState_ParseArray.include",
+                "Master Parse Array/RapidParser_LookingForNewlineForEXTINFState_ParseArray.include",
+                "Master Parse Array/RapidParser_LookingForNewLineForEXTState_ParseArray.include",
+                "Master Parse Array/RapidParser_LookingForNewLineForHashState_ParseArray.include",
+                "Master Parse Array/RapidParser_LookingForNForEXTINFState_ParseArray.include",
+                "Master Parse Array/RapidParser_LookingForTForEXTINFState_ParseArray.include",
+                "Master Parse Array/RapidParser_LookingForXForEXTINFState_ParseArray.include",
+                "Master Parse Array/RapidParser_LookingForXForEXTState_ParseArray.include",
+                "Master Parse Array/RapidParser_ScanningState_ParseArray.include",
+            ]
         ),
         .target(
             name: "CMTimeMakeFromString",
             path: "mambaSharedFramework/HLS Utils/String Util/Library"
-        ),
-//        .target(
-//            name: "RapidParserMasterParseArray",
-//            path: "mambaSharedFramework/HLS Rapid Parser/Master Parse Array",
-//            exclude: [
-//                "PrototypeRapidParseArray.include",
-//                "RapidParser_LookingForEForEXTINFState_ParseArray.include",
-//                "RapidParser_LookingForEForEXTState_ParseArray.include",
-//                "RapidParser_LookingForHashForEXTINFState_ParseArray.include",
-//                "RapidParser_LookingForHashForEXTState_ParseArray.include",
-//                "RapidParser_LookingForIForEXTINFState_ParseArray.include",
-//                "RapidParser_LookingForNewlineForEXTINFState_ParseArray.include",
-//                "RapidParser_LookingForNewLineForEXTState_ParseArray.include",
-//                "RapidParser_LookingForNewLineForHashState_ParseArray.include",
-//                "RapidParser_LookingForNForEXTINFState_ParseArray.include",
-//                "RapidParser_LookingForTForEXTINFState_ParseArray.include",
-//                "RapidParser_LookingForXForEXTINFState_ParseArray.include",
-//                "RapidParser_LookingForXForEXTState_ParseArray.include",
-//                "RapidParser_ScanningState_ParseArray.include",
-//            ]
-//        )
+        )
     ]
 )
