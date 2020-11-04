@@ -20,9 +20,15 @@
 #ifndef RapidParserMasterParseArray_h
 #define RapidParserMasterParseArray_h
 
+#if __has_include("RapidParserState.h")
+#include "RapidParserState.h"
+#include "RapidParserLineState.h"
+#include "RapidParserStateHandlers.h"
+#else
 #include "../Library/RapidParserState.h"
 #include "../Library/RapidParserLineState.h"
 #include "../Library/RapidParserStateHandlers.h"
+#endif
 
 extern const parserStateHandler masterParseArray[numberOfScanningParseStates][256];
 
