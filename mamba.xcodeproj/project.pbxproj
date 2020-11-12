@@ -619,6 +619,8 @@
 		1D28F3421EAA9E500010320B /* hls_master_playlist_sap.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_master_playlist_sap.m3u8; sourceTree = "<group>"; };
 		1D28F3431EAA9E500010320B /* hls_master_playlist.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_master_playlist.m3u8; sourceTree = "<group>"; };
 		1D28F3441EAA9E500010320B /* hls_variant_playlist.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_variant_playlist.m3u8; sourceTree = "<group>"; };
+		2B9FB5AA255DF283001DD1B8 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
+		2B9FB5AB255DF29F001DD1B8 /* Exports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Exports.swift; path = mambaSharedFramework/Exports.swift; sourceTree = SOURCE_ROOT; };
 		3D933C192193367C0029069F /* EXT-X-BITRATETagParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EXT-X-BITRATETagParserTests.swift"; sourceTree = "<group>"; };
 		4367C3721EAE83C000685945 /* HLSPlaylistStructureMasterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSPlaylistStructureMasterTests.swift; sourceTree = "<group>"; };
 		43DE4EFA1E564DA300EEE800 /* EXT_X_STARTTimeOffsetValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EXT_X_STARTTimeOffsetValidator.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -927,6 +929,15 @@
 			path = "Pantos-Generic Tag Validators";
 			sourceTree = "<group>";
 		};
+		2B9FB5A8255DF23D001DD1B8 /* mambaSPM */ = {
+			isa = PBXGroup;
+			children = (
+				2B9FB5AA255DF283001DD1B8 /* Package.swift */,
+				2B9FB5AB255DF29F001DD1B8 /* Exports.swift */,
+			);
+			name = mambaSPM;
+			sourceTree = "<group>";
+		};
 		EC03B62B1E5CC51C00BF1F97 /* HLS Rapid Parser */ = {
 			isa = PBXGroup;
 			children = (
@@ -1176,6 +1187,7 @@
 				EC1521821DD2857B006FB265 /* mambaSharedFramework */,
 				EC15215B1DD28536006FB265 /* mambaTests */,
 				EC15216C1DD2856F006FB265 /* mambaTVOS */,
+				2B9FB5A8255DF23D001DD1B8 /* mambaSPM */,
 				EC6C8F661D08C526007C1C99 /* Products */,
 			);
 			sourceTree = "<group>";

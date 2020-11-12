@@ -26,6 +26,7 @@ s.osx.deployment_target     = '10.13'
 s.source            = { :git => "https://github.com/Comcast/mamba.git", :tag => "#{s.version}" }
 s.source_files      = 'mambaSharedFramework/**/*.{h,m,swift,c}'
 s.preserve_paths    = 'mambaSharedFramework/**/*.include'
+s.exclude_files     = 'mambaSharedFramework/Exports.swift', 'mambaSharedFramework/HLS ObjectiveC/include/'
 s.frameworks        = 'CoreMedia'
 s.requires_arc      = true
 
