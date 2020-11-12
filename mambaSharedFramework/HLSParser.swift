@@ -11,6 +11,7 @@
 //
 
 import Foundation
+import QuartzCore
 
 /**
  A performant parser for HLS playlists.

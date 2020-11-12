@@ -1,5 +1,5 @@
 //
-//  HLSStringRef_ConcreteUnownedBytes.h
+//  HLSStringRef_ConcreteNSData.h
 //  mamba
 //
 //  Created by Andrew Morrow on 3/14/17.
@@ -17,8 +17,8 @@
 //  limitations under the License.
 //
 
-#import <mamba/mamba.h>
+#import "HLSStringRef.h"
 
-@interface HLSStringRef_ConcreteUnownedBytes : HLSStringRef
+@interface HLSStringRef_ConcreteNSData : HLSStringRef
 
 @end
