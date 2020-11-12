@@ -23,9 +23,9 @@ import XCTest
 
 extension XCTestCase {
     
-    public func parseMasterPlaylist(inData data: Data,
-                                    tagTypes: [PlaylistTagDescriptor.Type]? = nil,
-                                    url: URL = fakePlaylistURL()) -> MasterPlaylist {
+    fileprivate func _parseMasterPlaylist(inData data: Data,
+                                          tagTypes: [PlaylistTagDescriptor.Type]? = nil,
+                                          url: URL = fakePlaylistURL()) -> MasterPlaylist? {
         let result = _parsePlaylist(inData: data, tagTypes: tagTypes, url: url)
         switch result {
         case .parseError(let error):
@@ -38,9 +38,15 @@ extension XCTestCase {
             break
         }
         // we've already stopped the test at this point
-        return nil!
+        return nil
     }
     
+    public func parseMasterPlaylist(inData data: Data,
+                                    tagTypes: [PlaylistTagDescriptor.Type]? = nil,
+                                    url: URL = fakePlaylistURL()) -> MasterPlaylist {
+        return _parseMasterPlaylist(inData: data, tagTypes: tagTypes, url: url)!
+    }
+
     public func parseMasterPlaylist(inString playlistString: String,
                                     tagTypes: [PlaylistTagDescriptor.Type]? = nil,
                                     url: URL? = fakePlaylistURL()) -> MasterPlaylist {
@@ -59,9 +65,9 @@ extension XCTestCase {
         return parseMasterPlaylist(inData: data! as Data, tagTypes: tagTypes, url: url!)
     }
     
-    public func parseVariantPlaylist(inData data: Data,
-                                     tagTypes: [PlaylistTagDescriptor.Type]? = nil,
-                                     url: URL = fakePlaylistURL()) -> VariantPlaylist {
+    fileprivate func _parseVariantPlaylist(inData data: Data,
+                                           tagTypes: [PlaylistTagDescriptor.Type]? = nil,
+                                           url: URL = fakePlaylistURL()) -> VariantPlaylist? {
         let result = _parsePlaylist(inData: data, tagTypes: tagTypes, url: url)
         switch result {
         case .parseError(let error):
@@ -74,7 +80,13 @@ extension XCTestCase {
             break
         }
         // we've already stopped the test at this point
-        return nil!
+        return nil
+    }
+    
+    public func parseVariantPlaylist(inData data: Data,
+                                     tagTypes: [PlaylistTagDescriptor.Type]? = nil,
+                                     url: URL = fakePlaylistURL()) -> VariantPlaylist {
+        return _parseVariantPlaylist(inData: data, tagTypes: tagTypes, url: url)!
     }
     
     public func parseVariantPlaylist(inString playlistString: String,
