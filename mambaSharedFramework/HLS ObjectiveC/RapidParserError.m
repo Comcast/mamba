@@ -33,3 +33,7 @@ const uint32_t RapidParserErrorMissingTagData = 101;
 const uint32_t RapidParserErrorMissingTagDataForEXTINF = 102;
 
 #endif
+
+const char * RapidParserErrorMissingTagData_Message = "Found a tag with missing tag data";
+
+const char * RapidParserErrorMissingTagDataForEXTINF_Message = "Found an EXTINF tag with missing tag data";
