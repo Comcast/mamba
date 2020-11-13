@@ -18,21 +18,18 @@
 //
 
 #include "RapidParserError.h"
-// Module mamba-Swift is not available with Swift Package Manager.
-#if __has_include(<mamba/mamba-Swift.h>)
+// Module mamba-Swift is not available in Swift Package Manager.
+// In order to import 'HLSParserError.swift' a new module in Package.swift was created.
+// This is needed to access HLSParserInternalErrorCode enum.
+#if SWIFT_PACKAGE
+@import HLSParserError;
+#else
 #import <mamba/mamba-Swift.h>
+#endif
 
 const uint32_t RapidParserErrorMissingTagData = HLSParserInternalErrorCodeMissingTagData;
 
 const uint32_t RapidParserErrorMissingTagDataForEXTINF = HLSParserInternalErrorCodeMissingTagDataForEXTINF;
-
-#else
-
-const uint32_t RapidParserErrorMissingTagData = 101;
-
-const uint32_t RapidParserErrorMissingTagDataForEXTINF = 102;
-
-#endif
 
 const char * RapidParserErrorMissingTagData_Message = "Found a tag with missing tag data";
 

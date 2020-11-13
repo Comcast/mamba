@@ -34,10 +34,12 @@ let package = Package(
             path: "mambaSharedFramework",
             exclude: [
                 "HLS ObjectiveC",
+                "HLSParserError"
             ]
         ),
         .target(
             name: "HLSObjectiveC",
+            dependencies: ["HLSParserError"],
             path: "mambaSharedFramework/HLS ObjectiveC",
             exclude: [
                 "PrototypeRapidParseArray.include",
@@ -55,7 +57,10 @@ let package = Package(
                 "RapidParser_LookingForXForEXTState_ParseArray.include",
                 "RapidParser_ScanningState_ParseArray.include",
             ]
+        ),
+        .target(
+            name: "HLSParserError",
+            path: "mambaSharedFramework/HLSParserError"
         )
-
     ]
 )

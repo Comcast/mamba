@@ -12,6 +12,9 @@
 
 import Foundation
 import QuartzCore
+#if SWIFT_PACKAGE
+import HLSParserError
+#endif
 
 /**
  A performant parser for HLS playlists.
