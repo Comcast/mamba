@@ -18,6 +18,9 @@
 //
 
 import Foundation
+#if SWIFT_PACKAGE
+import HLSParserError
+#endif
 
 struct GenericDictionaryTagParserHelper {
     

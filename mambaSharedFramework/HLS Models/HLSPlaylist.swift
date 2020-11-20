@@ -18,6 +18,7 @@
 //
 
 import Foundation
+import QuartzCore
 
 /**
  `HLSPlaylist` represents a playlist that was downloaded from the network.

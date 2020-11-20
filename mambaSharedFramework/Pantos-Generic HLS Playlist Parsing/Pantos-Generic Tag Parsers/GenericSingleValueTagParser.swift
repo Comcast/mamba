@@ -18,6 +18,9 @@
 //
 
 import Foundation
+#if SWIFT_PACKAGE
+import HLSParserError
+#endif
 
 /// Class for generically parsing tags in the form of `#EXT-X-TARGETDURATION:10`, where there is a tag with a one and only one value associated with it
 public class GenericSingleValueTagParser: HLSTagParser {

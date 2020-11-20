@@ -619,6 +619,8 @@
 		1D28F3421EAA9E500010320B /* hls_master_playlist_sap.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_master_playlist_sap.m3u8; sourceTree = "<group>"; };
 		1D28F3431EAA9E500010320B /* hls_master_playlist.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_master_playlist.m3u8; sourceTree = "<group>"; };
 		1D28F3441EAA9E500010320B /* hls_variant_playlist.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_variant_playlist.m3u8; sourceTree = "<group>"; };
+		2B9FB5AA255DF283001DD1B8 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
+		2B9FB5AB255DF29F001DD1B8 /* Exports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Exports.swift; path = mambaSharedFramework/Exports.swift; sourceTree = SOURCE_ROOT; };
 		3D933C192193367C0029069F /* EXT-X-BITRATETagParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EXT-X-BITRATETagParserTests.swift"; sourceTree = "<group>"; };
 		4367C3721EAE83C000685945 /* HLSPlaylistStructureMasterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSPlaylistStructureMasterTests.swift; sourceTree = "<group>"; };
 		43DE4EFA1E564DA300EEE800 /* EXT_X_STARTTimeOffsetValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EXT_X_STARTTimeOffsetValidator.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -647,23 +649,23 @@
 		EC03B63A1E5CC54900BF1F97 /* RapidParser_ScanningState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_ScanningState_ParseArray.include; sourceTree = "<group>"; };
 		EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RapidParserMasterParseArray.c; sourceTree = "<group>"; };
 		EC03B63C1E5CC55800BF1F97 /* RapidParserMasterParseArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserMasterParseArray.h; sourceTree = "<group>"; };
-		EC03B6411E5CC56B00BF1F97 /* HLSRapidParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSRapidParser.h; sourceTree = "<group>"; };
-		EC03B6421E5CC56B00BF1F97 /* HLSRapidParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLSRapidParser.m; sourceTree = "<group>"; };
-		EC03B6431E5CC56B00BF1F97 /* HLSRapidParserCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSRapidParserCallback.h; sourceTree = "<group>"; };
-		EC03B6441E5CC56B00BF1F97 /* HLSStringRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSStringRef.h; sourceTree = "<group>"; };
-		EC03B6451E5CC56B00BF1F97 /* HLSStringRef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLSStringRef.m; sourceTree = "<group>"; };
+		EC03B6411E5CC56B00BF1F97 /* HLSRapidParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLSRapidParser.h; path = "../HLS ObjectiveC/include/HLSRapidParser.h"; sourceTree = "<group>"; };
+		EC03B6421E5CC56B00BF1F97 /* HLSRapidParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLSRapidParser.m; path = "../HLS ObjectiveC/HLSRapidParser.m"; sourceTree = "<group>"; };
+		EC03B6431E5CC56B00BF1F97 /* HLSRapidParserCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLSRapidParserCallback.h; path = "../HLS ObjectiveC/include/HLSRapidParserCallback.h"; sourceTree = "<group>"; };
+		EC03B6441E5CC56B00BF1F97 /* HLSStringRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLSStringRef.h; path = "../../HLS ObjectiveC/include/HLSStringRef.h"; sourceTree = "<group>"; };
+		EC03B6451E5CC56B00BF1F97 /* HLSStringRef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLSStringRef.m; path = "../../HLS ObjectiveC/HLSStringRef.m"; sourceTree = "<group>"; };
 		EC03B6461E5CC56B00BF1F97 /* HLSStringRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSStringRef.swift; sourceTree = "<group>"; };
-		EC03B6471E5CC56B00BF1F97 /* RapidParser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RapidParser.c; sourceTree = "<group>"; };
-		EC03B6481E5CC56B00BF1F97 /* RapidParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParser.h; sourceTree = "<group>"; };
-		EC03B6491E5CC56B00BF1F97 /* RapidParserDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserDebug.h; sourceTree = "<group>"; };
-		EC03B64A1E5CC56B00BF1F97 /* RapidParserError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RapidParserError.m; sourceTree = "<group>"; };
-		EC03B64B1E5CC56B00BF1F97 /* RapidParserError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserError.h; sourceTree = "<group>"; };
-		EC03B64C1E5CC56B00BF1F97 /* RapidParserLineState.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RapidParserLineState.c; sourceTree = "<group>"; };
-		EC03B64D1E5CC56B00BF1F97 /* RapidParserLineState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserLineState.h; sourceTree = "<group>"; };
-		EC03B64E1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserNewTagCallbacks.h; sourceTree = "<group>"; };
-		EC03B64F1E5CC56B00BF1F97 /* RapidParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserState.h; sourceTree = "<group>"; };
-		EC03B6501E5CC56B00BF1F97 /* RapidParserStateHandlers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RapidParserStateHandlers.c; sourceTree = "<group>"; };
-		EC03B6511E5CC56B00BF1F97 /* RapidParserStateHandlers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserStateHandlers.h; sourceTree = "<group>"; };
+		EC03B6471E5CC56B00BF1F97 /* RapidParser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = RapidParser.c; path = "../HLS ObjectiveC/RapidParser.c"; sourceTree = "<group>"; };
+		EC03B6481E5CC56B00BF1F97 /* RapidParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RapidParser.h; path = "../HLS ObjectiveC/RapidParser.h"; sourceTree = "<group>"; };
+		EC03B6491E5CC56B00BF1F97 /* RapidParserDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RapidParserDebug.h; path = "../HLS ObjectiveC/RapidParserDebug.h"; sourceTree = "<group>"; };
+		EC03B64A1E5CC56B00BF1F97 /* RapidParserError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RapidParserError.m; path = "../HLS ObjectiveC/RapidParserError.m"; sourceTree = "<group>"; };
+		EC03B64B1E5CC56B00BF1F97 /* RapidParserError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RapidParserError.h; path = "../HLS ObjectiveC/include/RapidParserError.h"; sourceTree = "<group>"; };
+		EC03B64C1E5CC56B00BF1F97 /* RapidParserLineState.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = RapidParserLineState.c; path = "../HLS ObjectiveC/RapidParserLineState.c"; sourceTree = "<group>"; };
+		EC03B64D1E5CC56B00BF1F97 /* RapidParserLineState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RapidParserLineState.h; path = "../HLS ObjectiveC/RapidParserLineState.h"; sourceTree = "<group>"; };
+		EC03B64E1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RapidParserNewTagCallbacks.h; path = "../HLS ObjectiveC/RapidParserNewTagCallbacks.h"; sourceTree = "<group>"; };
+		EC03B64F1E5CC56B00BF1F97 /* RapidParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RapidParserState.h; path = "../HLS ObjectiveC/RapidParserState.h"; sourceTree = "<group>"; };
+		EC03B6501E5CC56B00BF1F97 /* RapidParserStateHandlers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = RapidParserStateHandlers.c; path = "../HLS ObjectiveC/RapidParserStateHandlers.c"; sourceTree = "<group>"; };
+		EC03B6511E5CC56B00BF1F97 /* RapidParserStateHandlers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RapidParserStateHandlers.h; path = "../HLS ObjectiveC/RapidParserStateHandlers.h"; sourceTree = "<group>"; };
 		EC0677DB21641FE500E715D1 /* CMTimeMakeFromStringCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMTimeMakeFromStringCTests.m; sourceTree = "<group>"; };
 		EC0677DF2166C7CC00E715D1 /* HLSParser_EventUpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSParser_EventUpdateTests.swift; sourceTree = "<group>"; };
 		EC073F561FE0572400689228 /* HLSTagCriterionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSTagCriterionTests.swift; sourceTree = "<group>"; };
@@ -687,8 +689,8 @@
 		EC1CCCDA209A2AF8006B59FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC1CCCDF209A2AF8006B59FF /* mambaMacOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mambaMacOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1CCCE6209A2AF8006B59FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC318B432265041A00969E2D /* StaticMemoryStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaticMemoryStorage.h; sourceTree = "<group>"; };
-		EC318B442265041A00969E2D /* StaticMemoryStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StaticMemoryStorage.m; sourceTree = "<group>"; };
+		EC318B432265041A00969E2D /* StaticMemoryStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StaticMemoryStorage.h; path = "../HLS ObjectiveC/include/StaticMemoryStorage.h"; sourceTree = "<group>"; };
+		EC318B442265041A00969E2D /* StaticMemoryStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = StaticMemoryStorage.m; path = "../HLS ObjectiveC/StaticMemoryStorage.m"; sourceTree = "<group>"; };
 		EC318B4B22650A1300969E2D /* StaticMemoryStorageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StaticMemoryStorageTests.m; sourceTree = "<group>"; };
 		EC37A8D61E9C16C7005E8342 /* HLSPlaylistStructureAndEditingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = HLSPlaylistStructureAndEditingTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EC3B019E1DD4D47900B512E3 /* EXT_X_KEYValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXT_X_KEYValidator.swift; sourceTree = "<group>"; };
@@ -822,17 +824,17 @@
 		ECFBD90C1E5CCC2200379FC2 /* ParseArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseArrayTests.m; sourceTree = "<group>"; };
 		ECFBD90D1E5CCC2200379FC2 /* RapidParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidParserTests.swift; sourceTree = "<group>"; };
 		ECFBD9141E5CCCB100379FC2 /* PantosTagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantosTagTests.swift; sourceTree = "<group>"; };
-		F700CD2F1E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSStringRef_ConcreteUnownedBytes.h; sourceTree = "<group>"; };
-		F700CD301E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLSStringRef_ConcreteUnownedBytes.m; sourceTree = "<group>"; };
-		F700CD351E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSStringRef_ConcreteNSString.h; sourceTree = "<group>"; };
-		F700CD361E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLSStringRef_ConcreteNSString.m; sourceTree = "<group>"; };
-		F700CD3B1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSStringRef_ConcreteNSData.h; sourceTree = "<group>"; };
-		F700CD3C1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLSStringRef_ConcreteNSData.m; sourceTree = "<group>"; };
-		F70E9E991E8C43C8006022C6 /* HLSParserError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSParserError.swift; sourceTree = "<group>"; };
-		F73183731E78758B00ED8E59 /* HLSStringRefFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSStringRefFactory.h; sourceTree = "<group>"; };
-		F73183741E78758B00ED8E59 /* HLSStringRefFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLSStringRefFactory.m; sourceTree = "<group>"; };
-		F7CFF2771F38CACF009F4C82 /* CMTimeMakeFromString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CMTimeMakeFromString.c; sourceTree = "<group>"; };
-		F7CFF2781F38CACF009F4C82 /* CMTimeMakeFromString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMTimeMakeFromString.h; sourceTree = "<group>"; };
+		F700CD2F1E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLSStringRef_ConcreteUnownedBytes.h; path = "../../HLS ObjectiveC/HLSStringRef_ConcreteUnownedBytes.h"; sourceTree = "<group>"; };
+		F700CD301E78A0B9001C9487 /* HLSStringRef_ConcreteUnownedBytes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLSStringRef_ConcreteUnownedBytes.m; path = "../../HLS ObjectiveC/HLSStringRef_ConcreteUnownedBytes.m"; sourceTree = "<group>"; };
+		F700CD351E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLSStringRef_ConcreteNSString.h; path = "../../HLS ObjectiveC/HLSStringRef_ConcreteNSString.h"; sourceTree = "<group>"; };
+		F700CD361E78A2BE001C9487 /* HLSStringRef_ConcreteNSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLSStringRef_ConcreteNSString.m; path = "../../HLS ObjectiveC/HLSStringRef_ConcreteNSString.m"; sourceTree = "<group>"; };
+		F700CD3B1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLSStringRef_ConcreteNSData.h; path = "../../HLS ObjectiveC/HLSStringRef_ConcreteNSData.h"; sourceTree = "<group>"; };
+		F700CD3C1E78AA57001C9487 /* HLSStringRef_ConcreteNSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLSStringRef_ConcreteNSData.m; path = "../../HLS ObjectiveC/HLSStringRef_ConcreteNSData.m"; sourceTree = "<group>"; };
+		F70E9E991E8C43C8006022C6 /* HLSParserError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HLSParserError.swift; path = HLSParserError/HLSParserError.swift; sourceTree = "<group>"; };
+		F73183731E78758B00ED8E59 /* HLSStringRefFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLSStringRefFactory.h; path = "../../HLS ObjectiveC/HLSStringRefFactory.h"; sourceTree = "<group>"; };
+		F73183741E78758B00ED8E59 /* HLSStringRefFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLSStringRefFactory.m; path = "../../HLS ObjectiveC/HLSStringRefFactory.m"; sourceTree = "<group>"; };
+		F7CFF2771F38CACF009F4C82 /* CMTimeMakeFromString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = CMTimeMakeFromString.c; path = "../../HLS ObjectiveC/CMTimeMakeFromString.c"; sourceTree = "<group>"; };
+		F7CFF2781F38CACF009F4C82 /* CMTimeMakeFromString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMTimeMakeFromString.h; path = "../../HLS ObjectiveC/include/CMTimeMakeFromString.h"; sourceTree = "<group>"; };
 		F7CFF27D1F392009009F4C82 /* CMTimeMakeFromStringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMTimeMakeFromStringTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -927,6 +929,15 @@
 			path = "Pantos-Generic Tag Validators";
 			sourceTree = "<group>";
 		};
+		2B9FB5A8255DF23D001DD1B8 /* mambaSPM */ = {
+			isa = PBXGroup;
+			children = (
+				2B9FB5AA255DF283001DD1B8 /* Package.swift */,
+				2B9FB5AB255DF29F001DD1B8 /* Exports.swift */,
+			);
+			name = mambaSPM;
+			sourceTree = "<group>";
+		};
 		EC03B62B1E5CC51C00BF1F97 /* HLS Rapid Parser */ = {
 			isa = PBXGroup;
 			children = (
@@ -972,7 +983,8 @@
 				EC03B6391E5CC54900BF1F97 /* RapidParser_LookingForXForEXTState_ParseArray.include */,
 				EC03B63A1E5CC54900BF1F97 /* RapidParser_ScanningState_ParseArray.include */,
 			);
-			path = "Master Parse Array";
+			name = "Master Parse Array";
+			path = "../HLS ObjectiveC";
 			sourceTree = "<group>";
 		};
 		EC1418351D21BAD000B5CE32 /* Tag Parser Helpers */ = {
@@ -1175,6 +1187,7 @@
 				EC1521821DD2857B006FB265 /* mambaSharedFramework */,
 				EC15215B1DD28536006FB265 /* mambaTests */,
 				EC15216C1DD2856F006FB265 /* mambaTVOS */,
+				2B9FB5A8255DF23D001DD1B8 /* mambaSPM */,
 				EC6C8F661D08C526007C1C99 /* Products */,
 			);
 			sourceTree = "<group>";
