@@ -212,7 +212,7 @@
 		EC1CCD60209A2CF9006B59FF /* HLSValidationIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AF1DD29D5C00AF4E20 /* HLSValidationIssue.swift */; };
 		EC1CCD61209A2CF9006B59FF /* HLSValueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B11DD29D5C00AF4E20 /* HLSValueTypes.swift */; };
 		EC1CCD62209A2CF9006B59FF /* HLSWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B21DD29D5C00AF4E20 /* HLSWriter.swift */; };
-		EC1CCD63209A2CF9006B59FF /* Mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547871E5CC84700962535 /* Mamba.swift */; };
+		EC1CCD63209A2CF9006B59FF /* FrameworkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547871E5CC84700962535 /* FrameworkInfo.swift */; };
 		EC318B452265041A00969E2D /* StaticMemoryStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = EC318B432265041A00969E2D /* StaticMemoryStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC318B462265041A00969E2D /* StaticMemoryStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = EC318B432265041A00969E2D /* StaticMemoryStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC318B472265041A00969E2D /* StaticMemoryStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = EC318B432265041A00969E2D /* StaticMemoryStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -448,8 +448,8 @@
 		EC9547831E5CC82500962535 /* GenericTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547811E5CC82500962535 /* GenericTagWriter.swift */; };
 		EC9547851E5CC83C00962535 /* NoOpTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547841E5CC83C00962535 /* NoOpTagParser.swift */; };
 		EC9547861E5CC83C00962535 /* NoOpTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547841E5CC83C00962535 /* NoOpTagParser.swift */; };
-		EC9547881E5CC84700962535 /* Mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547871E5CC84700962535 /* Mamba.swift */; };
-		EC9547891E5CC84700962535 /* Mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547871E5CC84700962535 /* Mamba.swift */; };
+		EC9547881E5CC84700962535 /* FrameworkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547871E5CC84700962535 /* FrameworkInfo.swift */; };
+		EC9547891E5CC84700962535 /* FrameworkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547871E5CC84700962535 /* FrameworkInfo.swift */; };
 		EC95478B1E5CC86300962535 /* EXTINFValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95478A1E5CC86300962535 /* EXTINFValidator.swift */; };
 		EC95478C1E5CC86300962535 /* EXTINFValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95478A1E5CC86300962535 /* EXTINFValidator.swift */; };
 		EC9826021DD3A113003BCDA5 /* URL+hlsplaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9826011DD3A113003BCDA5 /* URL+hlsplaylist.swift */; };
@@ -805,7 +805,7 @@
 		EC95477E1E5CC80800962535 /* HLSStringRef+mamba.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLSStringRef+mamba.swift"; sourceTree = "<group>"; };
 		EC9547811E5CC82500962535 /* GenericTagWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTagWriter.swift; sourceTree = "<group>"; };
 		EC9547841E5CC83C00962535 /* NoOpTagParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoOpTagParser.swift; sourceTree = "<group>"; };
-		EC9547871E5CC84700962535 /* Mamba.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mamba.swift; sourceTree = "<group>"; };
+		EC9547871E5CC84700962535 /* FrameworkInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameworkInfo.swift; sourceTree = "<group>"; };
 		EC95478A1E5CC86300962535 /* EXTINFValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXTINFValidator.swift; sourceTree = "<group>"; };
 		EC9826011DD3A113003BCDA5 /* URL+hlsplaylist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+hlsplaylist.swift"; sourceTree = "<group>"; };
 		ECBEF4F01F7AC58A0051078F /* ReadMeUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMeUnitTests.swift; sourceTree = "<group>"; };
@@ -1071,7 +1071,7 @@
 				EC7491AF1DD29D5C00AF4E20 /* HLSValidationIssue.swift */,
 				EC7491B11DD29D5C00AF4E20 /* HLSValueTypes.swift */,
 				EC7491B21DD29D5C00AF4E20 /* HLSWriter.swift */,
-				EC9547871E5CC84700962535 /* Mamba.swift */,
+				EC9547871E5CC84700962535 /* FrameworkInfo.swift */,
 				EC1521511DD28536006FB265 /* mamba.h */,
 			);
 			path = mambaSharedFramework;
@@ -1834,7 +1834,7 @@
 				EC7491DC1DD29D9600AF4E20 /* GenericSingleValueTagParser.swift in Sources */,
 				EC7491CF1DD29D7C00AF4E20 /* PantosValue.swift in Sources */,
 				EC7491CD1DD29D7C00AF4E20 /* PantosTag.swift in Sources */,
-				EC9547881E5CC84700962535 /* Mamba.swift in Sources */,
+				EC9547881E5CC84700962535 /* FrameworkInfo.swift in Sources */,
 				EC7491861DD29CCB00AF4E20 /* GenericDictionaryTagParserHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1999,7 +1999,7 @@
 				EC7491DD1DD29D9600AF4E20 /* GenericSingleValueTagParser.swift in Sources */,
 				EC7491D01DD29D7C00AF4E20 /* PantosValue.swift in Sources */,
 				EC7491CE1DD29D7C00AF4E20 /* PantosTag.swift in Sources */,
-				EC9547891E5CC84700962535 /* Mamba.swift in Sources */,
+				EC9547891E5CC84700962535 /* FrameworkInfo.swift in Sources */,
 				EC7491871DD29CCB00AF4E20 /* GenericDictionaryTagParserHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2096,7 +2096,7 @@
 				EC1CCCF5209A2CF9006B59FF /* HLSPlaylistTimelineTranslator.swift in Sources */,
 				6DD0A1AF242F85C800FF7AAE /* EXT_X_DATERANGETagValidator.swift in Sources */,
 				EC1CCD58209A2CF9006B59FF /* PantosValue.swift in Sources */,
-				EC1CCD63209A2CF9006B59FF /* Mamba.swift in Sources */,
+				EC1CCD63209A2CF9006B59FF /* FrameworkInfo.swift in Sources */,
 				EC318B4A2265041A00969E2D /* StaticMemoryStorage.m in Sources */,
 				EC1CCD44209A2CF9006B59FF /* EXT_X_TARGETDURATIONLengthValidator.swift in Sources */,
 				EC1CCD48209A2CF9006B59FF /* HLSPlaylistCardinalityValidator.swift in Sources */,
@@ -2260,6 +2260,7 @@
 		EC1521601DD28536006FB265 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
@@ -2285,6 +2286,7 @@
 		EC1521611DD28536006FB265 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
@@ -2346,6 +2348,7 @@
 		EC15217D1DD2856F006FB265 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
@@ -2376,6 +2379,7 @@
 		EC15217E1DD2856F006FB265 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
@@ -2448,6 +2452,7 @@
 		EC1CCCE8209A2AF8006B59FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -2481,6 +2486,7 @@
 		EC1CCCE9209A2AF8006B59FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
