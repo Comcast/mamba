@@ -35,6 +35,9 @@
 		6DD9C898242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9C897242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 */; };
 		6DD9C899242CCE5300B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9C897242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 */; };
 		6DD9C89A242CCE5400B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9C897242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 */; };
+		722A207E26AB38C800134820 /* FrameworkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A207D26AB38C800134820 /* FrameworkInfo.swift */; };
+		722A207F26AB38C800134820 /* FrameworkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A207D26AB38C800134820 /* FrameworkInfo.swift */; };
+		722A208026AB38C800134820 /* FrameworkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722A207D26AB38C800134820 /* FrameworkInfo.swift */; };
 		883290561EA172170064588B /* MambaStringRefExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883290551EA172170064588B /* MambaStringRefExtensionTests.swift */; };
 		D44E03771E3BAC9F00126B52 /* PlaylistTag+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E03761E3BAC9F00126B52 /* PlaylistTag+Util.swift */; };
 		D44E03781E3BAC9F00126B52 /* PlaylistTag+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E03761E3BAC9F00126B52 /* PlaylistTag+Util.swift */; };
@@ -193,7 +196,6 @@
 		EC1CCD60209A2CF9006B59FF /* PlaylistValidationIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AF1DD29D5C00AF4E20 /* PlaylistValidationIssue.swift */; };
 		EC1CCD61209A2CF9006B59FF /* ValueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B11DD29D5C00AF4E20 /* ValueTypes.swift */; };
 		EC1CCD62209A2CF9006B59FF /* PlaylistWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B21DD29D5C00AF4E20 /* PlaylistWriter.swift */; };
-		EC1CCD63209A2CF9006B59FF /* Mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547871E5CC84700962535 /* Mamba.swift */; };
 		EC318B51226534AF00969E2D /* StaticMemoryStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = EC318B4F226534AF00969E2D /* StaticMemoryStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC318B52226534AF00969E2D /* StaticMemoryStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = EC318B4F226534AF00969E2D /* StaticMemoryStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC318B53226534AF00969E2D /* StaticMemoryStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = EC318B4F226534AF00969E2D /* StaticMemoryStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -431,8 +433,6 @@
 		EC9547831E5CC82500962535 /* GenericTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547811E5CC82500962535 /* GenericTagWriter.swift */; };
 		EC9547851E5CC83C00962535 /* NoOpTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547841E5CC83C00962535 /* NoOpTagParser.swift */; };
 		EC9547861E5CC83C00962535 /* NoOpTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547841E5CC83C00962535 /* NoOpTagParser.swift */; };
-		EC9547881E5CC84700962535 /* Mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547871E5CC84700962535 /* Mamba.swift */; };
-		EC9547891E5CC84700962535 /* Mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547871E5CC84700962535 /* Mamba.swift */; };
 		EC95478B1E5CC86300962535 /* EXTINFValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95478A1E5CC86300962535 /* EXTINFValidator.swift */; };
 		EC95478C1E5CC86300962535 /* EXTINFValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95478A1E5CC86300962535 /* EXTINFValidator.swift */; };
 		EC9826021DD3A113003BCDA5 /* URLSchemeChangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9826011DD3A113003BCDA5 /* URLSchemeChangeExtension.swift */; };
@@ -646,6 +646,7 @@
 		6DD0A1AC242F85C800FF7AAE /* EXT_X_DATERANGETagValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXT_X_DATERANGETagValidator.swift; sourceTree = "<group>"; };
 		6DD0A1B0242FADC600FF7AAE /* EXT_X_DATERANGEPlaylistValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXT_X_DATERANGEPlaylistValidator.swift; sourceTree = "<group>"; };
 		6DD9C897242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 */ = {isa = PBXFileReference; lastKnownFileType = text; path = hls_variant_playlist_with_daterange_metadata.m3u8; sourceTree = "<group>"; };
+		722A207D26AB38C800134820 /* FrameworkInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameworkInfo.swift; sourceTree = "<group>"; };
 		883290551EA172170064588B /* MambaStringRefExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MambaStringRefExtensionTests.swift; sourceTree = "<group>"; };
 		D44E03761E3BAC9F00126B52 /* PlaylistTag+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlaylistTag+Util.swift"; sourceTree = "<group>"; };
 		D4BB018C1E2EABD500CA006E /* PlaylistTagArray+RenditionGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlaylistTagArray+RenditionGroups.swift"; sourceTree = "<group>"; };
@@ -815,7 +816,6 @@
 		EC95477B1E5CC7C800962535 /* OutputStream+HLSWriting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OutputStream+HLSWriting.swift"; sourceTree = "<group>"; };
 		EC9547811E5CC82500962535 /* GenericTagWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTagWriter.swift; sourceTree = "<group>"; };
 		EC9547841E5CC83C00962535 /* NoOpTagParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoOpTagParser.swift; sourceTree = "<group>"; };
-		EC9547871E5CC84700962535 /* Mamba.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mamba.swift; sourceTree = "<group>"; };
 		EC95478A1E5CC86300962535 /* EXTINFValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXTINFValidator.swift; sourceTree = "<group>"; };
 		EC9826011DD3A113003BCDA5 /* URLSchemeChangeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSchemeChangeExtension.swift; sourceTree = "<group>"; };
 		ECAFFA002239A22800A6D5F4 /* Parser_EventUpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser_EventUpdateTests.swift; sourceTree = "<group>"; };
@@ -1074,8 +1074,8 @@
 		EC1521821DD2857B006FB265 /* mambaSharedFramework */ = {
 			isa = PBXGroup;
 			children = (
+				722A207D26AB38C800134820 /* FrameworkInfo.swift */,
 				EC1521511DD28536006FB265 /* mamba.h */,
-				EC9547871E5CC84700962535 /* Mamba.swift */,
 				ECBE47001D33F4100081D096 /* Pantos-Generic Playlist Parsing */,
 				F795EAF01D909D1900534F7E /* Playlist Models */,
 				ECDE184B22383230008566BB /* PlaylistParser.swift */,
@@ -1865,13 +1865,13 @@
 				EC7491D81DD29D9600AF4E20 /* GenericDictionaryTagParser.swift in Sources */,
 				EC676A6822AF0D8D008920BB /* VariantPlaylistTagMatchSegmentInfo.swift in Sources */,
 				EC03B6681E5CC56B00BF1F97 /* RapidParserLineState.c in Sources */,
+				722A207E26AB38C800134820 /* FrameworkInfo.swift in Sources */,
 				EC7491EB1DD29DBB00AF4E20 /* GenericDictionaryTagWriter.swift in Sources */,
 				EC03B6641E5CC56B00BF1F97 /* RapidParserError.m in Sources */,
 				EC7491DC1DD29D9600AF4E20 /* GenericSingleValueTagParser.swift in Sources */,
 				EC7491CF1DD29D7C00AF4E20 /* PantosValue.swift in Sources */,
 				EC7491CD1DD29D7C00AF4E20 /* PantosTag.swift in Sources */,
 				EC349ACA2236C1520077432B /* PlaylistTypeInterface.swift in Sources */,
-				EC9547881E5CC84700962535 /* Mamba.swift in Sources */,
 				EC7491861DD29CCB00AF4E20 /* GenericDictionaryTagParserHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2037,13 +2037,13 @@
 				EC7491D91DD29D9600AF4E20 /* GenericDictionaryTagParser.swift in Sources */,
 				EC676A6922AF0D8D008920BB /* VariantPlaylistTagMatchSegmentInfo.swift in Sources */,
 				EC03B6691E5CC56B00BF1F97 /* RapidParserLineState.c in Sources */,
+				722A207F26AB38C800134820 /* FrameworkInfo.swift in Sources */,
 				EC7491EC1DD29DBB00AF4E20 /* GenericDictionaryTagWriter.swift in Sources */,
 				EC03B6651E5CC56B00BF1F97 /* RapidParserError.m in Sources */,
 				EC7491DD1DD29D9600AF4E20 /* GenericSingleValueTagParser.swift in Sources */,
 				EC7491D01DD29D7C00AF4E20 /* PantosValue.swift in Sources */,
 				EC7491CE1DD29D7C00AF4E20 /* PantosTag.swift in Sources */,
 				EC349ACB2236C1520077432B /* PlaylistTypeInterface.swift in Sources */,
-				EC9547891E5CC84700962535 /* Mamba.swift in Sources */,
 				EC7491871DD29CCB00AF4E20 /* GenericDictionaryTagParserHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2143,7 +2143,6 @@
 				6DD0A1AF242F85C800FF7AAE /* EXT_X_DATERANGETagValidator.swift in Sources */,
 				EC1CCD58209A2CF9006B59FF /* PantosValue.swift in Sources */,
 				EC349AC72236BFF10077432B /* PlaylistInterface.swift in Sources */,
-				EC1CCD63209A2CF9006B59FF /* Mamba.swift in Sources */,
 				EC1CCD44209A2CF9006B59FF /* EXT_X_TARGETDURATIONLengthValidator.swift in Sources */,
 				EC1CCD48209A2CF9006B59FF /* PlaylistTagCardinalityValidator.swift in Sources */,
 				EC1CCD57209A2CF9006B59FF /* PantosTag.swift in Sources */,
@@ -2210,6 +2209,7 @@
 				EC676A6A22AF0D8D008920BB /* VariantPlaylistTagMatchSegmentInfo.swift in Sources */,
 				EC1CCD28209A2CF9006B59FF /* FailableStringLiteralConvertible.swift in Sources */,
 				EC1CCCF7209A2CF9006B59FF /* StructureState.swift in Sources */,
+				722A208026AB38C800134820 /* FrameworkInfo.swift in Sources */,
 				EC1CCD5C209A2CF9006B59FF /* PlaylistTagParser.swift in Sources */,
 				EC1CCD2C209A2CF9006B59FF /* OutputStream+HLSWriting.swift in Sources */,
 				EC1CCD16209A2CF9006B59FF /* RapidParser.m in Sources */,
@@ -2311,6 +2311,7 @@
 		EC1521601DD28536006FB265 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
@@ -2338,6 +2339,7 @@
 		EC1521611DD28536006FB265 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
@@ -2403,6 +2405,7 @@
 		EC15217D1DD2856F006FB265 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
@@ -2433,6 +2436,7 @@
 		EC15217E1DD2856F006FB265 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
@@ -2505,6 +2509,7 @@
 		EC1CCCE8209A2AF8006B59FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -2538,6 +2543,7 @@
 		EC1CCCE9209A2AF8006B59FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
