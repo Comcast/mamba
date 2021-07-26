@@ -650,7 +650,6 @@
 		883290551EA172170064588B /* MambaStringRefExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MambaStringRefExtensionTests.swift; sourceTree = "<group>"; };
 		D44E03761E3BAC9F00126B52 /* PlaylistTag+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlaylistTag+Util.swift"; sourceTree = "<group>"; };
 		D4BB018C1E2EABD500CA006E /* PlaylistTagArray+RenditionGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlaylistTagArray+RenditionGroups.swift"; sourceTree = "<group>"; };
-		EC02E9761E26E77900D4CEAC /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/tvOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		EC03B62D1E5CC54900BF1F97 /* PrototypeRapidParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrototypeRapidParseArray.include; sourceTree = "<group>"; };
 		EC03B62E1E5CC54900BF1F97 /* RapidParser_LookingForEForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForEForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
 		EC03B62F1E5CC54900BF1F97 /* RapidParser_LookingForEForEXTState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForEForEXTState_ParseArray.include; sourceTree = "<group>"; };
@@ -736,7 +735,6 @@
 		EC42A5F11FD9B88E00317EA5 /* IndeterminateBool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndeterminateBool.swift; sourceTree = "<group>"; };
 		EC42A5F41FD9BF0500317EA5 /* IndeterminateBoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndeterminateBoolTests.swift; sourceTree = "<group>"; };
 		EC44248B1E9694C600AECFAB /* PlaylistTagGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTagGroup.swift; sourceTree = "<group>"; };
-		EC5B87A91D947B59005F68C4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS10.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		EC676A6722AF0D8D008920BB /* VariantPlaylistTagMatchSegmentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantPlaylistTagMatchSegmentInfo.swift; sourceTree = "<group>"; };
 		EC676A6B22B00269008920BB /* VariantPlaylistTagMatchSegmentInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantPlaylistTagMatchSegmentInfoTests.swift; sourceTree = "<group>"; };
 		EC676A7722B05BF0008920BB /* MasterPlaylistStreamSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterPlaylistStreamSummary.swift; sourceTree = "<group>"; };
@@ -834,8 +832,6 @@
 		ECC410631EA1518E00B4E3C8 /* StructureStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructureStateTests.swift; sourceTree = "<group>"; };
 		ECC410661EA1527700B4E3C8 /* PlaylistTagGroupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistTagGroupTests.swift; sourceTree = "<group>"; };
 		ECCF2DAC1E23F54100D7C48B /* TagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTests.swift; sourceTree = "<group>"; };
-		ECD1EA4E1E2595AE00A88101 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
-		ECD1EA5A1E25A36000A88101 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = Carthage/Build/iOS/OCMock.framework; sourceTree = "<group>"; };
 		ECDE183F22381146008566BB /* MasterPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterPlaylist.swift; sourceTree = "<group>"; };
 		ECDE18432238114E008566BB /* VariantPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantPlaylist.swift; sourceTree = "<group>"; };
 		ECDE184722381E6C008566BB /* PlaylistURLDataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistURLDataExtensions.swift; sourceTree = "<group>"; };
@@ -1173,10 +1169,6 @@
 		EC5B87A81D947B59005F68C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EC02E9761E26E77900D4CEAC /* OHHTTPStubs.framework */,
-				ECD1EA5A1E25A36000A88101 /* OCMock.framework */,
-				ECD1EA4E1E2595AE00A88101 /* OHHTTPStubs.framework */,
-				EC5B87A91D947B59005F68C4 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
