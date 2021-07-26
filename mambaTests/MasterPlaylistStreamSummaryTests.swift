@@ -168,6 +168,8 @@ class MasterPlaylistStreamSummaryTests: XCTestCase {
                 default:
                     XCTFail("Unexpected streamInfIndex: \(streamInfIndex)")
                 }
+            @unknown default:
+                XCTFail("Unknown enum case")
             }
         }
         
@@ -333,6 +335,8 @@ class MasterPlaylistStreamSummaryTests: XCTestCase {
                 default:
                     XCTFail("Unexpected streamInfIndex: \(streamInfIndex)")
                 }
+            @unknown default:
+                XCTFail("Unknown enum case")
             }
         }
         
@@ -455,6 +459,8 @@ class MasterPlaylistStreamSummaryTests: XCTestCase {
                 default:
                     XCTFail("Unexpected streamInfIndex: \(streamInfIndex)")
                 }
+            @unknown default:
+                XCTFail("Unknown enum case")
             }
         }
         
@@ -551,6 +557,8 @@ class MasterPlaylistStreamSummaryTests: XCTestCase {
                 default:
                     XCTFail("Unexpected streamInfIndex: \(streamInfIndex)")
                 }
+            @unknown default:
+                XCTFail("Unknown enum case")
             }
         }
         
@@ -624,6 +632,8 @@ class MasterPlaylistStreamSummaryTests: XCTestCase {
                 default:
                     XCTFail("Unexpected streamInfIndex: \(streamInfIndex)")
                 }
+            @unknown default:
+                XCTFail("Unknown enum case")
             }
         }
         
@@ -647,7 +657,10 @@ class MasterPlaylistStreamSummaryTests: XCTestCase {
                 XCTAssert(errorText.contains("Location") && errorText.contains("streamInf"), "Expecting this error to be about location tags")
             case .internalIndexError:
                 XCTFail("Not expecting this error")
+            @unknown default:
+                XCTFail("Unknown enum case")
             }
+            
             return
         }
     }
