@@ -1,5 +1,5 @@
 //
-//  Mamba.swift
+//  FrameworkInfo.swift
 //  mamba
 //
 //  Created by David Coufal on 8/2/16.
@@ -19,8 +19,8 @@
 
 import Foundation
 
-/// Base object representing the Mamba framework
-public enum Mamba {
+///  Provides information about the framework
+public enum FrameworkInfo {
     
     /// returns the version of the mamba framework
     public static var version: String {
