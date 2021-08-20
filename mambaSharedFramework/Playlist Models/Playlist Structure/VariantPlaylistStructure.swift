@@ -55,7 +55,7 @@ import Foundation
  mediaSpans[1] would cover just mediaSegmentGroup[2] (range 2...2). Each media span has its own #EXT-X-KEY tag.
  
  */
-public typealias VariantPlaylistStructure = PlaylistStructureCore<MediaPlaylistStructureData, VariantPlaylistStructureDelegate>
+public typealias VariantPlaylistStructure = PlaylistStructureCore<VariantPlaylistStructureDelegate>
 
 extension PlaylistStructureCore: PlaylistTagSource, PlaylistTypeDetermination, VariantPlaylistStructureInterface where PSD == VariantPlaylistStructureDelegate {
     
@@ -173,7 +173,7 @@ extension VariantPlaylistStructureInterface {
     }
 }
 
-public struct MediaPlaylistStructureData: EmptyInitializerImplementor, PlaylistTypeDetermination {
+public struct MediaPlaylistStructureData: PlaylistStructure, PlaylistTypeDetermination {
     public init() {
         self.header = nil
         self.mediaSegmentGroups = [MediaSegmentPlaylistTagGroup]()
@@ -207,7 +207,7 @@ public struct MediaPlaylistStructureData: EmptyInitializerImplementor, PlaylistT
     public var playlistType: PlaylistType
 }
 
-public final class VariantPlaylistStructureDelegate: PlaylistStructureDelegate, EmptyInitializerImplementor {
+public final class VariantPlaylistStructureDelegate: PlaylistStructureDelegate {
     
     public typealias T = MediaPlaylistStructureData
     

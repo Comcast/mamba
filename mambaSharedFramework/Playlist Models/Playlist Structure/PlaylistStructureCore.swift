@@ -19,14 +19,14 @@
 
 import Foundation
 
-public final class PlaylistStructureCore<T: EmptyInitializerImplementor, PSD: PlaylistStructureDelegate & EmptyInitializerImplementor>: PlaylistStructureInterface where PSD.T == T {
+public final class PlaylistStructureCore<PSD: PlaylistStructureDelegate>: PlaylistStructureInterface {
     
     private var structureState: StructureState = .dirtyRequiresRebuild
     
     private var _tags: [PlaylistTag]
     private let delegate: PSD
     
-    var _structureData: T
+    var _structureData: PSD.StructureType
     
     private let queue = DispatchQueue(label: "com.comcast.mamba.playliststructurecore",
                                       qos: .userInitiated)
@@ -34,12 +34,12 @@ public final class PlaylistStructureCore<T: EmptyInitializerImplementor, PSD: Pl
     public convenience init(withTags tags: [PlaylistTag]) {
         self.init(withTags: tags,
                   withDelegate: PSD(),
-                  withStructureData: T())
+                  withStructureData: PSD.StructureType())
     }
     
     init(withTags tags: [PlaylistTag],
          withDelegate delegate: PSD,
-         withStructureData structureData: T) {
+         withStructureData structureData: PSD.StructureType) {
         self._tags = tags
         self.delegate = delegate
         self._structureData = structureData
@@ -58,7 +58,7 @@ public final class PlaylistStructureCore<T: EmptyInitializerImplementor, PSD: Pl
         }
     }
 
-    public var structureData: T {
+    public var structureData: PSD.StructureType {
         return queue.sync {
             rebuildIfRequired()
             return _structureData
@@ -188,7 +188,9 @@ public final class PlaylistStructureCore<T: EmptyInitializerImplementor, PSD: Pl
  */
 public protocol PlaylistStructureDelegate: class {
     
-    associatedtype T
+    associatedtype StructureType: PlaylistStructure
+    
+    init()
     
     /**
      Return true if this tag is a marker for structure boundaries in your structure definition.
@@ -205,9 +207,9 @@ public protocol PlaylistStructureDelegate: class {
      
      - parameter usingTagArray: The list of tags that defines our playlist.
      
-     - returns: New structure of `T` type
+     - returns: New structure of `StructureType` type
      */
-    func rebuild(usingTagArray tags: [PlaylistTag]) -> T
+    func rebuild(usingTagArray tags: [PlaylistTag]) -> StructureType
     
     /**
      `PlaylistStructureCore` has noted a minor change to the tag array and requests that
@@ -223,14 +225,14 @@ public protocol PlaylistStructureDelegate: class {
     func changed(numberOfTags alterCount: Int,
                  atIndex index: Int,
                  inTagArray tags: [PlaylistTag],
-                 withInitialStructure structure: T) -> PlaylistStructureChangeResult<T>
+                 withInitialStructure structure: StructureType) -> PlaylistStructureChangeResult<StructureType>
 }
 
-public struct PlaylistStructureChangeResult<T> {
+public struct PlaylistStructureChangeResult<StructureType> {
     /// `false` if we were able to fix up ourselves, `true` if we has to rebuild structure from scratch
     let hadToRebuildFromScratch: Bool
     /// New structure after rebuild
-    let structure: T
+    let structure: StructureType
 }
 
 struct PlaylistStructureConstructor {
@@ -421,6 +423,6 @@ struct PlaylistStructureConstructor {
     }
 }
 
-public protocol EmptyInitializerImplementor {
+public protocol PlaylistStructure {
     init()
 }

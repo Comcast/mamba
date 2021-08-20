@@ -62,6 +62,8 @@ class ReadMeUnitTests: XCTestCase {
                             // handle the PlaylistParserError
                             myErrorHandler(error: error)
                             break
+                        @unknown default:
+                            XCTFail("Unknown enum case")
                         }
         })
         
@@ -81,6 +83,8 @@ class ReadMeUnitTests: XCTestCase {
             // handle the PlaylistParserError
             myErrorHandler(error: error)
             break
+        @unknown default:
+            XCTFail("Unknown enum case")
         }
         
         // Validating a HLS Playlist

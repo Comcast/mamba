@@ -66,6 +66,8 @@ segment5.ts
         case .timeMatch(let timeRange):
             XCTAssertEqual(timeRange.start, CMTime.zero)
             XCTAssertEqual(timeRange.duration, CMTime(failableInitWithString: "3.0000")!)
+        @unknown default:
+            XCTFail("Unknown enum case")
         }
         
         // testing if the "match in header means no match" feature works
@@ -91,6 +93,8 @@ segment5.ts
         case .timeMatch(let timeRange):
             XCTAssertEqual(timeRange.start, CMTime(failableInitWithString: "6.0000")!)
             XCTAssertEqual(timeRange.duration, CMTime(failableInitWithString: "3.0000")!)
+        @unknown default:
+            XCTFail("Unknown enum case")
         }
         
         XCTAssertEqual(testSegmentTags[1].containsDiscontinuity, true)
@@ -105,6 +109,8 @@ segment5.ts
         case .timeMatch(let timeRange):
             XCTAssertEqual(timeRange.start, CMTime(failableInitWithString: "12.0000")!)
             XCTAssertEqual(timeRange.duration, CMTime(failableInitWithString: "3.0000")!)
+        @unknown default:
+            XCTFail("Unknown enum case")
         }
         
         // quick test of testing more "normal" segment based tags with "match in header means no match"
@@ -158,6 +164,8 @@ segment5.ts
             break
         case .timeMatch(_):
             XCTFail("Not expecting this value")
+        @unknown default:
+            XCTFail("Unknown enum case")
         }
         
         XCTAssertEqual(testSegmentTags[1].containsDiscontinuity, true)
@@ -172,6 +180,8 @@ segment5.ts
             break
         case .timeMatch(_):
             XCTFail("Not expecting this value")
+        @unknown default:
+            XCTFail("Unknown enum case")
         }
     }
     
