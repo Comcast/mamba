@@ -25,13 +25,18 @@ public enum FrameworkInfo {
     /// returns the version of the mamba framework
     public static var version: String {
         
-        let bundle = Bundle(for: HLSParser.self)
+        /// When exporting a framework on SPM, there is no way to access the info dictionary, so the version should be provided differently
+        #if SWIFT_PACKAGE
+        let version = "1.5.2"
+        #else
         
+        let bundle = Bundle(for: HLSParser.self)
         guard let version = bundle.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String else {
             assertionFailure("Unable to find version string in framework bundle")
             return "Error: Unable to find version string in framework bundle"
         }
         
+        #endif
         return version
     }
 }
