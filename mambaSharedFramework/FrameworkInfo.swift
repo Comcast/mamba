@@ -28,7 +28,7 @@ public enum FrameworkInfo {
         /// When exporting a framework on SPM, there is no way to access the info dictionary, so the version should be provided differently
         #if SWIFT_PACKAGE
         guard let filePath = versionFilePathUrl,
-              let version = try? String(contentsOf: URL(fileURLWithPath: filePath), encoding: .utf8)?.trimmingCharacters(in: .whitespacesAndNewlines)
+              let version = try? String(contentsOf: URL(fileURLWithPath: filePath), encoding: .utf8).trimmingCharacters(in: .whitespacesAndNewlines)
         else {
             assertionFailure("Unable to find version string in framework bundle")
             return "Error: Unable to find version string in framework bundle"
@@ -45,7 +45,8 @@ public enum FrameworkInfo {
     }
     
     #if SWIFT_PACKAGE
-    /// When importing packages, the bundle for a class gives the currently running scheme, rather than the package specific one, we need to append those bits to the file
+    /// When importing packages, the bundle for a class gives the currently running scheme, rather than the package specific one, we need to append those bits to the file.
+    /// The ideal scenario is to use bundle.module, but that is only available for Xcode13+
     private static var versionFilePathUrl: String? {
         let bundle = Bundle(for: HLSParser.self)
         return bundle.resourcePath?.appending("/mamba_mamba.bundle/version.txt")
