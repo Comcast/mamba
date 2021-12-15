@@ -35,7 +35,8 @@ let package = Package(
             exclude: [
                 "HLS ObjectiveC",
                 "HLSParserError"
-            ]
+            ],
+            resources: [.copy("version.txt")]
         ),
         .target(
             name: "HLSObjectiveC",
