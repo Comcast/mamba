@@ -25,18 +25,16 @@ public enum FrameworkInfo {
     /// returns the version of the mamba framework
     public static var version: String {
         
-        let bundle = Bundle(for: HLSParser.self)
-        
         /// When exporting a framework on SPM, there is no way to access the info dictionary, so the version should be provided differently
         #if SWIFT_PACKAGE
         guard
-            let fileURL = bundle.url(forResource: "version", withExtension: "txt"),
+            let fileURL = versionFilePathUrl,
             let version = try? String(contentsOf: fileURL, encoding: .utf8) else {
             assertionFailure("Unable to find version string in framework bundle")
             return "Error: Unable to find version string in framework bundle"
         }
         #else
-        
+        let bundle = Bundle(for: HLSParser.self)
         guard let version = bundle.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String else {
             assertionFailure("Unable to find version string in framework bundle")
             return "Error: Unable to find version string in framework bundle"
@@ -45,4 +43,12 @@ public enum FrameworkInfo {
         #endif
         return version
     }
+    
+    #if SWIFT_PACKAGE
+    /// When importing packages, the bundle for a class gives the currently running scheme, rather than the package specific one, we need to append those bits to the file
+    private static var versionFilePathUrl: String? {
+        let bundle = Bundle(for: HLSParser.self)
+        return bundle.resourcePath?.appending("/mamba_mamba.bundle/version.txt")
+    }
+    #endif
 }

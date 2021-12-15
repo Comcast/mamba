@@ -36,7 +36,9 @@ let package = Package(
                 "HLS ObjectiveC",
                 "HLSParserError"
             ],
-            resources: [.copy("version.txt")]
+            resources: [
+                .process("text.txt")
+            ]
         ),
         .target(
             name: "HLSObjectiveC",
