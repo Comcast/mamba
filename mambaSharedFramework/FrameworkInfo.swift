@@ -27,7 +27,7 @@ public enum FrameworkInfo {
         
         /// When exporting a framework on SPM, there is no way to access the info dictionary, so the version should be provided differently
         #if SWIFT_PACKAGE
-        guard let versiomFilePathUrl = Bundle.module.url(forResource: "version", withExtension: "tst"),
+        guard let versiomFilePathUrl = Bundle.module.url(forResource: "version", withExtension: "txt"),
               let version = try? String(contentsOf: versiomFilePathUrl, encoding: .utf8)
                 .trimmingCharacters(in: .whitespacesAndNewlines)
         else {
