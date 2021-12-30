@@ -621,6 +621,7 @@
 		1D28F3441EAA9E500010320B /* hls_variant_playlist.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_variant_playlist.m3u8; sourceTree = "<group>"; };
 		2B9FB5AA255DF283001DD1B8 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
 		2B9FB5AB255DF29F001DD1B8 /* Exports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Exports.swift; path = mambaSharedFramework/Exports.swift; sourceTree = SOURCE_ROOT; };
+		2BB693D7276A13A000FE56B1 /* version.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = version.txt; sourceTree = "<group>"; };
 		3D933C192193367C0029069F /* EXT-X-BITRATETagParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EXT-X-BITRATETagParserTests.swift"; sourceTree = "<group>"; };
 		4367C3721EAE83C000685945 /* HLSPlaylistStructureMasterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSPlaylistStructureMasterTests.swift; sourceTree = "<group>"; };
 		43DE4EFA1E564DA300EEE800 /* EXT_X_STARTTimeOffsetValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EXT_X_STARTTimeOffsetValidator.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -1073,6 +1074,7 @@
 				EC7491B21DD29D5C00AF4E20 /* HLSWriter.swift */,
 				EC9547871E5CC84700962535 /* FrameworkInfo.swift */,
 				EC1521511DD28536006FB265 /* mamba.h */,
+				2BB693D7276A13A000FE56B1 /* version.txt */,
 			);
 			path = mambaSharedFramework;
 			sourceTree = "<group>";
@@ -2273,7 +2275,7 @@
 				INFOPLIST_FILE = mamba/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.5.3;
+				MARKETING_VERSION = 1.5.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2299,7 +2301,7 @@
 				INFOPLIST_FILE = mamba/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.5.3;
+				MARKETING_VERSION = 1.5.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2361,7 +2363,7 @@
 				INFOPLIST_FILE = mamba/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.5.3;
+				MARKETING_VERSION = 1.5.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
 				PRODUCT_NAME = mamba;
 				SDKROOT = appletvos;
@@ -2392,7 +2394,7 @@
 				INFOPLIST_FILE = mamba/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.5.3;
+				MARKETING_VERSION = 1.5.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
 				PRODUCT_NAME = mamba;
 				SDKROOT = appletvos;
@@ -2471,7 +2473,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.5.3;
+				MARKETING_VERSION = 1.5.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
 				PRODUCT_MODULE_NAME = mamba;
 				PRODUCT_NAME = mamba;
@@ -2505,7 +2507,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.5.3;
+				MARKETING_VERSION = 1.5.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
 				PRODUCT_MODULE_NAME = mamba;
 				PRODUCT_NAME = mamba;
