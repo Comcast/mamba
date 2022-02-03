@@ -20,7 +20,7 @@
 import Foundation
 
 /// Namespace class for validating HLS playlists
-public protocol HLSValidator: class {}
+public protocol HLSValidator: AnyObject {}
 
 /// Protocol for validating objects that implement `HLSPlaylistInterface`
 public protocol HLSPlaylistValidator: HLSValidator {

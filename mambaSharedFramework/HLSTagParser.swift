@@ -34,7 +34,7 @@ public struct HLSValueData {
 public typealias HLSTagDictionary = OrderedDictionary<String, HLSValueData>
 
 /// Describes a object that parse an individual tag from a line in a HLS playlist
-public protocol HLSTagParser: class {
+public protocol HLSTagParser: AnyObject {
     
     /**
      Parses an HLS tag from a String. (i.e. if your tag is "#EXT-GENERICTAG:<Values>", you would pass "<Values>" as your string argument)
