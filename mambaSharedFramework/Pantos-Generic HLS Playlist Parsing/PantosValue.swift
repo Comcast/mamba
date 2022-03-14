@@ -190,6 +190,94 @@ public enum PantosValue: String {
     /// OPTIONAL.
     case endOnNext = "END-ON-NEXT"
     
+    /// Appendix D - Interstitials
+    
+    /// An Interstitial EXT-X-DATERANGE tag MUST have a CLASS attribute whose
+    /// value is "com.apple.hls.interstitial".  This class defines the
+    /// following attributes:
+    
+    /// The value of the X-ASSET-URI is a quoted-string absolute URI for a
+    /// single interstitial asset.  An Interstitial EXT-X-DATERANGE tag
+    /// MUST have either the X-ASSET-URI attribute or the X-ASSET-LIST
+    /// attribute.  It MUST NOT have both.
+    case xAssetUri = "X-ASSET-URI"
+
+    /// The value of the X-ASSET-LIST is a quoted-string URI to a JSON
+    /// object.
+    ///
+    /// The JSON object MUST contain a key/value pair whose key is
+    /// "ASSETS" and whose value is a JSON array of Asset-Description JSON
+    /// objects.  (Note that keys in a JSON object are case-sensitive.)
+    ///
+    /// Each Asset-Description JSON object MUST have a "URI" member whose
+    /// value is a quoted-string absolute URI for a single interstitial
+    /// asset, and a "DURATION" member whose value is a decimal-floating-
+    /// point indicating the duration of the interstitial asset in
+    /// seconds.
+    /// The client SHOULD play the interstitial assets back-to-back in the
+    /// order that they appear in the ASSETS array.
+    case xAssetList = "X-ASSET-LIST"
+    
+    /// The value of X-RESUME-OFFSET is a decimal-floating-point of
+    /// seconds that specifies where primary playback is to resume
+    /// following the playback of the interstitial.  It is expressed as a
+    /// time offset from where the interstitial playback was scheduled on
+    /// the primary player timeline.  A typical value for X-RESUME-OFFSET
+    /// is zero.  This attribute is OPTIONAL.
+    ///
+    /// If the X-RESUME-OFFSET is not present, its value is considered to
+    /// be the duration of the interstitial.  This is appropriate for live
+    /// content, where playback is to be kept at a constant delay from the
+    /// live edge, or for VOD playback where the HLS interstitial is
+    /// intended to exactly replace content in the primary asset.
+    case xResumeOffset = "X-RESUME-OFFSET"
+    
+    /// The value of X-PLAYOUT-LIMIT is a decimal-floating-point of
+    /// seconds that specifies a limit for the playout time of the entire
+    /// interstitial.  If it is present, the client SHOULD end the
+    /// interstitial if playback reaches that offset from its start.
+    /// Otherwise the interstitial MUST end upon reaching the end of the
+    /// interstitial asset(s).  This attribute is OPTIONAL.
+    case xPlayoutLimit = "X-PLAYOUT-LIMIT"
+    
+    /// The value of the X-SNAP attribute is an enumerated-string-list of
+    /// Snap Identifiers.  The defined Snap Identifiers are: OUT and IN.
+    /// This attribute is OPTIONAL.
+    ///
+    /// If the list contains OUT then the client SHOULD locate the segment
+    /// boundary closest to the START-DATE of the interstitial in the
+    /// Media Playlist of the primary content and transition to the
+    /// interstitial at that boundary.  If more than one Media Playlist is
+    /// contributing to playback (audio plus video for example), the
+    /// client SHOULD transition at the earliest segment boundary.
+    ///
+    /// If the list contains IN then the client SHOULD locate the segment
+    /// boundary closest to the scheduled resumption point from the
+    /// interstitial in the Media Playlist of the primary content and
+    /// resume playback of primary content at that boundary.  If more than
+    /// one Media Playlist is contributing to playback, the client SHOULD
+    /// transition at the latest segment boundary.
+    case xSnap = "X-SNAP"
+    
+    /// The value of the X-RESTRICT attribute is an enumerated-string-list
+    /// of Navigation Restriction Identifiers.  The defined Navigation
+    /// Restriction Identifiers are: SKIP and JUMP.  These restrictions
+    /// are enforced at the player UI level.  This attribute is OPTIONAL.
+    ///
+    /// If the list contains SKIP then while the interstitial is being
+    /// played, the client MUST NOT allow the user to seek forward from
+    /// the current playhead position or set the rate to greater than the
+    /// regular playback rate until playback reaches the end of the
+    /// interstitial.
+    ///
+    /// If the list contains JUMP then the client MUST NOT allow the user
+    /// to seek from a position in the primary asset earlier than the
+    /// START-DATE attribute to a position after it without first playing
+    /// the interstitial asset, even if the interstitial at START-DATE was
+    /// played through earlier.  If the user attempts to seek across more
+    /// than one interstitial, the client SHOULD choose at least one
+    /// interstitial to play before allowing the seek to complete.
+    case xRestrict = "X-RESTRICT"
 }
 
 extension PantosValue: HLSTagValueIdentifier {
