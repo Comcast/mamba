@@ -939,6 +939,14 @@
 			name = mambaSPM;
 			sourceTree = "<group>";
 		};
+		E6841B1329FB0F110074DBCC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2BB693D7276A13A000FE56B1 /* version.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		EC03B62B1E5CC51C00BF1F97 /* HLS Rapid Parser */ = {
 			isa = PBXGroup;
 			children = (
@@ -1057,6 +1065,7 @@
 		EC1521821DD2857B006FB265 /* mambaSharedFramework */ = {
 			isa = PBXGroup;
 			children = (
+				E6841B1329FB0F110074DBCC /* Resources */,
 				F795EAF01D909D1900534F7E /* HLS Models */,
 				EC8685381D651C0F004551B8 /* HLS Query Language */,
 				EC03B62B1E5CC51C00BF1F97 /* HLS Rapid Parser */,
@@ -1074,7 +1083,6 @@
 				EC7491B21DD29D5C00AF4E20 /* HLSWriter.swift */,
 				EC9547871E5CC84700962535 /* FrameworkInfo.swift */,
 				EC1521511DD28536006FB265 /* mamba.h */,
-				2BB693D7276A13A000FE56B1 /* version.txt */,
 			);
 			path = mambaSharedFramework;
 			sourceTree = "<group>";
