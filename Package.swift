@@ -37,7 +37,7 @@ let package = Package(
                 "HLSParserError"
             ],
             resources: [
-                .copy("Resources")
+                .process("Resources")
             ]
         ),
         .target(
