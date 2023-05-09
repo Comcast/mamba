@@ -37,7 +37,7 @@ let package = Package(
                 "HLSParserError"
             ],
             resources: [
-                .copy("version.txt")
+                .process("Resources")
             ]
         ),
         .target(
