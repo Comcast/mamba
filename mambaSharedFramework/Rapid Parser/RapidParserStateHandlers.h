@@ -21,6 +21,7 @@
 #define RapidParserStateHandlers_h
 
 #include <stdio.h>
+#include <stdint.h>
 #include "RapidParserLineState.h"
 
 // Type definition of the standard parser handler

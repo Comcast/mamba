@@ -21,6 +21,7 @@
 #define RapidParserCallback_h
 
 #include <stdbool.h>
+#include <stdint.h>
 
 void NewTagCallback(const void *parentparser, const uint64_t startTagName, const uint64_t endTagName, const uint64_t startTagData, const uint64_t endTagData);
 void NewTagNoDataCallback(const void *parentparser, const uint64_t startTagName, const uint64_t endTagName);
