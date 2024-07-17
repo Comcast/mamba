@@ -21,6 +21,7 @@
 #define RapidParserState_h
 
 #include <stdio.h>
+#include <stdint.h>
 
 enum ParseState {
     // normal scanning state
