@@ -189,7 +189,22 @@ public enum PantosValue: String {
     /// after the START-DATE of the range in question.  This attribute is
     /// OPTIONAL.
     case endOnNext = "END-ON-NEXT"
-    
+
+    /// Found in `.EXT_X_SKIP`.
+    ///
+    /// The value is a decimal-integer specifying the number of Media
+    /// Segments replaced by the EXT-X-SKIP tag.  This attribute is
+    /// REQUIRED.
+    case skippedSegments = "SKIPPED-SEGMENTS"
+
+    /// Found in `.EXT_X_SKIP`.
+    ///
+    /// The value is a quoted-string consisting of a tab (0x9) delimited
+    /// list of EXT-X-DATERANGE IDs that have been removed from the
+    /// Playlist recently.  See Section 6.2.5.1 for more information.
+    /// This attribute is REQUIRED if the Client requested an update that
+    /// skips EXT-X-DATERANGE tags.  The quoted-string MAY be empty.
+    case recentlyRemovedDateranges = "RECENTLY-REMOVED-DATERANGES"
 }
 
 extension PantosValue: HLSTagValueIdentifier {
