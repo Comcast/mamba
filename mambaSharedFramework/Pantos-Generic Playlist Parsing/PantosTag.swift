@@ -77,6 +77,7 @@ public enum PantosTag: String {
     
     // MARK: Variant playlist - Media metadata tags
     case EXT_X_DATERANGE = "EXT-X-DATERANGE"
+    case EXT_X_SKIP = "EXT-X-SKIP"
 }
 
 extension PantosTag: PlaylistTagDescriptor, Equatable {
@@ -139,6 +140,8 @@ extension PantosTag: PlaylistTagDescriptor, Equatable {
         case .EXT_X_TARGETDURATION:
             fallthrough
         case .EXT_X_DATERANGE:
+            fallthrough
+        case .EXT_X_SKIP:
             return .wholePlaylist
         
         case .EXT_X_BITRATE:
@@ -204,6 +207,8 @@ extension PantosTag: PlaylistTagDescriptor, Equatable {
         case .EXT_X_KEY:
             fallthrough
         case .EXT_X_DATERANGE:
+            fallthrough
+        case .EXT_X_SKIP:
             return .keyValue
             
         case .Location:
@@ -278,6 +283,8 @@ extension PantosTag: PlaylistTagDescriptor, Equatable {
         case .EXT_X_KEY:
             fallthrough
         case .EXT_X_DATERANGE:
+            fallthrough
+        case .EXT_X_SKIP:
             return GenericDictionaryTagParser(tag: pantostag)
             
         // No Data tags
@@ -342,6 +349,8 @@ extension PantosTag: PlaylistTagDescriptor, Equatable {
         case .EXT_X_KEY:
             fallthrough
         case .EXT_X_DATERANGE:
+            fallthrough
+        case .EXT_X_SKIP:
             return GenericDictionaryTagWriter()
             
         // These tags cannot be modified and therefore these cases are invalid.
@@ -464,7 +473,17 @@ extension PantosTag: PlaylistTagDescriptor, Equatable {
             
         case .EXT_X_DATERANGE:
             return EXT_X_DATERANGETagValidator()
-            
+
+        case .EXT_X_SKIP:
+            return GenericDictionaryTagValidator(tag: pantostag, dictionaryValueIdentifiers: [
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.skippedSegments,
+                                                 optional: false,
+                                                 expectedType: Int.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.recentlyRemovedDateranges,
+                                                 optional: true,
+                                                 expectedType: String.self)
+            ])
+
         case .Location:
             return nil
 
@@ -510,7 +529,8 @@ extension PantosTag: PlaylistTagDescriptor, Equatable {
                        PantosTag.EXT_X_START,
                        PantosTag.EXT_X_DISCONTINUITY,
                        PantosTag.EXT_X_BITRATE,
-                       PantosTag.EXT_X_DATERANGE]
+                       PantosTag.EXT_X_DATERANGE,
+                       PantosTag.EXT_X_SKIP]
 
         var dictionary = [UInt: [(descriptor: PantosTag, string: MambaStringRef)]]()
         
