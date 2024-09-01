@@ -65,8 +65,9 @@ public class PlaylistValidator: ExtensiblePlaylistValidator {
                                                                                   EXT_X_STREAM_INFRenditionGroupVIDEOValidator.self,
                                                                                   EXT_X_STREAM_INFRenditionGroupSUBTITLESValidator.self,
                                                                                   PlaylistRenditionGroupMatchingNAMELANGUAGEValidator.self,
-                                                                                  PlaylistRenditionGroupMatchingPROGRAM_IDValidator.self]
-    
+                                                                                  PlaylistRenditionGroupMatchingPROGRAM_IDValidator.self,
+                                                                                  EXT_X_SESSION_DATAPlaylistValidator.self]
+
     public static let variantPlaylistValidators: [VariantPlaylistValidator.Type] = [PlaylistAggregateTagCardinalityValidator.self,
                                                                                     EXT_X_TARGETDURATIONLengthValidator.self,
                                                                                     EXT_X_STARTTimeOffsetValidator.self,

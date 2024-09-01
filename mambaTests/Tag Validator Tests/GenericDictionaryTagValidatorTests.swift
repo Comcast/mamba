@@ -515,7 +515,212 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
                  mandatory: mandatory,
                  badValues: badValues)
     }
-    
+
+    /*
+     The EXT-X-SESSION-DATA tag allows arbitrary session data to be
+     carried in a Multivariant Playlist.
+
+     Its format is:
+
+     #EXT-X-SESSION-DATA:<attribute-list>
+
+     The following attributes are defined:
+
+        DATA-ID
+
+        The value of DATA-ID is a quoted-string that identifies a
+        particular data value.  The DATA-ID SHOULD conform to a reverse
+        DNS naming convention, such as "com.example.movie.title"; however,
+        there is no central registration authority, so Playlist authors
+        SHOULD take care to choose a value that is unlikely to collide
+        with others.  This attribute is REQUIRED.
+
+        VALUE
+
+        VALUE is a quoted-string.  It contains the data identified by
+        DATA-ID.  If the LANGUAGE is specified, VALUE SHOULD contain a
+        human-readable string written in the specified language.
+
+        URI
+
+        The value is a quoted-string containing a URI.  The resource
+        identified by the URI MUST be formatted as indicated by the FORMAT
+        attribute; otherwise, clients may fail to interpret the resource.
+
+        FORMAT
+
+        The value is an enumerated-string; valid strings are JSON and RAW.
+        The FORMAT attribute MUST be ignored when URI attribute is
+        missing.
+
+        If the value is JSON, the URI MUST reference a JSON [RFC8259]
+        format file.  If the value is RAW, the URI SHALL be treated as a
+        binary file.
+
+        This attribute is OPTIONAL.  Its absence implies a value of JSON.
+
+        LANGUAGE
+
+        The value is a quoted-string containing a language tag [RFC5646]
+        that identifies the language of the VALUE.  This attribute is
+        OPTIONAL.
+
+     Each EXT-X-SESSION-DATA tag MUST contain either a VALUE or URI
+     attribute, but not both.
+
+     A Playlist MAY contain multiple EXT-X-SESSION-DATA tags with the same
+     DATA-ID attribute.  A Playlist MUST NOT contain more than one EXT-X-
+     SESSION-DATA tag with the same DATA-ID attribute and the same
+     LANGUAGE attribute.
+     */
+    func test_EXT_X_SESSION_DATA() {
+        let withURI = "DATA-ID=\"com.example.data\",URI=\"http://not.a.server/data.txt\",FORMAT=RAW,LANGUAGE=\"en\""
+        validate(tag: PantosTag.EXT_X_SESSION_DATA,
+                 tagData: withURI,
+                 optional: [.value, .format, .language],
+                 mandatory: [.dataId, .uri],
+                 badValues: [])
+        
+        let withValue = "DATA-ID=\"com.example.data\",VALUE=\"Hello, World!\",LANGUAGE=\"en\""
+        validate(tag: PantosTag.EXT_X_SESSION_DATA,
+                 tagData: withValue,
+                 optional: [.uri, .format, .language],
+                 mandatory: [.dataId, .value],
+                 badValues: [])
+
+        // Using a closure to avoid naming clashes in the rest of the test.
+        let EXT_X_SESSION_DATA_withNoValueOrURI = {
+            let tagData = "DATA-ID=\"com.example.data\""
+            let tag = createTag(tagDescriptor: PantosTag.EXT_X_SESSION_DATA, tagData: tagData)
+            guard let validator = PantosTag.validator(forTag: PantosTag.EXT_X_SESSION_DATA) else {
+                return XCTFail("No validator for EXT-X-SESSION-DATA")
+            }
+            guard let issues = validator.validate(tag: tag) else {
+                return XCTFail("Should have issues when validating EXT-X-SESSION-DATA with no VALUE nor URI.")
+            }
+            XCTAssertEqual(1, issues.count, "Should have one issue")
+            guard let issue = issues.first else { return XCTFail("Should have at least one issue") }
+            XCTAssertEqual(issue.description, IssueDescription.EXT_X_SESSION_DATATagValidator.rawValue)
+            XCTAssertEqual(issue.severity, .error)
+        }
+        EXT_X_SESSION_DATA_withNoValueOrURI()
+
+        let EXT_X_SESSION_DATA_withValueAndURI = {
+            let tagData = "DATA-ID=\"com.example.data\",VALUE=\"example\",URI=\"http://not.a.server/example\""
+            let tag = createTag(tagDescriptor: PantosTag.EXT_X_SESSION_DATA, tagData: tagData)
+            guard let validator = PantosTag.validator(forTag: PantosTag.EXT_X_SESSION_DATA) else {
+                return XCTFail("No validator for EXT-X-SESSION-DATA")
+            }
+            guard let issues = validator.validate(tag: tag) else {
+                return XCTFail("Should have issues when validating EXT-X-SESSION-DATA with both VALUE and URI.")
+            }
+            XCTAssertEqual(1, issues.count, "Should have one issue")
+            guard let issue = issues.first else { return XCTFail("Should have at least one issue") }
+            XCTAssertEqual(issue.description, IssueDescription.EXT_X_SESSION_DATATagValidator.rawValue)
+            XCTAssertEqual(issue.severity, .error)
+        }
+        EXT_X_SESSION_DATA_withValueAndURI()
+    }
+
+    /*
+     The EXT-X-SESSION-KEY tag allows encryption keys from Media Playlists
+     to be specified in a Multivariant Playlist.  This allows the client
+     to preload these keys without having to read the Media Playlist(s)
+     first.
+
+     Its format is:
+
+     #EXT-X-SESSION-KEY:<attribute-list>
+
+     All attributes defined for the EXT-X-KEY tag (Section 4.4.4.4) are
+     also defined for the EXT-X-SESSION-KEY, except that the value of the
+     METHOD attribute MUST NOT be NONE.  If an EXT-X-SESSION-KEY is used,
+     the values of the METHOD, KEYFORMAT, and KEYFORMATVERSIONS attributes
+     MUST match any EXT-X-KEY with the same URI value.
+
+     EXT-X-SESSION-KEY tags SHOULD be added if multiple Variant Streams or
+     Renditions use the same encryption keys and formats.  An EXT-X-
+     SESSION-KEY tag is not associated with any particular Media Playlist.
+
+     A Multivariant Playlist MUST NOT contain more than one EXT-X-SESSION-
+     KEY tag with the same METHOD, URI, IV, KEYFORMAT, and
+     KEYFORMATVERSIONS attribute values.
+
+     The EXT-X-SESSION-KEY tag is optional.
+     */
+    func test_EXT_X_SESSION_KEY() {
+        let tagData = "METHOD=SAMPLE-AES,URI=\"skd://key65\",KEYFORMAT=\"com.apple.streamingkeydelivery\""
+        let tag = PantosTag.EXT_X_SESSION_KEY
+        // Splitting out the `validate` into constituent parts because when URI is empty it triggers more than one
+        // failure which trips up the `missingMandatoryKeys` method that expects just one failure.
+        validInput(tag: tag, tagData: tagData)
+        emptyInput(tag: tag, numberOfErrors: 2)
+        missingOptionalKeys(tag: tag, tagData: tagData, removed: [.ivector, .keyformat, .keyformatVersions])
+        missingMandatoryKeys(tag: tag, tagData: tagData, removed: [.method])
+        wrongType(tag: tag, tagData: tagData, badValues: [])
+
+        let EXT_X_SESSION_KEY_withNoURIAndMETHODEqualToNONE = {
+            let tagData = "METHOD=NONE"
+            let tag = createTag(tagDescriptor: PantosTag.EXT_X_SESSION_KEY, tagData: tagData)
+            guard let validator = PantosTag.validator(forTag: PantosTag.EXT_X_SESSION_KEY) else {
+                return XCTFail("No validator for EXT-X-SESSION-KEY")
+            }
+            guard let issues = validator.validate(tag: tag) else {
+                return XCTFail("Should have issues when validating EXT-X-SESSION-KEY when METHOD=NONE.")
+            }
+            XCTAssertEqual(2, issues.count, "Should have two issues")
+            for issue in issues {
+                if issue.description == IssueDescription.EXT_X_SESSION_KEYValidator.rawValue {
+                    XCTAssertEqual(issue.severity, .error, "Should have error severity for EXT-X-SESSION-KEY issue.")
+                } else if issue.description == "EXT-X-SESSION-KEY mandatory value uri is missing." {
+                    XCTAssertEqual(issue.severity, .error, "Should have error severity if URI is missing.")
+                } else {
+                    XCTFail("Not expecting to have issue with description: \(issue.description)")
+                }
+            }
+        }
+        EXT_X_SESSION_KEY_withNoURIAndMETHODEqualToNONE()
+    }
+
+    /*
+     The EXT-X-CONTENT-STEERING tag allows a server to provide a Content
+     Steering (Section 7) Manifest.  It is OPTIONAL.  It MUST NOT appear
+     more than once in a Multivariant Playlist.  Its format is:
+
+     #EXT-X-CONTENT-STEERING:<attribute-list>
+
+     The following attributes are defined:
+
+        SERVER-URI
+
+        The value is a quoted-string containing a URI to a Steering
+        Manifest (Section 7.1).  It MAY contain an asset identifier if the
+        Steering Server requires it to produce the Steering Manifest.  It
+        MAY use the "data" URI scheme to provide the manifest in-line in
+        the Multivariant Playlist; in that case, subsequent manifest
+        reloads MAY be redirected to a remote Steering Server using the
+        RELOAD-URI parameter (see Section 7.1).  This attribute is
+        REQUIRED.
+
+        PATHWAY-ID
+
+        The value is a quoted-string that identifies the Pathway that MUST
+        be applied by any client that supports Content Steering (see
+        Section 7.4) until the initial Steering Manifest has been
+        obtained.  Its value MUST be a legal Pathway ID according to
+        Section 7.1 that is specified by the PATHWAY-ID attribute of one
+        or more Variant Streams in the Multivariant Playlist.  This
+        attribute is OPTIONAL.
+     */
+    func test_EXT_X_CONTENT_STEERING() {
+        let tagData = "SERVER-URI=\"https://not.a.server/content-steering.json\",PATHWAY-ID=\"A\""
+        validate(tag: PantosTag.EXT_X_CONTENT_STEERING,
+                 tagData: tagData,
+                 optional: [.pathwayId],
+                 mandatory: [.serverUri],
+                 badValues: [])
+    }
+
     /*
      The EXT-X-BYTERANGE tag indicates that a media segment is a sub-range
      of the resource identified by its media URI.  It applies only to the

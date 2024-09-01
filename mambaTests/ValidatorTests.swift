@@ -152,13 +152,29 @@ class ValidatorTests: XCTestCase {
         }
     }
 
-    private func validate(validator: MasterPlaylistValidator.Type, playlist: String, expected: Int) {
-        
+    @discardableResult
+    private func validate(validator: MasterPlaylistValidator.Type, playlist: String, expected: Int) -> [PlaylistValidationIssue] {
+
         let playlist = parseMasterPlaylist(inString: playlist)
         let validationIssues = validator.validate(masterPlaylist: playlist)
         
         if validationIssues.count != expected {
             XCTAssert(false, "Found unexpected validation Issues should have \(expected) actually has \(validationIssues.count)")
+        }
+
+        return validationIssues
+    }
+
+    private func validate(validator: MasterPlaylistValidator.Type, playlist: String, expectedIssues: [PlaylistValidationIssue]) {
+        let issues = validate(validator: validator, playlist: playlist, expected: expectedIssues.count)
+        expectedIssues.forEach { expectedIssue in
+            guard let matchingIssue = issues.first(where: { $0.description == expectedIssue.description }) else {
+                return XCTFail("Expected issue \"\(expectedIssue.description)\" not found in multivariant playlist.\nIssues found:\n\(issues)")
+            }
+            XCTAssertEqual(expectedIssue.description, matchingIssue.description)
+            XCTAssertEqual(expectedIssue.severity,
+                           matchingIssue.severity,
+                           "Expected validation issue (\(expectedIssue.description)) had unexpected severity (\(matchingIssue.severity))")
         }
     }
 
@@ -789,7 +805,33 @@ frag1.ts
         let expectedIssues = [PlaylistValidationIssue(description: .EXT_X_DATERANGEAttributeMismatchForTagsWithSameID, severity: .warning)]
         validate(validator: u, playlist: hlsLoadString, expectedIssues: expectedIssues)
     }
-    
+
+    func testEXT_X_SESSION_DATAPlaylistValidator_multipleSessionDataDifferentLanguageIsOK() {
+        var tags = EXT_X_MEDIA_txt
+        tags.insert("#EXT-X-SESSION-DATA:DATA-ID=\"com.example.text\",VALUE=\"example\",LANGUAGE=\"en\"\n", at: 1)
+        tags.insert("#EXT-X-SESSION-DATA:DATA-ID=\"com.example.text\",VALUE=\"example\",LANGUAGE=\"es\"\n", at: 1)
+        let playlist = tags.joined()
+        validate(
+            validator: EXT_X_SESSION_DATAPlaylistValidator.self,
+            playlist: playlist,
+            expectedIssues: []
+        )
+    }
+
+    func testEXT_X_SESSION_DATAPlaylistValidator_multipleSessionDataSameLanguageIsNotOK() {
+        var tags = EXT_X_MEDIA_txt
+        tags.insert("#EXT-X-SESSION-DATA:DATA-ID=\"com.example.text\",VALUE=\"example\",LANGUAGE=\"en\"\n", at: 1)
+        tags.insert("#EXT-X-SESSION-DATA:DATA-ID=\"com.example.text\",VALUE=\"example\",LANGUAGE=\"en\"\n", at: 1)
+        let playlist = tags.joined()
+        validate(
+            validator: EXT_X_SESSION_DATAPlaylistValidator.self,
+            playlist: playlist,
+            expectedIssues: [
+                PlaylistValidationIssue(description: .EXT_X_SESSION_DATAPlaylistValidator, severity: .error)
+            ]
+        )
+    }
+
 }
 
 private let masterStreamInf = "#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=100,CODECS=\"avc1\",RESOLUTION=10x10\n"
