@@ -57,7 +57,22 @@ public enum PantosValue: String {
     
     /// Found in `.EXT_X_STREAM_INF`. Match a tag with a corresponding closed-caption stream.
     case closedCaptionsGroup = "CLOSED-CAPTIONS"
-    
+
+    /// Found in `.EXT_X_SESSION_DATA`. Identifier for a particular data value.
+    case dataId = "DATA-ID"
+
+    /// Found in `.EXT_X_SESSION_DATA`. The value of the data identified via DATA-ID.
+    case value = "VALUE"
+
+    /// Found in `.EXT_X_SESSION_DATA`. The format of the data provided via VALUE.
+    case format = "FORMAT"
+
+    /// Found in `.EXT_X_CONTENT_STEERING`. The URI location for the steering manifest.
+    case serverUri = "SERVER-URI"
+
+    /// Found in `.EXT_X_CONTENT_STEERING`. The initial pathway to choose until the first steering manifest is obtained.
+    case pathwayId = "PATHWAY-ID"
+
     /// Found in `.EXT_X_TARGETDURATION`. A target duration in seconds.
     case targetDurationSeconds = "targetDurationSeconds"
     
@@ -79,7 +94,7 @@ public enum PantosValue: String {
     /// Found in `.EXT_X_MEDIA`. Name of this media (typically a human-readable version of the language)
     case name = "NAME"
     
-    /// Found in `.EXT_X_MEDIA`. The primary language of the media
+    /// Found in `.EXT_X_MEDIA` and `.EXT_X_SESSION_DATA`. The primary language of the media
     case language = "LANGUAGE"
     
     /// Found in `.EXT_X_MEDIA`. The associated language of the media
@@ -100,7 +115,7 @@ public enum PantosValue: String {
     /// Found in `.EXT_X_MEDIA`. This attribute is REQUIRED if the TYPE attribute is CLOSED-CAPTIONS ("CC1", "CC2", "CC3", "CC4")
     case instreamId = "INSTREAM-ID"
     
-    /// Found in `.EXT_X_MEDIA`, `.EXT_X_KEY`, `.EXT_X_MAP` and `.EXT_X_I_FRAME_STREAM_INF`. The URI location of the media
+    /// Found in `.EXT_X_MEDIA`, `.EXT_X_KEY`, `.EXT_X_MAP`, `.EXT_X_I_FRAME_STREAM_INF` and `.EXT_X_SESSION_DATA`. The URI location of the media
     case uri = "URI"
     
     /// Found in `.EXT_X_KEY`. The encryption method

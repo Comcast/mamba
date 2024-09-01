@@ -54,7 +54,10 @@ public enum PantosTag: String {
     case EXT_X_MEDIA = "EXT-X-MEDIA"
     case EXT_X_STREAM_INF = "EXT-X-STREAM-INF"
     case EXT_X_I_FRAME_STREAM_INF = "EXT-X-I-FRAME-STREAM-INF"
-    
+    case EXT_X_SESSION_DATA = "EXT-X-SESSION-DATA"
+    case EXT_X_SESSION_KEY = "EXT-X-SESSION-KEY"
+    case EXT_X_CONTENT_STEERING = "EXT-X-CONTENT-STEERING"
+
     // MARK: Variant playlist tags
     case EXT_X_TARGETDURATION = "EXT-X-TARGETDURATION"
     case EXT_X_MEDIA_SEQUENCE = "EXT-X-MEDIA-SEQUENCE"
@@ -128,6 +131,12 @@ extension PantosTag: HLSTagDescriptor, Equatable {
             fallthrough
         case .EXT_X_I_FRAME_STREAM_INF:
             fallthrough
+        case .EXT_X_SESSION_DATA:
+            fallthrough
+        case .EXT_X_SESSION_KEY:
+            fallthrough
+        case .EXT_X_CONTENT_STEERING:
+            fallthrough
         case .EXT_X_ENDLIST:
             fallthrough
         case .EXT_X_INDEPENDENT_SEGMENTS:
@@ -192,6 +201,12 @@ extension PantosTag: HLSTagDescriptor, Equatable {
             return .array
             
         case .EXT_X_I_FRAME_STREAM_INF:
+            fallthrough
+        case .EXT_X_SESSION_DATA:
+            fallthrough
+        case .EXT_X_SESSION_KEY:
+            fallthrough
+        case .EXT_X_CONTENT_STEERING:
             fallthrough
         case .EXT_X_MEDIA:
             fallthrough
@@ -271,6 +286,12 @@ extension PantosTag: HLSTagDescriptor, Equatable {
             fallthrough
         case .EXT_X_I_FRAME_STREAM_INF:
             fallthrough
+        case .EXT_X_SESSION_DATA:
+            fallthrough
+        case .EXT_X_SESSION_KEY:
+            fallthrough
+        case .EXT_X_CONTENT_STEERING:
+            fallthrough
         case .EXT_X_MAP:
             fallthrough
         case .EXT_X_START:
@@ -334,6 +355,12 @@ extension PantosTag: HLSTagDescriptor, Equatable {
         case .EXT_X_MEDIA:
             fallthrough
         case .EXT_X_I_FRAME_STREAM_INF:
+            fallthrough
+        case .EXT_X_SESSION_DATA:
+            fallthrough
+        case .EXT_X_SESSION_KEY:
+            fallthrough
+        case .EXT_X_CONTENT_STEERING:
             fallthrough
         case .EXT_X_MAP:
             fallthrough
@@ -432,7 +459,39 @@ extension PantosTag: HLSTagDescriptor, Equatable {
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.uri, optional: false, expectedType: String.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.videoGroup, optional: true, expectedType: String.self),
                 ])
-            
+
+        case .EXT_X_SESSION_DATA:
+            return EXT_X_SESSION_DATATagValidator()
+
+        case .EXT_X_SESSION_KEY:
+            return EXT_X_SESSION_KEYValidator(tag: pantostag, dictionaryValueIdentifiers: [
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.method,
+                                                    optional: false,
+                                                    expectedType: HLSEncryptionMethodType.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.uri,
+                                                    optional: false, // URI is REQUIRED since METHOD can't be NONE
+                                                    expectedType: String.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.ivector,
+                                                    optional: true,
+                                                    expectedType: String.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.keyformat,
+                                                    optional: true,
+                                                    expectedType: String.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.keyformatVersions,
+                                                    optional: true,
+                                                    expectedType: String.self)
+            ])
+
+        case .EXT_X_CONTENT_STEERING:
+            return GenericDictionaryTagValidator(tag: pantostag, dictionaryValueIdentifiers: [
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.serverUri,
+                                                    optional: false,
+                                                    expectedType: String.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.pathwayId,
+                                                    optional: true,
+                                                    expectedType: String.self)
+            ])
+
         case .EXT_X_KEY:
             return EXT_X_KEYValidator(tag: pantostag, dictionaryValueIdentifiers: [
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.method, optional: true, expectedType: HLSEncryptionMethodType.self),
@@ -493,6 +552,9 @@ extension PantosTag: HLSTagDescriptor, Equatable {
                        PantosTag.EXT_X_VERSION,
                        PantosTag.EXT_X_MEDIA,
                        PantosTag.EXT_X_I_FRAME_STREAM_INF,
+                       PantosTag.EXT_X_SESSION_DATA,
+                       PantosTag.EXT_X_SESSION_KEY,
+                       PantosTag.EXT_X_CONTENT_STEERING,
                        PantosTag.EXT_X_TARGETDURATION,
                        PantosTag.EXT_X_MEDIA_SEQUENCE,
                        PantosTag.EXT_X_ENDLIST,

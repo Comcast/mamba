@@ -785,5 +785,29 @@ frag1.ts
         let expectedIssues = [HLSValidationIssue(description: .EXT_X_DATERANGEAttributeMismatchForTagsWithSameID, severity: .warning)]
         validate(validator: u, playlist: hlsLoadString, expectedIssues: expectedIssues)
     }
-    
+
+    func testEXT_X_SESSION_DATAPlaylistValidator_multipleSessionDataDifferentLanguageIsOK() {
+        var tags = EXT_X_MEDIA_txt
+        tags.insert("#EXT-X-SESSION-DATA:DATA-ID=\"com.example.text\",VALUE=\"example\",LANGUAGE=\"en\"\n", at: 1)
+        tags.insert("#EXT-X-SESSION-DATA:DATA-ID=\"com.example.text\",VALUE=\"example\",LANGUAGE=\"es\"\n", at: 1)
+        let playlist = tags.joined()
+        validate(
+            validator: EXT_X_SESSION_DATAPlaylistValidator.self,
+            playlist: playlist,
+            expectedIssues: []
+        )
+    }
+
+    func testEXT_X_SESSION_DATAPlaylistValidator_multipleSessionDataSameLanguageIsNotOK() {
+        var tags = EXT_X_MEDIA_txt
+        tags.insert("#EXT-X-SESSION-DATA:DATA-ID=\"com.example.text\",VALUE=\"example\",LANGUAGE=\"en\"\n", at: 1)
+        tags.insert("#EXT-X-SESSION-DATA:DATA-ID=\"com.example.text\",VALUE=\"example\",LANGUAGE=\"en\"\n", at: 1)
+        let playlist = tags.joined()
+        validate(
+            validator: EXT_X_SESSION_DATAPlaylistValidator.self,
+            playlist: playlist,
+            expectedIssues: [HLSValidationIssue(description: .EXT_X_SESSION_DATAPlaylistValidator, severity: .error)]
+        )
+    }
+
 }

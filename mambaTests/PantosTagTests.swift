@@ -33,6 +33,9 @@ class PantosTagTests: XCTestCase {
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_KEY)
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXTM3U)
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_I_FRAMES_ONLY)
+        runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_SESSION_DATA)
+        runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_SESSION_KEY)
+        runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_CONTENT_STEERING)
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_MEDIA_SEQUENCE)
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_ALLOW_CACHE)
         
@@ -73,6 +76,12 @@ class PantosTagTests: XCTestCase {
         case .EXTM3U:
             fallthrough
         case .EXT_X_I_FRAMES_ONLY:
+            fallthrough
+        case .EXT_X_SESSION_DATA:
+            fallthrough
+        case .EXT_X_SESSION_KEY:
+            fallthrough
+        case .EXT_X_CONTENT_STEERING:
             fallthrough
         case .EXT_X_MEDIA_SEQUENCE:
             fallthrough
