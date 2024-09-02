@@ -461,7 +461,7 @@ extension PantosTag: PlaylistTagDescriptor, Equatable {
                 DictionaryTagValueIdentifierImpl(valueId: PantosValue.bitDepth, optional: true, expectedType: Int.self),
                 DictionaryTagValueIdentifierImpl(valueId: PantosValue.sampleRate, optional: true, expectedType: Int.self),
                 DictionaryTagValueIdentifierImpl(valueId: PantosValue.characteristics, optional: true, expectedType: String.self),
-                DictionaryTagValueIdentifierImpl(valueId: PantosValue.channels, optional: true, expectedType: String.self)
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.channels, optional: true, expectedType: Channels.self)
                 ])
             
         case .EXT_X_I_FRAME_STREAM_INF:

@@ -373,7 +373,8 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
                                         .forced,
                                         .instreamId,
                                         .bitDepth,
-                                        .sampleRate]
+                                        .sampleRate,
+                                        .channels]
 
         validate(tag: PantosTag.EXT_X_MEDIA,
                  tagData: tagData,
