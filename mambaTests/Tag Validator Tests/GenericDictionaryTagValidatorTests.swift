@@ -401,96 +401,366 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
     /*
      #EXT-X-STREAM-INF:<attribute-list>
      <URI>
-     
+
      The following attributes are defined:
-     
+
      BANDWIDTH
-     
-     The value is a decimal-integer of bits per second.  It MUST be an
-     upper bound of the overall bitrate of each media segment (calculated
-     to include container overhead) that appears or will appear in the
-     Playlist.
-     
+
+     The value is a decimal-integer of bits per second.  It represents
+     the peak segment bit rate of the Variant Stream.
+
+     If all the Media Segments in a Variant Stream have already been
+     created, the BANDWIDTH value MUST be the largest sum of peak
+     segment bit rates that is produced by any playable combination of
+     Renditions.  (For a Variant Stream with a single Media Playlist,
+     this is just the peak segment bit rate of that Media Playlist.)
+     An inaccurate value can cause playback stalls or prevent clients
+     from playing the variant.
+
+     If the Multivariant Playlist is to be made available before all
+     Media Segments in the presentation have been encoded, the
+     BANDWIDTH value SHOULD be the BANDWIDTH value of a representative
+     period of similar content, encoded using the same settings.
+
      Every EXT-X-STREAM-INF tag MUST include the BANDWIDTH attribute.
-     
-     PROGRAM-ID
-     
-     The value is a decimal-integer that uniquely identifies a particular
-     presentation within the scope of the Playlist file.
-     
-     A Playlist file MAY contain multiple EXT-X-STREAM-INF tags with the
-     same PROGRAM-ID to identify different encodings of the same
-     presentation.  These variant playlists MAY contain additional EXT-X-
-     STREAM-INF tags.
-     
+
+     AVERAGE-BANDWIDTH
+
+     The value is a decimal-integer of bits per second.  It represents
+     the average segment bit rate of the Variant Stream.
+
+     If all the Media Segments in a Variant Stream have already been
+     created, the AVERAGE-BANDWIDTH value MUST be the largest sum of
+     average segment bit rates that is produced by any playable
+     combination of Renditions.  (For a Variant Stream with a single
+     Media Playlist, this is just the average segment bit rate of that
+     Media Playlist.)  An inaccurate value can cause playback stalls or
+     prevent clients from playing the variant.
+
+     If the Multivariant Playlist is to be made available before all
+     Media Segments in the presentation have been encoded, the AVERAGE-
+     BANDWIDTH value SHOULD be the AVERAGE-BANDWIDTH value of a
+     representative period of similar content, encoded using the same
+     settings.
+
+     The AVERAGE-BANDWIDTH attribute is OPTIONAL.
+
+     SCORE
+
+     The value is a positive decimal-floating-point number.  It is an
+     abstract, relative measure of the playback quality-of-experience
+     of the Variant Stream.
+
+     The value can be based on any metric or combination of metrics
+     that can be consistently applied to all Variant Streams.  The
+     value SHOULD consider all media in the Variant Stream, including
+     video, audio and subtitles.  A Variant Stream with a SCORE
+     attribute MUST be considered by the Playlist author to be more
+     desirable than any Variant Stream with a lower SCORE attribute in
+     the same Multivariant Playlist.
+
+     The SCORE attribute is OPTIONAL, but if any Variant Stream
+     contains the SCORE attribute, then all Variant Streams in the
+     Multivariant Playlist SHOULD have a SCORE attribute.  See
+     Section 6.3.1 for more information.
+
      CODECS
-     
+
      The value is a quoted-string containing a comma-separated list of
      formats, where each format specifies a media sample type that is
-     present in a media segment in the Playlist file.  Valid format
-     identifiers are those in the ISO File Format Name Space defined by
-     RFC 6381 [RFC6381].
-     
+     present in one or more Renditions specified by the Variant Stream.
+     Valid format identifiers are those in the ISO Base Media File
+     Format Name Space defined by "The 'Codecs' and 'Profiles'
+     Parameters for "Bucket" Media Types" [RFC6381].
+
+     For example, a stream containing AAC low complexity (AAC-LC) audio
+     and H.264 Main Profile Level 3.0 video would have a CODECS value
+     of "mp4a.40.2,avc1.4d401e".
+
+     Note that if a Variant Stream specifies one or more Renditions
+     that include IMSC subtitles, the CODECS attribute MUST indicate
+     this with a format identifier such as "stpp.ttml.im1t".
+
      Every EXT-X-STREAM-INF tag SHOULD include a CODECS attribute.
-     
+
+     SUPPLEMENTAL-CODECS
+
+     The SUPPLEMENTAL-CODECS attribute describes media samples with
+     both a backward-compatible base layer and a newer enhancement
+     layer.  The base layers are specified in the CODECS attribute and
+     the enhancement layers are specified by the SUPPLEMENTAL-CODECS
+     attribute.
+
+     The value is a quoted-string containing a comma-separated list of
+     elements, where each element specifies an enhancement layer media
+     sample type that is present in one or more Renditions specified by
+     the Variant Stream.
+
+     Each element is a slash-separated list of fields.  The first field
+     must be a valid CODECS format.  If more than one field is present,
+     the remaining fields must be compatibility brands [MP4RA] that
+     pertain to that codec's bitstream.
+
+     Each member of SUPPLEMENTAL-CODECS must have its base layer codec
+     declared in the CODECS attribute.
+
+     For example, a stream containing Dolby Vision 8.4 content might
+     have a CODECS attribute including "hvc1.2.4.L153.b0", and a
+     SUPPLEMENTAL-CODECS attribute including "dvh1.08.07/db4h".
+
+     The SUPPLEMENTAL-CODECS attribute is OPTIONAL.
+
      RESOLUTION
-     
-     The value is a decimal-resolution describing the approximate encoded
-     horizontal and vertical resolution of video within the presentation.
-     
+
+     The value is a decimal-resolution describing the optimal pixel
+     resolution at which to display all the video in the Variant
+     Stream.
+
+     The RESOLUTION attribute is OPTIONAL but is recommended if the
+     Variant Stream includes video.
+
+     FRAME-RATE
+
+     The value is a decimal-floating-point describing the maximum frame
+     rate for all the video in the Variant Stream, rounded to three
+     decimal places.
+
+     The FRAME-RATE attribute is OPTIONAL but is recommended if the
+     Variant Stream includes video.  The FRAME-RATE attribute SHOULD be
+     included if any video in a Variant Stream exceeds 30 frames per
+     second.
+
+     HDCP-LEVEL
+
+     The value is an enumerated-string; valid strings are TYPE-0, TYPE-
+     1, and NONE.  This attribute is advisory.  A value of TYPE-0
+     indicates that the Variant Stream could fail to play unless the
+     output is protected by High-bandwidth Digital Content Protection
+     (HDCP) Type 0 [HDCP] or equivalent.  A value of TYPE-1 indicates
+     that the Variant Stream could fail to play unless the output is
+     protected by HDCP Type 1 or equivalent.  A value of NONE indicates
+     that the content does not require output copy protection.
+
+     Encrypted Variant Streams with different HDCP levels SHOULD use
+     different media encryption keys.
+
+     The HDCP-LEVEL attribute is OPTIONAL.  It SHOULD be present if any
+     content in the Variant Stream will fail to play without HDCP.
+     Clients without output copy protection SHOULD NOT load a Variant
+     Stream with an HDCP-LEVEL attribute unless its value is NONE.
+
+     ALLOWED-CPC
+
+     The ALLOWED-CPC attribute allows a server to indicate that the
+     playback of a Variant Stream containing encrypted Media Segments
+     is to be restricted to devices that guarantee a certain level of
+     content protection robustness.  Its value is a quoted-string
+     containing a comma-separated list of entries.  Each entry consists
+     of a KEYFORMAT attribute value followed by a colon character (:)
+     followed by a sequence of Content Protection Configuration (CPC)
+     Labels separated by slash (/) characters.  Each CPC Label is a
+     string containing characters from the set [A..Z], [0..9], and '-'.
+
+     For example: ALLOWED-CPC="com.example.drm1:SMART-TV/PC,
+     com.example.drm2:HW"
+
+     A CPC Label identifies a class of playback device that implements
+     the KEYFORMAT with a certain level of content protection
+     robustness.  Each KEYFORMAT can define its own set of CPC Labels.
+     The "identity" KEYFORMAT does not define any labels.  A KEYFORMAT
+     that defines CPC Labels SHOULD also specify its robustness
+     requirements in a secure manner in each key response.
+
+     A client MAY play the Variant Stream if it implements one of the
+     listed KEYFORMAT schemes with content protection robustness that
+     matches one or more of the CPC Labels in the list.  If it does not
+     match any of the CPC Labels then it SHOULD NOT attempt to play the
+     Variant Stream.
+
+     The ALLOWED-CPC attribute is OPTIONAL.  If it is not present or
+     does not contain a particular KEYFORMAT then all clients that
+     support that KEYFORMAT MAY play the Variant Stream.
+
+     VIDEO-RANGE
+
+     The value is an enumerated-string; valid strings are SDR, HLG and
+     PQ.
+
+     The value MUST be SDR if the video in the Variant Stream is
+     encoded using one of the following reference opto-electronic
+     transfer characteristic functions specified by the
+     TransferCharacteristics code point: [CICP] 1, 6, 13, 14, 15.  Note
+     that different TransferCharacteristics code points can use the
+     same transfer function.
+
+     The value MUST be HLG if the video in the Variant Stream is
+     encoded using a reference opto-electronic transfer characteristic
+     function specified by the TransferCharacteristics code point 18,
+     or consists of such video mixed with video qualifying as SDR (see
+     above).
+
+     The value MUST be PQ if the video in the Variant Stream is encoded
+     using a reference opto-electronic transfer characteristic function
+     specified by the TransferCharacteristics code point 16, or
+     consists of such video mixed with video qualifying as SDR or HLG
+     (see above).
+
+     This attribute is OPTIONAL.  Its absence implies a value of SDR.
+     Clients that do not recognize the attribute value SHOULD NOT
+     select the Variant Stream.
+
+     REQ-VIDEO-LAYOUT
+
+     The REQ-VIDEO-LAYOUT attribute indicates whether the video content
+     in the Variant Stream requires specialized rendering to be
+     properly displayed.  Its value is a quoted-string containing a
+     comma-separated list of View Presentation Entries, where each
+     entry specifies the rendering for some portion of the Variant
+     Stream.
+
+     Each View Presentation Entry consists of an unordered, slash-
+     separated list of specifiers.  Each specifier controls one aspect
+     of the entry.  That is, the specifiers are disjoint and the values
+     for a specifier are mutually exclusive.  Each specifier can occur
+     at most once in an entry.  The possible specifiers are given
+     below.
+
+     All specifier values are enumerated-strings.  The enumerated-
+     strings for a specifier will share a common-prefix.  If the
+     specifier list contains an unrecognized enumerated-string then the
+     client MUST ignore the tag and the following URI line.
+
+     The Video Channel Specifier is an enumerated-string that defines
+     the video channels; valid strings are CH-STEREO, and CH-MONO.  A
+     value of CH-STEREO (stereoscopic) indicates that both left and
+     right eye images are present.  A value of CH-MONO (monoscopic)
+     indicates that a single image is present.
+
+     The REQ-VIDEO-LAYOUT attribute is optional.  A REQ-VIDEO-LAYOUT
+     attribute MUST NOT be empty, and each View Presentation Entry MUST
+     NOT be empty.  The attribute SHOULD be present if any content in
+     the Variant Stream will fail to display properly without
+     specialized rendering, otherwise playback errors can occur on some
+     clients.
+
+     The client SHOULD assume that the order of entries reflects the
+     most common presentation in the content.  For example, if the
+     content is predominantly stereoscopic, with some brief sections
+     that are monoscopic then the Multivariant Playlist SHOULD specify
+     REQ-VIDEO-LAYOUT="CH-STEREO,CH-MONO".  On the other hand, if the
+     content is predominantly monoscopic then the Multivariant Playlist
+     SHOULD specify REQ-VIDEO-LAYOUT="CH-MONO,CH-STEREO"".
+
+     By default a video variant is monoscopic, so an attribute
+     consisting entirely of REQ-VIDEO-LAYOUT="CH-MONO" is unnecessary
+     and SHOULD NOT be present.  Eliminating it allows Multivariant
+     Playlists with a mix of monoscopic and stereoscopic variants to be
+     played by clients that do not handle the REQ-VIDEO-LAYOUT
+     attribute.
+
+     STABLE-VARIANT-ID
+
+     The value is a quoted-string which is a stable identifier for the
+     URI within the Multivariant Playlist.  All characters in the
+     quoted-string MUST be from the following set: [a..z], [A..Z],
+     [0..9], '+', '/', '=', '.', '-', and '_'.  This attribute is
+     OPTIONAL.
+
+     The STABLE-VARIANT-ID allows the URI of the Variant Stream to
+     change between two distinct downloads of the Multivariant
+     Playlist.  IDs are matched using a byte-for-byte comparison.
+
+     All EXT-X-STREAM-INF tags in a Multivariant Playlist with the same
+     URI value SHOULD use the same STABLE-VARIANT-ID.
+
      AUDIO
-     
+
      The value is a quoted-string.  It MUST match the value of the
-     GROUP-ID attribute of an EXT-X-MEDIA tag elsewhere in the Playlist
-     whose TYPE attribute is AUDIO.  It indicates the set of audio
-     renditions that MAY be used when playing the presentation.  See
-     Section 3.3.10.1.
-     
+     GROUP-ID attribute of an EXT-X-MEDIA tag elsewhere in the
+     Multivariant Playlist whose TYPE attribute is AUDIO.  It indicates
+     the set of audio Renditions that SHOULD be used when playing the
+     presentation.  See Section 4.4.6.2.1.
+
+     The AUDIO attribute is OPTIONAL.
+
      VIDEO
-     
+
      The value is a quoted-string.  It MUST match the value of the
-     GROUP-ID attribute of an EXT-X-MEDIA tag elsewhere in the Playlist
-     whose TYPE attribute is VIDEO.  It indicates the set of video
-     renditions that MAY be used when playing the presentation.  See
-     Section 3.3.10.1.
-     
+     GROUP-ID attribute of an EXT-X-MEDIA tag elsewhere in the
+     Multivariant Playlist whose TYPE attribute is VIDEO.  It indicates
+     the set of video Renditions that SHOULD be used when playing the
+     presentation.  See Section 4.4.6.2.1.
+
+     The VIDEO attribute is OPTIONAL.
+
      SUBTITLES
-     
-     The value is a quoted-string.  It MUST match the value of the GROUP-
-     ID attribute of an EXT-X-MEDIA tag elsewhere in the Master Playlist
-     whose TYPE attribute is SUBTITLES. It indicates the set of subtitle
-     renditions that MAY be used when playing the presentation. See Section 3.4.10.1.
-     
+
+     The value is a quoted-string.  It MUST match the value of the
+     GROUP-ID attribute of an EXT-X-MEDIA tag elsewhere in the
+     Multivariant Playlist whose TYPE attribute is SUBTITLES.  It
+     indicates the set of subtitle Renditions that can be used when
+     playing the presentation.  See Section 4.4.6.2.1.
+
+     The SUBTITLES attribute is OPTIONAL.
+
      CLOSED-CAPTIONS
-     
-     The value can be either a quoted-string or an enumerated-string with
-     the value NONE.  If the value is a quoted-string, it MUST match the
-     value of the GROUP-ID attribute of an EXT-X-MEDIA tag elsewhere in
-     the Playlist whose TYPE attribute is CLOSED-CAPTIONS, and indicates
-     the set of closed-caption renditions that may be used when playlist
-     the presentation.
-     
-     If the value is the enumerated-string value NONE, all EXT-X-STREAM-
-     INF tags MUST have this attribute with a value of NONE.  This
-     indicates that there are no closed captions in any variant stream in
-     the Master Playlist
+
+     The value can be either a quoted-string or an enumerated-string
+     with the value NONE.  If the value is a quoted-string, it MUST
+     match the value of the GROUP-ID attribute of an EXT-X-MEDIA tag
+     elsewhere in the Playlist whose TYPE attribute is CLOSED-CAPTIONS,
+     and it indicates the set of closed-caption Renditions that can be
+     used when playing the presentation.  See Section 4.4.6.2.1.
+
+     If the value is the enumerated-string value NONE, all EXT-X-
+     STREAM-INF tags MUST have this attribute with a value of NONE,
+     indicating that there are no closed captions in any Variant Stream
+     in the Multivariant Playlist.  Having closed captions in one
+     Variant Stream but not another can trigger playback
+     inconsistencies.
+
+     The CLOSED-CAPTIONS attribute is OPTIONAL.
+
+     PATHWAY-ID
+
+     The value is a quoted-string.  It indicates that the Variant
+     Stream belongs to the identified Content Steering (Section 7)
+     Pathway.  This attribute is OPTIONAL.  Its absence indicates that
+     the Variant Stream belongs to the default Pathway ".", so every
+     Variant Stream can be associated with a named Pathway.
+
+     A Content Producer SHOULD provide all Rendition Groups on all
+     Pathways.  A Variant Stream belonging to a particular Pathway
+     SHOULD use Rendition Group(s) on that Pathway.
      */
     
     func test_EXT_X_STREAM_INF() {
     
         let tagData = "PROGRAM-ID=1,BANDWIDTH=2855600,CODECS=\"avc1.4d001f,mp4a.40.2\",RESOLUTION=960x540"
-        let optional: [PantosValue] = [.audioGroup,
+        let optional: [PantosValue] = [.averageBandwidthBPS,
+                                       .score,
+                                       .audioGroup,
                                        .programId,
                                        .resolution,
                                        .videoGroup,
                                        .subtitlesGroup,
                                        .closedCaptionsGroup,
-                                       .codecs]
+                                       .codecs,
+                                       .supplementalCodecs,
+                                       .hdcpLevel,
+                                       .allowedCpc,
+                                       .videoRange,
+                                       .reqVideoLayout,
+                                       .stableVariantId,
+                                       .frameRate]
         let mandatory: [PantosValue] = [.bandwidthBPS]
         let badValues: [PantosValue] = [.bandwidthBPS,
+                                        .averageBandwidthBPS,
+                                        .score,
                                         .programId,
-                                        .resolution]
-        
+                                        .resolution,
+                                        .frameRate]
+
         validate(tag: PantosTag.EXT_X_STREAM_INF,
                  tagData: tagData,
                  optional: optional,

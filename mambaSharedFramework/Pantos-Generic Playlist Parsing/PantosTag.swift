@@ -426,13 +426,23 @@ extension PantosTag: PlaylistTagDescriptor, Equatable {
         case .EXT_X_STREAM_INF:
             return GenericDictionaryTagValidator(tag: pantostag, dictionaryValueIdentifiers: [
                 DictionaryTagValueIdentifierImpl(valueId: PantosValue.bandwidthBPS, optional: false, expectedType: Int.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.averageBandwidthBPS, optional: true, expectedType: Int.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.score, optional: true, expectedType: Double.self),
                 DictionaryTagValueIdentifierImpl(valueId: PantosValue.programId, optional: true, expectedType: Int.self),
                 DictionaryTagValueIdentifierImpl(valueId: PantosValue.codecs, optional: true, expectedType: CodecValueTypeArray.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.supplementalCodecs, optional: true, expectedType: CodecValueTypeArray.self),
                 DictionaryTagValueIdentifierImpl(valueId: PantosValue.resolution, optional: true, expectedType: ResolutionValueType.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.frameRate, optional: true, expectedType: Double.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.hdcpLevel, optional: true, expectedType: String.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.allowedCpc, optional: true, expectedType: String.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.videoRange, optional: true, expectedType: String.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.reqVideoLayout, optional: true, expectedType: String.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.stableVariantId, optional: true, expectedType: String.self),
                 DictionaryTagValueIdentifierImpl(valueId: PantosValue.audioGroup, optional: true, expectedType: String.self),
                 DictionaryTagValueIdentifierImpl(valueId: PantosValue.videoGroup, optional: true, expectedType: String.self),
                 DictionaryTagValueIdentifierImpl(valueId: PantosValue.subtitlesGroup, optional: true, expectedType: String.self),
-                DictionaryTagValueIdentifierImpl(valueId: PantosValue.closedCaptionsGroup, optional: true, expectedType: ClosedCaptionsValueType.self)
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.closedCaptionsGroup, optional: true, expectedType: ClosedCaptionsValueType.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.pathwayId, optional: true, expectedType: String.self)
                 ])
             
         case .EXT_X_MEDIA:
