@@ -760,7 +760,8 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
                                         .score,
                                         .programId,
                                         .resolution,
-                                        .frameRate]
+                                        .frameRate,
+                                        .hdcpLevel]
 
         validate(tag: PantosTag.EXT_X_STREAM_INF,
                  tagData: tagData,
@@ -908,7 +909,8 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
                                         .averageBandwidthBPS,
                                         .score,
                                         .programId,
-                                        .resolution]
+                                        .resolution,
+                                        .hdcpLevel]
 
         validate(tag: PantosTag.EXT_X_I_FRAME_STREAM_INF,
                  tagData: tagData,

@@ -104,7 +104,7 @@ public func ==(lhs: HLSMediaType, rhs: HLSMediaType) -> Bool {
 
 /// Represents an encryption method
 ///
-/// Can be initialized with a string "NONE" or "AES-128" or "SAMPLE-AES" for a valid value
+/// Can be initialized with a string "NONE" or "AES-128" or "SAMPLE-AES" or "SAMPLE-AES-CTR" for a valid value
 public struct HLSEncryptionMethodType: Equatable, FailableStringLiteralConvertible {
     public let type: EncryptionMethod
     public enum EncryptionMethod: String {
@@ -129,6 +129,33 @@ public struct HLSEncryptionMethodType: Equatable, FailableStringLiteralConvertib
 
 public func ==(lhs: HLSEncryptionMethodType, rhs: HLSEncryptionMethodType) -> Bool {
     return lhs.type == rhs.type
+}
+
+/// Represents a minimum required HDCP level needed to play content.
+public struct HLSHDCPLevel: Equatable, FailableStringLiteralConvertible {
+    public let type: HDCPLevel
+    public enum HDCPLevel: String {
+        /// Indicates that the content does not require output copy protections.
+        case none = "NONE"
+        /// Indicates that the Variant Stream could fail to play unless the output is protected by High-bandwidth
+        /// Digital Content Protection (HDCP) Type 0 or equivalent.
+        case type0 = "TYPE-0"
+        /// Indicates that the Variant Stream could fail to play unless the output is protected by HDCP Type 1 or
+        /// equivalent.
+        case type1 = "TYPE-1"
+    }
+    public init?(string: String) {
+        self.init(hdcpLevel: string)
+    }
+    public init?(hdcpLevel: String) {
+        guard let type = HDCPLevel(rawValue: hdcpLevel) else {
+            return nil
+        }
+        self.type = type
+    }
+    public init(hdcpLevel: HDCPLevel) {
+        self.type = hdcpLevel
+    }
 }
 
 /// Represents a playlist type
