@@ -127,6 +127,7 @@ public struct EncryptionMethodType: Equatable, FailableStringLiteralConvertible 
         case None = "NONE"
         case AES128 = "AES-128"
         case SampleAES = "SAMPLE-AES"
+        case SampleAESCTR = "SAMPLE-AES-CTR"
     }
     public init?(failableInitWithString string: String) {
         self.init(encryption: string)
