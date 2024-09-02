@@ -111,6 +111,7 @@ public struct HLSEncryptionMethodType: Equatable, FailableStringLiteralConvertib
         case None = "NONE"
         case AES128 = "AES-128"
         case SampleAES = "SAMPLE-AES"
+        case SampleAESCTR = "SAMPLE-AES-CTR"
     }
     public init?(string: String) {
         self.init(encryption: string)

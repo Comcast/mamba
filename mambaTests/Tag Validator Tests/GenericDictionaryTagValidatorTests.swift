@@ -1057,7 +1057,7 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
         emptyInput(tag: tag, numberOfErrors: 2)
         missingOptionalKeys(tag: tag, tagData: tagData, removed: [.ivector, .keyformat, .keyformatVersions])
         missingMandatoryKeys(tag: tag, tagData: tagData, removed: [.method])
-        wrongType(tag: tag, tagData: tagData, badValues: [])
+        wrongType(tag: tag, tagData: tagData, badValues: [.method])
 
         let EXT_X_SESSION_KEY_withNoURIAndMETHODEqualToNONE = {
             let tagData = "METHOD=NONE"
