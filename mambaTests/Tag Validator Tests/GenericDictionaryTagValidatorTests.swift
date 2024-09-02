@@ -143,91 +143,208 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
      
      The following attributes are defined:
      
-     URI
-     
-     The value is a quoted-string containing a URI that identifies the
-     Playlist file.  This attribute is optional; see Section 3.4.10.1.
-     
      TYPE
-     
-     The value is enumerated-string; valid strings are AUDIO, VIDEO and
-     SUBTITLES.  If the value is AUDIO, the Playlist described by the tag
-     MUST contain audio media.  If the value is VIDEO, the Playlist MUST
-     contain video media.  If the value is SUBTITLES, the Playlist MUST
-     contain subtitle media.
-     
+
+     The value is an enumerated-string; valid strings are AUDIO, VIDEO,
+     SUBTITLES, and CLOSED-CAPTIONS.  This attribute is REQUIRED.
+
+     Typically, closed-caption [CEA608] media is carried in the video
+     stream.  Therefore, an EXT-X-MEDIA tag with TYPE of CLOSED-
+     CAPTIONS does not specify a Rendition; the closed-caption media is
+     present in the Media Segments of every video Rendition.
+
+     URI
+
+     The value is a quoted-string containing a URI that identifies the
+     Media Playlist file.  This attribute is OPTIONAL; see
+     Section 4.4.6.2.1.  If the TYPE is CLOSED-CAPTIONS, the URI
+     attribute MUST NOT be present.
+
      GROUP-ID
-     
-     The value is a quoted-string identifying a mutually-exclusive group
-     of renditions.  The presence of this attribute signals membership in
-     the group.  See Section 3.4.9.1.
-     
+
+     The value is a quoted-string that specifies the group to which the
+     Rendition belongs.  See Section 4.4.6.1.1.  This attribute is
+     REQUIRED.
+
      LANGUAGE
-     
-     The value is a quoted-string containing an RFC 5646 [RFC5646]
-     language tag that identifies the primary language used in the
-     rendition.  This attribute is optional.
-     
+
+     The value is a quoted-string containing one of the standard Tags
+     for Identifying Languages [RFC5646], which identifies the primary
+     language used in the Rendition.  This attribute is OPTIONAL.
+
      ASSOC-LANGUAGE
-     
-     The value is a quoted-string containing an RFC 5646 [RFC5646]
-     language tag that identifies a language that is associated with the
-     rendition.  An associated language is often used in a different role
-     than the language specified by the LANGUAGE attribute (e.g.  written
-     vs.  spoken, or as a fallback dialect). This attribute is OPTIONAL.
-     
+
+     The value is a quoted-string containing a language tag [RFC5646]
+     that identifies a language that is associated with the Rendition.
+     An associated language is often used in a different role than the
+     language specified by the LANGUAGE attribute (e.g., written versus
+     spoken, or a fallback dialect).  This attribute is OPTIONAL.
+
      NAME
-     
-     The value is a quoted-string containing a human-readable description
-     of the rendition.  If the LANGUAGE attribute is present then this
-     description SHOULD be in that language.
-     
+
+     The value is a quoted-string containing a human-readable
+     description of the Rendition.  If the LANGUAGE attribute is
+     present, then this description SHOULD be in that language.  See
+     Appendix E for more information.  This attribute is REQUIRED.
+
+     STABLE-RENDITION-ID
+
+     The value is a quoted-string which is a stable identifier for the
+     URI within the Multivariant Playlist.  All characters in the
+     quoted-string MUST be from the following set: [a..z], [A..Z],
+     [0..9], '+', '/', '=', '.', '-', and '_'.  This attribute is
+     OPTIONAL.
+
+     The STABLE-RENDITION-ID allows the URI of a Rendition to change
+     between two distinct downloads of the Multivariant Playlist.  IDs
+     are matched using a byte-for-byte comparison.
+
+     All EXT-X-MEDIA tags in a Multivariant Playlist with the same URI
+     value SHOULD use the same STABLE-RENDITION-ID.
+
      DEFAULT
-     
-     The value is an enumerated-string; valid strings are YES and NO.  If
-     the value is YES, then the client SHOULD play this rendition of the
-     content in the absence of information from the user indicating a
-     different choice.  This attribute is optional.  Its absence indicates
-     an implicit value of NO.
-     
+
+     The value is an enumerated-string; valid strings are YES and NO.
+     If the value is YES, then the client SHOULD play this Rendition of
+     the content in the absence of information from the user indicating
+     a different choice.  This attribute is OPTIONAL.  Its absence
+     indicates an implicit value of NO.
+
      AUTOSELECT
-     
+
      The value is an enumerated-string; valid strings are YES and NO.
-     This attribute is optional.  If it is present, its value MUST be YES
-     if the value of the DEFAULT attribute is YES.  If the value is YES,
-     then the client MAY choose to play this rendition in the absence of
-     explicit user preference because it matches the current playback
-     environment, such as chosen system language.
-     
+     This attribute is OPTIONAL.  Its absence indicates an implicit
+     value of NO.  If the value is YES, then the client MAY choose to
+     play this Rendition in the absence of explicit user preference
+     because it matches the current playback environment, such as
+     chosen system language.
+
+     If the AUTOSELECT attribute is present, its value MUST be YES if
+     the value of the DEFAULT attribute is YES.
+
      FORCED
-     
+
      The value is an enumerated-string; valid strings are YES and NO.
-     This attribute is optional.  Its absence indicates an implicit value
-     of NO.  The FORCED attribute MUST NOT be present unless the TYPE is
-     SUBTITLES.
-     
-     A value of YES indicates that the rendition contains content which is
-     considered essential to play.  When selecting a FORCED rendition, a
-     client should choose the one that best matches the current playback
-     environment (e.g. language).
-     
-     A value of NO indicates that the rendition contains content which is
-     intended to be played in response to explicit user request.
-     
+     This attribute is OPTIONAL.  Its absence indicates an implicit
+     value of NO.  The FORCED attribute MUST NOT be present unless the
+     TYPE is SUBTITLES.
+
+     A value of YES indicates that the Rendition contains content that
+     is considered essential to play.  When selecting a FORCED
+     Rendition, a client SHOULD choose the one that best matches the
+     current playback environment (e.g., language).
+
+     A value of NO indicates that the Rendition contains content that
+     is intended to be played in response to explicit user request.
+
      INSTREAM-ID
-     
-     The value is a quoted-string that specifies a rendition within the
+
+     The value is a quoted-string that specifies a Rendition within the
      segments in the Media Playlist.  This attribute is REQUIRED if the
-     TYPE attribute is CLOSED-CAPTIONS, in which case it MUST have one of
-     the values: "CC1", "CC2", "CC3", "CC4".  For all other TYPE values,
-     the INSTREAM-ID SHOULD NOT be specified.
-     
+     TYPE attribute is CLOSED-CAPTIONS, in which case it MUST have one
+     of the values: "CC1", "CC2", "CC3", "CC4", or "SERVICEn" where n
+     MUST be an integer between 1 and 63 (e.g., "SERVICE9" or
+     "SERVICE42").
+
+     The values "CC1", "CC2", "CC3", and "CC4" identify a Line 21 Data
+     Services channel [CEA608].  The "SERVICE" values identify a
+     Digital Television Closed Captioning [CEA708] service block
+     number.
+
+     For all other TYPE values, the INSTREAM-ID MUST NOT be specified.
+
+     BIT-DEPTH
+
+     The value is a non-negative decimal-integer specifying the audio
+     bit depth of the Rendition.  This attribute is OPTIONAL.  The
+     attribute allows players to identify Renditions that have a bit
+     depth appropriate to the available hardware.  The BIT-DEPTH
+     attribute MUST NOT be present unless the TYPE is AUDIO.
+
+     SAMPLE-RATE
+
+     The value is a non-negative decimal-integer specifying the audio
+     sample rate of the Rendition.  This attribute is OPTIONAL.  The
+     attribute allows players to identify Renditions that may be played
+     without sample rate conversion.  This is useful for lossless
+     encodings.  The SAMPLE-RATE attribute MUST NOT be present unless
+     the TYPE is AUDIO.
+
      CHARACTERISTICS
-     
-     The value is a quoted-string containing one or more Uniform Type
-     Identifiers [UTI] separated by comma (,) characters.  This attribute
-     is optional.  Each UTI indicates an individual characteristic of the
-     rendition.
+
+     The value is a quoted-string containing one or more Media
+     Characteristic Tags (MCTs) separated by comma (,) characters.  A
+     Media Characteristic Tag has the same format as the payload of a
+     media characteristic tag atom [MCT].  This attribute is OPTIONAL.
+     Each MCT indicates an individual characteristic of the Rendition.
+
+     A SUBTITLES Rendition MAY include the following characteristics:
+     "public.accessibility.transcribes-spoken-dialog",
+     "public.accessibility.describes-music-and-sound", and
+     "public.easy-to-read" (which indicates that the subtitles have
+     been edited for ease of reading).
+
+     An AUDIO Rendition MAY include the following characteristic:
+     "public.accessibility.describes-video".
+
+     The CHARACTERISTICS attribute MAY include private MCTs.
+
+     CHANNELS
+
+     The value is a quoted-string that specifies an ordered, slash-
+     separated ("/") list of parameters.
+
+     The CHANNELS attribute MUST NOT be present unless the TYPE is
+     AUDIO.  The first parameter is a decimal-integer.  Each succeeding
+     parameter is a comma-separated list of Identifiers.  An Identifier
+     is a string containing characters from the set [A..Z], [0..9], and
+     '-'.
+
+     The first parameter is a count of audio channels expressed as a
+     decimal-integer, indicating the maximum number of independent,
+     simultaneous audio channels present in any Media Segment in the
+     Rendition.  For example, an AC-3 5.1 Rendition would have a
+     CHANNELS="6" attribute.
+
+     The second parameter identifies the presence of spatial audio of
+     some kind, for example, object-based audio, in the Rendition.
+     This parameter is a comma-separated list of Audio Coding
+     Identifiers.  This parameter is optional.  The Audio Coding
+     Identifiers are codec-specific.  A parameter value of consisting
+     solely of the dash character (0x2D) indicates that the audio is
+     only channel-based.
+
+     The third parameter contains supplementary indications of special
+     channel usage that are necessary for informed selection and
+     processing.  This parameter is a comma-separated list of Special
+     Usage Identifiers.  This parameter is optional, however if it is
+     present the second parameter must be non-empty.  The following
+     Special Usage Identifiers can be present in the third parameter:
+
+     BINAURAL  The audio is binaural (either recorded or synthesized).
+        It SHOULD NOT be dynamically spatialized.  It is best suited
+        for delivery to headphones.
+
+     IMMERSIVE  The audio is pre-processed content that SHOULD NOT be
+        dynamically spatialized.  It is suitable to deliver to either
+        headphones or speakers.
+
+     DOWNMIX  The audio is a downmix derivative of some other audio.
+        If desired, the downmix may be used as a subtitute for
+        alternative Renditions in the same group with compatible
+        attributes and a greater channel count.  It MAY be dynamically
+        spatialized.
+
+     Audio without a Special Usage Identifier MAY be dynamically
+     spatialized.
+
+     No other CHANNELS parameters are currently defined.
+
+     All audio EXT-X-MEDIA tags SHOULD have a CHANNELS attribute.  If a
+     Multivariant Playlist contains two Renditions with the same NAME
+     encoded with the same codec but a different number of channels,
+     then the CHANNELS attribute is REQUIRED; otherwise, it is
+     OPTIONAL.
      */
     
      func test_EXT_X_MEDIA() {
