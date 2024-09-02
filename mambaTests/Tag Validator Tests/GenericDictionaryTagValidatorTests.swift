@@ -857,50 +857,58 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
                  badValues: badValues)
     }
     /*
-     The EXT-X-I-FRAME-STREAM-INF tag identifies a Playlist file
+     The EXT-X-I-FRAME-STREAM-INF tag identifies a Media Playlist file
      containing the I-frames of a multimedia presentation.  It stands
-     alone, in that it does not apply to a particular URI in the Playlist.
-     Its format is:
-     
+     alone, in that it does not apply to a particular URI in the
+     Multivariant Playlist.  Its format is:
+
      #EXT-X-I-FRAME-STREAM-INF:<attribute-list>
-     
-     All attributes defined for the EXT-X-STREAM-INF tag (Section 3.3.10)
+
+     All attributes defined for the EXT-X-STREAM-INF tag (Section 4.4.6.2)
      are also defined for the EXT-X-I-FRAME-STREAM-INF tag, except for the
-     AUDIO attribute.  In addition, the following attribute is defined:
-     
-     URI
-     
-     The value is a quoted-string containing a URI that identifies the
-     I-frame Playlist file.
-     
+     FRAME-RATE, AUDIO, SUBTITLES, and CLOSED-CAPTIONS attributes.  In
+     addition, the following attribute is defined:
+
+        URI
+
+        The value is a quoted-string containing a URI that identifies the
+        I-frame Media Playlist file.  That Playlist file MUST contain an
+        EXT-X-I-FRAMES-ONLY tag.
+
      Every EXT-X-I-FRAME-STREAM-INF tag MUST include a BANDWIDTH attribute
      and a URI attribute.
-     
-     The provisions in Section 3.3.10.1 also apply to EXT-X-I-FRAME-
+
+     The provisions in Section 4.4.6.2.1 also apply to EXT-X-I-FRAME-
      STREAM-INF tags with a VIDEO attribute.
-     
-     A Playlist that specifies alternative VIDEO renditions and I-frame
-     Playlists SHOULD include an alternative I-frame VIDEO rendition for
-     each regular VIDEO rendition, with the same NAME and LANGUAGE
-     attributes.
-     
-     The EXT-X-I-FRAME-STREAM-INF tag appeared in version 4 of the
-     protocol.  Clients supporting earlier protocol versions MUST ignore
-     it.
+
+     A Multivariant Playlist that specifies alternative VIDEO Renditions
+     and I-frame Playlists SHOULD include an alternative I-frame VIDEO
+     Rendition for each regular VIDEO Rendition, with the same NAME and
+     LANGUAGE attributes.
      */
     func test_EXT_I_FRAME_STREAM_INF() {
         
         let tagData = "BANDWIDTH=328400,PROGRAM-ID=1,CODECS=\"avc1.4d401f\",RESOLUTION=320x180,URI=\"Simpsons_505_HD_VOD_STUNT_movie_LVLH05/format-hls-track-iframe-bandwidth-328400-repid-328400.m3u8\""
-        let optional: [PantosValue] = [.programId,
-                                       .codecs,
+        let optional: [PantosValue] = [.averageBandwidthBPS,
+                                       .score,
+                                       .programId,
                                        .resolution,
-                                       .videoGroup]
+                                       .videoGroup,
+                                       .codecs,
+                                       .supplementalCodecs,
+                                       .hdcpLevel,
+                                       .allowedCpc,
+                                       .videoRange,
+                                       .reqVideoLayout,
+                                       .stableVariantId]
         let mandatory: [PantosValue] = [.bandwidthBPS,
                                         .uri]
         let badValues: [PantosValue] = [.bandwidthBPS,
+                                        .averageBandwidthBPS,
+                                        .score,
                                         .programId,
                                         .resolution]
-        
+
         validate(tag: PantosTag.EXT_X_I_FRAME_STREAM_INF,
                  tagData: tagData,
                  optional: optional,
