@@ -34,9 +34,15 @@ public enum PantosValue: String {
     /// Found in `.UnknownTag`. The data of the tag.
     case UnknownTag_Value = "UnknownTag_Value"
     
-    /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. A bandwidth value in bits per second.
+    /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. A peak bandwidth value in bits per second.
     case bandwidthBPS = "BANDWIDTH"
-    
+
+    /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. An average bandwidth value in bits per second.
+    case averageBandwidthBPS = "AVERAGE-BANDWIDTH"
+
+    /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. An abstract, relative measure of the playback quality-of-experience of the variant stream.
+    case score = "SCORE"
+
     /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. The program id of the stream.
     case programId = "PROGRAM-ID"
     
@@ -48,10 +54,33 @@ public enum PantosValue: String {
     
     /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. Comma delimited list of formats supported in the media file.
     case codecs = "CODECS"
-    
+
+    /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. Comma delimited list of formats supported in the enhancement layer in the media file.
+    case supplementalCodecs = "SUPPLEMENTAL-CODECS"
+
     /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. Horizonal by vertical pixel resolution of the media file, i.e. 1280x720
     case resolution = "RESOLUTION"
-    
+
+    /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. Advisory information on the minimum HDCP level
+    /// required by the output protection level of the license that will be provided to decrypt this media content.
+    case hdcpLevel = "HDCP-LEVEL"
+
+    /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. Advisory information on the minimum robustness
+    /// level required by the output protection level of the license that will be provided to decrypt this media content.
+    case allowedCpc = "ALLOWED-CPC"
+
+    /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. Reference opto-electronic transfer characteristic function used in the encoding of the media file.
+    case videoRange = "VIDEO-RANGE"
+
+    /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. Indication of any specialized rendering needed to properly display the video content of the media file.
+    case reqVideoLayout = "REQ-VIDEO-LAYOUT"
+
+    /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. Allows the URI (defined in next Location line or the URI attribute) to change between two reloads of the playlist.
+    case stableVariantId = "STABLE-VARIANT-ID"
+
+    /// Found in `.EXT_X_STREAM_INF`. Maximum frame rate for all video in the variant stream (rounded to 3 decimal places).
+    case frameRate = "FRAME-RATE"
+
     /// Found in `.EXT_X_STREAM_INF`. Match a tag with a corresponding subtitles stream.
     case subtitlesGroup = "SUBTITLES"
     
@@ -70,7 +99,10 @@ public enum PantosValue: String {
     /// Found in `.EXT_X_CONTENT_STEERING`. The URI location for the steering manifest.
     case serverUri = "SERVER-URI"
 
-    /// Found in `.EXT_X_CONTENT_STEERING`. The initial pathway to choose until the first steering manifest is obtained.
+    /// Found in `.EXT_X_STREAM_INF`, `.EXT_X_I_FRAME_STREAM_INF` and `.EXT_X_CONTENT_STEERING`. When found in
+    /// `.EXT_X_CONTENT_STEERING` it represents the initial pathway to choose until the first steering manifest is
+    /// obtained. When found in `.EXT_X_STREAM_INF` or `.EXT_X_I_FRAME_STREAM_INF` it represents the Content Steering
+    /// Pathway that the variant stream belongs to.
     case pathwayId = "PATHWAY-ID"
 
     /// Found in `.EXT_X_TARGETDURATION`. A target duration in seconds.
