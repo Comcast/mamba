@@ -443,11 +443,15 @@ extension PantosTag: PlaylistTagDescriptor, Equatable {
                 DictionaryTagValueIdentifierImpl(valueId: PantosValue.language, optional: true, expectedType: String.self),
                 DictionaryTagValueIdentifierImpl(valueId: PantosValue.assocLanguage, optional: true, expectedType: String.self),
                 DictionaryTagValueIdentifierImpl(valueId: PantosValue.name, optional: true, expectedType: String.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.stableRenditionId, optional: true, expectedType: String.self),
                 DictionaryTagValueIdentifierImpl(valueId: PantosValue.defaultMedia, optional: true, expectedType: Bool.self),
                 DictionaryTagValueIdentifierImpl(valueId: PantosValue.autoselect, optional: true, expectedType: Bool.self),
                 DictionaryTagValueIdentifierImpl(valueId: PantosValue.forced, optional: true, expectedType: Bool.self),
                 DictionaryTagValueIdentifierImpl(valueId: PantosValue.instreamId, optional: true, expectedType: InstreamId.self),
-                DictionaryTagValueIdentifierImpl(valueId: PantosValue.characteristics, optional: true, expectedType: String.self)
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.bitDepth, optional: true, expectedType: Int.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.sampleRate, optional: true, expectedType: Int.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.characteristics, optional: true, expectedType: String.self),
+                DictionaryTagValueIdentifierImpl(valueId: PantosValue.channels, optional: true, expectedType: String.self)
                 ])
             
         case .EXT_X_I_FRAME_STREAM_INF:

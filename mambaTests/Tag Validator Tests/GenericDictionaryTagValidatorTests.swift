@@ -237,6 +237,7 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
                                        .type,
                                        .groupId,
                                        .name,
+                                       .stableRenditionId,
                                        .language,
                                        .assocLanguage,
                                        .uri,
@@ -244,15 +245,19 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
                                        .autoselect,
                                        .forced,
                                        .instreamId,
-                                       .characteristics
-        ]
+                                       .bitDepth,
+                                       .sampleRate,
+                                       .characteristics,
+                                       .channels]
         let mandatory: [PantosValue] = []
         let badValues: [PantosValue] = [.type,
                                         .defaultMedia,
                                         .autoselect,
                                         .forced,
-                                        .instreamId]
-        
+                                        .instreamId,
+                                        .bitDepth,
+                                        .sampleRate]
+
         validate(tag: PantosTag.EXT_X_MEDIA,
                  tagData: tagData,
                  optional: optional,
