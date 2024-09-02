@@ -190,6 +190,109 @@ public struct HLSClosedCaptions: FailableStringLiteralConvertible {
     }
 }
 
+/// Represents CHANNELS
+public struct HLSChannels: Equatable, FailableStringLiteralConvertible {
+    /// A count of audio channels, indicating the maximum number of independent, simultaneous audio channels present in
+    /// any Media Segment in the Rendition.
+    ///
+    /// For example, an AC-3 5.1 Rendition would have a CHANNELS="6" attribute.
+    public let count: Int
+    /// Identifies the presence of spatial audio of some kind, for example, object-based audio, in the Rendition. The
+    /// Audio Coding Identifiers are codec-specific.
+    public let spatialAudioCodingIdentifiers: [String]
+    /// Supplementary indications of special channel usage that are necessary for informed selection and processing.
+    /// This parameter is an array of Special Usage Identifiers.
+    public let specialUsageIdentifiers: [SpecialUsageIdentifier]
+
+    public enum SpecialUsageIdentifier: String {
+        /// The audio is binaural (either recorded or synthesized). It SHOULD NOT be dynamically spatialized. It is best
+        /// suited for delivery to headphones.
+        case binaural = "BINAURAL"
+        /// The audio is pre-processed content that SHOULD NOT be dynamically spatialized. It is suitable to deliver to
+        /// either headphones or speakers.
+        case immersive = "IMMERSIVE"
+        /// The audio is a downmix derivative of some other audio. If desired, the downmix may be used as a subtitute
+        /// for alternative Renditions in the same group with compatible attributes and a greater channel count. It MAY
+        /// be dynamically spatialized.
+        case downmix = "DOWNMIX"
+
+        /// Allows `init` without having to allocate a new `String` object.
+        init?(str: Substring) {
+            switch str {
+            case "BINAURAL": self = .binaural
+            case "IMMERSIVE": self = .immersive
+            case "DOWNMIX": self = .downmix
+            default: return nil
+            }
+        }
+    }
+
+    public init?(string: String) {
+        var count: Int?
+        var spatialAudioCodingIdentifiers: [String]?
+        var specialUsageIdentifiers: [SpecialUsageIdentifier]?
+        let enumeratedSplit = string.split(separator: "/").enumerated()
+        for (index, str) in enumeratedSplit {
+            switch index {
+            case 0: count = Self.parseChannelCount(str: str)
+            case 1: spatialAudioCodingIdentifiers = Self.parseSpatialAudioCodingIdentifiers(str: str)
+            case 2:
+                guard let ids = Self.parseSpecialUsageIdentifiers(str: str) else {
+                    // In the case that we don't recognize one of the special usage identifiers, leading to nil being
+                    // parsed out, I believe it is better to fail the entire parsing, as otherwise we could mislead the
+                    // user of the library into thinking that there are less special usage identifiers than there
+                    // actually are in the CHANNELS attribtue.
+                    return nil
+                }
+                specialUsageIdentifiers = ids
+            default: break // In the future there may be more parameters defined.
+            }
+        }
+        // Count is required to have been parsed.
+        guard let count else {
+            return nil
+        }
+        self.count = count
+        self.spatialAudioCodingIdentifiers = spatialAudioCodingIdentifiers ?? []
+        self.specialUsageIdentifiers = specialUsageIdentifiers ?? []
+    }
+
+    public init(
+        count: Int,
+        spatialAudioCodingIdentifiers: [String],
+        specialUsageIdentifiers: [SpecialUsageIdentifier]
+    ) {
+        self.count = count
+        self.spatialAudioCodingIdentifiers = spatialAudioCodingIdentifiers
+        self.specialUsageIdentifiers = specialUsageIdentifiers
+    }
+
+    private static func parseChannelCount(str: Substring) -> Int? {
+        Int(string: String(str))
+    }
+
+    private static func parseSpatialAudioCodingIdentifiers(str: Substring) -> [String] {
+        let split = str.split(separator: ",")
+        var identifiers = [String]()
+        for id in split where id != "-" {
+            identifiers.append(String(id))
+        }
+        return identifiers
+    }
+
+    private static func parseSpecialUsageIdentifiers(str: Substring) -> [SpecialUsageIdentifier]? {
+        let split = str.split(separator: ",")
+        var identifiers = [SpecialUsageIdentifier]()
+        for id in split {
+            guard let specialUsageId = SpecialUsageIdentifier(str: id) else {
+                return nil
+            }
+            identifiers.append(specialUsageId)
+        }
+        return identifiers
+    }
+}
+
 /// Represents a RFC6381 codec
 ///
 /// We are currently not parsing these values further

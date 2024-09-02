@@ -17,6 +17,9 @@
 		144758352C83D23100D12CCD /* EXT_X_SESSION_DATAPlaylistValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144758342C83D23100D12CCD /* EXT_X_SESSION_DATAPlaylistValidator.swift */; };
 		144758362C83D23100D12CCD /* EXT_X_SESSION_DATAPlaylistValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144758342C83D23100D12CCD /* EXT_X_SESSION_DATAPlaylistValidator.swift */; };
 		144758372C83D23100D12CCD /* EXT_X_SESSION_DATAPlaylistValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144758342C83D23100D12CCD /* EXT_X_SESSION_DATAPlaylistValidator.swift */; };
+		144758392C8620C000D12CCD /* HLSChannelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144758382C8620C000D12CCD /* HLSChannelsTests.swift */; };
+		1447583A2C8620C000D12CCD /* HLSChannelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144758382C8620C000D12CCD /* HLSChannelsTests.swift */; };
+		1447583B2C8620C000D12CCD /* HLSChannelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144758382C8620C000D12CCD /* HLSChannelsTests.swift */; };
 		1D28F3451EAA9E500010320B /* hls_ad_master_playlist.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3401EAA9E500010320B /* hls_ad_master_playlist.m3u8 */; };
 		1D28F3461EAA9E500010320B /* hls_ad_variant_playlist.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3411EAA9E500010320B /* hls_ad_variant_playlist.m3u8 */; };
 		1D28F3471EAA9E500010320B /* hls_master_playlist_sap.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 1D28F3421EAA9E500010320B /* hls_master_playlist_sap.m3u8 */; };
@@ -626,6 +629,7 @@
 		1447582C2C83C20800D12CCD /* EXT_X_SESSION_KEYValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXT_X_SESSION_KEYValidator.swift; sourceTree = "<group>"; };
 		144758302C83C72B00D12CCD /* EXT_X_SESSION_DATATagValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXT_X_SESSION_DATATagValidator.swift; sourceTree = "<group>"; };
 		144758342C83D23100D12CCD /* EXT_X_SESSION_DATAPlaylistValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXT_X_SESSION_DATAPlaylistValidator.swift; sourceTree = "<group>"; };
+		144758382C8620C000D12CCD /* HLSChannelsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSChannelsTests.swift; sourceTree = "<group>"; };
 		1D28F3401EAA9E500010320B /* hls_ad_master_playlist.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_ad_master_playlist.m3u8; sourceTree = "<group>"; };
 		1D28F3411EAA9E500010320B /* hls_ad_variant_playlist.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_ad_variant_playlist.m3u8; sourceTree = "<group>"; };
 		1D28F3421EAA9E500010320B /* hls_master_playlist_sap.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hls_master_playlist_sap.m3u8; sourceTree = "<group>"; };
@@ -1325,6 +1329,7 @@
 		EC9BCAA21D749D8B0032BEBE /* Value Types */ = {
 			isa = PBXGroup;
 			children = (
+				144758382C8620C000D12CCD /* HLSChannelsTests.swift */,
 				EC7492AF1DD29F8900AF4E20 /* HLSCodecArrayTests.swift */,
 				EC7492B01DD29F8900AF4E20 /* HLSMediaTypeTests.swift */,
 				EC7492B11DD29F8900AF4E20 /* HLSPlaylistTypeTests.swift */,
@@ -1926,6 +1931,7 @@
 				43DE4EFF1E564E1500EEE800 /* HLSMediaSpanTests.swift in Sources */,
 				ECE36DE41F2A9F10005E5DA7 /* HLSPlaylistTimelineAndSequencingTests.swift in Sources */,
 				01CD2E7A1DE4D46F002510E7 /* EXT_X_MAPTagParserTests.swift in Sources */,
+				144758392C8620C000D12CCD /* HLSChannelsTests.swift in Sources */,
 				EC7492481DD29E7300AF4E20 /* HLSValidatorTests.swift in Sources */,
 				EC7492AB1DD29F7000AF4E20 /* OrderedDictionaryTests.swift in Sources */,
 				EC74923E1DD29E7300AF4E20 /* HLSParser_Super8DemuxedTests.swift in Sources */,
@@ -2094,6 +2100,7 @@
 				43DE4F001E564E1500EEE800 /* HLSMediaSpanTests.swift in Sources */,
 				EC7492B41DD29F8900AF4E20 /* HLSCodecArrayTests.swift in Sources */,
 				ECE36DE51F2A9F10005E5DA7 /* HLSPlaylistTimelineAndSequencingTests.swift in Sources */,
+				1447583A2C8620C000D12CCD /* HLSChannelsTests.swift in Sources */,
 				EC7492491DD29E7300AF4E20 /* HLSValidatorTests.swift in Sources */,
 				EC7492AC1DD29F7000AF4E20 /* OrderedDictionaryTests.swift in Sources */,
 				EC74923F1DD29E7300AF4E20 /* HLSParser_Super8DemuxedTests.swift in Sources */,
@@ -2262,6 +2269,7 @@
 				ECE253FD209A50B500D388CE /* ThirdPartyTagListSupportTests.swift in Sources */,
 				ECE25408209A50B500D388CE /* HLSResolutionTests.swift in Sources */,
 				ECE253F6209A50B500D388CE /* GenericSingleValueTagParserTests.swift in Sources */,
+				1447583B2C8620C000D12CCD /* HLSChannelsTests.swift in Sources */,
 				ECE253FA209A50B500D388CE /* GenericSingleTagValidatorTests.swift in Sources */,
 				ECE253DF209A509900D388CE /* HLSParserTest.swift in Sources */,
 				ECE253F1209A50B500D388CE /* EXT_X_KEYTagParserTests.swift in Sources */,

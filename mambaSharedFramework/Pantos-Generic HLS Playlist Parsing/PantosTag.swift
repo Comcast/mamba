@@ -461,7 +461,7 @@ extension PantosTag: HLSTagDescriptor, Equatable {
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.bitDepth, optional: true, expectedType: Int.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.sampleRate, optional: true, expectedType: Int.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.characteristics, optional: true, expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.channels, optional: true, expectedType: String.self)
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.channels, optional: true, expectedType: HLSChannels.self)
                 ])
             
         case .EXT_X_I_FRAME_STREAM_INF:
