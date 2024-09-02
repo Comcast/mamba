@@ -443,11 +443,15 @@ extension PantosTag: HLSTagDescriptor, Equatable {
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.language, optional: true, expectedType: String.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.assocLanguage, optional: true, expectedType: String.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.name, optional: true, expectedType: String.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.stableRenditionId, optional: true, expectedType: String.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.defaultMedia, optional: true, expectedType: Bool.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.autoselect, optional: true, expectedType: Bool.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.forced, optional: true, expectedType: Bool.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.instreamId, optional: true, expectedType: HLSInstreamId.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.characteristics, optional: true, expectedType: String.self)
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.bitDepth, optional: true, expectedType: Int.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.sampleRate, optional: true, expectedType: Int.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.characteristics, optional: true, expectedType: String.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.channels, optional: true, expectedType: String.self)
                 ])
             
         case .EXT_X_I_FRAME_STREAM_INF:

@@ -114,7 +114,19 @@ public enum PantosValue: String {
     
     /// Found in `.EXT_X_MEDIA`. This attribute is REQUIRED if the TYPE attribute is CLOSED-CAPTIONS ("CC1", "CC2", "CC3", "CC4")
     case instreamId = "INSTREAM-ID"
-    
+
+    /// Found in `.EXT_X_MEDIA`. Allows the URI to change between two reloads of the playlist.
+    case stableRenditionId = "STABLE-RENDITION-ID"
+
+    /// Found in `.EXT_X_MEDIA`. Specifies the audio bit depth of the rendition.
+    case bitDepth = "BIT-DEPTH"
+
+    /// Found in `.EXT_X_MEDIA`. Specifies the audio sample rate of the rendition.
+    case sampleRate = "SAMPLE-RATE"
+
+    /// Found in `.EXT_X_MEDIA`. Provides information about audio channels, such as count, spatial audio coding, and other special channel usage instructions.
+    case channels = "CHANNELS"
+
     /// Found in `.EXT_X_MEDIA`, `.EXT_X_KEY`, `.EXT_X_MAP`, `.EXT_X_I_FRAME_STREAM_INF` and `.EXT_X_SESSION_DATA`. The URI location of the media
     case uri = "URI"
     
