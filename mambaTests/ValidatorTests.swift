@@ -832,6 +832,17 @@ frag1.ts
         )
     }
 
+    func testEXT_X_SESSION_DATAPlaylistValidator_existsWithinMasterPlaylistValidators() {
+        XCTAssertEqual(
+            1,
+            PlaylistValidator.masterPlaylistValidators.filter { $0 == EXT_X_SESSION_DATAPlaylistValidator.self }.count
+        )
+        XCTAssertEqual(
+            0,
+            PlaylistValidator.variantPlaylistValidators.filter { $0 == EXT_X_SESSION_DATAPlaylistValidator.self }.count
+        )
+    }
+
 }
 
 private let masterStreamInf = "#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=100,CODECS=\"avc1\",RESOLUTION=10x10\n"
