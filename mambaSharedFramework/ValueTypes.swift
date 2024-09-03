@@ -212,6 +212,27 @@ public struct VideoRange: Equatable, FailableStringLiteralConvertible {
     }
 }
 
+/// Represents the format of the file referenced by `EXT-X-SESSION-DATA:URI`.
+public struct SessionDataFormat: Equatable, FailableStringLiteralConvertible {
+    public let type: Format
+    public enum Format: String {
+        case json = "JSON"
+        case raw = "RAW"
+    }
+    public init?(failableInitWithString string: String) {
+        self.init(format: string)
+    }
+    public init?(format: String) {
+        guard let type = Format(rawValue: format) else {
+            return nil
+        }
+        self.type = type
+    }
+    public init(format: Format) {
+        self.type = format
+    }
+}
+
 /// Represents a playlist type
 ///
 /// Can be initialized with a string "EVENT" or "VOD" for a valid value
@@ -242,7 +263,6 @@ public func ==(lhs: PlaylistValueType, rhs: PlaylistValueType) -> Bool {
 /// Represents a instreamId type
 ///
 /// Can be initialized with a string "CC1" or "CC2" or "CC3" or "CC4" for a valid value
-
 public enum InstreamId: String, FailableStringLiteralConvertible {
     case CC1 = "CC1"
     case CC2 = "CC2"
@@ -254,7 +274,6 @@ public enum InstreamId: String, FailableStringLiteralConvertible {
     }
     
 }
-
 
 /// Represents a CLOSED-CAPTIONS
 ///

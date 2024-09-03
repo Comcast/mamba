@@ -44,7 +44,7 @@ class EXT_X_SESSION_DATATagValidator: PlaylistTagValidator {
                 DictionaryTagValueIdentifierImpl(
                     valueId: PantosValue.format,
                     optional: true,
-                    expectedType: String.self
+                    expectedType: SessionDataFormat.self
                 ),
                 DictionaryTagValueIdentifierImpl(
                     valueId: PantosValue.language,
