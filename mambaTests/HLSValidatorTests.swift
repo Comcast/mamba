@@ -810,4 +810,15 @@ frag1.ts
         )
     }
 
+    func testEXT_X_SESSION_DATAPlaylistValidator_existsWithinMasterPlaylistValidators() {
+        XCTAssertEqual(
+            1,
+            HLSMasterPlaylistValidator.validators.filter { $0 == EXT_X_SESSION_DATAPlaylistValidator.self }.count
+        )
+        XCTAssertEqual(
+            0,
+            HLSVariantPlaylistValidator.validators.filter { $0 == EXT_X_SESSION_DATAPlaylistValidator.self }.count
+        )
+    }
+
 }
