@@ -44,7 +44,7 @@ class EXT_X_SESSION_DATATagValidator: HLSTagValidator {
                 HLSDictionaryTagValueIdentifierImpl(
                     valueId: PantosValue.format,
                     optional: true,
-                    expectedType: String.self
+                    expectedType: HLSSessionDataFormat.self
                 ),
                 HLSDictionaryTagValueIdentifierImpl(
                     valueId: PantosValue.language,

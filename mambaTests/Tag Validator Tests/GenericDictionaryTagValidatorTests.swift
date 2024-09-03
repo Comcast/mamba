@@ -986,14 +986,14 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
                  tagData: withURI,
                  optional: [.value, .format, .language],
                  mandatory: [.dataId, .uri],
-                 badValues: [])
-        
+                 badValues: [.format])
+
         let withValue = "DATA-ID=\"com.example.data\",VALUE=\"Hello, World!\",LANGUAGE=\"en\""
         validate(tag: PantosTag.EXT_X_SESSION_DATA,
                  tagData: withValue,
                  optional: [.uri, .format, .language],
                  mandatory: [.dataId, .value],
-                 badValues: [])
+                 badValues: [.format])
 
         // Using a closure to avoid naming clashes in the rest of the test.
         let EXT_X_SESSION_DATA_withNoValueOrURI = {
