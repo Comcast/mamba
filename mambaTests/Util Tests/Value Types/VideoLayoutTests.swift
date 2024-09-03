@@ -1,0 +1,84 @@
+//
+//  VideoLayoutTests.swift
+//  mamba
+//
+//  Created by Robert Galluccio on 9/2/24.
+//  Copyright © 2024 Comcast Corporation.
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//  http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License. All rights reserved.
+//
+
+import Foundation
+import XCTest
+import mamba
+
+class VideoLayoutTests: XCTestCase {
+    let empty = ""
+    let invalidVideoLayout = "CH-TRI"
+    let monoLayout = "CH-MONO"
+    let stereoLayout = "CH-STEREO"
+    let stereoWithMonoLayout = "CH-STEREO,CH-MONO"
+    let monoWithStereoLayout = "CH-MONO,CH-STEREO"
+    let monoWithStereoWithUnknownLayout = "CH-MONO,CH-STEREO,CH-TRI"
+
+    func test_empty() {
+        XCTAssertNil(VideoLayout(failableInitWithString: empty))
+    }
+
+    func test_invalidVideoLayout() {
+        XCTAssertNil(VideoLayout(failableInitWithString: invalidVideoLayout))
+    }
+
+    func test_monoLayout() {
+        guard let videoLayout = VideoLayout(failableInitWithString: monoLayout) else {
+            return XCTFail("Expected to parse REQ-VIDEO-LAYOUT from \(monoLayout).")
+        }
+        XCTAssertEqual(videoLayout.layouts, [.chMono])
+        XCTAssertEqual(videoLayout.predominantLayout, .chMono)
+        XCTAssertTrue(videoLayout.containsMono())
+        XCTAssertFalse(videoLayout.containsStereo())
+    }
+
+    func test_stereoLayout() {
+        guard let videoLayout = VideoLayout(failableInitWithString: stereoLayout) else {
+            return XCTFail("Expected to parse REQ-VIDEO-LAYOUT from \(stereoLayout).")
+        }
+        XCTAssertEqual(videoLayout.layouts, [.chStereo])
+        XCTAssertEqual(videoLayout.predominantLayout, .chStereo)
+        XCTAssertFalse(videoLayout.containsMono())
+        XCTAssertTrue(videoLayout.containsStereo())
+    }
+
+    func test_stereoWithMonoLayout() {
+        guard let videoLayout = VideoLayout(failableInitWithString: stereoWithMonoLayout) else {
+            return XCTFail("Expected to parse REQ-VIDEO-LAYOUT from \(stereoWithMonoLayout).")
+        }
+        XCTAssertEqual(videoLayout.layouts, [.chStereo, .chMono])
+        XCTAssertEqual(videoLayout.predominantLayout, .chStereo)
+        XCTAssertTrue(videoLayout.containsMono())
+        XCTAssertTrue(videoLayout.containsStereo())
+    }
+
+    func test_monoWithStereoLayout() {
+        guard let videoLayout = VideoLayout(failableInitWithString: monoWithStereoLayout) else {
+            return XCTFail("Expected to parse REQ-VIDEO-LAYOUT from \(monoWithStereoLayout).")
+        }
+        XCTAssertEqual(videoLayout.layouts, [.chMono, .chStereo])
+        XCTAssertEqual(videoLayout.predominantLayout, .chMono)
+        XCTAssertTrue(videoLayout.containsMono())
+        XCTAssertTrue(videoLayout.containsStereo())
+    }
+
+    func test_monoWithStereoWithUnknownLayout() {
+        XCTAssertNil(VideoLayout(failableInitWithString: monoWithStereoWithUnknownLayout))
+    }
+}

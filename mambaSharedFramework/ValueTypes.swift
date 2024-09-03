@@ -451,4 +451,68 @@ public func ==(lhs: CodecValueTypeArray, rhs: CodecValueTypeArray) -> Bool {
     return lhs.codecs == rhs.codecs
 }
 
+/// Represents information to assist in view presentation.
+///
+/// Indicates when video content in the Variant Stream requires specialized rendering to be properly displayed.
+public struct VideoLayout: Equatable, FailableStringLiteralConvertible {
+    /// Each specifier controls one aspect of the entry. That is, the specifiers are disjoint and the values for a
+    /// specifier are mutually exclusive.
+    public let layouts: [VideoLayout]
+    /// The client SHOULD assume that the order of entries reflects the most common presentation in the content.
+    ///
+    /// For example, if the content is predominantly stereoscopic, with some brief sections that are monoscopic then the
+    /// Multivariant Playlist SHOULD specify `REQ-VIDEO-LAYOUT="CH-STEREO,CH-MONO"`. On the other hand, if the content
+    /// is predominantly monoscopic then the Multivariant Playlist SHOULD specify `REQ-VIDEO-LAYOUT="CH-MONO,CH-STEREO"`.
+    public let predominantLayout: VideoLayout
 
+    public enum VideoLayout: String {
+        /// Monoscopic.
+        ///
+        /// Indicates that a single image is present.
+        case chMono = "CH-MONO"
+        /// Stereoscopic.
+        ///
+        /// Indicates that both left and right eye images are present.
+        case chStereo = "CH-STEREO"
+
+        init?(str: Substring) {
+            switch str {
+            case "CH-MONO": self = .chMono
+            case "CH-STEREO": self = .chStereo
+            default: return nil
+            }
+        }
+    }
+
+    public init?(failableInitWithString string: String) {
+        var layouts = [VideoLayout]()
+        for str in string.split(separator: ",") {
+            if let layout = VideoLayout(str: str) {
+                layouts.append(layout)
+            } else {
+                // Favor failing to parse the whole array if we find an unrecognized layout, so that we don't risk mis-
+                // reporting the existing layouts.
+                return nil
+            }
+        }
+        guard let firstLayout = layouts.first else {
+            return nil
+        }
+        self.predominantLayout = firstLayout
+        self.layouts = layouts
+    }
+
+    public init?(layouts: [VideoLayout]) {
+        guard let predominantLayout = layouts.first else { return nil }
+        self.layouts = layouts
+        self.predominantLayout = predominantLayout
+    }
+
+    public func containsStereo() -> Bool {
+        layouts.contains(.chStereo)
+    }
+
+    public func containsMono() -> Bool {
+        layouts.contains(.chMono)
+    }
+}
