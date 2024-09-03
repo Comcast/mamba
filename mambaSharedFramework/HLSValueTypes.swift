@@ -158,6 +158,44 @@ public struct HLSHDCPLevel: Equatable, FailableStringLiteralConvertible {
     }
 }
 
+/// Represents the dynamic range of the video.
+///
+/// This is represented by an enumeration where each case covers a group of similar opto-electronic transfer
+/// characteristic functions that could have been used to encode the media file.
+///
+/// For example, `SDR` covers TransferCharacteristics code points 1, 6, 13, 14 and 15. More information on what each
+/// code point represents can be found in _"Information technology - MPEG systems technologies - Part 8: Coding-_
+/// _independent code points" ISO/IEC International Standard 23001-8, 2016_ [CICP].
+public struct HLSVideoRange: Equatable, FailableStringLiteralConvertible {
+    public let type: VideoRange
+    public enum VideoRange: String {
+        /// The value MUST be SDR if the video in the Variant Stream is encoded using one of the following reference
+        /// opto-electronic transfer characteristic functions specified by the TransferCharacteristics code point: 1, 6,
+        /// 13, 14, 15. Note that different TransferCharacteristics code points can use the same transfer function.
+        case sdr = "SDR"
+        /// The value MUST be HLG if the video in the Variant Stream is encoded using a reference opto-electronic
+        /// transfer characteristic function specified by the TransferCharacteristics code point 18, or consists of such
+        /// video mixed with video qualifying as SDR.
+        case hlg = "HLG"
+        /// The value MUST be PQ if the video in the Variant Stream is encoded using a reference opto-electronic
+        /// transfer characteristic function specified by the TransferCharacteristics code point 16, or consists of such
+        /// video mixed with video qualifying as SDR or HLG.
+        case pq = "PQ"
+    }
+    public init?(string: String) {
+        self.init(videoRange: string)
+    }
+    public init?(videoRange: String) {
+        guard let type = VideoRange(rawValue: videoRange) else {
+            return nil
+        }
+        self.type = type
+    }
+    public init(videoRange: VideoRange) {
+        self.type = videoRange
+    }
+}
+
 /// Represents a playlist type
 ///
 /// Can be initialized with a string "EVENT" or "VOD" for a valid value
