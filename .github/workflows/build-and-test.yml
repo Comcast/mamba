@@ -1,0 +1,39 @@
+name: Build and test
+
+on:
+  push:
+    branches: [ "develop", "develop_1.x" ]
+  pull_request:
+    branches: [ "develop", "develop_1.x" ]
+
+jobs:
+  build:
+    name: Build and Test mamba and mambaTVOS
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        target:
+          - scheme: mamba
+            platform: iOS Simulator
+            device: ${{ `xcrun xctrace list devices 2>&1 | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}' | sed -e "s/ Simulator$//"` }}
+          - scheme: mambaTVOS
+            platform: tvOS Simulator
+            device: Apple TV
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build
+        env:
+          scheme: ${{ matrix.target.scheme }}
+          platform: ${{ matrix.target.platform }}
+          device: ${{ matrix.target.device }}
+        run: |
+          xcodebuild build-for-testing -scheme "$scheme" -"workspace" "mamba.xcworkspace" -destination "platform=$platform,name=$device"
+      - name: Test
+        env:
+          scheme: ${{ matrix.target.scheme }}
+          platform: ${{ matrix.target.platform }}
+          device: ${{ matrix.target.device }}
+        run: |
+          xcodebuild test-without-building -scheme "$scheme" -"workspace" "mamba.xcworkspace" -destination "platform=$platform,name=$device"
