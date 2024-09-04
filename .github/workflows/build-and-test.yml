@@ -7,19 +7,28 @@ on:
     branches: [ "develop", "develop_1.x" ]
 
 jobs:
+  define-ios-device:
+    name: Get iOS simulator device to run iOS tests on
+    runs-on: macos-latest
+    outputs:
+      ios_device: ${{ steps.ios.outputs.device }}
+    steps:
+      - id: ios
+        run: echo "device=`xcrun xctrace list devices 2>&1 | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}' | sed -e "s/ Simulator$//"`" >> "$GITHUB_OUTPUT"
+
   build:
     name: Build and Test mamba and mambaTVOS
     runs-on: macos-latest
+    needs: define-ios-device
     strategy:
       matrix:
         target:
           - scheme: mamba
             platform: iOS Simulator
-            device: ${{ `xcrun xctrace list devices 2>&1 | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}' | sed -e "s/ Simulator$//"` }}
+            device: ${{ needs.define-ios-device.outputs.device }}
           - scheme: mambaTVOS
             platform: tvOS Simulator
             device: Apple TV
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
