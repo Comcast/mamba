@@ -997,21 +997,23 @@ let sample4SegmentPlaylist =
 "#EXT-X-ENDLIST\n"
 
 let sampleDeltaUpdatePlaylist =
-    "#EXTM3U\n" +
-        "#EXT-X-VERSION:9\n" +
-        "#EXT-X-MEDIA-SEQUENCE:1\n" +
-        "#EXT-X-SERVER-CONTROL:CAN-SKIP-UNTIL=12\n" +
-        "#EXT-X-TARGETDURATION:2\n" +
-        "#EXT-X-SKIP:SKIPPED-SEGMENTS=4\n" +
-        "#EXTINF:2.002,\n" +
-        "http://not.a.server.nowhere/segment5.ts\n" +
-        "#EXTINF:2.002,\n" +
-        "http://not.a.server.nowhere/segment6.ts\n" +
-        "#EXTINF:2.002,\n" +
-        "http://not.a.server.nowhere/segment7.ts\n" +
-        "#EXTINF:2.002,\n" +
-        "http://not.a.server.nowhere/segment8.ts\n" +
-        "#EXTINF:2.002,\n" +
-        "http://not.a.server.nowhere/segment9.ts\n" +
-        "#EXTINF:2.002,\n" +
-"http://not.a.server.nowhere/segment10.ts\n"
+"""
+#EXTM3U
+#EXT-X-VERSION:9
+#EXT-X-MEDIA-SEQUENCE:1
+#EXT-X-SERVER-CONTROL:CAN-SKIP-UNTIL=12
+#EXT-X-TARGETDURATION:2
+#EXT-X-SKIP:SKIPPED-SEGMENTS=4
+#EXTINF:2.002,
+http://not.a.server.nowhere/segment5.ts
+#EXTINF:2.002,
+http://not.a.server.nowhere/segment6.ts
+#EXTINF:2.002,
+http://not.a.server.nowhere/segment7.ts
+#EXTINF:2.002,
+http://not.a.server.nowhere/segment8.ts
+#EXTINF:2.002,
+http://not.a.server.nowhere/segment9.ts
+#EXTINF:2.002,
+http://not.a.server.nowhere/segment10.ts
+"""
