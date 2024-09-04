@@ -11,7 +11,7 @@ jobs:
     name: Get iOS simulator device to run iOS tests on
     runs-on: macos-latest
     outputs:
-      ios_device: ${{ steps.ios.outputs.device }}
+      device: ${{ steps.ios.outputs.device }}
     steps:
       - id: ios
         run: echo "device=`xcrun xctrace list devices 2>&1 | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}' | sed -e "s/ Simulator$//"`" >> "$GITHUB_OUTPUT"
@@ -38,6 +38,9 @@ jobs:
           platform: ${{ matrix.target.platform }}
           device: ${{ matrix.target.device }}
         run: |
+          echo "scheme = $scheme"
+          echo "platform = $platform"
+          echo "device = $device"
           xcodebuild build-for-testing -scheme "$scheme" -"workspace" "mamba.xcworkspace" -destination "platform=$platform,name=$device"
       - name: Test
         env:
@@ -45,4 +48,7 @@ jobs:
           platform: ${{ matrix.target.platform }}
           device: ${{ matrix.target.device }}
         run: |
+          echo "scheme = $scheme"
+          echo "platform = $platform"
+          echo "device = $device"
           xcodebuild test-without-building -scheme "$scheme" -"workspace" "mamba.xcworkspace" -destination "platform=$platform,name=$device"
