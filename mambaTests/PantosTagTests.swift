@@ -46,6 +46,7 @@ class PantosTagTests: XCTestCase {
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_ENDLIST)
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_BITRATE)
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_DATERANGE)
+        runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_SKIP)
 
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_INDEPENDENT_SEGMENTS)
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_START)
@@ -110,6 +111,8 @@ class PantosTagTests: XCTestCase {
         case .EXTINF:
             fallthrough
         case .EXT_X_DATERANGE:
+            fallthrough
+        case .EXT_X_SKIP:
             let stringRef = HLSStringRef(string: "#\(descriptor.toString())")
             guard let newDescriptor = PantosTag.constructDescriptor(fromStringRef: stringRef) else {
                 XCTFail("PantosTag \(descriptor.toString()) is missing from stringRefLookup table.")

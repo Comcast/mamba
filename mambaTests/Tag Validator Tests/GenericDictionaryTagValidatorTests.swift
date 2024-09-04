@@ -1409,4 +1409,46 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
                            "Expected EXT-X-DATERANGE validation issue (\(expectedValidationIssue.description)) had unexpected severity (\(matchingIssue.severity))")
         }
     }
+
+    /*
+     A server produces a Playlist Delta Update (Section 6.2.5.1), by
+     replacing tags earlier than the Skip Boundary with an EXT-X-SKIP tag.
+
+     When replacing Media Segments, the EXT-X-SKIP tag replaces the
+     segment URI lines and all Media Segment Tags tags that are applied to
+     those segments.  This tag MUST NOT appear more than once in a
+     Playlist.
+
+     Its format is:
+
+     #EXT-X-SKIP:<attribute-list>
+
+     The following attributes are defined:
+
+        SKIPPED-SEGMENTS
+
+        The value is a decimal-integer specifying the number of Media
+        Segments replaced by the EXT-X-SKIP tag.  This attribute is
+        REQUIRED.
+
+        RECENTLY-REMOVED-DATERANGES
+
+        The value is a quoted-string consisting of a tab (0x9) delimited
+        list of EXT-X-DATERANGE IDs that have been removed from the
+        Playlist recently.  See Section 6.2.5.1 for more information.
+        This attribute is REQUIRED if the Client requested an update that
+        skips EXT-X-DATERANGE tags.  The quoted-string MAY be empty.
+     */
+    func test_EXT_X_SKIP() {
+        let tagData = "SKIPPED-SEGMENTS=10,RECENTLY-REMOVED-DATERANGES=\"\""
+        let optional: [PantosValue] = [.recentlyRemovedDateranges]
+        let mandatory: [PantosValue] = [.skippedSegments]
+        let badValues: [PantosValue] = [.skippedSegments]
+
+        validate(tag: PantosTag.EXT_X_SKIP,
+                 tagData: tagData,
+                 optional: optional,
+                 mandatory: mandatory,
+                 badValues: badValues)
+    }
 }
