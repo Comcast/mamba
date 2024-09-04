@@ -1,10 +1,8 @@
 name: Build and test
 
 on:
-  push:
-    branches: [ "develop", "develop_1.x" ]
   pull_request:
-    branches: [ "develop", "develop_1.x" ]
+    branches: [ "develop", "develop_1.x", "main", "main_1.x" ]
 
 jobs:
   define-ios-device:
