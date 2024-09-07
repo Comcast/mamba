@@ -23,8 +23,9 @@ class EXT_X_SESSION_DATAPlaylistValidator: HLSPlaylistValidator {
     static func validate(hlsPlaylist: any HLSPlaylistInterface) -> [HLSValidationIssue]? {
         var issues = [HLSValidationIssue]()
 
-        let issue = duplicateIssue(tags: hlsPlaylist.tags.filter { $0.tagDescriptor == PantosTag.EXT_X_SESSION_DATA })
-        if let issue {
+        if let issue = duplicateIssue(
+            tags: hlsPlaylist.tags.filter { $0.tagDescriptor == PantosTag.EXT_X_SESSION_DATA }
+        ) {
             issues.append(issue)
         }
 
