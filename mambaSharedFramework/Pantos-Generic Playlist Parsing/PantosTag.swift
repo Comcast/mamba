@@ -487,23 +487,7 @@ extension PantosTag: PlaylistTagDescriptor, Equatable {
             return EXT_X_SESSION_DATATagValidator()
 
         case .EXT_X_SESSION_KEY:
-            return EXT_X_SESSION_KEYValidator(tag: pantostag, dictionaryValueIdentifiers: [
-                DictionaryTagValueIdentifierImpl(valueId: PantosValue.method,
-                                                 optional: false,
-                                                 expectedType: EncryptionMethodType.self),
-                DictionaryTagValueIdentifierImpl(valueId: PantosValue.uri,
-                                                 optional: false, // URI is REQUIRED since METHOD can't be NONE
-                                                 expectedType: String.self),
-                DictionaryTagValueIdentifierImpl(valueId: PantosValue.ivector,
-                                                 optional: true,
-                                                 expectedType: String.self),
-                DictionaryTagValueIdentifierImpl(valueId: PantosValue.keyformat,
-                                                 optional: true,
-                                                 expectedType: String.self),
-                DictionaryTagValueIdentifierImpl(valueId: PantosValue.keyformatVersions,
-                                                 optional: true,
-                                                 expectedType: String.self)
-            ])
+            return EXT_X_SESSION_KEYValidator()
 
         case .EXT_X_CONTENT_STEERING:
             return GenericDictionaryTagValidator(tag: pantostag, dictionaryValueIdentifiers: [

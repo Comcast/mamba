@@ -19,7 +19,7 @@
 
 import Foundation
 
-class EXT_X_SESSION_DATATagValidator: PlaylistTagValidator {
+struct EXT_X_SESSION_DATATagValidator: PlaylistTagValidator {
     private var genericValidator: GenericDictionaryTagValidator
 
     init() {
