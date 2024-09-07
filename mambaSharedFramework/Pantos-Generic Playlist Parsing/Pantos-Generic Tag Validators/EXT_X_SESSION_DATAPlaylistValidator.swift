@@ -23,10 +23,9 @@ class EXT_X_SESSION_DATAPlaylistValidator: MasterPlaylistValidator {
     static func validate(masterPlaylist: any MasterPlaylistInterface) -> [PlaylistValidationIssue] {
         var issues = [PlaylistValidationIssue]()
 
-        let issue = duplicateIssue(
+        if let issue = duplicateIssue(
             tags: masterPlaylist.tags.filter { $0.tagDescriptor == PantosTag.EXT_X_SESSION_DATA }
-        )
-        if let issue {
+        ) {
             issues.append(issue)
         }
 
