@@ -132,29 +132,18 @@ public func ==(lhs: HLSEncryptionMethodType, rhs: HLSEncryptionMethodType) -> Bo
 }
 
 /// Represents a minimum required HDCP level needed to play content.
-public struct HLSHDCPLevel: Equatable, FailableStringLiteralConvertible {
-    public let type: HDCPLevel
-    public enum HDCPLevel: String {
-        /// Indicates that the content does not require output copy protections.
-        case none = "NONE"
-        /// Indicates that the Variant Stream could fail to play unless the output is protected by High-bandwidth
-        /// Digital Content Protection (HDCP) Type 0 or equivalent.
-        case type0 = "TYPE-0"
-        /// Indicates that the Variant Stream could fail to play unless the output is protected by HDCP Type 1 or
-        /// equivalent.
-        case type1 = "TYPE-1"
-    }
+public enum HLSHDCPLevel: String, Equatable, FailableStringLiteralConvertible {
+    /// Indicates that the content does not require output copy protections.
+    case none = "NONE"
+    /// Indicates that the Variant Stream could fail to play unless the output is protected by High-bandwidth Digital
+    /// Content Protection (HDCP) Type 0 or equivalent.
+    case type0 = "TYPE-0"
+    /// Indicates that the Variant Stream could fail to play unless the output is protected by HDCP Type 1 or
+    /// equivalent.
+    case type1 = "TYPE-1"
+
     public init?(string: String) {
-        self.init(hdcpLevel: string)
-    }
-    public init?(hdcpLevel: String) {
-        guard let type = HDCPLevel(rawValue: hdcpLevel) else {
-            return nil
-        }
-        self.type = type
-    }
-    public init(hdcpLevel: HDCPLevel) {
-        self.type = hdcpLevel
+        self.init(rawValue: string)
     }
 }
 
@@ -166,54 +155,32 @@ public struct HLSHDCPLevel: Equatable, FailableStringLiteralConvertible {
 /// For example, `SDR` covers TransferCharacteristics code points 1, 6, 13, 14 and 15. More information on what each
 /// code point represents can be found in _"Information technology - MPEG systems technologies - Part 8: Coding-_
 /// _independent code points" ISO/IEC International Standard 23001-8, 2016_ [CICP].
-public struct HLSVideoRange: Equatable, FailableStringLiteralConvertible {
-    public let type: VideoRange
-    public enum VideoRange: String {
-        /// The value MUST be SDR if the video in the Variant Stream is encoded using one of the following reference
-        /// opto-electronic transfer characteristic functions specified by the TransferCharacteristics code point: 1, 6,
-        /// 13, 14, 15. Note that different TransferCharacteristics code points can use the same transfer function.
-        case sdr = "SDR"
-        /// The value MUST be HLG if the video in the Variant Stream is encoded using a reference opto-electronic
-        /// transfer characteristic function specified by the TransferCharacteristics code point 18, or consists of such
-        /// video mixed with video qualifying as SDR.
-        case hlg = "HLG"
-        /// The value MUST be PQ if the video in the Variant Stream is encoded using a reference opto-electronic
-        /// transfer characteristic function specified by the TransferCharacteristics code point 16, or consists of such
-        /// video mixed with video qualifying as SDR or HLG.
-        case pq = "PQ"
-    }
+public enum HLSVideoRange: String, Equatable, FailableStringLiteralConvertible {
+    /// The value MUST be SDR if the video in the Variant Stream is encoded using one of the following reference
+    /// opto-electronic transfer characteristic functions specified by the TransferCharacteristics code point: 1, 6, 13,
+    /// 14, 15. Note that different TransferCharacteristics code points can use the same transfer function.
+    case sdr = "SDR"
+    /// The value MUST be HLG if the video in the Variant Stream is encoded using a reference opto-electronic transfer
+    /// characteristic function specified by the TransferCharacteristics code point 18, or consists of such video mixed
+    /// with video qualifying as SDR.
+    case hlg = "HLG"
+    /// The value MUST be PQ if the video in the Variant Stream is encoded using a reference opto-electronic transfer
+    /// characteristic function specified by the TransferCharacteristics code point 16, or consists of such video mixed
+    /// with video qualifying as SDR or HLG.
+    case pq = "PQ"
+
     public init?(string: String) {
-        self.init(videoRange: string)
-    }
-    public init?(videoRange: String) {
-        guard let type = VideoRange(rawValue: videoRange) else {
-            return nil
-        }
-        self.type = type
-    }
-    public init(videoRange: VideoRange) {
-        self.type = videoRange
+        self.init(rawValue: string)
     }
 }
 
 /// Represents the format of the file referenced by `EXT-X-SESSION-DATA:URI`.
-public struct HLSSessionDataFormat: Equatable, FailableStringLiteralConvertible {
-    public let type: Format
-    public enum Format: String {
-        case json = "JSON"
-        case raw = "RAW"
-    }
+public enum HLSSessionDataFormat: String, Equatable, FailableStringLiteralConvertible {
+    case json = "JSON"
+    case raw = "RAW"
+
     public init?(string: String) {
-        self.init(format: string)
-    }
-    public init?(format: String) {
-        guard let type = Format(rawValue: format) else {
-            return nil
-        }
-        self.type = type
-    }
-    public init(format: Format) {
-        self.type = format
+        self.init(rawValue: string)
     }
 }
 
