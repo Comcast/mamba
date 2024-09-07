@@ -44,8 +44,8 @@ class HLSVideoLayoutTests: XCTestCase {
         }
         XCTAssertEqual(videoLayout.layouts, [.chMono])
         XCTAssertEqual(videoLayout.predominantLayout, .chMono)
-        XCTAssertTrue(videoLayout.containsMono())
-        XCTAssertFalse(videoLayout.containsStereo())
+        XCTAssertTrue(videoLayout.contains(.chMono))
+        XCTAssertFalse(videoLayout.contains(.chStereo))
     }
 
     func test_stereoLayout() {
@@ -54,8 +54,8 @@ class HLSVideoLayoutTests: XCTestCase {
         }
         XCTAssertEqual(videoLayout.layouts, [.chStereo])
         XCTAssertEqual(videoLayout.predominantLayout, .chStereo)
-        XCTAssertFalse(videoLayout.containsMono())
-        XCTAssertTrue(videoLayout.containsStereo())
+        XCTAssertFalse(videoLayout.contains(.chMono))
+        XCTAssertTrue(videoLayout.contains(.chStereo))
     }
 
     func test_stereoWithMonoLayout() {
@@ -64,8 +64,8 @@ class HLSVideoLayoutTests: XCTestCase {
         }
         XCTAssertEqual(videoLayout.layouts, [.chStereo, .chMono])
         XCTAssertEqual(videoLayout.predominantLayout, .chStereo)
-        XCTAssertTrue(videoLayout.containsMono())
-        XCTAssertTrue(videoLayout.containsStereo())
+        XCTAssertTrue(videoLayout.contains(.chMono))
+        XCTAssertTrue(videoLayout.contains(.chStereo))
     }
 
     func test_monoWithStereoLayout() {
@@ -74,8 +74,8 @@ class HLSVideoLayoutTests: XCTestCase {
         }
         XCTAssertEqual(videoLayout.layouts, [.chMono, .chStereo])
         XCTAssertEqual(videoLayout.predominantLayout, .chMono)
-        XCTAssertTrue(videoLayout.containsMono())
-        XCTAssertTrue(videoLayout.containsStereo())
+        XCTAssertTrue(videoLayout.contains(.chMono))
+        XCTAssertTrue(videoLayout.contains(.chStereo))
     }
 
     func test_monoWithStereoWithUnknownLayout() {

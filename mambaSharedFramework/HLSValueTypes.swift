@@ -460,15 +460,15 @@ public func ==(lhs: HLSCodecArray, rhs: HLSCodecArray) -> Bool {
 public struct HLSVideoLayout: Equatable, FailableStringLiteralConvertible {
     /// Each specifier controls one aspect of the entry. That is, the specifiers are disjoint and the values for a
     /// specifier are mutually exclusive.
-    public let layouts: [VideoLayout]
+    public let layouts: [VideoLayoutIdentifier]
     /// The client SHOULD assume that the order of entries reflects the most common presentation in the content.
     ///
     /// For example, if the content is predominantly stereoscopic, with some brief sections that are monoscopic then the
     /// Multivariant Playlist SHOULD specify `REQ-VIDEO-LAYOUT="CH-STEREO,CH-MONO"`. On the other hand, if the content
     /// is predominantly monoscopic then the Multivariant Playlist SHOULD specify `REQ-VIDEO-LAYOUT="CH-MONO,CH-STEREO"`.
-    public let predominantLayout: VideoLayout
+    public let predominantLayout: VideoLayoutIdentifier
 
-    public enum VideoLayout: String {
+    public enum VideoLayoutIdentifier: String {
         /// Monoscopic.
         ///
         /// Indicates that a single image is present.
@@ -488,9 +488,9 @@ public struct HLSVideoLayout: Equatable, FailableStringLiteralConvertible {
     }
 
     public init?(string: String) {
-        var layouts = [VideoLayout]()
+        var layouts = [VideoLayoutIdentifier]()
         for str in string.split(separator: ",") {
-            if let layout = VideoLayout(str: str) {
+            if let layout = VideoLayoutIdentifier(str: str) {
                 layouts.append(layout)
             } else {
                 // Favor failing to parse the whole array if we find an unrecognized layout, so that we don't risk mis-
@@ -505,17 +505,13 @@ public struct HLSVideoLayout: Equatable, FailableStringLiteralConvertible {
         self.layouts = layouts
     }
 
-    public init?(layouts: [VideoLayout]) {
+    public init?(layouts: [VideoLayoutIdentifier]) {
         guard let predominantLayout = layouts.first else { return nil }
         self.layouts = layouts
         self.predominantLayout = predominantLayout
     }
 
-    public func containsStereo() -> Bool {
-        layouts.contains(.chStereo)
-    }
-
-    public func containsMono() -> Bool {
-        layouts.contains(.chMono)
+    public func contains(_ layout: VideoLayoutIdentifier) -> Bool {
+        layouts.contains(layout)
     }
 }
