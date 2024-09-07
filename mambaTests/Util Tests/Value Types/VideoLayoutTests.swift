@@ -23,19 +23,26 @@ import mamba
 
 class VideoLayoutTests: XCTestCase {
     let empty = ""
-    let invalidVideoLayout = "CH-TRI"
+    let unrecognizedVideoLayout = "CH-TRI"
     let monoLayout = "CH-MONO"
     let stereoLayout = "CH-STEREO"
     let stereoWithMonoLayout = "CH-STEREO,CH-MONO"
     let monoWithStereoLayout = "CH-MONO,CH-STEREO"
-    let monoWithStereoWithUnknownLayout = "CH-MONO,CH-STEREO,CH-TRI"
+    let monoWithStereoWithUnrecognizedLayout = "CH-MONO,CH-STEREO,CH-TRI"
 
     func test_empty() {
         XCTAssertNil(VideoLayout(failableInitWithString: empty))
     }
 
-    func test_invalidVideoLayout() {
-        XCTAssertNil(VideoLayout(failableInitWithString: invalidVideoLayout))
+    func test_unrecognizedVideoLayout() {
+        guard let videoLayout = VideoLayout(failableInitWithString: unrecognizedVideoLayout) else {
+            return XCTFail("Expected to parse REQ-VIDEO-LAYOUT from \(unrecognizedVideoLayout).")
+        }
+        XCTAssertEqual(videoLayout.layouts, [.unrecognized(unrecognizedVideoLayout)])
+        XCTAssertEqual(videoLayout.predominantLayout, .unrecognized(unrecognizedVideoLayout))
+        XCTAssertFalse(videoLayout.contains(.chMono))
+        XCTAssertFalse(videoLayout.contains(.chStereo))
+        XCTAssertTrue(videoLayout.contains(.unrecognized(unrecognizedVideoLayout)))
     }
 
     func test_monoLayout() {
@@ -78,7 +85,14 @@ class VideoLayoutTests: XCTestCase {
         XCTAssertTrue(videoLayout.contains(.chStereo))
     }
 
-    func test_monoWithStereoWithUnknownLayout() {
-        XCTAssertNil(VideoLayout(failableInitWithString: monoWithStereoWithUnknownLayout))
+    func test_monoWithStereoWithUnrecognizedLayout() {
+        guard let videoLayout = VideoLayout(failableInitWithString: monoWithStereoWithUnrecognizedLayout) else {
+            return XCTFail("Expected to parse REQ-VIDEO-LAYOUT from \(monoWithStereoWithUnrecognizedLayout).")
+        }
+        XCTAssertEqual(videoLayout.layouts, [.chMono, .chStereo, .unrecognized("CH-TRI")])
+        XCTAssertEqual(videoLayout.predominantLayout, .chMono)
+        XCTAssertTrue(videoLayout.contains(.chMono))
+        XCTAssertTrue(videoLayout.contains(.chStereo))
+        XCTAssertTrue(videoLayout.contains(.unrecognized("CH-TRI")))
     }
 }

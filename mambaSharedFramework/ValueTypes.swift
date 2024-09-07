@@ -271,25 +271,41 @@ public struct Channels: Equatable, FailableStringLiteralConvertible {
     /// This parameter is an array of Special Usage Identifiers.
     public let specialUsageIdentifiers: [SpecialUsageIdentifier]
 
-    public enum SpecialUsageIdentifier: String {
+    public enum SpecialUsageIdentifier: RawRepresentable, Equatable {
         /// The audio is binaural (either recorded or synthesized). It SHOULD NOT be dynamically spatialized. It is best
         /// suited for delivery to headphones.
-        case binaural = "BINAURAL"
+        case binaural
         /// The audio is pre-processed content that SHOULD NOT be dynamically spatialized. It is suitable to deliver to
         /// either headphones or speakers.
-        case immersive = "IMMERSIVE"
+        case immersive
         /// The audio is a downmix derivative of some other audio. If desired, the downmix may be used as a subtitute
         /// for alternative Renditions in the same group with compatible attributes and a greater channel count. It MAY
         /// be dynamically spatialized.
-        case downmix = "DOWNMIX"
+        case downmix
+        /// The audio identifier is not recognized by this library; however, we provide the raw identifier string that
+        /// existed in the manifest.
+        case unrecognized(String)
+
+        public var rawValue: String {
+            switch self {
+            case .binaural: return "BINAURAL"
+            case .immersive: return "IMMERSIVE"
+            case .downmix: return "DOWNMIX"
+            case .unrecognized(let string): return string
+            }
+        }
+
+        public init?(rawValue: String) {
+            self.init(str: Substring(rawValue))
+        }
 
         /// Allows `init` without having to allocate a new `String` object.
-        init?(str: Substring) {
+        init(str: Substring) {
             switch str {
             case "BINAURAL": self = .binaural
             case "IMMERSIVE": self = .immersive
             case "DOWNMIX": self = .downmix
-            default: return nil
+            default: self = .unrecognized(String(str))
             }
         }
     }
@@ -303,15 +319,7 @@ public struct Channels: Equatable, FailableStringLiteralConvertible {
             switch index {
             case 0: count = Self.parseChannelCount(str: str)
             case 1: spatialAudioCodingIdentifiers = Self.parseSpatialAudioCodingIdentifiers(str: str)
-            case 2:
-                guard let ids = Self.parseSpecialUsageIdentifiers(str: str) else {
-                    // In the case that we don't recognize one of the special usage identifiers, leading to nil being
-                    // parsed out, I believe it is better to fail the entire parsing, as otherwise we could mislead the
-                    // user of the library into thinking that there are less special usage identifiers than there
-                    // actually are in the CHANNELS attribtue.
-                    return nil
-                }
-                specialUsageIdentifiers = ids
+            case 2: specialUsageIdentifiers = Self.parseSpecialUsageIdentifiers(str: str)
             default: break // In the future there may be more parameters defined.
             }
         }
@@ -347,16 +355,8 @@ public struct Channels: Equatable, FailableStringLiteralConvertible {
         return identifiers
     }
 
-    private static func parseSpecialUsageIdentifiers(str: Substring) -> [SpecialUsageIdentifier]? {
-        let split = str.split(separator: ",")
-        var identifiers = [SpecialUsageIdentifier]()
-        for id in split {
-            guard let specialUsageId = SpecialUsageIdentifier(str: id) else {
-                return nil
-            }
-            identifiers.append(specialUsageId)
-        }
-        return identifiers
+    private static func parseSpecialUsageIdentifiers(str: Substring) -> [SpecialUsageIdentifier] {
+        str.split(separator: ",").map { SpecialUsageIdentifier(str: $0) }
     }
 }
 
@@ -451,36 +451,42 @@ public struct VideoLayout: Equatable, FailableStringLiteralConvertible {
     /// is predominantly monoscopic then the Multivariant Playlist SHOULD specify `REQ-VIDEO-LAYOUT="CH-MONO,CH-STEREO"`.
     public let predominantLayout: VideoLayoutIdentifier
 
-    public enum VideoLayoutIdentifier: String {
+    public enum VideoLayoutIdentifier: RawRepresentable, Equatable {
         /// Monoscopic.
         ///
         /// Indicates that a single image is present.
-        case chMono = "CH-MONO"
+        case chMono
         /// Stereoscopic.
         ///
         /// Indicates that both left and right eye images are present.
-        case chStereo = "CH-STEREO"
+        case chStereo
+        /// The video layout identifier is not recognized by this library; however, we provide the raw identifier string
+        /// that existed in the manifest.
+        case unrecognized(String)
 
-        init?(str: Substring) {
+        public var rawValue: String {
+            switch self {
+            case .chMono: return "CH-MONO"
+            case .chStereo: return "CH-STEREO"
+            case .unrecognized(let string): return string
+            }
+        }
+
+        public init?(rawValue: String) {
+            self.init(str: Substring(rawValue))
+        }
+
+        init(str: Substring) {
             switch str {
             case "CH-MONO": self = .chMono
             case "CH-STEREO": self = .chStereo
-            default: return nil
+            default: self = .unrecognized(String(str))
             }
         }
     }
 
     public init?(failableInitWithString string: String) {
-        var layouts = [VideoLayoutIdentifier]()
-        for str in string.split(separator: ",") {
-            if let layout = VideoLayoutIdentifier(str: str) {
-                layouts.append(layout)
-            } else {
-                // Favor failing to parse the whole array if we find an unrecognized layout, so that we don't risk mis-
-                // reporting the existing layouts.
-                return nil
-            }
-        }
+        let layouts = string.split(separator: ",").map { VideoLayoutIdentifier(str: $0) }
         guard let firstLayout = layouts.first else {
             return nil
         }

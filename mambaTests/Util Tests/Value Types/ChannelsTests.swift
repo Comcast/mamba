@@ -124,11 +124,13 @@ class ChannelsTests: XCTestCase {
         XCTAssertEqual(expectedChannels, actualChannels)
     }
 
-    // In the case that we don't recognize the special usage identifier, I think it is better to fail parsing the entire
-    // CHANNELS attribute, as otherwise we risk misleading the user of the library into thinking that the special usage
-    // is less than it actually is.
     func test_sixChannelUnknownSpecialUsageIdentifier() {
         let actualChannels = Channels(failableInitWithString: sixChannelUnknownSpecialUsageIdentifier)
-        XCTAssertNil(actualChannels)
+        let expectedChannels = Channels(
+            count: 6,
+            spatialAudioCodingIdentifiers: [],
+            specialUsageIdentifiers: [.unrecognized("NEW-IDENTIFIER")]
+        )
+        XCTAssertEqual(expectedChannels, actualChannels)
     }
 }
