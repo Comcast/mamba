@@ -19,7 +19,7 @@
 
 import Foundation
 
-class EXT_X_SESSION_DATATagValidator: HLSTagValidator {
+struct EXT_X_SESSION_DATATagValidator: HLSTagValidator {
     private var genericValidator: GenericDictionaryTagValidator
 
     init() {

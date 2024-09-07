@@ -21,10 +21,31 @@ import Foundation
 
 // All attributes defined for the EXT-X-KEY tag (Section 4.4.4.4) are also defined for the
 // EXT-X-SESSION-KEY, except that the value of the METHOD attribute MUST NOT be NONE.
-class EXT_X_SESSION_KEYValidator: EXT_X_KEYValidator {
+struct EXT_X_SESSION_KEYValidator: HLSTagValidator {
+    private let keyValidator: EXT_X_KEYValidator
 
-    override public func validate(tag: HLSTag) -> [HLSValidationIssue]? {
-        var issueList = super.validate(tag: tag) ?? []
+    init() {
+        keyValidator = EXT_X_KEYValidator(tag: PantosTag.EXT_X_SESSION_KEY, dictionaryValueIdentifiers: [
+            HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.method,
+                                                optional: false,
+                                                expectedType: HLSEncryptionMethodType.self),
+            HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.uri,
+                                                optional: false, // URI is REQUIRED since METHOD can't be NONE
+                                                expectedType: String.self),
+            HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.ivector,
+                                                optional: true,
+                                                expectedType: String.self),
+            HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.keyformat,
+                                                optional: true,
+                                                expectedType: String.self),
+            HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.keyformatVersions,
+                                                optional: true,
+                                                expectedType: String.self)
+        ])
+    }
+
+    public func validate(tag: HLSTag) -> [HLSValidationIssue]? {
+        var issueList = keyValidator.validate(tag: tag) ?? []
 
         if let method = tag.value(forValueIdentifier: PantosValue.method) {
             if method == HLSEncryptionMethodType.EncryptionMethod.None.rawValue {

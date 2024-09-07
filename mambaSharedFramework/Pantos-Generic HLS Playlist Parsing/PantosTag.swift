@@ -496,23 +496,7 @@ extension PantosTag: HLSTagDescriptor, Equatable {
             return EXT_X_SESSION_DATATagValidator()
 
         case .EXT_X_SESSION_KEY:
-            return EXT_X_SESSION_KEYValidator(tag: pantostag, dictionaryValueIdentifiers: [
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.method,
-                                                    optional: false,
-                                                    expectedType: HLSEncryptionMethodType.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.uri,
-                                                    optional: false, // URI is REQUIRED since METHOD can't be NONE
-                                                    expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.ivector,
-                                                    optional: true,
-                                                    expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.keyformat,
-                                                    optional: true,
-                                                    expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.keyformatVersions,
-                                                    optional: true,
-                                                    expectedType: String.self)
-            ])
+            return EXT_X_SESSION_KEYValidator()
 
         case .EXT_X_CONTENT_STEERING:
             return GenericDictionaryTagValidator(tag: pantostag, dictionaryValueIdentifiers: [
