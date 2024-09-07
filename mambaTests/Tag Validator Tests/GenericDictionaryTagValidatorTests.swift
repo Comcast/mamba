@@ -762,8 +762,7 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
                                         .resolution,
                                         .frameRate,
                                         .hdcpLevel,
-                                        .videoRange,
-                                        .reqVideoLayout]
+                                        .videoRange]
 
         validate(tag: PantosTag.EXT_X_STREAM_INF,
                  tagData: tagData,
@@ -913,8 +912,7 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
                                         .programId,
                                         .resolution,
                                         .hdcpLevel,
-                                        .videoRange,
-                                        .reqVideoLayout]
+                                        .videoRange]
 
         validate(tag: PantosTag.EXT_X_I_FRAME_STREAM_INF,
                  tagData: tagData,
