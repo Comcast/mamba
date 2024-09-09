@@ -19,7 +19,7 @@
 
 import Foundation
 
-class EXT_X_SESSION_DATAPlaylistValidator: MasterPlaylistValidator {
+final class EXT_X_SESSION_DATAPlaylistValidator: MasterPlaylistValidator {
     static func validate(masterPlaylist: any MasterPlaylistInterface) -> [PlaylistValidationIssue] {
         var issues = [PlaylistValidationIssue]()
 
