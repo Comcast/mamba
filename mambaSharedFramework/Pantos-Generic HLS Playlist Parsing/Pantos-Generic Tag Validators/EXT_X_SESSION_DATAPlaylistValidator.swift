@@ -19,7 +19,7 @@
 
 import Foundation
 
-class EXT_X_SESSION_DATAPlaylistValidator: HLSPlaylistValidator {
+final class EXT_X_SESSION_DATAPlaylistValidator: HLSPlaylistValidator {
     static func validate(hlsPlaylist: any HLSPlaylistInterface) -> [HLSValidationIssue]? {
         var issues = [HLSValidationIssue]()
 
