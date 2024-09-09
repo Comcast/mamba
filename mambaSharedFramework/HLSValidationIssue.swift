@@ -48,6 +48,9 @@ public enum IssueDescription: String {
     
     case HLSPlaylistRenditionGroupMatchingNAMELANGUAGEValidator = "A Playlist MAY contain multiple groups of the same TYPE in order to provide multiple encodings of each rendition. If it does so, each group of the same TYPE SHOULD contain corresponding members with the same NAME attribute, LANGUAGE attribute, and rendition."
     case EXT_X_KEYValidator = "EXT-X-KEY If the encryption method is NONE, the URI, IV, KEYFORMAT and KEYFORMATVERSIONS attributes MUST NOT be present. If the encryption method is AES-128 or SAMPLE-AES, the URI attribute MUST be present."
+    case EXT_X_SESSION_KEYValidator = "All attributes defined for the EXT-X-KEY tag are also defined for the EXT-X-SESSION-KEY, except that the value of the METHOD attribute MUST NOT be NONE."
+    case EXT_X_SESSION_DATATagValidator = "Each EXT-X-SESSION-DATA tag MUST contain either a VALUE or URI attribute, but not both."
+    case EXT_X_SESSION_DATAPlaylistValidator = "A Playlist MAY contain multiple EXT-X-SESSION-DATA tags with the same DATA-ID attribute. A Playlist MUST NOT contain more than one EXT-X-SESSION-DATA tag with the same DATA-ID attribute and the same LANGUAGE attribute."
     case HLSPlaylistRenditionGroupMatchingPROGRAM_IDValidator = "Variant Playlists MUST contain an EXT-X-STREAM-INF tag or EXT-X-I-FRAME-STREAM-INF tag for each variant stream. Each tag identifying an encoding of the same presentation MUST have the same PROGRAM-ID attribute value."
     case EXT_X_STREAM_INFRenditionGroupAUDIOValidator = "EXT-X-STREAM-INF - AUDIO The value is a quoted-string. It MUST match the value of the GROUP-ID attribute of an EXT-X-MEDIA tag elsewhere in the Playlist whose TYPE attribute is AUDIO."
     case EXT_X_STREAM_INFRenditionGroupVIDEOValidator = "EXT-X-STREAM-INF - VIDEO The value is a quoted-string. It MUST match the value of the GROUP-ID attribute of an EXT-X-MEDIA tag elsewhere in the Playlist whose TYPE attribute is VIDEO."

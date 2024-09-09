@@ -76,7 +76,8 @@ public class HLSMasterPlaylistValidator: HLSExtensibleValidator {
     public static let validators:[HLSValidator.Type] = [HLSPlaylistRenditionGroupValidator.self,
                                                 EXT_X_STREAM_INFRenditionGroupAUDIOValidator.self,
                                                 EXT_X_STREAM_INFRenditionGroupVIDEOValidator.self,
-                                                EXT_X_STREAM_INFRenditionGroupSUBTITLESValidator.self]
+                                                EXT_X_STREAM_INFRenditionGroupSUBTITLESValidator.self,
+                                                EXT_X_SESSION_DATAPlaylistValidator.self]
 }
 
 /// Validator for variant playlists
