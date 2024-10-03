@@ -34,9 +34,15 @@ public enum PantosValue: String {
     /// Found in `.UnknownTag`. The data of the tag.
     case UnknownTag_Value = "UnknownTag_Value"
     
-    /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. A bandwidth value in bits per second.
+    /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. A peak bandwidth value in bits per second.
     case bandwidthBPS = "BANDWIDTH"
-    
+
+    /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. An average bandwidth value in bits per second.
+    case averageBandwidthBPS = "AVERAGE-BANDWIDTH"
+
+    /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. An abstract, relative measure of the playback quality-of-experience of the variant stream.
+    case score = "SCORE"
+
     /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. The program id of the stream.
     case programId = "PROGRAM-ID"
     
@@ -48,16 +54,57 @@ public enum PantosValue: String {
     
     /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. Comma delimited list of formats supported in the media file.
     case codecs = "CODECS"
-    
+
+    /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. Comma delimited list of formats supported in the enhancement layer in the media file.
+    case supplementalCodecs = "SUPPLEMENTAL-CODECS"
+
     /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. Horizonal by vertical pixel resolution of the media file, i.e. 1280x720
     case resolution = "RESOLUTION"
-    
+
+    /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. Advisory information on the minimum HDCP level
+    /// required by the output protection level of the license that will be provided to decrypt this media content.
+    case hdcpLevel = "HDCP-LEVEL"
+
+    /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. Advisory information on the minimum robustness
+    /// level required by the output protection level of the license that will be provided to decrypt this media content.
+    case allowedCpc = "ALLOWED-CPC"
+
+    /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. Reference opto-electronic transfer characteristic function used in the encoding of the media file.
+    case videoRange = "VIDEO-RANGE"
+
+    /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. Indication of any specialized rendering needed to properly display the video content of the media file.
+    case reqVideoLayout = "REQ-VIDEO-LAYOUT"
+
+    /// Found in `.EXT_X_STREAM_INF` and `.EXT_X_I_FRAME_STREAM_INF`. Allows the URI (defined in next Location line or the URI attribute) to change between two reloads of the playlist.
+    case stableVariantId = "STABLE-VARIANT-ID"
+
+    /// Found in `.EXT_X_STREAM_INF`. Maximum frame rate for all video in the variant stream (rounded to 3 decimal places).
+    case frameRate = "FRAME-RATE"
+
     /// Found in `.EXT_X_STREAM_INF`. Match a tag with a corresponding subtitles stream.
     case subtitlesGroup = "SUBTITLES"
     
     /// Found in `.EXT_X_STREAM_INF`. Match a tag with a corresponding closed-caption stream.
     case closedCaptionsGroup = "CLOSED-CAPTIONS"
-    
+
+    /// Found in `.EXT_X_SESSION_DATA`. Identifier for a particular data value.
+    case dataId = "DATA-ID"
+
+    /// Found in `.EXT_X_SESSION_DATA`. The value of the data identified via DATA-ID.
+    case value = "VALUE"
+
+    /// Found in `.EXT_X_SESSION_DATA`. The format of the data provided via VALUE.
+    case format = "FORMAT"
+
+    /// Found in `.EXT_X_CONTENT_STEERING`. The URI location for the steering manifest.
+    case serverUri = "SERVER-URI"
+
+    /// Found in `.EXT_X_STREAM_INF`, `.EXT_X_I_FRAME_STREAM_INF` and `.EXT_X_CONTENT_STEERING`. When found in
+    /// `.EXT_X_CONTENT_STEERING` it represents the initial pathway to choose until the first steering manifest is
+    /// obtained. When found in `.EXT_X_STREAM_INF` or `.EXT_X_I_FRAME_STREAM_INF` it represents the Content Steering
+    /// Pathway that the variant stream belongs to.
+    case pathwayId = "PATHWAY-ID"
+
     /// Found in `.EXT_X_TARGETDURATION`. A target duration in seconds.
     case targetDurationSeconds = "targetDurationSeconds"
     
@@ -79,7 +126,7 @@ public enum PantosValue: String {
     /// Found in `.EXT_X_MEDIA`. Name of this media (typically a human-readable version of the language)
     case name = "NAME"
     
-    /// Found in `.EXT_X_MEDIA`. The primary language of the media
+    /// Found in `.EXT_X_MEDIA` and `.EXT_X_SESSION_DATA`. The primary language of the media
     case language = "LANGUAGE"
     
     /// Found in `.EXT_X_MEDIA`. The associated language of the media
@@ -99,8 +146,20 @@ public enum PantosValue: String {
     
     /// Found in `.EXT_X_MEDIA`. This attribute is REQUIRED if the TYPE attribute is CLOSED-CAPTIONS ("CC1", "CC2", "CC3", "CC4")
     case instreamId = "INSTREAM-ID"
-    
-    /// Found in `.EXT_X_MEDIA`, `.EXT_X_KEY`, `.EXT_X_MAP` and `.EXT_X_I_FRAME_STREAM_INF`. The URI location of the media
+
+    /// Found in `.EXT_X_MEDIA`. Allows the URI to change between two reloads of the playlist.
+    case stableRenditionId = "STABLE-RENDITION-ID"
+
+    /// Found in `.EXT_X_MEDIA`. Specifies the audio bit depth of the rendition.
+    case bitDepth = "BIT-DEPTH"
+
+    /// Found in `.EXT_X_MEDIA`. Specifies the audio sample rate of the rendition.
+    case sampleRate = "SAMPLE-RATE"
+
+    /// Found in `.EXT_X_MEDIA`. Provides information about audio channels, such as count, spatial audio coding, and other special channel usage instructions.
+    case channels = "CHANNELS"
+
+    /// Found in `.EXT_X_MEDIA`, `.EXT_X_KEY`, `.EXT_X_MAP`, `.EXT_X_I_FRAME_STREAM_INF` and `.EXT_X_SESSION_DATA`. The URI location of the media
     case uri = "URI"
     
     /// Found in `.EXT_X_KEY`. The encryption method
@@ -189,7 +248,22 @@ public enum PantosValue: String {
     /// after the START-DATE of the range in question.  This attribute is
     /// OPTIONAL.
     case endOnNext = "END-ON-NEXT"
-    
+
+    /// Found in `.EXT_X_SKIP`.
+    ///
+    /// The value is a decimal-integer specifying the number of Media
+    /// Segments replaced by the EXT-X-SKIP tag.  This attribute is
+    /// REQUIRED.
+    case skippedSegments = "SKIPPED-SEGMENTS"
+
+    /// Found in `.EXT_X_SKIP`.
+    ///
+    /// The value is a quoted-string consisting of a tab (0x9) delimited
+    /// list of EXT-X-DATERANGE IDs that have been removed from the
+    /// Playlist recently.  See Section 6.2.5.1 for more information.
+    /// This attribute is REQUIRED if the Client requested an update that
+    /// skips EXT-X-DATERANGE tags.  The quoted-string MAY be empty.
+    case recentlyRemovedDateranges = "RECENTLY-REMOVED-DATERANGES"
 }
 
 extension PantosValue: PlaylistTagValueIdentifier {
