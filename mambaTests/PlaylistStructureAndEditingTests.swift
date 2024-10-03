@@ -870,6 +870,26 @@ fragment1.ts
         
         XCTAssertEqual(playlist3.playlistType, .event)
     }
+
+    func testDeltaUpdateCorrectlyCalculatesMediaSequencesInTagGroups() {
+        let playlist = parseVariantPlaylist(inString: sampleDeltaUpdatePlaylist)
+
+        XCTAssertEqual(playlist.header?.range.count, 5, "Should have a header including 'server-control' and 'skip'")
+        XCTAssertEqual(playlist.mediaSegmentGroups.count, 6, "Should have 6 remaining groups")
+        for i in 0..<6 {
+            guard playlist.mediaSegmentGroups.indices.contains(i) else {
+                return XCTFail("Should have media segment group at index \(i)")
+            }
+            let group = playlist.mediaSegmentGroups[i]
+            XCTAssertEqual(
+                group.mediaSequence,
+                i + 5,
+                "Should have media sequence value equal to index (\(i)) + initial media sequence (1) + skipped (4)"
+            )
+        }
+        XCTAssertNil(playlist.footer, "Should have no footer")
+        XCTAssertEqual(playlist.mediaSpans.count, 0, "Should have no spans (no key tags)")
+    }
 }
 
 
@@ -975,3 +995,25 @@ let sample4SegmentPlaylist =
         "#EXTINF:2.002,\n" +
         "http://not.a.server.nowhere/segment4.ts\n" +
 "#EXT-X-ENDLIST\n"
+
+let sampleDeltaUpdatePlaylist =
+"""
+#EXTM3U
+#EXT-X-VERSION:9
+#EXT-X-MEDIA-SEQUENCE:1
+#EXT-X-SERVER-CONTROL:CAN-SKIP-UNTIL=12
+#EXT-X-TARGETDURATION:2
+#EXT-X-SKIP:SKIPPED-SEGMENTS=4
+#EXTINF:2.002,
+http://not.a.server.nowhere/segment5.ts
+#EXTINF:2.002,
+http://not.a.server.nowhere/segment6.ts
+#EXTINF:2.002,
+http://not.a.server.nowhere/segment7.ts
+#EXTINF:2.002,
+http://not.a.server.nowhere/segment8.ts
+#EXTINF:2.002,
+http://not.a.server.nowhere/segment9.ts
+#EXTINF:2.002,
+http://not.a.server.nowhere/segment10.ts
+"""
