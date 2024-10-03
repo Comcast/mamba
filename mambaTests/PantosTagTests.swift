@@ -33,6 +33,9 @@ class PantosTagTests: XCTestCase {
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_KEY)
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXTM3U)
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_I_FRAMES_ONLY)
+        runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_SESSION_DATA)
+        runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_SESSION_KEY)
+        runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_CONTENT_STEERING)
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_MEDIA_SEQUENCE)
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_ALLOW_CACHE)
         
@@ -43,6 +46,7 @@ class PantosTagTests: XCTestCase {
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_ENDLIST)
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_BITRATE)
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_DATERANGE)
+        runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_SKIP)
 
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_INDEPENDENT_SEGMENTS)
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_START)
@@ -74,6 +78,12 @@ class PantosTagTests: XCTestCase {
             fallthrough
         case .EXT_X_I_FRAMES_ONLY:
             fallthrough
+        case .EXT_X_SESSION_DATA:
+            fallthrough
+        case .EXT_X_SESSION_KEY:
+            fallthrough
+        case .EXT_X_CONTENT_STEERING:
+            fallthrough
         case .EXT_X_MEDIA_SEQUENCE:
             fallthrough
         case .EXT_X_ALLOW_CACHE:
@@ -101,6 +111,8 @@ class PantosTagTests: XCTestCase {
         case .EXTINF:
             fallthrough
         case .EXT_X_DATERANGE:
+            fallthrough
+        case .EXT_X_SKIP:
             let stringRef = MambaStringRef(string: "#\(descriptor.toString())")
             guard let newDescriptor = PantosTag.constructDescriptor(fromStringRef: stringRef) else {
                 XCTFail("PantosTag \(descriptor.toString()) is missing from stringRefLookup table.")
