@@ -21,6 +21,7 @@
 #define RapidParserError_h
 
 #include <stdio.h>
+#include <stdint.h>
 
 extern const uint32_t RapidParserErrorMissingTagData;
 
