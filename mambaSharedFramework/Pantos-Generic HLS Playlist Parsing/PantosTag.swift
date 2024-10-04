@@ -54,7 +54,10 @@ public enum PantosTag: String {
     case EXT_X_MEDIA = "EXT-X-MEDIA"
     case EXT_X_STREAM_INF = "EXT-X-STREAM-INF"
     case EXT_X_I_FRAME_STREAM_INF = "EXT-X-I-FRAME-STREAM-INF"
-    
+    case EXT_X_SESSION_DATA = "EXT-X-SESSION-DATA"
+    case EXT_X_SESSION_KEY = "EXT-X-SESSION-KEY"
+    case EXT_X_CONTENT_STEERING = "EXT-X-CONTENT-STEERING"
+
     // MARK: Variant playlist tags
     case EXT_X_TARGETDURATION = "EXT-X-TARGETDURATION"
     case EXT_X_MEDIA_SEQUENCE = "EXT-X-MEDIA-SEQUENCE"
@@ -77,6 +80,7 @@ public enum PantosTag: String {
     
     // MARK: Variant playlist - Media metadata tags
     case EXT_X_DATERANGE = "EXT-X-DATERANGE"
+    case EXT_X_SKIP = "EXT-X-SKIP"
 }
 
 extension PantosTag: HLSTagDescriptor, Equatable {
@@ -128,6 +132,12 @@ extension PantosTag: HLSTagDescriptor, Equatable {
             fallthrough
         case .EXT_X_I_FRAME_STREAM_INF:
             fallthrough
+        case .EXT_X_SESSION_DATA:
+            fallthrough
+        case .EXT_X_SESSION_KEY:
+            fallthrough
+        case .EXT_X_CONTENT_STEERING:
+            fallthrough
         case .EXT_X_ENDLIST:
             fallthrough
         case .EXT_X_INDEPENDENT_SEGMENTS:
@@ -139,6 +149,8 @@ extension PantosTag: HLSTagDescriptor, Equatable {
         case .EXT_X_TARGETDURATION:
             fallthrough
         case .EXT_X_DATERANGE:
+            fallthrough
+        case .EXT_X_SKIP:
             return .wholePlaylist
         
         case .EXT_X_BITRATE:
@@ -193,6 +205,12 @@ extension PantosTag: HLSTagDescriptor, Equatable {
             
         case .EXT_X_I_FRAME_STREAM_INF:
             fallthrough
+        case .EXT_X_SESSION_DATA:
+            fallthrough
+        case .EXT_X_SESSION_KEY:
+            fallthrough
+        case .EXT_X_CONTENT_STEERING:
+            fallthrough
         case .EXT_X_MEDIA:
             fallthrough
         case .EXT_X_STREAM_INF:
@@ -204,6 +222,8 @@ extension PantosTag: HLSTagDescriptor, Equatable {
         case .EXT_X_KEY:
             fallthrough
         case .EXT_X_DATERANGE:
+            fallthrough
+        case .EXT_X_SKIP:
             return .keyValue
             
         case .Location:
@@ -271,6 +291,12 @@ extension PantosTag: HLSTagDescriptor, Equatable {
             fallthrough
         case .EXT_X_I_FRAME_STREAM_INF:
             fallthrough
+        case .EXT_X_SESSION_DATA:
+            fallthrough
+        case .EXT_X_SESSION_KEY:
+            fallthrough
+        case .EXT_X_CONTENT_STEERING:
+            fallthrough
         case .EXT_X_MAP:
             fallthrough
         case .EXT_X_START:
@@ -278,6 +304,8 @@ extension PantosTag: HLSTagDescriptor, Equatable {
         case .EXT_X_KEY:
             fallthrough
         case .EXT_X_DATERANGE:
+            fallthrough
+        case .EXT_X_SKIP:
             return GenericDictionaryTagParser(tag: pantostag)
             
         // No Data tags
@@ -335,6 +363,12 @@ extension PantosTag: HLSTagDescriptor, Equatable {
             fallthrough
         case .EXT_X_I_FRAME_STREAM_INF:
             fallthrough
+        case .EXT_X_SESSION_DATA:
+            fallthrough
+        case .EXT_X_SESSION_KEY:
+            fallthrough
+        case .EXT_X_CONTENT_STEERING:
+            fallthrough
         case .EXT_X_MAP:
             fallthrough
         case .EXT_X_START:
@@ -342,6 +376,8 @@ extension PantosTag: HLSTagDescriptor, Equatable {
         case .EXT_X_KEY:
             fallthrough
         case .EXT_X_DATERANGE:
+            fallthrough
+        case .EXT_X_SKIP:
             return GenericDictionaryTagWriter()
             
         // These tags cannot be modified and therefore these cases are invalid.
@@ -399,13 +435,23 @@ extension PantosTag: HLSTagDescriptor, Equatable {
         case .EXT_X_STREAM_INF:
             return GenericDictionaryTagValidator(tag: pantostag, dictionaryValueIdentifiers: [
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.bandwidthBPS, optional: false, expectedType: Int.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.averageBandwidthBPS, optional: true, expectedType: Int.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.score, optional: true, expectedType: Double.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.programId, optional: true, expectedType: Int.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.codecs, optional: true, expectedType: HLSCodecArray.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.supplementalCodecs, optional: true, expectedType: HLSCodecArray.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.resolution, optional: true, expectedType: HLSResolution.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.frameRate, optional: true, expectedType: Double.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.hdcpLevel, optional: true, expectedType: HLSHDCPLevel.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.allowedCpc, optional: true, expectedType: String.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.videoRange, optional: true, expectedType: HLSVideoRange.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.reqVideoLayout, optional: true, expectedType: HLSVideoLayout.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.stableVariantId, optional: true, expectedType: String.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.audioGroup, optional: true, expectedType: String.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.videoGroup, optional: true, expectedType: String.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.subtitlesGroup, optional: true, expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.closedCaptionsGroup, optional: true, expectedType: HLSClosedCaptions.self)
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.closedCaptionsGroup, optional: true, expectedType: HLSClosedCaptions.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.pathwayId, optional: true, expectedType: String.self)
                 ])
             
         case .EXT_X_MEDIA:
@@ -416,23 +462,52 @@ extension PantosTag: HLSTagDescriptor, Equatable {
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.language, optional: true, expectedType: String.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.assocLanguage, optional: true, expectedType: String.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.name, optional: true, expectedType: String.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.stableRenditionId, optional: true, expectedType: String.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.defaultMedia, optional: true, expectedType: Bool.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.autoselect, optional: true, expectedType: Bool.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.forced, optional: true, expectedType: Bool.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.instreamId, optional: true, expectedType: HLSInstreamId.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.characteristics, optional: true, expectedType: String.self)
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.bitDepth, optional: true, expectedType: Int.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.sampleRate, optional: true, expectedType: Int.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.characteristics, optional: true, expectedType: String.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.channels, optional: true, expectedType: HLSChannels.self)
                 ])
             
         case .EXT_X_I_FRAME_STREAM_INF:
             return GenericDictionaryTagValidator(tag: pantostag, dictionaryValueIdentifiers: [
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.bandwidthBPS, optional: false, expectedType: Int.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.programId, optional: true, expectedType: Int.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.codecs, optional: true, expectedType: String.self),
-                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.resolution, optional: true, expectedType: HLSResolution.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.uri, optional: false, expectedType: String.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.bandwidthBPS, optional: false, expectedType: Int.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.averageBandwidthBPS, optional: true, expectedType: Int.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.score, optional: true, expectedType: Double.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.programId, optional: true, expectedType: Int.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.codecs, optional: true, expectedType: HLSCodecArray.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.supplementalCodecs, optional: true, expectedType: HLSCodecArray.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.resolution, optional: true, expectedType: HLSResolution.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.hdcpLevel, optional: true, expectedType: HLSHDCPLevel.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.allowedCpc, optional: true, expectedType: String.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.videoRange, optional: true, expectedType: HLSVideoRange.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.reqVideoLayout, optional: true, expectedType: HLSVideoLayout.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.stableVariantId, optional: true, expectedType: String.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.videoGroup, optional: true, expectedType: String.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.pathwayId, optional: true, expectedType: String.self),
                 ])
-            
+
+        case .EXT_X_SESSION_DATA:
+            return EXT_X_SESSION_DATATagValidator()
+
+        case .EXT_X_SESSION_KEY:
+            return EXT_X_SESSION_KEYValidator()
+
+        case .EXT_X_CONTENT_STEERING:
+            return GenericDictionaryTagValidator(tag: pantostag, dictionaryValueIdentifiers: [
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.serverUri,
+                                                    optional: false,
+                                                    expectedType: String.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.pathwayId,
+                                                    optional: true,
+                                                    expectedType: String.self)
+            ])
+
         case .EXT_X_KEY:
             return EXT_X_KEYValidator(tag: pantostag, dictionaryValueIdentifiers: [
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.method, optional: true, expectedType: HLSEncryptionMethodType.self),
@@ -464,7 +539,17 @@ extension PantosTag: HLSTagDescriptor, Equatable {
             
         case .EXT_X_DATERANGE:
             return EXT_X_DATERANGETagValidator()
-            
+
+        case .EXT_X_SKIP:
+            return GenericDictionaryTagValidator(tag: pantostag, dictionaryValueIdentifiers: [
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.skippedSegments,
+                                                    optional: false,
+                                                    expectedType: Int.self),
+                HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.recentlyRemovedDateranges,
+                                                    optional: true,
+                                                    expectedType: String.self)
+            ])
+
         case .Location:
             return nil
 
@@ -493,6 +578,9 @@ extension PantosTag: HLSTagDescriptor, Equatable {
                        PantosTag.EXT_X_VERSION,
                        PantosTag.EXT_X_MEDIA,
                        PantosTag.EXT_X_I_FRAME_STREAM_INF,
+                       PantosTag.EXT_X_SESSION_DATA,
+                       PantosTag.EXT_X_SESSION_KEY,
+                       PantosTag.EXT_X_CONTENT_STEERING,
                        PantosTag.EXT_X_TARGETDURATION,
                        PantosTag.EXT_X_MEDIA_SEQUENCE,
                        PantosTag.EXT_X_ENDLIST,
@@ -510,7 +598,8 @@ extension PantosTag: HLSTagDescriptor, Equatable {
                        PantosTag.EXT_X_START,
                        PantosTag.EXT_X_DISCONTINUITY,
                        PantosTag.EXT_X_BITRATE,
-                       PantosTag.EXT_X_DATERANGE]
+                       PantosTag.EXT_X_DATERANGE,
+                       PantosTag.EXT_X_SKIP]
 
         var dictionary = [UInt: [(descriptor: PantosTag, string: HLSStringRef)]]()
         

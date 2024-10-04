@@ -372,16 +372,44 @@ fileprivate struct HLSPlaylistStructureConstructor {
         var currentSegmentDuration: CMTime = CMTime.invalid
         var discontinuity = false
         let tagDescriptor = self.tagDescriptor(forTags: tags)
-        
-        // figure out our media sequence start (defaults to 1 if not specified)
-        let mediaSequenceTags = tags.filter{ $0.tagDescriptor == PantosTag.EXT_X_MEDIA_SEQUENCE }
-        if mediaSequenceTags.count > 0 {
-            assert(mediaSequenceTags.count == 1, "Unexpected to have more than one media sequence")
-            if let startMediaSequence: MediaSequence = mediaSequenceTags.first?.value(forValueIdentifier: PantosValue.sequence) {
-                currentMediaSequence = startMediaSequence
+
+        // collect media sequence and skip tag (if they exist) as they impact the initial media sequence value
+        var mediaSequenceTag: HLSTag?
+        var skipTag: HLSTag?
+        for tag in tags {
+            switch tag.tagDescriptor {
+            case PantosTag.EXT_X_MEDIA_SEQUENCE: mediaSequenceTag = tag
+            case PantosTag.EXT_X_SKIP: skipTag = tag
+            case PantosTag.Location:
+                // Both the EXT-X-MEDIA-SEQUNCE and the EXT-X-SKIP tag are expected to occur before any Media Segments.
+                //
+                // For EXT-X-MEDIA-SEQUNCE section 4.4.3.2 indicates:
+                //     The EXT-X-MEDIA-SEQUENCE tag MUST appear before the first Media Segment in the Playlist.
+                //
+                // For EXT-X-SKIP section 4.4.5.2 indicates:
+                //     A server produces a Playlist Delta Update (Section 6.2.5.1), by replacing tags earlier than the
+                //     Skip Boundary with an EXT-X-SKIP tag. When replacing Media Segments, the EXT-X-SKIP tag replaces
+                //     the segment URI lines and all Media Segment Tags tags that are applied to those segments.
+                //
+                // Exiting early at the first Location helps us avoid having to loop through the entire playlist when we
+                // know that the tags we're looking for MUST NOT exist.
+                break
+            default: continue
             }
         }
-        
+
+        // figure out our media sequence start (defaults to 0 if not specified)
+        if let startMediaSequence: MediaSequence = mediaSequenceTag?.value(forValueIdentifier: PantosValue.sequence) {
+            currentMediaSequence = startMediaSequence
+        }
+
+        // account for any skip tag (since a delta update replaces all segments earlier than the skip boundary, the
+        // SKIPPED-SEGMENTS value will effectively update the current media sequence value of the first segment, so safe
+        // to do this here and not within the looping through media group tags below).
+        if let skippedSegments: Int = skipTag?.value(forValueIdentifier: PantosValue.skippedSegments) {
+            currentMediaSequence += skippedSegments
+        }
+
         // find the "header" portion by finding the first ".mediaSegment" scoped tag
         let mediaStartIndexOptional = tags.firstIndex(where: { $0.scope() == .mediaSegment })
         
