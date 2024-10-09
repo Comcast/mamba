@@ -350,7 +350,7 @@ public struct HLSChannels: Equatable, FailableStringLiteralConvertible {
 public struct HLSCodec: Equatable {
     
     static let audioPrefixes: [String] = ["mp4a", "mp3", "ec-3", "ac-3"]
-    static let videoPrefixes: [String] = ["avc", "mp4v", "svc", "mvc", "sevc", "s263", "hvc", "vp9"]
+    static let videoPrefixes: [String] = ["avc", "mp4v", "svc", "mvc", "sevc", "s263", "hvc", "vp9", "dvh"]
     public let codecDescriptor: String
     
     init(codecDescriptor: String) {
