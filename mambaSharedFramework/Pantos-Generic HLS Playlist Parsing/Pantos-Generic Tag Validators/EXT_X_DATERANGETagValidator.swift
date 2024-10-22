@@ -52,7 +52,7 @@ class EXT_X_DATERANGETagValidator: HLSTagValidator {
             HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.assetList, optional: true, expectedType: String.self),
             HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.resumeOffset, optional: true, expectedType: Double.self),
             HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.playoutLimit, optional: true, expectedType: Double.self),
-            HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.snap, optional: true, expectedType: HLSInterstitialSnapGuide.self),
+            HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.snap, optional: true, expectedType: HLSInterstitialAlignment.self),
             HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.restrict, optional: true, expectedType: HLSInterstitialSeekRestrictions.self),
             HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.timelineOccupies, optional: true, expectedType: HLSInterstitialTimelineOccupation.self),
             HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.timelineStyle, optional: true, expectedType: HLSInterstitialTimelineStyle.self),
