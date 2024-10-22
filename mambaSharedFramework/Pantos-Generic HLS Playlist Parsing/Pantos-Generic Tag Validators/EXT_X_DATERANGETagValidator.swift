@@ -51,13 +51,12 @@ class EXT_X_DATERANGETagValidator: HLSTagValidator {
             HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.assetUri, optional: true, expectedType: String.self),
             HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.assetList, optional: true, expectedType: String.self),
             HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.resumeOffset, optional: true, expectedType: Double.self),
-            HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.playoutLimit, optional: true, expectedType: Double.self)
-
-//            case snap = "X-SNAP"
-//            case restrict = "X-RESTRICT"
-//            case timelineOccupies = "X-TIMELINE-OCCUPIES"
-//            case timelineStyle = "X-TIMELINE-STYLE"
-//            case contentMayVary = "X-CONTENT-MAY-VARY"
+            HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.playoutLimit, optional: true, expectedType: Double.self),
+            HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.snap, optional: true, expectedType: HLSInterstitialSnapGuide.self),
+            HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.restrict, optional: true, expectedType: HLSInterstitialSeekRestrictions.self),
+            HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.timelineOccupies, optional: true, expectedType: HLSInterstitialTimelineOccupation.self),
+            HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.timelineStyle, optional: true, expectedType: HLSInterstitialTimelineStyle.self),
+            HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.contentMayVary, optional: true, expectedType: Bool.self)
         ])
     }
     
@@ -193,8 +192,8 @@ class EXT_X_DATERANGETagValidator: HLSTagValidator {
         return [HLSValidationIssue(description: .EXT_X_DATERANGETagPLANNED_DURATIONMustNotBeNegative, severity: .warning)]
     }
     
-    /// if a DateRange tag contains `CLASS="com.apple.hls.interstitial"`, it must specify EITHER X-ASSET-LIST OR
-    /// X-ASSET-URI attributes, but never both.
+    /// if a DateRange tag contains `CLASS="com.apple.hls.interstitial"`, it must specify **either** X-ASSET-LIST OR
+    /// X-ASSET-URI attributes, but **never** both.
     private func hlsInterstitialValidation(tag: HLSTag) -> [HLSValidationIssue]? {
         guard let classId = tag.value(forValueIdentifier: PantosValue.classAttribute),
               classId == Self.appleHLSInterstitialClassIdentifier
