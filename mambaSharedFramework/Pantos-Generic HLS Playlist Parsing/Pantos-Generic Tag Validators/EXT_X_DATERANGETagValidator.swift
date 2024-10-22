@@ -27,6 +27,9 @@ import Foundation
 ///
 class EXT_X_DATERANGETagValidator: HLSTagValidator {
     
+    /// the required Date Range class identifier for specifying HLS interstitial tags
+    static let appleHLSInterstitialClassIdentifier = "com.apple.hls.interstitial"
+    
     private let genericDictionaryTagValidator: GenericDictionaryTagValidator
     
     init() {
@@ -44,7 +47,17 @@ class EXT_X_DATERANGETagValidator: HLSTagValidator {
             HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.scte35Cmd, optional: true, expectedType: String.self),
             HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.scte35Out, optional: true, expectedType: String.self),
             HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.scte35In, optional: true, expectedType: String.self),
-            HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.endOnNext, optional: true, expectedType: Bool.self)
+            HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.endOnNext, optional: true, expectedType: Bool.self),
+            HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.assetUri, optional: true, expectedType: String.self),
+            HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.assetList, optional: true, expectedType: String.self),
+            HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.resumeOffset, optional: true, expectedType: Double.self),
+            HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.playoutLimit, optional: true, expectedType: Double.self)
+
+//            case snap = "X-SNAP"
+//            case restrict = "X-RESTRICT"
+//            case timelineOccupies = "X-TIMELINE-OCCUPIES"
+//            case timelineStyle = "X-TIMELINE-STYLE"
+//            case contentMayVary = "X-CONTENT-MAY-VARY"
         ])
     }
     
@@ -77,6 +90,10 @@ class EXT_X_DATERANGETagValidator: HLSTagValidator {
         if let negativePlannedDurationIssues = negativePlannedDurationValidation(tag: tag) {
             validationIssues = validationIssues ?? []
             validationIssues?.append(contentsOf: negativePlannedDurationIssues)
+        }
+        if let interstitialIssues = hlsInterstitialValidation(tag: tag) {
+            validationIssues = validationIssues ?? []
+            validationIssues?.append(contentsOf: interstitialIssues)
         }
         
         return validationIssues
@@ -174,5 +191,27 @@ class EXT_X_DATERANGETagValidator: HLSTagValidator {
             return nil
         }
         return [HLSValidationIssue(description: .EXT_X_DATERANGETagPLANNED_DURATIONMustNotBeNegative, severity: .warning)]
+    }
+    
+    /// if a DateRange tag contains `CLASS="com.apple.hls.interstitial"`, it must specify EITHER X-ASSET-LIST OR
+    /// X-ASSET-URI attributes, but never both.
+    private func hlsInterstitialValidation(tag: HLSTag) -> [HLSValidationIssue]? {
+        guard let classId = tag.value(forValueIdentifier: PantosValue.classAttribute),
+              classId == Self.appleHLSInterstitialClassIdentifier
+        else {
+            return nil
+        }
+        
+        let assetList = tag.value(forValueIdentifier: PantosValue.assetList)
+        let assetUri = tag.value(forValueIdentifier: PantosValue.assetUri)
+        
+        switch(assetUri, assetList) {
+        case (.some(_), .some(_)):
+            return [HLSValidationIssue(description: .EXT_X_DATERANGEContainsBothAssetListAndAssetUriAttribute, severity: .warning)]
+        case (.none, .none):
+            return [HLSValidationIssue(description: .EXT_X_DATERANGEMissingAssetListOrAssetUriAttribute, severity: .warning)]
+        default:
+            return nil
+        }
     }
 }
