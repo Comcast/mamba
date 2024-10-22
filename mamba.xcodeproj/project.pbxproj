@@ -79,6 +79,9 @@
 		E6B2D80A2CC83E5B00D319DF /* HLSInterstitialValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D8092CC83E5B00D319DF /* HLSInterstitialValueTests.swift */; };
 		E6B2D80B2CC83E5B00D319DF /* HLSInterstitialValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D8092CC83E5B00D319DF /* HLSInterstitialValueTests.swift */; };
 		E6B2D80C2CC83E5B00D319DF /* HLSInterstitialValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D8092CC83E5B00D319DF /* HLSInterstitialValueTests.swift */; };
+		E6B2D80E2CC842DB00D319DF /* InterstitialTagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D80D2CC842DB00D319DF /* InterstitialTagBuilder.swift */; };
+		E6B2D80F2CC842DB00D319DF /* InterstitialTagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D80D2CC842DB00D319DF /* InterstitialTagBuilder.swift */; };
+		E6B2D8102CC842DB00D319DF /* InterstitialTagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D80D2CC842DB00D319DF /* InterstitialTagBuilder.swift */; };
 		EC03B63D1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */; };
 		EC03B63E1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */; };
 		EC03B63F1E5CC55800BF1F97 /* RapidParserMasterParseArray.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B63C1E5CC55800BF1F97 /* RapidParserMasterParseArray.h */; };
@@ -668,6 +671,7 @@
 		E6B2D7F72CC834DB00D319DF /* NoOpTagParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoOpTagParser.swift; sourceTree = "<group>"; };
 		E6B2D8052CC834F500D319DF /* HLSInterstitialValueTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSInterstitialValueTypes.swift; sourceTree = "<group>"; };
 		E6B2D8092CC83E5B00D319DF /* HLSInterstitialValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSInterstitialValueTests.swift; sourceTree = "<group>"; };
+		E6B2D80D2CC842DB00D319DF /* InterstitialTagBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialTagBuilder.swift; sourceTree = "<group>"; };
 		EC02E9761E26E77900D4CEAC /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/tvOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		EC03B62D1E5CC54900BF1F97 /* PrototypeRapidParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrototypeRapidParseArray.include; sourceTree = "<group>"; };
 		EC03B62E1E5CC54900BF1F97 /* RapidParser_LookingForEForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForEForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
@@ -1129,6 +1133,7 @@
 				E6B2D8052CC834F500D319DF /* HLSInterstitialValueTypes.swift */,
 				EC9547871E5CC84700962535 /* FrameworkInfo.swift */,
 				EC1521511DD28536006FB265 /* mamba.h */,
+				E6B2D80D2CC842DB00D319DF /* InterstitialTagBuilder.swift */,
 			);
 			path = mambaSharedFramework;
 			sourceTree = "<group>";
@@ -1882,6 +1887,7 @@
 				43DE4EFB1E564DA300EEE800 /* EXT_X_STARTTimeOffsetValidator.swift in Sources */,
 				EC74918A1DD29CCB00AF4E20 /* StringDictionaryParser.swift in Sources */,
 				F73183771E78758B00ED8E59 /* HLSStringRefFactory.m in Sources */,
+				E6B2D8102CC842DB00D319DF /* InterstitialTagBuilder.swift in Sources */,
 				D4BB018D1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift in Sources */,
 				EC7491881DD29CCB00AF4E20 /* StringArrayParser.swift in Sources */,
 				EC03B6681E5CC56B00BF1F97 /* RapidParserLineState.c in Sources */,
@@ -2054,6 +2060,7 @@
 				EC3B01A81DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift in Sources */,
 				EC74918B1DD29CCB00AF4E20 /* StringDictionaryParser.swift in Sources */,
 				F73183781E78758B00ED8E59 /* HLSStringRefFactory.m in Sources */,
+				E6B2D80E2CC842DB00D319DF /* InterstitialTagBuilder.swift in Sources */,
 				D4BB018E1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift in Sources */,
 				EC7491891DD29CCB00AF4E20 /* StringArrayParser.swift in Sources */,
 				EC03B6691E5CC56B00BF1F97 /* RapidParserLineState.c in Sources */,
@@ -2226,6 +2233,7 @@
 				EC1CCD02209A2CF9006B59FF /* HLSStringRef_ConcreteNSString.m in Sources */,
 				EC1CCD51209A2CF9006B59FF /* HLSPlaylistValidator.swift in Sources */,
 				EC1CCD5F209A2CF9006B59FF /* HLSTagWriter.swift in Sources */,
+				E6B2D80F2CC842DB00D319DF /* InterstitialTagBuilder.swift in Sources */,
 				EC1CCD49209A2CF9006B59FF /* HLSPlaylistCollectionValidator.swift in Sources */,
 				EC1CCD28209A2CF9006B59FF /* FailableStringLiteralConvertible.swift in Sources */,
 				EC1CCCF7209A2CF9006B59FF /* StructureState.swift in Sources */,
