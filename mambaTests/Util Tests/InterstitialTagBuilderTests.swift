@@ -73,8 +73,6 @@ final class InterstitialTagBuilderTests: XCTestCase {
         let clientAttributes: [String: LosslessStringConvertible] = ["X-COM-BEACON-URI": "http://not.a.real.beacon",
                                                                      "X-COM-AD-PROVIDER-ID": 100]
         
-        // TOOD: client attributes
-        
         let tag = tagBuilder
             .withDuration(duration)
             .withAlignment(alignment)
