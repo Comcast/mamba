@@ -226,10 +226,10 @@ public final class InterstitialTagBuilder {
         
         var hlsTagDictionary = HLSTagDictionary()
         
+        hlsTagDictionary[PantosValue.id.rawValue] = HLSValueData(value: id, quoteEscaped: true)
         let startDateString = String.DateFormatter.iso8601MS.string(from: startDate)
         hlsTagDictionary[PantosValue.startDate.rawValue] = HLSValueData(value: startDateString,
                                                                         quoteEscaped: true)
-        hlsTagDictionary[PantosValue.id.rawValue] = HLSValueData(value: id, quoteEscaped: true)
         hlsTagDictionary[PantosValue.classAttribute.rawValue] = HLSValueData(value: classId,
                                                                              quoteEscaped: true)
         

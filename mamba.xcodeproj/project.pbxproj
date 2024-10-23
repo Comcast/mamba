@@ -82,6 +82,9 @@
 		E6B2D80E2CC842DB00D319DF /* InterstitialTagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D80D2CC842DB00D319DF /* InterstitialTagBuilder.swift */; };
 		E6B2D80F2CC842DB00D319DF /* InterstitialTagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D80D2CC842DB00D319DF /* InterstitialTagBuilder.swift */; };
 		E6B2D8102CC842DB00D319DF /* InterstitialTagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D80D2CC842DB00D319DF /* InterstitialTagBuilder.swift */; };
+		E6B2D8122CC937D400D319DF /* InterstitialTagBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D8112CC937D400D319DF /* InterstitialTagBuilderTests.swift */; };
+		E6B2D8132CC937D400D319DF /* InterstitialTagBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D8112CC937D400D319DF /* InterstitialTagBuilderTests.swift */; };
+		E6B2D8142CC937D400D319DF /* InterstitialTagBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D8112CC937D400D319DF /* InterstitialTagBuilderTests.swift */; };
 		EC03B63D1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */; };
 		EC03B63E1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */; };
 		EC03B63F1E5CC55800BF1F97 /* RapidParserMasterParseArray.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B63C1E5CC55800BF1F97 /* RapidParserMasterParseArray.h */; };
@@ -672,6 +675,7 @@
 		E6B2D8052CC834F500D319DF /* HLSInterstitialValueTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSInterstitialValueTypes.swift; sourceTree = "<group>"; };
 		E6B2D8092CC83E5B00D319DF /* HLSInterstitialValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSInterstitialValueTests.swift; sourceTree = "<group>"; };
 		E6B2D80D2CC842DB00D319DF /* InterstitialTagBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialTagBuilder.swift; sourceTree = "<group>"; };
+		E6B2D8112CC937D400D319DF /* InterstitialTagBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialTagBuilderTests.swift; sourceTree = "<group>"; };
 		EC02E9761E26E77900D4CEAC /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/tvOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		EC03B62D1E5CC54900BF1F97 /* PrototypeRapidParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrototypeRapidParseArray.include; sourceTree = "<group>"; };
 		EC03B62E1E5CC54900BF1F97 /* RapidParser_LookingForEForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForEForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
@@ -1343,6 +1347,7 @@
 				EC073F5F1FE08F7500689228 /* String+Helio.swift */,
 				EC7492A61DD29F7000AF4E20 /* URL+hlsplaylistTests.swift */,
 				EC9BCAA21D749D8B0032BEBE /* Value Types */,
+				E6B2D8112CC937D400D319DF /* InterstitialTagBuilderTests.swift */,
 			);
 			path = "Util Tests";
 			sourceTree = "<group>";
@@ -1914,6 +1919,7 @@
 				EC7492741DD29EC800AF4E20 /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift in Sources */,
 				ECFBD90E1E5CCC2200379FC2 /* HLSStringRefTests.m in Sources */,
 				EC7492401DD29E7300AF4E20 /* HLSParser_Super8MuxedTests.swift in Sources */,
+				E6B2D8122CC937D400D319DF /* InterstitialTagBuilderTests.swift in Sources */,
 				4367C3731EAE83C000685945 /* HLSPlaylistStructureMasterTests.swift in Sources */,
 				EC74922E1DD29E4A00AF4E20 /* HLSPlaylistMock.swift in Sources */,
 				EC7492611DD29E9A00AF4E20 /* HLSTagWriting.swift in Sources */,
@@ -2087,6 +2093,7 @@
 				EC7492AA1DD29F7000AF4E20 /* MambaUtilTests.swift in Sources */,
 				ECFBD90F1E5CCC2200379FC2 /* HLSStringRefTests.m in Sources */,
 				EC7492751DD29EC800AF4E20 /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift in Sources */,
+				E6B2D8132CC937D400D319DF /* InterstitialTagBuilderTests.swift in Sources */,
 				EC7492411DD29E7300AF4E20 /* HLSParser_Super8MuxedTests.swift in Sources */,
 				EC74922F1DD29E4A00AF4E20 /* HLSPlaylistMock.swift in Sources */,
 				EC7492621DD29E9A00AF4E20 /* HLSTagWriting.swift in Sources */,
@@ -2260,6 +2267,7 @@
 				ECE253EA209A50A100D388CE /* HLSStringRefTests.m in Sources */,
 				ECE253F7209A50B500D388CE /* StringArrayParserTests.swift in Sources */,
 				ECE25401209A50B500D388CE /* MambaUtilTests.swift in Sources */,
+				E6B2D8142CC937D400D319DF /* InterstitialTagBuilderTests.swift in Sources */,
 				ECE253FB209A50B500D388CE /* GenericDictionaryTagWriterTests.swift in Sources */,
 				ECE25407209A50B500D388CE /* HLSPlaylistTypeTests.swift in Sources */,
 				ECE253D5209A509000D388CE /* XCTestCase+mamba.swift in Sources */,

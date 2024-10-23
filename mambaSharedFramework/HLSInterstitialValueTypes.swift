@@ -8,7 +8,7 @@
 import Foundation
 
 /// specifies how the client should align interstitial content to the primary content
-public struct HLSInterstitialAlignment: FailableStringLiteralConvertible {
+public struct HLSInterstitialAlignment: FailableStringLiteralConvertible, Equatable {
 
     public enum Snap: String, CaseIterable {
         /// client SHOULD locate the segment boundary closest to the scheduled resumption point from the
@@ -44,7 +44,7 @@ public struct HLSInterstitialAlignment: FailableStringLiteralConvertible {
 }
 
 /// specifies how the player should enforce seek restrictions for the interstitial content
-public struct HLSInterstitialSeekRestrictions: FailableStringLiteralConvertible {
+public struct HLSInterstitialSeekRestrictions: FailableStringLiteralConvertible, Equatable {
     
     public enum Restriction: String, CaseIterable {
         /// If the list contains SKIP then while the interstitial is being played, the client MUST NOT
