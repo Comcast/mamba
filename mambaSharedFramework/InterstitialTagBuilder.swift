@@ -22,6 +22,9 @@ import Foundation
 
 
 /// A utility class for configuring and constructing an interstitial tag
+/// The properties in this class are in accordance with the HLS spec
+/// outlined in `draft-pantos-hls-rfc8216bis-15` Appendix D
+/// https://datatracker.ietf.org/doc/html/draft-pantos-hls-rfc8216bis#appendix-D
 public final class InterstitialTagBuilder {
     
     /// An Interstitial EXT-X-DATERANGE tag MUST have a CLASS attribute whose
@@ -47,6 +50,9 @@ public final class InterstitialTagBuilder {
     /// The value of the X-ASSET-LIST is a quoted-string URI to a JSON
     /// object.
     let assetList: String?
+    
+    /// the duration of the interstitial content in seconds
+    var duration: Double?
     
     /// The value of X-RESUME-OFFSET is a decimal-floating-point of seconds that specifies where primary playback is to resume
     /// following the playback of the interstitial.
@@ -106,11 +112,24 @@ public final class InterstitialTagBuilder {
         self.classId = Self.appleHLSInterstitialClassIdentifier
     }
     
+    /// Specifies the duration of the interstitial
+    ///
+    /// - Parameter duration: `Double` indicating duration
+    ///
+    /// - Returns: an instance of the builder
+    @discardableResult
+    public func withDuration(_ duration: Double) -> Self {
+        self.duration = duration
+        
+        return self
+    }
+    
     /// Configures the interstitial with a resume offset
     ///
     /// - Parameter offset: `Double` indicating the resume offset
     ///
     /// - Returns: an instance of the builder
+    @discardableResult
     public func withResumeOffset(_ offset: Double) -> Self {
         self.resumeOffset = offset
         
@@ -122,6 +141,7 @@ public final class InterstitialTagBuilder {
     /// - Parameter limit: `Double` indicating playout limit
     ///
     /// - Returns: an instance of the builder
+    @discardableResult
     public func withPlayoutLimit(_ limit: Double) -> Self {
         self.playoutLimit = limit
         
@@ -133,6 +153,7 @@ public final class InterstitialTagBuilder {
     /// - Parameter alignment: `HLSInterstitialAlignment` specifying alignment guides
     ///
     /// - Returns: an instance of the builder
+    @discardableResult
     public func withAlignment(_ alignment: HLSInterstitialAlignment) -> Self {
         self.alignment = alignment
         
@@ -155,6 +176,7 @@ public final class InterstitialTagBuilder {
     /// - Parameter style: `HLSInterstitialTimelineStyle` type
     ///
     /// - Returns: an instance of the builder
+    @discardableResult
     public func withTimelineStyle(_ style: HLSInterstitialTimelineStyle) -> Self {
         self.timelineStyle = style
         
@@ -166,6 +188,7 @@ public final class InterstitialTagBuilder {
     /// - Parameter occupation: `HLSInterstitialTimelineOccupation` type
     ///
     /// - Returns: an instance of the builder
+    @discardableResult
     public func withTimelineOccupation(_ occupation: HLSInterstitialTimelineOccupation) -> Self {
         self.timelineOccupation = occupation
         
@@ -177,6 +200,7 @@ public final class InterstitialTagBuilder {
     /// - Parameter variation: `Bool` indicating if there's variation
     ///
     /// - Returns: an instance of the builder
+    @discardableResult
     public func withContentVariation(_ variation: Bool) -> Self {
         self.contentMayVary = variation
         
@@ -188,13 +212,82 @@ public final class InterstitialTagBuilder {
     /// - Parameter attributes: a map of `[String: LosslessStringConvertible]` describing the attributes
     ///
     /// - Returns: an instance of the builder
+    @discardableResult
     public func withClientAttributes(_ attributes: [String: LosslessStringConvertible]) -> Self {
         self.clientAttributes = attributes
         
         return self
     }
     
-    public func buildTag() {
+    /// Builds the DateRange tag utilizing the configured HLS interstitial properties
+    ///
+    /// - Returns: `HLSTag`
+    public func buildTag() -> HLSTag {
         
+        var hlsTagDictionary = HLSTagDictionary()
+        
+        let startDateString = String.DateFormatter.iso8601MS.string(from: startDate)
+        hlsTagDictionary[PantosValue.startDate.rawValue] = HLSValueData(value: startDateString,
+                                                                        quoteEscaped: true)
+        hlsTagDictionary[PantosValue.id.rawValue] = HLSValueData(value: id, quoteEscaped: true)
+        hlsTagDictionary[PantosValue.classAttribute.rawValue] = HLSValueData(value: classId,
+                                                                             quoteEscaped: true)
+        
+        if let assetUri {
+            hlsTagDictionary[PantosValue.assetUri.rawValue] = HLSValueData(value: assetUri, quoteEscaped: true)
+        }
+        
+        if let assetList {
+            hlsTagDictionary[PantosValue.assetList.rawValue] = HLSValueData(value: assetList, quoteEscaped: true)
+        }
+        
+        if let duration {
+            hlsTagDictionary[PantosValue.duration.rawValue] = HLSValueData(value: String(duration), quoteEscaped: true)
+        }
+        
+        if let resumeOffset {
+            hlsTagDictionary[PantosValue.resumeOffset.rawValue] = HLSValueData(value: String(resumeOffset),
+                                                                               quoteEscaped: true)
+        }
+        
+        if let playoutLimit {
+            hlsTagDictionary[PantosValue.playoutLimit.rawValue] = HLSValueData(value: String(playoutLimit),
+                                                                               quoteEscaped: true)
+        }
+        
+        if let restrictions {
+            let str = restrictions.restrictions.map({ $0.rawValue }).joined(separator: ",")
+            hlsTagDictionary[PantosValue.restrict.rawValue] = HLSValueData(value: str, quoteEscaped: true)
+        }
+        
+        if let alignment {
+            let str = alignment.values.map({ $0.rawValue }).joined(separator: ",")
+            hlsTagDictionary[PantosValue.snap.rawValue] = HLSValueData(value: str, quoteEscaped: true)
+        }
+        
+        if let timelineStyle {
+            hlsTagDictionary[PantosValue.timelineStyle.rawValue] = HLSValueData(value: timelineStyle.rawValue,
+                                                                                quoteEscaped: true)
+        }
+        
+        if let timelineOccupation {
+            hlsTagDictionary[PantosValue.timelineOccupies.rawValue] = HLSValueData(value: timelineOccupation.rawValue,
+                                                                                   quoteEscaped: true)
+        }
+        
+        if let contentMayVary {
+            hlsTagDictionary[PantosValue.contentMayVary.rawValue] = HLSValueData(value: contentMayVary == true ? "YES" : "NO",
+                                                                                 quoteEscaped: true)
+        }
+        
+        if let clientAttributes {
+            for (k, v) in clientAttributes {
+                hlsTagDictionary[k] = HLSValueData(value: String(v), quoteEscaped: true)
+            }
+        }
+        
+        return HLSTag(tagDescriptor: PantosTag.EXT_X_DATERANGE,
+                      stringTagData: nil,
+                      parsedValues: hlsTagDictionary)
     }
 }
