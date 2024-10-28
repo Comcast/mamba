@@ -19,8 +19,6 @@
 
 import Foundation
 
-
-
 /// A utility class for configuring and constructing an interstitial tag
 /// The properties in this class are in accordance with the HLS spec
 /// outlined in `draft-pantos-hls-rfc8216bis-15` Appendix D
