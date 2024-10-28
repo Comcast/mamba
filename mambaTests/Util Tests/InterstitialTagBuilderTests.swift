@@ -63,7 +63,7 @@ final class InterstitialTagBuilderTests: XCTestCase {
     func decorateAndTest(_ tagBuilder: InterstitialTagBuilder) -> HLSTag {
         
         let duration: Double = 10.0
-        let alignment = HLSInterstitialAlignment(values: [.snapIn, .snapOut])
+        let alignment = HLSInterstitialAlignment(values: [.in, .out])
         let restrictions = HLSInterstitialSeekRestrictions(restrictions: [.skip, .jump])
         let playoutLimit: Double = 30.0
         let resumeOffset: Double = 5.0

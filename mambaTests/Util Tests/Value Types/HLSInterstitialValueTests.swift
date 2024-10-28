@@ -29,7 +29,7 @@ final class HLSInterstitialValueTests: XCTestCase {
         XCTAssertEqual(HLSInterstitialAlignment(values: vals).values.count, 2)
         
         // test de-duping
-        vals.append(HLSInterstitialAlignment.Snap.snapIn)
+        vals.append(HLSInterstitialAlignment.Snap.in)
         XCTAssertEqual(HLSInterstitialAlignment(values: vals).values.count, 2)
         
         // create from string

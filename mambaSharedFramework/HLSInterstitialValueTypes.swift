@@ -13,11 +13,11 @@ public struct HLSInterstitialAlignment: FailableStringLiteralConvertible, Equata
     public enum Snap: String, CaseIterable {
         /// client SHOULD locate the segment boundary closest to the scheduled resumption point from the
         /// interstitial in the Media Playlist of the primary content and resume playback of primary content at that boundary.
-        case snapIn = "IN"
+        case `in` = "IN"
         
         /// client SHOULD locate the segment boundary closest to the START-DATE of the interstitial in the
         /// Media Playlist of the primary content and transition to the interstitial at that boundary.
-        case snapOut = "OUT"
+        case out = "OUT"
     }
     
     /// the set of snap options for aligning interstitial content
