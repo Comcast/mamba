@@ -52,6 +52,9 @@ public final class InterstitialTagBuilder {
     /// the duration of the interstitial content in seconds
     var duration: Double?
     
+    /// the expected duration of the interstitial content in seconds which can indicate a value when the actual duration is not yet known
+    var plannedDuration: Double?
+    
     /// The value of X-RESUME-OFFSET is a decimal-floating-point of seconds that specifies where primary playback is to resume
     /// following the playback of the interstitial.
     var resumeOffset: Double?
@@ -118,6 +121,18 @@ public final class InterstitialTagBuilder {
     @discardableResult
     public func withDuration(_ duration: Double) -> Self {
         self.duration = duration
+        
+        return self
+    }
+    
+    /// Specifies the planned duration of the interstitial
+    ///
+    /// - Parameter duration: `Double` indicating duration
+    ///
+    /// - Returns: an instance of the builder
+    @discardableResult
+    public func withPlannedDuration(_ plannedDuration: Double) -> Self {
+        self.plannedDuration = plannedDuration
         
         return self
     }
@@ -240,17 +255,23 @@ public final class InterstitialTagBuilder {
         }
         
         if let duration {
-            hlsTagDictionary[PantosValue.duration.rawValue] = HLSValueData(value: String(duration), quoteEscaped: true)
+            hlsTagDictionary[PantosValue.duration.rawValue] = HLSValueData(value: String(duration),
+                                                                           quoteEscaped: false)
+        }
+        
+        if let plannedDuration {
+            hlsTagDictionary[PantosValue.plannedDuration.rawValue] = HLSValueData(value: String(plannedDuration),
+                                                                                  quoteEscaped: false)
         }
         
         if let resumeOffset {
             hlsTagDictionary[PantosValue.resumeOffset.rawValue] = HLSValueData(value: String(resumeOffset),
-                                                                               quoteEscaped: true)
+                                                                               quoteEscaped: false)
         }
         
         if let playoutLimit {
             hlsTagDictionary[PantosValue.playoutLimit.rawValue] = HLSValueData(value: String(playoutLimit),
-                                                                               quoteEscaped: true)
+                                                                               quoteEscaped: false)
         }
         
         if let restrictions {

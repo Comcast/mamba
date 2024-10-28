@@ -63,6 +63,7 @@ final class InterstitialTagBuilderTests: XCTestCase {
     func decorateAndTest(_ tagBuilder: InterstitialTagBuilder) -> HLSTag {
         
         let duration: Double = 10.0
+        let plannedDuration: Double = 10.0
         let alignment = HLSInterstitialAlignment(values: [.in, .out])
         let restrictions = HLSInterstitialSeekRestrictions(restrictions: [.skip, .jump])
         let playoutLimit: Double = 30.0
@@ -75,6 +76,7 @@ final class InterstitialTagBuilderTests: XCTestCase {
         
         let tag = tagBuilder
             .withDuration(duration)
+            .withPlannedDuration(plannedDuration)
             .withAlignment(alignment)
             .withRestrictions(restrictions)
             .withPlayoutLimit(playoutLimit)
@@ -86,6 +88,7 @@ final class InterstitialTagBuilderTests: XCTestCase {
             .buildTag()
         
         XCTAssertEqual(tag.value<Double>(forValueIdentifier: PantosValue.duration), duration)
+        XCTAssertEqual(tag.value<Double>(forValueIdentifier: PantosValue.plannedDuration), plannedDuration)
         XCTAssertEqual(tag.value<HLSInterstitialAlignment>(forValueIdentifier: PantosValue.snap), alignment)
         XCTAssertEqual(tag.value<HLSInterstitialSeekRestrictions>(forValueIdentifier: PantosValue.restrict), restrictions)
         XCTAssertEqual(tag.value<Double>(forValueIdentifier: PantosValue.playoutLimit), playoutLimit)
