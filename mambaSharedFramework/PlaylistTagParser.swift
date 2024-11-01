@@ -27,14 +27,14 @@ public struct PlaylistTagValueData {
     }
     /// The actual value
     let value: String
-    /// Inidcates if the value should be quote-escaped or not
+    /// Indicates if the value should be quote-escaped or not
     let quoteEscaped: Bool
 }
 
 public typealias PlaylistTagDictionary = OrderedDictionary<String, PlaylistTagValueData>
 
 /// Describes a object that parse an individual tag from a line in a HLS playlist
-public protocol PlaylistTagParser: class {
+public protocol PlaylistTagParser: AnyObject {
     
     /**
      Parses an playlist tag from a String. (i.e. if your tag is "#EXT-GENERICTAG:<Values>", you would pass "<Values>" as your string argument)

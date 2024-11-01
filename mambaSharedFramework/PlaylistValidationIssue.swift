@@ -98,5 +98,7 @@ public enum IssueDescription: String {
     case EXT_X_DATERANGETagPLANNED_DURATIONMustNotBeNegative = "PLANNED-DURATION MUST NOT be negative."
     case EXT_X_DATERANGEExistsWithNoEXT_X_PROGRAM_DATE_TIME = "If a Playlist contains an EXT-X-DATERANGE tag, it MUST also contain at least one EXT-X-PROGRAM-DATE-TIME tag."
     case EXT_X_DATERANGEAttributeMismatchForTagsWithSameID = "If a Playlist contains two EXT-X-DATERANGE tags with the same ID attribute value, then any AttributeName that appears in both tags MUST have the same AttributeValue."
+    case EXT_X_DATERANGEMissingAssetListOrAssetUriAttribute = "A Date Range tag specifying CLASS=com.apple.hls.interstitial must contain either an X-ASSET-LIST OR X-ASSET-URI attribute"
+    case EXT_X_DATERANGEContainsBothAssetListAndAssetUriAttribute = "A Date Range tag specifying CLASS=com.apple.hls.interstitial cannot contain both an X-ASSET-LIST AND X-ASSET-URI attribute"
 }
 
