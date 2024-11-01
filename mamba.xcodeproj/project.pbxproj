@@ -61,6 +61,30 @@
 		E6841B382A0A92C00074DBCC /* version.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2BB693D7276A13A000FE56B1 /* version.txt */; };
 		E6841B392A0A92C10074DBCC /* version.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2BB693D7276A13A000FE56B1 /* version.txt */; };
 		E6841B3A2A0A92C10074DBCC /* version.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2BB693D7276A13A000FE56B1 /* version.txt */; };
+		E6B2D7F92CC834DB00D319DF /* NoOpTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D7F72CC834DB00D319DF /* NoOpTagParser.swift */; };
+		E6B2D7FA2CC834DB00D319DF /* GenericNoDataTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D7F52CC834DB00D319DF /* GenericNoDataTagParser.swift */; };
+		E6B2D7FB2CC834DB00D319DF /* GenericDictionaryTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D7F42CC834DB00D319DF /* GenericDictionaryTagParser.swift */; };
+		E6B2D7FC2CC834DB00D319DF /* GenericSingleValueTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D7F62CC834DB00D319DF /* GenericSingleValueTagParser.swift */; };
+		E6B2D7FD2CC834DB00D319DF /* NoOpTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D7F72CC834DB00D319DF /* NoOpTagParser.swift */; };
+		E6B2D7FE2CC834DB00D319DF /* GenericNoDataTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D7F52CC834DB00D319DF /* GenericNoDataTagParser.swift */; };
+		E6B2D7FF2CC834DB00D319DF /* GenericDictionaryTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D7F42CC834DB00D319DF /* GenericDictionaryTagParser.swift */; };
+		E6B2D8002CC834DB00D319DF /* GenericSingleValueTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D7F62CC834DB00D319DF /* GenericSingleValueTagParser.swift */; };
+		E6B2D8012CC834DB00D319DF /* NoOpTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D7F72CC834DB00D319DF /* NoOpTagParser.swift */; };
+		E6B2D8022CC834DB00D319DF /* GenericNoDataTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D7F52CC834DB00D319DF /* GenericNoDataTagParser.swift */; };
+		E6B2D8032CC834DB00D319DF /* GenericDictionaryTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D7F42CC834DB00D319DF /* GenericDictionaryTagParser.swift */; };
+		E6B2D8042CC834DB00D319DF /* GenericSingleValueTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D7F62CC834DB00D319DF /* GenericSingleValueTagParser.swift */; };
+		E6B2D8062CC834F500D319DF /* HLSInterstitialValueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D8052CC834F500D319DF /* HLSInterstitialValueTypes.swift */; };
+		E6B2D8072CC834F500D319DF /* HLSInterstitialValueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D8052CC834F500D319DF /* HLSInterstitialValueTypes.swift */; };
+		E6B2D8082CC834F500D319DF /* HLSInterstitialValueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D8052CC834F500D319DF /* HLSInterstitialValueTypes.swift */; };
+		E6B2D80A2CC83E5B00D319DF /* HLSInterstitialValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D8092CC83E5B00D319DF /* HLSInterstitialValueTests.swift */; };
+		E6B2D80B2CC83E5B00D319DF /* HLSInterstitialValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D8092CC83E5B00D319DF /* HLSInterstitialValueTests.swift */; };
+		E6B2D80C2CC83E5B00D319DF /* HLSInterstitialValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D8092CC83E5B00D319DF /* HLSInterstitialValueTests.swift */; };
+		E6B2D80E2CC842DB00D319DF /* InterstitialTagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D80D2CC842DB00D319DF /* InterstitialTagBuilder.swift */; };
+		E6B2D80F2CC842DB00D319DF /* InterstitialTagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D80D2CC842DB00D319DF /* InterstitialTagBuilder.swift */; };
+		E6B2D8102CC842DB00D319DF /* InterstitialTagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D80D2CC842DB00D319DF /* InterstitialTagBuilder.swift */; };
+		E6B2D8122CC937D400D319DF /* InterstitialTagBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D8112CC937D400D319DF /* InterstitialTagBuilderTests.swift */; };
+		E6B2D8132CC937D400D319DF /* InterstitialTagBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D8112CC937D400D319DF /* InterstitialTagBuilderTests.swift */; };
+		E6B2D8142CC937D400D319DF /* InterstitialTagBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2D8112CC937D400D319DF /* InterstitialTagBuilderTests.swift */; };
 		EC03B63D1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */; };
 		EC03B63E1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */; };
 		EC03B63F1E5CC55800BF1F97 /* RapidParserMasterParseArray.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B63C1E5CC55800BF1F97 /* RapidParserMasterParseArray.h */; };
@@ -186,10 +210,6 @@
 		EC1CCD34209A2CF9006B59FF /* StringArrayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491841DD29CCB00AF4E20 /* StringArrayParser.swift */; };
 		EC1CCD35209A2CF9006B59FF /* StringDictionaryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491851DD29CCB00AF4E20 /* StringDictionaryParser.swift */; };
 		EC1CCD36209A2CF9006B59FF /* URL+hlsplaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9826011DD3A113003BCDA5 /* URL+hlsplaylist.swift */; };
-		EC1CCD37209A2CF9006B59FF /* GenericDictionaryTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491D21DD29D9600AF4E20 /* GenericDictionaryTagParser.swift */; };
-		EC1CCD38209A2CF9006B59FF /* GenericNoDataTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491D31DD29D9600AF4E20 /* GenericNoDataTagParser.swift */; };
-		EC1CCD39209A2CF9006B59FF /* GenericSingleValueTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491D41DD29D9600AF4E20 /* GenericSingleValueTagParser.swift */; };
-		EC1CCD3A209A2CF9006B59FF /* NoOpTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547841E5CC83C00962535 /* NoOpTagParser.swift */; };
 		EC1CCD3B209A2CF9006B59FF /* EXTINFValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95478A1E5CC86300962535 /* EXTINFValidator.swift */; };
 		EC1CCD3C209A2CF9006B59FF /* EXT_X_KEYValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B019E1DD4D47900B512E3 /* EXT_X_KEYValidator.swift */; };
 		EC1CCD3D209A2CF9006B59FF /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3B019F1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift */; };
@@ -345,12 +365,6 @@
 		EC7491CE1DD29D7C00AF4E20 /* PantosTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491CB1DD29D7C00AF4E20 /* PantosTag.swift */; };
 		EC7491CF1DD29D7C00AF4E20 /* PantosValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491CC1DD29D7C00AF4E20 /* PantosValue.swift */; };
 		EC7491D01DD29D7C00AF4E20 /* PantosValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491CC1DD29D7C00AF4E20 /* PantosValue.swift */; };
-		EC7491D81DD29D9600AF4E20 /* GenericDictionaryTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491D21DD29D9600AF4E20 /* GenericDictionaryTagParser.swift */; };
-		EC7491D91DD29D9600AF4E20 /* GenericDictionaryTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491D21DD29D9600AF4E20 /* GenericDictionaryTagParser.swift */; };
-		EC7491DA1DD29D9600AF4E20 /* GenericNoDataTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491D31DD29D9600AF4E20 /* GenericNoDataTagParser.swift */; };
-		EC7491DB1DD29D9600AF4E20 /* GenericNoDataTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491D31DD29D9600AF4E20 /* GenericNoDataTagParser.swift */; };
-		EC7491DC1DD29D9600AF4E20 /* GenericSingleValueTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491D41DD29D9600AF4E20 /* GenericSingleValueTagParser.swift */; };
-		EC7491DD1DD29D9600AF4E20 /* GenericSingleValueTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491D41DD29D9600AF4E20 /* GenericSingleValueTagParser.swift */; };
 		EC7491EB1DD29DBB00AF4E20 /* GenericDictionaryTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491E21DD29DBB00AF4E20 /* GenericDictionaryTagWriter.swift */; };
 		EC7491EC1DD29DBB00AF4E20 /* GenericDictionaryTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491E21DD29DBB00AF4E20 /* GenericDictionaryTagWriter.swift */; };
 		EC7491EF1DD29DBB00AF4E20 /* GenericSingleTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491E41DD29DBB00AF4E20 /* GenericSingleTagWriter.swift */; };
@@ -464,8 +478,6 @@
 		EC9547801E5CC80800962535 /* HLSStringRef+mamba.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95477E1E5CC80800962535 /* HLSStringRef+mamba.swift */; };
 		EC9547821E5CC82500962535 /* GenericTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547811E5CC82500962535 /* GenericTagWriter.swift */; };
 		EC9547831E5CC82500962535 /* GenericTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547811E5CC82500962535 /* GenericTagWriter.swift */; };
-		EC9547851E5CC83C00962535 /* NoOpTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547841E5CC83C00962535 /* NoOpTagParser.swift */; };
-		EC9547861E5CC83C00962535 /* NoOpTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547841E5CC83C00962535 /* NoOpTagParser.swift */; };
 		EC9547881E5CC84700962535 /* FrameworkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547871E5CC84700962535 /* FrameworkInfo.swift */; };
 		EC9547891E5CC84700962535 /* FrameworkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9547871E5CC84700962535 /* FrameworkInfo.swift */; };
 		EC95478B1E5CC86300962535 /* EXTINFValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95478A1E5CC86300962535 /* EXTINFValidator.swift */; };
@@ -656,6 +668,14 @@
 		883290551EA172170064588B /* HLSStringRefExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSStringRefExtensionTests.swift; sourceTree = "<group>"; };
 		D44E03761E3BAC9F00126B52 /* HLSTag+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLSTag+Util.swift"; sourceTree = "<group>"; };
 		D4BB018C1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLSTagArray+RenditionGroups.swift"; sourceTree = "<group>"; };
+		E6B2D7F42CC834DB00D319DF /* GenericDictionaryTagParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDictionaryTagParser.swift; sourceTree = "<group>"; };
+		E6B2D7F52CC834DB00D319DF /* GenericNoDataTagParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericNoDataTagParser.swift; sourceTree = "<group>"; };
+		E6B2D7F62CC834DB00D319DF /* GenericSingleValueTagParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericSingleValueTagParser.swift; sourceTree = "<group>"; };
+		E6B2D7F72CC834DB00D319DF /* NoOpTagParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoOpTagParser.swift; sourceTree = "<group>"; };
+		E6B2D8052CC834F500D319DF /* HLSInterstitialValueTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSInterstitialValueTypes.swift; sourceTree = "<group>"; };
+		E6B2D8092CC83E5B00D319DF /* HLSInterstitialValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSInterstitialValueTests.swift; sourceTree = "<group>"; };
+		E6B2D80D2CC842DB00D319DF /* InterstitialTagBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialTagBuilder.swift; sourceTree = "<group>"; };
+		E6B2D8112CC937D400D319DF /* InterstitialTagBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialTagBuilderTests.swift; sourceTree = "<group>"; };
 		EC02E9761E26E77900D4CEAC /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/tvOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		EC03B62D1E5CC54900BF1F97 /* PrototypeRapidParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrototypeRapidParseArray.include; sourceTree = "<group>"; };
 		EC03B62E1E5CC54900BF1F97 /* RapidParser_LookingForEForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForEForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
@@ -769,9 +789,6 @@
 		EC7491B21DD29D5C00AF4E20 /* HLSWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSWriter.swift; sourceTree = "<group>"; };
 		EC7491CB1DD29D7C00AF4E20 /* PantosTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantosTag.swift; sourceTree = "<group>"; };
 		EC7491CC1DD29D7C00AF4E20 /* PantosValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantosValue.swift; sourceTree = "<group>"; };
-		EC7491D21DD29D9600AF4E20 /* GenericDictionaryTagParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDictionaryTagParser.swift; sourceTree = "<group>"; };
-		EC7491D31DD29D9600AF4E20 /* GenericNoDataTagParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericNoDataTagParser.swift; sourceTree = "<group>"; };
-		EC7491D41DD29D9600AF4E20 /* GenericSingleValueTagParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericSingleValueTagParser.swift; sourceTree = "<group>"; };
 		EC7491E21DD29DBB00AF4E20 /* GenericDictionaryTagWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDictionaryTagWriter.swift; sourceTree = "<group>"; };
 		EC7491E41DD29DBB00AF4E20 /* GenericSingleTagWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericSingleTagWriter.swift; sourceTree = "<group>"; };
 		EC7491E51DD29DBB00AF4E20 /* LocationTagWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTagWriter.swift; sourceTree = "<group>"; };
@@ -828,7 +845,6 @@
 		EC95477B1E5CC7C800962535 /* OutputStream+HLSWriting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OutputStream+HLSWriting.swift"; sourceTree = "<group>"; };
 		EC95477E1E5CC80800962535 /* HLSStringRef+mamba.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLSStringRef+mamba.swift"; sourceTree = "<group>"; };
 		EC9547811E5CC82500962535 /* GenericTagWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTagWriter.swift; sourceTree = "<group>"; };
-		EC9547841E5CC83C00962535 /* NoOpTagParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoOpTagParser.swift; sourceTree = "<group>"; };
 		EC9547871E5CC84700962535 /* FrameworkInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameworkInfo.swift; sourceTree = "<group>"; };
 		EC95478A1E5CC86300962535 /* EXTINFValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXTINFValidator.swift; sourceTree = "<group>"; };
 		EC9826011DD3A113003BCDA5 /* URL+hlsplaylist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+hlsplaylist.swift"; sourceTree = "<group>"; };
@@ -973,6 +989,17 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		E6B2D7F82CC834DB00D319DF /* Pantos-Generic Tag Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				E6B2D7F42CC834DB00D319DF /* GenericDictionaryTagParser.swift */,
+				E6B2D7F52CC834DB00D319DF /* GenericNoDataTagParser.swift */,
+				E6B2D7F62CC834DB00D319DF /* GenericSingleValueTagParser.swift */,
+				E6B2D7F72CC834DB00D319DF /* NoOpTagParser.swift */,
+			);
+			path = "Pantos-Generic Tag Parsers";
+			sourceTree = "<group>";
+		};
 		EC03B62B1E5CC51C00BF1F97 /* HLS Rapid Parser */ = {
 			isa = PBXGroup;
 			children = (
@@ -1107,8 +1134,10 @@
 				EC7491AF1DD29D5C00AF4E20 /* HLSValidationIssue.swift */,
 				EC7491B11DD29D5C00AF4E20 /* HLSValueTypes.swift */,
 				EC7491B21DD29D5C00AF4E20 /* HLSWriter.swift */,
+				E6B2D8052CC834F500D319DF /* HLSInterstitialValueTypes.swift */,
 				EC9547871E5CC84700962535 /* FrameworkInfo.swift */,
 				EC1521511DD28536006FB265 /* mamba.h */,
+				E6B2D80D2CC842DB00D319DF /* InterstitialTagBuilder.swift */,
 			);
 			path = mambaSharedFramework;
 			sourceTree = "<group>";
@@ -1279,17 +1308,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		EC7D1C791D343B5A007F971D /* Pantos-Generic Tag Parsers */ = {
-			isa = PBXGroup;
-			children = (
-				EC7491D21DD29D9600AF4E20 /* GenericDictionaryTagParser.swift */,
-				EC7491D31DD29D9600AF4E20 /* GenericNoDataTagParser.swift */,
-				EC7491D41DD29D9600AF4E20 /* GenericSingleValueTagParser.swift */,
-				EC9547841E5CC83C00962535 /* NoOpTagParser.swift */,
-			);
-			path = "Pantos-Generic Tag Parsers";
-			sourceTree = "<group>";
-		};
 		EC7ECA011D30177A000EEB7D /* HLS Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -1329,6 +1347,7 @@
 				EC073F5F1FE08F7500689228 /* String+Helio.swift */,
 				EC7492A61DD29F7000AF4E20 /* URL+hlsplaylistTests.swift */,
 				EC9BCAA21D749D8B0032BEBE /* Value Types */,
+				E6B2D8112CC937D400D319DF /* InterstitialTagBuilderTests.swift */,
 			);
 			path = "Util Tests";
 			sourceTree = "<group>";
@@ -1342,6 +1361,7 @@
 				EC7492B11DD29F8900AF4E20 /* HLSPlaylistTypeTests.swift */,
 				EC7492B21DD29F8900AF4E20 /* HLSResolutionTests.swift */,
 				1447583C2C8693E000D12CCD /* HLSVideoLayoutTests.swift */,
+				E6B2D8092CC83E5B00D319DF /* HLSInterstitialValueTests.swift */,
 			);
 			path = "Value Types";
 			sourceTree = "<group>";
@@ -1349,7 +1369,7 @@
 		ECBE47001D33F4100081D096 /* Pantos-Generic HLS Playlist Parsing */ = {
 			isa = PBXGroup;
 			children = (
-				EC7D1C791D343B5A007F971D /* Pantos-Generic Tag Parsers */,
+				E6B2D7F82CC834DB00D319DF /* Pantos-Generic Tag Parsers */,
 				0173AB0D1D5BB371005DE51B /* Pantos-Generic Tag Validators */,
 				EC550EEA1D35A71700706DC9 /* Pantos-Generic Tag Writers */,
 				EC7491CB1DD29D7C00AF4E20 /* PantosTag.swift */,
@@ -1795,13 +1815,12 @@
 				144758352C83D23100D12CCD /* EXT_X_SESSION_DATAPlaylistValidator.swift in Sources */,
 				EC7491C31DD29D5C00AF4E20 /* HLSValidationIssue.swift in Sources */,
 				EC74916E1DD29B5D00AF4E20 /* CollectionType+FindExtensions.swift in Sources */,
-				EC7491DA1DD29D9600AF4E20 /* GenericNoDataTagParser.swift in Sources */,
+				E6B2D8072CC834F500D319DF /* HLSInterstitialValueTypes.swift in Sources */,
 				EC7491C91DD29D5C00AF4E20 /* HLSWriter.swift in Sources */,
 				EC3B01A51DD4D47900B512E3 /* EXT_X_KEYValidator.swift in Sources */,
 				EC7491721DD29B5D00AF4E20 /* OrderedDictionary.swift in Sources */,
 				EC3B01BF1DD4D49A00B512E3 /* HLSPlaylistCardinalityValidator.swift in Sources */,
 				EC7491FA1DD29DD300AF4E20 /* GenericSingleTagValidator.swift in Sources */,
-				EC9547851E5CC83C00962535 /* NoOpTagParser.swift in Sources */,
 				EC42A5F21FD9B88E00317EA5 /* IndeterminateBool.swift in Sources */,
 				EC74914E1DD29ACF00AF4E20 /* HLSTagCriterion.swift in Sources */,
 				EC4424891E95A69C00AECFAB /* HLSPlaylistStructure.swift in Sources */,
@@ -1826,6 +1845,10 @@
 				EC03B6541E5CC56B00BF1F97 /* HLSRapidParser.m in Sources */,
 				F70E9E9A1E8C43C8006022C6 /* HLSParserError.swift in Sources */,
 				EC7491701DD29B5D00AF4E20 /* CollectionType+Safe.swift in Sources */,
+				E6B2D7FD2CC834DB00D319DF /* NoOpTagParser.swift in Sources */,
+				E6B2D7FE2CC834DB00D319DF /* GenericNoDataTagParser.swift in Sources */,
+				E6B2D7FF2CC834DB00D319DF /* GenericDictionaryTagParser.swift in Sources */,
+				E6B2D8002CC834DB00D319DF /* GenericSingleValueTagParser.swift in Sources */,
 				EC7491BB1DD29D5C00AF4E20 /* HLSTagParser.swift in Sources */,
 				EC7491C11DD29D5C00AF4E20 /* HLSTagWriter.swift in Sources */,
 				EC3B01CD1DD4D49A00B512E3 /* HLSPlaylistTagCardinalityValidation.swift in Sources */,
@@ -1869,13 +1892,12 @@
 				43DE4EFB1E564DA300EEE800 /* EXT_X_STARTTimeOffsetValidator.swift in Sources */,
 				EC74918A1DD29CCB00AF4E20 /* StringDictionaryParser.swift in Sources */,
 				F73183771E78758B00ED8E59 /* HLSStringRefFactory.m in Sources */,
+				E6B2D8102CC842DB00D319DF /* InterstitialTagBuilder.swift in Sources */,
 				D4BB018D1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift in Sources */,
 				EC7491881DD29CCB00AF4E20 /* StringArrayParser.swift in Sources */,
-				EC7491D81DD29D9600AF4E20 /* GenericDictionaryTagParser.swift in Sources */,
 				EC03B6681E5CC56B00BF1F97 /* RapidParserLineState.c in Sources */,
 				EC7491EB1DD29DBB00AF4E20 /* GenericDictionaryTagWriter.swift in Sources */,
 				EC03B6641E5CC56B00BF1F97 /* RapidParserError.m in Sources */,
-				EC7491DC1DD29D9600AF4E20 /* GenericSingleValueTagParser.swift in Sources */,
 				EC7491CF1DD29D7C00AF4E20 /* PantosValue.swift in Sources */,
 				EC7491CD1DD29D7C00AF4E20 /* PantosTag.swift in Sources */,
 				EC9547881E5CC84700962535 /* FrameworkInfo.swift in Sources */,
@@ -1897,6 +1919,7 @@
 				EC7492741DD29EC800AF4E20 /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift in Sources */,
 				ECFBD90E1E5CCC2200379FC2 /* HLSStringRefTests.m in Sources */,
 				EC7492401DD29E7300AF4E20 /* HLSParser_Super8MuxedTests.swift in Sources */,
+				E6B2D8122CC937D400D319DF /* InterstitialTagBuilderTests.swift in Sources */,
 				4367C3731EAE83C000685945 /* HLSPlaylistStructureMasterTests.swift in Sources */,
 				EC74922E1DD29E4A00AF4E20 /* HLSPlaylistMock.swift in Sources */,
 				EC7492611DD29E9A00AF4E20 /* HLSTagWriting.swift in Sources */,
@@ -1939,6 +1962,7 @@
 				EC7492B71DD29F8900AF4E20 /* HLSPlaylistTypeTests.swift in Sources */,
 				ECFBD9101E5CCC2200379FC2 /* ParseArrayTests.m in Sources */,
 				EC7492B31DD29F8900AF4E20 /* HLSCodecArrayTests.swift in Sources */,
+				E6B2D80C2CC83E5B00D319DF /* HLSInterstitialValueTests.swift in Sources */,
 				43DE4EFF1E564E1500EEE800 /* HLSMediaSpanTests.swift in Sources */,
 				ECE36DE41F2A9F10005E5DA7 /* HLSPlaylistTimelineAndSequencingTests.swift in Sources */,
 				01CD2E7A1DE4D46F002510E7 /* EXT_X_MAPTagParserTests.swift in Sources */,
@@ -1965,15 +1989,14 @@
 				144758362C83D23100D12CCD /* EXT_X_SESSION_DATAPlaylistValidator.swift in Sources */,
 				EC3B01C41DD4D49A00B512E3 /* HLSPlaylistOneToManyValidator.swift in Sources */,
 				EC7491821DD29C3500AF4E20 /* String+Trim.swift in Sources */,
+				E6B2D8082CC834F500D319DF /* HLSInterstitialValueTypes.swift in Sources */,
 				EC7491C41DD29D5C00AF4E20 /* HLSValidationIssue.swift in Sources */,
 				EC74916F1DD29B5D00AF4E20 /* CollectionType+FindExtensions.swift in Sources */,
-				EC7491DB1DD29D9600AF4E20 /* GenericNoDataTagParser.swift in Sources */,
 				EC7491CA1DD29D5C00AF4E20 /* HLSWriter.swift in Sources */,
 				EC3B01A61DD4D47900B512E3 /* EXT_X_KEYValidator.swift in Sources */,
 				EC7491731DD29B5D00AF4E20 /* OrderedDictionary.swift in Sources */,
 				EC3B01C01DD4D49A00B512E3 /* HLSPlaylistCardinalityValidator.swift in Sources */,
 				EC42A5F31FD9B88E00317EA5 /* IndeterminateBool.swift in Sources */,
-				EC9547861E5CC83C00962535 /* NoOpTagParser.swift in Sources */,
 				EC7491FB1DD29DD300AF4E20 /* GenericSingleTagValidator.swift in Sources */,
 				EC44248A1E95A69C00AECFAB /* HLSPlaylistStructure.swift in Sources */,
 				EC74914F1DD29ACF00AF4E20 /* HLSTagCriterion.swift in Sources */,
@@ -1996,6 +2019,10 @@
 				EC7491B61DD29D5C00AF4E20 /* HLSParser.swift in Sources */,
 				F70E9E9B1E8C43C8006022C6 /* HLSParserError.swift in Sources */,
 				EC03B6551E5CC56B00BF1F97 /* HLSRapidParser.m in Sources */,
+				E6B2D7F92CC834DB00D319DF /* NoOpTagParser.swift in Sources */,
+				E6B2D7FA2CC834DB00D319DF /* GenericNoDataTagParser.swift in Sources */,
+				E6B2D7FB2CC834DB00D319DF /* GenericDictionaryTagParser.swift in Sources */,
+				E6B2D7FC2CC834DB00D319DF /* GenericSingleValueTagParser.swift in Sources */,
 				6DD0A1AE242F85C800FF7AAE /* EXT_X_DATERANGETagValidator.swift in Sources */,
 				6DD0A1B2242FADC600FF7AAE /* EXT_X_DATERANGEPlaylistValidator.swift in Sources */,
 				EC7491711DD29B5D00AF4E20 /* CollectionType+Safe.swift in Sources */,
@@ -2039,13 +2066,12 @@
 				EC3B01A81DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift in Sources */,
 				EC74918B1DD29CCB00AF4E20 /* StringDictionaryParser.swift in Sources */,
 				F73183781E78758B00ED8E59 /* HLSStringRefFactory.m in Sources */,
+				E6B2D80E2CC842DB00D319DF /* InterstitialTagBuilder.swift in Sources */,
 				D4BB018E1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift in Sources */,
 				EC7491891DD29CCB00AF4E20 /* StringArrayParser.swift in Sources */,
-				EC7491D91DD29D9600AF4E20 /* GenericDictionaryTagParser.swift in Sources */,
 				EC03B6691E5CC56B00BF1F97 /* RapidParserLineState.c in Sources */,
 				EC7491EC1DD29DBB00AF4E20 /* GenericDictionaryTagWriter.swift in Sources */,
 				EC03B6651E5CC56B00BF1F97 /* RapidParserError.m in Sources */,
-				EC7491DD1DD29D9600AF4E20 /* GenericSingleValueTagParser.swift in Sources */,
 				EC7491D01DD29D7C00AF4E20 /* PantosValue.swift in Sources */,
 				EC7491CE1DD29D7C00AF4E20 /* PantosTag.swift in Sources */,
 				EC9547891E5CC84700962535 /* FrameworkInfo.swift in Sources */,
@@ -2067,6 +2093,7 @@
 				EC7492AA1DD29F7000AF4E20 /* MambaUtilTests.swift in Sources */,
 				ECFBD90F1E5CCC2200379FC2 /* HLSStringRefTests.m in Sources */,
 				EC7492751DD29EC800AF4E20 /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift in Sources */,
+				E6B2D8132CC937D400D319DF /* InterstitialTagBuilderTests.swift in Sources */,
 				EC7492411DD29E7300AF4E20 /* HLSParser_Super8MuxedTests.swift in Sources */,
 				EC74922F1DD29E4A00AF4E20 /* HLSPlaylistMock.swift in Sources */,
 				EC7492621DD29E9A00AF4E20 /* HLSTagWriting.swift in Sources */,
@@ -2109,6 +2136,7 @@
 				EC74922D1DD29E4A00AF4E20 /* HLSPlaylist+Convenience.swift in Sources */,
 				ECFBD9111E5CCC2200379FC2 /* ParseArrayTests.m in Sources */,
 				EC7492B81DD29F8900AF4E20 /* HLSPlaylistTypeTests.swift in Sources */,
+				E6B2D80B2CC83E5B00D319DF /* HLSInterstitialValueTests.swift in Sources */,
 				43DE4F001E564E1500EEE800 /* HLSMediaSpanTests.swift in Sources */,
 				EC7492B41DD29F8900AF4E20 /* HLSCodecArrayTests.swift in Sources */,
 				ECE36DE51F2A9F10005E5DA7 /* HLSPlaylistTimelineAndSequencingTests.swift in Sources */,
@@ -2135,6 +2163,7 @@
 				144758372C83D23100D12CCD /* EXT_X_SESSION_DATAPlaylistValidator.swift in Sources */,
 				EC1CCD59209A2CF9006B59FF /* HLSParser.swift in Sources */,
 				EC1CCD30209A2CF9006B59FF /* String+DateParsing.swift in Sources */,
+				E6B2D8062CC834F500D319DF /* HLSInterstitialValueTypes.swift in Sources */,
 				EC1CCD53209A2CF9006B59FF /* GenericDictionaryTagWriter.swift in Sources */,
 				EC1CCD55209A2CF9006B59FF /* GenericTagWriter.swift in Sources */,
 				EC1CCD60209A2CF9006B59FF /* HLSValidationIssue.swift in Sources */,
@@ -2160,13 +2189,15 @@
 				EC1CCD50209A2CF9006B59FF /* HLSPlaylistTagGroupValidator.swift in Sources */,
 				EC1CCCFE209A2CF9006B59FF /* HLSStringRefFactory.m in Sources */,
 				6DD0A1B3242FADC600FF7AAE /* EXT_X_DATERANGEPlaylistValidator.swift in Sources */,
-				EC1CCD3A209A2CF9006B59FF /* NoOpTagParser.swift in Sources */,
 				EC1CCD5D209A2CF9006B59FF /* HLSTagValidator.swift in Sources */,
 				EC1CCD62209A2CF9006B59FF /* HLSWriter.swift in Sources */,
 				EC1CCCF8209A2CF9006B59FF /* HLSTagCriteria.swift in Sources */,
 				EC1CCCF4209A2CF9006B59FF /* HLSPlaylistStructureInterface.swift in Sources */,
+				E6B2D8012CC834DB00D319DF /* NoOpTagParser.swift in Sources */,
+				E6B2D8022CC834DB00D319DF /* GenericNoDataTagParser.swift in Sources */,
+				E6B2D8032CC834DB00D319DF /* GenericDictionaryTagParser.swift in Sources */,
+				E6B2D8042CC834DB00D319DF /* GenericSingleValueTagParser.swift in Sources */,
 				EC1CCD61209A2CF9006B59FF /* HLSValueTypes.swift in Sources */,
-				EC1CCD39209A2CF9006B59FF /* GenericSingleValueTagParser.swift in Sources */,
 				EC1CCD34209A2CF9006B59FF /* StringArrayParser.swift in Sources */,
 				EC1CCD18209A2CF9006B59FF /* RapidParser.c in Sources */,
 				EC1CCD3E209A2CF9006B59FF /* EXT_X_MEDIARenditionGroupDEFAULTValidator.swift in Sources */,
@@ -2207,11 +2238,10 @@
 				1447582F2C83C20800D12CCD /* EXT_X_SESSION_KEYValidator.swift in Sources */,
 				EC1CCD35209A2CF9006B59FF /* StringDictionaryParser.swift in Sources */,
 				EC1CCD02209A2CF9006B59FF /* HLSStringRef_ConcreteNSString.m in Sources */,
-				EC1CCD38209A2CF9006B59FF /* GenericNoDataTagParser.swift in Sources */,
 				EC1CCD51209A2CF9006B59FF /* HLSPlaylistValidator.swift in Sources */,
 				EC1CCD5F209A2CF9006B59FF /* HLSTagWriter.swift in Sources */,
+				E6B2D80F2CC842DB00D319DF /* InterstitialTagBuilder.swift in Sources */,
 				EC1CCD49209A2CF9006B59FF /* HLSPlaylistCollectionValidator.swift in Sources */,
-				EC1CCD37209A2CF9006B59FF /* GenericDictionaryTagParser.swift in Sources */,
 				EC1CCD28209A2CF9006B59FF /* FailableStringLiteralConvertible.swift in Sources */,
 				EC1CCCF7209A2CF9006B59FF /* StructureState.swift in Sources */,
 				EC1CCD5C209A2CF9006B59FF /* HLSTagParser.swift in Sources */,
@@ -2237,6 +2267,7 @@
 				ECE253EA209A50A100D388CE /* HLSStringRefTests.m in Sources */,
 				ECE253F7209A50B500D388CE /* StringArrayParserTests.swift in Sources */,
 				ECE25401209A50B500D388CE /* MambaUtilTests.swift in Sources */,
+				E6B2D8142CC937D400D319DF /* InterstitialTagBuilderTests.swift in Sources */,
 				ECE253FB209A50B500D388CE /* GenericDictionaryTagWriterTests.swift in Sources */,
 				ECE25407209A50B500D388CE /* HLSPlaylistTypeTests.swift in Sources */,
 				ECE253D5209A509000D388CE /* XCTestCase+mamba.swift in Sources */,
@@ -2279,6 +2310,7 @@
 				ECE253FC209A50B500D388CE /* GenericSingleTagWriterTests.swift in Sources */,
 				ECE253DA209A509900D388CE /* HLSPlaylistTests.swift in Sources */,
 				ECE253F4209A50B500D388CE /* EXT_X_PROGRAM_DATE_TIMEParserTests.swift in Sources */,
+				E6B2D80A2CC83E5B00D319DF /* HLSInterstitialValueTests.swift in Sources */,
 				ECE253FD209A50B500D388CE /* ThirdPartyTagListSupportTests.swift in Sources */,
 				ECE25408209A50B500D388CE /* HLSResolutionTests.swift in Sources */,
 				ECE253F6209A50B500D388CE /* GenericSingleValueTagParserTests.swift in Sources */,

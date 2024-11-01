@@ -1407,6 +1407,30 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
                            "Expected EXT-X-DATERANGE validation issue (\(expectedValidationIssue.description)) had unexpected severity (\(matchingIssue.severity))")
         }
     }
+    
+    private func validateInterstitialsEXT_X_DATERANGE(tagData: String, expectedValidationIssues: [HLSValidationIssue]) {
+        let expectedIssuesDescriptions = expectedValidationIssues.map { $0.description }.joined(separator: "\n")
+        let (validator, tag) = constructDictionaryValidator(PantosTag.EXT_X_DATERANGE, data: tagData)
+        guard let errors = validator.validate(tag: tag) else {
+            if expectedValidationIssues.isEmpty {
+                return // no issues as expected
+            }
+            return XCTFail("Expected EXT-X-DATERANGE validation issue\nTag data: \(tagData)\nExpected issues:\n\(expectedIssuesDescriptions)")
+        }
+        let actualIssuesDescriptions = errors.map { $0.description }.joined(separator: "\n")
+        XCTAssertEqual(errors.count,
+                       expectedValidationIssues.count,
+                       "Mismatch in expected issues and actual issues in EXT_X_DATERANGE validation.\nExpected issues:\n\(expectedIssuesDescriptions)\nActual issues:\n\(actualIssuesDescriptions)")
+        expectedValidationIssues.forEach { expectedValidationIssue in
+            guard let matchingIssue = errors.first(where: { $0.description == expectedValidationIssue.description }) else {
+                return XCTFail("Expected issue \"\(expectedValidationIssue.description)\" not found for EXT-X-DATERANGE tag: \(tagData)\nIssues found:\n\(actualIssuesDescriptions)")
+            }
+            XCTAssertEqual(expectedValidationIssue.description, matchingIssue.description)
+            XCTAssertEqual(expectedValidationIssue.severity,
+                           matchingIssue.severity,
+                           "Expected EXT-X-DATERANGE validation issue (\(expectedValidationIssue.description)) had unexpected severity (\(matchingIssue.severity))")
+        }
+    }
 
     /*
      A server produces a Playlist Delta Update (Section 6.2.5.1), by
@@ -1449,4 +1473,58 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
                  mandatory: mandatory,
                  badValues: badValues)
     }
+    
+    // MARK: - tests for validating DateRange tags with interstitial attributes
+    func testParseInterstitialWithAssetUriSuccessful() {
+        let assetUriString =
+        """
+        ID="ad1",CLASS="com.apple.hls.interstitial",START-DATE="2020-01-02T21:55:44.000Z",DURATION=15.0,X-ASSET-URI="http://example.com/ad1.m3u8",X-RESUME-OFFSET=0,X-RESTRICT="SKIP,JUMP",X-COM-EXAMPLE-BEACON=123
+        """
+        
+        let (validator, tag) = constructDictionaryValidator(PantosTag.EXT_X_DATERANGE, data: assetUriString)
+        XCTAssertNil(validator.validate(tag: tag))
+    }
+    
+    func testParseInterstitialWithAssetListSuccessful() {
+        let assetListString =
+        """
+        ID="ad1",CLASS="com.apple.hls.interstitial",START-DATE="2020-01-02T21:55:44.000Z",DURATION=15.0,X-ASSET-LIST="http://example.com/adList",X-RESUME-OFFSET=0,X-RESTRICT="SKIP,JUMP",X-COM-EXAMPLE-BEACON=123
+        """
+        
+        let (validator, tag) = constructDictionaryValidator(PantosTag.EXT_X_DATERANGE, data: assetListString)
+        XCTAssertNil(validator.validate(tag: tag))
+    }
+    
+    func testInterstitialMissingAssetListOrUriValidationIssue() {
+        let missingAssetListOrUri =
+        """
+        ID="ad1",CLASS="com.apple.hls.interstitial",START-DATE="2020-01-02T21:55:44.000Z",DURATION=15.0,X-RESUME-OFFSET=0,X-RESTRICT="SKIP,JUMP",X-COM-EXAMPLE-BEACON=123
+        """
+        
+        let (validator, tag) = constructDictionaryValidator(PantosTag.EXT_X_DATERANGE, data: missingAssetListOrUri)
+        
+        guard let issues = validator.validate(tag: tag), !issues.isEmpty else {
+            XCTFail("Expected validation issues")
+            return
+        }
+        
+        XCTAssertEqual(issues.first?.description, IssueDescription.EXT_X_DATERANGEMissingAssetListOrAssetUriAttribute.rawValue)
+    }
+    
+    func testInterstitialContainsBothAssetListAndAssetUriAttributes() {
+        let assetContainsBothUriAndList =
+        """
+        ID="ad1",CLASS="com.apple.hls.interstitial",START-DATE="2020-01-02T21:55:44.000Z",DURATION=15.0,X-ASSET-LIST="http://example.com/adList",X-ASSET-URI="http://example.com/ad1.m3u8",X-RESUME-OFFSET=0,X-RESTRICT="SKIP,JUMP",X-COM-EXAMPLE-BEACON=123
+        """
+        
+        let (validator, tag) = constructDictionaryValidator(PantosTag.EXT_X_DATERANGE, data: assetContainsBothUriAndList)
+        
+        guard let issues = validator.validate(tag: tag), !issues.isEmpty else {
+            XCTFail("Expected validation issues")
+            return
+        }
+        
+        XCTAssertEqual(issues.first?.description, IssueDescription.EXT_X_DATERANGEContainsBothAssetListAndAssetUriAttribute.rawValue)
+    }
 }
+
