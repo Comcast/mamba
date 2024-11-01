@@ -1449,4 +1449,57 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
                  mandatory: mandatory,
                  badValues: badValues)
     }
+    
+    // MARK: - tests for validating DateRange tags with interstitial attributes
+    func testParseInterstitialWithAssetUriSuccessful() {
+        let assetUriString =
+        """
+        ID="ad1",CLASS="com.apple.hls.interstitial",START-DATE="2020-01-02T21:55:44.000Z",DURATION=15.0,X-ASSET-URI="http://example.com/ad1.m3u8",X-RESUME-OFFSET=0,X-RESTRICT="SKIP,JUMP",X-COM-EXAMPLE-BEACON=123
+        """
+
+        let (validator, tag) = constructDictionaryValidator(PantosTag.EXT_X_DATERANGE, data: assetUriString)
+        XCTAssertNil(validator.validate(tag: tag))
+    }
+
+    func testParseInterstitialWithAssetListSuccessful() {
+        let assetListString =
+        """
+        ID="ad1",CLASS="com.apple.hls.interstitial",START-DATE="2020-01-02T21:55:44.000Z",DURATION=15.0,X-ASSET-LIST="http://example.com/adList",X-RESUME-OFFSET=0,X-RESTRICT="SKIP,JUMP",X-COM-EXAMPLE-BEACON=123
+        """
+
+        let (validator, tag) = constructDictionaryValidator(PantosTag.EXT_X_DATERANGE, data: assetListString)
+        XCTAssertNil(validator.validate(tag: tag))
+    }
+
+    func testInterstitialMissingAssetListOrUriValidationIssue() {
+        let missingAssetListOrUri =
+        """
+        ID="ad1",CLASS="com.apple.hls.interstitial",START-DATE="2020-01-02T21:55:44.000Z",DURATION=15.0,X-RESUME-OFFSET=0,X-RESTRICT="SKIP,JUMP",X-COM-EXAMPLE-BEACON=123
+        """
+
+        let (validator, tag) = constructDictionaryValidator(PantosTag.EXT_X_DATERANGE, data: missingAssetListOrUri)
+
+        guard let issues = validator.validate(tag: tag), !issues.isEmpty else {
+            XCTFail("Expected validation issues")
+            return
+        }
+
+        XCTAssertEqual(issues.first?.description, IssueDescription.EXT_X_DATERANGEMissingAssetListOrAssetUriAttribute.rawValue)
+    }
+
+    func testInterstitialContainsBothAssetListAndAssetUriAttributes() {
+        let assetContainsBothUriAndList =
+        """
+        ID="ad1",CLASS="com.apple.hls.interstitial",START-DATE="2020-01-02T21:55:44.000Z",DURATION=15.0,X-ASSET-LIST="http://example.com/adList",X-ASSET-URI="http://example.com/ad1.m3u8",X-RESUME-OFFSET=0,X-RESTRICT="SKIP,JUMP",X-COM-EXAMPLE-BEACON=123
+        """
+
+        let (validator, tag) = constructDictionaryValidator(PantosTag.EXT_X_DATERANGE, data: assetContainsBothUriAndList)
+
+        guard let issues = validator.validate(tag: tag), !issues.isEmpty else {
+            XCTFail("Expected validation issues")
+            return
+        }
+
+        XCTAssertEqual(issues.first?.description, IssueDescription.EXT_X_DATERANGEContainsBothAssetListAndAssetUriAttribute.rawValue)
+    }
 }
