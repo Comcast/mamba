@@ -64,6 +64,9 @@
 		E65FB2462CD5241D00BF6F56 /* InterstitialValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB2452CD5241D00BF6F56 /* InterstitialValueTests.swift */; };
 		E65FB2472CD5241D00BF6F56 /* InterstitialValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB2452CD5241D00BF6F56 /* InterstitialValueTests.swift */; };
 		E65FB2482CD5241D00BF6F56 /* InterstitialValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB2452CD5241D00BF6F56 /* InterstitialValueTests.swift */; };
+		E65FB24A2CD524BF00BF6F56 /* InterstitialTagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB2492CD524BF00BF6F56 /* InterstitialTagBuilder.swift */; };
+		E65FB24B2CD524BF00BF6F56 /* InterstitialTagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB2492CD524BF00BF6F56 /* InterstitialTagBuilder.swift */; };
+		E65FB24C2CD524BF00BF6F56 /* InterstitialTagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB2492CD524BF00BF6F56 /* InterstitialTagBuilder.swift */; };
 		EC03B63D1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */; };
 		EC03B63E1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */; };
 		EC03B63F1E5CC55800BF1F97 /* RapidParserMasterParseArray.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B63C1E5CC55800BF1F97 /* RapidParserMasterParseArray.h */; };
@@ -678,6 +681,7 @@
 		D4BB018C1E2EABD500CA006E /* PlaylistTagArray+RenditionGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlaylistTagArray+RenditionGroups.swift"; sourceTree = "<group>"; };
 		E65FB2412CD51E4200BF6F56 /* InterstitialValueTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialValueTypes.swift; sourceTree = "<group>"; };
 		E65FB2452CD5241D00BF6F56 /* InterstitialValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialValueTests.swift; sourceTree = "<group>"; };
+		E65FB2492CD524BF00BF6F56 /* InterstitialTagBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialTagBuilder.swift; sourceTree = "<group>"; };
 		EC03B62D1E5CC54900BF1F97 /* PrototypeRapidParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrototypeRapidParseArray.include; sourceTree = "<group>"; };
 		EC03B62E1E5CC54900BF1F97 /* RapidParser_LookingForEForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForEForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
 		EC03B62F1E5CC54900BF1F97 /* RapidParser_LookingForEForEXTState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForEForEXTState_ParseArray.include; sourceTree = "<group>"; };
@@ -1118,6 +1122,7 @@
 				EC7ECA011D30177A000EEB7D /* Utils */,
 				EC7491B11DD29D5C00AF4E20 /* ValueTypes.swift */,
 				E65FB2412CD51E4200BF6F56 /* InterstitialValueTypes.swift */,
+				E65FB2492CD524BF00BF6F56 /* InterstitialTagBuilder.swift */,
 			);
 			path = mambaSharedFramework;
 			sourceTree = "<group>";
@@ -1816,6 +1821,7 @@
 				EC349AD62236F55F0077432B /* MasterPlaylistStructure.swift in Sources */,
 				ECDE18442238114E008566BB /* VariantPlaylist.swift in Sources */,
 				EC7491721DD29B5D00AF4E20 /* OrderedDictionary.swift in Sources */,
+				E65FB24A2CD524BF00BF6F56 /* InterstitialTagBuilder.swift in Sources */,
 				EC3B01BF1DD4D49A00B512E3 /* PlaylistTagCardinalityValidator.swift in Sources */,
 				EC7491FA1DD29DD300AF4E20 /* GenericSingleTagValidator.swift in Sources */,
 				EC9547851E5CC83C00962535 /* NoOpTagParser.swift in Sources */,
@@ -1995,6 +2001,7 @@
 				EC349AD72236F55F0077432B /* MasterPlaylistStructure.swift in Sources */,
 				ECDE18452238114E008566BB /* VariantPlaylist.swift in Sources */,
 				EC7491CA1DD29D5C00AF4E20 /* PlaylistWriter.swift in Sources */,
+				E65FB24C2CD524BF00BF6F56 /* InterstitialTagBuilder.swift in Sources */,
 				EC3B01A61DD4D47900B512E3 /* EXT_X_KEYValidator.swift in Sources */,
 				EC7491731DD29B5D00AF4E20 /* OrderedDictionary.swift in Sources */,
 				EC3B01C01DD4D49A00B512E3 /* PlaylistTagCardinalityValidator.swift in Sources */,
@@ -2174,6 +2181,7 @@
 				EC1CCD60209A2CF9006B59FF /* PlaylistValidationIssue.swift in Sources */,
 				EC349AD82236F55F0077432B /* MasterPlaylistStructure.swift in Sources */,
 				ECDE18462238114E008566BB /* VariantPlaylist.swift in Sources */,
+				E65FB24B2CD524BF00BF6F56 /* InterstitialTagBuilder.swift in Sources */,
 				EC1CCD40209A2CF9006B59FF /* EXT_X_MEDIARenditionGroupTYPEValidator.swift in Sources */,
 				EC1CCD21209A2CF9006B59FF /* RapidParserStateHandlers.c in Sources */,
 				EC1CCD23209A2CF9006B59FF /* CollectionType+FindExtensions.swift in Sources */,
