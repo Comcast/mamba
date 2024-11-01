@@ -21,7 +21,7 @@ import Foundation
 
 extension String {
     
-    private struct DateFormatter {
+    struct DateFormatter {
         static let iso8601MS: Foundation.DateFormatter = {
             let formatter = Foundation.DateFormatter()
             formatter.calendar = Calendar(identifier: Calendar.Identifier.iso8601)
