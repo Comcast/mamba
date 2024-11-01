@@ -61,6 +61,9 @@
 		E65FB2422CD51E4200BF6F56 /* InterstitialValueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB2412CD51E4200BF6F56 /* InterstitialValueTypes.swift */; };
 		E65FB2432CD51E4200BF6F56 /* InterstitialValueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB2412CD51E4200BF6F56 /* InterstitialValueTypes.swift */; };
 		E65FB2442CD51E4200BF6F56 /* InterstitialValueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB2412CD51E4200BF6F56 /* InterstitialValueTypes.swift */; };
+		E65FB2462CD5241D00BF6F56 /* InterstitialValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB2452CD5241D00BF6F56 /* InterstitialValueTests.swift */; };
+		E65FB2472CD5241D00BF6F56 /* InterstitialValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB2452CD5241D00BF6F56 /* InterstitialValueTests.swift */; };
+		E65FB2482CD5241D00BF6F56 /* InterstitialValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB2452CD5241D00BF6F56 /* InterstitialValueTests.swift */; };
 		EC03B63D1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */; };
 		EC03B63E1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */; };
 		EC03B63F1E5CC55800BF1F97 /* RapidParserMasterParseArray.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B63C1E5CC55800BF1F97 /* RapidParserMasterParseArray.h */; };
@@ -674,6 +677,7 @@
 		D44E03761E3BAC9F00126B52 /* PlaylistTag+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlaylistTag+Util.swift"; sourceTree = "<group>"; };
 		D4BB018C1E2EABD500CA006E /* PlaylistTagArray+RenditionGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlaylistTagArray+RenditionGroups.swift"; sourceTree = "<group>"; };
 		E65FB2412CD51E4200BF6F56 /* InterstitialValueTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialValueTypes.swift; sourceTree = "<group>"; };
+		E65FB2452CD5241D00BF6F56 /* InterstitialValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialValueTests.swift; sourceTree = "<group>"; };
 		EC03B62D1E5CC54900BF1F97 /* PrototypeRapidParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrototypeRapidParseArray.include; sourceTree = "<group>"; };
 		EC03B62E1E5CC54900BF1F97 /* RapidParser_LookingForEForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForEForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
 		EC03B62F1E5CC54900BF1F97 /* RapidParser_LookingForEForEXTState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForEForEXTState_ParseArray.include; sourceTree = "<group>"; };
@@ -1352,6 +1356,7 @@
 				EC7492B11DD29F8900AF4E20 /* PlaylistTypeTests.swift */,
 				EC7492B21DD29F8900AF4E20 /* ResolutionTests.swift */,
 				1447583C2C8693E000D12CCD /* VideoLayoutTests.swift */,
+				E65FB2452CD5241D00BF6F56 /* InterstitialValueTests.swift */,
 			);
 			path = "Value Types";
 			sourceTree = "<group>";
@@ -1946,6 +1951,7 @@
 				EC7492AD1DD29F7000AF4E20 /* URLSchemeChangeTests.swift in Sources */,
 				ECFBD9031E5CCAAF00379FC2 /* XCTestCase+mamba.swift in Sources */,
 				EC7492A11DD29F4600AF4E20 /* ThirdPartyTagListSupportTests.swift in Sources */,
+				E65FB2472CD5241D00BF6F56 /* InterstitialValueTests.swift in Sources */,
 				3D933C1A2193367C0029069F /* EXT-X-BITRATETagParserTests.swift in Sources */,
 				EC073F5D1FE0840000689228 /* OutputStreamExtensionTests.swift in Sources */,
 				ECC410671EA1527700B4E3C8 /* PlaylistTagGroupTests.swift in Sources */,
@@ -2124,6 +2130,7 @@
 				ECBEF4F21F7AC58A0051078F /* ReadMeUnitTests.swift in Sources */,
 				EC7492851DD29EC800AF4E20 /* StringDictionaryParserTests.swift in Sources */,
 				EC7492AE1DD29F7000AF4E20 /* URLSchemeChangeTests.swift in Sources */,
+				E65FB2462CD5241D00BF6F56 /* InterstitialValueTests.swift in Sources */,
 				3D933C1C219336970029069F /* EXT-X-BITRATETagParserTests.swift in Sources */,
 				ECFBD9041E5CCAAF00379FC2 /* XCTestCase+mamba.swift in Sources */,
 				EC073F5E1FE0840000689228 /* OutputStreamExtensionTests.swift in Sources */,
@@ -2302,6 +2309,7 @@
 				ECE253EB209A50A100D388CE /* ParseArrayTests.m in Sources */,
 				ECE253E5209A509900D388CE /* TagWriting.swift in Sources */,
 				3D933C1B219336970029069F /* EXT-X-BITRATETagParserTests.swift in Sources */,
+				E65FB2482CD5241D00BF6F56 /* InterstitialValueTests.swift in Sources */,
 				ECE253F5209A50B500D388CE /* GenericNoDataTagParserTests.swift in Sources */,
 				ECE253D4209A509000D388CE /* TagParserMock.swift in Sources */,
 				ECE253E3209A509900D388CE /* PlaylistTagGroupTests.swift in Sources */,
