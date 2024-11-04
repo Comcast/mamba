@@ -1,5 +1,5 @@
 //
-//  MambaStringRef_ConcreteNSString.m
+//  MambaStringRefFactory.h
 //  mamba
 //
 //  Created by Andrew Morrow on 3/14/17.
@@ -17,33 +17,8 @@
 //  limitations under the License.
 //
 
-#import "MambaStringRef_ConcreteNSString.h"
+#import "MambaStringRef.h"
 
-@interface MambaStringRef_ConcreteNSString ()
-
-@property (nonatomic, readonly, nonnull) NSString *internalString;
-
-@end
-
-@implementation MambaStringRef_ConcreteNSString
-
-@synthesize length=_length;
-
-- (instancetype)initWithString:(NSString *)string {
-    self = [self init];
-    if (self) {
-        _internalString = string;
-        _length = [string lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
-    }
-    return self;
-}
-
-- (const char *)UTF8Bytes {
-    return self.internalString.UTF8String;
-}
-
-- (NSString *)stringValue {
-    return self.internalString;
-}
+@interface MambaStringRefFactory : MambaStringRef
 
 @end

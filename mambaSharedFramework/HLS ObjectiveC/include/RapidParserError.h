@@ -1,8 +1,8 @@
 //
-//  MambaStringRef_ConcreteNSData.h
+//  RapidParserError.h
 //  mamba
 //
-//  Created by Andrew Morrow on 3/14/17.
+//  Created by David Coufal on 1/20/17.
 //  Copyright © 2017 Comcast Cable Communications Management, LLC
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -17,8 +17,18 @@
 //  limitations under the License.
 //
 
-#import <mamba/mamba.h>
+#ifndef RapidParserError_h
+#define RapidParserError_h
 
-@interface MambaStringRef_ConcreteNSData : MambaStringRef
+#include <stdio.h>
+#include <stdint.h>
 
-@end
+extern const uint32_t RapidParserErrorMissingTagData;
+
+extern const uint32_t RapidParserErrorMissingTagDataForEXTINF;
+
+extern const char * RapidParserErrorMissingTagData_Message;
+
+extern const char * RapidParserErrorMissingTagDataForEXTINF_Message;
+
+#endif /* RapidParserError_h */

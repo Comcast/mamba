@@ -1,8 +1,8 @@
 //
-//  RapidParserMasterParseArray.h
+//  RapidParser.h
 //  mamba
 //
-//  Created by David Coufal on 1/20/17.
+//  Created by David Coufal on 1/19/17.
 //  Copyright © 2017 Comcast Cable Communications Management, LLC
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -17,13 +17,14 @@
 //  limitations under the License.
 //
 
-#ifndef RapidParserMasterParseArray_h
-#define RapidParserMasterParseArray_h
+@import Foundation;
+#include "RapidParserError.h"
+#include "StaticMemoryStorage.h"
 
-#include "RapidParserState.h"
-#include "RapidParserLineState.h"
-#include "RapidParserStateHandlers.h"
+@protocol RapidParserCallback;
 
-extern const parserStateHandler masterParseArray[numberOfScanningParseStates][256];
+@interface RapidParser : NSObject
 
-#endif /* RapidParserMasterParseArray_h */
+- (void)parseHLSData:(StaticMemoryStorage * _Nonnull)storage callback:(id<RapidParserCallback> _Nonnull)callback;
+
+@end
