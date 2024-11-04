@@ -19,6 +19,11 @@
 
 import Foundation
 
+#if SWIFT_PACKAGE
+import HLSObjectiveC
+#endif
+
+
 extension String {
     
     public init(tagDescriptor: PlaylistTagDescriptor) {

@@ -18,6 +18,7 @@
 //
 
 import Foundation
+import CoreMedia
 
 /**
  `VariantPlaylist` is a struct that represents a variant-style HLS playlist.

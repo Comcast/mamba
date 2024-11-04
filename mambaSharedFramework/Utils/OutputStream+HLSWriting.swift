@@ -19,6 +19,10 @@
 
 import Foundation
 
+#if SWIFT_PACKAGE
+import HLSObjectiveC
+#endif
+
 public enum OutputStreamError: Error {
     case couldNotWriteToStream(NSError?)
     case invalidData(description: String?)

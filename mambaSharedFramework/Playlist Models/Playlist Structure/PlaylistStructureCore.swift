@@ -18,6 +18,8 @@
 //
 
 import Foundation
+import CoreMedia
+
 
 public final class PlaylistStructureCore<PSD: PlaylistStructureDelegate>: PlaylistStructureInterface {
     

@@ -1,8 +1,8 @@
 //
-//  EXTINFValidator.swift
+//  MambaStringRef_ConcreteNSData.h
 //  mamba
 //
-//  Created by David Coufal on 2/8/17.
+//  Created by Andrew Morrow on 3/14/17.
 //  Copyright © 2017 Comcast Cable Communications Management, LLC
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -17,17 +17,8 @@
 //  limitations under the License.
 //
 
-import Foundation
-import CoreMedia
+#import "MambaStringRef.h"
 
-// Specialized validator for EXTINF tags
-class EXTINFValidator: PlaylistTagValidator {
-    
-    public func validate(tag: PlaylistTag) -> [PlaylistValidationIssue]? {
-        
-        if !(tag.duration.isNumeric && tag.duration > CMTime.zero) {
-            return [PlaylistValidationIssue(description: IssueDescription.EXTINFTagsRequireADurationValidator, severity: IssueSeverity.error)]
-        }
-        return nil
-    }
-}
+@interface MambaStringRef_ConcreteNSData : MambaStringRef
+
+@end

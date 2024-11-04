@@ -18,6 +18,8 @@
 //
 
 import Foundation
+import CoreMedia
+
 
 public protocol PlaylistSegmentMatcher {
     /**

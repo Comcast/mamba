@@ -18,6 +18,11 @@
 //
 
 import Foundation
+import CoreMedia
+
+#if SWIFT_PACKAGE
+import HLSObjectiveC
+#endif
 
 /// A protocol for objects that can be constructed from a string, but might fail.
 public protocol FailableStringLiteralConvertible {

@@ -19,6 +19,10 @@
 
 import Foundation
 
+#if SWIFT_PACKAGE
+import HLSObjectiveC
+#endif
+
 /**
  enum describing all playlist tags that mamba understands from the Pantos HLS specification
  
