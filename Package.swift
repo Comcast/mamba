@@ -37,6 +37,9 @@ let package = Package(
                 "HLS ObjectiveC",
                 "PlaylistParserError",
                 "mamba.h"
+            ],
+            resources: [
+                .process("Resources")
             ]
         ),
         .target(
