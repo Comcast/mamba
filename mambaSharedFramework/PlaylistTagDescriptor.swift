@@ -17,6 +17,10 @@
 //  limitations under the License.
 //
 
+#if SWIFT_PACKAGE
+import HLSObjectiveC
+#endif
+
 import Foundation
 
 /// Protocol that describes the behavior of a playlist tag descriptor.

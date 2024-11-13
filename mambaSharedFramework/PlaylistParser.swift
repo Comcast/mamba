@@ -18,6 +18,12 @@
 //
 
 import Foundation
+import QuartzCore
+
+#if SWIFT_PACKAGE
+import PlaylistParserError
+import HLSObjectiveC
+#endif
 
 /**
  A performant parser for HLS playlists.

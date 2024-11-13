@@ -18,6 +18,11 @@
 //
 
 import Foundation
+import CoreMedia
+
+#if SWIFT_PACKAGE
+import HLSObjectiveC
+#endif
 
 /**
  A struct representing a single tag line from a HLS playlist.

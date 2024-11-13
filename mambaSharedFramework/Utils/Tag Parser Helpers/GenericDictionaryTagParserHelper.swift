@@ -17,6 +17,10 @@
 //  limitations under the License.
 //
 
+#if SWIFT_PACKAGE
+import PlaylistParserError
+#endif
+
 import Foundation
 
 struct GenericDictionaryTagParserHelper {

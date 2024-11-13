@@ -18,6 +18,11 @@
 //
 
 import Foundation
+import CoreMedia
+
+#if SWIFT_PACKAGE
+import HLSObjectiveC
+#endif
 
 /**
  This object is responsible for maintaining a HLS playlist structure, including a array of tags and

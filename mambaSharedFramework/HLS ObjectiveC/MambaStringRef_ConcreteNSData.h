@@ -1,5 +1,5 @@
 //
-//  MambaStringRefFactory.h
+//  MambaStringRef_ConcreteNSData.h
 //  mamba
 //
 //  Created by Andrew Morrow on 3/14/17.
@@ -17,8 +17,8 @@
 //  limitations under the License.
 //
 
-#import <mamba/mamba.h>
+#import "MambaStringRef.h"
 
-@interface MambaStringRefFactory : MambaStringRef
+@interface MambaStringRef_ConcreteNSData : MambaStringRef
 
 @end

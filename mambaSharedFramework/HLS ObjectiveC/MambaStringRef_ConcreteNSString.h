@@ -1,5 +1,5 @@
 //
-//  MambaStringRef_ConcreteUnownedBytes.h
+//  MambaStringRef_ConcreteNSString.h
 //  mamba
 //
 //  Created by Andrew Morrow on 3/14/17.
@@ -17,8 +17,8 @@
 //  limitations under the License.
 //
 
-#import <mamba/mamba.h>
+#import "MambaStringRef.h"
 
-@interface MambaStringRef_ConcreteUnownedBytes : MambaStringRef
+@interface MambaStringRef_ConcreteNSString : MambaStringRef
 
 @end
