@@ -90,7 +90,8 @@ public enum PantosValue: String {
     /// Found in `.EXT_X_SESSION_DATA`. Identifier for a particular data value.
     case dataId = "DATA-ID"
 
-    /// Found in `.EXT_X_SESSION_DATA`. The value of the data identified via DATA-ID.
+    /// Found in `.EXT_X_SESSION_DATA` and `EXT_X_DEFINE`. The value of the data identified via DATA-ID or the value of
+    /// the playlist variable definition.
     case value = "VALUE"
 
     /// Found in `.EXT_X_SESSION_DATA`. The format of the data provided via VALUE.
@@ -123,7 +124,8 @@ public enum PantosValue: String {
     /// Found in `.EXT_X_MEDIA`. Group id of this media stream
     case groupId = "GROUP-ID"
     
-    /// Found in `.EXT_X_MEDIA`. Name of this media (typically a human-readable version of the language)
+    /// Found in `.EXT_X_MEDIA` and `.EXT_X_DEFINE`. Name of this media (typically a human-readable version of the
+    /// language) or name of the playlist variable definition.
     case name = "NAME"
     
     /// Found in `.EXT_X_MEDIA` and `.EXT_X_SESSION_DATA`. The primary language of the media
@@ -191,7 +193,15 @@ public enum PantosValue: String {
     
     /// Found in `.EXT_X_START`. Indicates client SHOULD NOT render media samples in that segment whose presentation times are prior to the TIME-OFFSET (YES or NO)
     case precise = "PRECISE"
-    
+
+    /// Found in `.EXT_X_DEFINE`. Indicates the name of the playlist variable being imported from the multivariant
+    /// playlist.
+    case `import` = "IMPORT"
+
+    /// Found in `.EXT_X_DEFINE`. Indicates the name of the playlist variable defined in the URL query string that is
+    /// being imported into the playlist.
+    case queryparam = "QUERYPARAM"
+
     /// Found in `.EXT_X_DATERANGE`.
     /// A quoted-string that uniquely identifies a Date Range in the
     /// Playlist.  This attribute is REQUIRED
