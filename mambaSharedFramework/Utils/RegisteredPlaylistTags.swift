@@ -19,6 +19,10 @@
 
 import Foundation
 
+#if SWIFT_PACKAGE
+import HLSObjectiveC
+#endif
+
 /**
  This struct is the mechanism to register and deregister arbitrary PlaylistTagDescriptor and
  PlaylistTagValueIdentifier objects to support arbitrary playlist tag types.

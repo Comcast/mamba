@@ -19,6 +19,10 @@
 
 import Foundation
 
+#if SWIFT_PACKAGE
+import HLSObjectiveC
+#endif
+
 public extension MambaStringRef {
     
     convenience init(descriptor: PlaylistTagDescriptor) {

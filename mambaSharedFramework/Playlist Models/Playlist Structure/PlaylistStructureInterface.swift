@@ -18,6 +18,7 @@
 //
 
 import Foundation
+import CoreMedia
 
 /**
  This protocol defines a minimal interface of a object that represents HLS playlist structure.

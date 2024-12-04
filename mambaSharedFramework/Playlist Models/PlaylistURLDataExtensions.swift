@@ -18,6 +18,11 @@
 //
 
 import Foundation
+import QuartzCore
+
+#if SWIFT_PACKAGE
+import HLSObjectiveC
+#endif
 
 /// Specialized custom data modifier for VariantPlaylist and MasterPlaylist
 public struct PlaylistURLData {

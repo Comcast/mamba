@@ -17,6 +17,10 @@
 //  limitations under the License.
 //
 
+#if SWIFT_PACKAGE
+import PlaylistParserError
+#endif
+
 import Foundation
 
 /// Class for generically parsing tags in the form of `#EXT-X-TARGETDURATION:10`, where there is a tag with a one and only one value associated with it

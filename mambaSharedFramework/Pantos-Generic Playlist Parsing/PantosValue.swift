@@ -248,6 +248,118 @@ public enum PantosValue: String {
     /// after the START-DATE of the range in question.  This attribute is
     /// OPTIONAL.
     case endOnNext = "END-ON-NEXT"
+    
+    /// Found in `.EXT_X_DATERANGE`.
+    ///
+    /// The value of the X-ASSET-URI is a quoted-string absolute URI for a
+    /// single interstitial asset.  An Interstitial EXT-X-DATERANGE tag
+    /// MUST have either the X-ASSET-URI attribute or the X-ASSET-LIST
+    /// attribute.  It MUST NOT have both.
+     case assetUri = "X-ASSET-URI"
+    
+    /// Found in `.EXT_X_DATERANGE`.
+    ///
+    /// The value of the X-ASSET-LIST is a quoted-string URI to a JSON
+    /// object.
+    case assetList = "X-ASSET-LIST"
+    
+    /// Found in `.EXT_X_DATERANGE`.
+    ///
+    /// The value of X-RESUME-OFFSET is a decimal-floating-point of
+    /// seconds that specifies where primary playback is to resume
+    /// following the playback of the interstitial.  It is expressed as a
+    /// time offset from where the interstitial playback was scheduled on
+    /// the primary player timeline.  A typical value for X-RESUME-OFFSET
+    /// is zero.  This attribute is OPTIONAL.
+    ///
+    /// If the X-RESUME-OFFSET is not present, its value is considered to
+    /// be the duration of the interstitial.  This is appropriate for live
+    /// content, where playback is to be kept at a constant delay from the
+    /// live edge, or for VOD playback where the HLS interstitial is
+    /// intended to exactly replace content in the primary asset.
+     case resumeOffset = "X-RESUME-OFFSET"
+    
+    /// Found in `.EXT_X_DATERANGE`.
+    ///
+    /// The value of X-PLAYOUT-LIMIT is a decimal-floating-point of
+    /// seconds that specifies a limit for the playout time of the entire
+    /// interstitial.  If it is present, the client SHOULD end the
+    /// interstitial if playback reaches that offset from its start.
+    /// Otherwise the interstitial MUST end upon reaching the end of the
+    /// interstitial asset(s).  This attribute is OPTIONAL.
+    case playoutLimit = "X-PLAYOUT-LIMIT"
+    
+    /// Found in `.EXT_X_DATERANGE`.
+    ///
+    /// The value of the X-SNAP attribute is an enumerated-string-list of
+    /// Snap Identifiers.  The defined Snap Identifiers are: OUT and IN.
+    /// This attribute is OPTIONAL.
+    ///
+    /// If the list contains OUT then the client SHOULD locate the segment
+    /// boundary closest to the START-DATE of the interstitial in the
+    /// Media Playlist of the primary content and transition to the
+    /// interstitial at that boundary.  If more than one Media Playlist is
+    /// contributing to playback (audio plus video for example), the
+    /// client SHOULD transition at the earliest segment boundary.
+    ///
+    /// If the list contains IN then the client SHOULD locate the segment
+    /// boundary closest to the scheduled resumption point from the
+    /// interstitial in the Media Playlist of the primary content and
+    /// resume playback of primary content at that boundary.  If more than
+    /// one Media Playlist is contributing to playback, the client SHOULD
+    /// transition at the latest segment boundary.
+    case snap = "X-SNAP"
+    
+    /// Found in `.EXT_X_DATERANGE`.
+    ///
+    /// The value of the X-RESTRICT attribute is an enumerated-string-list
+    /// of Navigation Restriction Identifiers.  The defined Navigation
+    /// Restriction Identifiers are: SKIP and JUMP.  These restrictions
+    /// are enforced at the player UI level.  This attribute is OPTIONAL.
+    ///
+    /// If the list contains SKIP then while the interstitial is being
+    /// played, the client MUST NOT allow the user to seek forward from
+    /// the current playhead position or set the rate to greater than the
+    /// regular playback rate until playback reaches the end of the
+    /// interstitial.
+    ///
+    /// If the list contains JUMP then the client MUST NOT allow the user
+    /// to seek from a position in the primary asset earlier than the
+    /// START-DATE attribute to a position after it without first playing
+    /// the interstitial asset, even if the interstitial at START-DATE was
+    /// played through earlier.  If the user attempts to seek across more
+    /// than one interstitial, the client SHOULD choose at least one
+    /// interstitial to play before allowing the seek to complete.
+    case restrict = "X-RESTRICT"
+    
+    /// Found in `.EXT_X_DATERANGE`.
+    ///
+    /// This attribute may have the value "POINT" or "RANGE".
+    /// The attribute indicates whether the interstitial should be presented as a
+    /// single point on the timeline or as a range.
+    /// If X-TIMELINE-OCCUPIES is missing it is considered to have a value of
+    /// "POINT" (which is typical for VOD presentations), although clients may infer
+    /// a value of "RANGE" if the interstitial has positive non-zero resumption offset.
+    /// This attribute is OPTIONAL
+    case timelineOccupies = "X-TIMELINE-OCCUPIES"
+    
+    /// Found in `.EXT_X_DATERANGE`.
+    ///
+    /// This attribute may have the value "HIGHLIGHT" or "PRIMARY".
+    /// This attribute indicates whether the interstitial is intended to be presented as
+    /// distinct from the content ("HIGHLIGHT") or not differentiated ("PRIMARY").
+    /// If X-TIMELINE-STYLE is missing it is considered to have a value of "HIGHLIGHT"
+    /// This attribute is OPTIONAL
+    case timelineStyle = "X-TIMELINE-STYLE"
+    
+    /// Found in `.EXT_X_DATERANGE`.
+    ///
+    /// Provides a hint to the client to know how coordinated playback of
+    /// the same asset will behave across multiple players
+    /// A value of "NO" indicates all players will get the same interstitial content.
+    /// If this attribute is missing, it is considered to have a value of "YES".
+    /// This attribute is OPTIONAL
+    case contentMayVary = "X-CONTENT-MAY-VARY"
 
     /// Found in `.EXT_X_SKIP`.
     ///

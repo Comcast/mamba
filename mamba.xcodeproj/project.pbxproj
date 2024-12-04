@@ -58,44 +58,156 @@
 		D44E03781E3BAC9F00126B52 /* PlaylistTag+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E03761E3BAC9F00126B52 /* PlaylistTag+Util.swift */; };
 		D4BB018D1E2EABD500CA006E /* PlaylistTagArray+RenditionGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB018C1E2EABD500CA006E /* PlaylistTagArray+RenditionGroups.swift */; };
 		D4BB018E1E2EABD500CA006E /* PlaylistTagArray+RenditionGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB018C1E2EABD500CA006E /* PlaylistTagArray+RenditionGroups.swift */; };
-		EC03B63D1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */; };
-		EC03B63E1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */; };
-		EC03B63F1E5CC55800BF1F97 /* RapidParserMasterParseArray.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B63C1E5CC55800BF1F97 /* RapidParserMasterParseArray.h */; };
-		EC03B6401E5CC55800BF1F97 /* RapidParserMasterParseArray.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B63C1E5CC55800BF1F97 /* RapidParserMasterParseArray.h */; };
-		EC03B6521E5CC56B00BF1F97 /* RapidParser.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6411E5CC56B00BF1F97 /* RapidParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC03B6531E5CC56B00BF1F97 /* RapidParser.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6411E5CC56B00BF1F97 /* RapidParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC03B6541E5CC56B00BF1F97 /* RapidParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6421E5CC56B00BF1F97 /* RapidParser.m */; };
-		EC03B6551E5CC56B00BF1F97 /* RapidParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6421E5CC56B00BF1F97 /* RapidParser.m */; };
-		EC03B6561E5CC56B00BF1F97 /* RapidParserCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6431E5CC56B00BF1F97 /* RapidParserCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC03B6571E5CC56B00BF1F97 /* RapidParserCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6431E5CC56B00BF1F97 /* RapidParserCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC03B6581E5CC56B00BF1F97 /* MambaStringRef.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6441E5CC56B00BF1F97 /* MambaStringRef.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC03B6591E5CC56B00BF1F97 /* MambaStringRef.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6441E5CC56B00BF1F97 /* MambaStringRef.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC03B65A1E5CC56B00BF1F97 /* MambaStringRef.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6451E5CC56B00BF1F97 /* MambaStringRef.m */; };
-		EC03B65B1E5CC56B00BF1F97 /* MambaStringRef.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6451E5CC56B00BF1F97 /* MambaStringRef.m */; };
-		EC03B65C1E5CC56B00BF1F97 /* MambaStringRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6461E5CC56B00BF1F97 /* MambaStringRef.swift */; };
-		EC03B65D1E5CC56B00BF1F97 /* MambaStringRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6461E5CC56B00BF1F97 /* MambaStringRef.swift */; };
-		EC03B65E1E5CC56B00BF1F97 /* parseHLS.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6471E5CC56B00BF1F97 /* parseHLS.c */; };
-		EC03B65F1E5CC56B00BF1F97 /* parseHLS.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6471E5CC56B00BF1F97 /* parseHLS.c */; };
-		EC03B6601E5CC56B00BF1F97 /* parseHLS.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6481E5CC56B00BF1F97 /* parseHLS.h */; };
-		EC03B6611E5CC56B00BF1F97 /* parseHLS.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6481E5CC56B00BF1F97 /* parseHLS.h */; };
-		EC03B6621E5CC56B00BF1F97 /* RapidParserDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6491E5CC56B00BF1F97 /* RapidParserDebug.h */; };
-		EC03B6631E5CC56B00BF1F97 /* RapidParserDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6491E5CC56B00BF1F97 /* RapidParserDebug.h */; };
-		EC03B6641E5CC56B00BF1F97 /* RapidParserError.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B64A1E5CC56B00BF1F97 /* RapidParserError.m */; };
-		EC03B6651E5CC56B00BF1F97 /* RapidParserError.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B64A1E5CC56B00BF1F97 /* RapidParserError.m */; };
-		EC03B6661E5CC56B00BF1F97 /* RapidParserError.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64B1E5CC56B00BF1F97 /* RapidParserError.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC03B6671E5CC56B00BF1F97 /* RapidParserError.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64B1E5CC56B00BF1F97 /* RapidParserError.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC03B6681E5CC56B00BF1F97 /* RapidParserLineState.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B64C1E5CC56B00BF1F97 /* RapidParserLineState.c */; };
-		EC03B6691E5CC56B00BF1F97 /* RapidParserLineState.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B64C1E5CC56B00BF1F97 /* RapidParserLineState.c */; };
-		EC03B66A1E5CC56B00BF1F97 /* RapidParserLineState.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64D1E5CC56B00BF1F97 /* RapidParserLineState.h */; };
-		EC03B66B1E5CC56B00BF1F97 /* RapidParserLineState.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64D1E5CC56B00BF1F97 /* RapidParserLineState.h */; };
-		EC03B66C1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64E1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h */; };
-		EC03B66D1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64E1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h */; };
-		EC03B66E1E5CC56B00BF1F97 /* RapidParserState.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64F1E5CC56B00BF1F97 /* RapidParserState.h */; };
-		EC03B66F1E5CC56B00BF1F97 /* RapidParserState.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64F1E5CC56B00BF1F97 /* RapidParserState.h */; };
-		EC03B6701E5CC56B00BF1F97 /* RapidParserStateHandlers.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6501E5CC56B00BF1F97 /* RapidParserStateHandlers.c */; };
-		EC03B6711E5CC56B00BF1F97 /* RapidParserStateHandlers.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6501E5CC56B00BF1F97 /* RapidParserStateHandlers.c */; };
-		EC03B6721E5CC56B00BF1F97 /* RapidParserStateHandlers.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6511E5CC56B00BF1F97 /* RapidParserStateHandlers.h */; };
-		EC03B6731E5CC56B00BF1F97 /* RapidParserStateHandlers.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6511E5CC56B00BF1F97 /* RapidParserStateHandlers.h */; };
+		E60E30402CD9773C001AF4DB /* PrototypeRapidParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30252CD9773C001AF4DB /* PrototypeRapidParseArray.include */; };
+		E60E30412CD9773C001AF4DB /* RapidParser_LookingForNewlineForEXTINFState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E302C2CD9773C001AF4DB /* RapidParser_LookingForNewlineForEXTINFState_ParseArray.include */; };
+		E60E30422CD9773C001AF4DB /* RapidParser_LookingForNForEXTINFState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E302F2CD9773C001AF4DB /* RapidParser_LookingForNForEXTINFState_ParseArray.include */; };
+		E60E30432CD9773C001AF4DB /* RapidParser_LookingForXForEXTState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30322CD9773C001AF4DB /* RapidParser_LookingForXForEXTState_ParseArray.include */; };
+		E60E30442CD9773C001AF4DB /* RapidParser_LookingForNewLineForEXTState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E302D2CD9773C001AF4DB /* RapidParser_LookingForNewLineForEXTState_ParseArray.include */; };
+		E60E30452CD9773C001AF4DB /* RapidParser_LookingForEForEXTINFState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30272CD9773C001AF4DB /* RapidParser_LookingForEForEXTINFState_ParseArray.include */; };
+		E60E30462CD9773C001AF4DB /* RapidParser_ScanningState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30332CD9773C001AF4DB /* RapidParser_ScanningState_ParseArray.include */; };
+		E60E30472CD9773C001AF4DB /* RapidParser_LookingForHashForEXTState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E302A2CD9773C001AF4DB /* RapidParser_LookingForHashForEXTState_ParseArray.include */; };
+		E60E30482CD9773C001AF4DB /* RapidParser_LookingForXForEXTINFState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30312CD9773C001AF4DB /* RapidParser_LookingForXForEXTINFState_ParseArray.include */; };
+		E60E30492CD9773C001AF4DB /* RapidParser_LookingForTForEXTINFState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30302CD9773C001AF4DB /* RapidParser_LookingForTForEXTINFState_ParseArray.include */; };
+		E60E304A2CD9773C001AF4DB /* RapidParser_LookingForNewLineForHashState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E302E2CD9773C001AF4DB /* RapidParser_LookingForNewLineForHashState_ParseArray.include */; };
+		E60E304B2CD9773C001AF4DB /* RapidParser_LookingForHashForEXTINFState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30292CD9773C001AF4DB /* RapidParser_LookingForHashForEXTINFState_ParseArray.include */; };
+		E60E304C2CD9773C001AF4DB /* RapidParser_LookingForIForEXTINFState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E302B2CD9773C001AF4DB /* RapidParser_LookingForIForEXTINFState_ParseArray.include */; };
+		E60E304D2CD9773C001AF4DB /* RapidParser_LookingForEForEXTState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30282CD9773C001AF4DB /* RapidParser_LookingForEForEXTState_ParseArray.include */; };
+		E60E304E2CD9773C001AF4DB /* CMTimeMakeFromString.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30122CD9773C001AF4DB /* CMTimeMakeFromString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E60E304F2CD9773C001AF4DB /* MambaStringRef_ConcreteNSData.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E301B2CD9773C001AF4DB /* MambaStringRef_ConcreteNSData.h */; };
+		E60E30502CD9773C001AF4DB /* MambaStringRef_ConcreteNSString.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E301D2CD9773C001AF4DB /* MambaStringRef_ConcreteNSString.h */; };
+		E60E30512CD9773C001AF4DB /* MambaStringRef.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30132CD9773C001AF4DB /* MambaStringRef.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E60E30522CD9773C001AF4DB /* RapidParserNewTagCallbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E303A2CD9773C001AF4DB /* RapidParserNewTagCallbacks.h */; };
+		E60E30532CD9773C001AF4DB /* RapidParserDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30342CD9773C001AF4DB /* RapidParserDebug.h */; };
+		E60E30542CD9773C001AF4DB /* parseHLS.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30232CD9773C001AF4DB /* parseHLS.h */; };
+		E60E30552CD9773C001AF4DB /* MambaStringRefFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30212CD9773C001AF4DB /* MambaStringRefFactory.h */; };
+		E60E30562CD9773C001AF4DB /* RapidParserStateHandlers.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E303C2CD9773C001AF4DB /* RapidParserStateHandlers.h */; };
+		E60E30572CD9773C001AF4DB /* MambaStringRef_ConcreteUnownedBytes.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E301F2CD9773C001AF4DB /* MambaStringRef_ConcreteUnownedBytes.h */; };
+		E60E30582CD9773C001AF4DB /* RapidParserLineState.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30362CD9773C001AF4DB /* RapidParserLineState.h */; };
+		E60E30592CD9773C001AF4DB /* RapidParserCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30152CD9773C001AF4DB /* RapidParserCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E60E305A2CD9773C001AF4DB /* RapidParserMasterParseArray.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30382CD9773C001AF4DB /* RapidParserMasterParseArray.h */; };
+		E60E305B2CD9773C001AF4DB /* StaticMemoryStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30172CD9773C001AF4DB /* StaticMemoryStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E60E305C2CD9773C001AF4DB /* RapidParserError.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30162CD9773C001AF4DB /* RapidParserError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E60E305D2CD9773C001AF4DB /* RapidParserState.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E303B2CD9773C001AF4DB /* RapidParserState.h */; };
+		E60E305E2CD9773C001AF4DB /* RapidParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30142CD9773C001AF4DB /* RapidParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E60E305F2CD9773C001AF4DB /* parseHLS.c in Sources */ = {isa = PBXBuildFile; fileRef = E60E30242CD9773C001AF4DB /* parseHLS.c */; };
+		E60E30602CD9773C001AF4DB /* RapidParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E30262CD9773C001AF4DB /* RapidParser.m */; };
+		E60E30612CD9773C001AF4DB /* MambaStringRef.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E301A2CD9773C001AF4DB /* MambaStringRef.m */; };
+		E60E30622CD9773C001AF4DB /* MambaStringRef_ConcreteUnownedBytes.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E30202CD9773C001AF4DB /* MambaStringRef_ConcreteUnownedBytes.m */; };
+		E60E30632CD9773C001AF4DB /* RapidParserStateHandlers.c in Sources */ = {isa = PBXBuildFile; fileRef = E60E303D2CD9773C001AF4DB /* RapidParserStateHandlers.c */; };
+		E60E30642CD9773C001AF4DB /* CMTimeMakeFromString.c in Sources */ = {isa = PBXBuildFile; fileRef = E60E30192CD9773C001AF4DB /* CMTimeMakeFromString.c */; };
+		E60E30652CD9773C001AF4DB /* RapidParserError.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E30352CD9773C001AF4DB /* RapidParserError.m */; };
+		E60E30662CD9773C001AF4DB /* MambaStringRef_ConcreteNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E301E2CD9773C001AF4DB /* MambaStringRef_ConcreteNSString.m */; };
+		E60E30672CD9773C001AF4DB /* MambaStringRef_ConcreteNSData.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E301C2CD9773C001AF4DB /* MambaStringRef_ConcreteNSData.m */; };
+		E60E30682CD9773C001AF4DB /* StaticMemoryStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E303E2CD9773C001AF4DB /* StaticMemoryStorage.m */; };
+		E60E30692CD9773C001AF4DB /* MambaStringRefFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E30222CD9773C001AF4DB /* MambaStringRefFactory.m */; };
+		E60E306A2CD9773C001AF4DB /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = E60E30392CD9773C001AF4DB /* RapidParserMasterParseArray.c */; };
+		E60E306B2CD9773C001AF4DB /* RapidParserLineState.c in Sources */ = {isa = PBXBuildFile; fileRef = E60E30372CD9773C001AF4DB /* RapidParserLineState.c */; };
+		E60E306C2CD9773C001AF4DB /* CMTimeMakeFromString.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30122CD9773C001AF4DB /* CMTimeMakeFromString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E60E306D2CD9773C001AF4DB /* MambaStringRef_ConcreteNSData.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E301B2CD9773C001AF4DB /* MambaStringRef_ConcreteNSData.h */; };
+		E60E306E2CD9773C001AF4DB /* MambaStringRef_ConcreteNSString.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E301D2CD9773C001AF4DB /* MambaStringRef_ConcreteNSString.h */; };
+		E60E306F2CD9773C001AF4DB /* MambaStringRef.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30132CD9773C001AF4DB /* MambaStringRef.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E60E30702CD9773C001AF4DB /* RapidParserNewTagCallbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E303A2CD9773C001AF4DB /* RapidParserNewTagCallbacks.h */; };
+		E60E30712CD9773C001AF4DB /* RapidParserDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30342CD9773C001AF4DB /* RapidParserDebug.h */; };
+		E60E30722CD9773C001AF4DB /* parseHLS.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30232CD9773C001AF4DB /* parseHLS.h */; };
+		E60E30732CD9773C001AF4DB /* MambaStringRefFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30212CD9773C001AF4DB /* MambaStringRefFactory.h */; };
+		E60E30742CD9773C001AF4DB /* RapidParserStateHandlers.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E303C2CD9773C001AF4DB /* RapidParserStateHandlers.h */; };
+		E60E30752CD9773C001AF4DB /* MambaStringRef_ConcreteUnownedBytes.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E301F2CD9773C001AF4DB /* MambaStringRef_ConcreteUnownedBytes.h */; };
+		E60E30762CD9773C001AF4DB /* RapidParserLineState.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30362CD9773C001AF4DB /* RapidParserLineState.h */; };
+		E60E30772CD9773C001AF4DB /* RapidParserCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30152CD9773C001AF4DB /* RapidParserCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E60E30782CD9773C001AF4DB /* RapidParserMasterParseArray.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30382CD9773C001AF4DB /* RapidParserMasterParseArray.h */; };
+		E60E30792CD9773C001AF4DB /* StaticMemoryStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30172CD9773C001AF4DB /* StaticMemoryStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E60E307A2CD9773C001AF4DB /* RapidParserError.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30162CD9773C001AF4DB /* RapidParserError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E60E307B2CD9773C001AF4DB /* RapidParserState.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E303B2CD9773C001AF4DB /* RapidParserState.h */; };
+		E60E307C2CD9773C001AF4DB /* RapidParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30142CD9773C001AF4DB /* RapidParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E60E307D2CD9773C001AF4DB /* PrototypeRapidParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30252CD9773C001AF4DB /* PrototypeRapidParseArray.include */; };
+		E60E307E2CD9773C001AF4DB /* RapidParser_LookingForNewlineForEXTINFState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E302C2CD9773C001AF4DB /* RapidParser_LookingForNewlineForEXTINFState_ParseArray.include */; };
+		E60E307F2CD9773C001AF4DB /* RapidParser_LookingForNForEXTINFState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E302F2CD9773C001AF4DB /* RapidParser_LookingForNForEXTINFState_ParseArray.include */; };
+		E60E30802CD9773C001AF4DB /* RapidParser_LookingForXForEXTState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30322CD9773C001AF4DB /* RapidParser_LookingForXForEXTState_ParseArray.include */; };
+		E60E30812CD9773C001AF4DB /* RapidParser_LookingForNewLineForEXTState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E302D2CD9773C001AF4DB /* RapidParser_LookingForNewLineForEXTState_ParseArray.include */; };
+		E60E30822CD9773C001AF4DB /* RapidParser_LookingForEForEXTINFState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30272CD9773C001AF4DB /* RapidParser_LookingForEForEXTINFState_ParseArray.include */; };
+		E60E30832CD9773C001AF4DB /* RapidParser_ScanningState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30332CD9773C001AF4DB /* RapidParser_ScanningState_ParseArray.include */; };
+		E60E30842CD9773C001AF4DB /* RapidParser_LookingForHashForEXTState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E302A2CD9773C001AF4DB /* RapidParser_LookingForHashForEXTState_ParseArray.include */; };
+		E60E30852CD9773C001AF4DB /* RapidParser_LookingForXForEXTINFState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30312CD9773C001AF4DB /* RapidParser_LookingForXForEXTINFState_ParseArray.include */; };
+		E60E30862CD9773C001AF4DB /* RapidParser_LookingForTForEXTINFState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30302CD9773C001AF4DB /* RapidParser_LookingForTForEXTINFState_ParseArray.include */; };
+		E60E30872CD9773C001AF4DB /* RapidParser_LookingForNewLineForHashState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E302E2CD9773C001AF4DB /* RapidParser_LookingForNewLineForHashState_ParseArray.include */; };
+		E60E30882CD9773C001AF4DB /* RapidParser_LookingForHashForEXTINFState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30292CD9773C001AF4DB /* RapidParser_LookingForHashForEXTINFState_ParseArray.include */; };
+		E60E30892CD9773C001AF4DB /* RapidParser_LookingForIForEXTINFState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E302B2CD9773C001AF4DB /* RapidParser_LookingForIForEXTINFState_ParseArray.include */; };
+		E60E308A2CD9773C001AF4DB /* RapidParser_LookingForEForEXTState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30282CD9773C001AF4DB /* RapidParser_LookingForEForEXTState_ParseArray.include */; };
+		E60E308B2CD9773C001AF4DB /* parseHLS.c in Sources */ = {isa = PBXBuildFile; fileRef = E60E30242CD9773C001AF4DB /* parseHLS.c */; };
+		E60E308C2CD9773C001AF4DB /* RapidParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E30262CD9773C001AF4DB /* RapidParser.m */; };
+		E60E308D2CD9773C001AF4DB /* MambaStringRef.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E301A2CD9773C001AF4DB /* MambaStringRef.m */; };
+		E60E308E2CD9773C001AF4DB /* MambaStringRef_ConcreteUnownedBytes.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E30202CD9773C001AF4DB /* MambaStringRef_ConcreteUnownedBytes.m */; };
+		E60E308F2CD9773C001AF4DB /* RapidParserStateHandlers.c in Sources */ = {isa = PBXBuildFile; fileRef = E60E303D2CD9773C001AF4DB /* RapidParserStateHandlers.c */; };
+		E60E30902CD9773C001AF4DB /* CMTimeMakeFromString.c in Sources */ = {isa = PBXBuildFile; fileRef = E60E30192CD9773C001AF4DB /* CMTimeMakeFromString.c */; };
+		E60E30912CD9773C001AF4DB /* RapidParserError.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E30352CD9773C001AF4DB /* RapidParserError.m */; };
+		E60E30922CD9773C001AF4DB /* MambaStringRef_ConcreteNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E301E2CD9773C001AF4DB /* MambaStringRef_ConcreteNSString.m */; };
+		E60E30932CD9773C001AF4DB /* MambaStringRef_ConcreteNSData.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E301C2CD9773C001AF4DB /* MambaStringRef_ConcreteNSData.m */; };
+		E60E30942CD9773C001AF4DB /* StaticMemoryStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E303E2CD9773C001AF4DB /* StaticMemoryStorage.m */; };
+		E60E30952CD9773C001AF4DB /* MambaStringRefFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E30222CD9773C001AF4DB /* MambaStringRefFactory.m */; };
+		E60E30962CD9773C001AF4DB /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = E60E30392CD9773C001AF4DB /* RapidParserMasterParseArray.c */; };
+		E60E30972CD9773C001AF4DB /* RapidParserLineState.c in Sources */ = {isa = PBXBuildFile; fileRef = E60E30372CD9773C001AF4DB /* RapidParserLineState.c */; };
+		E60E30982CD9773C001AF4DB /* CMTimeMakeFromString.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30122CD9773C001AF4DB /* CMTimeMakeFromString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E60E30992CD9773C001AF4DB /* MambaStringRef_ConcreteNSData.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E301B2CD9773C001AF4DB /* MambaStringRef_ConcreteNSData.h */; };
+		E60E309A2CD9773C001AF4DB /* MambaStringRef_ConcreteNSString.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E301D2CD9773C001AF4DB /* MambaStringRef_ConcreteNSString.h */; };
+		E60E309B2CD9773C001AF4DB /* MambaStringRef.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30132CD9773C001AF4DB /* MambaStringRef.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E60E309C2CD9773C001AF4DB /* RapidParserNewTagCallbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E303A2CD9773C001AF4DB /* RapidParserNewTagCallbacks.h */; };
+		E60E309D2CD9773C001AF4DB /* RapidParserDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30342CD9773C001AF4DB /* RapidParserDebug.h */; };
+		E60E309E2CD9773C001AF4DB /* parseHLS.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30232CD9773C001AF4DB /* parseHLS.h */; };
+		E60E309F2CD9773C001AF4DB /* MambaStringRefFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30212CD9773C001AF4DB /* MambaStringRefFactory.h */; };
+		E60E30A02CD9773C001AF4DB /* RapidParserStateHandlers.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E303C2CD9773C001AF4DB /* RapidParserStateHandlers.h */; };
+		E60E30A12CD9773C001AF4DB /* MambaStringRef_ConcreteUnownedBytes.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E301F2CD9773C001AF4DB /* MambaStringRef_ConcreteUnownedBytes.h */; };
+		E60E30A22CD9773C001AF4DB /* RapidParserLineState.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30362CD9773C001AF4DB /* RapidParserLineState.h */; };
+		E60E30A32CD9773C001AF4DB /* RapidParserCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30152CD9773C001AF4DB /* RapidParserCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E60E30A42CD9773C001AF4DB /* RapidParserMasterParseArray.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30382CD9773C001AF4DB /* RapidParserMasterParseArray.h */; };
+		E60E30A52CD9773C001AF4DB /* StaticMemoryStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30172CD9773C001AF4DB /* StaticMemoryStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E60E30A62CD9773C001AF4DB /* RapidParserError.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30162CD9773C001AF4DB /* RapidParserError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E60E30A72CD9773C001AF4DB /* RapidParserState.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E303B2CD9773C001AF4DB /* RapidParserState.h */; };
+		E60E30A82CD9773C001AF4DB /* RapidParser.h in Headers */ = {isa = PBXBuildFile; fileRef = E60E30142CD9773C001AF4DB /* RapidParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E60E30A92CD9773C001AF4DB /* parseHLS.c in Sources */ = {isa = PBXBuildFile; fileRef = E60E30242CD9773C001AF4DB /* parseHLS.c */; };
+		E60E30AA2CD9773C001AF4DB /* RapidParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E30262CD9773C001AF4DB /* RapidParser.m */; };
+		E60E30AB2CD9773C001AF4DB /* MambaStringRef.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E301A2CD9773C001AF4DB /* MambaStringRef.m */; };
+		E60E30AC2CD9773C001AF4DB /* MambaStringRef_ConcreteUnownedBytes.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E30202CD9773C001AF4DB /* MambaStringRef_ConcreteUnownedBytes.m */; };
+		E60E30AD2CD9773C001AF4DB /* RapidParserStateHandlers.c in Sources */ = {isa = PBXBuildFile; fileRef = E60E303D2CD9773C001AF4DB /* RapidParserStateHandlers.c */; };
+		E60E30AE2CD9773C001AF4DB /* CMTimeMakeFromString.c in Sources */ = {isa = PBXBuildFile; fileRef = E60E30192CD9773C001AF4DB /* CMTimeMakeFromString.c */; };
+		E60E30AF2CD9773C001AF4DB /* RapidParserError.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E30352CD9773C001AF4DB /* RapidParserError.m */; };
+		E60E30B02CD9773C001AF4DB /* MambaStringRef_ConcreteNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E301E2CD9773C001AF4DB /* MambaStringRef_ConcreteNSString.m */; };
+		E60E30B12CD9773C001AF4DB /* MambaStringRef_ConcreteNSData.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E301C2CD9773C001AF4DB /* MambaStringRef_ConcreteNSData.m */; };
+		E60E30B22CD9773C001AF4DB /* StaticMemoryStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E303E2CD9773C001AF4DB /* StaticMemoryStorage.m */; };
+		E60E30B32CD9773C001AF4DB /* MambaStringRefFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E60E30222CD9773C001AF4DB /* MambaStringRefFactory.m */; };
+		E60E30B42CD9773C001AF4DB /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = E60E30392CD9773C001AF4DB /* RapidParserMasterParseArray.c */; };
+		E60E30B52CD9773C001AF4DB /* RapidParserLineState.c in Sources */ = {isa = PBXBuildFile; fileRef = E60E30372CD9773C001AF4DB /* RapidParserLineState.c */; };
+		E60E30B62CD9773C001AF4DB /* PrototypeRapidParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30252CD9773C001AF4DB /* PrototypeRapidParseArray.include */; };
+		E60E30B72CD9773C001AF4DB /* RapidParser_LookingForNewlineForEXTINFState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E302C2CD9773C001AF4DB /* RapidParser_LookingForNewlineForEXTINFState_ParseArray.include */; };
+		E60E30B82CD9773C001AF4DB /* RapidParser_LookingForNForEXTINFState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E302F2CD9773C001AF4DB /* RapidParser_LookingForNForEXTINFState_ParseArray.include */; };
+		E60E30B92CD9773C001AF4DB /* RapidParser_LookingForXForEXTState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30322CD9773C001AF4DB /* RapidParser_LookingForXForEXTState_ParseArray.include */; };
+		E60E30BA2CD9773C001AF4DB /* RapidParser_LookingForNewLineForEXTState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E302D2CD9773C001AF4DB /* RapidParser_LookingForNewLineForEXTState_ParseArray.include */; };
+		E60E30BB2CD9773C001AF4DB /* RapidParser_LookingForEForEXTINFState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30272CD9773C001AF4DB /* RapidParser_LookingForEForEXTINFState_ParseArray.include */; };
+		E60E30BC2CD9773C001AF4DB /* RapidParser_ScanningState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30332CD9773C001AF4DB /* RapidParser_ScanningState_ParseArray.include */; };
+		E60E30BD2CD9773C001AF4DB /* RapidParser_LookingForHashForEXTState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E302A2CD9773C001AF4DB /* RapidParser_LookingForHashForEXTState_ParseArray.include */; };
+		E60E30BE2CD9773C001AF4DB /* RapidParser_LookingForXForEXTINFState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30312CD9773C001AF4DB /* RapidParser_LookingForXForEXTINFState_ParseArray.include */; };
+		E60E30BF2CD9773C001AF4DB /* RapidParser_LookingForTForEXTINFState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30302CD9773C001AF4DB /* RapidParser_LookingForTForEXTINFState_ParseArray.include */; };
+		E60E30C02CD9773C001AF4DB /* RapidParser_LookingForNewLineForHashState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E302E2CD9773C001AF4DB /* RapidParser_LookingForNewLineForHashState_ParseArray.include */; };
+		E60E30C12CD9773C001AF4DB /* RapidParser_LookingForHashForEXTINFState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30292CD9773C001AF4DB /* RapidParser_LookingForHashForEXTINFState_ParseArray.include */; };
+		E60E30C22CD9773C001AF4DB /* RapidParser_LookingForIForEXTINFState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E302B2CD9773C001AF4DB /* RapidParser_LookingForIForEXTINFState_ParseArray.include */; };
+		E60E30C32CD9773C001AF4DB /* RapidParser_LookingForEForEXTState_ParseArray.include in Resources */ = {isa = PBXBuildFile; fileRef = E60E30282CD9773C001AF4DB /* RapidParser_LookingForEForEXTState_ParseArray.include */; };
+		E60E30C62CD9774D001AF4DB /* PlaylistParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60E30C42CD9774D001AF4DB /* PlaylistParserError.swift */; };
+		E60E30C72CD9774D001AF4DB /* PlaylistParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60E30C42CD9774D001AF4DB /* PlaylistParserError.swift */; };
+		E60E30C82CD9774D001AF4DB /* PlaylistParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60E30C42CD9774D001AF4DB /* PlaylistParserError.swift */; };
+		E60E30CA2CD977C5001AF4DB /* MambaStringRef+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60E30C92CD977C5001AF4DB /* MambaStringRef+Extensions.swift */; };
+		E60E30CB2CD977C5001AF4DB /* MambaStringRef+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60E30C92CD977C5001AF4DB /* MambaStringRef+Extensions.swift */; };
+		E60E30CC2CD977C5001AF4DB /* MambaStringRef+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60E30C92CD977C5001AF4DB /* MambaStringRef+Extensions.swift */; };
+		E65FB2422CD51E4200BF6F56 /* InterstitialValueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB2412CD51E4200BF6F56 /* InterstitialValueTypes.swift */; };
+		E65FB2432CD51E4200BF6F56 /* InterstitialValueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB2412CD51E4200BF6F56 /* InterstitialValueTypes.swift */; };
+		E65FB2442CD51E4200BF6F56 /* InterstitialValueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB2412CD51E4200BF6F56 /* InterstitialValueTypes.swift */; };
+		E65FB2462CD5241D00BF6F56 /* InterstitialValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB2452CD5241D00BF6F56 /* InterstitialValueTests.swift */; };
+		E65FB2472CD5241D00BF6F56 /* InterstitialValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB2452CD5241D00BF6F56 /* InterstitialValueTests.swift */; };
+		E65FB2482CD5241D00BF6F56 /* InterstitialValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB2452CD5241D00BF6F56 /* InterstitialValueTests.swift */; };
+		E65FB24A2CD524BF00BF6F56 /* InterstitialTagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB2492CD524BF00BF6F56 /* InterstitialTagBuilder.swift */; };
+		E65FB24B2CD524BF00BF6F56 /* InterstitialTagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB2492CD524BF00BF6F56 /* InterstitialTagBuilder.swift */; };
+		E65FB24C2CD524BF00BF6F56 /* InterstitialTagBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB2492CD524BF00BF6F56 /* InterstitialTagBuilder.swift */; };
+		E65FB24E2CD526DD00BF6F56 /* InterstitialTagBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB24D2CD526DD00BF6F56 /* InterstitialTagBuilderTests.swift */; };
+		E65FB24F2CD526DD00BF6F56 /* InterstitialTagBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB24D2CD526DD00BF6F56 /* InterstitialTagBuilderTests.swift */; };
+		E65FB2502CD526DD00BF6F56 /* InterstitialTagBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65FB24D2CD526DD00BF6F56 /* InterstitialTagBuilderTests.swift */; };
 		EC0677DC21641FE500E715D1 /* CMTimeMakeFromStringCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0677DB21641FE500E715D1 /* CMTimeMakeFromStringCTests.m */; };
 		EC0677DD21641FE500E715D1 /* CMTimeMakeFromStringCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0677DB21641FE500E715D1 /* CMTimeMakeFromStringCTests.m */; };
 		EC0677DE2165753500E715D1 /* CMTimeMakeFromStringCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0677DB21641FE500E715D1 /* CMTimeMakeFromStringCTests.m */; };
@@ -124,33 +236,6 @@
 		EC1CCCF5209A2CF9006B59FF /* PlaylistTimelineTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE36DE01F2A9D94005E5DA7 /* PlaylistTimelineTranslator.swift */; };
 		EC1CCCF6209A2CF9006B59FF /* PlaylistTagGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC44248B1E9694C600AECFAB /* PlaylistTagGroup.swift */; };
 		EC1CCCF7209A2CF9006B59FF /* StructureState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC4105F1EA02F4800B4E3C8 /* StructureState.swift */; };
-		EC1CCCFA209A2CF9006B59FF /* MambaStringRef.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6441E5CC56B00BF1F97 /* MambaStringRef.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC1CCCFB209A2CF9006B59FF /* MambaStringRef.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6451E5CC56B00BF1F97 /* MambaStringRef.m */; };
-		EC1CCCFC209A2CF9006B59FF /* MambaStringRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6461E5CC56B00BF1F97 /* MambaStringRef.swift */; };
-		EC1CCCFD209A2CF9006B59FF /* MambaStringRefFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F73183731E78758B00ED8E59 /* MambaStringRefFactory.h */; };
-		EC1CCCFE209A2CF9006B59FF /* MambaStringRefFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F73183741E78758B00ED8E59 /* MambaStringRefFactory.m */; };
-		EC1CCCFF209A2CF9006B59FF /* MambaStringRef_ConcreteNSData.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD3B1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.h */; };
-		EC1CCD00209A2CF9006B59FF /* MambaStringRef_ConcreteNSData.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD3C1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.m */; };
-		EC1CCD01209A2CF9006B59FF /* MambaStringRef_ConcreteNSString.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD351E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.h */; };
-		EC1CCD02209A2CF9006B59FF /* MambaStringRef_ConcreteNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD361E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.m */; };
-		EC1CCD03209A2CF9006B59FF /* MambaStringRef_ConcreteUnownedBytes.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD2F1E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.h */; };
-		EC1CCD04209A2CF9006B59FF /* MambaStringRef_ConcreteUnownedBytes.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD301E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.m */; };
-		EC1CCD06209A2CF9006B59FF /* RapidParserMasterParseArray.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */; };
-		EC1CCD07209A2CF9006B59FF /* RapidParserMasterParseArray.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B63C1E5CC55800BF1F97 /* RapidParserMasterParseArray.h */; };
-		EC1CCD15209A2CF9006B59FF /* RapidParser.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6411E5CC56B00BF1F97 /* RapidParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC1CCD16209A2CF9006B59FF /* RapidParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6421E5CC56B00BF1F97 /* RapidParser.m */; };
-		EC1CCD17209A2CF9006B59FF /* RapidParserCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6431E5CC56B00BF1F97 /* RapidParserCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC1CCD18209A2CF9006B59FF /* parseHLS.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6471E5CC56B00BF1F97 /* parseHLS.c */; };
-		EC1CCD19209A2CF9006B59FF /* parseHLS.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6481E5CC56B00BF1F97 /* parseHLS.h */; };
-		EC1CCD1A209A2CF9006B59FF /* RapidParserDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6491E5CC56B00BF1F97 /* RapidParserDebug.h */; };
-		EC1CCD1B209A2CF9006B59FF /* RapidParserError.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64B1E5CC56B00BF1F97 /* RapidParserError.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC1CCD1C209A2CF9006B59FF /* RapidParserError.m in Sources */ = {isa = PBXBuildFile; fileRef = EC03B64A1E5CC56B00BF1F97 /* RapidParserError.m */; };
-		EC1CCD1D209A2CF9006B59FF /* RapidParserLineState.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B64C1E5CC56B00BF1F97 /* RapidParserLineState.c */; };
-		EC1CCD1E209A2CF9006B59FF /* RapidParserLineState.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64D1E5CC56B00BF1F97 /* RapidParserLineState.h */; };
-		EC1CCD1F209A2CF9006B59FF /* RapidParserNewTagCallbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64E1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h */; };
-		EC1CCD20209A2CF9006B59FF /* RapidParserState.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B64F1E5CC56B00BF1F97 /* RapidParserState.h */; };
-		EC1CCD21209A2CF9006B59FF /* RapidParserStateHandlers.c in Sources */ = {isa = PBXBuildFile; fileRef = EC03B6501E5CC56B00BF1F97 /* RapidParserStateHandlers.c */; };
-		EC1CCD22209A2CF9006B59FF /* RapidParserStateHandlers.h in Headers */ = {isa = PBXBuildFile; fileRef = EC03B6511E5CC56B00BF1F97 /* RapidParserStateHandlers.h */; };
 		EC1CCD23209A2CF9006B59FF /* CollectionType+FindExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74916B1DD29B5D00AF4E20 /* CollectionType+FindExtensions.swift */; };
 		EC1CCD24209A2CF9006B59FF /* CollectionType+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74916C1DD29B5D00AF4E20 /* CollectionType+Safe.swift */; };
 		EC1CCD25209A2CF9006B59FF /* PlaylistTagArray+RenditionGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BB018C1E2EABD500CA006E /* PlaylistTagArray+RenditionGroups.swift */; };
@@ -161,8 +246,6 @@
 		EC1CCD2B209A2CF9006B59FF /* IndeterminateBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC42A5F11FD9B88E00317EA5 /* IndeterminateBool.swift */; };
 		EC1CCD2C209A2CF9006B59FF /* OutputStream+HLSWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC95477B1E5CC7C800962535 /* OutputStream+HLSWriting.swift */; };
 		EC1CCD2D209A2CF9006B59FF /* RegisteredPlaylistTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491611DD29B0F00AF4E20 /* RegisteredPlaylistTags.swift */; };
-		EC1CCD2E209A2CF9006B59FF /* CMTimeMakeFromString.c in Sources */ = {isa = PBXBuildFile; fileRef = F7CFF2771F38CACF009F4C82 /* CMTimeMakeFromString.c */; };
-		EC1CCD2F209A2CF9006B59FF /* CMTimeMakeFromString.h in Headers */ = {isa = PBXBuildFile; fileRef = F7CFF2781F38CACF009F4C82 /* CMTimeMakeFromString.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC1CCD30209A2CF9006B59FF /* String+DateParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917A1DD29C3500AF4E20 /* String+DateParsing.swift */; };
 		EC1CCD31209A2CF9006B59FF /* String+EquatableMambaTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917B1DD29C3500AF4E20 /* String+EquatableMambaTypes.swift */; };
 		EC1CCD32209A2CF9006B59FF /* String+Trim.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC74917C1DD29C3500AF4E20 /* String+Trim.swift */; };
@@ -202,7 +285,6 @@
 		EC1CCD56209A2CF9006B59FF /* LocationTagWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491E51DD29DBB00AF4E20 /* LocationTagWriter.swift */; };
 		EC1CCD57209A2CF9006B59FF /* PantosTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491CB1DD29D7C00AF4E20 /* PantosTag.swift */; };
 		EC1CCD58209A2CF9006B59FF /* PantosValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491CC1DD29D7C00AF4E20 /* PantosValue.swift */; };
-		EC1CCD5A209A2CF9006B59FF /* PlaylistParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70E9E991E8C43C8006022C6 /* PlaylistParserError.swift */; };
 		EC1CCD5B209A2CF9006B59FF /* PlaylistTagDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AA1DD29D5C00AF4E20 /* PlaylistTagDescriptor.swift */; };
 		EC1CCD5C209A2CF9006B59FF /* PlaylistTagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AB1DD29D5C00AF4E20 /* PlaylistTagParser.swift */; };
 		EC1CCD5D209A2CF9006B59FF /* PlaylistTagValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AC1DD29D5C00AF4E20 /* PlaylistTagValidator.swift */; };
@@ -211,12 +293,6 @@
 		EC1CCD60209A2CF9006B59FF /* PlaylistValidationIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491AF1DD29D5C00AF4E20 /* PlaylistValidationIssue.swift */; };
 		EC1CCD61209A2CF9006B59FF /* ValueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B11DD29D5C00AF4E20 /* ValueTypes.swift */; };
 		EC1CCD62209A2CF9006B59FF /* PlaylistWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7491B21DD29D5C00AF4E20 /* PlaylistWriter.swift */; };
-		EC318B51226534AF00969E2D /* StaticMemoryStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = EC318B4F226534AF00969E2D /* StaticMemoryStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC318B52226534AF00969E2D /* StaticMemoryStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = EC318B4F226534AF00969E2D /* StaticMemoryStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC318B53226534AF00969E2D /* StaticMemoryStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = EC318B4F226534AF00969E2D /* StaticMemoryStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC318B54226534AF00969E2D /* StaticMemoryStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = EC318B50226534AF00969E2D /* StaticMemoryStorage.m */; };
-		EC318B55226534AF00969E2D /* StaticMemoryStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = EC318B50226534AF00969E2D /* StaticMemoryStorage.m */; };
-		EC318B56226534AF00969E2D /* StaticMemoryStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = EC318B50226534AF00969E2D /* StaticMemoryStorage.m */; };
 		EC318B58226534F400969E2D /* StaticMemoryStorageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC318B57226534F400969E2D /* StaticMemoryStorageTests.m */; };
 		EC318B59226534F400969E2D /* StaticMemoryStorageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC318B57226534F400969E2D /* StaticMemoryStorageTests.m */; };
 		EC318B5A226534F400969E2D /* StaticMemoryStorageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC318B57226534F400969E2D /* StaticMemoryStorageTests.m */; };
@@ -598,28 +674,6 @@
 		ECFBD9131E5CCC2200379FC2 /* RapidParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD90D1E5CCC2200379FC2 /* RapidParserTests.swift */; };
 		ECFBD9151E5CCCB100379FC2 /* PantosTagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD9141E5CCCB100379FC2 /* PantosTagTests.swift */; };
 		ECFBD9161E5CCCB100379FC2 /* PantosTagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFBD9141E5CCCB100379FC2 /* PantosTagTests.swift */; };
-		F700CD311E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD2F1E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.h */; };
-		F700CD321E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD2F1E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.h */; };
-		F700CD331E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD301E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.m */; };
-		F700CD341E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD301E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.m */; };
-		F700CD371E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD351E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.h */; };
-		F700CD381E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD351E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.h */; };
-		F700CD391E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD361E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.m */; };
-		F700CD3A1E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD361E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.m */; };
-		F700CD3D1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD3B1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.h */; };
-		F700CD3E1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.h in Headers */ = {isa = PBXBuildFile; fileRef = F700CD3B1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.h */; };
-		F700CD3F1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD3C1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.m */; };
-		F700CD401E78AA57001C9487 /* MambaStringRef_ConcreteNSData.m in Sources */ = {isa = PBXBuildFile; fileRef = F700CD3C1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.m */; };
-		F70E9E9A1E8C43C8006022C6 /* PlaylistParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70E9E991E8C43C8006022C6 /* PlaylistParserError.swift */; };
-		F70E9E9B1E8C43C8006022C6 /* PlaylistParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70E9E991E8C43C8006022C6 /* PlaylistParserError.swift */; };
-		F73183751E78758B00ED8E59 /* MambaStringRefFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F73183731E78758B00ED8E59 /* MambaStringRefFactory.h */; };
-		F73183761E78758B00ED8E59 /* MambaStringRefFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = F73183731E78758B00ED8E59 /* MambaStringRefFactory.h */; };
-		F73183771E78758B00ED8E59 /* MambaStringRefFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F73183741E78758B00ED8E59 /* MambaStringRefFactory.m */; };
-		F73183781E78758B00ED8E59 /* MambaStringRefFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F73183741E78758B00ED8E59 /* MambaStringRefFactory.m */; };
-		F7CFF2791F38CACF009F4C82 /* CMTimeMakeFromString.c in Sources */ = {isa = PBXBuildFile; fileRef = F7CFF2771F38CACF009F4C82 /* CMTimeMakeFromString.c */; };
-		F7CFF27A1F38CACF009F4C82 /* CMTimeMakeFromString.c in Sources */ = {isa = PBXBuildFile; fileRef = F7CFF2771F38CACF009F4C82 /* CMTimeMakeFromString.c */; };
-		F7CFF27B1F38CACF009F4C82 /* CMTimeMakeFromString.h in Headers */ = {isa = PBXBuildFile; fileRef = F7CFF2781F38CACF009F4C82 /* CMTimeMakeFromString.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F7CFF27C1F38CACF009F4C82 /* CMTimeMakeFromString.h in Headers */ = {isa = PBXBuildFile; fileRef = F7CFF2781F38CACF009F4C82 /* CMTimeMakeFromString.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F7CFF27E1F392009009F4C82 /* CMTimeMakeFromStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CFF27D1F392009009F4C82 /* CMTimeMakeFromStringTests.swift */; };
 		F7CFF27F1F392009009F4C82 /* CMTimeMakeFromStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CFF27D1F392009009F4C82 /* CMTimeMakeFromStringTests.swift */; };
 /* End PBXBuildFile section */
@@ -670,39 +724,56 @@
 		883290551EA172170064588B /* MambaStringRefExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MambaStringRefExtensionTests.swift; sourceTree = "<group>"; };
 		D44E03761E3BAC9F00126B52 /* PlaylistTag+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlaylistTag+Util.swift"; sourceTree = "<group>"; };
 		D4BB018C1E2EABD500CA006E /* PlaylistTagArray+RenditionGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlaylistTagArray+RenditionGroups.swift"; sourceTree = "<group>"; };
-		EC03B62D1E5CC54900BF1F97 /* PrototypeRapidParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrototypeRapidParseArray.include; sourceTree = "<group>"; };
-		EC03B62E1E5CC54900BF1F97 /* RapidParser_LookingForEForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForEForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
-		EC03B62F1E5CC54900BF1F97 /* RapidParser_LookingForEForEXTState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForEForEXTState_ParseArray.include; sourceTree = "<group>"; };
-		EC03B6301E5CC54900BF1F97 /* RapidParser_LookingForHashForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForHashForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
-		EC03B6311E5CC54900BF1F97 /* RapidParser_LookingForHashForEXTState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForHashForEXTState_ParseArray.include; sourceTree = "<group>"; };
-		EC03B6321E5CC54900BF1F97 /* RapidParser_LookingForIForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForIForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
-		EC03B6331E5CC54900BF1F97 /* RapidParser_LookingForNewlineForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForNewlineForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
-		EC03B6341E5CC54900BF1F97 /* RapidParser_LookingForNewLineForEXTState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForNewLineForEXTState_ParseArray.include; sourceTree = "<group>"; };
-		EC03B6351E5CC54900BF1F97 /* RapidParser_LookingForNewLineForHashState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForNewLineForHashState_ParseArray.include; sourceTree = "<group>"; };
-		EC03B6361E5CC54900BF1F97 /* RapidParser_LookingForNForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForNForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
-		EC03B6371E5CC54900BF1F97 /* RapidParser_LookingForTForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForTForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
-		EC03B6381E5CC54900BF1F97 /* RapidParser_LookingForXForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForXForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
-		EC03B6391E5CC54900BF1F97 /* RapidParser_LookingForXForEXTState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForXForEXTState_ParseArray.include; sourceTree = "<group>"; };
-		EC03B63A1E5CC54900BF1F97 /* RapidParser_ScanningState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_ScanningState_ParseArray.include; sourceTree = "<group>"; };
-		EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RapidParserMasterParseArray.c; sourceTree = "<group>"; };
-		EC03B63C1E5CC55800BF1F97 /* RapidParserMasterParseArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserMasterParseArray.h; sourceTree = "<group>"; };
-		EC03B6411E5CC56B00BF1F97 /* RapidParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParser.h; sourceTree = "<group>"; };
-		EC03B6421E5CC56B00BF1F97 /* RapidParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RapidParser.m; sourceTree = "<group>"; };
-		EC03B6431E5CC56B00BF1F97 /* RapidParserCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserCallback.h; sourceTree = "<group>"; };
-		EC03B6441E5CC56B00BF1F97 /* MambaStringRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MambaStringRef.h; sourceTree = "<group>"; };
-		EC03B6451E5CC56B00BF1F97 /* MambaStringRef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MambaStringRef.m; sourceTree = "<group>"; };
-		EC03B6461E5CC56B00BF1F97 /* MambaStringRef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MambaStringRef.swift; sourceTree = "<group>"; };
-		EC03B6471E5CC56B00BF1F97 /* parseHLS.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = parseHLS.c; sourceTree = "<group>"; };
-		EC03B6481E5CC56B00BF1F97 /* parseHLS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parseHLS.h; sourceTree = "<group>"; };
-		EC03B6491E5CC56B00BF1F97 /* RapidParserDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserDebug.h; sourceTree = "<group>"; };
-		EC03B64A1E5CC56B00BF1F97 /* RapidParserError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RapidParserError.m; sourceTree = "<group>"; };
-		EC03B64B1E5CC56B00BF1F97 /* RapidParserError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserError.h; sourceTree = "<group>"; };
-		EC03B64C1E5CC56B00BF1F97 /* RapidParserLineState.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RapidParserLineState.c; sourceTree = "<group>"; };
-		EC03B64D1E5CC56B00BF1F97 /* RapidParserLineState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserLineState.h; sourceTree = "<group>"; };
-		EC03B64E1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserNewTagCallbacks.h; sourceTree = "<group>"; };
-		EC03B64F1E5CC56B00BF1F97 /* RapidParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserState.h; sourceTree = "<group>"; };
-		EC03B6501E5CC56B00BF1F97 /* RapidParserStateHandlers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RapidParserStateHandlers.c; sourceTree = "<group>"; };
-		EC03B6511E5CC56B00BF1F97 /* RapidParserStateHandlers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RapidParserStateHandlers.h; sourceTree = "<group>"; };
+		E60E30122CD9773C001AF4DB /* CMTimeMakeFromString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMTimeMakeFromString.h; sourceTree = "<group>"; };
+		E60E30132CD9773C001AF4DB /* MambaStringRef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MambaStringRef.h; sourceTree = "<group>"; };
+		E60E30142CD9773C001AF4DB /* RapidParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RapidParser.h; sourceTree = "<group>"; };
+		E60E30152CD9773C001AF4DB /* RapidParserCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RapidParserCallback.h; sourceTree = "<group>"; };
+		E60E30162CD9773C001AF4DB /* RapidParserError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RapidParserError.h; sourceTree = "<group>"; };
+		E60E30172CD9773C001AF4DB /* StaticMemoryStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaticMemoryStorage.h; sourceTree = "<group>"; };
+		E60E30192CD9773C001AF4DB /* CMTimeMakeFromString.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = CMTimeMakeFromString.c; sourceTree = "<group>"; };
+		E60E301A2CD9773C001AF4DB /* MambaStringRef.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MambaStringRef.m; sourceTree = "<group>"; };
+		E60E301B2CD9773C001AF4DB /* MambaStringRef_ConcreteNSData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MambaStringRef_ConcreteNSData.h; sourceTree = "<group>"; };
+		E60E301C2CD9773C001AF4DB /* MambaStringRef_ConcreteNSData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MambaStringRef_ConcreteNSData.m; sourceTree = "<group>"; };
+		E60E301D2CD9773C001AF4DB /* MambaStringRef_ConcreteNSString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MambaStringRef_ConcreteNSString.h; sourceTree = "<group>"; };
+		E60E301E2CD9773C001AF4DB /* MambaStringRef_ConcreteNSString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MambaStringRef_ConcreteNSString.m; sourceTree = "<group>"; };
+		E60E301F2CD9773C001AF4DB /* MambaStringRef_ConcreteUnownedBytes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MambaStringRef_ConcreteUnownedBytes.h; sourceTree = "<group>"; };
+		E60E30202CD9773C001AF4DB /* MambaStringRef_ConcreteUnownedBytes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MambaStringRef_ConcreteUnownedBytes.m; sourceTree = "<group>"; };
+		E60E30212CD9773C001AF4DB /* MambaStringRefFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MambaStringRefFactory.h; sourceTree = "<group>"; };
+		E60E30222CD9773C001AF4DB /* MambaStringRefFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MambaStringRefFactory.m; sourceTree = "<group>"; };
+		E60E30232CD9773C001AF4DB /* parseHLS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = parseHLS.h; sourceTree = "<group>"; };
+		E60E30242CD9773C001AF4DB /* parseHLS.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = parseHLS.c; sourceTree = "<group>"; };
+		E60E30252CD9773C001AF4DB /* PrototypeRapidParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrototypeRapidParseArray.include; sourceTree = "<group>"; };
+		E60E30262CD9773C001AF4DB /* RapidParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RapidParser.m; sourceTree = "<group>"; };
+		E60E30272CD9773C001AF4DB /* RapidParser_LookingForEForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForEForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
+		E60E30282CD9773C001AF4DB /* RapidParser_LookingForEForEXTState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForEForEXTState_ParseArray.include; sourceTree = "<group>"; };
+		E60E30292CD9773C001AF4DB /* RapidParser_LookingForHashForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForHashForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
+		E60E302A2CD9773C001AF4DB /* RapidParser_LookingForHashForEXTState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForHashForEXTState_ParseArray.include; sourceTree = "<group>"; };
+		E60E302B2CD9773C001AF4DB /* RapidParser_LookingForIForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForIForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
+		E60E302C2CD9773C001AF4DB /* RapidParser_LookingForNewlineForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForNewlineForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
+		E60E302D2CD9773C001AF4DB /* RapidParser_LookingForNewLineForEXTState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForNewLineForEXTState_ParseArray.include; sourceTree = "<group>"; };
+		E60E302E2CD9773C001AF4DB /* RapidParser_LookingForNewLineForHashState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForNewLineForHashState_ParseArray.include; sourceTree = "<group>"; };
+		E60E302F2CD9773C001AF4DB /* RapidParser_LookingForNForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForNForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
+		E60E30302CD9773C001AF4DB /* RapidParser_LookingForTForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForTForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
+		E60E30312CD9773C001AF4DB /* RapidParser_LookingForXForEXTINFState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForXForEXTINFState_ParseArray.include; sourceTree = "<group>"; };
+		E60E30322CD9773C001AF4DB /* RapidParser_LookingForXForEXTState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_LookingForXForEXTState_ParseArray.include; sourceTree = "<group>"; };
+		E60E30332CD9773C001AF4DB /* RapidParser_ScanningState_ParseArray.include */ = {isa = PBXFileReference; lastKnownFileType = text; path = RapidParser_ScanningState_ParseArray.include; sourceTree = "<group>"; };
+		E60E30342CD9773C001AF4DB /* RapidParserDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RapidParserDebug.h; sourceTree = "<group>"; };
+		E60E30352CD9773C001AF4DB /* RapidParserError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RapidParserError.m; sourceTree = "<group>"; };
+		E60E30362CD9773C001AF4DB /* RapidParserLineState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RapidParserLineState.h; sourceTree = "<group>"; };
+		E60E30372CD9773C001AF4DB /* RapidParserLineState.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = RapidParserLineState.c; sourceTree = "<group>"; };
+		E60E30382CD9773C001AF4DB /* RapidParserMasterParseArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RapidParserMasterParseArray.h; sourceTree = "<group>"; };
+		E60E30392CD9773C001AF4DB /* RapidParserMasterParseArray.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = RapidParserMasterParseArray.c; sourceTree = "<group>"; };
+		E60E303A2CD9773C001AF4DB /* RapidParserNewTagCallbacks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RapidParserNewTagCallbacks.h; sourceTree = "<group>"; };
+		E60E303B2CD9773C001AF4DB /* RapidParserState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RapidParserState.h; sourceTree = "<group>"; };
+		E60E303C2CD9773C001AF4DB /* RapidParserStateHandlers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RapidParserStateHandlers.h; sourceTree = "<group>"; };
+		E60E303D2CD9773C001AF4DB /* RapidParserStateHandlers.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = RapidParserStateHandlers.c; sourceTree = "<group>"; };
+		E60E303E2CD9773C001AF4DB /* StaticMemoryStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StaticMemoryStorage.m; sourceTree = "<group>"; };
+		E60E30C42CD9774D001AF4DB /* PlaylistParserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistParserError.swift; sourceTree = "<group>"; };
+		E60E30C92CD977C5001AF4DB /* MambaStringRef+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MambaStringRef+Extensions.swift"; sourceTree = "<group>"; };
+		E65FB2412CD51E4200BF6F56 /* InterstitialValueTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialValueTypes.swift; sourceTree = "<group>"; };
+		E65FB2452CD5241D00BF6F56 /* InterstitialValueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialValueTests.swift; sourceTree = "<group>"; };
+		E65FB2492CD524BF00BF6F56 /* InterstitialTagBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialTagBuilder.swift; sourceTree = "<group>"; };
+		E65FB24D2CD526DD00BF6F56 /* InterstitialTagBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialTagBuilderTests.swift; sourceTree = "<group>"; };
 		EC0677DB21641FE500E715D1 /* CMTimeMakeFromStringCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMTimeMakeFromStringCTests.m; sourceTree = "<group>"; };
 		EC073F591FE072DC00689228 /* TagCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionTests.swift; sourceTree = "<group>"; };
 		EC073F5C1FE0840000689228 /* OutputStreamExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputStreamExtensionTests.swift; sourceTree = "<group>"; };
@@ -724,8 +795,6 @@
 		EC1CCCDA209A2AF8006B59FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC1CCCDF209A2AF8006B59FF /* mambaMacOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mambaMacOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1CCCE6209A2AF8006B59FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC318B4F226534AF00969E2D /* StaticMemoryStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaticMemoryStorage.h; sourceTree = "<group>"; };
-		EC318B50226534AF00969E2D /* StaticMemoryStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StaticMemoryStorage.m; sourceTree = "<group>"; };
 		EC318B57226534F400969E2D /* StaticMemoryStorageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StaticMemoryStorageTests.m; sourceTree = "<group>"; };
 		EC349AC02236BFAC0077432B /* PlaylistCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCore.swift; sourceTree = "<group>"; };
 		EC349AC42236BFF10077432B /* PlaylistInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistInterface.swift; sourceTree = "<group>"; };
@@ -866,17 +935,6 @@
 		ECFBD90C1E5CCC2200379FC2 /* ParseArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseArrayTests.m; sourceTree = "<group>"; };
 		ECFBD90D1E5CCC2200379FC2 /* RapidParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidParserTests.swift; sourceTree = "<group>"; };
 		ECFBD9141E5CCCB100379FC2 /* PantosTagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantosTagTests.swift; sourceTree = "<group>"; };
-		F700CD2F1E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MambaStringRef_ConcreteUnownedBytes.h; sourceTree = "<group>"; };
-		F700CD301E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MambaStringRef_ConcreteUnownedBytes.m; sourceTree = "<group>"; };
-		F700CD351E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MambaStringRef_ConcreteNSString.h; sourceTree = "<group>"; };
-		F700CD361E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MambaStringRef_ConcreteNSString.m; sourceTree = "<group>"; };
-		F700CD3B1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MambaStringRef_ConcreteNSData.h; sourceTree = "<group>"; };
-		F700CD3C1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MambaStringRef_ConcreteNSData.m; sourceTree = "<group>"; };
-		F70E9E991E8C43C8006022C6 /* PlaylistParserError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistParserError.swift; sourceTree = "<group>"; };
-		F73183731E78758B00ED8E59 /* MambaStringRefFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MambaStringRefFactory.h; sourceTree = "<group>"; };
-		F73183741E78758B00ED8E59 /* MambaStringRefFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MambaStringRefFactory.m; sourceTree = "<group>"; };
-		F7CFF2771F38CACF009F4C82 /* CMTimeMakeFromString.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CMTimeMakeFromString.c; sourceTree = "<group>"; };
-		F7CFF2781F38CACF009F4C82 /* CMTimeMakeFromString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMTimeMakeFromString.h; sourceTree = "<group>"; };
 		F7CFF27D1F392009009F4C82 /* CMTimeMakeFromStringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMTimeMakeFromStringTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -975,52 +1033,71 @@
 			path = "Pantos-Generic Tag Validators";
 			sourceTree = "<group>";
 		};
-		EC03B62B1E5CC51C00BF1F97 /* Rapid Parser */ = {
+		E60E30182CD9773C001AF4DB /* include */ = {
 			isa = PBXGroup;
 			children = (
-				F73183721E7872AB00ED8E59 /* MambaStringRef */,
-				EC03B6411E5CC56B00BF1F97 /* RapidParser.h */,
-				EC03B6421E5CC56B00BF1F97 /* RapidParser.m */,
-				EC03B6431E5CC56B00BF1F97 /* RapidParserCallback.h */,
-				EC03B62C1E5CC52C00BF1F97 /* Master Parse Array */,
-				EC03B6471E5CC56B00BF1F97 /* parseHLS.c */,
-				EC03B6481E5CC56B00BF1F97 /* parseHLS.h */,
-				EC03B6491E5CC56B00BF1F97 /* RapidParserDebug.h */,
-				EC03B64B1E5CC56B00BF1F97 /* RapidParserError.h */,
-				EC03B64A1E5CC56B00BF1F97 /* RapidParserError.m */,
-				EC03B64C1E5CC56B00BF1F97 /* RapidParserLineState.c */,
-				EC03B64D1E5CC56B00BF1F97 /* RapidParserLineState.h */,
-				EC03B64E1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h */,
-				EC03B64F1E5CC56B00BF1F97 /* RapidParserState.h */,
-				EC03B6501E5CC56B00BF1F97 /* RapidParserStateHandlers.c */,
-				EC03B6511E5CC56B00BF1F97 /* RapidParserStateHandlers.h */,
-				EC318B4F226534AF00969E2D /* StaticMemoryStorage.h */,
-				EC318B50226534AF00969E2D /* StaticMemoryStorage.m */,
+				E60E30122CD9773C001AF4DB /* CMTimeMakeFromString.h */,
+				E60E30132CD9773C001AF4DB /* MambaStringRef.h */,
+				E60E30142CD9773C001AF4DB /* RapidParser.h */,
+				E60E30152CD9773C001AF4DB /* RapidParserCallback.h */,
+				E60E30162CD9773C001AF4DB /* RapidParserError.h */,
+				E60E30172CD9773C001AF4DB /* StaticMemoryStorage.h */,
 			);
-			path = "Rapid Parser";
+			path = include;
 			sourceTree = "<group>";
 		};
-		EC03B62C1E5CC52C00BF1F97 /* Master Parse Array */ = {
+		E60E303F2CD9773C001AF4DB /* HLS ObjectiveC */ = {
 			isa = PBXGroup;
 			children = (
-				EC03B62D1E5CC54900BF1F97 /* PrototypeRapidParseArray.include */,
-				EC03B63B1E5CC55800BF1F97 /* RapidParserMasterParseArray.c */,
-				EC03B63C1E5CC55800BF1F97 /* RapidParserMasterParseArray.h */,
-				EC03B62E1E5CC54900BF1F97 /* RapidParser_LookingForEForEXTINFState_ParseArray.include */,
-				EC03B62F1E5CC54900BF1F97 /* RapidParser_LookingForEForEXTState_ParseArray.include */,
-				EC03B6301E5CC54900BF1F97 /* RapidParser_LookingForHashForEXTINFState_ParseArray.include */,
-				EC03B6311E5CC54900BF1F97 /* RapidParser_LookingForHashForEXTState_ParseArray.include */,
-				EC03B6321E5CC54900BF1F97 /* RapidParser_LookingForIForEXTINFState_ParseArray.include */,
-				EC03B6361E5CC54900BF1F97 /* RapidParser_LookingForNForEXTINFState_ParseArray.include */,
-				EC03B6341E5CC54900BF1F97 /* RapidParser_LookingForNewLineForEXTState_ParseArray.include */,
-				EC03B6351E5CC54900BF1F97 /* RapidParser_LookingForNewLineForHashState_ParseArray.include */,
-				EC03B6331E5CC54900BF1F97 /* RapidParser_LookingForNewlineForEXTINFState_ParseArray.include */,
-				EC03B6371E5CC54900BF1F97 /* RapidParser_LookingForTForEXTINFState_ParseArray.include */,
-				EC03B6381E5CC54900BF1F97 /* RapidParser_LookingForXForEXTINFState_ParseArray.include */,
-				EC03B6391E5CC54900BF1F97 /* RapidParser_LookingForXForEXTState_ParseArray.include */,
-				EC03B63A1E5CC54900BF1F97 /* RapidParser_ScanningState_ParseArray.include */,
+				E60E30182CD9773C001AF4DB /* include */,
+				E60E30192CD9773C001AF4DB /* CMTimeMakeFromString.c */,
+				E60E301A2CD9773C001AF4DB /* MambaStringRef.m */,
+				E60E301B2CD9773C001AF4DB /* MambaStringRef_ConcreteNSData.h */,
+				E60E301C2CD9773C001AF4DB /* MambaStringRef_ConcreteNSData.m */,
+				E60E301D2CD9773C001AF4DB /* MambaStringRef_ConcreteNSString.h */,
+				E60E301E2CD9773C001AF4DB /* MambaStringRef_ConcreteNSString.m */,
+				E60E301F2CD9773C001AF4DB /* MambaStringRef_ConcreteUnownedBytes.h */,
+				E60E30202CD9773C001AF4DB /* MambaStringRef_ConcreteUnownedBytes.m */,
+				E60E30212CD9773C001AF4DB /* MambaStringRefFactory.h */,
+				E60E30222CD9773C001AF4DB /* MambaStringRefFactory.m */,
+				E60E30232CD9773C001AF4DB /* parseHLS.h */,
+				E60E30242CD9773C001AF4DB /* parseHLS.c */,
+				E60E30252CD9773C001AF4DB /* PrototypeRapidParseArray.include */,
+				E60E30262CD9773C001AF4DB /* RapidParser.m */,
+				E60E30272CD9773C001AF4DB /* RapidParser_LookingForEForEXTINFState_ParseArray.include */,
+				E60E30282CD9773C001AF4DB /* RapidParser_LookingForEForEXTState_ParseArray.include */,
+				E60E30292CD9773C001AF4DB /* RapidParser_LookingForHashForEXTINFState_ParseArray.include */,
+				E60E302A2CD9773C001AF4DB /* RapidParser_LookingForHashForEXTState_ParseArray.include */,
+				E60E302B2CD9773C001AF4DB /* RapidParser_LookingForIForEXTINFState_ParseArray.include */,
+				E60E302C2CD9773C001AF4DB /* RapidParser_LookingForNewlineForEXTINFState_ParseArray.include */,
+				E60E302D2CD9773C001AF4DB /* RapidParser_LookingForNewLineForEXTState_ParseArray.include */,
+				E60E302E2CD9773C001AF4DB /* RapidParser_LookingForNewLineForHashState_ParseArray.include */,
+				E60E302F2CD9773C001AF4DB /* RapidParser_LookingForNForEXTINFState_ParseArray.include */,
+				E60E30302CD9773C001AF4DB /* RapidParser_LookingForTForEXTINFState_ParseArray.include */,
+				E60E30312CD9773C001AF4DB /* RapidParser_LookingForXForEXTINFState_ParseArray.include */,
+				E60E30322CD9773C001AF4DB /* RapidParser_LookingForXForEXTState_ParseArray.include */,
+				E60E30332CD9773C001AF4DB /* RapidParser_ScanningState_ParseArray.include */,
+				E60E30342CD9773C001AF4DB /* RapidParserDebug.h */,
+				E60E30352CD9773C001AF4DB /* RapidParserError.m */,
+				E60E30362CD9773C001AF4DB /* RapidParserLineState.h */,
+				E60E30372CD9773C001AF4DB /* RapidParserLineState.c */,
+				E60E30382CD9773C001AF4DB /* RapidParserMasterParseArray.h */,
+				E60E30392CD9773C001AF4DB /* RapidParserMasterParseArray.c */,
+				E60E303A2CD9773C001AF4DB /* RapidParserNewTagCallbacks.h */,
+				E60E303B2CD9773C001AF4DB /* RapidParserState.h */,
+				E60E303C2CD9773C001AF4DB /* RapidParserStateHandlers.h */,
+				E60E303D2CD9773C001AF4DB /* RapidParserStateHandlers.c */,
+				E60E303E2CD9773C001AF4DB /* StaticMemoryStorage.m */,
 			);
-			path = "Master Parse Array";
+			path = "HLS ObjectiveC";
+			sourceTree = "<group>";
+		};
+		E60E30C52CD9774D001AF4DB /* PlaylistParserError */ = {
+			isa = PBXGroup;
+			children = (
+				E60E30C42CD9774D001AF4DB /* PlaylistParserError.swift */,
+			);
+			path = PlaylistParserError;
 			sourceTree = "<group>";
 		};
 		EC1418351D21BAD000B5CE32 /* Tag Parser Helpers */ = {
@@ -1093,12 +1170,13 @@
 		EC1521821DD2857B006FB265 /* mambaSharedFramework */ = {
 			isa = PBXGroup;
 			children = (
+				E60E30C92CD977C5001AF4DB /* MambaStringRef+Extensions.swift */,
+				E60E303F2CD9773C001AF4DB /* HLS ObjectiveC */,
 				722A207D26AB38C800134820 /* FrameworkInfo.swift */,
 				EC1521511DD28536006FB265 /* mamba.h */,
 				ECBE47001D33F4100081D096 /* Pantos-Generic Playlist Parsing */,
 				F795EAF01D909D1900534F7E /* Playlist Models */,
 				ECDE184B22383230008566BB /* PlaylistParser.swift */,
-				F70E9E991E8C43C8006022C6 /* PlaylistParserError.swift */,
 				EC7491AA1DD29D5C00AF4E20 /* PlaylistTagDescriptor.swift */,
 				EC7491AB1DD29D5C00AF4E20 /* PlaylistTagParser.swift */,
 				EC7491AC1DD29D5C00AF4E20 /* PlaylistTagValidator.swift */,
@@ -1106,9 +1184,11 @@
 				EC7491AE1DD29D5C00AF4E20 /* PlaylistTagWriter.swift */,
 				EC7491AF1DD29D5C00AF4E20 /* PlaylistValidationIssue.swift */,
 				EC7491B21DD29D5C00AF4E20 /* PlaylistWriter.swift */,
-				EC03B62B1E5CC51C00BF1F97 /* Rapid Parser */,
 				EC7ECA011D30177A000EEB7D /* Utils */,
 				EC7491B11DD29D5C00AF4E20 /* ValueTypes.swift */,
+				E65FB2412CD51E4200BF6F56 /* InterstitialValueTypes.swift */,
+				E65FB2492CD524BF00BF6F56 /* InterstitialTagBuilder.swift */,
+				E60E30C52CD9774D001AF4DB /* PlaylistParserError */,
 			);
 			path = mambaSharedFramework;
 			sourceTree = "<group>";
@@ -1199,8 +1279,6 @@
 		EC60B5931D52681100421ACF /* String Util */ = {
 			isa = PBXGroup;
 			children = (
-				F7CFF2771F38CACF009F4C82 /* CMTimeMakeFromString.c */,
-				F7CFF2781F38CACF009F4C82 /* CMTimeMakeFromString.h */,
 				EC74917A1DD29C3500AF4E20 /* String+DateParsing.swift */,
 				EC74917B1DD29C3500AF4E20 /* String+EquatableMambaTypes.swift */,
 				EC74917C1DD29C3500AF4E20 /* String+Trim.swift */,
@@ -1323,6 +1401,7 @@
 				EC073F5F1FE08F7500689228 /* String+Helio.swift */,
 				EC7492A61DD29F7000AF4E20 /* URLSchemeChangeTests.swift */,
 				EC9BCAA21D749D8B0032BEBE /* Value Types */,
+				E65FB24D2CD526DD00BF6F56 /* InterstitialTagBuilderTests.swift */,
 			);
 			path = "Util Tests";
 			sourceTree = "<group>";
@@ -1347,6 +1426,7 @@
 				EC7492B11DD29F8900AF4E20 /* PlaylistTypeTests.swift */,
 				EC7492B21DD29F8900AF4E20 /* ResolutionTests.swift */,
 				1447583C2C8693E000D12CCD /* VideoLayoutTests.swift */,
+				E65FB2452CD5241D00BF6F56 /* InterstitialValueTests.swift */,
 			);
 			path = "Value Types";
 			sourceTree = "<group>";
@@ -1387,24 +1467,6 @@
 			path = "Rapid Parsing Tests";
 			sourceTree = "<group>";
 		};
-		F73183721E7872AB00ED8E59 /* MambaStringRef */ = {
-			isa = PBXGroup;
-			children = (
-				EC03B6441E5CC56B00BF1F97 /* MambaStringRef.h */,
-				EC03B6451E5CC56B00BF1F97 /* MambaStringRef.m */,
-				EC03B6461E5CC56B00BF1F97 /* MambaStringRef.swift */,
-				F73183731E78758B00ED8E59 /* MambaStringRefFactory.h */,
-				F73183741E78758B00ED8E59 /* MambaStringRefFactory.m */,
-				F700CD3B1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.h */,
-				F700CD3C1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.m */,
-				F700CD351E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.h */,
-				F700CD361E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.m */,
-				F700CD2F1E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.h */,
-				F700CD301E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.m */,
-			);
-			path = MambaStringRef;
-			sourceTree = "<group>";
-		};
 		F795EAF01D909D1900534F7E /* Playlist Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -1427,24 +1489,24 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC03B63F1E5CC55800BF1F97 /* RapidParserMasterParseArray.h in Headers */,
-				EC03B6581E5CC56B00BF1F97 /* MambaStringRef.h in Headers */,
-				F73183751E78758B00ED8E59 /* MambaStringRefFactory.h in Headers */,
-				F700CD311E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.h in Headers */,
-				EC03B6621E5CC56B00BF1F97 /* RapidParserDebug.h in Headers */,
-				F700CD371E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.h in Headers */,
-				EC03B6721E5CC56B00BF1F97 /* RapidParserStateHandlers.h in Headers */,
-				EC318B51226534AF00969E2D /* StaticMemoryStorage.h in Headers */,
-				EC03B66C1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h in Headers */,
-				EC03B66A1E5CC56B00BF1F97 /* RapidParserLineState.h in Headers */,
-				EC03B66E1E5CC56B00BF1F97 /* RapidParserState.h in Headers */,
-				EC03B6521E5CC56B00BF1F97 /* RapidParser.h in Headers */,
-				F700CD3D1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.h in Headers */,
-				F7CFF27B1F38CACF009F4C82 /* CMTimeMakeFromString.h in Headers */,
+				E60E30982CD9773C001AF4DB /* CMTimeMakeFromString.h in Headers */,
+				E60E30992CD9773C001AF4DB /* MambaStringRef_ConcreteNSData.h in Headers */,
+				E60E309A2CD9773C001AF4DB /* MambaStringRef_ConcreteNSString.h in Headers */,
+				E60E309B2CD9773C001AF4DB /* MambaStringRef.h in Headers */,
+				E60E309C2CD9773C001AF4DB /* RapidParserNewTagCallbacks.h in Headers */,
+				E60E309D2CD9773C001AF4DB /* RapidParserDebug.h in Headers */,
+				E60E309E2CD9773C001AF4DB /* parseHLS.h in Headers */,
+				E60E309F2CD9773C001AF4DB /* MambaStringRefFactory.h in Headers */,
+				E60E30A02CD9773C001AF4DB /* RapidParserStateHandlers.h in Headers */,
+				E60E30A12CD9773C001AF4DB /* MambaStringRef_ConcreteUnownedBytes.h in Headers */,
+				E60E30A22CD9773C001AF4DB /* RapidParserLineState.h in Headers */,
+				E60E30A32CD9773C001AF4DB /* RapidParserCallback.h in Headers */,
+				E60E30A42CD9773C001AF4DB /* RapidParserMasterParseArray.h in Headers */,
+				E60E30A52CD9773C001AF4DB /* StaticMemoryStorage.h in Headers */,
+				E60E30A62CD9773C001AF4DB /* RapidParserError.h in Headers */,
+				E60E30A72CD9773C001AF4DB /* RapidParserState.h in Headers */,
+				E60E30A82CD9773C001AF4DB /* RapidParser.h in Headers */,
 				EC15215F1DD28536006FB265 /* mamba.h in Headers */,
-				EC03B6601E5CC56B00BF1F97 /* parseHLS.h in Headers */,
-				EC03B6561E5CC56B00BF1F97 /* RapidParserCallback.h in Headers */,
-				EC03B6661E5CC56B00BF1F97 /* RapidParserError.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1452,24 +1514,24 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC03B6401E5CC55800BF1F97 /* RapidParserMasterParseArray.h in Headers */,
-				EC03B6591E5CC56B00BF1F97 /* MambaStringRef.h in Headers */,
-				F73183761E78758B00ED8E59 /* MambaStringRefFactory.h in Headers */,
-				F700CD321E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.h in Headers */,
-				EC03B6631E5CC56B00BF1F97 /* RapidParserDebug.h in Headers */,
-				F700CD381E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.h in Headers */,
-				EC03B6731E5CC56B00BF1F97 /* RapidParserStateHandlers.h in Headers */,
-				EC318B52226534AF00969E2D /* StaticMemoryStorage.h in Headers */,
-				EC03B66D1E5CC56B00BF1F97 /* RapidParserNewTagCallbacks.h in Headers */,
 				ECFBD9011E5CCA0900379FC2 /* mamba.h in Headers */,
-				EC03B66B1E5CC56B00BF1F97 /* RapidParserLineState.h in Headers */,
-				EC03B66F1E5CC56B00BF1F97 /* RapidParserState.h in Headers */,
-				F700CD3E1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.h in Headers */,
-				F7CFF27C1F38CACF009F4C82 /* CMTimeMakeFromString.h in Headers */,
-				EC03B6531E5CC56B00BF1F97 /* RapidParser.h in Headers */,
-				EC03B6611E5CC56B00BF1F97 /* parseHLS.h in Headers */,
-				EC03B6571E5CC56B00BF1F97 /* RapidParserCallback.h in Headers */,
-				EC03B6671E5CC56B00BF1F97 /* RapidParserError.h in Headers */,
+				E60E306C2CD9773C001AF4DB /* CMTimeMakeFromString.h in Headers */,
+				E60E306D2CD9773C001AF4DB /* MambaStringRef_ConcreteNSData.h in Headers */,
+				E60E306E2CD9773C001AF4DB /* MambaStringRef_ConcreteNSString.h in Headers */,
+				E60E306F2CD9773C001AF4DB /* MambaStringRef.h in Headers */,
+				E60E30702CD9773C001AF4DB /* RapidParserNewTagCallbacks.h in Headers */,
+				E60E30712CD9773C001AF4DB /* RapidParserDebug.h in Headers */,
+				E60E30722CD9773C001AF4DB /* parseHLS.h in Headers */,
+				E60E30732CD9773C001AF4DB /* MambaStringRefFactory.h in Headers */,
+				E60E30742CD9773C001AF4DB /* RapidParserStateHandlers.h in Headers */,
+				E60E30752CD9773C001AF4DB /* MambaStringRef_ConcreteUnownedBytes.h in Headers */,
+				E60E30762CD9773C001AF4DB /* RapidParserLineState.h in Headers */,
+				E60E30772CD9773C001AF4DB /* RapidParserCallback.h in Headers */,
+				E60E30782CD9773C001AF4DB /* RapidParserMasterParseArray.h in Headers */,
+				E60E30792CD9773C001AF4DB /* StaticMemoryStorage.h in Headers */,
+				E60E307A2CD9773C001AF4DB /* RapidParserError.h in Headers */,
+				E60E307B2CD9773C001AF4DB /* RapidParserState.h in Headers */,
+				E60E307C2CD9773C001AF4DB /* RapidParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1477,24 +1539,24 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC1CCD01209A2CF9006B59FF /* MambaStringRef_ConcreteNSString.h in Headers */,
-				EC1CCD17209A2CF9006B59FF /* RapidParserCallback.h in Headers */,
 				ECE253BA209A485E00D388CE /* mamba.h in Headers */,
-				EC1CCD15209A2CF9006B59FF /* RapidParser.h in Headers */,
-				EC1CCCFA209A2CF9006B59FF /* MambaStringRef.h in Headers */,
-				EC1CCD03209A2CF9006B59FF /* MambaStringRef_ConcreteUnownedBytes.h in Headers */,
-				EC1CCD19209A2CF9006B59FF /* parseHLS.h in Headers */,
-				EC318B53226534AF00969E2D /* StaticMemoryStorage.h in Headers */,
-				EC1CCD07209A2CF9006B59FF /* RapidParserMasterParseArray.h in Headers */,
-				EC1CCD1A209A2CF9006B59FF /* RapidParserDebug.h in Headers */,
-				EC1CCCFD209A2CF9006B59FF /* MambaStringRefFactory.h in Headers */,
-				EC1CCCFF209A2CF9006B59FF /* MambaStringRef_ConcreteNSData.h in Headers */,
-				EC1CCD20209A2CF9006B59FF /* RapidParserState.h in Headers */,
-				EC1CCD2F209A2CF9006B59FF /* CMTimeMakeFromString.h in Headers */,
-				EC1CCD1F209A2CF9006B59FF /* RapidParserNewTagCallbacks.h in Headers */,
-				EC1CCD1B209A2CF9006B59FF /* RapidParserError.h in Headers */,
-				EC1CCD1E209A2CF9006B59FF /* RapidParserLineState.h in Headers */,
-				EC1CCD22209A2CF9006B59FF /* RapidParserStateHandlers.h in Headers */,
+				E60E304E2CD9773C001AF4DB /* CMTimeMakeFromString.h in Headers */,
+				E60E304F2CD9773C001AF4DB /* MambaStringRef_ConcreteNSData.h in Headers */,
+				E60E30502CD9773C001AF4DB /* MambaStringRef_ConcreteNSString.h in Headers */,
+				E60E30512CD9773C001AF4DB /* MambaStringRef.h in Headers */,
+				E60E30522CD9773C001AF4DB /* RapidParserNewTagCallbacks.h in Headers */,
+				E60E30532CD9773C001AF4DB /* RapidParserDebug.h in Headers */,
+				E60E30542CD9773C001AF4DB /* parseHLS.h in Headers */,
+				E60E30552CD9773C001AF4DB /* MambaStringRefFactory.h in Headers */,
+				E60E30562CD9773C001AF4DB /* RapidParserStateHandlers.h in Headers */,
+				E60E30572CD9773C001AF4DB /* MambaStringRef_ConcreteUnownedBytes.h in Headers */,
+				E60E30582CD9773C001AF4DB /* RapidParserLineState.h in Headers */,
+				E60E30592CD9773C001AF4DB /* RapidParserCallback.h in Headers */,
+				E60E305A2CD9773C001AF4DB /* RapidParserMasterParseArray.h in Headers */,
+				E60E305B2CD9773C001AF4DB /* StaticMemoryStorage.h in Headers */,
+				E60E305C2CD9773C001AF4DB /* RapidParserError.h in Headers */,
+				E60E305D2CD9773C001AF4DB /* RapidParserState.h in Headers */,
+				E60E305E2CD9773C001AF4DB /* RapidParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1678,6 +1740,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E60E30B62CD9773C001AF4DB /* PrototypeRapidParseArray.include in Resources */,
+				E60E30B72CD9773C001AF4DB /* RapidParser_LookingForNewlineForEXTINFState_ParseArray.include in Resources */,
+				E60E30B82CD9773C001AF4DB /* RapidParser_LookingForNForEXTINFState_ParseArray.include in Resources */,
+				E60E30B92CD9773C001AF4DB /* RapidParser_LookingForXForEXTState_ParseArray.include in Resources */,
+				E60E30BA2CD9773C001AF4DB /* RapidParser_LookingForNewLineForEXTState_ParseArray.include in Resources */,
+				E60E30BB2CD9773C001AF4DB /* RapidParser_LookingForEForEXTINFState_ParseArray.include in Resources */,
+				E60E30BC2CD9773C001AF4DB /* RapidParser_ScanningState_ParseArray.include in Resources */,
+				E60E30BD2CD9773C001AF4DB /* RapidParser_LookingForHashForEXTState_ParseArray.include in Resources */,
+				E60E30BE2CD9773C001AF4DB /* RapidParser_LookingForXForEXTINFState_ParseArray.include in Resources */,
+				E60E30BF2CD9773C001AF4DB /* RapidParser_LookingForTForEXTINFState_ParseArray.include in Resources */,
+				E60E30C02CD9773C001AF4DB /* RapidParser_LookingForNewLineForHashState_ParseArray.include in Resources */,
+				E60E30C12CD9773C001AF4DB /* RapidParser_LookingForHashForEXTINFState_ParseArray.include in Resources */,
+				E60E30C22CD9773C001AF4DB /* RapidParser_LookingForIForEXTINFState_ParseArray.include in Resources */,
+				E60E30C32CD9773C001AF4DB /* RapidParser_LookingForEForEXTState_ParseArray.include in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1715,6 +1791,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E60E307D2CD9773C001AF4DB /* PrototypeRapidParseArray.include in Resources */,
+				E60E307E2CD9773C001AF4DB /* RapidParser_LookingForNewlineForEXTINFState_ParseArray.include in Resources */,
+				E60E307F2CD9773C001AF4DB /* RapidParser_LookingForNForEXTINFState_ParseArray.include in Resources */,
+				E60E30802CD9773C001AF4DB /* RapidParser_LookingForXForEXTState_ParseArray.include in Resources */,
+				E60E30812CD9773C001AF4DB /* RapidParser_LookingForNewLineForEXTState_ParseArray.include in Resources */,
+				E60E30822CD9773C001AF4DB /* RapidParser_LookingForEForEXTINFState_ParseArray.include in Resources */,
+				E60E30832CD9773C001AF4DB /* RapidParser_ScanningState_ParseArray.include in Resources */,
+				E60E30842CD9773C001AF4DB /* RapidParser_LookingForHashForEXTState_ParseArray.include in Resources */,
+				E60E30852CD9773C001AF4DB /* RapidParser_LookingForXForEXTINFState_ParseArray.include in Resources */,
+				E60E30862CD9773C001AF4DB /* RapidParser_LookingForTForEXTINFState_ParseArray.include in Resources */,
+				E60E30872CD9773C001AF4DB /* RapidParser_LookingForNewLineForHashState_ParseArray.include in Resources */,
+				E60E30882CD9773C001AF4DB /* RapidParser_LookingForHashForEXTINFState_ParseArray.include in Resources */,
+				E60E30892CD9773C001AF4DB /* RapidParser_LookingForIForEXTINFState_ParseArray.include in Resources */,
+				E60E308A2CD9773C001AF4DB /* RapidParser_LookingForEForEXTState_ParseArray.include in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1752,6 +1842,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E60E30402CD9773C001AF4DB /* PrototypeRapidParseArray.include in Resources */,
+				E60E30412CD9773C001AF4DB /* RapidParser_LookingForNewlineForEXTINFState_ParseArray.include in Resources */,
+				E60E30422CD9773C001AF4DB /* RapidParser_LookingForNForEXTINFState_ParseArray.include in Resources */,
+				E60E30432CD9773C001AF4DB /* RapidParser_LookingForXForEXTState_ParseArray.include in Resources */,
+				E60E30442CD9773C001AF4DB /* RapidParser_LookingForNewLineForEXTState_ParseArray.include in Resources */,
+				E60E30452CD9773C001AF4DB /* RapidParser_LookingForEForEXTINFState_ParseArray.include in Resources */,
+				E60E30462CD9773C001AF4DB /* RapidParser_ScanningState_ParseArray.include in Resources */,
+				E60E30472CD9773C001AF4DB /* RapidParser_LookingForHashForEXTState_ParseArray.include in Resources */,
+				E60E30482CD9773C001AF4DB /* RapidParser_LookingForXForEXTINFState_ParseArray.include in Resources */,
+				E60E30492CD9773C001AF4DB /* RapidParser_LookingForTForEXTINFState_ParseArray.include in Resources */,
+				E60E304A2CD9773C001AF4DB /* RapidParser_LookingForNewLineForHashState_ParseArray.include in Resources */,
+				E60E304B2CD9773C001AF4DB /* RapidParser_LookingForHashForEXTINFState_ParseArray.include in Resources */,
+				E60E304C2CD9773C001AF4DB /* RapidParser_LookingForIForEXTINFState_ParseArray.include in Resources */,
+				E60E304D2CD9773C001AF4DB /* RapidParser_LookingForEForEXTState_ParseArray.include in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1806,6 +1910,7 @@
 				EC349AD62236F55F0077432B /* MasterPlaylistStructure.swift in Sources */,
 				ECDE18442238114E008566BB /* VariantPlaylist.swift in Sources */,
 				EC7491721DD29B5D00AF4E20 /* OrderedDictionary.swift in Sources */,
+				E65FB24A2CD524BF00BF6F56 /* InterstitialTagBuilder.swift in Sources */,
 				EC3B01BF1DD4D49A00B512E3 /* PlaylistTagCardinalityValidator.swift in Sources */,
 				EC7491FA1DD29DD300AF4E20 /* GenericSingleTagValidator.swift in Sources */,
 				EC9547851E5CC83C00962535 /* NoOpTagParser.swift in Sources */,
@@ -1815,7 +1920,6 @@
 				EC3B01C91DD4D49A00B512E3 /* PlaylistRenditionGroupMatchingPROGRAM_IDValidator.swift in Sources */,
 				EC349AC52236BFF10077432B /* PlaylistInterface.swift in Sources */,
 				6DD0A1AD242F85C800FF7AAE /* EXT_X_DATERANGETagValidator.swift in Sources */,
-				F700CD331E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.m in Sources */,
 				EC95478B1E5CC86300962535 /* EXTINFValidator.swift in Sources */,
 				EC9826021DD3A113003BCDA5 /* URLSchemeChangeExtension.swift in Sources */,
 				EC3B01CF1DD4D49A00B512E3 /* PlaylistTagGroupValidator.swift in Sources */,
@@ -1824,9 +1928,6 @@
 				EC7491BD1DD29D5C00AF4E20 /* PlaylistTagValidator.swift in Sources */,
 				EC349AD22236CB860077432B /* PlaylistStructureCore.swift in Sources */,
 				EC74917F1DD29C3500AF4E20 /* String+EquatableMambaTypes.swift in Sources */,
-				EC03B65A1E5CC56B00BF1F97 /* MambaStringRef.m in Sources */,
-				EC03B6541E5CC56B00BF1F97 /* RapidParser.m in Sources */,
-				F70E9E9A1E8C43C8006022C6 /* PlaylistParserError.swift in Sources */,
 				EC7491701DD29B5D00AF4E20 /* CollectionType+Safe.swift in Sources */,
 				6DD0A1B1242FADC600FF7AAE /* EXT_X_DATERANGEPlaylistValidator.swift in Sources */,
 				EC7491BB1DD29D5C00AF4E20 /* PlaylistTagParser.swift in Sources */,
@@ -1835,31 +1936,25 @@
 				EC7491B91DD29D5C00AF4E20 /* PlaylistTagDescriptor.swift in Sources */,
 				EC3B01AD1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupTYPEValidator.swift in Sources */,
 				EC3B01B11DD4D47900B512E3 /* EXT_X_TARGETDURATIONLengthValidator.swift in Sources */,
-				EC03B63D1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */,
 				ECDE185D22396E7D008566BB /* PlaylistValidator.swift in Sources */,
 				EC3B01C11DD4D49A00B512E3 /* PlaylistCollectionValidator.swift in Sources */,
 				EC9547821E5CC82500962535 /* GenericTagWriter.swift in Sources */,
-				F700CD3F1E78AA57001C9487 /* MambaStringRef_ConcreteNSData.m in Sources */,
-				F7CFF2791F38CACF009F4C82 /* CMTimeMakeFromString.c in Sources */,
 				EC349ADA2236F56A0077432B /* VariantPlaylistStructure.swift in Sources */,
 				EC7491FC1DD29DD300AF4E20 /* DictionaryTagValueIdentifier.swift in Sources */,
 				43DE4EFD1E564DBE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift in Sources */,
 				EC7491C71DD29D5C00AF4E20 /* ValueTypes.swift in Sources */,
 				EC7491EF1DD29DBB00AF4E20 /* GenericSingleTagWriter.swift in Sources */,
-				EC03B65C1E5CC56B00BF1F97 /* MambaStringRef.swift in Sources */,
 				EC3B01C51DD4D49A00B512E3 /* PlaylistRenditionGroupAudioVideoValidator.swift in Sources */,
 				ECDE184822381E6C008566BB /* PlaylistURLDataExtensions.swift in Sources */,
 				EC7491591DD29AED00AF4E20 /* PlaylistTag.swift in Sources */,
 				EC3B01AF1DD4D47900B512E3 /* EXT_X_STREAM_INFRenditionGroupValidator.swift in Sources */,
 				EC3B01CB1DD4D49A00B512E3 /* PlaylistRenditionGroupValidator.swift in Sources */,
-				EC318B54226534AF00969E2D /* StaticMemoryStorage.m in Sources */,
-				EC03B6701E5CC56B00BF1F97 /* RapidParserStateHandlers.c in Sources */,
 				EC7491F81DD29DD300AF4E20 /* GenericDictionaryTagValidator.swift in Sources */,
 				EC7491631DD29B0F00AF4E20 /* CoreMedia+Util.swift in Sources */,
-				EC03B65E1E5CC56B00BF1F97 /* parseHLS.c in Sources */,
 				D44E03771E3BAC9F00126B52 /* PlaylistTag+Util.swift in Sources */,
 				EC7491F11DD29DBB00AF4E20 /* LocationTagWriter.swift in Sources */,
 				ECDE185922396846008566BB /* MasterPlaylistValidator.swift in Sources */,
+				E60E30C62CD9774D001AF4DB /* PlaylistParserError.swift in Sources */,
 				EC7491671DD29B0F00AF4E20 /* RegisteredPlaylistTags.swift in Sources */,
 				ECDE185522396833008566BB /* VariantPlaylistValidator.swift in Sources */,
 				EC95477C1E5CC7C800962535 /* OutputStream+HLSWriting.swift in Sources */,
@@ -1871,23 +1966,34 @@
 				EC676A7822B05BF0008920BB /* MasterPlaylistStreamSummary.swift in Sources */,
 				EC7491461DD299B400AF4E20 /* PlaylistTypes.swift in Sources */,
 				EC349ACE2236C3A60077432B /* PlaylistStructureInterface.swift in Sources */,
+				E65FB2432CD51E4200BF6F56 /* InterstitialValueTypes.swift in Sources */,
 				EC3B01A71DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift in Sources */,
-				F700CD391E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.m in Sources */,
 				144758312C83C72B00D12CCD /* EXT_X_SESSION_DATATagValidator.swift in Sources */,
 				1447582D2C83C20800D12CCD /* EXT_X_SESSION_KEYValidator.swift in Sources */,
 				43DE4EFB1E564DA300EEE800 /* EXT_X_STARTTimeOffsetValidator.swift in Sources */,
 				EC74918A1DD29CCB00AF4E20 /* StringDictionaryParser.swift in Sources */,
 				ECDE184022381146008566BB /* MasterPlaylist.swift in Sources */,
-				F73183771E78758B00ED8E59 /* MambaStringRefFactory.m in Sources */,
 				EC349ADE2236F57F0077432B /* MasterPlaylistType.swift in Sources */,
 				D4BB018D1E2EABD500CA006E /* PlaylistTagArray+RenditionGroups.swift in Sources */,
 				EC7491881DD29CCB00AF4E20 /* StringArrayParser.swift in Sources */,
+				E60E30A92CD9773C001AF4DB /* parseHLS.c in Sources */,
+				E60E30AA2CD9773C001AF4DB /* RapidParser.m in Sources */,
+				E60E30AB2CD9773C001AF4DB /* MambaStringRef.m in Sources */,
+				E60E30AC2CD9773C001AF4DB /* MambaStringRef_ConcreteUnownedBytes.m in Sources */,
+				E60E30AD2CD9773C001AF4DB /* RapidParserStateHandlers.c in Sources */,
+				E60E30AE2CD9773C001AF4DB /* CMTimeMakeFromString.c in Sources */,
+				E60E30AF2CD9773C001AF4DB /* RapidParserError.m in Sources */,
+				E60E30B02CD9773C001AF4DB /* MambaStringRef_ConcreteNSString.m in Sources */,
+				E60E30B12CD9773C001AF4DB /* MambaStringRef_ConcreteNSData.m in Sources */,
+				E60E30B22CD9773C001AF4DB /* StaticMemoryStorage.m in Sources */,
+				E60E30B32CD9773C001AF4DB /* MambaStringRefFactory.m in Sources */,
+				E60E30B42CD9773C001AF4DB /* RapidParserMasterParseArray.c in Sources */,
+				E60E30CA2CD977C5001AF4DB /* MambaStringRef+Extensions.swift in Sources */,
+				E60E30B52CD9773C001AF4DB /* RapidParserLineState.c in Sources */,
 				EC7491D81DD29D9600AF4E20 /* GenericDictionaryTagParser.swift in Sources */,
 				EC676A6822AF0D8D008920BB /* VariantPlaylistTagMatchSegmentInfo.swift in Sources */,
-				EC03B6681E5CC56B00BF1F97 /* RapidParserLineState.c in Sources */,
 				722A207E26AB38C800134820 /* FrameworkInfo.swift in Sources */,
 				EC7491EB1DD29DBB00AF4E20 /* GenericDictionaryTagWriter.swift in Sources */,
-				EC03B6641E5CC56B00BF1F97 /* RapidParserError.m in Sources */,
 				EC7491DC1DD29D9600AF4E20 /* GenericSingleValueTagParser.swift in Sources */,
 				EC7491CF1DD29D7C00AF4E20 /* PantosValue.swift in Sources */,
 				EC7491CD1DD29D7C00AF4E20 /* PantosTag.swift in Sources */,
@@ -1910,6 +2016,7 @@
 				EC7492761DD29EC800AF4E20 /* EXT_X_KEYTagParserTests.swift in Sources */,
 				883290561EA172170064588B /* MambaStringRefExtensionTests.swift in Sources */,
 				ECDE185122387257008566BB /* VariantPlaylistMediaSpanTests.swift in Sources */,
+				E65FB2502CD526DD00BF6F56 /* InterstitialTagBuilderTests.swift in Sources */,
 				EC7492A91DD29F7000AF4E20 /* MambaUtilTests.swift in Sources */,
 				EC7492741DD29EC800AF4E20 /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift in Sources */,
 				ECFBD90E1E5CCC2200379FC2 /* MambaStringRefTests.m in Sources */,
@@ -1940,6 +2047,7 @@
 				EC7492AD1DD29F7000AF4E20 /* URLSchemeChangeTests.swift in Sources */,
 				ECFBD9031E5CCAAF00379FC2 /* XCTestCase+mamba.swift in Sources */,
 				EC7492A11DD29F4600AF4E20 /* ThirdPartyTagListSupportTests.swift in Sources */,
+				E65FB2472CD5241D00BF6F56 /* InterstitialValueTests.swift in Sources */,
 				3D933C1A2193367C0029069F /* EXT-X-BITRATETagParserTests.swift in Sources */,
 				EC073F5D1FE0840000689228 /* OutputStreamExtensionTests.swift in Sources */,
 				ECC410671EA1527700B4E3C8 /* PlaylistTagGroupTests.swift in Sources */,
@@ -1983,6 +2091,7 @@
 				EC349AD72236F55F0077432B /* MasterPlaylistStructure.swift in Sources */,
 				ECDE18452238114E008566BB /* VariantPlaylist.swift in Sources */,
 				EC7491CA1DD29D5C00AF4E20 /* PlaylistWriter.swift in Sources */,
+				E65FB24C2CD524BF00BF6F56 /* InterstitialTagBuilder.swift in Sources */,
 				EC3B01A61DD4D47900B512E3 /* EXT_X_KEYValidator.swift in Sources */,
 				EC7491731DD29B5D00AF4E20 /* OrderedDictionary.swift in Sources */,
 				EC3B01C01DD4D49A00B512E3 /* PlaylistTagCardinalityValidator.swift in Sources */,
@@ -1992,7 +2101,6 @@
 				EC7491FB1DD29DD300AF4E20 /* GenericSingleTagValidator.swift in Sources */,
 				EC349AC62236BFF10077432B /* PlaylistInterface.swift in Sources */,
 				6DD0A1AE242F85C800FF7AAE /* EXT_X_DATERANGETagValidator.swift in Sources */,
-				F700CD341E78A0B9001C9487 /* MambaStringRef_ConcreteUnownedBytes.m in Sources */,
 				EC95478C1E5CC86300962535 /* EXTINFValidator.swift in Sources */,
 				EC7491C01DD29D5C00AF4E20 /* PlaylistTagValueIdentifier.swift in Sources */,
 				EC3B01CA1DD4D49A00B512E3 /* PlaylistRenditionGroupMatchingPROGRAM_IDValidator.swift in Sources */,
@@ -2002,41 +2110,32 @@
 				EC349AD32236CB860077432B /* PlaylistStructureCore.swift in Sources */,
 				EC3B01D01DD4D49A00B512E3 /* PlaylistTagGroupValidator.swift in Sources */,
 				EC7491BE1DD29D5C00AF4E20 /* PlaylistTagValidator.swift in Sources */,
-				EC03B65B1E5CC56B00BF1F97 /* MambaStringRef.m in Sources */,
 				EC7491801DD29C3500AF4E20 /* String+EquatableMambaTypes.swift in Sources */,
-				F70E9E9B1E8C43C8006022C6 /* PlaylistParserError.swift in Sources */,
 				6DD0A1B2242FADC600FF7AAE /* EXT_X_DATERANGEPlaylistValidator.swift in Sources */,
-				EC03B6551E5CC56B00BF1F97 /* RapidParser.m in Sources */,
 				EC7491711DD29B5D00AF4E20 /* CollectionType+Safe.swift in Sources */,
 				EC7491BC1DD29D5C00AF4E20 /* PlaylistTagParser.swift in Sources */,
 				EC7491C21DD29D5C00AF4E20 /* PlaylistTagWriter.swift in Sources */,
 				EC3B01CE1DD4D49A00B512E3 /* PlaylistTagCardinalityValidation.swift in Sources */,
 				EC7491BA1DD29D5C00AF4E20 /* PlaylistTagDescriptor.swift in Sources */,
-				EC03B63E1E5CC55800BF1F97 /* RapidParserMasterParseArray.c in Sources */,
 				ECDE185E22396E7D008566BB /* PlaylistValidator.swift in Sources */,
 				EC3B01AE1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupTYPEValidator.swift in Sources */,
 				EC3B01B21DD4D47900B512E3 /* EXT_X_TARGETDURATIONLengthValidator.swift in Sources */,
 				EC3B01C21DD4D49A00B512E3 /* PlaylistCollectionValidator.swift in Sources */,
-				F7CFF27A1F38CACF009F4C82 /* CMTimeMakeFromString.c in Sources */,
 				EC349ADB2236F56A0077432B /* VariantPlaylistStructure.swift in Sources */,
-				F700CD401E78AA57001C9487 /* MambaStringRef_ConcreteNSData.m in Sources */,
 				EC9547831E5CC82500962535 /* GenericTagWriter.swift in Sources */,
 				EC7491FD1DD29DD300AF4E20 /* DictionaryTagValueIdentifier.swift in Sources */,
 				EC7491C81DD29D5C00AF4E20 /* ValueTypes.swift in Sources */,
 				EC7491F01DD29DBB00AF4E20 /* GenericSingleTagWriter.swift in Sources */,
-				EC03B65D1E5CC56B00BF1F97 /* MambaStringRef.swift in Sources */,
 				ECDE184922381E6C008566BB /* PlaylistURLDataExtensions.swift in Sources */,
 				EC3B01C61DD4D49A00B512E3 /* PlaylistRenditionGroupAudioVideoValidator.swift in Sources */,
 				EC74915A1DD29AED00AF4E20 /* PlaylistTag.swift in Sources */,
 				EC3B01B01DD4D47900B512E3 /* EXT_X_STREAM_INFRenditionGroupValidator.swift in Sources */,
-				EC318B55226534AF00969E2D /* StaticMemoryStorage.m in Sources */,
-				EC03B6711E5CC56B00BF1F97 /* RapidParserStateHandlers.c in Sources */,
 				EC3B01CC1DD4D49A00B512E3 /* PlaylistRenditionGroupValidator.swift in Sources */,
 				EC7491F91DD29DD300AF4E20 /* GenericDictionaryTagValidator.swift in Sources */,
-				EC03B65F1E5CC56B00BF1F97 /* parseHLS.c in Sources */,
 				EC7491641DD29B0F00AF4E20 /* CoreMedia+Util.swift in Sources */,
 				D44E03781E3BAC9F00126B52 /* PlaylistTag+Util.swift in Sources */,
 				ECDE185A22396846008566BB /* MasterPlaylistValidator.swift in Sources */,
+				E60E30C82CD9774D001AF4DB /* PlaylistParserError.swift in Sources */,
 				EC7491F21DD29DBB00AF4E20 /* LocationTagWriter.swift in Sources */,
 				EC7491681DD29B0F00AF4E20 /* RegisteredPlaylistTags.swift in Sources */,
 				ECDE185622396833008566BB /* VariantPlaylistValidator.swift in Sources */,
@@ -2048,23 +2147,34 @@
 				EC676A7922B05BF0008920BB /* MasterPlaylistStreamSummary.swift in Sources */,
 				EC7491661DD29B0F00AF4E20 /* FailableStringLiteralConvertible.swift in Sources */,
 				EC349ACF2236C3A60077432B /* PlaylistStructureInterface.swift in Sources */,
+				E65FB2442CD51E4200BF6F56 /* InterstitialValueTypes.swift in Sources */,
 				EC7491471DD299B400AF4E20 /* PlaylistTypes.swift in Sources */,
-				F700CD3A1E78A2BE001C9487 /* MambaStringRef_ConcreteNSString.m in Sources */,
 				144758322C83C72B00D12CCD /* EXT_X_SESSION_DATATagValidator.swift in Sources */,
 				1447582E2C83C20800D12CCD /* EXT_X_SESSION_KEYValidator.swift in Sources */,
 				EC3B01A81DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift in Sources */,
 				EC74918B1DD29CCB00AF4E20 /* StringDictionaryParser.swift in Sources */,
 				ECDE184122381146008566BB /* MasterPlaylist.swift in Sources */,
-				F73183781E78758B00ED8E59 /* MambaStringRefFactory.m in Sources */,
 				EC349ADF2236F57F0077432B /* MasterPlaylistType.swift in Sources */,
 				D4BB018E1E2EABD500CA006E /* PlaylistTagArray+RenditionGroups.swift in Sources */,
 				EC7491891DD29CCB00AF4E20 /* StringArrayParser.swift in Sources */,
+				E60E308B2CD9773C001AF4DB /* parseHLS.c in Sources */,
+				E60E308C2CD9773C001AF4DB /* RapidParser.m in Sources */,
+				E60E308D2CD9773C001AF4DB /* MambaStringRef.m in Sources */,
+				E60E308E2CD9773C001AF4DB /* MambaStringRef_ConcreteUnownedBytes.m in Sources */,
+				E60E308F2CD9773C001AF4DB /* RapidParserStateHandlers.c in Sources */,
+				E60E30902CD9773C001AF4DB /* CMTimeMakeFromString.c in Sources */,
+				E60E30912CD9773C001AF4DB /* RapidParserError.m in Sources */,
+				E60E30922CD9773C001AF4DB /* MambaStringRef_ConcreteNSString.m in Sources */,
+				E60E30932CD9773C001AF4DB /* MambaStringRef_ConcreteNSData.m in Sources */,
+				E60E30942CD9773C001AF4DB /* StaticMemoryStorage.m in Sources */,
+				E60E30952CD9773C001AF4DB /* MambaStringRefFactory.m in Sources */,
+				E60E30962CD9773C001AF4DB /* RapidParserMasterParseArray.c in Sources */,
+				E60E30CB2CD977C5001AF4DB /* MambaStringRef+Extensions.swift in Sources */,
+				E60E30972CD9773C001AF4DB /* RapidParserLineState.c in Sources */,
 				EC7491D91DD29D9600AF4E20 /* GenericDictionaryTagParser.swift in Sources */,
 				EC676A6922AF0D8D008920BB /* VariantPlaylistTagMatchSegmentInfo.swift in Sources */,
-				EC03B6691E5CC56B00BF1F97 /* RapidParserLineState.c in Sources */,
 				722A207F26AB38C800134820 /* FrameworkInfo.swift in Sources */,
 				EC7491EC1DD29DBB00AF4E20 /* GenericDictionaryTagWriter.swift in Sources */,
-				EC03B6651E5CC56B00BF1F97 /* RapidParserError.m in Sources */,
 				EC7491DD1DD29D9600AF4E20 /* GenericSingleValueTagParser.swift in Sources */,
 				EC7491D01DD29D7C00AF4E20 /* PantosValue.swift in Sources */,
 				EC7491CE1DD29D7C00AF4E20 /* PantosTag.swift in Sources */,
@@ -2087,6 +2197,7 @@
 				EC7492291DD29E4A00AF4E20 /* FixtureLoader.swift in Sources */,
 				F7CFF27F1F392009009F4C82 /* CMTimeMakeFromStringTests.swift in Sources */,
 				ECDE185222387257008566BB /* VariantPlaylistMediaSpanTests.swift in Sources */,
+				E65FB24F2CD526DD00BF6F56 /* InterstitialTagBuilderTests.swift in Sources */,
 				EC7492771DD29EC800AF4E20 /* EXT_X_KEYTagParserTests.swift in Sources */,
 				EC7492AA1DD29F7000AF4E20 /* MambaUtilTests.swift in Sources */,
 				ECFBD90F1E5CCC2200379FC2 /* MambaStringRefTests.m in Sources */,
@@ -2117,6 +2228,7 @@
 				ECBEF4F21F7AC58A0051078F /* ReadMeUnitTests.swift in Sources */,
 				EC7492851DD29EC800AF4E20 /* StringDictionaryParserTests.swift in Sources */,
 				EC7492AE1DD29F7000AF4E20 /* URLSchemeChangeTests.swift in Sources */,
+				E65FB2462CD5241D00BF6F56 /* InterstitialValueTests.swift in Sources */,
 				3D933C1C219336970029069F /* EXT-X-BITRATETagParserTests.swift in Sources */,
 				ECFBD9041E5CCAAF00379FC2 /* XCTestCase+mamba.swift in Sources */,
 				EC073F5E1FE0840000689228 /* OutputStreamExtensionTests.swift in Sources */,
@@ -2146,9 +2258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC1CCD04209A2CF9006B59FF /* MambaStringRef_ConcreteUnownedBytes.m in Sources */,
 				EC1CCD56209A2CF9006B59FF /* LocationTagWriter.swift in Sources */,
-				EC1CCD00209A2CF9006B59FF /* MambaStringRef_ConcreteNSData.m in Sources */,
 				EC1CCD36209A2CF9006B59FF /* URLSchemeChangeExtension.swift in Sources */,
 				EC1CCD32209A2CF9006B59FF /* String+Trim.swift in Sources */,
 				EC1CCD46209A2CF9006B59FF /* GenericSingleTagValidator.swift in Sources */,
@@ -2160,8 +2270,8 @@
 				EC1CCD60209A2CF9006B59FF /* PlaylistValidationIssue.swift in Sources */,
 				EC349AD82236F55F0077432B /* MasterPlaylistStructure.swift in Sources */,
 				ECDE18462238114E008566BB /* VariantPlaylist.swift in Sources */,
+				E65FB24B2CD524BF00BF6F56 /* InterstitialTagBuilder.swift in Sources */,
 				EC1CCD40209A2CF9006B59FF /* EXT_X_MEDIARenditionGroupTYPEValidator.swift in Sources */,
-				EC1CCD21209A2CF9006B59FF /* RapidParserStateHandlers.c in Sources */,
 				EC1CCD23209A2CF9006B59FF /* CollectionType+FindExtensions.swift in Sources */,
 				EC1CCD4A209A2CF9006B59FF /* PlaylistOneToManyValidator.swift in Sources */,
 				EC349AC32236BFAC0077432B /* PlaylistCore.swift in Sources */,
@@ -2175,11 +2285,8 @@
 				EC1CCD48209A2CF9006B59FF /* PlaylistTagCardinalityValidator.swift in Sources */,
 				EC1CCD57209A2CF9006B59FF /* PantosTag.swift in Sources */,
 				EC1CCD4B209A2CF9006B59FF /* PlaylistRenditionGroupAudioVideoValidator.swift in Sources */,
-				EC1CCCFB209A2CF9006B59FF /* MambaStringRef.m in Sources */,
-				EC1CCD2E209A2CF9006B59FF /* CMTimeMakeFromString.c in Sources */,
 				EC1CCD25209A2CF9006B59FF /* PlaylistTagArray+RenditionGroups.swift in Sources */,
 				EC1CCD50209A2CF9006B59FF /* PlaylistTagGroupValidator.swift in Sources */,
-				EC1CCCFE209A2CF9006B59FF /* MambaStringRefFactory.m in Sources */,
 				EC349AD42236CB860077432B /* PlaylistStructureCore.swift in Sources */,
 				6DD0A1B3242FADC600FF7AAE /* EXT_X_DATERANGEPlaylistValidator.swift in Sources */,
 				EC1CCD3A209A2CF9006B59FF /* NoOpTagParser.swift in Sources */,
@@ -2188,7 +2295,6 @@
 				EC1CCD61209A2CF9006B59FF /* ValueTypes.swift in Sources */,
 				EC1CCD39209A2CF9006B59FF /* GenericSingleValueTagParser.swift in Sources */,
 				EC1CCD34209A2CF9006B59FF /* StringArrayParser.swift in Sources */,
-				EC1CCD18209A2CF9006B59FF /* parseHLS.c in Sources */,
 				EC1CCD3E209A2CF9006B59FF /* EXT_X_MEDIARenditionGroupDEFAULTValidator.swift in Sources */,
 				EC1CCCF6209A2CF9006B59FF /* PlaylistTagGroup.swift in Sources */,
 				EC1CCD3D209A2CF9006B59FF /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift in Sources */,
@@ -2201,23 +2307,19 @@
 				EC349ADC2236F56A0077432B /* VariantPlaylistStructure.swift in Sources */,
 				EC1CCD3C209A2CF9006B59FF /* EXT_X_KEYValidator.swift in Sources */,
 				EC1CCD5E209A2CF9006B59FF /* PlaylistTagValueIdentifier.swift in Sources */,
-				EC1CCD06209A2CF9006B59FF /* RapidParserMasterParseArray.c in Sources */,
 				EC1CCD42209A2CF9006B59FF /* EXT_X_STARTTimeOffsetValidator.swift in Sources */,
 				EC1CCD33209A2CF9006B59FF /* GenericDictionaryTagParserHelper.swift in Sources */,
 				EC1CCD3F209A2CF9006B59FF /* EXT_X_MEDIARenditionGroupNAMEValidator.swift in Sources */,
 				ECDE184A22381E6C008566BB /* PlaylistURLDataExtensions.swift in Sources */,
 				EC1CCD5B209A2CF9006B59FF /* PlaylistTagDescriptor.swift in Sources */,
-				EC318B56226534AF00969E2D /* StaticMemoryStorage.m in Sources */,
-				EC1CCD1C209A2CF9006B59FF /* RapidParserError.m in Sources */,
 				EC1CCCF1209A2CF9006B59FF /* PlaylistTypes.swift in Sources */,
 				EC1CCD4E209A2CF9006B59FF /* PlaylistRenditionGroupValidator.swift in Sources */,
-				EC1CCCFC209A2CF9006B59FF /* MambaStringRef.swift in Sources */,
 				EC1CCD2A209A2CF9006B59FF /* PlaylistTag+Util.swift in Sources */,
 				ECDE185B22396846008566BB /* MasterPlaylistValidator.swift in Sources */,
+				E60E30C72CD9774D001AF4DB /* PlaylistParserError.swift in Sources */,
 				EC1CCD31209A2CF9006B59FF /* String+EquatableMambaTypes.swift in Sources */,
 				EC1CCD2D209A2CF9006B59FF /* RegisteredPlaylistTags.swift in Sources */,
 				ECDE185722396833008566BB /* VariantPlaylistValidator.swift in Sources */,
-				EC1CCD5A209A2CF9006B59FF /* PlaylistParserError.swift in Sources */,
 				EC349AE42236F58B0077432B /* VariantPlaylistType.swift in Sources */,
 				EC1CCD47209A2CF9006B59FF /* DictionaryTagValueIdentifier.swift in Sources */,
 				EC1CCCF2209A2CF9006B59FF /* PlaylistTag.swift in Sources */,
@@ -2225,27 +2327,39 @@
 				EC1CCD4F209A2CF9006B59FF /* PlaylistTagCardinalityValidation.swift in Sources */,
 				EC1CCD2B209A2CF9006B59FF /* IndeterminateBool.swift in Sources */,
 				EC349AD02236C3A60077432B /* PlaylistStructureInterface.swift in Sources */,
+				E65FB2422CD51E4200BF6F56 /* InterstitialValueTypes.swift in Sources */,
 				144758332C83C72B00D12CCD /* EXT_X_SESSION_DATATagValidator.swift in Sources */,
 				EC1CCD43209A2CF9006B59FF /* EXT_X_STREAM_INFRenditionGroupValidator.swift in Sources */,
 				1447582F2C83C20800D12CCD /* EXT_X_SESSION_KEYValidator.swift in Sources */,
 				EC1CCD35209A2CF9006B59FF /* StringDictionaryParser.swift in Sources */,
-				EC1CCD02209A2CF9006B59FF /* MambaStringRef_ConcreteNSString.m in Sources */,
 				EC1CCD38209A2CF9006B59FF /* GenericNoDataTagParser.swift in Sources */,
 				ECDE184222381146008566BB /* MasterPlaylist.swift in Sources */,
 				EC349AE02236F57F0077432B /* MasterPlaylistType.swift in Sources */,
 				EC1CCD5F209A2CF9006B59FF /* PlaylistTagWriter.swift in Sources */,
 				EC1CCD49209A2CF9006B59FF /* PlaylistCollectionValidator.swift in Sources */,
 				EC1CCD37209A2CF9006B59FF /* GenericDictionaryTagParser.swift in Sources */,
+				E60E305F2CD9773C001AF4DB /* parseHLS.c in Sources */,
+				E60E30602CD9773C001AF4DB /* RapidParser.m in Sources */,
+				E60E30612CD9773C001AF4DB /* MambaStringRef.m in Sources */,
+				E60E30622CD9773C001AF4DB /* MambaStringRef_ConcreteUnownedBytes.m in Sources */,
+				E60E30632CD9773C001AF4DB /* RapidParserStateHandlers.c in Sources */,
+				E60E30642CD9773C001AF4DB /* CMTimeMakeFromString.c in Sources */,
+				E60E30652CD9773C001AF4DB /* RapidParserError.m in Sources */,
+				E60E30662CD9773C001AF4DB /* MambaStringRef_ConcreteNSString.m in Sources */,
+				E60E30672CD9773C001AF4DB /* MambaStringRef_ConcreteNSData.m in Sources */,
+				E60E30682CD9773C001AF4DB /* StaticMemoryStorage.m in Sources */,
+				E60E30692CD9773C001AF4DB /* MambaStringRefFactory.m in Sources */,
+				E60E306A2CD9773C001AF4DB /* RapidParserMasterParseArray.c in Sources */,
+				E60E30CC2CD977C5001AF4DB /* MambaStringRef+Extensions.swift in Sources */,
+				E60E306B2CD9773C001AF4DB /* RapidParserLineState.c in Sources */,
 				EC676A6A22AF0D8D008920BB /* VariantPlaylistTagMatchSegmentInfo.swift in Sources */,
 				EC1CCD28209A2CF9006B59FF /* FailableStringLiteralConvertible.swift in Sources */,
 				EC1CCCF7209A2CF9006B59FF /* StructureState.swift in Sources */,
 				722A208026AB38C800134820 /* FrameworkInfo.swift in Sources */,
 				EC1CCD5C209A2CF9006B59FF /* PlaylistTagParser.swift in Sources */,
 				EC1CCD2C209A2CF9006B59FF /* OutputStream+HLSWriting.swift in Sources */,
-				EC1CCD16209A2CF9006B59FF /* RapidParser.m in Sources */,
 				EC1CCD4C209A2CF9006B59FF /* PlaylistRenditionGroupMatchingNAMELANGUAGEValidator.swift in Sources */,
 				EC349ACC2236C1520077432B /* PlaylistTypeInterface.swift in Sources */,
-				EC1CCD1D209A2CF9006B59FF /* RapidParserLineState.c in Sources */,
 				EC1CCD45209A2CF9006B59FF /* GenericDictionaryTagValidator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2264,6 +2378,7 @@
 				ECE253F0209A50B500D388CE /* EXT_X_I_FRAME_STREAM_INFTagParserTests.swift in Sources */,
 				ECDE185322387257008566BB /* VariantPlaylistMediaSpanTests.swift in Sources */,
 				ECE25405209A50B500D388CE /* CodecArrayTests.swift in Sources */,
+				E65FB24E2CD526DD00BF6F56 /* InterstitialTagBuilderTests.swift in Sources */,
 				ECE253EA209A50A100D388CE /* MambaStringRefTests.m in Sources */,
 				ECE253F7209A50B500D388CE /* StringArrayParserTests.swift in Sources */,
 				ECE25401209A50B500D388CE /* MambaUtilTests.swift in Sources */,
@@ -2294,6 +2409,7 @@
 				ECE253EB209A50A100D388CE /* ParseArrayTests.m in Sources */,
 				ECE253E5209A509900D388CE /* TagWriting.swift in Sources */,
 				3D933C1B219336970029069F /* EXT-X-BITRATETagParserTests.swift in Sources */,
+				E65FB2482CD5241D00BF6F56 /* InterstitialValueTests.swift in Sources */,
 				ECE253F5209A50B500D388CE /* GenericNoDataTagParserTests.swift in Sources */,
 				ECE253D4209A509000D388CE /* TagParserMock.swift in Sources */,
 				ECE253E3209A509900D388CE /* PlaylistTagGroupTests.swift in Sources */,
@@ -2344,6 +2460,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
@@ -2357,7 +2474,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2372,6 +2489,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
@@ -2385,7 +2503,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2450,7 +2568,7 @@
 				INFOPLIST_FILE = mamba/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
 				PRODUCT_NAME = mamba;
 				SDKROOT = appletvos;
@@ -2481,7 +2599,7 @@
 				INFOPLIST_FILE = mamba/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
 				PRODUCT_NAME = mamba;
 				SDKROOT = appletvos;
@@ -2560,7 +2678,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
 				PRODUCT_MODULE_NAME = mamba;
 				PRODUCT_NAME = mamba;
@@ -2594,7 +2712,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 2.3.0;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.comcast.mamba;
 				PRODUCT_MODULE_NAME = mamba;
 				PRODUCT_NAME = mamba;

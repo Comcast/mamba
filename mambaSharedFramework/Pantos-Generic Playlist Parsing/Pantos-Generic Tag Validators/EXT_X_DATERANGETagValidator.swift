@@ -27,6 +27,9 @@ import Foundation
 ///
 class EXT_X_DATERANGETagValidator: PlaylistTagValidator {
     
+    /// the required Date Range class identifier for specifying HLS interstitial tags
+    static let appleHLSInterstitialClassIdentifier = "com.apple.hls.interstitial"
+    
     private let genericDictionaryTagValidator: GenericDictionaryTagValidator
     
     init() {
@@ -44,7 +47,16 @@ class EXT_X_DATERANGETagValidator: PlaylistTagValidator {
             DictionaryTagValueIdentifierImpl(valueId: PantosValue.scte35Cmd, optional: true, expectedType: String.self),
             DictionaryTagValueIdentifierImpl(valueId: PantosValue.scte35Out, optional: true, expectedType: String.self),
             DictionaryTagValueIdentifierImpl(valueId: PantosValue.scte35In, optional: true, expectedType: String.self),
-            DictionaryTagValueIdentifierImpl(valueId: PantosValue.endOnNext, optional: true, expectedType: Bool.self)
+            DictionaryTagValueIdentifierImpl(valueId: PantosValue.endOnNext, optional: true, expectedType: Bool.self),
+            DictionaryTagValueIdentifierImpl(valueId: PantosValue.assetUri, optional: true, expectedType: String.self),
+            DictionaryTagValueIdentifierImpl(valueId: PantosValue.assetList, optional: true, expectedType: String.self),
+            DictionaryTagValueIdentifierImpl(valueId: PantosValue.resumeOffset, optional: true, expectedType: Double.self),
+            DictionaryTagValueIdentifierImpl(valueId: PantosValue.playoutLimit, optional: true, expectedType: Double.self),
+            DictionaryTagValueIdentifierImpl(valueId: PantosValue.snap, optional: true, expectedType: HLSInterstitialAlignment.self),
+            DictionaryTagValueIdentifierImpl(valueId: PantosValue.restrict, optional: true, expectedType: HLSInterstitialSeekRestrictions.self),
+            DictionaryTagValueIdentifierImpl(valueId: PantosValue.timelineOccupies, optional: true, expectedType: HLSInterstitialTimelineOccupation.self),
+            DictionaryTagValueIdentifierImpl(valueId: PantosValue.timelineStyle, optional: true, expectedType: HLSInterstitialTimelineStyle.self),
+            DictionaryTagValueIdentifierImpl(valueId: PantosValue.contentMayVary, optional: true, expectedType: Bool.self)
         ])
     }
     
@@ -77,6 +89,10 @@ class EXT_X_DATERANGETagValidator: PlaylistTagValidator {
         if let negativePlannedDurationIssues = negativePlannedDurationValidation(tag: tag) {
             validationIssues = validationIssues ?? []
             validationIssues?.append(contentsOf: negativePlannedDurationIssues)
+        }
+        if let interstitialIssues = hlsInterstitialValidation(tag: tag) {
+            validationIssues = validationIssues ?? []
+            validationIssues?.append(contentsOf: interstitialIssues)
         }
         
         return validationIssues
@@ -174,5 +190,27 @@ class EXT_X_DATERANGETagValidator: PlaylistTagValidator {
             return nil
         }
         return [PlaylistValidationIssue(description: .EXT_X_DATERANGETagPLANNED_DURATIONMustNotBeNegative, severity: .warning)]
+    }
+    
+    /// if a DateRange tag contains `CLASS="com.apple.hls.interstitial"`, it must specify **either** X-ASSET-LIST OR
+    /// X-ASSET-URI attributes, but **never** both.
+    private func hlsInterstitialValidation(tag: PlaylistTag) -> [PlaylistValidationIssue]? {
+        guard let classId = tag.value(forValueIdentifier: PantosValue.classAttribute),
+              classId == Self.appleHLSInterstitialClassIdentifier
+        else {
+            return nil
+        }
+
+        let assetList = tag.value(forValueIdentifier: PantosValue.assetList)
+        let assetUri = tag.value(forValueIdentifier: PantosValue.assetUri)
+
+        switch(assetUri, assetList) {
+        case (.some(_), .some(_)):
+            return [PlaylistValidationIssue(description: .EXT_X_DATERANGEContainsBothAssetListAndAssetUriAttribute, severity: .warning)]
+        case (.none, .none):
+            return [PlaylistValidationIssue(description: .EXT_X_DATERANGEMissingAssetListOrAssetUriAttribute, severity: .warning)]
+        default:
+            return nil
+        }
     }
 }

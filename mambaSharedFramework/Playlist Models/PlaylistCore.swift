@@ -18,8 +18,11 @@
 //
 
 import Foundation
-
 import CoreMedia
+
+#if SWIFT_PACKAGE
+import HLSObjectiveC
+#endif
 
 /**
  A structure representing a HLS playlist in easy to edit form.

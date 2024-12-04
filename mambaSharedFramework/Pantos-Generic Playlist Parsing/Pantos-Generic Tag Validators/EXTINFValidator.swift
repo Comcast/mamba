@@ -18,6 +18,7 @@
 //
 
 import Foundation
+import CoreMedia
 
 // Specialized validator for EXTINF tags
 class EXTINFValidator: PlaylistTagValidator {

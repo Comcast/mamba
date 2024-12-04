@@ -1,0 +1,34 @@
+name: Publish Release
+on:
+  push:
+    branches:
+      - 'main'
+      - 'main_1.x'
+
+jobs:
+  get-version:
+    name: Get version for release
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - id: version
+        run: echo "version=`cat ./mambaSharedFramework/Resources/version.txt`" >> "$GITHUB_OUTPUT"
+
+  publish-release:
+    name: Publish release ${{ needs.get-version.outputs.version }}
+    runs-on: ubuntu-latest
+    needs: get-version
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create release
+        uses: elgohr/Github-Release-Action@v5
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          title: ${{ needs.get-version.outputs.version }}
+          tag: ${{ needs.get-version.outputs.version }}

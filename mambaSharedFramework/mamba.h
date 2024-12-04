@@ -32,9 +32,8 @@ FOUNDATION_EXPORT double mambaVersionNumber;
 FOUNDATION_EXPORT const unsigned char mambaVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <mamba/PublicHeader.h>
-
-#import <mamba/MambaStringRef.h>
-#import <mamba/RapidParser.h>
-#import <mamba/RapidParserCallback.h>
-#import <mamba/CMTimeMakeFromString.h>
-#import <mamba/StaticMemoryStorage.h>
+#import "MambaStringRef.h"
+#import "RapidParser.h"
+#import "RapidParserCallback.h"
+#import "CMTimeMakeFromString.h"
+#import "StaticMemoryStorage.h"
