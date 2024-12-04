@@ -50,6 +50,7 @@ class PantosTagTests: XCTestCase {
 
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_INDEPENDENT_SEGMENTS)
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_START)
+        runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_DEFINE)
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_TARGETDURATION)
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXT_X_MAP)
         runStringRefLookupTest(onPantosDescriptor: PantosTag.EXTINF)
@@ -101,6 +102,8 @@ class PantosTagTests: XCTestCase {
         case .EXT_X_INDEPENDENT_SEGMENTS:
             fallthrough
         case .EXT_X_START:
+            fallthrough
+        case .EXT_X_DEFINE:
             fallthrough
         case .EXT_X_TARGETDURATION:
             fallthrough

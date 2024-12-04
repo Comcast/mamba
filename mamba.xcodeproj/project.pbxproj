@@ -53,6 +53,12 @@
 		6DD9C898242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9C897242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 */; };
 		6DD9C899242CCE5300B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9C897242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 */; };
 		6DD9C89A242CCE5400B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = 6DD9C897242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 */; };
+		82E2777E2CFBF92800D6C95D /* EXT_X_DEFINETagValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E2777D2CFBF91C00D6C95D /* EXT_X_DEFINETagValidator.swift */; };
+		82E2777F2CFBF92800D6C95D /* EXT_X_DEFINETagValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E2777D2CFBF91C00D6C95D /* EXT_X_DEFINETagValidator.swift */; };
+		82E277802CFBF92800D6C95D /* EXT_X_DEFINETagValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E2777D2CFBF91C00D6C95D /* EXT_X_DEFINETagValidator.swift */; };
+		82E277822CFC005B00D6C95D /* EXT_X_DEFINEPlaylistValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E277812CFC005600D6C95D /* EXT_X_DEFINEPlaylistValidator.swift */; };
+		82E277832CFC005B00D6C95D /* EXT_X_DEFINEPlaylistValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E277812CFC005600D6C95D /* EXT_X_DEFINEPlaylistValidator.swift */; };
+		82E277842CFC005B00D6C95D /* EXT_X_DEFINEPlaylistValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E277812CFC005600D6C95D /* EXT_X_DEFINEPlaylistValidator.swift */; };
 		883290561EA172170064588B /* HLSStringRefExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883290551EA172170064588B /* HLSStringRefExtensionTests.swift */; };
 		D44E03771E3BAC9F00126B52 /* HLSTag+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E03761E3BAC9F00126B52 /* HLSTag+Util.swift */; };
 		D44E03781E3BAC9F00126B52 /* HLSTag+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E03761E3BAC9F00126B52 /* HLSTag+Util.swift */; };
@@ -665,6 +671,8 @@
 		6DD0A1AC242F85C800FF7AAE /* EXT_X_DATERANGETagValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXT_X_DATERANGETagValidator.swift; sourceTree = "<group>"; };
 		6DD0A1B0242FADC600FF7AAE /* EXT_X_DATERANGEPlaylistValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXT_X_DATERANGEPlaylistValidator.swift; sourceTree = "<group>"; };
 		6DD9C897242CCE4A00B90E1C /* hls_variant_playlist_with_daterange_metadata.m3u8 */ = {isa = PBXFileReference; lastKnownFileType = text; path = hls_variant_playlist_with_daterange_metadata.m3u8; sourceTree = "<group>"; };
+		82E2777D2CFBF91C00D6C95D /* EXT_X_DEFINETagValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXT_X_DEFINETagValidator.swift; sourceTree = "<group>"; };
+		82E277812CFC005600D6C95D /* EXT_X_DEFINEPlaylistValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXT_X_DEFINEPlaylistValidator.swift; sourceTree = "<group>"; };
 		883290551EA172170064588B /* HLSStringRefExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLSStringRefExtensionTests.swift; sourceTree = "<group>"; };
 		D44E03761E3BAC9F00126B52 /* HLSTag+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLSTag+Util.swift"; sourceTree = "<group>"; };
 		D4BB018C1E2EABD500CA006E /* HLSTagArray+RenditionGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HLSTagArray+RenditionGroups.swift"; sourceTree = "<group>"; };
@@ -941,6 +949,8 @@
 			children = (
 				6DD0A1B0242FADC600FF7AAE /* EXT_X_DATERANGEPlaylistValidator.swift */,
 				6DD0A1AC242F85C800FF7AAE /* EXT_X_DATERANGETagValidator.swift */,
+				82E277812CFC005600D6C95D /* EXT_X_DEFINEPlaylistValidator.swift */,
+				82E2777D2CFBF91C00D6C95D /* EXT_X_DEFINETagValidator.swift */,
 				EC3B019E1DD4D47900B512E3 /* EXT_X_KEYValidator.swift */,
 				EC3B019F1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupAUTOSELECTValidator.swift */,
 				EC3B01A01DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupDEFAULTValidator.swift */,
@@ -1809,6 +1819,7 @@
 				EC3B01A91DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupDEFAULTValidator.swift in Sources */,
 				EC8A3C821F7C497400A50EED /* HLSPlaylistCore.swift in Sources */,
 				EC3B01C31DD4D49A00B512E3 /* HLSPlaylistOneToManyValidator.swift in Sources */,
+				82E2777E2CFBF92800D6C95D /* EXT_X_DEFINETagValidator.swift in Sources */,
 				ECFAA6581E6DD93C00398D66 /* HLSPlaylist.swift in Sources */,
 				ECC410601EA02F4800B4E3C8 /* StructureState.swift in Sources */,
 				EC7491811DD29C3500AF4E20 /* String+Trim.swift in Sources */,
@@ -1879,6 +1890,7 @@
 				EC7491F11DD29DBB00AF4E20 /* LocationTagWriter.swift in Sources */,
 				EC7491671DD29B0F00AF4E20 /* RegisteredHLSTags.swift in Sources */,
 				EC74914C1DD29ACF00AF4E20 /* HLSTagCriteria.swift in Sources */,
+				82E277822CFC005B00D6C95D /* EXT_X_DEFINEPlaylistValidator.swift in Sources */,
 				EC95477C1E5CC7C800962535 /* OutputStream+HLSWriting.swift in Sources */,
 				EC3B01C71DD4D49A00B512E3 /* HLSPlaylistRenditionGroupMatchingNAMELANGUAGEValidator.swift in Sources */,
 				EC74917D1DD29C3500AF4E20 /* String+DateParsing.swift in Sources */,
@@ -1983,6 +1995,7 @@
 				43DE4F0E1E564FFE00EEE800 /* EXT_X_MEDIARenditionINSTREAMIDValidator.swift in Sources */,
 				EC8A3C831F7C497400A50EED /* HLSPlaylistCore.swift in Sources */,
 				43DE4F0D1E564FEE00EEE800 /* EXT_X_STARTTimeOffsetValidator.swift in Sources */,
+				82E277802CFBF92800D6C95D /* EXT_X_DEFINETagValidator.swift in Sources */,
 				ECFAA6591E6DD93C00398D66 /* HLSPlaylist.swift in Sources */,
 				ECC410611EA02F4800B4E3C8 /* StructureState.swift in Sources */,
 				EC3B01AA1DD4D47900B512E3 /* EXT_X_MEDIARenditionGroupDEFAULTValidator.swift in Sources */,
@@ -2053,6 +2066,7 @@
 				D44E03781E3BAC9F00126B52 /* HLSTag+Util.swift in Sources */,
 				EC7491F21DD29DBB00AF4E20 /* LocationTagWriter.swift in Sources */,
 				EC7491681DD29B0F00AF4E20 /* RegisteredHLSTags.swift in Sources */,
+				82E277842CFC005B00D6C95D /* EXT_X_DEFINEPlaylistValidator.swift in Sources */,
 				EC95477D1E5CC7C900962535 /* OutputStream+HLSWriting.swift in Sources */,
 				EC74914D1DD29ACF00AF4E20 /* HLSTagCriteria.swift in Sources */,
 				EC3B01C81DD4D49A00B512E3 /* HLSPlaylistRenditionGroupMatchingNAMELANGUAGEValidator.swift in Sources */,
@@ -2157,6 +2171,7 @@
 				EC1CCD04209A2CF9006B59FF /* HLSStringRef_ConcreteUnownedBytes.m in Sources */,
 				EC1CCD56209A2CF9006B59FF /* LocationTagWriter.swift in Sources */,
 				EC1CCD00209A2CF9006B59FF /* HLSStringRef_ConcreteNSData.m in Sources */,
+				82E2777F2CFBF92800D6C95D /* EXT_X_DEFINETagValidator.swift in Sources */,
 				EC1CCD36209A2CF9006B59FF /* URL+hlsplaylist.swift in Sources */,
 				EC1CCD32209A2CF9006B59FF /* String+Trim.swift in Sources */,
 				EC1CCD46209A2CF9006B59FF /* GenericSingleTagValidator.swift in Sources */,
@@ -2227,6 +2242,7 @@
 				EC1CCD2A209A2CF9006B59FF /* HLSTag+Util.swift in Sources */,
 				EC1CCD31209A2CF9006B59FF /* String+HLSTypeEquatable.swift in Sources */,
 				EC1CCD2D209A2CF9006B59FF /* RegisteredHLSTags.swift in Sources */,
+				82E277832CFC005B00D6C95D /* EXT_X_DEFINEPlaylistValidator.swift in Sources */,
 				EC1CCD5A209A2CF9006B59FF /* HLSParserError.swift in Sources */,
 				EC1CCD47209A2CF9006B59FF /* HLSDictionaryTagValueIdentifier.swift in Sources */,
 				EC1CCCF2209A2CF9006B59FF /* HLSTag.swift in Sources */,

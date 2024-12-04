@@ -1211,7 +1211,101 @@ class GenericDictionaryTagValidatorTests: XCTestCase {
                  mandatory: mandatory,
                  badValues: badValues)
     }
-    
+
+    /*
+     The EXT-X-DEFINE tag provides a Playlist variable definition or
+     declaration.  This tag is OPTIONAL.
+
+     Its format is:
+
+     #EXT-X-DEFINE:<attribute-list>
+
+     The following attributes are defined:
+
+        NAME
+
+        The value is a quoted-string which specifies the Variable Name.
+        All characters in the quoted-string MUST be from the following
+        set: [a..z], [A..Z], [0..9], '-', and '_'.
+
+        VALUE
+
+        The value is a quoted-string which specifies the Variable Value.
+        This attribute is REQUIRED if the EXT-X-DEFINE tag has a NAME
+        attribute.  The quoted-string MAY be empty.
+
+        IMPORT
+
+        The value is a quoted-string which specifies the Variable Name and
+        indicates that its value is that of the variable of the same name
+        in the Multivariant Playlist.  The valid character set for the
+        quoted-string is the same as for the NAME attribute.  EXT-X-DEFINE
+        tags containing the IMPORT attribute MUST NOT occur in
+        Multivariant Playlists; they are only allowed in Media Playlists.
+
+        If the IMPORT attribute value does not match any Variable Name
+        declared in the Multivariant Playlist, or if the Media Playlist
+        was not loaded from a Multivariant Playlist, the parser MUST fail
+        to parse the Playlist.
+
+        QUERYPARAM
+
+        The value is a quoted-string which specifies the Variable Name and
+        indicates that its value is the value associated with the query
+        parameter of the same name in the URI of the Playlist.  The valid
+        character set for the quoted-string is the same as for the NAME
+        attribute.  The value associated with the query parameter MUST be
+        percent-decoded before performing the variable replacement.  The
+        decoded value MUST NOT contain any of the characters disallowed in
+        quoted-strings.
+
+        If the QUERYPARAM attribute value does not match any query
+        parameter in the URI or the matching parameter has no associated
+        value, the parser MUST fail to parse the Playlist.  If more than
+        one parameter matches, any of the associated values MAY be used.
+
+        If the URI is redirected, the client MUST look for the query
+        parameter in the 30x response URI.
+
+     An EXT-X-DEFINE tag MUST contain either a NAME, an IMPORT, or a
+     QUERYPARAM attribute, but only one of the three.  Otherwise, the
+     client MUST fail to parse the Playlist.
+
+     An EXT-X-DEFINE tag MUST NOT specify the same Variable Name as any
+     other EXT-X-DEFINE tag in the same Playlist.  Parsers that encounter
+     duplicate Variable Name declarations MUST fail to parse the Playlist.
+
+     Variable Names are case-sensitive.
+
+     EXT-X-DEFINE tags do NOT implicitly persist across Playlist reloads.
+     */
+    func test_EXT_X_DEFINE() {
+        // GOOD
+        var tagData = "NAME=\"HELLO\",VALUE=\"WORLD\""
+        validInput(tag: .EXT_X_DEFINE, tagData: tagData)
+        // GOOD
+        tagData = "IMPORT=\"HELLO\""
+        validInput(tag: .EXT_X_DEFINE, tagData: tagData)
+        // GOOD
+        tagData = "QUERYPARAM=\"hello\""
+        validInput(tag: .EXT_X_DEFINE, tagData: tagData)
+        // BAD (NAME with no VALUE)
+        tagData = "NAME=\"HELLO\""
+        missingMandatoryKeys(tag: .EXT_X_DEFINE, tagData: tagData, removed: [.value])
+        // BAD (NAME with IMPORT)
+        tagData = "NAME=\"HELLO\",VALUE=\"WORLD\",IMPORT=\"WORLD\""
+        missingOrBadKey(tag: .EXT_X_DEFINE, tagData: tagData, key: "IMPORT")
+        // BAD (NAME with QUERYPARAM)
+        tagData = "NAME=\"HELLO\",VALUE=\"WORLD\",QUERYPARAM=\"world\""
+        missingOrBadKey(tag: .EXT_X_DEFINE, tagData: tagData, key: "QUERYPARAM")
+        // BAD (IMPORT with QUERYPARAM)
+        tagData = "IMPORT=\"WORLD\",QUERYPARAM=\"world\""
+        missingOrBadKey(tag: .EXT_X_DEFINE, tagData: tagData, key: "QUERYPARAM")
+        // BAD (No NAME, IMPORT, nor VALUE)
+        tagData = "VALUE=\"WORLD\""
+        missingOrBadKey(tag: .EXT_X_DEFINE, tagData: tagData, key: "NAME")
+    }
+
     /*
      The EXT-X-DATERANGE tag associates a Date Range (i.e., a range of
      time defined by a starting and ending date) with a set of attribute/
