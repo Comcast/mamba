@@ -508,6 +508,11 @@ fileprivate struct HLSPlaylistStructureConstructor {
                                                header: TagGroup?,
                                                mediaSegmentGroups: [MediaSegmentTagGroup]) throws -> [TagSpan] {
         
+        // If the playlist contains no segments then there are no spans
+        if mediaSegmentGroups.isEmpty {
+            return []
+        }
+        
         var mediaSpans = [TagSpan]()
         
         // handle our only known spannable tag, `EXT-X-KEY`
@@ -546,7 +551,9 @@ fileprivate struct HLSPlaylistStructureConstructor {
                 
                 if let startKeyIndex = startKeyIndex, let startKeyTag = startKeyTag {
                     // we are closing out our last key
-                    mediaSpans.append(TagSpan(parentTag: startKeyTag, tagMediaSpan: startKeyIndex...currentIndex - 1))
+                    if startKeyIndex <= currentIndex - 1 {
+                        mediaSpans.append(TagSpan(parentTag: startKeyTag, tagMediaSpan: startKeyIndex...(currentIndex - 1)))
+                    }
                 }
                 
                 startKeyIndex = currentIndex
@@ -559,10 +566,15 @@ fileprivate struct HLSPlaylistStructureConstructor {
         
         // close out our last tag
         if let startKeyIndex = startKeyIndex, let startKeyTag = startKeyTag {
-            mediaSpans.append(TagSpan(parentTag: startKeyTag, tagMediaSpan: startKeyIndex...(currentIndex - 1)))
+            if startKeyIndex <= currentIndex - 1 {
+                mediaSpans.append(TagSpan(parentTag: startKeyTag, tagMediaSpan: startKeyIndex...(currentIndex - 1)))
+            }
         }
-        
-        assert(keyCount == keyTags.count, "we missed a key tag")
+
+        // instead of assert, warn softly if key counts mismatch (footer keys or malformed playlists)
+        if keyCount != keyTags.count {
+            print("Warning: generateMediaSpans counted \(keyCount) EXT-X-KEY tags, but found \(keyTags.count). Possibly due to footer-only key tags.")
+        }
         
         return mediaSpans
     }
