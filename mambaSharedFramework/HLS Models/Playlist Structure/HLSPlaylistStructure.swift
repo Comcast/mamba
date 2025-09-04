@@ -244,9 +244,16 @@ final class HLSPlaylistStructure: HLSPlaylistStructureInterface {
         do {
             let result = try HLSPlaylistStructureConstructor.generateMediaGroups(fromTags: _tags)
             
-            let mediaSpans = try HLSPlaylistStructureConstructor.generateMediaSpans(fromTags: _tags,
-                                                                                    header: result.header,
-                                                                                    mediaSegmentGroups: result.mediaSegmentGroups)
+            let mediaSpans: [TagSpan]
+            do {
+                mediaSpans = try HLSPlaylistStructureConstructor.generateMediaSpans(
+                    fromTags: _tags,
+                    header: result.header,
+                    mediaSegmentGroups: result.mediaSegmentGroups
+                )
+            } catch {
+                mediaSpans = []
+            }
             
             self._header = result.header
             self._mediaSegmentGroups = result.mediaSegmentGroups
