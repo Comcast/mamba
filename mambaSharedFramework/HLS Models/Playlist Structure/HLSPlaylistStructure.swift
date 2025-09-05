@@ -244,16 +244,11 @@ final class HLSPlaylistStructure: HLSPlaylistStructureInterface {
         do {
             let result = try HLSPlaylistStructureConstructor.generateMediaGroups(fromTags: _tags)
             
-            let mediaSpans: [TagSpan]
-            do {
-                mediaSpans = try HLSPlaylistStructureConstructor.generateMediaSpans(
-                    fromTags: _tags,
-                    header: result.header,
-                    mediaSegmentGroups: result.mediaSegmentGroups
-                )
-            } catch {
-                mediaSpans = []
-            }
+            let mediaSpans = (try? HLSPlaylistStructureConstructor.generateMediaSpans(
+                fromTags: _tags,
+                header: result.header,
+                mediaSegmentGroups: result.mediaSegmentGroups
+            )) ?? []
             
             self._header = result.header
             self._mediaSegmentGroups = result.mediaSegmentGroups
@@ -586,9 +581,9 @@ fileprivate struct HLSPlaylistStructureConstructor {
             }
         }
 
-        // instead of assert, warn softly if key counts mismatch (footer keys or malformed playlists)
+        // assert if key counts mismatch (footer keys or malformed playlists)
         if keyCount != keyTags.count {
-            print("Warning: generateMediaSpans counted \(keyCount) EXT-X-KEY tags, but found \(keyTags.count). Possibly due to footer-only key tags.")
+            assert(keyCount == keyTags.count, "Warning: generateMediaSpans counted \(keyCount) EXT-X-KEY tags, but found \(keyTags.count). Possibly due to footer-only key tags.")
         }
         
         return mediaSpans
