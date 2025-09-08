@@ -821,4 +821,130 @@ frag1.ts
         )
     }
 
+    func test_EXT_X_DEFINEPlaylistValidator_existsInBothMasterAndVariantPlaylistValidators() {
+        XCTAssertEqual(
+            1,
+            HLSMasterPlaylistValidator.validators.filter { $0 == EXT_X_DEFINEPlaylistValidator.self }.count
+        )
+        XCTAssertEqual(
+            1,
+            HLSVariantPlaylistValidator.validators.filter { $0 == EXT_X_DEFINEPlaylistValidator.self }.count
+        )
+    }
+
+    func test_EXT_X_DEFINEPlaylistValidator_raisesErrorForDefineTagWithNoNameNorImportNorQueryparam() {
+        var tags = EXT_X_MEDIA_SEQUENCE_txt
+        tags.insert("#EXT-X-DEFINE:VALUE=\"example\"\n", at: 1)
+        let playlist = tags.joined()
+        validate(
+            validator: EXT_X_DEFINEPlaylistValidator.self,
+            playlist: playlist,
+            expectedIssues: [
+                HLSValidationIssue(description: .EXT_X_DEFINENoNameNorImportNorQueryparam, severity: .error)
+            ]
+        )
+    }
+
+    func test_EXT_X_DEFINEPlaylistValidator_raisesErrorForDefineTagWithNameAndImport() {
+        var tags = EXT_X_MEDIA_SEQUENCE_txt
+        tags.insert("#EXT-X-DEFINE:NAME=\"example\",IMPORT=\"example\"\n", at: 1)
+        let playlist = tags.joined()
+        validate(
+            validator: EXT_X_DEFINEPlaylistValidator.self,
+            playlist: playlist,
+            expectedIssues: [
+                HLSValidationIssue(description: .EXT_X_DEFINEMoreThanOneOfNameImportOrQueryParam, severity: .error)
+            ]
+        )
+    }
+
+    func test_EXT_X_DEFINEPlaylistValidator_raisesErrorForDefineTagWithNameAndQueryparam() {
+        var tags = EXT_X_MEDIA_SEQUENCE_txt
+        tags.insert("#EXT-X-DEFINE:NAME=\"example\",QUERYPARAM=\"example\"\n", at: 1)
+        let playlist = tags.joined()
+        validate(
+            validator: EXT_X_DEFINEPlaylistValidator.self,
+            playlist: playlist,
+            expectedIssues: [
+                HLSValidationIssue(description: .EXT_X_DEFINEMoreThanOneOfNameImportOrQueryParam, severity: .error)
+            ]
+        )
+    }
+
+    func test_EXT_X_DEFINEPlaylistValidator_raisesErrorForDefineTagWithImportAndQueryparam() {
+        var tags = EXT_X_MEDIA_SEQUENCE_txt
+        tags.insert("#EXT-X-DEFINE:IMPORT=\"example\",QUERYPARAM=\"example\"\n", at: 1)
+        let playlist = tags.joined()
+        validate(
+            validator: EXT_X_DEFINEPlaylistValidator.self,
+            playlist: playlist,
+            expectedIssues: [
+                HLSValidationIssue(description: .EXT_X_DEFINEMoreThanOneOfNameImportOrQueryParam, severity: .error)
+            ]
+        )
+    }
+
+    func test_EXT_X_DEFINEPlaylistValidator_raisesErrorForDefineTagWithAllNameImportAndQueryparam() {
+        var tags = EXT_X_MEDIA_SEQUENCE_txt
+        tags.insert("#EXT-X-DEFINE:NAME=\"example\",IMPORT=\"example\",QUERYPARAM=\"example\"\n", at: 1)
+        let playlist = tags.joined()
+        validate(
+            validator: EXT_X_DEFINEPlaylistValidator.self,
+            playlist: playlist,
+            expectedIssues: [
+                HLSValidationIssue(description: .EXT_X_DEFINEMoreThanOneOfNameImportOrQueryParam, severity: .error)
+            ]
+        )
+    }
+
+    func test_EXT_X_DEFINEPlaylistValidator_doesNotRaiseErrorIfNameAndNoValue() {
+        var tags = EXT_X_MEDIA_SEQUENCE_txt
+        tags.insert("#EXT-X-DEFINE:NAME=\"example\"\n", at: 1)
+        let playlist = tags.joined()
+        validate(
+            validator: EXT_X_DEFINEPlaylistValidator.self,
+            playlist: playlist,
+            expectedIssues: []
+        )
+    }
+
+    func test_EXT_X_DEFINEPlaylistValidator_raisesErrorIfImportInMultivariant() {
+        var tags = SubtitlesAndCCGroup_txt
+        tags.insert("#EXT-X-DEFINE:IMPORT=\"example\"\n", at: 1)
+        let playlist = tags.joined()
+        validate(
+            validator: EXT_X_DEFINEPlaylistValidator.self,
+            playlist: playlist,
+            expectedIssues: [
+                HLSValidationIssue(description: .EXT_X_DEFINEImportInMultivariant, severity: .error)
+            ]
+        )
+    }
+
+    func test_EXT_X_DEFINEPlaylistValidator_raisesErrorIfQueryparamWithNoQueryValueInURL() {
+        var tags = EXT_X_MEDIA_SEQUENCE_txt
+        tags.insert("#EXT-X-DEFINE:QUERYPARAM=\"example\"\n", at: 1)
+        let playlist = tags.joined()
+        validate(
+            validator: EXT_X_DEFINEPlaylistValidator.self,
+            playlist: playlist,
+            expectedIssues: [
+                HLSValidationIssue(description: .EXT_X_DEFINENoQueryParameterValue, severity: .error)
+            ]
+        )
+    }
+
+    func test_EXT_X_DEFINEPlaylistValidator_raisesErrorIfDuplicateDefinitions() {
+        var tags = EXT_X_MEDIA_SEQUENCE_txt
+        tags.insert("#EXT-X-DEFINE:NAME=\"example\",VALUE=\"example\"\n", at: 1)
+        tags.insert("#EXT-X-DEFINE:NAME=\"example\",VALUE=\"example\"\n", at: 1)
+        let playlist = tags.joined()
+        validate(
+            validator: EXT_X_DEFINEPlaylistValidator.self,
+            playlist: playlist,
+            expectedIssues: [
+                HLSValidationIssue(description: .EXT_X_DEFINEDuplicateDefinition, severity: .error)
+            ]
+        )
+    }
 }

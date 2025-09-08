@@ -74,10 +74,11 @@ public extension HLSExtensibleValidator {
 /// Validator for master playlists
 public class HLSMasterPlaylistValidator: HLSExtensibleValidator {
     public static let validators:[HLSValidator.Type] = [HLSPlaylistRenditionGroupValidator.self,
-                                                EXT_X_STREAM_INFRenditionGroupAUDIOValidator.self,
-                                                EXT_X_STREAM_INFRenditionGroupVIDEOValidator.self,
-                                                EXT_X_STREAM_INFRenditionGroupSUBTITLESValidator.self,
-                                                EXT_X_SESSION_DATAPlaylistValidator.self]
+                                                        EXT_X_STREAM_INFRenditionGroupAUDIOValidator.self,
+                                                        EXT_X_STREAM_INFRenditionGroupVIDEOValidator.self,
+                                                        EXT_X_STREAM_INFRenditionGroupSUBTITLESValidator.self,
+                                                        EXT_X_SESSION_DATAPlaylistValidator.self,
+                                                        EXT_X_DEFINEPlaylistValidator.self]
 }
 
 /// Validator for variant playlists
@@ -87,7 +88,8 @@ public class HLSVariantPlaylistValidator: HLSExtensibleValidator {
                                                         HLSPlaylistRenditionGroupMatchingPROGRAM_IDValidator.self,
                                                         HLSPlaylistRenditionGroupMatchingNAMELANGUAGEValidator.self,
                                                         EXT_X_STARTTimeOffsetValidator.self,
-                                                        EXT_X_DATERANGEPlaylistValidator.self]
+                                                        EXT_X_DATERANGEPlaylistValidator.self,
+                                                        EXT_X_DEFINEPlaylistValidator.self]
 }
 
 /// A general purpose validator that will validate either a variant or a master playlist
