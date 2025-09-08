@@ -114,4 +114,52 @@ class HLSMediaSpanTests: XCTestCase {
         let hlsString = hlsArray.joined()
         runTest(hlsString: hlsString, expectedSpans: [0...1, 2...4, 5...8])
     }
+    
+    // This validates the early return logic in generateMediaSpans() for empty mediaSegmentGroups.
+    func testNoMediaSegmentsScenario() {
+        let hlsArray = [
+            """
+            #EXTM3U\n,
+            #EXT-X-TARGETDURATION:6\n,
+            #EXT-X-VERSION:3\n,
+            #EXT-X-MEDIA-SEQUENCE:0\n,
+            #EXT-X-PLAYLIST-TYPE:VOD\n,
+            #EXT-X-KEY:METHOD=NONE\n,
+            #EXT-X-MAP:URI=\"test.mp4\",BYTERANGE=\"610@0\"\n
+            """
+        ]
+        let hlsString = hlsArray.joined()
+        runTest(hlsString: hlsString, expectedSpans: [])
+    }
+    
+    // Covers an edge case crash where an EXT-X-KEY appears in the header, but the playlist has no media segments.
+    func testKeyInHeaderWithNoMediaSegmentsDoesNotCrash() {
+        let hlsArray = [
+            """
+            #EXTM3U\n,
+            #EXT-X-VERSION:3\n,
+            #EXT-X-KEY:METHOD=AES-128,URI=\"enc.key\"\n,
+            #EXT-X-ENDLIST\n
+            """
+        ]
+        let hlsString = hlsArray.joined()
+        runTest(hlsString: hlsString, expectedSpans: [])
+    }
+
+    // Validates that an EXT-X-KEY tag appearing after the last media segment (in the footer) does not crash generateMediaSpans() or create invalid spans. This seems to occur with DAI
+    func testFooterOnlyKeyDoesNotCrashOrAppend() {
+        let hlsArray = [
+            """
+            #EXTM3U\n,
+            #EXT-X-VERSION:3\n,
+            #EXT-X-TARGETDURATION:6\n,
+            #EXTINF:6.0,\n,
+            segment1.ts\n,
+            #EXT-X-KEY:METHOD=AES-128,URI=\"footer.key\"\n,
+            #EXT-X-ENDLIST\n
+            """
+        ]
+        let hlsString = hlsArray.joined()
+        runTest(hlsString: hlsString, expectedSpans: [])
+    }
 }
