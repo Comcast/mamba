@@ -67,7 +67,8 @@ public enum PantosTag: String {
     case EXT_X_ALLOW_CACHE = "EXT-X-ALLOW-CACHE"
     case EXT_X_INDEPENDENT_SEGMENTS = "EXT-X-INDEPENDENT-SEGMENTS"
     case EXT_X_START = "EXT-X-START"
-    
+    case EXT_X_DEFINE = "EXT-X-DEFINE"
+
     // MARK: Variant playlist - Media segment tags
     case EXTINF = "EXTINF"
     case EXT_X_BITRATE = "EXT-X-BITRATE"
@@ -144,6 +145,8 @@ extension PantosTag: HLSTagDescriptor, Equatable {
             fallthrough
         case .EXT_X_START:
             fallthrough
+        case .EXT_X_DEFINE:
+            fallthrough
         case .EXT_X_DISCONTINUITY_SEQUENCE:
             fallthrough
         case .EXT_X_TARGETDURATION:
@@ -218,6 +221,8 @@ extension PantosTag: HLSTagDescriptor, Equatable {
         case .EXT_X_MAP:
             fallthrough
         case .EXT_X_START:
+            fallthrough
+        case .EXT_X_DEFINE:
             fallthrough
         case .EXT_X_KEY:
             fallthrough
@@ -301,6 +306,8 @@ extension PantosTag: HLSTagDescriptor, Equatable {
             fallthrough
         case .EXT_X_START:
             fallthrough
+        case .EXT_X_DEFINE:
+            fallthrough
         case .EXT_X_KEY:
             fallthrough
         case .EXT_X_DATERANGE:
@@ -372,6 +379,8 @@ extension PantosTag: HLSTagDescriptor, Equatable {
         case .EXT_X_MAP:
             fallthrough
         case .EXT_X_START:
+            fallthrough
+        case .EXT_X_DEFINE:
             fallthrough
         case .EXT_X_KEY:
             fallthrough
@@ -536,7 +545,10 @@ extension PantosTag: HLSTagDescriptor, Equatable {
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.startTimeOffset, optional: false, expectedType: Float.self),
                 HLSDictionaryTagValueIdentifierImpl(valueId: PantosValue.precise, optional: true, expectedType: Bool.self)
                 ])
-            
+
+        case .EXT_X_DEFINE:
+            return EXT_X_DEFINETagValidator()
+
         case .EXT_X_DATERANGE:
             return EXT_X_DATERANGETagValidator()
 
@@ -596,6 +608,7 @@ extension PantosTag: HLSTagDescriptor, Equatable {
                        PantosTag.EXT_X_DISCONTINUITY_SEQUENCE,
                        PantosTag.EXT_X_INDEPENDENT_SEGMENTS,
                        PantosTag.EXT_X_START,
+                       PantosTag.EXT_X_DEFINE,
                        PantosTag.EXT_X_DISCONTINUITY,
                        PantosTag.EXT_X_BITRATE,
                        PantosTag.EXT_X_DATERANGE,
